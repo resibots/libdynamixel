@@ -5,6 +5,9 @@
 #include <errno.h>
 #include <termios.h>
 #include <vector>
+#include <cstdio>
+#include <unistd.h>
+
 #include "error.hpp"
 #include "misc.hpp"
 #include "instruction.hpp"
@@ -26,7 +29,7 @@ namespace dynamixel
 
     // general send
     void send(const Instruction& inst);
-    void close_serial(){close(_fd);_fd=-1;}
+    void close_serial(){ close(_fd);_fd=-1;}
     bool isOpen()
     {
         return !(_fd==-1);
