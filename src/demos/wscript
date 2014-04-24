@@ -1,0 +1,81 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+def build(bld):
+    # Demo 1 : stand up
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "demo1_stand_up.cpp"
+    obj.includes = '. ..'
+    obj.target = 'demo1_stand_up'
+    obj.uselib_local = 'dynamixel'
+
+    # Demo 2 : wriggle
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "demo2_wriggle.cpp"
+    obj.includes = '. ..'
+    obj.target = 'demo2_wriggle'
+    obj.uselib_local = 'dynamixel'
+
+    # Demo 3 : static walk
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "demo3_static_walk.cpp monitor.cpp"
+    obj.includes = '. ..'
+    obj.target = 'demo3_static_walk'
+    obj.uselib_local = 'dynamixel'
+
+    # Demo 3 : static walk pause
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "demo3_static_walk_pause.cpp monitor.cpp"
+    obj.includes = '. ..'
+    obj.target = 'demo3_static_walk_pause'
+    obj.uselib_local = 'dynamixel'
+
+    # Demo 4 : sinusoid walk
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "demo4_sinusoid_walk.cpp actuator.cpp monitor.cpp"
+    obj.includes = '. ..'
+    obj.target = 'demo4_sinusoid_walk'
+    obj.uselib_local = 'dynamixel'
+
+    # Demo 5 : discrete sinusoid walk
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "demo5_discrete_sinusoid_walk.cpp actuator.cpp monitor.cpp"
+    obj.includes = '. ..'
+    obj.target = 'demo5_discrete_sinusoid_walk'
+    obj.uselib_local = 'dynamixel'
+
+    # Demo 6 : reality experiment
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "demo6_reality_exp.cpp actuator.cpp monitor.cpp"
+    obj.includes = '. ..'
+    obj.target = 'demo6_reality_exp'
+    obj.uselib_local = 'dynamixel'
+
+    # Test codamotion 1
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "test1_codamotion.cpp"
+    obj.includes = '. ..'
+    obj.target = 'test1_codamotion'
+    obj.uselib_local = 'dynamixel'
+
+    # Test codamotion 2
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "test2_codamotion.cpp"
+    obj.includes = '. ..'
+    obj.target = 'test2_codamotion'
+    obj.uselib_local = 'dynamixel'
+
+
+    # worm
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "worm.cpp"
+    obj.includes = '. ..'
+    obj.target = 'worm'
+    obj.uselib_local = 'dynamixel'
+
+    # worm
+#    obj = bld.new_task_gen('cxx', 'program')
+#    obj.source = "hexapod.cpp"
+#    obj.includes = '. ..'
+#    obj.target = 'hexapod'
+#    obj.uselib_local = 'dynamixel'

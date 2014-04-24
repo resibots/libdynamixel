@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+def build(bld):
+    # scan
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = "dynamixel.cpp"
+    obj.includes = '. ..'
+    obj.target = 'dynamixel'
+    obj.uselib_local = 'dynamixel'
+    obj.uselib = 'BOOST_PROGRAM_OPTIONS'
