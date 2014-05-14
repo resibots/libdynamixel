@@ -154,6 +154,21 @@ namespace dynamixel
       }
     };
 
+    class SetPosition : public Instruction
+    {
+      public:
+        SetPosition(const byte_t& id, const int position) : Instruction(id,action::sync_write)
+        {
+          std::vector<byte_t> params;
+          params.push_back(ax12::ctrl::goal_position_lo);
+          params.push_back(2);
+          params.push_back(id);
+          params.push_back(position & 0x00FF);
+          params.push_back((position & 0xFF00) >> 8);
+          rebuild_packet(params);
+        }
+    };
+
      // -- useful high-level instructions --
      // set position of all pointed ax12
     class SetPositions : public Instruction
@@ -188,6 +203,23 @@ namespace dynamixel
             params.push_back(positions[i] & 0x00FF);
             params.push_back((positions[i] & 0xFF00) >> 8);
           }
+          rebuild_packet(params);
+        }
+    };
+
+    class SetSpeed : public Instruction
+    {
+      public:
+        SetSpeed(const byte_t& id, bool direction, const int speed) : Instruction(id,action::sync_write)
+        {
+          std::vector<byte_t> params;
+          params.push_back(ax12::ctrl::moving_speed_lo);
+          params.push_back(2);
+          CHECK(speed <= 1023, "SetSpeed: speed > 1023");
+          params.push_back(id);
+          params.push_back(speed & 0x00FF);
+          int s = (speed | (direction << 10));
+          params.push_back(s >> 8);
           rebuild_packet(params);
         }
     };
@@ -251,6 +283,37 @@ namespace dynamixel
       TorqueEnable(byte_t id, bool b) :
         Instruction(id, action::write_data,
                     ctrl::torque_enable, (b ? 1 : 0))
+      {
+      }
+    };
+
+    /*
+    Dynamixel can protect itself by detecting errors occur during the operation.
+    The errors can be set are as the table below.
+    Bit 7 - 0
+    Bit 6 - Instruction Error - When undefined Instruction is transmitted or the Action command is delivered without the reg_write command
+    Bit 5 - Overload Error - When the current load cannot be controlled with the set maximum torque
+    Bit 4 - CheckSum Error - When the Checksum of the transmitted Instruction Packet is invalid
+    Bit 3 - Range Error - When the command is given beyond the range of usage
+    Bit 2 - OverHeating Error - When the internal temperature is out of the range of operating temperature set in the Control Table
+    Bit 1 - Angle Limit Error - When Goal Position is written with the value that is not between CW Angle Limit and CCW Angle Limit
+    Bit 0 - Input Voltage Error - When the applied voltage is out of the range of operating voltage set in the Control Table
+
+    If errors occur, in case of Alarm LED (reg 0x11), the LED blinks; in case of Alarm Shutdown (reg 0x12), the motor output becomes 0 % by making the value of Torque Limit(Address 34, 35) as 0.
+    */
+    struct SetAlarmLed : public Instruction
+    {
+      SetAlarmLed(byte_t value = 0b01111010) :
+        Instruction(broadcast, action::write_data,
+                    ctrl::alarm_led, value)
+      {
+      }
+    };
+    struct SetAlarmShutdown : public Instruction
+    {
+      SetAlarmShutdown(byte_t value = 0b01111010) :
+        Instruction(broadcast, action::write_data,
+                    ctrl::alarm_shutdown, value)
       {
       }
     };
