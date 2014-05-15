@@ -324,6 +324,14 @@ namespace dynamixel
       {
       }
     };
+
+    struct GetLoad : public ReadData
+    {
+        GetLoad(byte_t id) : ReadData(id, ctrl::present_load_lo, 2)
+        {
+        }
+    };
+
 //  this is a BROADCAST instruction
     struct ChangeBaudRate : public Instruction
     {
