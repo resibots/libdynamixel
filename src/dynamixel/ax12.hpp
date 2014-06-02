@@ -334,7 +334,7 @@ namespace dynamixel
 
     struct GetVoltage : public ReadData
     {
-        GetLoad(byte_t id) : ReadData(id, ctrl::present_voltage, 1)
+        GetVoltage(byte_t id) : ReadData(id, ctrl::present_voltage, 1)
         {
         }
     };
