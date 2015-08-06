@@ -278,6 +278,21 @@ namespace dynamixel
         }
     };
 
+    class UnsetContinuous : public Instruction
+    {
+      public:
+        UnsetContinuous(byte_t id) : Instruction(id, action::write_data)
+        {
+          std::vector<byte_t> params;
+          params.push_back(ax12::ctrl::cw_angle_limit_lo);
+          for (size_t i = 0; i < 2; ++i)
+            params.push_back(0);
+          params.push_back(255);
+          params.push_back(3);
+          rebuild_packet(params);
+        }
+    };
+
     struct TorqueEnable : public Instruction
     {
       TorqueEnable(byte_t id, bool b) :

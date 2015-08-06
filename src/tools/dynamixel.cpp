@@ -1,6 +1,7 @@
 #ifdef USE_BOOST
 
 #include <iostream>
+#include <algorithm>
 #include <dynamixel/dynamixel.hpp>
 #include <cmath>
 #include <boost/program_options.hpp>
@@ -535,60 +536,114 @@ void getContacts(Usb2Dynamixel& controller)
     std::cout << "done" << std::endl;
 }
 
+/** Set the control mode of an actuator to continuous.
+  *
+  * It allows the servo-motor for continuous rotation and disables position
+  * commands.
+  * @param controller reference to the controller object
+  * @param id id of the actuator affected
+  */
+void continuous_mode(Usb2Dynamixel& controller, int id)
+{
+  std::vector<byte_t> servos = scan(controller);
+  if (std::find(servos.begin(), servos.end(), (byte_t)id) == servos.end()) {
+    std::cout << "The requested ID corresponds to none of the connected "
+      << "servo-motors." << std::endl;
+      return;
+  }
+
+  dynamixel::Status status;
+
+  // Set the control mode to continuous
+  std::cout << "Set control mode to continuous" << std::endl;
+  controller.send(dynamixel::ax12::UnsetContinuous((byte_t)id));
+  controller.recv(READ_DURATION, status);
+  std::cout << "done" << std::endl;
+}
 
 
+/** Set the control mode of an actuator to position.
+  *
+  * It makes the servo-motor move to given positions. Reverts the effect of
+  * `continuous_mode`. In this mode, defining the moving speed affect the speed
+  * at which the servo-motor moves to its target.
+  * @param controller reference to the controller object
+  * @param id id of the actuator affected
+  */
+void position_mode(Usb2Dynamixel& controller, int id)
+{
+  std::vector<byte_t> servos = scan(controller);
+  if (std::find(servos.begin(), servos.end(), (byte_t)id) == servos.end()) {
+    std::cout << "The requested ID corresponds to none of the connected "
+      << "servo-motors." << std::endl;
+      return;
+  }
 
+  dynamixel::Status status;
+
+  // Set the control mode to continuous
+  std::cout << "Set control mode to continuous" << std::endl;
+  controller.send(dynamixel::ax12::SetContinuous((byte_t)id));
+  controller.recv(READ_DURATION, status);
+  std::cout << "done" << std::endl;
+}
 
 
 void select_command(const std::string& command, unsigned arg,
                     Usb2Dynamixel& controller)
 {
-    if (command == "scan")
-        scan(controller);
-    else
-        if (command == "change_baud")
-            change_baud(controller, arg);
-        else
-            if (command == "change_id")
-                change_id(controller, arg);
-            else
-                if (command == "zero")
-                    zero(controller);
-                else
-                    if (command == "relax")
-                        relax(controller);
-                    else
-                        if (command == "reset_overload")
-                            resetOverload(controller);
-                        else
-                            if (command == "get_torque")
-                                getTorque(controller,arg);
-                            else
-                                if (command == "get_version")
-                                    getVersion(controller);
-                                else
-                                    if (command == "get_contacts")
-                                        getContacts(controller);
-                                    else
-                                        if (command == "init")
-                                            init(controller);
-                                        else
-                                            if (command == "test_roues")
-                                                testRoues(controller,arg);
-                                            else
-                                                if (command == "positions")
-                                                    positions(controller);
-                                                else
-                                                    if (command == "osc")
-                                                        osc(controller);
-                                                    else
-                                                        std::cerr << "unknown command:" << command
-                                                        << " (arg=" << arg << ")" << std::endl;
+  if (command == "scan")
+    scan(controller);
+  else
+  if (command == "change_baud")
+    change_baud(controller, arg);
+  else
+  if (command == "change_id")
+    change_id(controller, arg);
+  else
+  if (command == "zero")
+    zero(controller);
+  else
+  if (command == "relax")
+    relax(controller);
+  else
+  if (command == "reset_overload")
+    resetOverload(controller);
+  else
+  if (command == "get_torque")
+    getTorque(controller,arg);
+  else
+  if (command == "get_version")
+    getVersion(controller);
+  else
+  if (command == "get_contacts")
+    getContacts(controller);
+  else
+  if (command == "init")
+    init(controller);
+  else
+  if (command == "test_roues")
+    testRoues(controller,arg);
+  else
+  if (command == "positions")
+    positions(controller);
+  else
+  if (command == "osc")
+    osc(controller);
+  else
+  if (command == "continuous_mode")
+    continuous_mode(controller, arg);
+  else
+  if (command == "position_mode")
+    position_mode(controller, arg);
+  else
+    std::cerr << "unknown command:" << command
+    << " (arg=" << arg << ")" << std::endl;
 }
 
 int main(int argc, char **argv)
 {
-    std::string port = "/dev/ttyACM0";
+    std::string port = "/dev/ttyUSB0";
     int baudrate = B1000000;
     std::string command = "scan";
     unsigned arg = 0;
@@ -600,7 +655,7 @@ int main(int argc, char **argv)
     ("baudrate,b", po::value<unsigned>(),
      "baud rate for the communication (1=1Mb, 2=115200, 34=57600)")
     ("command,c", po::value<std::string>(),
-     "command [scan, zero,init , change_baud, change_id, relax ,get_contacts, test_roues, position,reset_overload,get_version,get_torque, osc]")
+     "command [scan, zero, init , change_baud, change_id, relax, get_contacts, test_roues, positions, reset_overload, get_version, get_torque, osc, continuous_mode, position_mode]")
     ("arg,a", po::value<unsigned>(), "argument of the command")
     ;
 
