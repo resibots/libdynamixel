@@ -37,15 +37,15 @@ namespace dynamixel
             std::string error_str = boost::lexical_cast<std::string>(_id);
             // we could have many errors in the same packet ?
             if (error & 1) // bit 0
-                error_str += "Input voltage error;";
+                error_str += " Input voltage error;";
             if (error & 2) // bit 1
-                error_str += "Angle limit error;";
+                error_str += " Angle limit error;";
             if (error & 4) // bit 2
-                error_str += "Overheating error;";
+                error_str += " Overheating error;";
             if (error & 8) // bit 3
-                error_str += "Range error;";
+                error_str += " Range error;";
             if (error & 16) // bit 4
-                error_str += "Checksum error;";
+                error_str += " Checksum error;";
             if (error & 32) // bit 5
             {
                 error_str += "Overload error;";
