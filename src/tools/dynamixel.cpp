@@ -588,7 +588,7 @@ void select_command(const std::string& command, unsigned arg,
 
 int main(int argc, char **argv)
 {
-    std::string port = "/dev/ttyUSB0";
+    std::string port = "/dev/ttyACM0";
     int baudrate = B1000000;
     std::string command = "scan";
     unsigned arg = 0;
