@@ -1,0 +1,5 @@
+build/
+
+# Files specific to the Waf build system
+.lock-wscript
+.waf-*

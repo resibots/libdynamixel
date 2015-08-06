@@ -278,6 +278,21 @@ namespace dynamixel
         }
     };
 
+    class UnsetContinuous : public Instruction
+    {
+      public:
+        UnsetContinuous(byte_t id) : Instruction(id, action::write_data)
+        {
+          std::vector<byte_t> params;
+          params.push_back(ax12::ctrl::cw_angle_limit_lo);
+          for (size_t i = 0; i < 2; ++i)
+            params.push_back(0);
+          params.push_back(255);
+          params.push_back(3);
+          rebuild_packet(params);
+        }
+    };
+
     struct TorqueEnable : public Instruction
     {
       TorqueEnable(byte_t id, bool b) :
@@ -355,6 +370,21 @@ namespace dynamixel
                     ctrl::id, new_id)
       {
       }
+    };
+
+    class SetMaxTorque : public Instruction
+    {
+      public:
+        SetMaxTorque(const byte_t& id, const int torque) : Instruction(id,action::sync_write)
+        {
+          std::vector<byte_t> params;
+          params.push_back(ax12::ctrl::torque_limit_lo);
+          params.push_back(2);
+          params.push_back(id);
+          params.push_back(torque & 0x00FF);
+          params.push_back((torque & 0xFF00) >> 8);
+          rebuild_packet(params);
+        }
     };
   }
 }
