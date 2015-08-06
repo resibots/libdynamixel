@@ -556,7 +556,7 @@ void continuous_mode(Usb2Dynamixel& controller, int id)
 
   // Set the control mode to continuous
   std::cout << "Set control mode to continuous" << std::endl;
-  controller.send(dynamixel::ax12::UnsetContinuous((byte_t)id));
+  controller.send(dynamixel::ax12::SetContinuous((byte_t)id));
   controller.recv(READ_DURATION, status);
   std::cout << "done" << std::endl;
 }
@@ -582,8 +582,8 @@ void position_mode(Usb2Dynamixel& controller, int id)
   dynamixel::Status status;
 
   // Set the control mode to continuous
-  std::cout << "Set control mode to continuous" << std::endl;
-  controller.send(dynamixel::ax12::SetContinuous((byte_t)id));
+  std::cout << "Set control mode to position" << std::endl;
+  controller.send(dynamixel::ax12::UnsetContinuous((byte_t)id));
   controller.recv(READ_DURATION, status);
   std::cout << "done" << std::endl;
 }
