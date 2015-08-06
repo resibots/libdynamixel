@@ -1,5 +1,6 @@
-#include "status.hpp"
 #include <iostream>
+#include <boost/lexical_cast.hpp>
+#include "status.hpp"
 
 namespace dynamixel
 {
@@ -33,7 +34,7 @@ namespace dynamixel
 
         if (error != 0)
         {
-            std::string error_str;
+            std::string error_str = boost::lexical_cast<std::string>(_id);
             // we could have many errors in the same packet ?
             if (error & 1) // bit 0
                 error_str += "Input voltage error;";

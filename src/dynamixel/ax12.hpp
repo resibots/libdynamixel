@@ -356,6 +356,21 @@ namespace dynamixel
       {
       }
     };
+
+    class SetMaxTorque : public Instruction
+    {
+      public:
+        SetMaxTorque(const byte_t& id, const int torque) : Instruction(id,action::sync_write)
+        {
+          std::vector<byte_t> params;
+          params.push_back(ax12::ctrl::torque_limit_lo);
+          params.push_back(2);
+          params.push_back(id);
+          params.push_back(torque & 0x00FF);
+          params.push_back((torque & 0xFF00) >> 8);
+          rebuild_packet(params);
+        }
+    };
   }
 }
 
