@@ -11,6 +11,8 @@ namespace dynamixel
     static const unsigned int model_number = 0x000c;
     static const unsigned int goal_position_min = 0x0000;
     static const unsigned int goal_position_max = 0x03ff;
+    /// Asks the servo-motor to move with its maximal speed capacity.
+    /// Works only in joint mode
     static const unsigned int speed_uncontroled = 0x0000;
     static const unsigned int speed_min = 0x0001;
     static const unsigned int speed_max = 0x03ff;
@@ -210,7 +212,7 @@ namespace dynamixel
     class SetSpeed : public Instruction
     {
       public:
-        SetSpeed(const byte_t& id, bool direction, const int speed) : Instruction(id,action::sync_write)
+        SetSpeed(const byte_t& id, const int speed, bool direction=false) : Instruction(id,action::sync_write)
         {
           std::vector<byte_t> params;
           params.push_back(ax12::ctrl::moving_speed_lo);
@@ -228,25 +230,38 @@ namespace dynamixel
     {
       public:
         SetSpeeds(const std::vector<byte_t> &ids,
-                  const std::vector<bool>&directions,
+                  const std::vector<int> speeds,
+                  const std::vector<bool>& directions) :
+        Instruction(broadcast, action::sync_write),
+        _ids(ids)
+        {
+          _set_speeds(speeds, directions);
+        }
+
+        SetSpeeds(const std::vector<byte_t> &ids,
                   const std::vector<int> speeds) :
         Instruction(broadcast, action::sync_write),
         _ids(ids)
         {
-          _set_speeds(directions, speeds);
+          _set_speeds(speeds);
         }
 
-        void set_speeds(const std::vector<bool>& directions,
-                        const std::vector<int> speeds)
+        void set_speeds(const std::vector<int> speeds,
+                        const std::vector<bool>& directions)
         {
-          _set_speeds(directions, speeds);
+          _set_speeds(speeds, directions);
+        }
+
+        void set_speeds(const std::vector<int> speeds)
+        {
+          _set_speeds(speeds);
         }
 
       protected:
         std::vector<byte_t> _ids;
 
-        void _set_speeds(std::vector<bool> directions,
-                         const std::vector<int> speeds)
+        void _set_speeds(const std::vector<int> speeds,
+                         std::vector<bool> directions)
         {
           assert(_ids.size() == directions.size());
           assert(speeds.size() == directions.size());
@@ -260,6 +275,22 @@ namespace dynamixel
             params.push_back(speeds[i] & 0x00FF);
             int s = (speeds[i] | (directions[i] << 10));
             params.push_back(s >> 8);
+          }
+          rebuild_packet(params);
+        }
+
+        void _set_speeds(const std::vector<int> speeds)
+        {
+          assert(_ids.size() == speeds.size());
+          std::vector<byte_t> params;
+          params.push_back(ax12::ctrl::moving_speed_lo);
+          params.push_back(2);
+          for (size_t i = 0; i < _ids.size(); ++i)
+          {
+            CHECK(speeds[i] <= 1023, "SetSpeed: speed > 1023");
+            params.push_back(_ids[i]);
+            params.push_back(speeds[i] & 0x00FF);
+            params.push_back(speeds[i] >> 8);
           }
           rebuild_packet(params);
         }

@@ -423,7 +423,7 @@ void testRoues(Usb2Dynamixel& controller,unsigned  arg)
     pos[4]=200;
     pos[5]=200;
 
-    controller.send(ax12::SetSpeeds(ids, direction,pos));
+    controller.send(ax12::SetSpeeds(ids, pos, direction));
     controller.recv(READ_DURATION, status);
 
     ids[0]=7;

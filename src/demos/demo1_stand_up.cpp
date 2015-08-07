@@ -9,7 +9,7 @@
 #include <dynamixel/dynamixel.hpp>
 
 using namespace dynamixel;
-    
+
 void usage(char * prog);
 
 int main(int argc, char **argv) {
@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
     // Getopt ///////////////////////////////////
     char controllerDevice[256] = "/dev/ttyUSB0";
     int c;
-     
+
     opterr = 0;
 
     while ((c = getopt (argc, argv, "d:")) != -1) {
@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
     try
     {
         // Init ///////////////////////////////////////////////////////////////
-       
+
         // Set device file
         Usb2Dynamixel controller(controllerDevice);
 
@@ -67,12 +67,12 @@ int main(int argc, char **argv) {
             usleep(1000);                                  // Suspend execution for n microseconds
             wheels_speeds.push_back(0x0fe);                // Set wheels speed (max = 0x3fe)
         }
-        
+
         // Set wheels directions
-        wheels_directions.push_back(true);  // Wheel #4 get left 
-        wheels_directions.push_back(false); // Wheel #8 get right 
-        wheels_directions.push_back(false); // Wheel #12 get right 
-        wheels_directions.push_back(true);  // Wheel #16 get left 
+        wheels_directions.push_back(true);  // Wheel #4 get left
+        wheels_directions.push_back(false); // Wheel #8 get right
+        wheels_directions.push_back(false); // Wheel #12 get right
+        wheels_directions.push_back(true);  // Wheel #16 get left
 
         // Get status
         Status st;
@@ -101,14 +101,14 @@ int main(int argc, char **argv) {
         controller.send(set_positions);
         usleep(1000); // Suspend execution for n microseconds
 
-        ax12::SetSpeeds set_speeds(limbs_IDs, limbs_directions, limbs_speeds);
+        ax12::SetSpeeds set_speeds(limbs_IDs, limbs_speeds, limbs_directions);
         controller.send(set_speeds);
         usleep(1000); // Suspend execution for n microseconds
 
         sleep(5);     // Suspend execution for n seconds
-        controller.send(ax12::SetSpeeds(wheels_IDs, wheels_directions, wheels_speeds));
+        controller.send(ax12::SetSpeeds(wheels_IDs, wheels_speeds, wheels_directions));
 
-        while(true) 
+        while(true)
         {
             Status st;
             controller.recv(1000.5f, st);
