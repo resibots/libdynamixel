@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
     // Getopt ///////////////////////////////////
     char controllerDevice[256] = "/dev/ttyUSB0";
     int c;
-     
+
     opterr = 0;
 
     while ((c = getopt (argc, argv, "d:")) != -1) {
@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
     try
     {
         // Init ///////////////////////////////////////////////////////////////
-       
+
         // Set device file
         Usb2Dynamixel controller(controllerDevice);
 
@@ -73,12 +73,12 @@ int main(int argc, char **argv) {
             usleep(1000);                                  // Suspend execution for n microseconds
             wheels_speeds.push_back(0x0fe);                // Set wheels speed (max = 0x3fe)
         }
-        
+
         // Set wheels directions
-        wheels_directions.push_back(true);  // Wheel #4 get left 
-        wheels_directions.push_back(false); // Wheel #8 get right 
-        wheels_directions.push_back(false); // Wheel #12 get right 
-        wheels_directions.push_back(true);  // Wheel #16 get left 
+        wheels_directions.push_back(true);  // Wheel #4 get left
+        wheels_directions.push_back(false); // Wheel #8 get right
+        wheels_directions.push_back(false); // Wheel #12 get right
+        wheels_directions.push_back(true);  // Wheel #16 get left
 
         // Get status
         Status st;
@@ -100,7 +100,7 @@ int main(int argc, char **argv) {
         actuators_IDs.push_back(10);
         actuators_IDs.push_back(13);
         actuators_IDs.push_back(14);
-        
+
         Status status;
 
         // Init timers //////////////////////////
@@ -109,7 +109,7 @@ int main(int argc, char **argv) {
         struct timeval timev_cur;   // Current absolute time
         struct timeval timev_rel;   // Current relative time (curent absolute time - initial time)
         struct timeval timev_diff;  // Current tick position (curent absolute time - previous tick time)
-       
+
         timerclear(&timev_init);
         gettimeofday(&timev_init, NULL);
 
@@ -121,7 +121,7 @@ int main(int argc, char **argv) {
             actuators_positions.push_back(512);           // Set actuators positions (max = 0x3fe)
         }
 
-        ax12::SetSpeeds set_speeds(actuators_IDs, actuators_directions, actuators_speeds);
+        ax12::SetSpeeds set_speeds(actuators_IDs, actuators_speeds, actuators_directions);
         controller.send(set_speeds);
         usleep(1000); // Suspend execution for n microseconds
 
