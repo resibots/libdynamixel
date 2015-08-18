@@ -14,7 +14,7 @@ namespace dynamixel
 
     _fd = open(name.c_str(), O_RDWR | O_NOCTTY);
     if (_fd == -1)
-      throw Error("error opening device:" + name + std::string(strerror(errno)));
+      throw Error("error opening device:" + name + " " + std::string(strerror(errno)));
 
     // Serial port setting
     bzero(&tio_serial, sizeof(tio_serial));
