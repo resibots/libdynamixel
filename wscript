@@ -12,7 +12,7 @@ blddir = 'build'
 def set_options(opt):
     opt.tool_options('compiler_cxx')
     opt.add_option('--arm', type='string', help='enable arm cross-compilation', dest='arm')
-    opt.tool_options('boost')
+    opt.tool_options('boost_detect')
 
 def configure(conf):
     conf.check_tool('compiler_cxx')
@@ -22,7 +22,7 @@ def configure(conf):
     env.set_variant('arm')
     conf.set_env_name('arm', env)
 
-    conf.check_tool('boost')
+    conf.check_tool('boost_detect')
     boost = conf.check_boost(lib='program_options', min_version='1.35')
     if boost:
       conf.env['CPPFLAGS'] += ['-DUSE_BOOST']
