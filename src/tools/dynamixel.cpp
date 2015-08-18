@@ -47,9 +47,17 @@ int find_baudrate(unsigned s)
 
 void change_baud(Usb2Dynamixel& controller, unsigned baudrate)
 {
-    std::cout << "changing baudrate to " << baudrate << std::endl;
-    controller.send(ax12::ChangeBaudRate(baudrate));
-    std::cout << "done" << std::endl;
+    if (baudrate == baudrates::b1000000 || baudrate == baudrates::b115200 || baudrate == baudrates::b57600)
+    {
+      std::cout << "changing baudrate to " << baudrate << std::endl;
+      controller.send(ax12::ChangeBaudRate(baudrate));
+      std::cout << "done" << std::endl;
+    }
+    else
+    {
+      std::cerr << "ERROR : undefined baudrate (" << baudrate << ")" << std::endl;
+      exit(1);
+    }
 }
 
 void change_id(Usb2Dynamixel& controller, unsigned id)
@@ -653,7 +661,7 @@ int main(int argc, char **argv)
     ("help,h", "produce help message")
     ("port,p", po::value<std::string>(), "port")
     ("baudrate,b", po::value<unsigned>(),
-     "baud rate for the communication (1=1Mb, 2=115200, 34=57600)")
+     "baud rate for the communication (1=1Mb, 16=115200, 34=57600)")
     ("command,c", po::value<std::string>(),
      "command [scan, zero, init , change_baud, change_id, relax, get_contacts, test_roues, positions, reset_overload, get_version, get_torque, osc, continuous_mode, position_mode]")
     ("arg,a", po::value<unsigned>(), "argument of the command")
