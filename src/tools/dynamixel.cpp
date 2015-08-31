@@ -28,6 +28,12 @@ namespace baudrates
     static const unsigned b57600 = 34;
 }
 
+namespace dynamixel_series
+{
+  static const unsigned AX = 1;
+  static const unsigned MX = 2;
+}
+
 int find_baudrate(unsigned s)
 {
     switch (s)
@@ -225,29 +231,35 @@ void init(Usb2Dynamixel& controller)
 
 
 
-void osc(Usb2Dynamixel& controller)
+void osc(Usb2Dynamixel& controller, unsigned actuator_type)
 {
-    std::cout << "oscillating" << std::endl;
-    std::vector<byte_t> ax12_ids = scan(controller);
-    dynamixel::Status status;
+  if (actuator_type != dynamixel_series::MX && actuator_type != dynamixel_series::AX)
+  {
+    std::cerr << "Only dynamixels of type MX or AX are supported." << std::endl;
+    return;
+  }
 
+  std::cout << "oscillating" << std::endl;
+  std::vector<byte_t> ax12_ids = scan(controller);
+  dynamixel::Status status;
+
+  for (size_t i = 0; i < ax12_ids.size(); ++i)
+  {
+    controller.send(dynamixel::ax12::TorqueEnable(ax12_ids[i], true));
+    controller.recv(READ_DURATION, status);
+  }
+  usleep(1e5);
+  std::vector<int> pos(ax12_ids.size());
+  for (float x = 0; x < 1e10; x += 0.0035)
+  {
     for (size_t i = 0; i < ax12_ids.size(); ++i)
-    {
-        controller.send(dynamixel::ax12::TorqueEnable(ax12_ids[i], true));
-        controller.recv(READ_DURATION, status);
-    }
-    usleep(1e5);
-    std::vector<int> pos(ax12_ids.size());
-    for (float x = 0; x < 1e10; x += 0.0035)
-    {
-        for (size_t i = 0; i < ax12_ids.size(); ++i)
-            if (ax12_ids[i] >= 30) // mx28
-                pos[i] = 2048 + sin(x) * 300;
-            else
-                pos[i] = 512 + sin(x) * 40;
-        controller.send(ax12::SetPositions(ax12_ids, pos));
-    }
-    std::cout << "done" << std::endl;
+      if (actuator_type == dynamixel_series::MX) // mx28
+        pos[i] = 2048 + sin(x) * 300;
+      else if (actuator_type == dynamixel_series::AX)
+        pos[i] = 512 + sin(x) * 40;
+    controller.send(ax12::SetPositions(ax12_ids, pos));
+  }
+  std::cout << "done" << std::endl;
 }
 
 
@@ -637,7 +649,7 @@ void select_command(const std::string& command, unsigned arg,
     positions(controller);
   else
   if (command == "osc")
-    osc(controller);
+    osc(controller, arg);
   else
   if (command == "continuous_mode")
     continuous_mode(controller, arg);
