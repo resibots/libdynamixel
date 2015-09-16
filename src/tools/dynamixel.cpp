@@ -256,7 +256,7 @@ void osc(Usb2Dynamixel& controller, unsigned actuator_type)
       if (actuator_type == dynamixel_series::MX) // mx28
         pos[i] = 2048 + sin(x) * 300;
       else if (actuator_type == dynamixel_series::AX)
-        pos[i] = 512 + sin(x) * 40;
+        pos[i] = 512 + sin(x/8.0) * 40;
     controller.send(ax12::SetPositions(ax12_ids, pos));
   }
   std::cout << "done" << std::endl;
