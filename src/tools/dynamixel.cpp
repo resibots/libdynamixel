@@ -653,7 +653,7 @@ int main(int argc, char **argv)
     ("help,h", "produce help message")
     ("port,p", po::value<std::string>(), "port")
     ("baudrate,b", po::value<unsigned>(),
-     "baud rate for the communication (1=1Mb, 2=115200, 34=57600)")
+     "baud rate for the communication (1=1Mb, 15=115200, 34=57600)")
     ("command,c", po::value<std::string>(),
      "command [scan, zero, init , change_baud, change_id, relax, get_contacts, test_roues, positions, reset_overload, get_version, get_torque, osc, continuous_mode, position_mode]")
     ("arg,a", po::value<unsigned>(), "argument of the command")
