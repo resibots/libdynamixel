@@ -1,5 +1,5 @@
 /*
- * Demo 3 : static walk  
+ * Demo 3 : static walk
  */
 #include <iostream>
 #include <algorithm>
@@ -20,15 +20,20 @@
 #define VERBOSE 0
 
 using namespace dynamixel;
-    
+
 void usage(char * prog);
 
+/**
+    Seemingly makes an hexapod walk using hard-coded joint angles.
+    Warning: the actuator IDs do not match the ones for our current hexapods
+    (as of September 2015)!
+ */
 int main(int argc, char **argv) {
 
     // Getopt ///////////////////////////////////
     char controllerDevice[256] = "/dev/ttyUSB0";
     int c;
-     
+
     opterr = 0;
 
     while ((c = getopt (argc, argv, "d:")) != -1) {
@@ -43,9 +48,9 @@ int main(int argc, char **argv) {
     }
 
     // Dynamixel //////////////////////////////////////////////////////////////////////////////////
-        
+
     // Init ///////////////////////////////////////////////////////////////
-   
+
     // Set device file
     Usb2Dynamixel controller(controllerDevice);
 
@@ -60,7 +65,7 @@ int main(int argc, char **argv) {
     }
 
     // Config actuators //////////////////////////////////////////////////////
-    
+
     // AX-12+ IDs
     byte_t actuators_IDs[NB_AX12] = {1, 2, 5, 6, 9, 10, 13, 14};
 
@@ -68,16 +73,16 @@ int main(int argc, char **argv) {
     int actuators_positions[NB_AX12][SAMPLING_FREQUENCY] = {                 //
         {    0,    0,   50,   50,   50,  -20,  -20,  -20,  -20,  -20,  -20,      0,    0,    0,  -90,  -90,  -90,    0,    0,    0,    0,   0},  // right front
         {    0,    0,    0,   90,   90,   90,   90,   90,   90,   90,   90,      0,    0,    0,    0,    0,    0,    0,    0,    0,    0,   0},  // right front
-                                                                                                                                             
+
         {    0,    0,    0,    0,    0,    0,   50,   50,   50,  -20,  -20,      0,    0,    0,    0,    0,    0,    0,  -90,  -90,  -90,   0},  // left front
         {    0,    0,    0,    0,    0,    0,    0,   90,   90,   90,   90,      0,    0,    0,    0,    0,    0,    0,    0,    0,    0,   0},  // left front
-                                                                                                                                             
+
         {    0,    0,    0,    0,    0,  -90,  -90,  -90,    0,    0,    0,    -20,  -20,  -20,  -20,  -20,  -20,   50,   50,   50,    0,   0},  // left back
         {    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     90,   90,   90,   90,   90,   90,   90,   90,    0,    0,   0},  // left back
-                                                                                                                                             
+
         {    0,  -90,  -90,  -90,    0,    0,    0,    0,    0,    0,    0,    -20,  -20,   50,   50,   50,    0,    0,    0,    0,    0,   0},  // right back
         {    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     90,   90,   90,   90,    0,    0,    0,    0,    0,    0,   0}   // right back
-                                                                                                                           
+
     };
 /*
     int actuators_positions[NB_AX12][SAMPLING_FREQUENCY] = {
@@ -86,15 +91,15 @@ int main(int argc, char **argv) {
 
         {    0,    0,    0,    0,    0,    0,    0,   50,   50,   50,  -20,  -20,    0,    0,    0,    0,    0,    0,  -90,  -90,  -90,  -90},
         {    0,    0,    0,    0,    0,    0,    0,    0,   90,   90,   90,   90,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0},
-                                                                                                                           
+
         {    0,    0,    0,    0,    0,    0,  -90,  -90,  -90,    0,    0,    0,  -20,  -20,  -20,  -20,  -20,  -20,  -20,   50,   50,    0},
         {    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,   90,   90,   90,   90,   90,   90,   90,   90,    0,    0},
 
         {    0,    0,  -90,  -90,  -90,    0,    0,    0,    0,    0,    0,    0,  -20,  -20,   50,   50,    0,    0,    0,    0,    0,    0},
         {    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,   90,   90,   90,    0,    0,    0,    0,    0,    0,    0}
-                                                                                                                           
+
     };
-*/ 
+*/
     // Normalize positions
     for(int i = 0 ; i < NB_AX12 ; i++) {
         for(int j = 0 ; j < SAMPLING_FREQUENCY ; j++) {
@@ -113,7 +118,7 @@ int main(int argc, char **argv) {
     struct timeval timev_cur;   // Current absolute time
     struct timeval timev_rel;   // Current relative time (curent absolute time - initial time)
     struct timeval timev_diff;  // Current tick position (curent absolute time - previous tick time)
-   
+
     timerclear(&timev_init);
     gettimeofday(&timev_init, NULL);
 

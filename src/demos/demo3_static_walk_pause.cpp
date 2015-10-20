@@ -1,5 +1,5 @@
 /*
- * Demo 3 : static walk  
+ * Demo 3 : static walk
  */
 #include <iostream>
 #include <algorithm>
@@ -18,15 +18,20 @@
 #define VERBOSE 0
 
 using namespace dynamixel;
-    
+
 void usage(char * prog);
 
+/**
+    Does the same as demo3_static_walk_pause with the difference that it is not
+    time based but asks the user to press a key between two steps in the
+    movement.
+ */
 int main(int argc, char **argv) {
 
     // Getopt ///////////////////////////////////
     char controllerDevice[256] = "/dev/ttyUSB0";
     int c;
-     
+
     opterr = 0;
 
     while ((c = getopt (argc, argv, "d:")) != -1) {
@@ -41,9 +46,9 @@ int main(int argc, char **argv) {
     }
 
     // Dynamixel //////////////////////////////////////////////////////////////////////////////////
-        
+
     // Init ///////////////////////////////////////////////////////////////
-   
+
     // Set device file
     Usb2Dynamixel controller(controllerDevice);
 
@@ -58,7 +63,7 @@ int main(int argc, char **argv) {
     }
 
     // Config actuators //////////////////////////////////////////////////////
-    
+
     // AX-12+ IDs
     byte_t actuators_IDs[NB_AX12] = {1, 2, 5, 6, 9, 10, 13, 14};
 
@@ -66,16 +71,16 @@ int main(int argc, char **argv) {
     int actuators_positions[NB_AX12][SAMPLING_FREQUENCY] = {                 //
         {    0,    0,   50,   50,   50,  -20,  -20,  -20,  -20,  -20,  -20,      0,    0,    0,  -90,  -90,  -90,    0,    0,    0,    0,   0},  // right front
         {    0,    0,    0,   90,   90,   90,   90,   90,   90,   90,   90,      0,    0,    0,    0,    0,    0,    0,    0,    0,    0,   0},  // right front
-                                                                                                                                             
+
         {    0,    0,    0,    0,    0,    0,   50,   50,   50,  -20,  -20,      0,    0,    0,    0,    0,    0,    0,  -90,  -90,  -90,   0},  // left front
         {    0,    0,    0,    0,    0,    0,    0,   90,   90,   90,   90,      0,    0,    0,    0,    0,    0,    0,    0,    0,    0,   0},  // left front
-                                                                                                                                             
+
         {    0,    0,    0,    0,    0,  -90,  -90,  -90,    0,    0,    0,    -20,  -20,  -20,  -20,  -20,  -20,   50,   50,   50,    0,   0},  // left back
         {    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     90,   90,   90,   90,   90,   90,   90,   90,    0,    0,   0},  // left back
-                                                                                                                                             
+
         {    0,  -90,  -90,  -90,    0,    0,    0,    0,    0,    0,    0,    -20,  -20,   50,   50,   50,    0,    0,    0,    0,    0,   0},  // right back
         {    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,     90,   90,   90,   90,    0,    0,    0,    0,    0,    0,   0}   // right back
-                                                                                                                           
+
     };
 /*
     int actuators_positions[NB_AX12][SAMPLING_FREQUENCY] = {
@@ -84,15 +89,15 @@ int main(int argc, char **argv) {
 
         {    0,    0,    0,    0,    0,    0,    0,   50,   50,   50,  -20,  -20,    0,    0,    0,    0,    0,    0,  -90,  -90,  -90,  -90},
         {    0,    0,    0,    0,    0,    0,    0,    0,   90,   90,   90,   90,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0},
-                                                                                                                           
+
         {    0,    0,    0,    0,    0,    0,  -90,  -90,  -90,    0,    0,    0,  -20,  -20,  -20,  -20,  -20,  -20,  -20,   50,   50,    0},
         {    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,   90,   90,   90,   90,   90,   90,   90,   90,    0,    0},
 
         {    0,    0,  -90,  -90,  -90,    0,    0,    0,    0,    0,    0,    0,  -20,  -20,   50,   50,    0,    0,    0,    0,    0,    0},
         {    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,   90,   90,   90,    0,    0,    0,    0,    0,    0,    0}
-                                                                                                                           
+
     };
-*/ 
+*/
     // Normalize positions
     for(int i = 0 ; i < NB_AX12 ; i++) {
         for(int j = 0 ; j < SAMPLING_FREQUENCY ; j++) {

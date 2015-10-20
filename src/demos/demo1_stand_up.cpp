@@ -12,6 +12,12 @@ using namespace dynamixel;
 
 void usage(char * prog);
 
+/**
+    This programs will move a few actuators to a preset position and then
+    make a few others turn continuously (wheel mode). The wheel actuator IDs
+    are 4, 8, 12, 16. Also, the actuators seem to be assumed to have encoder
+    values spanning from 0 to 1023 (probably AX-12 actuators, not MX series).
+ */
 int main(int argc, char **argv) {
 
     // Getopt ///////////////////////////////////
