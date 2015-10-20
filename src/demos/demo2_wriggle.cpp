@@ -19,6 +19,12 @@ using namespace dynamixel;
 
 void usage(char * prog);
 
+/**
+    This program will activate a number of dynamixels considered to be wheels
+    and move the other ones in a cosine trajectory.
+    Actuators assumed to be wheels: 4, 8, 12, 16. All the others are considered
+    to be in joint mode and controlled as such.
+ */
 int main(int argc, char **argv) {
 
     // Getopt ///////////////////////////////////

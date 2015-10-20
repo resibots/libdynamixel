@@ -19,7 +19,7 @@
 #define VERBOSE 0
 
 using namespace dynamixel;
-    
+
 void usage(char * prog);
 
 int main(int argc, char **argv) {
@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
     // Getopt ///////////////////////////////////
     char controllerDevice[256] = "/dev/ttyUSB0";
     int c;
-     
+
     opterr = 0;
 
     while ((c = getopt (argc, argv, "d:")) != -1) {
@@ -42,9 +42,9 @@ int main(int argc, char **argv) {
     }
 
     // Dynamixel //////////////////////////////////////////////////////////////////////////////////
-        
+
     // Init ///////////////////////////////////////////////////////////////
-   
+
     // Set device file
     Usb2Dynamixel controller(controllerDevice);
 
@@ -79,7 +79,7 @@ int main(int argc, char **argv) {
     struct timeval timev_cur;   // Current absolute time
     struct timeval timev_rel;   // Current relative time (curent absolute time - initial time)
     struct timeval timev_diff;  // Current tick position (curent absolute time - previous tick time)
-   
+
     timerclear(&timev_init);
     gettimeofday(&timev_init, NULL);
 
@@ -133,6 +133,7 @@ int main(int argc, char **argv) {
             double t = timev_rel.tv_sec + (double) timev_rel.tv_usec / 1000000; // TODO : Approximative cast...
 
             // Move robot ///////////////////////////////////////
+            // TODO: this should rather use dynamixel::ax12::SetPositions
             std::vector<byte_t> params;
             params.push_back(0x1e);
             params.push_back(0x02);
@@ -146,7 +147,7 @@ int main(int argc, char **argv) {
                 int goal_position = actuators[id_index]->getInitialPosition()
                                     + actuators[id_index]->getAmplitude()
                                     * (actuators[id_index]->getDirection() ? 1 : -1)
-                                    * sin(t * 2 * M_PI * actuators[id_index]->getAngularFrequency() 
+                                    * sin(t * 2 * M_PI * actuators[id_index]->getAngularFrequency()
                                           + actuators[id_index]->getPhase());      // a * cos(w * t + d)
                 byte_t goal_position_L = goal_position & 0x00FF;
                 byte_t goal_position_H = (goal_position & 0xFF00) >> 8;

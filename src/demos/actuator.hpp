@@ -2,6 +2,11 @@
 
 typedef enum {clockwise, counterclockwise} t_direction;
 
+/**
+    Actuator generates a vector of poses for an actuator, using the parameters
+    given to its constructor. Then, the resulting data is available in different
+    forms, through a few methods.
+ */
 class Actuator {
 
 protected :
@@ -9,7 +14,7 @@ protected :
     std::vector<unsigned int> _discretePositions;
 
     unsigned int _index;
-    
+
     dynamixel::byte_t _id;
 
     int _initialPosition;
