@@ -60,6 +60,7 @@ Contents
   :maxdepth: 2
 
   tutorials/index
+  reference/index
 
 Indices and tables
 ==================

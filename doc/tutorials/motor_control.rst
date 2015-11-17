@@ -22,30 +22,4 @@ It requires the port name which is the absolute path to the linux device interfa
 
     To be able to access this interface, you usually need special rights. On ubuntu, you either have to belong to the *dialout* group or to run the generated programs as superuser.
 
-TODO: change the "xxx" with actual content.
-
-The B1000000 constant is defined by the system and is the default baud rate for a newly acquired actuator. See xxx for the other possible values.
-
-Possible values are:
-
-- B0
-- B50
-- B75
-- B110
-- B134
-- B150
-- B200
-- B300
-- B600
-- B1200
-- B1800
-- B2400
-- B4800
-- B9600
-- B19200
-- B38400
-- B57600
-- B76800
-- B115200
-
-B1000000 corresponds to :math:`10^6` bauds. It is not a standard value but is accepted on linux. This is also the default baud rate for a newly bought actuator.
+The B1000000 constant is defined by the system and is the default baud rate for a newly acquired actuator. See :doc:`/reference/baudrates` for the other possible values.
