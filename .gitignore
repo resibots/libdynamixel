@@ -9,3 +9,7 @@ build/
 
 # Clang-format style files
 .clang-format
+
+# Generated content of the documentation
+_build/
+
