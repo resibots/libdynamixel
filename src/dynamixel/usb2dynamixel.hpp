@@ -15,8 +15,8 @@
 
 #include "error.hpp"
 #include "misc.hpp"
-#include "packet.hpp"
-//#include "status.hpp"
+#include "instruction_packet.hpp"
+#include "status_packet.hpp"
 
 namespace dynamixel {
     static const byte_t broadcast = 0xfe;
@@ -70,32 +70,68 @@ namespace dynamixel {
 
         // general send
         template <typename T>
-        void send(const Packet<T>& packet)
+        void send(const InstructionPacket<T>& packet)
         {
             if (_fd == -1)
                 return;
 
-            int ret = write(_fd, &packet.packet().front(), packet.packet().size());
-            /*    std::cout << "Send: ";
-          for (size_t i = 0; i < inst.packet_size(); ++i)
-            std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex <<
-         (unsigned int)inst.packet()[i] << " ";
-          std::cout << std::endl;*/
+            int ret = write(_fd, packet.data(), packet.size());
 
-            if (ret != packet.packet().size()) {
+            std::cout << "Send: ";
+            for (size_t i = 0; i < packet.size(); ++i)
+                std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)packet[i] << " ";
+            std::cout << std::endl;
+
+            if (ret != packet.size()) {
                 std::stringstream ofs;
                 perror("write:");
-                ofs << "written= " << ret << " size=" << packet.packet().size();
+                ofs << "written= " << ret << " size=" << packet.size();
                 throw Error("Usb2Dynamixel::Send: packet not fully written" + ofs.str());
             }
         }
 
         // general receive
-        //bool recv(float timeout, Status& status);
+        template <typename T>
+        bool recv(float timeout, StatusPacket<T>& status)
+        {
+            if (_fd == -1)
+                return true;
+
+            double time = get_time();
+            bool done = false;
+
+            std::vector<uint8_t> packet;
+            packet.reserve(_recv_buffer_size);
+            
+            std::cout << "Recv: ";
+
+            do {
+                double current_time = get_time();
+                uint8_t b;
+                int res = read(_fd, &b, 1);
+                if (res > 0) {
+                    packet.push_back(b);
+                    time = current_time;
+
+                    std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)b << " ";
+
+                    done = status.decode_packet(packet);
+                }
+
+                if (current_time - time > timeout) {
+                    std::cout << std::endl;
+                    return false;
+                }
+            } while (!done);
+
+            std::cout << std::endl;
+
+            return true;
+        }
+
     private:
         int _fd;
         static const size_t _recv_buffer_size = 256;
-        uint8_t _recv_buffer[_recv_buffer_size];
     };
 }
 

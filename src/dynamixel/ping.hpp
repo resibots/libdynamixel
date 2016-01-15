@@ -3,11 +3,13 @@
 
 #include <stdint.h>
 
+#include "instruction_packet.hpp"
+
 namespace dynamixel {
     template <class T>
-    class Ping : public Packet<T> {
+    class Ping : public InstructionPacket<T> {
     public:
-        Ping(typename T::id_t id) : Packet<T>(id, T::Instructions::ping, std::vector<uint8_t>()) {}
+        Ping(typename T::id_t id) : InstructionPacket<T>(id, T::Instructions::ping, std::vector<uint8_t>()) {}
     };
 }
 

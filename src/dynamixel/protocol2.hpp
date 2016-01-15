@@ -27,7 +27,7 @@ namespace dynamixel {
             static const instr_t bulk_write = 0x93;
         };
 
-        static std::vector<uint8_t> pack(id_t id, instr_t instr, const std::vector<uint8_t>& parameters)
+        static std::vector<uint8_t> pack_instruction(id_t id, instr_t instr, const std::vector<uint8_t>& parameters)
         {
             size_t packet_size = 3 // header
                 + 1 // reserved
@@ -54,6 +54,61 @@ namespace dynamixel {
             packet[packet_size - 1] = (uint8_t)((checksum >> 8) & 0x00ff);
 
             return packet;
+        }
+
+        static bool unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters)
+        {
+            // 11 is the size of the smallest packets (no params)
+            if (packet.size() < 11)
+                return false;
+
+            if (packet[0] != 0xFF || packet[1]  != 0xFF || packet[2]  != 0xFD)
+                throw Error("Status: bad packet header");
+
+            length_t length = (((uint16_t)packet[6]) << 8) | packet[5];
+
+            if (length != packet.size() - 7)
+                return false;
+
+            id = packet[4];
+            uint8_t error = packet[8];
+
+            parameters.clear();
+            for (size_t i = 0; i < length - 4; ++i)
+                parameters.push_back(packet[9 + i]);
+            uint16_t checksum = _checksum(packet);
+            uint16_t recv_checksum = (((uint16_t)packet.back()) << 8) | packet[packet.size() - 2];
+
+            if (checksum != recv_checksum) {
+                std::cout << std::endl << "computed: " << (int)checksum << " recv: " << (int)recv_checksum << std::endl;
+                throw Error("Status: checksum error while decoding packet. ");
+            }
+
+            /*if (error != 0)
+            {
+                std::string error_str = boost::lexical_cast<std::string>(_id);
+                // we could have many errors in the same packet ?
+                if (error & 1) // bit 0
+                    error_str += " Input voltage error;";
+                if (error & 2) // bit 1
+                    error_str += " Angle limit error;";
+                if (error & 4) // bit 2
+                    error_str += " Overheating error;";
+                if (error & 8) // bit 3
+                    error_str += " Range error;";
+                if (error & 16) // bit 4
+                    error_str += " Checksum error;";
+                if (error & 32) // bit 5
+                {
+                    error_str += "Overload error;";
+                    std::cout<<"Status: error while decoding packet: " + error_str<<std::endl;
+                    return true;
+                }
+                if (error & 64) // bit 6
+                    error_str += "Instruction error;";
+                throw Error(std::string("Status: error while decoding packet: ") + error_str);
+            }*/
+            return true;
         }
 
     protected:
@@ -93,7 +148,7 @@ namespace dynamixel {
                 0x022A, 0x823B, 0x023E, 0x0234, 0x8231, 0x8213, 0x0216, 0x021C, 0x8219,
                 0x0208, 0x820D, 0x8207, 0x0202};
 
-            for (size_t j = 0; j < packet.size(); j++) {
+            for (size_t j = 0; j < packet.size() - 2; j++) {
                 uint16_t i = ((uint16_t)(crc_accum >> 8) ^ packet[j]) & 0xFF;
                 crc_accum = (crc_accum << 8) ^ crc_table[i];
             }
