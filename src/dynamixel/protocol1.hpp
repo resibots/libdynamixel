@@ -5,6 +5,8 @@
 #include <vector>
 #include <cassert>
 
+#include "error.hpp"
+
 namespace dynamixel {
     class Protocol1 {
     public:
@@ -23,7 +25,7 @@ namespace dynamixel {
             static const instr_t sync_write = 0x83;
         };
 
-        static std::vector<uint8_t> pack(id_t id, instr_t instr, const std::vector<uint8_t>& parameters)
+        static std::vector<uint8_t> pack_instruction(id_t id, instr_t instr, const std::vector<uint8_t>& parameters)
         {
             size_t packet_size = 2 // header
                 + 1 // id
@@ -46,6 +48,57 @@ namespace dynamixel {
             packet[packet_size - 1] = _checksum(packet);
 
             return packet;
+        }
+
+        static bool unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters)
+        {
+            // 6 is the size of the smallest packets (no params)
+            if (packet.size() < 6)
+                return false;
+
+            if (packet[0] != 0xFF || packet[1]  != 0xFF)
+                throw Error("Status: bad packet header");
+
+            if (packet[3] != packet.size() - 4)                
+                return false;
+
+            id = packet[2];
+            length_t length = packet[3];
+            uint8_t error = packet[4];
+
+            parameters.clear();
+            for (size_t i = 0; i < length - 2; ++i)
+                parameters.push_back(packet[5 + i]);
+            uint8_t checksum = _checksum(packet);
+
+            if (checksum != packet.back())
+                throw Error("Status: checksum error while decoding packet");
+
+            /*if (error != 0)
+            {
+                std::string error_str = boost::lexical_cast<std::string>(_id);
+                // we could have many errors in the same packet ?
+                if (error & 1) // bit 0
+                    error_str += " Input voltage error;";
+                if (error & 2) // bit 1
+                    error_str += " Angle limit error;";
+                if (error & 4) // bit 2
+                    error_str += " Overheating error;";
+                if (error & 8) // bit 3
+                    error_str += " Range error;";
+                if (error & 16) // bit 4
+                    error_str += " Checksum error;";
+                if (error & 32) // bit 5
+                {
+                    error_str += "Overload error;";
+                    std::cout<<"Status: error while decoding packet: " + error_str<<std::endl;
+                    return true;
+                }
+                if (error & 64) // bit 6
+                    error_str += "Instruction error;";
+                throw Error(std::string("Status: error while decoding packet: ") + error_str);
+            }*/
+            return true;
         }
 
     protected:

@@ -3,13 +3,15 @@
 
 #include <stdint.h>
 
+#include "instruction_packet.hpp"
+
 namespace dynamixel {
     template <class T>
-    class Read : public Packet<T> {
+    class Read : public InstructionPacket<T> {
     public:
         Read(typename T::id_t id, typename T::address_t address,
             typename T::length_t length)
-            : Packet<T>(id, T::Instructions::read, _get_parameters(address, length)) {}
+            : InstructionPacket<T>(id, T::Instructions::read, _get_parameters(address, length)) {}
 
     protected:
         std::vector<uint8_t> _get_parameters(uint8_t address, uint8_t length)

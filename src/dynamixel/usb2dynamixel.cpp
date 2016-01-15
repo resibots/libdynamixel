@@ -15,35 +15,7 @@ namespace dynamixel {
     
 
     bool Usb2Dynamixel::recv(float timeout, Status& st)
-    {
-        if (_fd == -1)
-            return true;
-        int p = 0;
-        double time = get_time();
-        bool done = false;
-        memset(_recv_buffer, 0, _recv_buffer_size);
-        // std::cout << "Recv: ";
-        do {
-            double current_time = get_time();
-            byte_t b;
-            int res = read(_fd, &b, 1);
-            if (res > 0) {
-                _recv_buffer[p++] = b;
-                time = current_time;
-                //    std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex
-                //    << (unsigned int)b << " ";
-                done = st.decode_packet(_recv_buffer, p);
-            }
-            if (current_time - time > timeout) {
-                // std::cout << std::endl;
-                return false;
-            }
-        } while (!done);
-
-        // std::cout << std::endl;
-
-        return true;
-    }
+    
 
     void Usb2Dynamixel::scan_ax12s()
     {
