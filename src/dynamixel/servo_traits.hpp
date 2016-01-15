@@ -3,8 +3,7 @@
 
 namespace dynamixel {
     template<typename Servo>
-    class ServoTraits
-    {
+    struct ServoTraits {        
     };
 }
 

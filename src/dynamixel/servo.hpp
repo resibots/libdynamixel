@@ -13,9 +13,9 @@ namespace dynamixel {
     template <class Model>
     class Servo {
     public:
-        typedef ServoTraits<Model> traits;
-        typedef typename traits::protocol_t protocol_t;
-        typedef typename traits::CT ct_t;
+        typedef ServoTraits<Model> traits_t;
+        typedef typename traits_t::protocol_t protocol_t;
+        typedef typename traits_t::CT ct_t;
         typedef Ping<protocol_t> ping_t;
         typedef Read<protocol_t> read_t;
         typedef Write<protocol_t> write_t;

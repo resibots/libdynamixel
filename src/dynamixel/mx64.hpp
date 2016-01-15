@@ -10,9 +10,7 @@ namespace dynamixel {
     class Mx64;
 
     template<>
-    class ServoTraits<Mx64>
-    {
-        public:
+    struct ServoTraits<Mx64> {
         typedef Protocol1 protocol_t;
 
         struct CT {
