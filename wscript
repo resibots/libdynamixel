@@ -35,9 +35,9 @@ def configure(conf):
     print 'CXXFLAGS:' + conf.env['CXXFLAGS']
 
 def build(bld):
-    bld.add_subdirs('src/dynamixel')
+    #bld.add_subdirs('src/dynamixel')
     bld.add_subdirs('src/demos')
-    bld.add_subdirs('src/tools')
+    #bld.add_subdirs('src/tools')
 
     if ('arm' in bld.all_envs) and (bld.all_envs['arm']['ENABLE_ARM'] == True):
         print "arm enabled"

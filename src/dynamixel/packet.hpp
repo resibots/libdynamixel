@@ -2,13 +2,20 @@
 #define DYNAMIXEL_PACKET_HPP_
 
 #include <vector>
-#include <cassert>
-#include <cstdlib>
-#include "misc.hpp"
+#include <stdint.h>
 
-namespace dynamixel
-{
-  byte_t compute_checksum(const byte_t* packet,
-			  size_t packet_size);
+namespace dynamixel {
+    template <class T>
+    class Packet {
+    public:
+        Packet(typename T::id_t id, std::vector<uint8_t> payload)
+            : _packet(T::pack(id, payload)) {}
+
+        const std::vector<uint8_t>& packet() const { return _packet; }
+
+    protected:
+        std::vector<uint8_t> _packet;
+    };
 }
+
 #endif
