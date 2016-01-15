@@ -44,16 +44,41 @@ namespace dynamixel {
             packet[2] = 0xFD;
             packet[3] = 0x00;
             packet[4] = id;
-            packet[5] = (uint8_t)((parameters.size() + 3) & 0xff);
-            packet[6] = (uint8_t)(((parameters.size() + 3) >> 8) & 0xff);
+            packet[5] = (uint8_t)((parameters.size() + 3) & 0xFF);
+            packet[6] = (uint8_t)(((parameters.size() + 3) >> 8) & 0xFF);
             packet[7] = instr;
             for (size_t i = 0; i < parameters.size(); ++i)
                 packet[8 + i] = parameters[i];
             uint16_t checksum = _checksum(packet);
-            packet[packet_size - 2] = (uint8_t)(checksum & 0x00ff);
-            packet[packet_size - 1] = (uint8_t)((checksum >> 8) & 0x00ff);
+            packet[packet_size - 2] = (uint8_t)(checksum & 0xFF);
+            packet[packet_size - 1] = (uint8_t)((checksum >> 8) & 0xFF);
 
             return packet;
+        }
+
+        static std::vector<uint8_t> pack_data(uint8_t data)
+        {
+            std::vector<uint8_t> packed(1);
+            packed[0] = data;
+            return packed;
+        }
+
+        static std::vector<uint8_t> pack_data(uint16_t data)
+        {
+            std::vector<uint8_t> packed(2);
+            packed[0] = (uint8_t)(data & 0xFF);
+            packed[1] = (uint8_t)((data >> 8) & 0xFF);
+            return packed;
+        }
+
+        static std::vector<uint8_t> pack_data(uint32_t data)
+        {
+            std::vector<uint8_t> packed(4);
+            packed[0] = (uint8_t)(data & 0x00ff);
+            packed[1] = (uint8_t)((data >> 8) & 0xFF);
+            packed[2] = (uint8_t)((data >> 16) & 0xFF);
+            packed[3] = (uint8_t)((data >> 24) & 0xFF);
+            return packed;
         }
 
         static bool unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters)

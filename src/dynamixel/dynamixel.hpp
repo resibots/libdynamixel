@@ -9,5 +9,7 @@
 #include "read.hpp"
 #include "write.hpp"
 #include "usb2dynamixel.hpp"
+#include "servo.hpp"
+#include "mx64.hpp"
 
 #endif
