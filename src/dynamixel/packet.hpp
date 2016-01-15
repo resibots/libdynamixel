@@ -8,8 +8,8 @@ namespace dynamixel {
     template <class T>
     class Packet {
     public:
-        Packet(typename T::id_t id, std::vector<uint8_t> payload)
-            : _packet(T::pack(id, payload)) {}
+        Packet(typename T::id_t id, typename T::instr_t instr, const std::vector<uint8_t>& parameters)
+            : _packet(T::pack(id, instr, parameters)) {}
 
         const std::vector<uint8_t>& packet() const { return _packet; }
 

@@ -9,30 +9,32 @@ namespace dynamixel {
     class Protocol2 {
     public:
         typedef uint8_t id_t;
+        typedef uint8_t instr_t;
         typedef uint16_t address_t;
         typedef uint16_t length_t;
 
         struct Instructions {
-            static const uint8_t ping = 0x01;
-            static const uint8_t read = 0x02;
-            static const uint8_t write = 0x03;
-            static const uint8_t reg_write = 0x4;
-            static const uint8_t action = 0x05;
-            static const uint8_t factory_reset = 0x06;
-            static const uint8_t reboot = 0x08;
-            static const uint8_t sync_read = 0x82;
-            static const uint8_t sync_write = 0x83;
-            static const uint8_t bulk_read = 0x92;
-            static const uint8_t bulk_write = 0x93;
+            static const instr_t ping = 0x01;
+            static const instr_t read = 0x02;
+            static const instr_t write = 0x03;
+            static const instr_t reg_write = 0x4;
+            static const instr_t action = 0x05;
+            static const instr_t factory_reset = 0x06;
+            static const instr_t reboot = 0x08;
+            static const instr_t sync_read = 0x82;
+            static const instr_t sync_write = 0x83;
+            static const instr_t bulk_read = 0x92;
+            static const instr_t bulk_write = 0x93;
         };
 
-        static std::vector<uint8_t> pack(id_t id, std::vector<uint8_t> payload)
+        static std::vector<uint8_t> pack(id_t id, instr_t instr, const std::vector<uint8_t>& parameters)
         {
             size_t packet_size = 3 // header
                 + 1 // reserved
                 + 1 // id
                 + 2 // length
-                + payload.size() // payload (instruction + params)
+                + 1 // instruction
+                + parameters.size() // parameters
                 + 2; // checksum
 
             std::vector<uint8_t> packet(packet_size);
@@ -42,10 +44,11 @@ namespace dynamixel {
             packet[2] = 0xFD;
             packet[3] = 0x00;
             packet[4] = id;
-            packet[5] = (uint8_t)((payload.size() + 2) & 0xff);
-            packet[6] = (uint8_t)(((payload.size() + 2) >> 8) & 0xff);
-            for (size_t i = 0; i < payload.size(); ++i)
-                packet[7 + i] = payload[i];
+            packet[5] = (uint8_t)((parameters.size() + 3) & 0xff);
+            packet[6] = (uint8_t)(((parameters.size() + 3) >> 8) & 0xff);
+            packet[7] = instr;
+            for (size_t i = 0; i < parameters.size(); ++i)
+                packet[8 + i] = parameters[i];
             uint16_t checksum = _checksum(packet);
             packet[packet_size - 2] = (uint8_t)(checksum & 0x00ff);
             packet[packet_size - 1] = (uint8_t)((checksum >> 8) & 0x00ff);
@@ -54,7 +57,7 @@ namespace dynamixel {
         }
 
     protected:
-        static uint8_t _checksum(const std::vector<uint8_t>& packet)
+        static uint16_t _checksum(const std::vector<uint8_t>& packet)
         {
             assert(packet.size());
             uint16_t crc_accum = 0;

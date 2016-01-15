@@ -51,15 +51,15 @@ int main()
     std::cout << std::endl;
 
     data[0] = 0xFF;
-    Write<Protocol2> write2(1, 0x233, data);
+    Write<Protocol2> write2(1, 563, data);   
     size = write2.packet().size();
 
     std::cout << "Write Protcol 2: ";
     for (size_t i = 0; i < size; i++)
         std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)write2.packet()[i] << " ";
     std::cout << std::endl;
-
-    Usb2Dynamixel controller("/dev/ttyUSB0", B57142);
+     
+    Usb2Dynamixel controller("/dev/ttyUSB0", B57600);
     controller.send(write2);
 
     return 0;
