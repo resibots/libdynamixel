@@ -11,6 +11,9 @@ namespace dynamixel {
         InstructionPacket(typename T::id_t id, typename T::instr_t instr, const std::vector<uint8_t>& parameters)
             : _packet(T::pack_instruction(id, instr, parameters)) {}
 
+         InstructionPacket(typename T::id_t id, typename T::instr_t instr)
+            : _packet(T::pack_instruction(id, instr)) {}
+
         size_t size() const { return _packet.size(); }
 
         uint8_t operator[](size_t pos) const { return _packet[pos]; } 

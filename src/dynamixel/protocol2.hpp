@@ -13,6 +13,8 @@ namespace dynamixel {
         typedef uint16_t address_t;
         typedef uint16_t length_t;
 
+        static const id_t broadcast_id = 0xFE;
+
         struct Instructions {
             static const instr_t ping = 0x01;
             static const instr_t read = 0x02;
@@ -26,6 +28,32 @@ namespace dynamixel {
             static const instr_t bulk_read = 0x92;
             static const instr_t bulk_write = 0x93;
         };
+
+        static std::vector<uint8_t> pack_instruction(id_t id, instr_t instr)
+        {
+            const size_t packet_size = 3 // header
+                + 1 // reserved
+                + 1 // id
+                + 2 // length
+                + 1 // instruction
+                + 2; // checksum
+
+            std::vector<uint8_t> packet(packet_size);
+
+            packet[0] = 0xFF;
+            packet[1] = 0xFF;
+            packet[2] = 0xFD;
+            packet[3] = 0x00;
+            packet[4] = id;
+            packet[5] = 3;
+            packet[6] = 0;
+            packet[7] = instr;
+            uint16_t checksum = _checksum(packet);
+            packet[8] = (uint8_t)(checksum & 0xFF);
+            packet[9] = (uint8_t)((checksum >> 8) & 0xFF);
+
+            return packet;
+        }
 
         static std::vector<uint8_t> pack_instruction(id_t id, instr_t instr, const std::vector<uint8_t>& parameters)
         {
@@ -74,7 +102,7 @@ namespace dynamixel {
         static std::vector<uint8_t> pack_data(uint32_t data)
         {
             std::vector<uint8_t> packed(4);
-            packed[0] = (uint8_t)(data & 0x00ff);
+            packed[0] = (uint8_t)(data & 0xFF);
             packed[1] = (uint8_t)((data >> 8) & 0xFF);
             packed[2] = (uint8_t)((data >> 16) & 0xFF);
             packed[3] = (uint8_t)((data >> 24) & 0xFF);

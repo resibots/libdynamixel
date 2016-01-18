@@ -70,17 +70,17 @@ namespace dynamixel {
 
         // general send
         template <typename T>
-        void send(const InstructionPacket<T>& packet)
+        void send(const InstructionPacket<T>& packet) const
         {
             if (_fd == -1)
                 return;
 
             int ret = write(_fd, packet.data(), packet.size());
 
-            std::cout << "Send: ";
+            /*std::cout << "Send: ";
             for (size_t i = 0; i < packet.size(); ++i)
                 std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)packet[i] << " ";
-            std::cout << std::endl;
+            std::cout << std::endl;*/
 
             if (ret != packet.size()) {
                 std::stringstream ofs;
@@ -92,7 +92,7 @@ namespace dynamixel {
 
         // general receive
         template <typename T>
-        bool recv(float timeout, StatusPacket<T>& status)
+        bool recv(double timeout, StatusPacket<T>& status) const
         {
             if (_fd == -1)
                 return true;
@@ -103,7 +103,7 @@ namespace dynamixel {
             std::vector<uint8_t> packet;
             packet.reserve(_recv_buffer_size);
             
-            std::cout << "Recv: ";
+            //std::cout << "Recv: ";
 
             do {
                 double current_time = get_time();
@@ -113,18 +113,18 @@ namespace dynamixel {
                     packet.push_back(b);
                     time = current_time;
 
-                    std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)b << " ";
+                    //std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)b << " ";
 
                     done = status.decode_packet(packet);
                 }
 
                 if (current_time - time > timeout) {
-                    std::cout << std::endl;
+                    //std::cout << std::endl;
                     return false;
                 }
             } while (!done);
 
-            std::cout << std::endl;
+            //std::cout << std::endl;
 
             return true;
         }

@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <stdint.h>
+#include <cassert>
 
 namespace dynamixel {
     template <class T>

@@ -5,11 +5,8 @@
 #include "status_packet.hpp"
 #include "protocol1.hpp"
 #include "protocol2.hpp"
-#include "ping.hpp"
-#include "read.hpp"
-#include "write.hpp"
 #include "usb2dynamixel.hpp"
-#include "servo.hpp"
-#include "mx64.hpp"
+#include "models/mx64.hpp"
+#include "models/pro_l54.hpp"
 
 #endif

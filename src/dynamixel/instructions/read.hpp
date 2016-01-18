@@ -1,11 +1,12 @@
-#ifndef DYNAMIXEL_READ_HPP_
-#define DYNAMIXEL_READ_HPP_
+#ifndef DYNAMIXEL_INSTRUCTIONS_READ_HPP_
+#define DYNAMIXEL_INSTRUCTIONS_READ_HPP_
 
 #include <stdint.h>
 
-#include "instruction_packet.hpp"
+#include "../instruction_packet.hpp"
 
 namespace dynamixel {
+namespace instructions {
     template <class T>
     class Read : public InstructionPacket<T> {
     public:
@@ -25,13 +26,14 @@ namespace dynamixel {
         std::vector<uint8_t> _get_parameters(uint16_t address, uint16_t length)
         {
             std::vector<uint8_t> parameters(4);
-            parameters[0] = (uint8_t)(address & 0x00ff);
-            parameters[1] = (uint8_t)((address >> 8) & 0x00ff);
-            parameters[2] = (uint8_t)(length & 0x00ff);
-            parameters[3] = (uint8_t)((length >> 8) & 0x00ff);
+            parameters[0] = (uint8_t)(address & 0xFF);
+            parameters[1] = (uint8_t)((address >> 8) & 0xFF);
+            parameters[2] = (uint8_t)(length & 0xFF);
+            parameters[3] = (uint8_t)((length >> 8) & 0xFF);
             return parameters;
         }
     };
+}
 }
 
 #endif
