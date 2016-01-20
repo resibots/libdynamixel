@@ -7,6 +7,14 @@ using namespace dynamixel;
 using namespace models;
 using namespace instructions;
 
+#define RECV_TIME 0.01
+
+
+std::vector<unsigned int> ids(1);
+std::vector<unsigned int> positions(1);
+std::vector<unsigned int> speeds(1);
+
+
 template <typename Model>
 void find_devices(int baudrate)
 {
@@ -15,11 +23,51 @@ void find_devices(int baudrate)
 
         for (int i = 0; i < 254; i++) {
             controller.send(typename Model::ping_t(i));
-            if (controller.recv(0.05, status) && status.valid() && status.id() == i) {
+            if (controller.recv(RECV_TIME, status) && status.valid() && status.id() == i) {
                 std::cout << "Found device with baudrate " << baudrate << " and id " << i << std::endl;
-                controller.send(Model::led_on(i));
+                controller.send(Model::set_led(i, true));
+                controller.recv(RECV_TIME, status);
+                controller.send(Model::set_torque_enabled(i, true));
+                controller.recv(RECV_TIME, status);
+
+                ids[0] = i;
+                speeds[0] = 1024;
+
+                controller.send(Model::set_speeds(ids, speeds));
+                controller.recv(RECV_TIME, status);
+                controller.send(Model::set_position(i, -180684));
+                controller.recv(RECV_TIME, status);
                 std::cin.get();
-                controller.send(Model::led_off(i));
+
+                controller.send(Model::set_torque_enabled(i, false));
+                controller.recv(RECV_TIME, status);
+                controller.send(Model::set_id(i, i +10));
+                controller.recv(RECV_TIME, status);
+                controller.send(Model::set_torque_enabled(i + 10, true));
+                controller.recv(RECV_TIME, status);
+
+                controller.send(Model::set_speed(i + 10, 0));
+                controller.recv(RECV_TIME, status);
+                controller.send(Model::set_position(i + 10, 0));
+                controller.recv(RECV_TIME, status);
+                std::cin.get();
+
+                controller.send(Model::set_torque_enabled(i + 10, false));
+                controller.recv(RECV_TIME, status);
+                controller.send(Model::set_id(i + 10, i));
+                controller.recv(RECV_TIME, status);
+                controller.send(Model::set_torque_enabled(i, true));
+                controller.recv(RECV_TIME, status);
+
+                controller.send(Model::set_position(i, 180684));
+                controller.recv(RECV_TIME, status);
+                std::cin.get();
+                
+                controller.send(Model::set_led(i, false));
+                controller.recv(RECV_TIME, status);
+                controller.send(Model::set_position(i, 0));
+                controller.recv(RECV_TIME, status);
+                break;
             }
         }
 }
@@ -43,9 +91,6 @@ int main()
 
         //Usb2Dynamixel controller("/dev/ttyUSB0", B57600);
         //controller.send(Write<Protocol2>(1, 563, data));
-
-        std::vector<unsigned int> ids(3);
-        std::vector<unsigned int> positions(3);
 
         ids[0] = 16;
         positions[0] = 0;

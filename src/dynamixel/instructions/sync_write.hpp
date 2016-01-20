@@ -39,8 +39,6 @@ namespace instructions {
                     parameters[curr++] = data[i][j];
             }
 
-            std::cout << curr << "/" << parameters.size() << std::endl;
-
             return parameters;
         }
 
@@ -49,7 +47,6 @@ namespace instructions {
         {
             assert(ids.size());
             assert(ids.size() == data.size());
-
 
             typename T::length_t data_length = data[0].size();
             std::vector<uint8_t> parameters((data_length + 1) * ids.size() + 4);
@@ -68,8 +65,6 @@ namespace instructions {
                 for (size_t j = 0; j < data_length; ++j)
                     parameters[curr++] = data[i][j];
             }
-
-            std::cout << curr << "/" << data_length << std::endl;
 
             return parameters;
         }
