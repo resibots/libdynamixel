@@ -27,45 +27,47 @@ void find_devices(int baudrate)
                 std::cout << "Found device with baudrate " << baudrate << " and id " << i << std::endl;
                 controller.send(Model::set_led(i, true));
                 controller.recv(RECV_TIME, status);
-                controller.send(Model::set_torque_enabled(i, true));
+                controller.send(Model::get_torque_enable(i));
+                controller.recv(RECV_TIME, status);
+                controller.send(Model::set_torque_enable(i, true));
                 controller.recv(RECV_TIME, status);
 
                 ids[0] = i;
                 speeds[0] = 1024;
 
-                controller.send(Model::set_speeds(ids, speeds));
+                controller.send(Model::set_moving_speeds(ids, speeds));
                 controller.recv(RECV_TIME, status);
-                controller.send(Model::set_position(i, -180684));
+                controller.send(Model::set_goal_position(i, 0));
                 controller.recv(RECV_TIME, status);
                 std::cin.get();
 
-                controller.send(Model::set_torque_enabled(i, false));
+                controller.send(Model::set_torque_enable(i, false));
                 controller.recv(RECV_TIME, status);
                 controller.send(Model::set_id(i, i +10));
                 controller.recv(RECV_TIME, status);
-                controller.send(Model::set_torque_enabled(i + 10, true));
+                controller.send(Model::set_torque_enable(i + 10, true));
                 controller.recv(RECV_TIME, status);
 
-                controller.send(Model::set_speed(i + 10, 0));
+                controller.send(Model::set_moving_speed(i + 10, 0));
                 controller.recv(RECV_TIME, status);
-                controller.send(Model::set_position(i + 10, 0));
+                controller.send(Model::set_goal_position(i + 10, 0));
                 controller.recv(RECV_TIME, status);
                 std::cin.get();
 
-                controller.send(Model::set_torque_enabled(i + 10, false));
+                controller.send(Model::set_torque_enable(i + 10, false));
                 controller.recv(RECV_TIME, status);
                 controller.send(Model::set_id(i + 10, i));
                 controller.recv(RECV_TIME, status);
-                controller.send(Model::set_torque_enabled(i, true));
+                controller.send(Model::set_torque_enable(i, true));
                 controller.recv(RECV_TIME, status);
 
-                controller.send(Model::set_position(i, 180684));
+                controller.send(Model::set_goal_position(i, 4095));
                 controller.recv(RECV_TIME, status);
                 std::cin.get();
                 
                 controller.send(Model::set_led(i, false));
                 controller.recv(RECV_TIME, status);
-                controller.send(Model::set_position(i, 0));
+                controller.send(Model::set_goal_position(i, 0));
                 controller.recv(RECV_TIME, status);
                 break;
             }
@@ -76,8 +78,8 @@ int main()
 {
     try
     {
-        //find_devices<Mx64>(B1000000);
-        find_devices<ProL54>(B57600);
+        find_devices<Mx64>(B1000000);
+        //find_devices<ProL54>(B57600);
         return 0;
 
         size_t size = 0;
@@ -99,7 +101,7 @@ int main()
         ids[2] = 26;
         positions[2] = 2048;
 
-        controller.send(Mx64::set_positions(ids, positions));
+        controller.send(Mx64::get_torque_enable(1));
         controller.recv(0.1, status);
         std::cout << status << std::endl;
 
@@ -109,7 +111,9 @@ int main()
         positions[1] = 4095;
         positions[2] = 4095;
 
-        controller.send(Mx64::set_positions(ids, positions));
+        controller.send(Mx64::set_goal_positions(ids, positions));
+        controller.send(Ax12::get_cw_angle_limit(1));
+        controller.send(Mx64::get_punch(1));
         controller.recv(0.1, status);
         std::cout << status << std::endl;
 

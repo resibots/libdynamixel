@@ -1,5 +1,5 @@
-#ifndef DYNAMIXEL_MX64_HPP_
-#define DYNAMIXEL_MX64_HPP_
+#ifndef DYNAMIXEL_EX106_HPP_
+#define DYNAMIXEL_EX106_HPP_
 
 #include <stdint.h>
 
@@ -8,16 +8,16 @@
 
 namespace dynamixel {
 namespace models {
-    class Mx64;
+    class Ex106;
 
     template<>
-    struct ModelTraits<Mx64> {
+    struct ModelTraits<Ex106> {
         typedef Protocol1 protocol_t;
 
         struct CT {
             static const protocol_t::address_t model_number = 0;
             typedef uint16_t model_number_t;
-            static const model_number_t model_number_value = 310;
+            static const model_number_t model_number_value = 107;
             static const protocol_t::address_t firmware_version = 2;
             typedef uint8_t firmware_version_t;
             static const protocol_t::address_t id = 3;
@@ -30,6 +30,8 @@ namespace models {
             typedef uint16_t cw_angle_limit_t;
             static const protocol_t::address_t ccw_angle_limit = 8;
             typedef uint16_t ccw_angle_limit_t;
+            static const protocol_t::address_t drive_mode = 10;
+            typedef uint8_t drive_mode_t;
             static const protocol_t::address_t highest_temperature_limit = 11;
             typedef uint8_t highest_temperature_limit_t;
             static const protocol_t::address_t lowest_voltage_limit = 12;
@@ -44,26 +46,24 @@ namespace models {
             typedef uint8_t alarm_led_t;
             static const protocol_t::address_t alarm_shutdown = 18;
             typedef uint8_t alarm_shutdown_t;
-            static const protocol_t::address_t multi_turn_offset = 20;
-            typedef uint16_t multi_turn_offset_t;
-            static const protocol_t::address_t resolution_divider = 22;
-            typedef uint8_t resolution_divider_t;
             static const protocol_t::address_t torque_enable = 24;
             typedef uint8_t torque_enable_t;
             static const protocol_t::address_t led = 25;
             typedef uint8_t led_t;
             static const led_t led_off = 0;
             static const led_t led_on = 1;
-            static const protocol_t::address_t d_gain = 26;
-            typedef uint8_t d_gain_t;
-            static const protocol_t::address_t i_gain = 27;
-            typedef uint8_t i_gain_t;
-            static const protocol_t::address_t p_gain = 28;
-            typedef uint8_t p_gain_t;
+            static const protocol_t::address_t cw_compliance_margin = 26;
+            typedef uint8_t cw_compliance_margin_t;
+            static const protocol_t::address_t ccw_compliance_margin = 27;
+            typedef uint8_t ccw_compliance_margin_t;
+            static const protocol_t::address_t cw_compliance_slope = 28;
+            typedef uint8_t cw_compliance_slope_t;
+            static const protocol_t::address_t ccw_compliance_slope = 29;
+            typedef uint8_t ccw_compliance_slope_t;
             static const protocol_t::address_t goal_position = 30;
             typedef uint16_t goal_position_t;
             static const goal_position_t min_goal_position = 0;
-            static const goal_position_t max_goal_position = 4095;
+            static const goal_position_t max_goal_position = 1023;
             static const protocol_t::address_t moving_speed = 32;
             typedef uint16_t moving_speed_t;
             static const protocol_t::address_t torque_limit = 34;
@@ -88,35 +88,23 @@ namespace models {
             static const lock_t lock_on = 1;
             static const protocol_t::address_t punch = 48;
             typedef uint16_t punch_t;
-            static const protocol_t::address_t current = 68;
-            typedef uint16_t current_t;
-            static const protocol_t::address_t torque_control_mode_enabled = 70;
-            typedef uint8_t torque_control_mode_enabled_t;
-            static const torque_control_mode_enabled_t torque_control_mode_enabled_off = 0;
-            static const torque_control_mode_enabled_t torque_control_mode_enabled_on = 1;
-            static const protocol_t::address_t goal_torque = 71;
-            typedef uint16_t goal_torque_t;
-            static const protocol_t::address_t goal_acceleration = 73;
-            typedef uint8_t goal_acceleration_t;
+            static const protocol_t::address_t sensed_current = 56;
+            typedef uint16_t sensed_current_t;
         };
     };
 
-    class Mx64 : public ServoModel<Mx64>,
-    public AngleLimitServoModel<Mx64>,
-    public MaxTorqueServoModel<Mx64>,
-    public AlarmLedServoModel<Mx64>,
-    public MultiTurnOffsetServoModel<Mx64>,
-    public ResolutionDividerServoModel<Mx64>,
-    public SingleLedServoModel<Mx64>,
-    public PidServoModel<Mx64>,
-    public TorqueLimitServoModel<Mx64>,
-    public PresentLoadServoModel<Mx64>,
-    public LockServoModel<Mx64>,
-    public PunchServoModel<Mx64>,
-    public CurrentServoModel<Mx64>,
-    public TorqueControlModeServoModel<Mx64>,
-    public GoalTorqueServoModel<Mx64>,
-    public GoalAccelerationServoModel<Mx64> {    
+    class Ex106 : public ServoModel<Ex106>,
+    public AngleLimitServoModel<Ex106>,
+    public DriveModeServoModel<Ex106>,
+    public MaxTorqueServoModel<Ex106>,
+    public AlarmLedServoModel<Ex106>,
+    public SingleLedServoModel<Ex106>,
+    public ComplianceServoModel<Ex106>,
+    public TorqueLimitServoModel<Ex106>,
+    public PresentLoadServoModel<Ex106>,
+    public LockServoModel<Ex106>,
+    public PunchServoModel<Ex106>,
+    public SensedCurrentServoModel<Ex106> {    
     };
 }
 }
