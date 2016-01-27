@@ -5,6 +5,7 @@
 #include <stdint.h>
 
 #include "../instruction_packet.hpp"
+#include "../status_packet.hpp"
 #include "../instructions/ping.hpp"
 #include "../instructions/read.hpp"
 #include "../instructions/write.hpp"
@@ -14,28 +15,17 @@
 #include "../instructions/sync_write.hpp"
 #include "model_traits.hpp"
 
-#define BASE_READ_FIELD(Name) \
-    static InstructionPacket<protocol_t> get_##Name(typename protocol_t::id_t id)   \
-    {                                                                                                                                     \
-        return read_t(id, ct_t::Name, sizeof(typename ct_t::Name##_t));                           \
-    }
-
-#define BASE_WRITE_FIELD(Name) \
-    static InstructionPacket<protocol_t> set_##Name(typename protocol_t::id_t id, typename ct_t::Name##_t value, bool reg = false)  \
-    {                                                                                                                                                                                                                           \
-            if (reg)                                                                                                                                                                                                          \
-                return reg_write_t(id, ct_t::Name, protocol_t::pack_data(value));                                                                                                \
-            else                                                                                                                                                                                                               \
-                return write_t(id, ct_t::Name, protocol_t::pack_data(value));                                                                                                       \
-    }
-
-#define BASE_READ_WRITE_FIELD(Name) BASE_READ_FIELD(Name) \
-    BASE_WRITE_FIELD(Name)
-
 #define READ_FIELD(Name) \
-    static InstructionPacket<typename ServoModel<Model>::protocol_t> get_##Name(typename ServoModel<Model>::protocol_t::id_t id)   \
-    {                                                                                                                                     \
-        return typename ServoModel<Model>::read_t(id, ServoModel<Model>::ct_t::Name, sizeof(typename ServoModel<Model>::ct_t::Name##_t));                           \
+    static InstructionPacket<typename ServoModel<Model>::protocol_t> get_##Name(typename ServoModel<Model>::protocol_t::id_t id)                 \
+    {                                                                                                                                                                                                                                              \
+        return typename ServoModel<Model>::read_t(id, ServoModel<Model>::ct_t::Name, sizeof(typename ServoModel<Model>::ct_t::Name##_t));   \
+    }                                                                                                                                                                                                                                              \
+                                                                                                                                                                                                                                                    \
+    static typename ServoModel<Model>::ct_t::Name##_t  parse_##Name(const StatusPacket<typename ServoModel<Model>::protocol_t>& st) \
+    {                                                                                                                                                                                                                                               \
+        typename ServoModel<Model>::ct_t::Name##_t res;                                                                                                                                                      \
+        ServoModel<Model>::protocol_t::unpack_data(st.parameters(), res);                                                                                                             \
+        return res;                                                                                                                                                                                                                              \
     }
 
 #define WRITE_FIELD(Name) \
@@ -74,25 +64,25 @@ namespace models {
         typedef instructions::FactoryReset<protocol_t> factory_reset_t;
         typedef instructions::SyncWrite<protocol_t> sync_write_t;
 
-        BASE_READ_FIELD(model_number);
-        BASE_READ_FIELD(firmware_version);
-        BASE_READ_WRITE_FIELD(id);
-        BASE_READ_WRITE_FIELD(baudrate);
-        BASE_READ_WRITE_FIELD(return_delay_time);
-        BASE_READ_WRITE_FIELD(highest_temperature_limit);
-        BASE_READ_WRITE_FIELD(highest_voltage_limit);
-        BASE_READ_WRITE_FIELD(lowest_voltage_limit);
-        BASE_READ_WRITE_FIELD(status_return_level);
-        BASE_READ_WRITE_FIELD(alarm_shutdown);
-        BASE_READ_WRITE_FIELD(torque_enable);
-        BASE_READ_WRITE_FIELD(goal_position);
-        BASE_READ_WRITE_FIELD(moving_speed);
-        BASE_READ_FIELD(present_position);
-        BASE_READ_FIELD(present_speed);
-        BASE_READ_FIELD(present_voltage);
-        BASE_READ_FIELD(present_temperature);
-        BASE_READ_FIELD(registered);
-        BASE_READ_FIELD(moving);
+        READ_FIELD(model_number);
+        READ_FIELD(firmware_version);
+        READ_WRITE_FIELD(id);
+        READ_WRITE_FIELD(baudrate);
+        READ_WRITE_FIELD(return_delay_time);
+        READ_WRITE_FIELD(highest_temperature_limit);
+        READ_WRITE_FIELD(highest_voltage_limit);
+        READ_WRITE_FIELD(lowest_voltage_limit);
+        READ_WRITE_FIELD(status_return_level);
+        READ_WRITE_FIELD(alarm_shutdown);
+        READ_WRITE_FIELD(torque_enable);
+        READ_WRITE_FIELD(goal_position);
+        READ_WRITE_FIELD(moving_speed);
+        READ_FIELD(present_position);
+        READ_FIELD(present_speed);
+        READ_FIELD(present_voltage);
+        READ_FIELD(present_temperature);
+        READ_FIELD(registered);
+        READ_FIELD(moving);
 
         template <typename Id, typename Pos>
         static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)

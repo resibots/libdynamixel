@@ -20,7 +20,7 @@ namespace models {
             static const model_number_t model_number_value = 320;
             static const protocol_t::address_t model_info = 2;
             typedef uint32_t model_info_t;
-            static const protocol_t::address_t firmware_version = 2;
+            static const protocol_t::address_t firmware_version = 6;
             typedef uint8_t firmware_version_t;
             static const protocol_t::address_t id = 7;
             typedef protocol_t::id_t id_t;
@@ -64,8 +64,8 @@ namespace models {
             static const uint8_t led_on = 255;
             static const protocol_t::address_t goal_position = 596;
             typedef int32_t goal_position_t;
-            static const goal_position_t min_goal_pos = -180684;
-            static const goal_position_t max_goal_pos = 180684;
+            static const goal_position_t min_goal_position = -180684;
+            static const goal_position_t max_goal_position = 180684;
             static const protocol_t::address_t moving_speed = 600;
             typedef uint32_t moving_speed_t;
             static const protocol_t::address_t goal_torque = 604;

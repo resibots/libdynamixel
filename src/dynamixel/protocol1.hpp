@@ -87,6 +87,18 @@ namespace dynamixel {
             return packed;
         }
 
+        static void unpack_data(const std::vector<uint8_t>& packet, uint8_t& res)
+        {
+            assert(packet.size());
+            res = packet[0];
+        }
+
+        static void unpack_data(const std::vector<uint8_t>& packet, uint16_t& res)
+        {
+            assert(packet.size() == 2);
+            res = (((uint16_t)packet[1]) << 8) | ((uint16_t)packet[0]);
+        }
+
         static bool unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters)
         {
             // 6 is the size of the smallest packets (no params)
