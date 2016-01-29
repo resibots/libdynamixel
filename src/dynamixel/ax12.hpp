@@ -371,6 +371,13 @@ namespace dynamixel
       }
     };
 
+    struct GetSpeed : public ReadData
+    {
+        GetSpeed(byte_t id) : ReadData(id, ctrl::present_speed_lo, 2)
+        {
+        }
+    };
+
     struct GetLoad : public ReadData
     {
         GetLoad(byte_t id) : ReadData(id, ctrl::present_load_lo, 2)
