@@ -17,6 +17,8 @@ namespace dynamixel
       throw Error("error opening device:" + name + " " + std::string(strerror(errno)));
 
     // Serial port setting
+    // FIXME: this function is marked as deprecated for POSIX, to be replaced
+    //  by a call to memset
     bzero(&tio_serial, sizeof(tio_serial));
     tio_serial.c_cflag = CS8 | CLOCAL | CREAD;
     tio_serial.c_iflag = IGNBRK | IGNPAR;

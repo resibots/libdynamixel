@@ -77,7 +77,7 @@ void change_id(Usb2Dynamixel& controller, unsigned id)
         std::cerr << "you need to connect only ONE dynamixel" << std::endl;
         return;
     }
-    std::cout << "changing id of " << ax12_ids[0] << " to " << id << std::endl;
+    std::cout << "changing id of " << (int)ax12_ids[0] << " to " << id << std::endl;
     controller.send(ax12::ChangeId(ax12_ids[0], (byte_t)id));
     dynamixel::Status status;
     controller.recv(READ_DURATION, status);
