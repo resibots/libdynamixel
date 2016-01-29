@@ -118,9 +118,8 @@ namespace dynamixel
           os_baudrate = B4000000;
           break;
       default:
-        os_baudrate = B1000000;
         std::stringstream err_message;
-        err_message << "Invalid baudrate: " << os_baudrate << "! Setting to default: 1,000,000 bauds";
+        err_message << "Invalid baudrate: " << os_baudrate;
         throw Error(err_message.str());
     }
     return os_baudrate;
