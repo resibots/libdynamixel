@@ -100,57 +100,49 @@ void set_vel_to_zero(const Usb2Dynamixel& controller, int id)
     controller.recv(0.1, status);
 }
 
+template <typename Model>
+void set_to_angle(const Usb2Dynamixel& controller, int id, double deg)
+{
+    StatusPacket<typename Model::protocol_t > status;
+    controller.send(Model::set_goal_position_angle(id, deg));
+    controller.recv(0.1, status);
+}
+
+template <typename Model>
+void get_angle_pos(const Usb2Dynamixel& controller, int id)
+{
+    StatusPacket<typename Model::protocol_t > status;
+    controller.send(Model::get_present_position_angle(id));
+    controller.recv(0.1, status);
+    std::cout << "Id: " << id << " Angle: " << Model::parse_present_position_angle(status) << "°" << std::endl;
+}
+
+template <typename Model>
+void  test(const Usb2Dynamixel& controller, int id)
+{
+        get_model_number<Model>(controller, id);
+        set_torque_enabled<Model>(controller, id);
+        set_vel_to_zero<Model>(controller, id);
+
+        std::cin.get();
+
+        for (int i = 0; i <= 360; i += 15){
+            if (i < Model::ct_t::min_goal_angle_deg)
+                continue;
+            if (i > Model::ct_t::max_goal_angle_deg)
+                break;
+            set_to_angle<Model>(controller, id, i);
+            usleep(1000000);
+            get_angle_pos<Model>(controller, id);
+        }
+}
+
 int main()
 {
     try
     {
-        Usb2Dynamixel controller("/dev/ttyUSB0", B1000000);
-
-        get_model_number<Ax12>(controller, 1);
-        get_model_number<Ax18>(controller, 2);
-        get_model_number<Mx28>(controller, 3);
-        get_model_number<Mx64>(controller, 4);
-        get_model_number<Mx106>(controller, 5);
-
-        set_max_torque<Ax12>(controller, 1, 1023);
-        set_max_torque<Ax18>(controller, 2, 1023);
-        set_max_torque<Mx28>(controller, 3, 1023);
-        set_max_torque<Mx64>(controller, 4, 1023);
-        set_max_torque<Mx106>(controller, 5, 1023);
-
-        get_max_torque<Ax12>(controller, 1);
-        get_max_torque<Ax18>(controller, 2);
-        get_max_torque<Mx28>(controller, 3);
-        get_max_torque<Mx64>(controller, 4);
-        get_max_torque<Mx106>(controller, 5);
-
-        set_torque_enabled<Ax12>(controller, 1);
-        set_torque_enabled<Ax18>(controller, 2);
-        set_torque_enabled<Mx28>(controller, 3);
-        set_torque_enabled<Mx64>(controller, 4);
-        set_torque_enabled<Mx106>(controller, 5);
-
-        set_vel_to_zero<Ax12>(controller, 1);
-        set_vel_to_zero<Ax18>(controller, 2);
-        set_vel_to_zero<Mx28>(controller, 3);
-        set_vel_to_zero<Mx64>(controller, 4);
-        set_vel_to_zero<Mx106>(controller, 5);
-
-        std::cin.get();
-
-        set_pos_to_zero<Ax12>(controller, 1);
-        set_pos_to_zero<Ax18>(controller, 2);
-        set_pos_to_zero<Mx28>(controller, 3);
-        set_pos_to_zero<Mx64>(controller, 4);
-        set_pos_to_zero<Mx106>(controller, 5);
-
-        std::cin.get();
-
-        set_pos_to_max<Ax12>(controller, 1);
-        set_pos_to_max<Ax18>(controller, 2);
-        set_pos_to_max<Mx28>(controller, 3);
-        set_pos_to_max<Mx64>(controller, 4);
-        set_pos_to_max<Mx106>(controller, 5);
+        Usb2Dynamixel controller("/dev/ttyUSB0", B57600);
+        test<ProL4210S300>(controller, 2);
     }
     catch (const Error& e)
     {

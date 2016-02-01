@@ -66,6 +66,8 @@ namespace models {
             typedef uint16_t goal_position_t;
             static const goal_position_t min_goal_position = 0;
             static const goal_position_t max_goal_position = 4095;
+            static const uint16_t min_goal_angle_deg = 0;
+            static const uint16_t max_goal_angle_deg = 360;
             static const protocol_t::address_t moving_speed = 32;
             typedef uint16_t moving_speed_t;
             static const protocol_t::address_t torque_limit = 34;
@@ -86,6 +88,8 @@ namespace models {
             typedef uint8_t moving_t;
             static const protocol_t::address_t lock = 47;
             typedef uint8_t lock_t;
+            static const lock_t lock_off = 0;
+            static const lock_t lock_on = 1;
             static const protocol_t::address_t punch = 48;
             typedef uint16_t punch_t;
             static const protocol_t::address_t current = 68;
@@ -101,23 +105,33 @@ namespace models {
         };
     };
 
-    class Mx106 : public ServoModel<Mx106>,
-    public AngleLimitServoModel<Mx106>,
-    public DriveModeServoModel<Ex106>,
-    public MaxTorqueServoModel<Mx106>,
-    public AlarmLedServoModel<Mx106>,
-    public MultiTurnOffsetServoModel<Mx106>,
-    public ResolutionDividerServoModel<Mx106>,
-    public SingleLedServoModel<Mx106>,
-    public PidServoModel<Mx106>,
-    public TorqueLimitServoModel<Mx106>,
-    public PresentLoadServoModel<Mx106>,
-    public LockServoModel<Mx106>,
-    public PunchServoModel<Mx106>,
-    public CurrentServoModel<Mx106>,
-    public TorqueControlModeServoModel<Mx106>,
-    public GoalTorqueServoModel<Mx106>,
-    public GoalAccelerationServoModel<Mx106> {    
+    class Mx106 : public ServoModel<Mx106> {
+    public:
+        typedef Mx106 Model;
+
+        // Here we add the fields that are not common to all dynamixels
+        READ_WRITE_FIELD(cw_angle_limit);
+        READ_WRITE_FIELD(ccw_angle_limit);
+        READ_WRITE_FIELD(drive_mode);
+        READ_WRITE_FIELD(max_torque);
+        READ_WRITE_FIELD(alarm_led);
+        READ_WRITE_FIELD(multi_turn_offset);
+        READ_WRITE_FIELD(resolution_divider);
+        READ_FIELD(led);
+        WRITE_BOOL_FIELD(led, led);
+        READ_WRITE_FIELD(d_gain);
+        READ_WRITE_FIELD(i_gain);
+        READ_WRITE_FIELD(p_gain);
+        READ_WRITE_FIELD(torque_limit);
+        READ_FIELD(present_load);
+        READ_FIELD(lock);
+        WRITE_BOOL_FIELD(lock, lock);
+        READ_WRITE_FIELD(punch);
+        READ_FIELD(current);
+        READ_FIELD(torque_control_mode_enabled);
+        WRITE_BOOL_FIELD(torque_control_mode_enabled, torque_control_mode_enabled);
+        READ_WRITE_FIELD(goal_torque);
+        READ_WRITE_FIELD(goal_acceleration);
     };
 }
 }

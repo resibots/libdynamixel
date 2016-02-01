@@ -2,6 +2,7 @@
 #define DYNAMIXEL_MODELS_SERVO_MODEL_HPP_
 
 #include <cassert>
+#include <cmath>
 #include <stdint.h>
 
 #include "../instruction_packet.hpp"
@@ -84,6 +85,26 @@ namespace models {
         READ_FIELD(registered);
         READ_FIELD(moving);
 
+        static InstructionPacket<protocol_t> set_goal_position_angle(typename ServoModel<Model>::protocol_t::id_t id, double deg, bool reg = false)
+        {
+            assert(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg);
+            typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
+            return set_goal_position(id, pos, reg);
+        }
+
+        static InstructionPacket<typename ServoModel<Model>::protocol_t> get_present_position_angle(typename ServoModel<Model>::protocol_t::id_t id)
+        {
+            return get_present_position(id);
+        }
+
+        static double parse_present_position_angle(const StatusPacket<typename ServoModel<Model>::protocol_t>& st)
+        {
+            typename ServoModel<Model>::ct_t::present_position_t pos;
+            ServoModel<Model>::protocol_t::unpack_data(st.parameters(), pos);
+            double res = ((pos - ct_t::min_goal_position) * (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg) / (ct_t::max_goal_position - ct_t::min_goal_position)) + ct_t::min_goal_angle_deg;
+            return res;
+        }
+
         template <typename Id, typename Pos>
         static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)
         {
@@ -106,90 +127,6 @@ namespace models {
             return sync_write_t(ct_t::moving_speed, get_typed<typename protocol_t::id_t>(ids), packed);
         }
 
-        template <typename T, typename U>
-        static std::vector<T> get_typed(std::vector<U> vector)
-        {
-            std::vector<T> result(vector.size());
-            for (size_t i = 0; i < vector.size(); i++)
-                result[i] = (T)vector[i];
-
-            return result;
-        }
-    };
-
-    template <class Model>
-    struct AngleLimitServoModel {
-        READ_WRITE_FIELD(cw_angle_limit);
-        READ_WRITE_FIELD(ccw_angle_limit);
-    };
-
-    template <class Model>
-    struct DriveModeServoModel {
-        READ_WRITE_FIELD(drive_mode);
-    };
-
-    template <class Model>
-    struct MaxTorqueServoModel {
-        READ_WRITE_FIELD(max_torque);
-    };
-
-    template <class Model>
-    struct AlarmLedServoModel {
-        READ_WRITE_FIELD(alarm_led);
-    };
-
-    template <class Model>
-    struct MultiTurnOffsetServoModel {
-        READ_WRITE_FIELD(multi_turn_offset);
-    };
-
-    template <class Model>
-    struct ResolutionDividerServoModel {
-        READ_WRITE_FIELD(resolution_divider);
-    };
-
-    template <class Model>
-    struct SingleLedServoModel {
-        READ_FIELD(led);
-        WRITE_BOOL_FIELD(led, led);
-    };
-
-    template <class Model>
-    struct RGBLedServoModel {
-        READ_FIELD(led_r);
-        READ_FIELD(led_g);
-        READ_FIELD(led_b);
-        WRITE_BOOL_FIELD(led_r, led);
-        WRITE_BOOL_FIELD(led_g, led);
-        WRITE_BOOL_FIELD(led_b, led);
-    };
-
-    template <class Model>
-    struct DynRGBLedServoModel {
-        READ_WRITE_FIELD(led_r);
-        READ_WRITE_FIELD(led_g);
-        READ_WRITE_FIELD(led_b);
-    };
-
-    template <class Model>
-    struct ComplianceServoModel {
-        READ_WRITE_FIELD(cw_compliance_margin);
-        READ_WRITE_FIELD(ccw_compliance_margin);
-        READ_WRITE_FIELD(cw_compliance_slope);
-        READ_WRITE_FIELD(ccw_compliance_slope);
-    };
-
-    template <class Model>
-    struct PidServoModel {
-        READ_WRITE_FIELD(d_gain);
-        READ_WRITE_FIELD(i_gain);
-        READ_WRITE_FIELD(p_gain);
-    };
-
-    template <class Model>
-    struct TorqueLimitServoModel {
-        READ_WRITE_FIELD(torque_limit);
-
         template <typename Id, typename TorqueLimit>
         static InstructionPacket<typename ServoModel<Model>::protocol_t> set_torque_limits(const std::vector<Id>& ids, const std::vector<TorqueLimit>& torque_limits)
         {
@@ -200,48 +137,16 @@ namespace models {
 
             return typename ServoModel<Model>::sync_write_t(ServoModel<Model>::ct_t::torque_limit, ServoModel<Model>::template get_typed<typename ServoModel<Model>::protocol_t::id_t>(ids), packed);
         }
-    };
 
-    template <class Model>
-    struct PresentLoadServoModel {
-        READ_FIELD(present_load);
-    };
+        template <typename T, typename U>
+        static std::vector<T> get_typed(std::vector<U> vector)
+        {
+            std::vector<T> result(vector.size());
+            for (size_t i = 0; i < vector.size(); i++)
+                result[i] = (T)vector[i];
 
-    template <class Model>
-    struct LockServoModel {
-        READ_FIELD(lock);
-        WRITE_BOOL_FIELD(lock, lock);
-    };
-
-    template <class Model>
-    struct PunchServoModel {
-        READ_WRITE_FIELD(punch);
-    };
-
-    template <class Model>
-    struct SensedCurrentServoModel {
-        READ_FIELD(sensed_current);
-    };
-
-    template <class Model>
-    struct CurrentServoModel {
-        READ_FIELD(current);
-    };
-
-    template <class Model>
-    struct TorqueControlModeServoModel {
-        READ_FIELD(torque_control_mode_enabled);
-        WRITE_BOOL_FIELD(torque_control_mode_enabled, torque_control_mode_enabled);
-    };
-
-    template <class Model>
-    struct GoalTorqueServoModel {
-        READ_WRITE_FIELD(goal_torque);
-    };
-
-    template <class Model>
-    struct GoalAccelerationServoModel {
-        READ_WRITE_FIELD(goal_acceleration);
+            return result;
+        }
     };
 }
 }

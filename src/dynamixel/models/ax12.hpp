@@ -62,6 +62,8 @@ namespace models {
             typedef uint16_t goal_position_t;
             static const goal_position_t min_goal_position = 0;
             static const goal_position_t max_goal_position = 1023;
+            static const uint16_t min_goal_angle_deg = 30;
+            static const uint16_t max_goal_angle_deg = 330;
             static const protocol_t::address_t moving_speed = 32;
             typedef uint16_t moving_speed_t;
             static const protocol_t::address_t torque_limit = 34;
@@ -89,16 +91,26 @@ namespace models {
         };
     };
 
-    class Ax12 : public ServoModel<Ax12>,
-    public AngleLimitServoModel<Ax12>,
-    public MaxTorqueServoModel<Ax12>,
-    public AlarmLedServoModel<Ax12>,
-    public SingleLedServoModel<Ax12>,
-    public ComplianceServoModel<Ax12>,
-    public TorqueLimitServoModel<Ax12>,
-    public PresentLoadServoModel<Ax12>,
-    public LockServoModel<Ax12>,
-    public PunchServoModel<Ax12> {    
+    class Ax12 : public ServoModel<Ax12> {
+    public:
+        typedef Ax12 Model;
+
+        // Here we add the fields that are not common to all dynamixels
+        READ_WRITE_FIELD(cw_angle_limit);
+        READ_WRITE_FIELD(ccw_angle_limit);
+        READ_WRITE_FIELD(max_torque);
+        READ_WRITE_FIELD(alarm_led);
+        READ_FIELD(led);
+        WRITE_BOOL_FIELD(led, led);
+        READ_WRITE_FIELD(cw_compliance_margin);
+        READ_WRITE_FIELD(ccw_compliance_margin);
+        READ_WRITE_FIELD(cw_compliance_slope);
+        READ_WRITE_FIELD(ccw_compliance_slope);
+        READ_WRITE_FIELD(torque_limit);
+        READ_FIELD(present_load);
+        READ_FIELD(lock);
+        WRITE_BOOL_FIELD(lock, lock);
+        READ_WRITE_FIELD(punch);
     };
 }
 }

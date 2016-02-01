@@ -64,6 +64,8 @@ namespace models {
             typedef uint16_t goal_position_t;
             static const goal_position_t min_goal_position = 0;
             static const goal_position_t max_goal_position = 4095;
+            static const uint16_t min_goal_angle_deg = 0;
+            static const uint16_t max_goal_angle_deg = 360;
             static const protocol_t::address_t moving_speed = 32;
             typedef uint16_t moving_speed_t;
             static const protocol_t::address_t torque_limit = 34;
@@ -93,19 +95,28 @@ namespace models {
         };
     };
 
-    class Mx28 : public ServoModel<Mx28>,
-    public AngleLimitServoModel<Mx28>,
-    public MaxTorqueServoModel<Mx28>,
-    public AlarmLedServoModel<Mx28>,
-    public MultiTurnOffsetServoModel<Mx28>,
-    public ResolutionDividerServoModel<Mx28>,
-    public SingleLedServoModel<Mx28>,
-    public PidServoModel<Mx28>,
-    public TorqueLimitServoModel<Mx28>,
-    public PresentLoadServoModel<Mx28>,
-    public LockServoModel<Mx28>,
-    public PunchServoModel<Mx28>,
-    public GoalAccelerationServoModel<Mx28> {    
+    class Mx28 : public ServoModel<Mx28> {
+    public:
+        typedef Mx28 Model;
+
+        // Here we add the fields that are not common to all dynamixels
+        READ_WRITE_FIELD(cw_angle_limit);
+        READ_WRITE_FIELD(ccw_angle_limit);
+        READ_WRITE_FIELD(max_torque);
+        READ_WRITE_FIELD(alarm_led);
+        READ_WRITE_FIELD(multi_turn_offset);
+        READ_WRITE_FIELD(resolution_divider);
+        READ_FIELD(led);
+        WRITE_BOOL_FIELD(led, led);
+        READ_WRITE_FIELD(d_gain);
+        READ_WRITE_FIELD(i_gain);
+        READ_WRITE_FIELD(p_gain);
+        READ_WRITE_FIELD(torque_limit);
+        READ_FIELD(present_load);
+        READ_FIELD(lock);
+        WRITE_BOOL_FIELD(lock, lock);
+        READ_WRITE_FIELD(punch);
+        READ_WRITE_FIELD(goal_acceleration);
     };
 }
 }

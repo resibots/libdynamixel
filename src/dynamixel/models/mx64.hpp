@@ -64,6 +64,8 @@ namespace models {
             typedef uint16_t goal_position_t;
             static const goal_position_t min_goal_position = 0;
             static const goal_position_t max_goal_position = 4095;
+            static const uint16_t min_goal_angle_deg = 0;
+            static const uint16_t max_goal_angle_deg = 360;
             static const protocol_t::address_t moving_speed = 32;
             typedef uint16_t moving_speed_t;
             static const protocol_t::address_t torque_limit = 34;
@@ -101,22 +103,32 @@ namespace models {
         };
     };
 
-    class Mx64 : public ServoModel<Mx64>,
-    public AngleLimitServoModel<Mx64>,
-    public MaxTorqueServoModel<Mx64>,
-    public AlarmLedServoModel<Mx64>,
-    public MultiTurnOffsetServoModel<Mx64>,
-    public ResolutionDividerServoModel<Mx64>,
-    public SingleLedServoModel<Mx64>,
-    public PidServoModel<Mx64>,
-    public TorqueLimitServoModel<Mx64>,
-    public PresentLoadServoModel<Mx64>,
-    public LockServoModel<Mx64>,
-    public PunchServoModel<Mx64>,
-    public CurrentServoModel<Mx64>,
-    public TorqueControlModeServoModel<Mx64>,
-    public GoalTorqueServoModel<Mx64>,
-    public GoalAccelerationServoModel<Mx64> {    
+    class Mx64 : public ServoModel<Mx64> {
+    public:
+        typedef Mx64 Model;
+
+        // Here we add the fields that are not common to all dynamixels
+        READ_WRITE_FIELD(cw_angle_limit);
+        READ_WRITE_FIELD(ccw_angle_limit);
+        READ_WRITE_FIELD(max_torque);
+        READ_WRITE_FIELD(alarm_led);
+        READ_WRITE_FIELD(multi_turn_offset);
+        READ_WRITE_FIELD(resolution_divider);
+        READ_FIELD(led);
+        WRITE_BOOL_FIELD(led, led);
+        READ_WRITE_FIELD(d_gain);
+        READ_WRITE_FIELD(i_gain);
+        READ_WRITE_FIELD(p_gain);
+        READ_WRITE_FIELD(torque_limit);
+        READ_FIELD(present_load);
+        READ_FIELD(lock);
+        WRITE_BOOL_FIELD(lock, lock);
+        READ_WRITE_FIELD(punch);
+        READ_FIELD(current);
+        READ_FIELD(torque_control_mode_enabled);
+        WRITE_BOOL_FIELD(torque_control_mode_enabled, torque_control_mode_enabled);
+        READ_WRITE_FIELD(goal_torque);
+        READ_WRITE_FIELD(goal_acceleration);
     };
 }
 }
