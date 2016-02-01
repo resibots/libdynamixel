@@ -121,15 +121,14 @@ namespace models {
         READ_WRITE_FIELD(led_r);
         READ_WRITE_FIELD(led_g);
         READ_WRITE_FIELD(led_b);    
-        READ_FIELD(led); // To have an homogeneous way to light a led, we default the red one
-        WRITE_BOOL_FIELD(led, led);
+        READ_FIELD(led);
+        WRITE_BOOL_FIELD(led, led); // To have an homogeneous way to light a led, we default the red one
         READ_WRITE_FIELD(velocity_i_gain);
         READ_WRITE_FIELD(velocity_p_gain);
         READ_WRITE_FIELD(position_p_gain);
         READ_WRITE_FIELD(goal_torque);
         READ_WRITE_FIELD(goal_acceleration);
         READ_FIELD(current);
-        READ_WRITE_FIELD(status_return_level);
         READ_FIELD(hardware_error_status);
     };
 }

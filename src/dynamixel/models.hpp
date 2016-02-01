@@ -9,6 +9,7 @@
 #include "models/mx28.hpp"
 #include "models/mx64.hpp"
 #include "models/mx106.hpp"
+#include "models/xl320.hpp"
 #include "models/pro_l54_30_s400.hpp"
 #include "models/pro_l54_30_s500.hpp"
 #include "models/pro_l54_50_s290.hpp"

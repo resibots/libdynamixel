@@ -142,8 +142,6 @@ int main()
     try
     {
         Usb2Dynamixel controller("/dev/ttyUSB0", B57600);
-        Ax12 ax(1);
-        ax.parse_model_number(StatusPacket<Protocol1>());
         test<ProL4210S300>(controller, 2);
     }
     catch (const Error& e)
