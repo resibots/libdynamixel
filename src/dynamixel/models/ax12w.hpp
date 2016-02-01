@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#include "servo_model.hpp"
+#include "servo.hpp"
 #include "../protocol1.hpp"
 
 namespace dynamixel {
@@ -91,9 +91,11 @@ namespace models {
         };
     };
 
-    class Ax12W : public ServoModel<Ax12W> {
+    class Ax12W : public Servo<Ax12W> {
     public:
         typedef Ax12W Model;
+
+        Ax12W(typename protocol_t::id_t id) : Servo<Ax12W>(id) {};
 
         // Here we add the fields that are not common to all dynamixels
         READ_WRITE_FIELD(cw_angle_limit);

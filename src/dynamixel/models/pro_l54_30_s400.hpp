@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#include "servo_model.hpp"
+#include "servo.hpp"
 #include "../protocol1.hpp"
 
 namespace dynamixel {
@@ -103,9 +103,11 @@ namespace models {
         };
     };
 
-    class ProL5430S400 : public ServoModel<ProL5430S400> {
+    class ProL5430S400 : public Servo<ProL5430S400> {
     public:
         typedef ProL5430S400 Model;
+
+        ProL5430S400(typename protocol_t::id_t id) : Servo<ProL5430S400>(id) {};
 
         // Here we add the fields that are not common to all dynamixels
         READ_WRITE_FIELD(operating_mode);
