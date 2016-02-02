@@ -4,7 +4,8 @@
 #include <cmath>
 
 using namespace dynamixel;
-using namespace models;
+using namespace controllers;
+using namespace servos;
 using namespace instructions;
 
 #define RECV_TIME 0.01

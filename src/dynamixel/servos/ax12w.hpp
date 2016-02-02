@@ -1,23 +1,23 @@
-#ifndef DYNAMIXEL_AX12_HPP_
-#define DYNAMIXEL_AX12_HPP_
+#ifndef DYNAMIXEL_SERVOS_SERVOS_AX12W_HPP_
+#define DYNAMIXEL_SERVOS_AX12W_HPP_
 
 #include <stdint.h>
 
 #include "servo.hpp"
-#include "../protocol1.hpp"
+#include "../protocols/protocol1.hpp"
 
 namespace dynamixel {
-namespace models {
-    class Ax12;
+namespace servos {
+    class Ax12W;
 
     template<>
-    struct ModelTraits<Ax12> {
-        typedef Protocol1 protocol_t;
+    struct ModelTraits<Ax12W> {
+        typedef protocols::Protocol1 protocol_t;
 
         struct CT {
             static const protocol_t::address_t model_number = 0;
             typedef uint16_t model_number_t;
-            static const model_number_t model_number_value = 12;
+            static const model_number_t model_number_value = 300;
             static const protocol_t::address_t firmware_version = 2;
             typedef uint8_t firmware_version_t;
             static const protocol_t::address_t id = 3;
@@ -91,11 +91,11 @@ namespace models {
         };
     };
 
-    class Ax12 : public Servo<Ax12> {
+    class Ax12W : public Servo<Ax12W> {
     public:
-        typedef Ax12 Model;
+        typedef Ax12W Model;
 
-        Ax12(typename protocol_t::id_t id) : Servo<Ax12>(id) {};
+        Ax12W(typename protocol_t::id_t id) : Servo<Ax12W>(id) {};
 
         // Here we add the fields that are not common to all dynamixels
         READ_WRITE_FIELD(cw_angle_limit);

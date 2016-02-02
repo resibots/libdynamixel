@@ -3,8 +3,6 @@
 
 #include <sys/time.h>
 namespace dynamixel {
-    typedef unsigned char byte_t;
-
     inline double get_time()
     {
         struct timeval tv;

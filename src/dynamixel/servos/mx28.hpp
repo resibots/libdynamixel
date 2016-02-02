@@ -1,23 +1,23 @@
-#ifndef DYNAMIXEL_MX64_HPP_
-#define DYNAMIXEL_MX64_HPP_
+#ifndef DYNAMIXEL_SERVOS_MX28_HPP_
+#define DYNAMIXEL_SERVOS_MX28_HPP_
 
 #include <stdint.h>
 
 #include "servo.hpp"
-#include "../protocol1.hpp"
+#include "../protocols/protocol1.hpp"
 
 namespace dynamixel {
-namespace models {
-    class Mx64;
+namespace servos {
+    class Mx28;
 
     template<>
-    struct ModelTraits<Mx64> {
-        typedef Protocol1 protocol_t;
+    struct ModelTraits<Mx28> {
+        typedef protocols::Protocol1 protocol_t;
 
         struct CT {
             static const protocol_t::address_t model_number = 0;
             typedef uint16_t model_number_t;
-            static const model_number_t model_number_value = 310;
+            static const model_number_t model_number_value = 29;
             static const protocol_t::address_t firmware_version = 2;
             typedef uint8_t firmware_version_t;
             static const protocol_t::address_t id = 3;
@@ -52,7 +52,7 @@ namespace models {
             typedef uint8_t torque_enable_t;
             static const protocol_t::address_t led = 25;
             typedef uint8_t led_t;
-            static const led_t led_off = 0;
+             static const led_t led_off = 0;
             static const led_t led_on = 1;
             static const protocol_t::address_t d_gain = 26;
             typedef uint8_t d_gain_t;
@@ -90,24 +90,16 @@ namespace models {
             static const lock_t lock_on = 1;
             static const protocol_t::address_t punch = 48;
             typedef uint16_t punch_t;
-            static const protocol_t::address_t current = 68;
-            typedef uint16_t current_t;
-            static const protocol_t::address_t torque_control_mode_enabled = 70;
-            typedef uint8_t torque_control_mode_enabled_t;
-            static const torque_control_mode_enabled_t torque_control_mode_enabled_off = 0;
-            static const torque_control_mode_enabled_t torque_control_mode_enabled_on = 1;
-            static const protocol_t::address_t goal_torque = 71;
-            typedef uint16_t goal_torque_t;
             static const protocol_t::address_t goal_acceleration = 73;
             typedef uint8_t goal_acceleration_t;
         };
     };
 
-    class Mx64 : public Servo<Mx64> {
+    class Mx28 : public Servo<Mx28> {
     public:
-        typedef Mx64 Model;
+        typedef Mx28 Model;
 
-        Mx64(typename protocol_t::id_t id) : Servo<Mx64>(id) {};
+        Mx28(typename protocol_t::id_t id) : Servo<Mx28>(id) {};
 
         // Here we add the fields that are not common to all dynamixels
         READ_WRITE_FIELD(cw_angle_limit);
@@ -126,10 +118,6 @@ namespace models {
         READ_FIELD(lock);
         WRITE_BOOL_FIELD(lock, lock);
         READ_WRITE_FIELD(punch);
-        READ_FIELD(current);
-        READ_FIELD(torque_control_mode_enabled);
-        WRITE_BOOL_FIELD(torque_control_mode_enabled, torque_control_mode_enabled);
-        READ_WRITE_FIELD(goal_torque);
         READ_WRITE_FIELD(goal_acceleration);
     };
 }

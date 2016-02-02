@@ -1,23 +1,23 @@
-#ifndef DYNAMIXEL_PRO_L54_50_S290_HPP_
-#define DYNAMIXEL_PRO_L54_50_S290_HPP_
+#ifndef DYNAMIXEL_SERVOS_PRO_L54_30_S500_HPP_
+#define DYNAMIXEL_SERVOS_PRO_L54_30_S500_HPP_
 
 #include <stdint.h>
 
 #include "servo.hpp"
-#include "../protocol1.hpp"
+#include "../protocols/protocol1.hpp"
 
 namespace dynamixel {
-namespace models {
-    class ProL5450S290;
+namespace servos {
+    class ProL5430S500;
 
     template<>
-    struct ModelTraits<ProL5450S290> {
-        typedef Protocol2 protocol_t;
+    struct ModelTraits<ProL5430S500> {
+        typedef protocols::Protocol2 protocol_t;
 
         struct CT {
             static const protocol_t::address_t model_number = 0;
             typedef uint16_t model_number_t;
-            static const model_number_t model_number_value = 38176;
+            static const model_number_t model_number_value = 37896;
             static const protocol_t::address_t model_info = 2;
             typedef uint32_t model_info_t;
             static const protocol_t::address_t firmware_version = 6;
@@ -103,11 +103,11 @@ namespace models {
         };
     };
 
-    class ProL5450S290 : public Servo<ProL5450S290> {
+    class ProL5430S500 : public Servo<ProL5430S500> {
     public:
-        typedef ProL5450S290 Model;
+        typedef ProL5430S500 Model;
 
-        ProL5450S290(typename protocol_t::id_t id) : Servo<ProL5450S290>(id) {};
+        ProL5430S500(typename protocol_t::id_t id) : Servo<ProL5430S500>(id) {};
 
         // Here we add the fields that are not common to all dynamixels
         READ_WRITE_FIELD(model_info);

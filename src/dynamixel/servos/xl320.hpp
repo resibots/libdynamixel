@@ -1,18 +1,18 @@
-#ifndef DYNAMIXEL_XL320_HPP_
-#define DYNAMIXEL_XL320_HPP_
+#ifndef DYNAMIXEL_SERVOS_XL320_HPP_
+#define DYNAMIXEL_SERVOS_XL320_HPP_
 
 #include <stdint.h>
 
 #include "servo.hpp"
-#include "../protocol1.hpp"
+#include "../protocols/protocol1.hpp"
 
 namespace dynamixel {
-namespace models {
+namespace servos {
     class Xl320;
 
     template<>
     struct ModelTraits<Xl320> {
-        typedef Protocol2 protocol_t;
+        typedef protocols::Protocol2 protocol_t;
 
         struct CT {
             static const protocol_t::address_t model_number = 0;

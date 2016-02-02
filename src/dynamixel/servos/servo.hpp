@@ -1,5 +1,5 @@
-#ifndef DYNAMIXEL_MODELS_SERVO_HPP_
-#define DYNAMIXEL_MODELS_SERVO_HPP_
+#ifndef DYNAMIXEL_SERVOS_SERVO_HPP_
+#define DYNAMIXEL_SERVOS_SERVO_HPP_
 
 #include <cassert>
 #include <cmath>
@@ -80,7 +80,7 @@
     WRITE_FIELD(Name)
 
 namespace dynamixel {
-namespace models {
+namespace servos {
     template <class Model>
     class Servo {
     public:

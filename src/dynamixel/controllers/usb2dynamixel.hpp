@@ -1,5 +1,5 @@
-#ifndef DYNAMIXEL_USB2DYNAMIXEL_HPP_
-#define DYNAMIXEL_USB2DYNAMIXEL_HPP_
+#ifndef DYNAMIXEL_CONTROLLERS_USB2DYNAMIXEL_HPP_
+#define DYNAMIXEL_CONTROLLERS_USB2DYNAMIXEL_HPP_
 
 #include <fcntl.h>
 #include <errno.h>
@@ -13,14 +13,13 @@
 #include <sstream>
 #include <iomanip>
 
-#include "errors/error.hpp"
-#include "misc.hpp"
-#include "instruction_packet.hpp"
-#include "status_packet.hpp"
+#include "../errors/error.hpp"
+#include "../misc.hpp"
+#include "../instruction_packet.hpp"
+#include "../status_packet.hpp"
 
 namespace dynamixel {
-    static const byte_t broadcast = 0xfe;
-
+namespace controllers {
     class Usb2Dynamixel {
     public:
         Usb2Dynamixel(const std::string& name, int baudrate = B115200)
@@ -133,6 +132,7 @@ namespace dynamixel {
         int _fd;
         static const size_t _recv_buffer_size = 256;
     };
+}
 }
 
 #endif

@@ -1,15 +1,16 @@
-#ifndef DYNAMIXEL_PROTOCOL1_HPP_
-#define DYNAMIXEL_PROTOCOL1_HPP_
+#ifndef DYNAMIXEL_PROTOCOLS_PROTOCOL1_HPP_
+#define DYNAMIXEL_PROTOCOLS_PROTOCOL1_HPP_
 
 #include <stdint.h>
 #include <vector>
 #include <cassert>
 #include <boost/lexical_cast.hpp>
 
-#include "errors/crc_error.hpp"
-#include "errors/status_error.hpp"
+#include "../errors/crc_error.hpp"
+#include "../errors/status_error.hpp"
 
 namespace dynamixel {
+namespace protocols {
     class Protocol1 {
     public:
         typedef uint8_t id_t;
@@ -161,6 +162,7 @@ namespace dynamixel {
             return ~checksum;
         }
     };
+}
 }
 
 #endif

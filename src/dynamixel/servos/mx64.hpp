@@ -1,23 +1,23 @@
-#ifndef DYNAMIXEL_AX12W_HPP_
-#define DYNAMIXEL_AX12W_HPP_
+#ifndef DYNAMIXEL_SERVOS_MX64_HPP_
+#define DYNAMIXEL_SERVOS_MX64_HPP_
 
 #include <stdint.h>
 
 #include "servo.hpp"
-#include "../protocol1.hpp"
+#include "../protocols/protocol1.hpp"
 
 namespace dynamixel {
-namespace models {
-    class Ax12W;
+namespace servos {
+    class Mx64;
 
     template<>
-    struct ModelTraits<Ax12W> {
-        typedef Protocol1 protocol_t;
+    struct ModelTraits<Mx64> {
+        typedef protocols::Protocol1 protocol_t;
 
         struct CT {
             static const protocol_t::address_t model_number = 0;
             typedef uint16_t model_number_t;
-            static const model_number_t model_number_value = 300;
+            static const model_number_t model_number_value = 310;
             static const protocol_t::address_t firmware_version = 2;
             typedef uint8_t firmware_version_t;
             static const protocol_t::address_t id = 3;
@@ -44,26 +44,28 @@ namespace models {
             typedef uint8_t alarm_led_t;
             static const protocol_t::address_t alarm_shutdown = 18;
             typedef uint8_t alarm_shutdown_t;
+            static const protocol_t::address_t multi_turn_offset = 20;
+            typedef uint16_t multi_turn_offset_t;
+            static const protocol_t::address_t resolution_divider = 22;
+            typedef uint8_t resolution_divider_t;
             static const protocol_t::address_t torque_enable = 24;
             typedef uint8_t torque_enable_t;
             static const protocol_t::address_t led = 25;
             typedef uint8_t led_t;
             static const led_t led_off = 0;
             static const led_t led_on = 1;
-            static const protocol_t::address_t cw_compliance_margin = 26;
-            typedef uint8_t cw_compliance_margin_t;
-            static const protocol_t::address_t ccw_compliance_margin = 27;
-            typedef uint8_t ccw_compliance_margin_t;
-            static const protocol_t::address_t cw_compliance_slope = 28;
-            typedef uint8_t cw_compliance_slope_t;
-            static const protocol_t::address_t ccw_compliance_slope = 29;
-            typedef uint8_t ccw_compliance_slope_t;
+            static const protocol_t::address_t d_gain = 26;
+            typedef uint8_t d_gain_t;
+            static const protocol_t::address_t i_gain = 27;
+            typedef uint8_t i_gain_t;
+            static const protocol_t::address_t p_gain = 28;
+            typedef uint8_t p_gain_t;
             static const protocol_t::address_t goal_position = 30;
             typedef uint16_t goal_position_t;
             static const goal_position_t min_goal_position = 0;
-            static const goal_position_t max_goal_position = 1023;
-            static const uint16_t min_goal_angle_deg = 30;
-            static const uint16_t max_goal_angle_deg = 330;
+            static const goal_position_t max_goal_position = 4095;
+            static const uint16_t min_goal_angle_deg = 0;
+            static const uint16_t max_goal_angle_deg = 360;
             static const protocol_t::address_t moving_speed = 32;
             typedef uint16_t moving_speed_t;
             static const protocol_t::address_t torque_limit = 34;
@@ -88,31 +90,47 @@ namespace models {
             static const lock_t lock_on = 1;
             static const protocol_t::address_t punch = 48;
             typedef uint16_t punch_t;
+            static const protocol_t::address_t current = 68;
+            typedef uint16_t current_t;
+            static const protocol_t::address_t torque_control_mode_enabled = 70;
+            typedef uint8_t torque_control_mode_enabled_t;
+            static const torque_control_mode_enabled_t torque_control_mode_enabled_off = 0;
+            static const torque_control_mode_enabled_t torque_control_mode_enabled_on = 1;
+            static const protocol_t::address_t goal_torque = 71;
+            typedef uint16_t goal_torque_t;
+            static const protocol_t::address_t goal_acceleration = 73;
+            typedef uint8_t goal_acceleration_t;
         };
     };
 
-    class Ax12W : public Servo<Ax12W> {
+    class Mx64 : public Servo<Mx64> {
     public:
-        typedef Ax12W Model;
+        typedef Mx64 Model;
 
-        Ax12W(typename protocol_t::id_t id) : Servo<Ax12W>(id) {};
+        Mx64(typename protocol_t::id_t id) : Servo<Mx64>(id) {};
 
         // Here we add the fields that are not common to all dynamixels
         READ_WRITE_FIELD(cw_angle_limit);
         READ_WRITE_FIELD(ccw_angle_limit);
         READ_WRITE_FIELD(max_torque);
         READ_WRITE_FIELD(alarm_led);
+        READ_WRITE_FIELD(multi_turn_offset);
+        READ_WRITE_FIELD(resolution_divider);
         READ_FIELD(led);
         WRITE_BOOL_FIELD(led, led);
-        READ_WRITE_FIELD(cw_compliance_margin);
-        READ_WRITE_FIELD(ccw_compliance_margin);
-        READ_WRITE_FIELD(cw_compliance_slope);
-        READ_WRITE_FIELD(ccw_compliance_slope);
+        READ_WRITE_FIELD(d_gain);
+        READ_WRITE_FIELD(i_gain);
+        READ_WRITE_FIELD(p_gain);
         READ_WRITE_FIELD(torque_limit);
         READ_FIELD(present_load);
         READ_FIELD(lock);
         WRITE_BOOL_FIELD(lock, lock);
         READ_WRITE_FIELD(punch);
+        READ_FIELD(current);
+        READ_FIELD(torque_control_mode_enabled);
+        WRITE_BOOL_FIELD(torque_control_mode_enabled, torque_control_mode_enabled);
+        READ_WRITE_FIELD(goal_torque);
+        READ_WRITE_FIELD(goal_acceleration);
     };
 }
 }
