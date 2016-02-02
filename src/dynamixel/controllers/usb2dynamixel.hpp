@@ -22,14 +22,14 @@ namespace dynamixel {
 namespace controllers {
     class Usb2Dynamixel {
     public:
-        Usb2Dynamixel(const std::string& name, int baudrate = B115200)
+        Usb2Dynamixel(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
         {
-            open_serial(name, baudrate);
+            open_serial(name, baudrate, recv_timeout);
         }
 
         Usb2Dynamixel() : _fd(-1) {}
 
-        void open_serial(const std::string& name, int baudrate = B115200)
+        void open_serial(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
         {
             struct termios tio_serial;
 
@@ -49,12 +49,11 @@ namespace controllers {
 
             cfsetispeed(&tio_serial, baudrate);
             cfsetospeed(&tio_serial, baudrate);
-            // cfsetispeed(&tio_serial, B115200);
-            // cfsetospeed(&tio_serial, B115200);
 
             int res = cfgetispeed(&tio_serial);
             tcflush(_fd, TCIFLUSH);
             tcsetattr(_fd, TCSANOW, &tio_serial);
+            _recv_timeout = recv_timeout;
         }
 
         void close_serial()
@@ -66,6 +65,10 @@ namespace controllers {
         bool is_open() { return !(_fd == -1); }
 
         void flush() { tcflush(_fd, TCIFLUSH); }
+
+        double recv_timeout() { return _recv_timeout; }
+
+        void set_recv_timeout(double recv_timeout) { _recv_timeout = recv_timeout; }
 
         // general send
         template <typename T>
@@ -91,10 +94,10 @@ namespace controllers {
 
         // general receive
         template <typename T>
-        bool recv(double timeout, StatusPacket<T>& status) const
+        bool recv(StatusPacket<T>& status) const
         {
             if (_fd == -1)
-                return true;
+                return false;
 
             double time = get_time();
             bool done = false;
@@ -117,7 +120,7 @@ namespace controllers {
                     done = status.decode_packet(packet);
                 }
 
-                if (current_time - time > timeout) {
+                if (current_time - time > _recv_timeout) {
                     //std::cout << std::endl;
                     return false;
                 }
@@ -130,6 +133,7 @@ namespace controllers {
 
     private:
         int _fd;
+        double _recv_timeout;
         static const size_t _recv_buffer_size = 256;
     };
 }
