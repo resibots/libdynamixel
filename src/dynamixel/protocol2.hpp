@@ -4,6 +4,10 @@
 #include <stdint.h>
 #include <vector>
 #include <cassert>
+#include <boost/lexical_cast.hpp>
+
+#include "errors/crc_error.hpp"
+#include "errors/status_error.hpp"
 
 namespace dynamixel {
     class Protocol2 {
@@ -150,7 +154,7 @@ namespace dynamixel {
                 return false;
 
             if (packet[0] != 0xFF || packet[1]  != 0xFF || packet[2]  != 0xFD)
-                throw Error("Status: bad packet header");
+                throw errors::Error("Status: bad packet header");
 
             length_t length = (((uint16_t)packet[6]) << 8) | packet[5];
 
@@ -166,35 +170,45 @@ namespace dynamixel {
             uint16_t checksum = _checksum(packet);
             uint16_t recv_checksum = (((uint16_t)packet.back()) << 8) | packet[packet.size() - 2];
 
-            if (checksum != recv_checksum) {
-                std::cout << std::endl << "computed: " << (int)checksum << " recv: " << (int)recv_checksum << std::endl;
-                throw Error("Status: checksum error while decoding packet. ");
+            if (checksum != recv_checksum)
+                throw errors::CrcError(id, 2, checksum, recv_checksum);
+
+            if (error != 0)
+            {
+                std::string error_str = boost::lexical_cast<std::string>((int32_t)id) + ": ";
+                if (error & 128)
+                   error_str += "Device alert. Check Hardware Error field from Control Table"; 
+               else
+               {
+                    switch(error)
+                    {
+                    case 1:                    
+                        error_str += "Result fail";
+                        break;
+                    case 2:
+                        error_str += "Instruction error";
+                        break;
+                    case 3:
+                        error_str += "CRC error";
+                        break;
+                    case 4:
+                        error_str += "Data range error";
+                        break;
+                    case 5:
+                        error_str += "Data length error";
+                        break;
+                    case 6:
+                        error_str += "Data limit error";
+                        break;
+                    case 7:
+                        error_str += "Access error";
+                        break;
+                    }
+                }
+
+                throw errors::StatusError(id, 1, error, "Status: error while decoding packet with ID " + error_str);
             }
 
-            /*if (error != 0)
-            {
-                std::string error_str = boost::lexical_cast<std::string>(_id);
-                // we could have many errors in the same packet ?
-                if (error & 1) // bit 0
-                    error_str += " Input voltage error;";
-                if (error & 2) // bit 1
-                    error_str += " Angle limit error;";
-                if (error & 4) // bit 2
-                    error_str += " Overheating error;";
-                if (error & 8) // bit 3
-                    error_str += " Range error;";
-                if (error & 16) // bit 4
-                    error_str += " Checksum error;";
-                if (error & 32) // bit 5
-                {
-                    error_str += "Overload error;";
-                    std::cout<<"Status: error while decoding packet: " + error_str<<std::endl;
-                    return true;
-                }
-                if (error & 64) // bit 6
-                    error_str += "Instruction error;";
-                throw Error(std::string("Status: error while decoding packet: ") + error_str);
-            }*/
             return true;
         }
 

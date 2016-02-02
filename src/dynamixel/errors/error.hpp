@@ -8,7 +8,7 @@
 #include <string>
 
 namespace dynamixel {
-    // exception
+namespace errors {
     class Error {
     public:
         Error() {}
@@ -25,15 +25,17 @@ namespace dynamixel {
             return _msg;
         }
 
-    private:
+    protected:
         std::string _msg;
     };
+
     inline void check(const char* file, int line, bool value,
         const std::string& msg)
     {
         if (!value)
             throw Error(msg + std::string("[") + std::string(file) + "]");
     }
+}
 }
 
 #define CHECK(val, msg) check(__FILE__, __LINE__, (val), msg)

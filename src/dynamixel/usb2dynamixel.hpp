@@ -13,7 +13,7 @@
 #include <sstream>
 #include <iomanip>
 
-#include "error.hpp"
+#include "errors/error.hpp"
 #include "misc.hpp"
 #include "instruction_packet.hpp"
 #include "status_packet.hpp"
@@ -36,7 +36,7 @@ namespace dynamixel {
 
             _fd = open(name.c_str(), O_RDWR | O_NOCTTY);
             if (_fd == -1)
-                throw Error("error opening device:" + name + " " + std::string(strerror(errno)));
+                throw errors::Error("error opening device:" + name + " " + std::string(strerror(errno)));
 
             // Serial port setting
             bzero(&tio_serial, sizeof(tio_serial));
@@ -86,7 +86,7 @@ namespace dynamixel {
                 std::stringstream ofs;
                 perror("write:");
                 ofs << "written= " << ret << " size=" << packet.size();
-                throw Error("Usb2Dynamixel::Send: packet not fully written" + ofs.str());
+                throw errors::Error("Usb2Dynamixel::Send: packet not fully written" + ofs.str());
             }
         }
 

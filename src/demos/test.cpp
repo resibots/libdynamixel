@@ -142,9 +142,9 @@ int main()
     try
     {
         Usb2Dynamixel controller("/dev/ttyUSB0", B57600);
-        test<ProL4210S300>(controller, 2);
+        test<ProL5430S500>(controller, 1);
     }
-    catch (const Error& e)
+    catch (const errors::Error& e)
     {
         std::cerr << "error (dynamixel): " << e.msg() << std::endl;
     }

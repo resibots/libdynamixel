@@ -117,6 +117,16 @@ namespace models {
         READ_FIELD(registered);
         READ_FIELD(moving);
 
+        static InstructionPacket<protocol_t> ping(typename Servo<Model>::protocol_t::id_t id)
+        {
+            return ping_t(id);
+        }
+
+        InstructionPacket<protocol_t> ping()
+        {
+            return ping_t(this->_id);
+        }
+
         static InstructionPacket<protocol_t> set_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, double deg)
         {
             assert(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg);

@@ -108,6 +108,7 @@ namespace models {
         ProL4210S300(typename protocol_t::id_t id) : Servo<ProL4210S300>(id) {};
 
         // Here we add the fields that are not common to all dynamixels
+        READ_WRITE_FIELD(model_info);
         READ_WRITE_FIELD(operating_mode);
         READ_WRITE_FIELD(moving_threshold);
         READ_WRITE_FIELD(acceleration_limit);
