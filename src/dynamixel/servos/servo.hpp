@@ -176,7 +176,7 @@ namespace servos {
             for (size_t i = 0; i < pos.size(); i++)
                 packed[i] = protocol_t::pack_data((typename ct_t::goal_position_t)pos[i]);
 
-            return sync_write_t(ct_t::goal_position, get_typed<typename protocol_t::id_t>(ids), packed);
+            return sync_write_t(ct_t::goal_position, _get_typed<typename protocol_t::id_t>(ids), packed);
         }
 
         template <typename Id, typename Speed>
@@ -187,7 +187,7 @@ namespace servos {
             for (size_t i = 0; i < speeds.size(); i++)
                 packed[i] = protocol_t::pack_data((typename ct_t::moving_speed_t)speeds[i]);
 
-            return sync_write_t(ct_t::moving_speed, get_typed<typename protocol_t::id_t>(ids), packed);
+            return sync_write_t(ct_t::moving_speed, _get_typed<typename protocol_t::id_t>(ids), packed);
         }
 
         template <typename Id, typename TorqueLimit>
@@ -198,7 +198,7 @@ namespace servos {
             for (size_t i = 0; i < torque_limits.size(); i++)
                 packed[i] = protocol_t::pack_data((typename ct_t::torque_limit_t)torque_limits[i]);
 
-            return typename sync_write_t(ct_t::torque_limit, _get_typed<typename protocol_t::id_t>(ids), packed);
+            return sync_write_t(ct_t::torque_limit, _get_typed<typename protocol_t::id_t>(ids), packed);
         }
 
     protected:
