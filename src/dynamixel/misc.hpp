@@ -5,7 +5,7 @@
 #include <termios.h>
 #include <sstream>
 
-#include "error.hpp"
+#include "errors/error.hpp"
 
 namespace dynamixel
 {
@@ -115,8 +115,8 @@ namespace dynamixel
           break;
       default:
         std::stringstream err_message;
-        err_message << "Invalid baudrate: " << os_baudrate;
-        throw Error(err_message.str());
+        err_message << "Invalid baudrate: " << baudrate;
+        throw errors::Error(err_message.str());
     }
     return 0;
   }
