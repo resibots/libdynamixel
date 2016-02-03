@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <vector>
 #include <cassert>
-#include <boost/lexical_cast.hpp>
+#include <sstream>
 
 #include "../errors/crc_error.hpp"
 #include "../errors/status_error.hpp"
@@ -176,38 +176,39 @@ namespace protocols {
 
             if (error != 0)
             {
-                std::string error_str = boost::lexical_cast<std::string>((int32_t)id) + ": ";
+                std::stringstream err_message;
+                err_message << ((int32_t)id) << ": ";
                 if (error & 128)
-                   error_str += "Device alert. Check Hardware Error field from Control Table"; 
+                   err_message << "Device alert. Check Hardware Error field from Control Table"; 
                else
                {
                     switch(error)
                     {
                     case 1:                    
-                        error_str += "Result fail";
+                        err_message << "Result fail";
                         break;
                     case 2:
-                        error_str += "Instruction error";
+                        err_message << "Instruction error";
                         break;
                     case 3:
-                        error_str += "CRC error";
+                        err_message << "CRC error";
                         break;
                     case 4:
-                        error_str += "Data range error";
+                        err_message << "Data range error";
                         break;
                     case 5:
-                        error_str += "Data length error";
+                        err_message << "Data length error";
                         break;
                     case 6:
-                        error_str += "Data limit error";
+                        err_message << "Data limit error";
                         break;
                     case 7:
-                        error_str += "Access error";
+                        err_message << "Access error";
                         break;
                     }
                 }
 
-                throw errors::StatusError(id, 1, error, "Status: error while decoding packet with ID " + error_str);
+                throw errors::StatusError(id, 2, error, "Status: error while decoding packet with ID " + err_message.str());
             }
 
             return true;

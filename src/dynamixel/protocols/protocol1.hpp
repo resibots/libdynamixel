@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <vector>
 #include <cassert>
-#include <boost/lexical_cast.hpp>
+#include <sstream>
 
 #include "../errors/crc_error.hpp"
 #include "../errors/status_error.hpp"
@@ -128,23 +128,24 @@ namespace protocols {
 
             if (error != 0)
             {
-                std::string error_str = boost::lexical_cast<std::string>((int32_t)id) + ": ";
+                std::stringstream err_message;
+                err_message << ((int32_t)id) << ": ";
                 if (error & 1) // bit 0
-                    error_str += "Input voltage error, ";
+                    err_message << "Input voltage error, ";
                 if (error & 2) // bit 1
-                    error_str += "Angle limit error, ";
+                    err_message << "Angle limit error, ";
                 if (error & 4) // bit 2
-                    error_str += "Overheating error, ";
+                    err_message << "Overheating error, ";
                 if (error & 8) // bit 3
-                    error_str += "Range error, ";
+                    err_message << "Range error, ";
                 if (error & 16) // bit 4
-                    error_str += "Checksum error, ";
+                    err_message << "Checksum error, ";
                 if (error & 32) // bit 5
-                    error_str += "Overload error, ";
+                    err_message << "Overload error, ";
                 if (error & 64) // bit 6
-                    error_str += "Instruction error, ";
+                    err_message << "Instruction error, ";
 
-                throw errors::StatusError(id, 1, error, "Status: error while decoding packet with ID " + error_str.substr(0, error_str.length() - 2));
+                throw errors::StatusError(id, 1, error, "Status: error while decoding packet with ID " + err_message.str().substr(0, err_message.str().length() - 2));
             }
 
             return true;

@@ -3,6 +3,7 @@
 
 #include <string>
 #include <stdint.h>
+#include <sstream>
 
 #include "error.hpp"
 
@@ -12,7 +13,10 @@ namespace errors {
     public:
         CrcError(uint8_t id, uint8_t protocol, uint32_t expected, uint32_t received) : _id(id), _protocol(protocol), _expected(expected), _received(received)
         {
-            this->_msg = "Status: checksum error while decoding packet with ID " + boost::lexical_cast<std::string>((int32_t)id) + ": expected " + boost::lexical_cast<std::string>(expected) + ", received " + boost::lexical_cast<std::string>(received);
+            std::stringstream err_message;
+            err_message << "Status: checksum error while decoding packet with ID " << ((int32_t)id) << ": ";
+            err_message << ": expected " << expected << ", received " << received;
+            this->_msg = err_message.str();
         }
 
         uint8_t id() const
