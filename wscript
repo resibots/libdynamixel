@@ -34,10 +34,10 @@ def configure(conf):
 def build(bld):
     bld.recurse('src/demos')
 
-    if ('arm' in bld.all_envs) and (bld.all_envs['arm']['ENABLE_ARM'] is True):
-        print "arm enabled"
-        for obj in copy.copy(bld.all_task_gen):
-            obj.clone('arm')
+    # if ('arm' in bld.all_envs) and (bld.all_envs['arm']['ENABLE_ARM'] is True):
+    #     print "arm enabled"
+    #     for obj in copy.copy(bld.all_task_gen):
+    #         obj.clone('arm')
 
     p = bld.srcnode.abspath() + '/src/dynamixel/'
 
