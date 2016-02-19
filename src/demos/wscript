@@ -3,12 +3,5 @@
 
 
 def build(bld):
-    obj = bld.new_task_gen('cxx', 'program')
-    obj.source = "test.cpp"
-    obj.includes = '. ..'
-    obj.target = 'dynamixel_test'
-
-    obj = bld.new_task_gen('cxx', 'program')
-    obj.source = "omnipointer_arm.cpp"
-    obj.includes = '. ..'
-    obj.target = 'omnipointer_arm'
+    bld(features='cxx cxxprogram', source='test.cpp', target="dynamixel_test", includes=". ..")
+    bld(features='cxx cxxprogram', source='omnipointer_arm.cpp', target="omnipointer_arm", includes=". ..")

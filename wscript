@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-import Options
 import copy
+import os
+import glob
+
 VERSION = '0.0.2'
 APPNAME = 'dynamixel-demos'
 
@@ -10,33 +12,43 @@ srcdir = '.'
 blddir = 'build'
 
 
-def set_options(opt):
-    opt.tool_options('compiler_cxx')
-    opt.add_option('--arm', type='string', help='enable arm cross-compilation', dest='arm')
+def options(opt):
+    opt.load('compiler_cxx')
+    opt.add_option('--arm', action='store_true', help='enable arm cross-compilation', dest='arm')
 
 
 def configure(conf):
-    conf.check_tool('compiler_cxx')
+    conf.load('compiler_cxx')
     conf.env['CXXFLAGS'] = '-D_REENTRANT -Wall -finline-functions -Wno-inline  -fPIC -O3 -ftemplate-depth-128 -Wno-sign-compare'
 
-    env = conf.env.copy()
-    env.set_variant('arm')
-    conf.set_env_name('arm', env)
-
-    if Options.options.arm:
-        conf.setenv('arm')
+    if conf.options.arm:
+        conf.setenv('arm', conf.env)
         conf.env['ENABLE_ARM'] = True
-        conf.check_tool('cross_arm', tooldir='.')
+        conf.load('cross_arm', tooldir='waf_tools')
+        conf.find_arm_cc()
+        conf.find_arm_cxx_cpp()
         conf.env['CXXFLAGS'] = '-D_REENTRANT -DDBG_ENABLED -Wall -O3 -ftemplate-depth-128 -Wno-sign-compare'
     print 'CXXFLAGS:' + conf.env['CXXFLAGS']
 
 
 def build(bld):
-    #bld.add_subdirs('src/dynamixel')
-    bld.add_subdirs('src/demos')
-    #bld.add_subdirs('src/tools')
+    bld.recurse('src/demos')
 
     if ('arm' in bld.all_envs) and (bld.all_envs['arm']['ENABLE_ARM'] is True):
         print "arm enabled"
         for obj in copy.copy(bld.all_task_gen):
             obj.clone('arm')
+
+    p = bld.srcnode.abspath() + '/src/dynamixel/'
+
+    r = glob.glob(p + '*/**')
+    for i in r:
+        k = os.path.split(i)
+        d = os.path.split(k[0])
+        bld.install_files('${PREFIX}/include/dynamixel/' + d[1], i)
+
+    r = glob.glob(p + '*.hpp')
+    for i in r:
+        k = os.path.split(i)
+        d = os.path.split(k[0])
+        bld.install_files('${PREFIX}/include/' + d[1], i)
