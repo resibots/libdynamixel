@@ -21,7 +21,7 @@ int main(int argc, char** argv)
     {
         Usb2Dynamixel controller(argv[1], B1000000, 0.01);
         std::vector<std::shared_ptr<BaseServo<Protocol1> > > servos = auto_detect<Protocol1>(controller);
-        StatusPacket<protocols::Protocol1> st;
+        StatusPacket<Protocol1> st;
 
         for (auto servo : servos) {
             std::cout << "Detected an " << servo->model_name() << " with ID " << servo->id() << std::endl;

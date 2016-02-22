@@ -3,5 +3,6 @@
 
 
 def build(bld):
-    bld(features='cxx cxxprogram', source='test.cpp', target="dynamixel_test", includes=". ..")
+    bld(features='cxx cxxprogram', source='dynamixel_simple_check.cpp', target="dynamixel_simple_check", includes=". ..")
+    bld(features='cxx cxxprogram', source='dynamixel_test.cpp', target="dynamixel_test", includes=". ..")
     bld(features='cxx cxxprogram', source='omnipointer_arm.cpp', target="omnipointer_arm", includes=". ..")
