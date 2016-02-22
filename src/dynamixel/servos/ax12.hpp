@@ -48,8 +48,6 @@ namespace servos {
             typedef uint8_t torque_enable_t;
             static const protocol_t::address_t led = 25;
             typedef uint8_t led_t;
-            static const led_t led_off = 0;
-            static const led_t led_on = 1;
             static const protocol_t::address_t cw_compliance_margin = 26;
             typedef uint8_t cw_compliance_margin_t;
             static const protocol_t::address_t ccw_compliance_margin = 27;
@@ -84,8 +82,6 @@ namespace servos {
             typedef uint8_t moving_t;
             static const protocol_t::address_t lock = 47;
             typedef uint8_t lock_t;
-            static const lock_t lock_off = 0;
-            static const lock_t lock_on = 1;
             static const protocol_t::address_t punch = 48;
             typedef uint16_t punch_t;
         };
@@ -97,21 +93,21 @@ namespace servos {
 
         Ax12(typename protocol_t::id_t id) : Servo<Ax12>(id) {};
 
+        MODEL_NAME(Ax12);
+
         // Here we add the fields that are not common to all dynamixels
         READ_WRITE_FIELD(cw_angle_limit);
         READ_WRITE_FIELD(ccw_angle_limit);
         READ_WRITE_FIELD(max_torque);
         READ_WRITE_FIELD(alarm_led);
-        READ_FIELD(led);
-        WRITE_BOOL_FIELD(led, led);
+        READ_WRITE_FIELD(led);
         READ_WRITE_FIELD(cw_compliance_margin);
         READ_WRITE_FIELD(ccw_compliance_margin);
         READ_WRITE_FIELD(cw_compliance_slope);
         READ_WRITE_FIELD(ccw_compliance_slope);
         READ_WRITE_FIELD(torque_limit);
         READ_FIELD(present_load);
-        READ_FIELD(lock);
-        WRITE_BOOL_FIELD(lock, lock);
+        READ_WRITE_FIELD(lock);
         READ_WRITE_FIELD(punch);
     };
 }

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-import copy
 import os
 import glob
 
@@ -14,21 +13,21 @@ blddir = 'build'
 
 def options(opt):
     opt.load('compiler_cxx')
-    opt.add_option('--arm', action='store_true', help='enable arm cross-compilation', dest='arm')
+    #opt.add_option('--arm', action='store_true', help='enable arm cross-compilation', dest='arm')
 
 
 def configure(conf):
     conf.load('compiler_cxx')
-    conf.env['CXXFLAGS'] = '-D_REENTRANT -Wall -finline-functions -Wno-inline  -fPIC -O3 -ftemplate-depth-128 -Wno-sign-compare'
+    conf.env['CXXFLAGS'] = '-D_REENTRANT -Wall -finline-functions -Wno-inline  -fPIC -O3 -std=c++11 -ftemplate-depth-128 -Wno-sign-compare'.split(' ')
 
-    if conf.options.arm:
-        conf.setenv('arm', conf.env)
-        conf.env['ENABLE_ARM'] = True
-        conf.load('cross_arm', tooldir='waf_tools')
-        conf.find_arm_cc()
-        conf.find_arm_cxx_cpp()
-        conf.env['CXXFLAGS'] = '-D_REENTRANT -DDBG_ENABLED -Wall -O3 -ftemplate-depth-128 -Wno-sign-compare'
-    print 'CXXFLAGS:' + conf.env['CXXFLAGS']
+    # if conf.options.arm:
+    #     conf.setenv('arm', conf.env)
+    #     conf.env['ENABLE_ARM'] = True
+    #     conf.load('cross_arm', tooldir='waf_tools')
+    #     conf.find_arm_cc()
+    #     conf.find_arm_cxx_cpp()
+    #     conf.env['CXXFLAGS'] = '-D_REENTRANT -DDBG_ENABLED -Wall -O3 -ftemplate-depth-128 -Wno-sign-compare'
+    print 'CXXFLAGS:' + str(conf.env['CXXFLAGS'])
 
 
 def build(bld):

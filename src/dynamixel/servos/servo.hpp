@@ -7,6 +7,7 @@
 
 #include "../instruction_packet.hpp"
 #include "../status_packet.hpp"
+#include "base_servo.hpp"
 #include "../instructions/ping.hpp"
 #include "../instructions/read.hpp"
 #include "../instructions/write.hpp"
@@ -15,78 +16,79 @@
 #include "../instructions/factory_reset.hpp"
 #include "../instructions/sync_write.hpp"
 #include "model_traits.hpp"
+#include "../errors/error.hpp"
+
+#define MODEL_NAME(Name) \
+    std::string model_name() const override \
+    { \
+        return #Name; \
+    }
 
 #define READ_FIELD(Name) \
-    static InstructionPacket<typename Servo<Model>::protocol_t> get_##Name(typename Servo<Model>::protocol_t::id_t id)                 \
-    {                                                                                                                                                                                                                                              \
-        return typename Servo<Model>::read_t(id, Servo<Model>::ct_t::Name, sizeof(typename Servo<Model>::ct_t::Name##_t));   \
-    }                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                    \
-    InstructionPacket<typename Servo<Model>::protocol_t> get_##Name() const                                                                                                    \
-    {                                                                                                                                                                                                                                              \
-        return typename Servo<Model>::read_t(this->_id, Servo<Model>::ct_t::Name, sizeof(typename Servo<Model>::ct_t::Name##_t));   \
-    }                                                                                                                                                                                                                                              \
-                                                                                                                                                                                                                                                    \
-    static typename Servo<Model>::ct_t::Name##_t  parse_##Name(const StatusPacket<typename Servo<Model>::protocol_t>& st) \
-    {                                                                                                                                                                                                                                               \
-        typename Servo<Model>::ct_t::Name##_t res;                                                                                                                                                      \
-        Servo<Model>::protocol_t::unpack_data(st.parameters(), res);                                                                                                             \
-        return res;                                                                                                                                                                                                                              \
-    }                                                                                                                                                                                                                               
+    static InstructionPacket<typename Servo<Model>::protocol_t> get_##Name(typename Servo<Model>::protocol_t::id_t id) \
+    { \
+        return typename Servo<Model>::read_t(id, Servo<Model>::ct_t::Name, sizeof(typename Servo<Model>::ct_t::Name##_t)); \
+    } \
+    \
+    static typename Servo<Model>::ct_t::Name##_t  parse_##Name(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st) \
+    { \
+        typename Servo<Model>::ct_t::Name##_t res; \
+        Servo<Model>::protocol_t::unpack_data(st.parameters(), res); \
+        return res; \
+    } \
+    \
+    InstructionPacket<typename Servo<Model>::protocol_t> get_##Name() const override \
+    { \
+        return Model::get_##Name(this->_id); \
+    } \
+    \
+    long long int parse_##Name(const StatusPacket<typename Servo<Model>::protocol_t>& st) const override \
+    { \
+        return static_cast<long long int>(Model::parse_##Name(this->_id, st)); \
+    }
 
 #define WRITE_FIELD(Name) \
-    static InstructionPacket<typename Servo<Model>::protocol_t> set_##Name(typename Servo<Model>::protocol_t::id_t id, typename Servo<Model>::ct_t::Name##_t value)      \
-    {                                                                                                                                                                                                                           \
-            return typename Servo<Model>::write_t(id, Servo<Model>::ct_t::Name, Servo<Model>::protocol_t::pack_data(value));                                                                                      \
-    }                                                                                                                                                                                                                             \
-                                                                                                                                                                                                                                    \
-    static InstructionPacket<typename Servo<Model>::protocol_t> reg_##Name(typename Servo<Model>::protocol_t::id_t id, typename Servo<Model>::ct_t::Name##_t value)      \
-    {                                                                                                                                                                                                                           \
-            return typename Servo<Model>::reg_write_t(id, Servo<Model>::ct_t::Name, Servo<Model>::protocol_t::pack_data(value));                                                                               \
-    }                                                                                                                                                                                                                             \
-                                                                                                                                                                                                                                    \
-    InstructionPacket<typename Servo<Model>::protocol_t> set_##Name(typename Servo<Model>::ct_t::Name##_t value)  const \
-    {                                                                                                                                                                                                                           \
-            return typename Servo<Model>::write_t(this->_id, Servo<Model>::ct_t::Name, Servo<Model>::protocol_t::pack_data(value));                                                                          \
-    }                                                                                                                                                                                                                             \
-                                                                                                                                                                                                                                    \
-    InstructionPacket<typename Servo<Model>::protocol_t> reg_##Name(typename Servo<Model>::ct_t::Name##_t value)      \
-    {                                                                                                                                                                                                                           \
-            return typename Servo<Model>::reg_write_t(this->_id, Servo<Model>::ct_t::Name, Servo<Model>::protocol_t::pack_data(value));                                                                               \
-    }
-
-#define WRITE_BOOL_FIELD(Name, Bool_Name) \
-    static InstructionPacket<typename Servo<Model>::protocol_t> set_##Name(typename Servo<Model>::protocol_t::id_t id, bool value)  \
-    {                                                                                                                                                                                                                           \
-            return typename Servo<Model>::write_t(id, Servo<Model>::ct_t::Name, Servo<Model>::protocol_t::pack_data(value ? Servo<Model>::ct_t::Bool_Name##_on : Servo<Model>::ct_t::Bool_Name##_off)); \
-    }                                                                                                                                                                                                                             \
-                                                                                                                                                                                                                                    \
-    static InstructionPacket<typename Servo<Model>::protocol_t> reg_##Name(typename Servo<Model>::protocol_t::id_t id, bool value)  \
-    {                                                                                                                                                                                                                           \
-            return typename Servo<Model>::reg_write_t(id, Servo<Model>::ct_t::Name, Servo<Model>::protocol_t::pack_data(value ? Servo<Model>::ct_t::Bool_Name##_on : Servo<Model>::ct_t::Bool_Name##_off)); \
-    }                                                                                                                                                                                                                             \
-                                                                                                                                                                                                                                    \
-    InstructionPacket<typename Servo<Model>::protocol_t> set_##Name(bool value)  \
-    {                                                                                                                                                                                                                           \
-            return typename Servo<Model>::write_t(this->_id, Servo<Model>::ct_t::Name, Servo<Model>::protocol_t::pack_data(value ? Servo<Model>::ct_t::Bool_Name##_on : Servo<Model>::ct_t::Bool_Name##_off));                                                                                                       \
-    }                                                                                                                                                                                                                            \
-                                                                                                                                                                                                                                  \
-    InstructionPacket<typename Servo<Model>::protocol_t> reg_##Name(bool value)  \
-    {                                                                                                                                                                                                                           \
-            return typename Servo<Model>::reg_write_t(this->_id, Servo<Model>::ct_t::Name, Servo<Model>::protocol_t::pack_data(value ? Servo<Model>::ct_t::Bool_Name##_on : Servo<Model>::ct_t::Bool_Name##_off)); \
-    }
+    static inline InstructionPacket<typename Servo<Model>::protocol_t> set_##Name(typename Servo<Model>::protocol_t::id_t id, typename Servo<Model>::ct_t::Name##_t value) \
+    { \
+            return typename Servo<Model>::write_t(id, Servo<Model>::ct_t::Name, Servo<Model>::protocol_t::pack_data(value)); \
+    } \
+    \
+    static inline InstructionPacket<typename Servo<Model>::protocol_t> reg_##Name(typename Servo<Model>::protocol_t::id_t id, typename Servo<Model>::ct_t::Name##_t value) \
+    { \
+            return typename Servo<Model>::reg_write_t(id, Servo<Model>::ct_t::Name, Servo<Model>::protocol_t::pack_data(value)); \
+    } \
+    \
+    inline InstructionPacket<typename Servo<Model>::protocol_t> set_##Name(typename Servo<Model>::ct_t::Name##_t value)  const \
+    { \
+            return Model::set_##Name(this->_id, value); \
+    } \
+    \
+    inline InstructionPacket<typename Servo<Model>::protocol_t> reg_##Name(typename Servo<Model>::ct_t::Name##_t value) const \
+    { \
+            return Model::reg_##Name(this->_id, value); \
+    } \
+    \
+    inline InstructionPacket<typename Servo<Model>::protocol_t> set_##Name(long long int value)  const override \
+    { \
+            return this->set_##Name(static_cast<typename Servo<Model>::ct_t::Name##_t>(value)); \
+    } \
+    \
+    inline InstructionPacket<typename Servo<Model>::protocol_t> reg_##Name(long long int value) const override\
+    { \
+            return this->reg_##Name(static_cast<typename Servo<Model>::ct_t::Name##_t>(value)); \
+    } \
 
 #define READ_WRITE_FIELD(Name) READ_FIELD(Name) \
     WRITE_FIELD(Name)
 
 namespace dynamixel {
 namespace servos {
+
     template <class Model>
-    class Servo {
+    class Servo : public BaseServo<typename ModelTraits<Model>::protocol_t> {
     public:
-        typedef ModelTraits<Model> traits_t;
-        typedef typename traits_t::protocol_t protocol_t;
-        typedef typename traits_t::CT ct_t;
+        typedef typename ModelTraits<Model>::protocol_t protocol_t;
+        typedef typename ModelTraits<Model>::CT ct_t;
         typedef instructions::Ping<protocol_t> ping_t;
         typedef instructions::Read<protocol_t> read_t;
         typedef instructions::Write<protocol_t> write_t;
@@ -96,6 +98,16 @@ namespace servos {
         typedef instructions::SyncWrite<protocol_t> sync_write_t;
 
         Servo(typename protocol_t::id_t id) : _id(id) {}
+
+        long long int id() const override
+        {
+            return this->_id;
+        }
+
+        void id(long long int id) override
+        {
+            this->_id = static_cast<typename protocol_t::id_t>(id);
+        }
 
         READ_FIELD(model_number);
         READ_FIELD(firmware_version);
@@ -117,42 +129,40 @@ namespace servos {
         READ_FIELD(registered);
         READ_FIELD(moving);
 
-        static InstructionPacket<protocol_t> ping(typename Servo<Model>::protocol_t::id_t id)
+        static inline InstructionPacket<protocol_t> ping(typename Servo<Model>::protocol_t::id_t id)
         {
             return ping_t(id);
         }
 
-        InstructionPacket<protocol_t> ping()
+        InstructionPacket<protocol_t> ping() const override
         {
             return ping_t(this->_id);
         }
 
-        static InstructionPacket<protocol_t> set_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, double deg)
+        static inline InstructionPacket<protocol_t> set_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, double rad)
         {
+            double deg = rad * 57.2958;
             assert(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg);
             typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
             return set_goal_position(id, pos);
         }
 
-        static InstructionPacket<protocol_t> reg_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, double deg)
+        static inline InstructionPacket<protocol_t> reg_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, double rad)
         {
+            double deg = rad * 57.2958;
             assert(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg);
             typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
             return reg_goal_position(id, pos);
         }
 
-        InstructionPacket<protocol_t> set_goal_position_angle(double deg)
+        InstructionPacket<protocol_t> set_goal_position_angle(double rad) const override
         {
-            assert(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg);
-            typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
-            return set_goal_position(this->_id, pos);
+            return Model::set_goal_position_angle(this->_id, rad);
         }
 
-        InstructionPacket<protocol_t> reg_goal_position_angle(double deg)
+        InstructionPacket<protocol_t> reg_goal_position_angle(double rad) const override
         {
-            assert(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg);
-            typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
-            return reg_goal_position(this->_id, pos);
+            return Model::reg_goal_position_angle(this->_id, rad);
         }
 
         static InstructionPacket<typename Servo<Model>::protocol_t> get_present_position_angle(typename Servo<Model>::protocol_t::id_t id)
@@ -160,14 +170,26 @@ namespace servos {
             return get_present_position(id);
         }
 
-        static double parse_present_position_angle(const StatusPacket<typename Servo<Model>::protocol_t>& st)
+        InstructionPacket<typename Servo<Model>::protocol_t> get_present_position_angle() const override
+        {
+            return Model::get_present_position_angle(this->_id);
+        }
+
+        static double parse_present_position_angle(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st)
         {
             typename Servo<Model>::ct_t::present_position_t pos;
             Servo<Model>::protocol_t::unpack_data(st.parameters(), pos);
-            double res = ((pos - ct_t::min_goal_position) * (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg) / (ct_t::max_goal_position - ct_t::min_goal_position)) + ct_t::min_goal_angle_deg;
-            return res;
+            double deg = ((pos - ct_t::min_goal_position) * (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg) / (ct_t::max_goal_position - ct_t::min_goal_position)) + ct_t::min_goal_angle_deg;
+            double rad = deg / 57.2958;
+            return rad;
         }
 
+        double parse_present_position_angle(const StatusPacket<typename Servo<Model>::protocol_t>& st) const override
+        {
+            return Model::parse_present_position_angle(this->_id, st);
+        }
+
+        // Bulk operations. Only works if the models are known and they are all the same
         template <typename Id, typename Pos>
         static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)
         {

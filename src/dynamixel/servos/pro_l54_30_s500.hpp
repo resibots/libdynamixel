@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 #include "servo.hpp"
-#include "../protocols/protocol1.hpp"
+#include "../protocols/protocol2.hpp"
 
 namespace dynamixel {
 namespace servos {
@@ -60,10 +60,6 @@ namespace servos {
             typedef uint8_t led_g_t;
             static const protocol_t::address_t led_b = 565;
             typedef uint8_t led_b_t;
-            static const protocol_t::address_t led = 563;
-            typedef uint8_t led_t;
-            static const uint8_t led_off = 0;
-            static const uint8_t led_on = 255;
             static const protocol_t::address_t velocity_i_gain = 26;
             typedef uint16_t velocity_i_gain_t;
             static const protocol_t::address_t velocity_p_gain = 27;
@@ -109,6 +105,8 @@ namespace servos {
 
         ProL5430S500(typename protocol_t::id_t id) : Servo<ProL5430S500>(id) {};
 
+        MODEL_NAME(ProL5430S500);
+
         // Here we add the fields that are not common to all dynamixels
         READ_WRITE_FIELD(model_info);
         READ_WRITE_FIELD(operating_mode);
@@ -122,8 +120,6 @@ namespace servos {
         READ_WRITE_FIELD(led_r);
         READ_WRITE_FIELD(led_g);
         READ_WRITE_FIELD(led_b);    
-        READ_FIELD(led);
-        WRITE_BOOL_FIELD(led, led); // To have an homogeneous way to light a led, we default the red one
         READ_WRITE_FIELD(velocity_i_gain);
         READ_WRITE_FIELD(velocity_p_gain);
         READ_WRITE_FIELD(position_p_gain);

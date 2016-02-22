@@ -1,145 +1,37 @@
 #include <iostream>
-#include <iomanip>
-#include <dynamixel/dynamixel.hpp>
 #include <cmath>
+
+#include <dynamixel/dynamixel.hpp>
 
 using namespace dynamixel;
 using namespace controllers;
 using namespace servos;
 using namespace instructions;
+using namespace protocols;
 
-std::vector<unsigned int> ids(1);
-std::vector<unsigned int> positions(1);
-std::vector<unsigned int> speeds(1);
-
-template <typename Protocol>
-void find_devices(int baudrate)
+int main(int argc, char** argv)
 {
-    Usb2Dynamixel controller("/dev/ttyUSB0", baudrate);
-    StatusPacket<Protocol> status;
-
-    for (int i = 0; i < 254; i++) {
-        controller.send(Ping<Protocol>(i));
-        if (controller.recv(status) && status.valid() && status.id() == i) {
-            controller.send(Read<Protocol>(i, 0, 2));
-            controller.recv(status);
-            uint16_t model;
-            Protocol::unpack_data(status.parameters(), model);
-            std::cout << "Found device. Baudrate: " << baudrate << " Id: " << i << " Model: " << model << std::endl;
-        }
+    if (argc != 2)
+    {
+        std::cout << "Usage: " << argv[0] << " device" << std::endl;
+        return -1;
     }
-}
 
-template <typename Model>
-void get_model_number(const Usb2Dynamixel& controller, int id)
-{
-    StatusPacket<typename Model::protocol_t > status;
-    controller.send(Model::get_model_number(id));
-    controller.recv(status);
-    std::cout << "Id: " << id << " Model: " << Model::parse_model_number(status) << " Expected: " << Model::ct_t::model_number_value << std::endl;
-}
-
-template <typename Model>
-void get_torque_enabled(const Usb2Dynamixel& controller, int id)
-{
-    StatusPacket<typename Model::protocol_t > status;
-    controller.send(Model::get_torque_enable(id));
-    controller.recv(status);
-    std::cout << "Id: " << id << " Torque Enabled: " << (bool)Model::parse_torque_enable(status) << std::endl;
-}
-
-template <typename Model>
-void get_max_torque(const Usb2Dynamixel& controller, int id)
-{
-    StatusPacket<typename Model::protocol_t > status;
-    controller.send(Model::get_max_torque(id));
-    controller.recv(status);
-    std::cout << "Id: " << id << " Max Torque: " << Model::parse_max_torque(status) << std::endl;
-}
-
-template <typename Model>
-void set_torque_enabled(const Usb2Dynamixel& controller, int id)
-{
-    StatusPacket<typename Model::protocol_t > status;
-    controller.send(Model::set_torque_enable(id, true));
-    controller.recv(status);
-}
-
-template <typename Model>
-void set_max_torque(const Usb2Dynamixel& controller, int id, int value)
-{
-    StatusPacket<typename Model::protocol_t > status;
-    controller.send(Model::set_max_torque(id, value));
-    controller.recv(status);
-}
-
-template <typename Model>
-void set_pos_to_zero(const Usb2Dynamixel& controller, int id)
-{
-    StatusPacket<typename Model::protocol_t > status;
-    controller.send(Model::set_goal_position(id, 0));
-    controller.recv(status);
-}
-
-template <typename Model>
-void set_pos_to_max(const Usb2Dynamixel& controller, int id)
-{
-    StatusPacket<typename Model::protocol_t > status;
-    controller.send(Model::set_goal_position(id, Model::ct_t::max_goal_position));
-    controller.recv(status);
-}
-
-template <typename Model>
-void set_vel_to_zero(const Usb2Dynamixel& controller, int id)
-{
-    StatusPacket<typename Model::protocol_t > status;
-    controller.send(Model::set_moving_speed(id, 0));
-    controller.recv(status);
-}
-
-template <typename Model>
-void set_to_angle(const Usb2Dynamixel& controller, int id, double deg)
-{
-    StatusPacket<typename Model::protocol_t > status;
-    controller.send(Model::set_goal_position_angle(id, deg));
-    controller.recv(status);
-}
-
-template <typename Model>
-void get_angle_pos(const Usb2Dynamixel& controller, int id)
-{
-    StatusPacket<typename Model::protocol_t > status;
-    controller.send(Model::get_present_position_angle(id));
-    controller.recv(status);
-    std::cout << "Id: " << id << " Angle: " << Model::parse_present_position_angle(status) << "°" << std::endl;
-}
-
-template <typename Model>
-void  test(const Usb2Dynamixel& controller, int id)
-{
-        get_model_number<Model>(controller, id);
-        set_torque_enabled<Model>(controller, id);
-        set_vel_to_zero<Model>(controller, id);
-
-        std::cin.get();
-
-        for (int i = 0; i <= 360; i += 15){
-            if (i < Model::ct_t::min_goal_angle_deg)
-                continue;
-            if (i > Model::ct_t::max_goal_angle_deg)
-                break;
-            set_to_angle<Model>(controller, id, i);
-            usleep(1000000);
-            get_angle_pos<Model>(controller, id);
-        }
-}
-
-int main()
-{
     try
     {
-        Usb2Dynamixel controller("/dev/ttyUSB0", B57600, 0.1);
-        test<ProL5430S500>(controller, 1);
+        Usb2Dynamixel controller(argv[1], B1000000, 0.01);
+        std::vector<std::shared_ptr<BaseServo<Protocol1> > > servos = auto_detect<Protocol1>(controller);
+        StatusPacket<protocols::Protocol1> st;
+
+        for (auto servo : servos) {
+            std::cout << "Detected an " << servo->model_name() << " with ID " << servo->id() << std::endl;
+            controller.send(servo->set_torque_enable(1));
+            controller.recv(st);
+            controller.send(servo->set_moving_speed(50));
+            controller.recv(st);
+            controller.send(servo->set_goal_position_angle(M_PI));
+            controller.recv(st);
+        }
     }
     catch (const errors::Error& e)
     {

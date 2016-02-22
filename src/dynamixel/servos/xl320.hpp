@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 #include "servo.hpp"
-#include "../protocols/protocol1.hpp"
+#include "../protocols/protocol2.hpp"
 
 namespace dynamixel {
 namespace servos {
@@ -48,8 +48,6 @@ namespace servos {
             typedef uint8_t torque_enable_t;
             static const protocol_t::address_t led = 25;
             typedef uint8_t led_t;
-             static const led_t led_off = 0;
-            static const led_t led_on = 1;
             static const protocol_t::address_t d_gain = 27;
             typedef uint8_t d_gain_t;
             static const protocol_t::address_t i_gain = 28;
@@ -93,13 +91,14 @@ namespace servos {
 
         Xl320(typename protocol_t::id_t id) : Servo<Xl320>(id) {};
 
+        MODEL_NAME(Xl320);
+
         // Here we add the fields that are not common to all dynamixels
         READ_WRITE_FIELD(cw_angle_limit);
         READ_WRITE_FIELD(ccw_angle_limit);
         READ_WRITE_FIELD(control_mode);
         READ_WRITE_FIELD(max_torque);
         READ_WRITE_FIELD(led);
-        WRITE_BOOL_FIELD(led, led); // To have an homogeneous way to light a led, we default the red one
         READ_WRITE_FIELD(d_gain);
         READ_WRITE_FIELD(i_gain);
         READ_WRITE_FIELD(p_gain);
