@@ -122,7 +122,14 @@ namespace dynamixel {
         return 0;
     }
 
-    std::shared_ptr<servos::BaseServo<protocols::Protocol1> > get_servo(protocols::Protocol1::address_t id, uint16_t model)
+    template <typename Protocol>
+    std::shared_ptr<servos::BaseServo<Protocol> > get_servo(typename Protocol::address_t id, uint16_t model)
+    {
+        throw errors::Error("Unrecognized model number");
+    }
+
+    template <>
+    std::shared_ptr<servos::BaseServo<protocols::Protocol1> > get_servo<protocols::Protocol1>(protocols::Protocol1::address_t id, uint16_t model)
     {
         switch(model)
         {
@@ -147,7 +154,8 @@ namespace dynamixel {
         }
     }
 
-    std::shared_ptr<servos::BaseServo<protocols::Protocol2> > get_servo(protocols::Protocol2::address_t id, uint16_t model)
+    template <>
+    std::shared_ptr<servos::BaseServo<protocols::Protocol2> > get_servo<protocols::Protocol2>(protocols::Protocol2::address_t id, uint16_t model)
     {
         switch(model)
         {
@@ -182,7 +190,7 @@ namespace dynamixel {
                     if (controller.recv(status)) {
                         uint16_t model;
                         Protocol::unpack_data(status.parameters(), model);
-                        res.push_back(get_servo(id, model)); 
+                        res.push_back(get_servo<Protocol>(id, model)); 
                     }
                 }
             }
