@@ -50,7 +50,7 @@ namespace controllers {
             cfsetispeed(&tio_serial, baudrate);
             cfsetospeed(&tio_serial, baudrate);
 
-            int res = cfgetispeed(&tio_serial);
+            cfgetispeed(&tio_serial);
             tcflush(_fd, TCIFLUSH);
             tcsetattr(_fd, TCSANOW, &tio_serial);
             _recv_timeout = recv_timeout;
