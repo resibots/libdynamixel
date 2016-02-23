@@ -1,7 +1,9 @@
 #include <iostream>
 #include <cstdlib>
 
-#include <dynamixel/dynamixel.hpp>
+#include <dynamixel/dynamixel_core.hpp>
+#include <dynamixel/servos/mx106.hpp>
+#include <dynamixel/servos/mx28.hpp>
 
 using namespace dynamixel;
 using namespace controllers;

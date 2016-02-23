@@ -1,10 +1,8 @@
 #ifndef DYNAMIXEL_HPP_
 #define DYNAMIXEL_HPP_
 
-#include "controllers.hpp"
-#include "protocols.hpp"
+#include "dynamixel_core.hpp"
 #include "servos.hpp"
-#include "errors.hpp"
-//#include "misc.hpp"
+#include "auto_detect.hpp"
 
 #endif
