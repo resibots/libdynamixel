@@ -80,8 +80,10 @@ namespace protocols {
             packet[5] = (uint8_t)((parameters.size() + 3) & 0xFF);
             packet[6] = (uint8_t)(((parameters.size() + 3) >> 8) & 0xFF);
             packet[7] = instr;
+
             for (size_t i = 0; i < parameters.size(); ++i)
                 packet[8 + i] = parameters[i];
+
             uint16_t checksum = _checksum(packet);
             packet[packet_size - 2] = (uint8_t)(checksum & 0xFF);
             packet[packet_size - 1] = (uint8_t)((checksum >> 8) & 0xFF);
