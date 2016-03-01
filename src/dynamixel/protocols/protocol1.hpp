@@ -102,6 +102,19 @@ namespace protocols {
             res = (((uint16_t)packet[1]) << 8) | ((uint16_t)packet[0]);
         }
 
+        /** Decodes the content of a status packet recieved from the servos
+
+            This method is only used by the StatusPacket class, to make it generic
+            with regard to the protocol version.
+
+            @param packet data of the recieved packet
+            @param id id of the sending actuator
+            @param parameters parameters of the status packet, filled by unpack_status
+
+            @return true if and only if the status packet is valid (well formated)
+
+            @see unpack_status in protocol2.hpp
+        **/
         static bool unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters)
         {
             // 6 is the size of the smallest packets (no params)
@@ -111,7 +124,7 @@ namespace protocols {
             if (packet[0] != 0xFF || packet[1]  != 0xFF)
                 throw errors::Error("Status: bad packet header");
 
-            if (packet[3] != packet.size() - 4)                
+            if (packet[3] != packet.size() - 4)
                 return false;
 
             id = packet[2];

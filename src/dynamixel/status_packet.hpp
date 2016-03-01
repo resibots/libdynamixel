@@ -6,7 +6,7 @@
 #include <cassert>
 
 namespace dynamixel {
-    template <class T>
+    template <class T> // Protocol
     class StatusPacket {
     public:
         StatusPacket() : _valid(false) { }
@@ -32,7 +32,7 @@ namespace dynamixel {
             }
 
             os << "id=" << (unsigned int)_id << " params=";
- 
+
             for (size_t i = 0; i < _parameters.size(); ++i)
                 os << (unsigned int)_parameters[i] << " ";
             os << "["<<_parameters.size()<<"]";
