@@ -28,7 +28,7 @@ namespace controllers {
             open_serial(name, baudrate);
         }
 
-        Usb2Dynamixel() : _fd(-1) {}
+        Usb2Dynamixel() : _recv_timeout(0.1), _fd(-1) {}
 
         void open_serial(const std::string& name, int baudrate = B115200)
         {
