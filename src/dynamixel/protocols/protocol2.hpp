@@ -148,6 +148,10 @@ namespace protocols {
             res = (((int32_t)packet[3]) << 24) | (((int32_t)packet[2]) << 16) | (((int32_t)packet[1]) << 8) | ((int32_t)packet[0]);
         }
 
+        /** Decodes the content of a status packet recieved from the servos
+
+            @see unpack_status in protocol1.hpp
+        **/
         static bool unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters)
         {
             // 11 is the size of the smallest packets (no params)
@@ -179,12 +183,12 @@ namespace protocols {
                 std::stringstream err_message;
                 err_message << ((int32_t)id) << ": ";
                 if (error & 128)
-                   err_message << "Device alert. Check Hardware Error field from Control Table"; 
+                   err_message << "Device alert. Check Hardware Error field from Control Table";
                else
                {
                     switch(error)
                     {
-                    case 1:                    
+                    case 1:
                         err_message << "Result fail";
                         break;
                     case 2:
