@@ -163,20 +163,29 @@ namespace protocols {
             if (packet[0] != 0xFF || packet[1]  != 0xFF || packet[2]  != 0xFD)
                 throw errors::Error("Status: bad packet header");
 
-            length_t length = (((uint16_t)packet[6]) << 8) | packet[5];
+            // the field at position 3 in the packet is a predefined value
 
+            id = packet[4];
+
+            // Check that the actual length of the packet equals the one written
+            // in the packet itself
+            length_t length = (((uint16_t)packet[6]) << 8) | packet[5];
             if (length != packet.size() - 7)
                 return false;
 
-            id = packet[4];
+            // the instruction field for a status packet must always be 0x55
+            if (packet[7] != 0x55)
+                return false;
+
             uint8_t error = packet[8];
 
             parameters.clear();
             for (size_t i = 0; i < length - 4; ++i)
                 parameters.push_back(packet[9 + i]);
+
+            // Compute checksum and compare with the one we recieved
             uint16_t checksum = _checksum(packet);
             uint16_t recv_checksum = (((uint16_t)packet.back()) << 8) | packet[packet.size() - 2];
-
             if (checksum != recv_checksum)
                 throw errors::CrcError(id, 2, checksum, recv_checksum);
 
