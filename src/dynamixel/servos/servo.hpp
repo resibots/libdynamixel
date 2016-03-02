@@ -97,8 +97,6 @@ namespace servos {
         typedef instructions::FactoryReset<protocol_t> factory_reset_t;
         typedef instructions::SyncWrite<protocol_t> sync_write_t;
 
-        Servo(typename protocol_t::id_t id) : _id(id) {}
-
         long long int id() const override
         {
             return this->_id;
@@ -224,6 +222,8 @@ namespace servos {
         }
 
     protected:
+        Servo(typename protocol_t::id_t id) : _id(id) {}
+
         template <typename T, typename U>
         static std::vector<T> _get_typed(std::vector<U> vector)
         {
