@@ -53,21 +53,40 @@ namespace dynamixel {
         }
     }
 
+    /** Auto-detect all connected actuators using a given protocol.
+
+        The template parameter Controller is inferred from the function's
+        parameter. Conversely, it is compulsory to specify the protocol version:
+        either dynamixel::protocols::Protocol1 or dynamixel::protocols::Protocol2.
+
+        The returned vector contains objects corresponding to the actuators that
+        were found. You can use these objects to do all actions that are possible
+        with the Dynamixel actuators.
+
+        @param controller object handling the USB to dynamixel interface, instance
+            of the dynamixel::controllers::Usb2Dynamixel class
+        @return vector of actuators
+    **/
     template <typename Protocol, typename Controller>
     inline std::vector<std::shared_ptr<servos::BaseServo<Protocol> > > auto_detect(const Controller& controller)
     {
+        // vector of actuators returned by this function
         std::vector<std::shared_ptr<servos::BaseServo<Protocol> > > res;
 
+        // search through each possible device ID
         for (typename Protocol::address_t id = 0; id < Protocol::broadcast_id; id++) {
             try {
+                // Send a ping. If it is answered, read the actuator model and
+                // instanciate a class of the correct type
                 controller.send(instructions::Ping<Protocol>(id));
                 StatusPacket<Protocol> status;
                 if (controller.recv(status) && status.id() == id) {
+                    // get actuator model
                     controller.send(instructions::Read<Protocol>(id, 0, 2));
                     if (controller.recv(status)) {
                         uint16_t model;
                         Protocol::unpack_data(status.parameters(), model);
-                        res.push_back(get_servo(id, model)); 
+                        res.push_back(get_servo(id, model));
                     }
                 }
             }
