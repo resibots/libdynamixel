@@ -178,7 +178,7 @@ namespace protocols {
             {
                 std::stringstream err_message;
                 err_message << ((int32_t)id) << ": ";
-                if (error & 128)
+                if (error & 0x80)
                     err_message << "Device alert. Check Hardware Error field from Control Table; ";
 
                 switch(error & 0x7F)
