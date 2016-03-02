@@ -4,7 +4,7 @@
 namespace dynamixel {
 namespace servos {
     template<typename Model>
-    struct ModelTraits {        
+    struct ModelTraits {
     };
 
     // This traits define the protocol and control table of each model
