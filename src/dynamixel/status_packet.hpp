@@ -6,20 +6,20 @@
 #include <cassert>
 
 namespace dynamixel {
-    template <class T> // Protocol
+    template <class Protocol>
     class StatusPacket {
     public:
         StatusPacket() : _valid(false) { }
 
         bool valid() const { return _valid; }
 
-        typename T::id_t id() const { assert(_valid); return _id; }
+        typename Protocol::id_t id() const { assert(_valid); return _id; }
 
         const std::vector<uint8_t>& parameters() const { assert(_valid); return _parameters; }
 
         bool decode_packet(const std::vector<uint8_t>& packet)
         {
-            _valid = T::unpack_status(packet, _id, _parameters);
+            _valid = Protocol::unpack_status(packet, _id, _parameters);
             return _valid;
         }
 
@@ -42,12 +42,12 @@ namespace dynamixel {
 
     protected:
         bool _valid;
-        typename T::id_t _id;
+        typename Protocol::id_t _id;
         std::vector<uint8_t> _parameters;
     };
 
-    template <typename T>
-    inline std::ostream& operator << (std::ostream & os, const StatusPacket<T> &st)
+    template <typename Protocol>
+    inline std::ostream& operator << (std::ostream & os, const StatusPacket<Protocol> &st)
     {
         return st.print(os);
     }
