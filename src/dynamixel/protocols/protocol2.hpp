@@ -178,34 +178,32 @@ namespace protocols {
             {
                 std::stringstream err_message;
                 err_message << ((int32_t)id) << ": ";
-                if (error & 128)
-                   err_message << "Device alert. Check Hardware Error field from Control Table"; 
-               else
-               {
-                    switch(error)
-                    {
-                    case 1:                    
-                        err_message << "Result fail";
-                        break;
-                    case 2:
-                        err_message << "Instruction error";
-                        break;
-                    case 3:
-                        err_message << "CRC error";
-                        break;
-                    case 4:
-                        err_message << "Data range error";
-                        break;
-                    case 5:
-                        err_message << "Data length error";
-                        break;
-                    case 6:
-                        err_message << "Data limit error";
-                        break;
-                    case 7:
-                        err_message << "Access error";
-                        break;
-                    }
+                if (error & 0x80)
+                    err_message << "Device alert. Check Hardware Error field from Control Table; ";
+
+                switch(error & 0x7F)
+                {
+                case 1:
+                    err_message << "Result fail";
+                    break;
+                case 2:
+                    err_message << "Instruction error";
+                    break;
+                case 3:
+                    err_message << "CRC error";
+                    break;
+                case 4:
+                    err_message << "Data range error";
+                    break;
+                case 5:
+                    err_message << "Data length error";
+                    break;
+                case 6:
+                    err_message << "Data limit error";
+                    break;
+                case 7:
+                    err_message << "Access error";
+                    break;
                 }
 
                 throw errors::StatusError(id, 2, error, "Status: error while decoding packet with ID " + err_message.str());
