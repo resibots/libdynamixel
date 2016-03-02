@@ -181,7 +181,7 @@ namespace protocols {
                 if (error & 128)
                     err_message << "Device alert. Check Hardware Error field from Control Table; ";
 
-                switch(error && 0x7F)
+                switch(error & 0x7F)
                 {
                 case 1:
                     err_message << "Result fail";
