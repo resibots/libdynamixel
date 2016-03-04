@@ -10,3 +10,10 @@ The work is in progress, the documentation too.
 Building
 ========
 
+Projects using this library
+===========================
+
+Internal projects
+-----------------
+- omnigrasper_bo_recovery
+- [dynamixel_control_hw](https://github.com/resibots/dynamixel_control_hw/)
