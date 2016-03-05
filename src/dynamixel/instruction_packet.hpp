@@ -5,14 +5,14 @@
 #include <stdint.h>
 
 namespace dynamixel {
-    template <class T>
+    template <class Protocol>
     class InstructionPacket {
     public:
-        InstructionPacket(typename T::id_t id, typename T::instr_t instr, const std::vector<uint8_t>& parameters)
-            : _packet(T::pack_instruction(id, instr, parameters)) {}
+        InstructionPacket(typename Protocol::id_t id, typename Protocol::instr_t instr, const std::vector<uint8_t>& parameters)
+            : _packet(Protocol::pack_instruction(id, instr, parameters)) {}
 
-         InstructionPacket(typename T::id_t id, typename T::instr_t instr)
-            : _packet(T::pack_instruction(id, instr)) {}
+         InstructionPacket(typename Protocol::id_t id, typename Protocol::instr_t instr)
+            : _packet(Protocol::pack_instruction(id, instr)) {}
 
         size_t size() const { return _packet.size(); }
 

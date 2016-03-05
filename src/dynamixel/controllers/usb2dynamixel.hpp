@@ -22,16 +22,21 @@ namespace dynamixel {
 namespace controllers {
     class Usb2Dynamixel {
     public:
-        Usb2Dynamixel(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
+        Usb2Dynamixel(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1):
+            _recv_timeout(recv_timeout), _fd(-1)
         {
-            open_serial(name, baudrate, recv_timeout);
+            open_serial(name, baudrate);
         }
 
-        Usb2Dynamixel() : _fd(-1) {}
+        Usb2Dynamixel() : _recv_timeout(0.1), _fd(-1) {}
 
-        void open_serial(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
+        void open_serial(const std::string& name, int baudrate = B115200)
         {
             struct termios tio_serial;
+
+            // Firstly, check that there is no active connexion
+            if (_fd != -1)
+                throw errors::Error("error attempting to open device " + name + ": an other connexion is active; call `close serial` before opening a new connexion");
 
             _fd = open(name.c_str(), O_RDWR | O_NOCTTY);
             if (_fd == -1)
@@ -53,7 +58,6 @@ namespace controllers {
             cfgetispeed(&tio_serial);
             tcflush(_fd, TCIFLUSH);
             tcsetattr(_fd, TCSANOW, &tio_serial);
-            _recv_timeout = recv_timeout;
         }
 
         void close_serial()
@@ -104,7 +108,7 @@ namespace controllers {
 
             std::vector<uint8_t> packet;
             packet.reserve(_recv_buffer_size);
-            
+
             //std::cout << "Recv: ";
 
             do {
@@ -132,9 +136,9 @@ namespace controllers {
         }
 
     private:
-        int _fd;
         double _recv_timeout;
         static const size_t _recv_buffer_size = 256;
+        int _fd;
     };
 }
 }

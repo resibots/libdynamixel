@@ -27,6 +27,7 @@
 
 namespace dynamixel {
 namespace servos {
+
     template <typename Protocol>
     class BaseServo {
     public:
