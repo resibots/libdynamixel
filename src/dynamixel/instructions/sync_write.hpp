@@ -5,6 +5,7 @@
 #include <cassert>
 
 #include "../instruction_packet.hpp"
+#include "../errors/error.hpp"
 
 namespace dynamixel {
 namespace instructions {
@@ -20,19 +21,22 @@ namespace instructions {
         std::vector<uint8_t> _get_parameters(uint8_t address, const std::vector<typename T::id_t>& ids,
             const std::vector<std::vector<uint8_t> >& data)
         {
-            assert(ids.size());
-            assert(ids.size() == data.size());
+            if(ids.size() == 0)
+                throw errors::Error("SyncWrite: ids vectors of size zero");
+            if(ids.size() != data.size())
+                throw errors::Error("SyncWrite: mismatch in ids and data vectors size");
 
             typename T::length_t data_length = data[0].size();
             std::vector<uint8_t> parameters((data_length + 1) * ids.size() + 2);
 
             parameters[0] = address;
             parameters[1] = data_length;
-            
+
             size_t curr = 2;
 
             for (size_t i = 0; i < ids.size(); ++i) {
-                assert(data[i].size() == data_length);
+                if(data[i].size() != data_length)
+                    throw errors::Error("SyncWrite: mismatch in data vectors sizes");
                 parameters[curr++] = ids[i];
 
                 for (size_t j = 0; j < data_length; ++j)
@@ -45,8 +49,10 @@ namespace instructions {
         std::vector<uint8_t> _get_parameters(uint16_t address, const std::vector<typename T::id_t>& ids,
             const std::vector<std::vector<uint8_t> >& data)
         {
-            assert(ids.size());
-            assert(ids.size() == data.size());
+            if(ids.size() == 0)
+                throw errors::Error("SyncWrite: ids vectors of size zero");
+            if(ids.size() != data.size())
+                throw errors::Error("SyncWrite: mismatch in ids and data vectors size");
 
             typename T::length_t data_length = data[0].size();
             std::vector<uint8_t> parameters((data_length + 1) * ids.size() + 4);
@@ -59,7 +65,8 @@ namespace instructions {
             size_t curr = 4;
 
             for (size_t i = 0; i < ids.size(); ++i) {
-                assert(data[i].size() == data_length);
+                if(data[i].size() != data_length)
+                    throw errors::Error("SyncWrite: mismatch in data vectors sizes");
                 parameters[curr++] = ids[i];
 
                 for (size_t j = 0; j < data_length; ++j)

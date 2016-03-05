@@ -5,6 +5,8 @@
 #include <stdint.h>
 #include <cassert>
 
+#include "./errors/error.hpp"
+
 namespace dynamixel {
     template <class Protocol>
     class StatusPacket {
@@ -13,9 +15,19 @@ namespace dynamixel {
 
         bool valid() const { return _valid; }
 
-        typename Protocol::id_t id() const { assert(_valid); return _id; }
+        typename Protocol::id_t id() const
+        {
+            if(!_valid)
+                throw errors::Error("StatusPacket: should be valid before calling member function: `id`");
+            return _id;
+        }
 
-        const std::vector<uint8_t>& parameters() const { assert(_valid); return _parameters; }
+        const std::vector<uint8_t>& parameters() const
+        {
+            if(!_valid)
+                throw errors::Error("StatusPacket: should be valid before calling member function: `parameters`");
+            return _parameters;
+        }
 
         bool decode_packet(const std::vector<uint8_t>& packet)
         {
