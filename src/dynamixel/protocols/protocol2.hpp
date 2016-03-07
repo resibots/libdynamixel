@@ -202,25 +202,25 @@ namespace protocols {
 
                 switch(error & 0x7F)
                 {
-                case 1:
+                case 0x01:
                     err_message << "Result fail";
                     break;
-                case 2:
+                case 0x02:
                     err_message << "Instruction error";
                     break;
-                case 3:
+                case 0x03:
                     err_message << "CRC error";
                     break;
-                case 4:
+                case 0x04:
                     err_message << "Data range error";
                     break;
-                case 5:
+                case 0x05:
                     err_message << "Data length error";
                     break;
-                case 6:
+                case 0x06:
                     err_message << "Data limit error";
                     break;
-                case 7:
+                case 0x07:
                     err_message << "Access error";
                     break;
                 }
