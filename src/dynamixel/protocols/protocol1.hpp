@@ -8,6 +8,7 @@
 
 #include "../errors/crc_error.hpp"
 #include "../errors/status_error.hpp"
+#include "../errors/unpack_error.hpp"
 
 namespace dynamixel {
 namespace protocols {
@@ -92,13 +93,15 @@ namespace protocols {
 
         static void unpack_data(const std::vector<uint8_t>& packet, uint8_t& res)
         {
-            assert(packet.size());
+            if(packet.size() == 0)
+                throw errors::UnpackError(1);
             res = packet[0];
         }
 
         static void unpack_data(const std::vector<uint8_t>& packet, uint16_t& res)
         {
-            assert(packet.size() == 2);
+            if(packet.size() != 2)
+                throw errors::UnpackError(1);
             res = (((uint16_t)packet[1]) << 8) | ((uint16_t)packet[0]);
         }
 
@@ -140,6 +143,7 @@ namespace protocols {
 
             // Compute checksum and compare with the one we recieved
             uint8_t checksum = _checksum(packet);
+
             if (checksum != packet.back())
                 throw errors::CrcError(id, 1, checksum, packet.back());
 
@@ -171,12 +175,14 @@ namespace protocols {
     protected:
         static uint8_t _checksum(const std::vector<uint8_t>& packet)
         {
-            assert(packet.size());
+            if(packet.size() == 0)
+                throw errors::Error("Checksum (protocol 1): cannot compute checksum, the packet is empty");
             int sum = 0;
             for (size_t i = 2; i < packet.size() - 1; ++i)
                 sum += packet[i];
             uint8_t checksum = (sum & 0xFF);
-            assert((sum > 255) || (sum == checksum));
+            if(!(sum > 255) || (sum == checksum))
+                throw errors::CrcError(packet[2], 1, checksum, sum);
             return ~checksum;
         }
     };

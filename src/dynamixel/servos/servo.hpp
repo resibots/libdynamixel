@@ -17,6 +17,7 @@
 #include "../instructions/sync_write.hpp"
 #include "model_traits.hpp"
 #include "../errors/error.hpp"
+#include "../errors/servo_limit_error.hpp"
 
 #define MODEL_NAME(Name) \
     std::string model_name() const override \
@@ -140,7 +141,8 @@ namespace servos {
         static inline InstructionPacket<protocol_t> set_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, double rad)
         {
             double deg = rad * 57.2958;
-            assert(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg);
+            if(!(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg))
+                throw errors::ServoLimitError(id, ct_t::min_goal_angle_deg, ct_t::max_goal_angle_deg, deg);
             typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
             return set_goal_position(id, pos);
         }
@@ -148,7 +150,8 @@ namespace servos {
         static inline InstructionPacket<protocol_t> reg_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, double rad)
         {
             double deg = rad * 57.2958;
-            assert(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg);
+            if(!(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg))
+                throw errors::ServoLimitError(id, ct_t::min_goal_angle_deg, ct_t::max_goal_angle_deg, deg);
             typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
             return reg_goal_position(id, pos);
         }
@@ -191,7 +194,8 @@ namespace servos {
         template <typename Id, typename Pos>
         static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)
         {
-            assert(ids.size() == pos.size());
+            if(ids.size() != pos.size())
+                throw errors::Error("Instruction: error when setting goal positions: \n\tMismatch in vector size for ids and positions");
             std::vector<std::vector<uint8_t> > packed(pos.size());
             for (size_t i = 0; i < pos.size(); i++)
                 packed[i] = protocol_t::pack_data((typename ct_t::goal_position_t)pos[i]);
@@ -202,7 +206,8 @@ namespace servos {
         template <typename Id, typename Speed>
         static InstructionPacket<protocol_t> set_moving_speeds(const std::vector<Id>& ids, const std::vector<Speed>& speeds)
         {
-            assert(ids.size() == speeds.size());
+            if(ids.size() != speeds.size())
+                throw errors::Error("Instruction: error when setting moving speeds: \n\tMismatch in vector size for ids and speeds");
             std::vector<std::vector<uint8_t> > packed(speeds.size());
             for (size_t i = 0; i < speeds.size(); i++)
                 packed[i] = protocol_t::pack_data((typename ct_t::moving_speed_t)speeds[i]);
@@ -213,7 +218,8 @@ namespace servos {
         template <typename Id, typename TorqueLimit>
         static InstructionPacket<protocol_t> set_torque_limits(const std::vector<Id>& ids, const std::vector<TorqueLimit>& torque_limits)
         {
-            assert(ids.size() == torque_limits.size());
+            if(ids.size() != torque_limits.size())
+                throw errors::Error("Instruction: error when setting torque limits: \n\tMismatch in vector size for ids and torques");
             std::vector<std::vector<uint8_t> > packed(torque_limits.size());
             for (size_t i = 0; i < torque_limits.size(); i++)
                 packed[i] = protocol_t::pack_data((typename ct_t::torque_limit_t)torque_limits[i]);
@@ -235,7 +241,7 @@ namespace servos {
         }
 
         typename protocol_t::id_t _id;
- 
+
     };
 }
 }

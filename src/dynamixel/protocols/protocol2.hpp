@@ -128,25 +128,29 @@ namespace protocols {
 
         static void unpack_data(const std::vector<uint8_t>& packet, uint8_t& res)
         {
-            assert(packet.size());
+            if(packet.size() == 0)
+                throw errors::UnpackError(2);
             res = packet[0];
         }
 
         static void unpack_data(const std::vector<uint8_t>& packet, uint16_t& res)
         {
-            assert(packet.size() == 2);
+            if(packet.size() != 2)
+                throw errors::UnpackError(2);
             res = (((uint16_t)packet[1]) << 8) | ((uint16_t)packet[0]);
         }
 
         static void unpack_data(const std::vector<uint8_t>& packet, uint32_t& res)
         {
-            assert(packet.size() == 4);
+            if(packet.size() != 4)
+                throw errors::UnpackError(2);
             res = (((uint32_t)packet[3]) << 24) | (((uint32_t)packet[2]) << 16) | (((uint32_t)packet[1]) << 8) | ((uint32_t)packet[0]);
         }
 
         static void unpack_data(const std::vector<uint8_t>& packet, int32_t& res)
         {
-            assert(packet.size() == 4);
+            if(packet.size() != 4)
+                throw errors::UnpackError(2);
             res = (((int32_t)packet[3]) << 24) | (((int32_t)packet[2]) << 16) | (((int32_t)packet[1]) << 8) | ((int32_t)packet[0]);
         }
 
@@ -232,7 +236,8 @@ namespace protocols {
     protected:
         static uint16_t _checksum(const std::vector<uint8_t>& packet)
         {
-            assert(packet.size());
+            if(packet.size() == 0)
+                throw errors::Error("Checksum (protocol 2): cannot compute checksum, the packet is empty");
             uint16_t crc_accum = 0;
 
             uint16_t crc_table[256] = {
