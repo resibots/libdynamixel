@@ -237,7 +237,7 @@ namespace protocols {
         static uint16_t _checksum(const std::vector<uint8_t>& packet)
         {
             if(packet.size() == 0)
-                throw errors::Error("Checksum: bad packet when checking checksum in protocol 2");
+                throw errors::Error("Checksum (protocol 2): cannot compute checksum, the packet is empty");
             uint16_t crc_accum = 0;
 
             uint16_t crc_table[256] = {
