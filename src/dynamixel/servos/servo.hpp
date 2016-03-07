@@ -195,7 +195,7 @@ namespace servos {
         static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)
         {
             if(ids.size() != pos.size())
-                throw errors::Error("Instruction: error when setting goal positions: \nMismatch in id and position vectors");
+                throw errors::Error("Instruction: error when setting goal positions: \n\tMismatch in vector size for ids and positions");
             std::vector<std::vector<uint8_t> > packed(pos.size());
             for (size_t i = 0; i < pos.size(); i++)
                 packed[i] = protocol_t::pack_data((typename ct_t::goal_position_t)pos[i]);
@@ -207,7 +207,7 @@ namespace servos {
         static InstructionPacket<protocol_t> set_moving_speeds(const std::vector<Id>& ids, const std::vector<Speed>& speeds)
         {
             if(ids.size() != speeds.size())
-                throw errors::Error("Instruction: error when setting moving speeds: \nMismatch in id and speed vectors");
+                throw errors::Error("Instruction: error when setting moving speeds: \n\tMismatch in vector size for ids and speeds");
             std::vector<std::vector<uint8_t> > packed(speeds.size());
             for (size_t i = 0; i < speeds.size(); i++)
                 packed[i] = protocol_t::pack_data((typename ct_t::moving_speed_t)speeds[i]);
@@ -219,7 +219,7 @@ namespace servos {
         static InstructionPacket<protocol_t> set_torque_limits(const std::vector<Id>& ids, const std::vector<TorqueLimit>& torque_limits)
         {
             if(ids.size() != torque_limits.size())
-                throw errors::Error("Instruction: error when setting torque limits: \nMismatch in id and torque vectors");
+                throw errors::Error("Instruction: error when setting torque limits: \n\tMismatch in vector size for ids and torques");
             std::vector<std::vector<uint8_t> > packed(torque_limits.size());
             for (size_t i = 0; i < torque_limits.size(); i++)
                 packed[i] = protocol_t::pack_data((typename ct_t::torque_limit_t)torque_limits[i]);

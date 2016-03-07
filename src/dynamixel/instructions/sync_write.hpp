@@ -22,9 +22,9 @@ namespace instructions {
             const std::vector<std::vector<uint8_t> >& data)
         {
             if(ids.size() == 0)
-                throw errors::Error("SyncWrite: ids vectors of size zero");
+                throw errors::Error("SyncWrite: ids vector of size zero");
             if(ids.size() != data.size())
-                throw errors::Error("SyncWrite: mismatch in ids and data vectors size");
+                throw errors::Error("SyncWrite: mismatching vectors size for ids and data");
 
             typename T::length_t data_length = data[0].size();
             std::vector<uint8_t> parameters((data_length + 1) * ids.size() + 2);
@@ -36,7 +36,8 @@ namespace instructions {
 
             for (size_t i = 0; i < ids.size(); ++i) {
                 if(data[i].size() != data_length)
-                    throw errors::Error("SyncWrite: mismatch in data vectors sizes");
+                    throw errors::Error("SyncWrite: mismatch between declared"
+                        "data length and data vector size");
                 parameters[curr++] = ids[i];
 
                 for (size_t j = 0; j < data_length; ++j)
@@ -50,9 +51,9 @@ namespace instructions {
             const std::vector<std::vector<uint8_t> >& data)
         {
             if(ids.size() == 0)
-                throw errors::Error("SyncWrite: ids vectors of size zero");
+                throw errors::Error("SyncWrite: ids vector of size zero");
             if(ids.size() != data.size())
-                throw errors::Error("SyncWrite: mismatch in ids and data vectors size");
+                throw errors::Error("SyncWrite: mismatching vectors size for ids and data");
 
             typename T::length_t data_length = data[0].size();
             std::vector<uint8_t> parameters((data_length + 1) * ids.size() + 4);
@@ -66,7 +67,8 @@ namespace instructions {
 
             for (size_t i = 0; i < ids.size(); ++i) {
                 if(data[i].size() != data_length)
-                    throw errors::Error("SyncWrite: mismatch in data vectors sizes");
+                    throw errors::Error("SyncWrite: mismatch between declared"
+                        "data length and data vector size");
                 parameters[curr++] = ids[i];
 
                 for (size_t j = 0; j < data_length; ++j)

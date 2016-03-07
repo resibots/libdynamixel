@@ -176,7 +176,7 @@ namespace protocols {
         static uint8_t _checksum(const std::vector<uint8_t>& packet)
         {
             if(packet.size() == 0)
-                throw errors::Error("Checksum: bad packet when checking checksum in protocol 1");
+                throw errors::Error("Checksum (protocol 1): cannot compute checksum, the packet is empty");
             int sum = 0;
             for (size_t i = 2; i < packet.size() - 1; ++i)
                 sum += packet[i];
