@@ -11,20 +11,20 @@ namespace dynamixel {
     template <class Protocol>
     class StatusPacket {
     public:
-        StatusPacket() : _valid(false) { }
+        StatusPacket() : _valid(false) {}
 
         bool valid() const { return _valid; }
 
         typename Protocol::id_t id() const
         {
-            if(!_valid)
+            if (!_valid)
                 throw errors::Error("StatusPacket: should be valid before calling member function: `id`");
             return _id;
         }
 
         const std::vector<uint8_t>& parameters() const
         {
-            if(!_valid)
+            if (!_valid)
                 throw errors::Error("StatusPacket: should be valid before calling member function: `parameters`");
             return _parameters;
         }
@@ -37,8 +37,7 @@ namespace dynamixel {
 
         std::ostream& print(std::ostream& os) const
         {
-            if (!_valid)
-            {
+            if (!_valid) {
                 os << "no packet or invalid";
                 return os;
             }
@@ -47,7 +46,7 @@ namespace dynamixel {
 
             for (size_t i = 0; i < _parameters.size(); ++i)
                 os << (unsigned int)_parameters[i] << " ";
-            os << "["<<_parameters.size()<<"]";
+            os << "[" << _parameters.size() << "]";
 
             return os;
         }
@@ -59,7 +58,7 @@ namespace dynamixel {
     };
 
     template <typename Protocol>
-    inline std::ostream& operator << (std::ostream & os, const StatusPacket<Protocol> &st)
+    inline std::ostream& operator<<(std::ostream& os, const StatusPacket<Protocol>& st)
     {
         return st.print(os);
     }

@@ -11,16 +11,14 @@ using namespace protocols;
 
 int main(int argc, char** argv)
 {
-    if (argc != 2)
-    {
+    if (argc != 2) {
         std::cout << "Usage: " << argv[0] << " device" << std::endl;
         return -1;
     }
 
-    try
-    {
+    try {
         Usb2Dynamixel controller(argv[1], B1000000, 0.01);
-        std::vector<std::shared_ptr<BaseServo<Protocol1> > > servos = auto_detect<Protocol1>(controller);
+        std::vector<std::shared_ptr<BaseServo<Protocol1>>> servos = auto_detect<Protocol1>(controller);
         StatusPacket<Protocol1> st;
 
         for (auto servo : servos) {
@@ -33,8 +31,7 @@ int main(int argc, char** argv)
             controller.recv(st);
         }
     }
-    catch (const errors::Error& e)
-    {
+    catch (const errors::Error& e) {
         std::cerr << "error (dynamixel): " << e.msg() << std::endl;
     }
 

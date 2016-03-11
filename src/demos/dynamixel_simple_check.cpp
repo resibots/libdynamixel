@@ -11,19 +11,17 @@ using namespace protocols;
 
 int main(int argc, char** argv)
 {
-    if (argc != 2)
-    {
+    if (argc != 2) {
         std::cout << "Usage: " << argv[0] << " device" << std::endl;
         return -1;
     }
 
-    try
-    {
+    try {
         Usb2Dynamixel controller(argv[1], B1000000, 0.01);
 
-        std::vector<std::shared_ptr<BaseServo<Protocol1> > > servos_1 = auto_detect<Protocol1>(controller);
-        std::vector<std::shared_ptr<BaseServo<Protocol2> > > servos_2 = auto_detect<Protocol2>(controller);
-        
+        std::vector<std::shared_ptr<BaseServo<Protocol1>>> servos_1 = auto_detect<Protocol1>(controller);
+        std::vector<std::shared_ptr<BaseServo<Protocol2>>> servos_2 = auto_detect<Protocol2>(controller);
+
         if (servos_1.size()) {
             std::cout << "Detected an " << servos_1[0]->model_name() << " with ID " << servos_1[0]->id() << std::endl;
 
@@ -38,8 +36,9 @@ int main(int argc, char** argv)
                 controller.recv(st);
                 std::cin.get();
             }
-        } else if (servos_2.size()) {
-              std::cout << "Detected an " << servos_2[0]->model_name() << " with ID " << servos_2[0]->id() << std::endl;
+        }
+        else if (servos_2.size()) {
+            std::cout << "Detected an " << servos_2[0]->model_name() << " with ID " << servos_2[0]->id() << std::endl;
 
             StatusPacket<Protocol2> st;
 
@@ -52,12 +51,12 @@ int main(int argc, char** argv)
                 controller.recv(st);
                 std::cin.get();
             }
-        } else {
+        }
+        else {
             std::cout << "No dynamixel detected" << std::endl;
         }
     }
-    catch (const errors::Error& e)
-    {
+    catch (const errors::Error& e) {
         std::cerr << "error (dynamixel): " << e.msg() << std::endl;
     }
 
