@@ -235,13 +235,15 @@ void osc(Usb2Dynamixel& controller, unsigned actuator_type)
 {
   if (actuator_type != dynamixel_series::MX && actuator_type != dynamixel_series::AX)
   {
-    std::cerr << "Only dynamixels of type MX or AX are supported." << std::endl;
+    std::cerr << "Only dynamixels of type MX (2) or AX (1) are supported.\n"
+        << "Please give the type of actuators you have as an argument" << std::endl;
     return;
   }
 
-  std::cout << "oscillating" << std::endl;
   std::vector<byte_t> ax12_ids = scan(controller);
   dynamixel::Status status;
+
+  std::cout << "Oscillating..." << std::endl;
 
   for (size_t i = 0; i < ax12_ids.size(); ++i)
   {
@@ -254,7 +256,7 @@ void osc(Usb2Dynamixel& controller, unsigned actuator_type)
   {
     for (size_t i = 0; i < ax12_ids.size(); ++i)
       if (actuator_type == dynamixel_series::MX) // mx28
-        pos[i] = 2048 + sin(x) * 300;
+        pos[i] = 2048 + sin(x) * 50;
       else if (actuator_type == dynamixel_series::AX)
         pos[i] = 512 + sin(x/8.0) * 40;
     controller.send(ax12::SetPositions(ax12_ids, pos));
