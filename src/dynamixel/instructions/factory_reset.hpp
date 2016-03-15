@@ -4,13 +4,13 @@
 #include "../instruction_packet.hpp"
 
 namespace dynamixel {
-    namespace instructions {
-        template <class T>
-        class FactoryReset : public InstructionPacket<T> {
-        public:
-            FactoryReset(typename T::id_t id) : InstructionPacket<T>(id, T::Instructions::factory_reset) {}
-        };
-    }
+namespace instructions {
+template <class T> class FactoryReset : public InstructionPacket<T> {
+public:
+  FactoryReset(typename T::id_t id)
+      : InstructionPacket<T>(id, T::Instructions::factory_reset) {}
+};
+}
 }
 
 #endif
