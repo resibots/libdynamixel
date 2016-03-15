@@ -1,7 +1,7 @@
 build/
 
 # Files specific to the Waf build system
-.lock-wscript
+.lock-*
 .waf-*
 
 # Python compiled files
