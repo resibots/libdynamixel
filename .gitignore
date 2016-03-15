@@ -6,3 +6,6 @@ build/
 
 # Python compiled files
 *.pyc
+
+# Clang-format style files
+.clang-format
