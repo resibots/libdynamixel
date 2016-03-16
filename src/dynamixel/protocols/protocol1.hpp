@@ -180,7 +180,7 @@ namespace dynamixel {
                 for (size_t i = 2; i < packet.size() - 1; ++i)
                     sum += packet[i];
                 uint8_t checksum = (sum & 0xFF);
-                if (!(sum > 255) || (sum == checksum))
+                if (!(sum > 255) && (sum != checksum))
                     throw errors::CrcError(packet[2], 1, checksum, sum);
                 return ~checksum;
             }
