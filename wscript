@@ -32,6 +32,7 @@ def configure(conf):
 
 def build(bld):
     bld.recurse('src/demos')
+    bld.recurse('src/tools')
 
     # if ('arm' in bld.all_envs) and (bld.all_envs['arm']['ENABLE_ARM'] is True):
     #     print "arm enabled"
