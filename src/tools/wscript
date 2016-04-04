@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+def options(opt):
+    opt.load('boost')
+
+def configure(conf):
+    conf.load('boost')
+
+    conf.check_boost(lib='program_options', min_version='1.39')
 
 def build(bld):
-    bld(features='cxx cxxprogram', source='dynamixel2.cpp', target="dynamixel2", includes=". ..", uselib="BOOST_PROGRAM_OPTIONS", uselib_local="dynamixel")
+    bld(features='cxx cxxprogram', source='dynamixel2.cpp', target="dynamixel2", includes=". ..", uselib="BOOST", uselib_local="dynamixel")
