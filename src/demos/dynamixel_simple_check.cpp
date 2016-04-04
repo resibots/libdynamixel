@@ -17,6 +17,7 @@ int main(int argc, char** argv)
     }
 
     try {
+        // Default baudrate for the dynamixel pro is 57600
         Usb2Dynamixel controller(argv[1], B1000000, 0.01);
 
         std::vector<std::shared_ptr<BaseServo<Protocol1>>> servos_1 = auto_detect<Protocol1>(controller);
