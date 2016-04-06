@@ -4,6 +4,7 @@
 #include <dynamixel/dynamixel.hpp>
 
 #include <map>
+#include <utility> // std::pair
 #include <sstream>
 #include <stdexcept>
 
@@ -128,30 +129,32 @@ namespace dynamixel {
             return positions;
         }
 
-        std::vector<double> get_angles()
+        std::pair<std::vector<long long int>, std::vector<double>> get_angles()
         {
-            std::vector<double> positions(_servos.size());
+            std::vector<double> positions;
+            std::vector<long long int> ids;
 
-            for (unsigned i = 0; i < _servos.size(); ++i) {
+            for (auto servo : _servos) {
                 StatusPacket<Protocol> status;
                 // request current position
                 _serial_interface.send(
-                    _servos[i]->get_present_position_angle());
+                    servo->get_present_position_angle());
                 _serial_interface.recv(status);
 
                 // parse response to get the position
-                if (status.valid())
-                    positions[i] = _servos[i]
-                                       ->parse_present_position_angle(status);
+                if (status.valid()) {
+                    positions.push_back(servo->parse_present_position_angle(status));
+                    ids.push_back(servo->id());
+                }
                 else {
                     std::stringstream message;
                     message << "Did not receive any data when reading "
-                            << _servos[i]->id() << "'s position";
+                            << servo->id() << "'s position";
                     throw std::runtime_error(message.str());
                 }
             }
 
-            return positions;
+            return std::make_pair(ids, positions);
         }
 
     private:

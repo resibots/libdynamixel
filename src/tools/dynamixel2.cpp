@@ -32,7 +32,12 @@ namespace dynamixel {
                     vm["angle"].as<std::vector<double>>());
             }
             else if ("get-position" == command) {
-                get_position(vm["id"].as<std::vector<long long int>>());
+                if (vm.count("id"))
+                    get_position(vm["id"].as<std::vector<long long int>>());
+                else {
+                    std::vector<long long int> ids;
+                    get_position(ids);
+                }
             }
         }
 
@@ -71,14 +76,21 @@ namespace dynamixel {
             // TODO: manage limit cases
         }
 
+        // TODO: pass parameters by reference
         void get_position(std::vector<long long int> ids)
         {
+            _dyn_util.detect_servos();
+
             std::vector<double> positions;
 
             if (ids.size() > 0)
                 positions = _dyn_util.get_angles(ids);
-            else
-                positions = _dyn_util.get_angles();
+            else {
+                std::pair<std::vector<long long int>, std::vector<double>> angles;
+                angles = _dyn_util.get_angles();
+                ids = angles.first;
+                positions = angles.second;
+            }
 
             std::cout << "Angular positions of the actuators:" << std::endl;
             for (unsigned i = 0; i < ids.size(); ++i) {
