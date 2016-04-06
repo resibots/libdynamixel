@@ -74,7 +74,7 @@ namespace dynamixel {
         void set_angle(std::vector<long long int> ids, double angle)
         {
             for (auto id : ids) {
-                std::shared_ptr<BaseServo<Protocol>> servo = _servos[_ids_map[id]];
+                std::shared_ptr<BaseServo<Protocol>> servo = _servos[_ids_map.at(id)];
                 _serial_interface.send(servo->reg_goal_position_angle(angle));
 
                 StatusPacket<Protocol> status;
@@ -92,7 +92,7 @@ namespace dynamixel {
                                          "the same length");
 
             for (int i = 0; i < ids.size(); i++) {
-                std::shared_ptr<BaseServo<Protocol>> servo = _servos[_ids_map[ids[i]]];
+                std::shared_ptr<BaseServo<Protocol>> servo = _servos[_ids_map.at(ids[i])];
                 _serial_interface.send(servo->reg_goal_position_angle(angles[i]));
 
                 StatusPacket<Protocol> status;
@@ -110,12 +110,12 @@ namespace dynamixel {
                 StatusPacket<Protocol> status;
                 // request current position
                 _serial_interface.send(
-                    _servos[_ids_map[ids[i]]]->get_present_position_angle());
+                    _servos[_ids_map.at(ids[i])]->get_present_position_angle());
                 _serial_interface.recv(status);
 
                 // parse response to get the position
                 if (status.valid())
-                    positions[i] = _servos[_ids_map[ids[i]]]
+                    positions[i] = _servos[_ids_map.at(ids[i])]
                                        ->parse_present_position_angle(status);
                 else {
                     std::stringstream message;
