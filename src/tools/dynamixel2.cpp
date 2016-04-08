@@ -35,8 +35,7 @@ namespace dynamixel {
                 if (vm.count("id"))
                     get_position(vm["id"].as<std::vector<long long int>>());
                 else {
-                    std::vector<long long int> ids;
-                    get_position(ids);
+                    get_position();
                 }
             }
         }
@@ -47,15 +46,18 @@ namespace dynamixel {
         void list()
         {
             _dyn_util.detect_servos();
-            std::vector<std::shared_ptr<BaseServo<Protocol>>> actuators = _dyn_util.list();
+            std::map<typename Protocol::address_t, std::shared_ptr<BaseServo<Protocol>>>
+                actuators = _dyn_util.servos();
 
-            std::cout << "Connected devices (" << actuators.size() << ") :" << std::endl;
+            std::cout << "Connected devices (" << actuators.size() << ") :"
+                      << std::endl;
             for (auto actuator : actuators) {
-                std::cout << actuator->id() << " : " << actuator->model_name() << std::endl;
+                std::cout << (long long int)actuator.first
+                          << "\t" << actuator.second->model_name() << std::endl;
             }
         }
 
-        void position(std::vector<long long int> ids, std::vector<double> angles)
+        void position(const std::vector<long long int>& ids, const std::vector<double>& angles)
         {
             if (angles.size() == 1) {
                 _dyn_util.detect_servos();
@@ -76,25 +78,32 @@ namespace dynamixel {
             // TODO: manage limit cases
         }
 
-        // TODO: pass parameters by reference
-        void get_position(std::vector<long long int> ids)
+        void get_position(const std::vector<long long int>& ids)
         {
+            if (ids.size() == 0)
+                return;
+
             _dyn_util.detect_servos();
 
             std::vector<double> positions;
-
-            if (ids.size() > 0)
-                positions = _dyn_util.get_angles(ids);
-            else {
-                std::pair<std::vector<long long int>, std::vector<double>> angles;
-                angles = _dyn_util.get_angles();
-                ids = angles.first;
-                positions = angles.second;
-            }
+            positions = _dyn_util.get_angles(ids);
 
             std::cout << "Angular positions of the actuators:" << std::endl;
             for (unsigned i = 0; i < ids.size(); ++i) {
                 std::cout << ids[i] << "\t" << positions[i] << std::endl;
+            }
+        }
+
+        void get_position()
+        {
+            _dyn_util.detect_servos();
+
+            std::pair<std::vector<long long int>, std::vector<double>> angles;
+            angles = _dyn_util.get_angles();
+
+            std::cout << "Angular positions of the actuators:" << std::endl;
+            for (unsigned i = 0; i < angles.first.size(); ++i) {
+                std::cout << angles.first[i] << "\t" << angles.second[i] << std::endl;
             }
         }
     };

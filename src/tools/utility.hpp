@@ -22,61 +22,73 @@ namespace dynamixel {
         {
         }
 
+        /** Detect the connected servos on the bus.
+            These servos are then stored internally and you can use the other
+            methods to send them orders or get data about them.
+
+            Note that it will only find the servos connected to a given serial
+            interface and talking at a given baudrate. Also, they have to speak
+            the same protocol you use to talk to them.
+
+            @param scan_timeout (default 0.01) set a special listening timeout;
+                will only apply for this detection process
+        **/
         void detect_servos(double scan_timeout = 0.01)
         {
             double original_timeout = _serial_interface.recv_timeout();
             _serial_interface.set_recv_timeout(scan_timeout);
 
-            _servos = auto_detect<Protocol>(_serial_interface);
+            _servos = auto_detect_map<Protocol>(_serial_interface);
             _scanned = true;
 
             _serial_interface.set_recv_timeout(original_timeout);
-
-            // Build a map from the actuator id to the index in _servos
-            typename std::vector<std::shared_ptr<BaseServo<Protocol>>>::iterator servo_it;
-            for (servo_it = _servos.begin(); servo_it != _servos.end(); ++servo_it) {
-                _ids_map[(*servo_it)->id()] = servo_it - _servos.begin();
-            }
         }
 
-        /** Return the list of connected actuators.
+        /** Return the connected actuators.
             If we didn't do a scanning yet, does it with the default recieve timout.
 
-            @return vector of (std) shared pointers to BaseServo instances
+            @return map of ids and (std) shared pointers to BaseServo instances
         **/
-        const std::vector<std::shared_ptr<BaseServo<Protocol>>>& list()
+        const std::map<typename Protocol::address_t, std::shared_ptr<BaseServo<Protocol>>>&
+        servos() const
         {
             if (!_scanned)
-                detect_servos();
+                throw std::runtime_error("You need to scan for connected "
+                                         "actuators before trying to retrieve them");
 
             return _servos;
         }
 
-        const std::map<long long int, unsigned>& ids_map() const
-        {
-            if (!_scanned)
-                throw std::runtime_error("ids_map(): you need to scan for connected actuators before asking for the map of IDs");
+        /** Move one servo to a given angle
 
-            return _ids_map;
-        }
+            @param id ID of the servo
+            @param angle desired angle (rad)
 
-        const std::map<long long int, unsigned>& ids_map()
-        {
-            return _ids_map;
-        }
-
+            @throws out_of_range if the id is not among the detected servos
+            @throws dynamixel::errors::ServoLimitError if angle is out of the
+                servo's feasible positions
+        **/
         void set_angle(long long int id, double angle)
         {
-            // FIXME: check that the id indeed matches one of the detected servos
-            // FIXME: fix the exception thrown if we ask an angle beyond limits. Currently, the message speaks about ticks whereas we are talking in rad.
-            _serial_interface.send(_servos[id]->set_goal_position_angle(angle));
+            StatusPacket<Protocol> status;
+            _serial_interface.send(_servos.at(id)->set_goal_position_angle(angle));
+            _serial_interface.recv(status);
         }
 
-        void set_angle(std::vector<long long int> ids, double angle)
+        /** Move servos to a given angle
+            This version moves the selected servos all to the same angle
+
+            @param ids vector of ids for the servos to be moved
+            @param angle desired angle (rad)
+
+            @throws out_of_range if the id is not among the detected servos
+            @throws dynamixel::errors::ServoLimitError if angle is out of the
+                servo's feasible positions
+        **/
+        void set_angle(const std::vector<long long int>& ids, double angle)
         {
             for (auto id : ids) {
-                std::shared_ptr<BaseServo<Protocol>> servo = _servos[_ids_map.at(id)];
-                _serial_interface.send(servo->reg_goal_position_angle(angle));
+                _serial_interface.send(_servos.at(id)->reg_goal_position_angle(angle));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);
@@ -85,7 +97,19 @@ namespace dynamixel {
             _serial_interface.send(dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
         }
 
-        void set_angle(std::vector<long long int> ids, std::vector<double> angles)
+        /** Move servos to a given angle
+            This version moves each servo to its own angle
+
+            @param ids vector of ids for the servos to be moved
+            @param angles vector of angles, one for each actuator
+
+            @throws out_of_range if the id is not among the detected servos
+            @throws dynamixel::errors::ServoLimitError if angle is out of the
+                servo's feasible positions
+            @throws runtime_error if the ids and angles vectors have different lengths
+        **/
+        // FIXME: use proper exception classes
+        void set_angle(const std::vector<long long int>& ids, const std::vector<double>& angles)
         {
             if (ids.size() != angles.size())
                 throw std::runtime_error("set_position(vector, vector): the "
@@ -93,35 +117,41 @@ namespace dynamixel {
                                          "the same length");
 
             for (int i = 0; i < ids.size(); i++) {
-                std::shared_ptr<BaseServo<Protocol>> servo = _servos[_ids_map.at(ids[i])];
-                _serial_interface.send(servo->reg_goal_position_angle(angles[i]));
+                _serial_interface.send(_servos.at(ids[i])->reg_goal_position_angle(angles[i]));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);
             }
 
-            _serial_interface.send(dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+            if (ids.size() > 0)
+                _serial_interface.send(dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
         }
 
-        std::vector<double> get_angles(std::vector<long long int> ids)
-        {
-            std::vector<double> positions(ids.size());
+        /** Give current angular position (rad) of desired servos
 
-            for (unsigned i = 0; i < ids.size(); ++i) {
+            @param ids vector of ids for the servos to querry
+            @return vector of angles in the same order as the ids
+
+            @throws runtime_error if one actuator did not reply (within the timeout)
+        **/
+        std::vector<double> get_angles(const std::vector<long long int>& ids) const
+        {
+            std::vector<double> positions;
+
+            for (auto id : ids) {
                 StatusPacket<Protocol> status;
                 // request current position
-                _serial_interface.send(
-                    _servos[_ids_map.at(ids[i])]->get_present_position_angle());
+                _serial_interface.send(_servos.at(id)->get_present_position_angle());
                 _serial_interface.recv(status);
 
                 // parse response to get the position
                 if (status.valid())
-                    positions[i] = _servos[_ids_map.at(ids[i])]
-                                       ->parse_present_position_angle(status);
+                    positions.push_back(
+                        _servos.at(id)->parse_present_position_angle(status));
                 else {
                     std::stringstream message;
                     message << "Did not receive any data when reading "
-                            << ids[i] << "'s position";
+                            << id << "'s position";
                     throw std::runtime_error(message.str());
                 }
             }
@@ -129,7 +159,14 @@ namespace dynamixel {
             return positions;
         }
 
-        std::pair<std::vector<long long int>, std::vector<double>> get_angles()
+        /** Give current angular position (rad) of all connected servos
+
+            @return vector of all angles of the servos that were detected beforehand
+
+            @throws runtime_error if one of the detected actuator did not reply
+                (within the timeout)
+        **/
+        std::pair<std::vector<long long int>, std::vector<double>> get_angles() const
         {
             std::vector<double> positions;
             std::vector<long long int> ids;
@@ -138,18 +175,18 @@ namespace dynamixel {
                 StatusPacket<Protocol> status;
                 // request current position
                 _serial_interface.send(
-                    servo->get_present_position_angle());
+                    servo.second->get_present_position_angle());
                 _serial_interface.recv(status);
 
                 // parse response to get the position
                 if (status.valid()) {
-                    positions.push_back(servo->parse_present_position_angle(status));
-                    ids.push_back(servo->id());
+                    positions.push_back(servo.second->parse_present_position_angle(status));
+                    ids.push_back(servo.first);
                 }
                 else {
                     std::stringstream message;
                     message << "Did not receive any data when reading "
-                            << servo->id() << "'s position";
+                            << servo.first << "'s position";
                     throw std::runtime_error(message.str());
                 }
             }
@@ -159,8 +196,7 @@ namespace dynamixel {
 
     private:
         Usb2Dynamixel _serial_interface;
-        std::vector<std::shared_ptr<BaseServo<Protocol>>> _servos;
-        std::map<long long int, unsigned> _ids_map;
+        std::map<typename Protocol::address_t, std::shared_ptr<BaseServo<Protocol>>> _servos;
         bool _scanned;
     };
 }

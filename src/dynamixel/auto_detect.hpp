@@ -2,6 +2,7 @@
 #define DYNAMIXEL_AUTO_DETECT_HPP_
 
 #include <memory>
+#include <map>
 
 #include "errors/error.hpp"
 #include "servos.hpp"
@@ -85,6 +86,50 @@ namespace dynamixel {
                         uint16_t model;
                         Protocol::unpack_data(status.parameters(), model);
                         res.push_back(get_servo(id, model));
+                    }
+                }
+            }
+            catch (const errors::Error&) {
+                continue;
+            }
+        }
+
+        return res;
+    }
+
+    /** Auto-detect all connected actuators using a given protocol.
+
+        This function does the same as auto_detect but instead of returning a
+        vector, it gives a map from ID to object.
+
+        @see auto_detect
+
+        @param controller object handling the USB to dynamixel interface, instance
+            of the dynamixel::controllers::Usb2Dynamixel class
+        @return vector of actuators
+    **/
+    template <typename Protocol, typename Controller>
+    inline std::map<typename Protocol::address_t, std::shared_ptr<servos::BaseServo<Protocol>>>
+    auto_detect_map(const Controller& controller)
+    {
+        // vector of actuators returned by this function
+        std::map<typename Protocol::address_t, std::shared_ptr<servos::BaseServo<Protocol>>>
+            res;
+
+        // search through each possible device ID
+        for (typename Protocol::address_t id = 0; id < Protocol::broadcast_id; id++) {
+            try {
+                // Send a ping. If it is answered, read the actuator model and
+                // instanciate a class of the correct type
+                controller.send(instructions::Ping<Protocol>(id));
+                StatusPacket<Protocol> status;
+                if (controller.recv(status) && status.id() == id) {
+                    // get actuator model
+                    controller.send(instructions::Read<Protocol>(id, 0, 2));
+                    if (controller.recv(status)) {
+                        uint16_t model;
+                        Protocol::unpack_data(status.parameters(), model);
+                        res[id] = (get_servo(id, model));
                     }
                 }
             }
