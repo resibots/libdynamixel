@@ -33,9 +33,9 @@ namespace dynamixel {
             }
             else if ("get-position" == command) {
                 if (vm.count("id"))
-                    get_position(vm["id"].as<std::vector<long long int>>());
+                    print_position(vm["id"].as<std::vector<long long int>>());
                 else {
-                    get_position();
+                    print_position();
                 }
             }
         }
@@ -78,7 +78,7 @@ namespace dynamixel {
             // TODO: manage limit cases
         }
 
-        void get_position(const std::vector<long long int>& ids)
+        void print_position(const std::vector<long long int>& ids)
         {
             if (ids.size() == 0)
                 return;
@@ -94,7 +94,7 @@ namespace dynamixel {
             }
         }
 
-        void get_position()
+        void print_position()
         {
             _dyn_util.detect_servos();
 
