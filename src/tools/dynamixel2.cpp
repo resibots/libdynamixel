@@ -109,9 +109,48 @@ namespace dynamixel {
     };
 }
 
-//void parse_input TODO: put input parsing in a dedicated function
+void display_help(const std::string program_name,
+    const po::options_description& desc, const po::variables_map& vm)
+{
+    std::map<std::string, std::string> command_help;
+    // clang-format off
+    command_help["list"] =
+        "List available actuators. Does not take any optional parameter";
+    command_help["position"] =
+        "Command one or more actuator to go to (a) given position(s).\n\n"
+        "As many angles as servo ids are provided\n"
+        "\tEach angle is set for the corresponding servo\n"
+        "\tEXAMPLE: "+program_name+" position --id 1 5 --angle 1.254 4.189\n"
+        "\twill move actuator 1 to angle 1.254 rad, and 5 to 4.189 rad\n"
+        "\n"
+        "One angle for several ids\n"
+        "\tAll listed actuators are moved to the given angle\n"
+        "\tEXAMPLE: "+program_name+" position --id 1 51 24 5 --angle 3.457";
+    command_help["get-position"] =
+        "Retrieve current angular position of one or more servo"
+        "If given ids, it will ask to the selected servos for their angular "
+        "position. Otherwise, it will get it for all available servo.\n"
+        "EXAMPLES:\n"
+        "\t" + program_name + " get-position --id 1 54\n"
+        "\tGives the positions for servos 1 and 54\n"
+        "\t" + program_name + " get-position";
+    //clang-format on
 
-// TODO: show help message for each command if called with `--help command`
+    if (vm.count("command")) {
+        std::string command = vm["command"].as<std::string>();
+        std::string help_message;
+
+        if (command_help.count(command))
+            help_message = command_help[command];
+        else
+            help_message = "Unrecognized command: " + command;
+
+        std::cout << help_message << std::endl;
+    }
+    else {
+        std::cout << desc << std::endl;
+    }
+}
 
 int main(int argc, char** argv)
 {
@@ -135,7 +174,7 @@ int main(int argc, char** argv)
         ("id", po::value<std::vector<long long int>>()->multitoken(),
             "one or more ids of devices")
         ("angle", po::value<std::vector<double>>()->multitoken(),
-            "desired angle, used for the \"position\" command")
+            "desired angle (in radians), used for the \"position\" command")
         ("command", po::value<std::string>(), "command to be executed. "
             "Available commands are:\n"
             "  list     list available actuators"
@@ -155,7 +194,7 @@ int main(int argc, char** argv)
     po::notify(vm);
 
     if (vm.count("help")) {
-        std::cout << desc << std::endl;
+        display_help(argv[0], desc, vm);
         return 0;
     }
     if (vm.count("command"))
