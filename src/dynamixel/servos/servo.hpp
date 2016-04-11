@@ -191,6 +191,31 @@ namespace dynamixel {
                 return Model::parse_present_position_angle(this->_id, st);
             }
 
+            // TODO: read speed from dynamixel pros to check that we do get negative values too
+            static double parse_present_joint_speed(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st)
+            {
+                typename Servo<Model>::ct_t::present_speed_t speed;
+                Servo<Model>::protocol_t::unpack_data(st.parameters(), speed);
+
+                int8_t sign;
+                if (Servo<Model>::ct_t::speed_sign_bit) { // the highest bit is used for the sign
+                    sign = speed / Servo<Model>::ct_t::max_goal_speed == 0 ? 1 : -1;
+                    speed = speed % Servo<Model>::ct_t::max_goal_speed;
+                }
+                else {
+                    sign = 1;
+                }
+
+                double speed_rpm = sign * speed * Servo<Model>::ct_t::rpm_per_tick;
+                double speed_si = speed_rpm * 0.104720; // convertion ratio is 2*pi/60
+                return speed_si;
+            }
+
+            double parse_present_joint_speed(const StatusPacket<typename Servo<Model>::protocol_t>& st) const override
+            {
+                return Model::parse_present_joint_speed(this->_id, st);
+            }
+
             // Bulk operations. Only works if the models are known and they are all the same
             template <typename Id, typename Pos>
             static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)

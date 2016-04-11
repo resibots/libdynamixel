@@ -140,6 +140,11 @@ namespace dynamixel {
                 throw errors::Error("parse_present_position_angle not implemented in model");
             }
 
+            virtual double parse_present_joint_speed(const StatusPacket<protocol_t>& st) const
+            {
+                throw errors::Error("parse_present_joint_speed not implemented in model");
+            }
+
         protected:
             BaseServo() {}
         };

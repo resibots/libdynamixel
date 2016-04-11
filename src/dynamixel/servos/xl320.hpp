@@ -62,6 +62,10 @@ namespace dynamixel {
                 static const uint16_t max_goal_angle_deg = 330;
                 static const protocol_t::address_t moving_speed = 32;
                 typedef uint16_t moving_speed_t;
+                static const moving_speed_t min_goal_speed = 0;
+                static const moving_speed_t max_goal_speed = 1023;
+                static constexpr double rpm_per_tick = 0.111;
+                static const bool speed_sign_bit = true;
                 static const protocol_t::address_t goal_torque = 35;
                 typedef uint16_t goal_torque_t;
                 static const protocol_t::address_t present_position = 37;
