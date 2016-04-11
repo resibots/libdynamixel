@@ -83,6 +83,30 @@ namespace dynamixel {
             }
         }
 
+        /** Change the baudrate of one or all actuators.
+            If the target_id argument is set to the broadcast id for the current
+            protocol, the IDs of all connected servos will be changed.
+
+            @param target_id ID of a servo or the broadcast id
+            @param baudrate new baudrete of the targetted servo(s).
+        **/
+        void change_baudrate(const long long int& id, unsigned baudrate)
+        {
+            baudrate = get_baudrate_id<Protocol>(baudrate);
+
+            StatusPacket<Protocol> status;
+            if (Protocol::broadcast_id == id) {
+                for (auto servo : _servos) {
+                    _serial_interface.send(servo.second->set_baudrate(baudrate));
+                    _serial_interface.recv(status);
+                }
+            }
+            else {
+                _serial_interface.send(_servos.at(id)->set_baudrate(baudrate));
+                _serial_interface.recv(status);
+            }
+        }
+
         /** Move one servo to a given angle
 
             @param id ID of the servo

@@ -32,6 +32,15 @@ namespace dynamixel {
             else if ("change-id" == command) {
                 change_id(vm["id"].as<std::vector<long long int>>());
             }
+            else if ("change-baudrate" == command) {
+                // TODO: test for Dynamixel Pro actuators
+                if (vm.count("id"))
+                    change_baudrate(
+                        vm["id"].as<std::vector<long long int>>(),
+                        vm["new-baudrate"].as<unsigned int>());
+                else
+                    change_baudrate(vm["new-baudrate"].as<unsigned int>());
+            }
             else if ("position" == command) {
                 position(vm["id"].as<std::vector<long long int>>(),
                     vm["angle"].as<std::vector<double>>());
@@ -78,6 +87,20 @@ namespace dynamixel {
                 std::cerr << "Inproper number of parameters for change-id: expecting "
                           << "only one id or an even number of ids" << std::endl;
             }
+        }
+
+        void change_baudrate(const std::vector<long long int>& ids, unsigned int baudrate)
+        {
+            _dyn_util.detect_servos();
+
+            for (auto id : ids) {
+                _dyn_util.change_baudrate(id, baudrate);
+            }
+        }
+        void change_baudrate(unsigned int baudrate)
+        {
+            _dyn_util.detect_servos();
+            _dyn_util.change_baudrate(Protocol::broadcast_id, baudrate);
         }
 
         void position(const std::vector<long long int>& ids, const std::vector<double>& angles)
@@ -211,6 +234,8 @@ int main(int argc, char** argv)
             "one or more ids of devices")
         ("angle", po::value<std::vector<double>>()->multitoken(),
             "desired angle (in radians), used for the \"position\" command")
+        ("new-baudrate", po::value<unsigned>(),
+            "used by change-baudrate as the new baudrate value to be set")
         ("command", po::value<std::string>(), "command to be executed. Call "
             "with `--help COMMAND` to get help for one command. Available "
             "commands:\n"
