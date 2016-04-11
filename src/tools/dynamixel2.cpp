@@ -52,6 +52,9 @@ namespace dynamixel {
                     print_position();
                 }
             }
+            else {
+                std::cout << "Unrecognized command." << std::endl;
+            }
         }
 
     private:
