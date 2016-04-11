@@ -87,7 +87,7 @@ namespace dynamixel {
                 static const protocol_t::address_t present_position = 611;
                 typedef int32_t present_position_t;
                 static const protocol_t::address_t present_speed = 615;
-                typedef uint32_t present_speed_t;
+                typedef int32_t present_speed_t;
                 static const protocol_t::address_t current = 621;
                 typedef uint16_t current_t;
                 static const protocol_t::address_t present_voltage = 623;
