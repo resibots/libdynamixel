@@ -18,7 +18,8 @@ namespace dynamixel {
     template <class Protocol>
     class Utility {
     public:
-        Utility(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1) : _serial_interface(name, baudrate, recv_timeout), _scanned(false)
+        Utility(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
+            : _serial_interface(name, baudrate, recv_timeout), _scanned(false)
         {
         }
 
@@ -45,7 +46,8 @@ namespace dynamixel {
         }
 
         /** Return the connected actuators.
-            If we didn't do a scanning yet, does it with the default recieve timout.
+            If we didn't do a scanning yet, does it with the default recieve
+            timeout.
 
             @return map of ids and (std) shared pointers to BaseServo instances
         **/
@@ -94,7 +96,8 @@ namespace dynamixel {
                 _serial_interface.recv(status);
             }
 
-            _serial_interface.send(dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+            _serial_interface.send(
+                dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
         }
 
         /** Move servos to a given angle
@@ -106,10 +109,13 @@ namespace dynamixel {
             @throws out_of_range if the id is not among the detected servos
             @throws dynamixel::errors::ServoLimitError if angle is out of the
                 servo's feasible positions
-            @throws runtime_error if the ids and angles vectors have different lengths
+            @throws runtime_error if the ids and angles vectors have different
+                lengths
         **/
         // FIXME: use proper exception classes
-        void set_angle(const std::vector<long long int>& ids, const std::vector<double>& angles)
+        void set_angle(
+            const std::vector<long long int>& ids,
+            const std::vector<double>& angles)
         {
             if (ids.size() != angles.size())
                 throw std::runtime_error("set_position(vector, vector): the "
@@ -117,14 +123,16 @@ namespace dynamixel {
                                          "the same length");
 
             for (int i = 0; i < ids.size(); i++) {
-                _serial_interface.send(_servos.at(ids[i])->reg_goal_position_angle(angles[i]));
+                _serial_interface.send(
+                    _servos.at(ids[i])->reg_goal_position_angle(angles[i]));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);
             }
 
             if (ids.size() > 0)
-                _serial_interface.send(dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+                _serial_interface.send(
+                    dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
         }
 
         /** Give current angular position (rad) of desired servos
@@ -180,7 +188,8 @@ namespace dynamixel {
 
                 // parse response to get the position
                 if (status.valid()) {
-                    positions.push_back(servo.second->parse_present_position_angle(status));
+                    positions.push_back(
+                        servo.second->parse_present_position_angle(status));
                     ids.push_back(servo.first);
                 }
                 else {
@@ -196,7 +205,8 @@ namespace dynamixel {
 
     private:
         Usb2Dynamixel _serial_interface;
-        std::map<typename Protocol::address_t, std::shared_ptr<BaseServo<Protocol>>> _servos;
+        std::map<typename Protocol::address_t, std::shared_ptr<BaseServo<Protocol>>>
+            _servos;
         bool _scanned;
     };
 }

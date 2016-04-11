@@ -16,7 +16,8 @@ namespace dynamixel {
     template <class Protocol>
     class CommandLineUtility {
     public:
-        CommandLineUtility(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1) : _dyn_util(name, baudrate, recv_timeout)
+        CommandLineUtility(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
+            : _dyn_util(name, baudrate, recv_timeout)
         {
         }
 
@@ -75,7 +76,6 @@ namespace dynamixel {
                           << "- as many angles as there are ids, to give target "
                              "angle for each servo"
                           << std::endl;
-            // TODO: manage limit cases
         }
 
         void print_position(const std::vector<long long int>& ids)
@@ -136,6 +136,8 @@ void display_help(const std::string program_name,
         "\t" + program_name + " get-position";
     //clang-format on
 
+    // Write the command specific help message if a command is specified and it
+    // is one of the supported commands
     if (vm.count("command")) {
         std::string command = vm["command"].as<std::string>();
         std::string help_message;
