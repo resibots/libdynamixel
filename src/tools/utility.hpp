@@ -61,6 +61,28 @@ namespace dynamixel {
             return _servos;
         }
 
+        /** Change the ID of one or all actuators.
+            If the target_id argument is set to the broadcast id for the current
+            protocol, the IDs of all connected servos will be changed.
+
+            @param id former ID of a servo
+            @param new_id new ID of the servo responding to messages sent to target_id.
+        **/
+        void change_id(const long long int& id, const long long int& new_id)
+        {
+            StatusPacket<Protocol> status;
+            if (Protocol::broadcast_id == id) {
+                for (auto servo : _servos) {
+                    _serial_interface.send(servo.second->set_id(new_id));
+                    _serial_interface.recv(status);
+                }
+            }
+            else {
+                _serial_interface.send(_servos.at(id)->set_id(new_id));
+                _serial_interface.recv(status);
+            }
+        }
+
         /** Move one servo to a given angle
 
             @param id ID of the servo
@@ -70,7 +92,7 @@ namespace dynamixel {
             @throws dynamixel::errors::ServoLimitError if angle is out of the
                 servo's feasible positions
         **/
-        void set_angle(long long int id, double angle)
+        void set_angle(const long long int& id, double angle)
         {
             StatusPacket<Protocol> status;
             _serial_interface.send(_servos.at(id)->set_goal_position_angle(angle));

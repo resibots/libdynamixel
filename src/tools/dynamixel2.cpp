@@ -25,8 +25,12 @@ namespace dynamixel {
         {
             std::string command = vm["command"].as<std::string>();
 
+            // TODO: check that the required parameters are given; otherwise display help
             if ("list" == command) {
                 list();
+            }
+            else if ("change-id" == command) {
+                change_id(vm["id"].as<std::vector<long long int>>());
             }
             else if ("position" == command) {
                 position(vm["id"].as<std::vector<long long int>>(),
@@ -55,6 +59,24 @@ namespace dynamixel {
             for (auto actuator : actuators) {
                 std::cout << (long long int)actuator.first
                           << "\t" << actuator.second->model_name() << std::endl;
+            }
+        }
+
+        void change_id(const std::vector<long long int>& ids)
+        {
+            _dyn_util.detect_servos();
+
+            if (0 == ids.size() % 2) {
+                for (unsigned i = 0; i + 1 < ids.size(); i += 2) {
+                    _dyn_util.change_id(ids.at(i), ids.at(i + 1));
+                }
+            }
+            else if (1 == ids.size()) {
+                _dyn_util.change_id(Protocol::broadcast_id, ids.at(0));
+            }
+            else {
+                std::cerr << "Inproper number of parameters for change-id: expecting "
+                          << "only one id or an even number of ids" << std::endl;
             }
         }
 
@@ -116,6 +138,18 @@ void display_help(const std::string program_name,
     // clang-format off
     command_help["list"] =
         "List available actuators. Does not take any optional parameter";
+    command_help["change-id"] =
+        "Change the ID of one or more device(s). Requires the parameter --id.\n\n"
+        "Set one ID for all connected servos\n"
+        "Give the desired ID as single parmeter to --id.\n"
+        "EXAMPLE: "+program_name+" change-id --id 54\n"
+        "\tsets the ID 54 to all connected servos\n"
+        "\n"
+        "Set IDs for one or more targetted actuators\n"
+        "To do so, write pairs of IDs, the first item of each pair being the "
+        "original ID and the second item being the new ID.\n"
+        "EXAMPLE: "+program_name+" change-id --id 1 2 7 54\n"
+        "\tsets ID 2 to servo 1 and ID 54 to servo 7";
     command_help["position"] =
         "Command one or more actuator to go to (a) given position(s).\n\n"
         "As many angles as servo ids are provided\n"
@@ -177,11 +211,13 @@ int main(int argc, char** argv)
             "one or more ids of devices")
         ("angle", po::value<std::vector<double>>()->multitoken(),
             "desired angle (in radians), used for the \"position\" command")
-        ("command", po::value<std::string>(), "command to be executed. "
-            "Available commands are:\n"
-            "  list     list available actuators"
-            "  position command one or more actuator to go to (a) given position(s)"
-            "  get-position retrieve current angular position of one or more servo");
+        ("command", po::value<std::string>(), "command to be executed. Call "
+            "with `--help COMMAND` to get help for one command. Available "
+            "commands:\n"
+            "  list\n"
+            "  position\n"
+            "  get-position\n"
+            "  change-id");
     // clang-format on
 
     po::positional_options_description pos_desc;
