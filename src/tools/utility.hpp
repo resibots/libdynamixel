@@ -249,6 +249,38 @@ namespace dynamixel {
             return std::make_pair(ids, positions);
         }
 
+        /** Enable (or disable) an actuator.
+            By default, it will enable the actuator, unless one gives the `enable`
+            argument with value false. Here, enabling an acuator means that it
+            will enable its position control or speed output.
+
+            If the broadcast ID is used, it will scan through the servos and
+            send them all the same instruction.
+
+            Note: requires that detect_servos be run before
+
+            @param id ID of a servo or Protocol::broadcast_id to select all
+                connected servos
+            @param enable whether the actuator should be enabled; if set to false
+                it will be disabled
+        **/
+        void torque_enable(long long int id, bool enable = true)
+        {
+            StatusPacket<Protocol> status;
+            if (Protocol::broadcast_id == id) {
+                for (auto servo : _servos) {
+                    _serial_interface.send(
+                        servo.second->set_torque_enable((int)enable));
+                    _serial_interface.recv(status);
+                }
+            }
+            else {
+                _serial_interface.send(
+                    _servos.at(id)->set_torque_enable((int)enable));
+                _serial_interface.recv(status);
+            }
+        }
+
     private:
         Usb2Dynamixel _serial_interface;
         std::map<typename Protocol::address_t, std::shared_ptr<BaseServo<Protocol>>>

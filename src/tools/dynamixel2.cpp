@@ -52,6 +52,16 @@ namespace dynamixel {
                     print_position();
                 }
             }
+            else if ("torque-enable" == command) {
+                bool enable = vm["enable"].as<bool>();
+
+                if (vm.count("id"))
+                    torque_enable(
+                        vm["id"].as<std::vector<long long int>>(),
+                        enable);
+                else
+                    torque_enable(enable);
+            }
             else {
                 std::cout << "Unrecognized command." << std::endl;
             }
@@ -154,6 +164,21 @@ namespace dynamixel {
                 std::cout << angles.first[i] << "\t" << angles.second[i] << std::endl;
             }
         }
+
+        void torque_enable(const std::vector<long long int>& ids, bool enable = true)
+        {
+            _dyn_util.detect_servos();
+
+            for (auto id : ids) {
+                _dyn_util.torque_enable(id, enable);
+            }
+        }
+
+        void torque_enable(bool enable = true)
+        {
+            _dyn_util.detect_servos();
+            _dyn_util.torque_enable(Protocol::broadcast_id, enable);
+        }
     };
 }
 
@@ -233,19 +258,22 @@ int main(int argc, char** argv)
             "Example: -b 115200")
         ("timeout,t", po::value<float>(&timeout)->default_value(0.02),
             "timeout for the reception of data packets")
-        ("id", po::value<std::vector<long long int>>()->multitoken(),
-            "one or more ids of devices")
-        ("angle", po::value<std::vector<double>>()->multitoken(),
-            "desired angle (in radians), used for the \"position\" command")
-        ("new-baudrate", po::value<unsigned>(),
-            "used by change-baudrate as the new baudrate value to be set")
         ("command", po::value<std::string>(), "command to be executed. Call "
             "with `--help COMMAND` to get help for one command. Available "
             "commands:\n"
             "  list\n"
             "  position\n"
             "  get-position\n"
-            "  change-id");
+            "  change-id\n"
+            "  torque-enable")
+        ("id", po::value<std::vector<long long int>>()->multitoken(),
+            "one or more ids of devices")
+        ("angle", po::value<std::vector<double>>()->multitoken(),
+            "desired angle (in radians), used for the \"position\" command")
+        ("new-baudrate", po::value<unsigned>(),
+            "used by change-baudrate as the new baudrate value to be set")
+        ("enable", po::value<bool>(),
+            "enable (or disable) the selected servo(s)");
     // clang-format on
 
     po::positional_options_description pos_desc;
