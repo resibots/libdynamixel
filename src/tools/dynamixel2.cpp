@@ -193,28 +193,33 @@ void display_help(const std::string program_name,
         "Change the ID of one or more device(s). Requires the parameter --id.\n\n"
         "Set one ID for all connected servos\n"
         "Give the desired ID as single parmeter to --id.\n"
+        "\n"
         "EXAMPLE: "+program_name+" change-id --id 54\n"
         "\tsets the ID 54 to all connected servos\n"
         "\n"
         "Set IDs for one or more targetted actuators\n"
-        "To do so, write pairs of IDs, the first item of each pair being the "
+        "To do so, write pairs of IDs, the first item of each pair being the\n"
         "original ID and the second item being the new ID.\n"
+        "\n"
         "EXAMPLE: "+program_name+" change-id --id 1 2 7 54\n"
         "\tsets ID 2 to servo 1 and ID 54 to servo 7";
     command_help["position"] =
         "Command one or more actuator to go to (a) given position(s).\n\n"
-        "As many angles as servo ids are provided\n"
-        "\tEach angle is set for the corresponding servo\n"
+        "An angle for each given servo\n"
+        "\tEach angle is set for the corresponding servo. There must be the same\n"
+        "\tnumber of values for --id and --angle.\n"
+        "\n"
         "\tEXAMPLE: "+program_name+" position --id 1 5 --angle 1.254 4.189\n"
         "\twill move actuator 1 to angle 1.254 rad, and 5 to 4.189 rad\n"
         "\n"
         "One angle for several ids\n"
-        "\tAll listed actuators are moved to the given angle\n"
+        "\tAll listed actuators are moved to the given angle\n\n"
         "\tEXAMPLE: "+program_name+" position --id 1 51 24 5 --angle 3.457";
     command_help["get-position"] =
-        "Retrieve current angular position of one or more servo"
-        "If given ids, it will ask to the selected servos for their angular "
+        "Retrieve current angular position of one or more servo.\n"
+        "If given ids, it will ask to the selected servos for their angular\n"
         "position. Otherwise, it will get it for all available servo.\n"
+        "\n"
         "EXAMPLES:\n"
         "\t" + program_name + " get-position --id 1 54\n"
         "\tGives the positions for servos 1 and 54\n"
@@ -235,7 +240,18 @@ void display_help(const std::string program_name,
         std::cout << help_message << std::endl;
     }
     else {
-        std::cout << desc << std::endl;
+        std::cout << "Usage: " + program_name + " COMMAND [options]\n\n"
+            << "Available commands:\n"
+            "  list\n"
+            "  position\n"
+            "  get-position\n"
+            "  change-id\n"
+            "  change-baudrate\n"
+            "  torque-enable\n"
+            "Use `"+program_name+" --help COMMAND` to get help for one "
+            "command."
+            << "\n\n"
+            << desc;
     }
 }
 
@@ -249,25 +265,16 @@ int main(int argc, char** argv)
     po::options_description desc("Allowed options");
     // clang-format off
     desc.add_options()
-        ("help,h", "produce help message")
+        ("help,h", "produce help message, also for each command")
         ("port,p", po::value<std::string>()->default_value("/dev/ttyUSB0"),
             "path to the USB to dynamixel interface.\n"
-            "Example: --port /dev/ttyACM5")
+            "EXAMPLE: --port /dev/ttyACM5")
         ("baudrate,b", po::value<unsigned>()->default_value(1000000),
             "baud rate for the communication\n"
-            "Example: -b 115200")
+            "EXAMPLE: -b 115200")
         ("timeout,t", po::value<float>(&timeout)->default_value(0.02),
             "timeout for the reception of data packets")
-        ("command", po::value<std::string>(), "command to be executed. Call "
-            "with `--help COMMAND` to get help for one command. Available "
-            "commands:\n"
-            "  list\n"
-            "  position\n"
-            "  get-position\n"
-            "  change-id\n"
-            "  change-baudrate\n"
-            "  torque-enable")
-        ("id", po::value<std::vector<long long int>>()->multitoken(),
+        ("id", po::value<std::vector<id_t>>()->multitoken(),
             "one or more ids of devices")
         ("angle", po::value<std::vector<double>>()->multitoken(),
             "desired angle (in radians), used for the \"position\" command")
@@ -277,11 +284,20 @@ int main(int argc, char** argv)
             "enable (or disable) the selected servo(s)");
     // clang-format on
 
+    po::options_description hidden("Hidden options");
+    // clang-format off
+    hidden.add_options()
+        ("command", po::value<std::string>(), "command executed");
+    // clang-format on
+
+    po::options_description cmdline_options;
+    cmdline_options.add(desc).add(hidden);
+
     po::positional_options_description pos_desc;
     pos_desc.add("command", 1);
 
     po::command_line_parser parser{argc, argv};
-    parser.options(desc).positional(pos_desc);
+    parser.options(cmdline_options).positional(pos_desc);
     po::parsed_options parsed_options = parser.run();
 
     po::variables_map vm;
@@ -295,8 +311,7 @@ int main(int argc, char** argv)
     if (vm.count("command"))
         command = vm["command"].as<std::string>();
     else {
-        std::cerr << "No command given to the software!" << std::endl;
-        std::cout << desc << std::endl;
+        display_help(argv[0], desc, vm);
         return 1;
     }
     if (vm.count("port"))
