@@ -265,6 +265,7 @@ int main(int argc, char** argv)
             "  position\n"
             "  get-position\n"
             "  change-id\n"
+            "  change-baudrate\n"
             "  torque-enable")
         ("id", po::value<std::vector<long long int>>()->multitoken(),
             "one or more ids of devices")
