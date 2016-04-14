@@ -189,22 +189,10 @@ void display_help(const std::string program_name,
     // clang-format off
     command_help["list"] =
         "List available actuators. Does not take any optional parameter";
-    command_help["change-id"] =
-        "Change the ID of one or more device(s). Requires the parameter --id.\n\n"
-        "Set one ID for all connected servos\n"
-        "Give the desired ID as single parmeter to --id.\n"
-        "\n"
-        "EXAMPLE: "+program_name+" change-id --id 54\n"
-        "\tsets the ID 54 to all connected servos\n"
-        "\n"
-        "Set IDs for one or more targetted actuators\n"
-        "To do so, write pairs of IDs, the first item of each pair being the\n"
-        "original ID and the second item being the new ID.\n"
-        "\n"
-        "EXAMPLE: "+program_name+" change-id --id 1 2 7 54\n"
-        "\tsets ID 2 to servo 1 and ID 54 to servo 7";
     command_help["position"] =
-        "Command one or more actuator to go to (a) given position(s).\n\n"
+        "Command one or more actuator to go to (a) given position(s). The angles\n"
+        "are in radian.\n"
+        "\n"
         "An angle for each given servo\n"
         "\tEach angle is set for the corresponding servo. There must be the same\n"
         "\tnumber of values for --id and --angle.\n"
@@ -216,14 +204,63 @@ void display_help(const std::string program_name,
         "\tAll listed actuators are moved to the given angle\n\n"
         "\tEXAMPLE: "+program_name+" position --id 1 51 24 5 --angle 3.457";
     command_help["get-position"] =
-        "Retrieve current angular position of one or more servo.\n"
+        "Retrieve current angular position of one or more servo, in radian.\n"
         "If given ids, it will ask to the selected servos for their angular\n"
         "position. Otherwise, it will get it for all available servo.\n"
         "\n"
         "EXAMPLES:\n"
         "\t" + program_name + " get-position --id 1 54\n"
-        "\tGives the positions for servos 1 and 54\n"
-        "\t" + program_name + " get-position";
+        "\tgives the positions for servos 1 and 54\n"
+        "\n"
+        "\t" + program_name + " get-position\n"
+        "\tgives the angular position of each connected servo";
+    command_help["change-id"] =
+        "Change the ID of one or more servo.\n"
+        "\n"
+        "For all connected servos\n"
+        "\tIf only one ID is given, all connected servo will get this new ID. It\n"
+        "\tshould only be used if a single servo is connected.\n"
+        "\n"
+        "\tEXAMPLE: "+program_name+" change-id --id 54\n"
+        "\tsets the ID 54 to all connected servos\n"
+        "\n"
+        "For specified actuators\n"
+        "\tRequires pairs of IDs, the first item of each pair being the original\n"
+        "\tID and the second item being the new ID.\n"
+        "\n"
+        "\tEXAMPLES:\n"
+        "\t"+program_name+" change-id --id 5 25\n"
+        "\tset the new ID 25 to actuator 5\n"
+        "\n"
+        "\t"+program_name+" change-id --id 6 5 7 8 9 4\n"
+        "\tdo the following changes in IDs: 6 becomes 5, 7 becomes 8, 9 becomes 4";
+    command_help["change-baudrate"] =
+        "Tell one or more servos to talk at a given baudrate.\n"
+        "For this command to work, like any other one, it has to be sent using\n"
+        "the current baudrate of the servo.\n"
+        "\n"
+        "For all connected servos\n"
+        "\tAll connected servo will talk in the new baudrate.\n"
+        "\n"
+        "\tEXAMPLE: "+program_name+" change-baudrate -b 57600\n"
+        "\t\t--new-baudrate 1000000\n"
+        "\tmake all servos that currently use 57600 baudrate change to 1000000\n"
+        "\n"
+        "For specified actuators\n"
+        "\tIf you give some IDs, ony these ones will be affected\n"
+        "\n"
+        "\tEXAMPLE: "+program_name+" change-baudrate -b 57600 --id 5 25\n"
+        "\t\t--new-baudrate 1000000";
+    command_help["torque-enable"] =
+        "Enable or disable the torque on servo(s).\n"
+        "\n"
+        "EXAMPLES:\n"
+        "\t"+program_name+" torque-enable --enable 1\n"
+        "\twill affect all connected servos, enabling their output; using 0\n"
+        "\tinstead of 1 would have disabled them\n"
+        "\n"
+        "\t"+program_name+" torque-enable --id 1 11 21 --enable 0\n"
+        "\twill disable only servos 1, 11 and 21";
     //clang-format on
 
     // Write the command specific help message if a command is specified and it
