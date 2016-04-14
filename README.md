@@ -15,6 +15,8 @@ The build system for this library is Waf. Don't run away yet. It has the big adv
   is as easy as `./waf`
 3. installation  
   is simply done with `./waf install`, with the required rights (might need sudo if you install globally)
+4. setup the proper authorisation  
+  please ensure that you have the proper rights to access the serial interfaces. On GNU/Linux, you might have to add your user to the `dialout` group and log out.
 
 Using the utility
 =================
