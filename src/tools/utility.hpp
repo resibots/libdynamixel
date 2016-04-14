@@ -51,7 +51,7 @@ namespace dynamixel {
 
             @return map of ids and (std) shared pointers to BaseServo instances
         **/
-        const std::map<typename Protocol::address_t, std::shared_ptr<BaseServo<Protocol>>>&
+        const std::map<typename Protocol::id_t, std::shared_ptr<BaseServo<Protocol>>>&
         servos() const
         {
             if (!_scanned)
@@ -68,7 +68,7 @@ namespace dynamixel {
             @param id former ID of a servo
             @param new_id new ID of the servo responding to messages sent to target_id.
         **/
-        void change_id(const long long int& id, const long long int& new_id)
+        void change_id(typename Protocol::id_t id, const typename Protocol::id_t& new_id)
         {
             StatusPacket<Protocol> status;
             if (Protocol::broadcast_id == id) {
@@ -90,7 +90,7 @@ namespace dynamixel {
             @param target_id ID of a servo or the broadcast id
             @param baudrate new baudrete of the targetted servo(s).
         **/
-        void change_baudrate(const long long int& id, unsigned baudrate)
+        void change_baudrate(typename Protocol::id_t id, unsigned baudrate)
         {
             baudrate = get_baudrate_id<Protocol>(baudrate);
 
@@ -116,7 +116,7 @@ namespace dynamixel {
             @throws dynamixel::errors::ServoLimitError if angle is out of the
                 servo's feasible positions
         **/
-        void set_angle(const long long int& id, double angle)
+        void set_angle(typename Protocol::id_t id, double angle)
         {
             StatusPacket<Protocol> status;
             _serial_interface.send(_servos.at(id)->set_goal_position_angle(angle));
@@ -133,7 +133,7 @@ namespace dynamixel {
             @throws dynamixel::errors::ServoLimitError if angle is out of the
                 servo's feasible positions
         **/
-        void set_angle(const std::vector<long long int>& ids, double angle)
+        void set_angle(const std::vector<typename Protocol::id_t>& ids, double angle)
         {
             for (auto id : ids) {
                 _serial_interface.send(_servos.at(id)->reg_goal_position_angle(angle));
@@ -160,7 +160,7 @@ namespace dynamixel {
         **/
         // FIXME: use proper exception classes
         void set_angle(
-            const std::vector<long long int>& ids,
+            const std::vector<typename Protocol::id_t>& ids,
             const std::vector<double>& angles)
         {
             if (ids.size() != angles.size())
@@ -188,7 +188,7 @@ namespace dynamixel {
 
             @throws runtime_error if one actuator did not reply (within the timeout)
         **/
-        std::vector<double> get_angles(const std::vector<long long int>& ids) const
+        std::vector<double> get_angles(const std::vector<typename Protocol::id_t>& ids) const
         {
             std::vector<double> positions;
 
@@ -220,10 +220,11 @@ namespace dynamixel {
             @throws runtime_error if one of the detected actuator did not reply
                 (within the timeout)
         **/
-        std::pair<std::vector<long long int>, std::vector<double>> get_angles() const
+        std::pair<std::vector<typename Protocol::id_t>, std::vector<double>>
+        get_angles() const
         {
             std::vector<double> positions;
-            std::vector<long long int> ids;
+            std::vector<typename Protocol::id_t> ids;
 
             for (auto servo : _servos) {
                 StatusPacket<Protocol> status;
@@ -264,7 +265,7 @@ namespace dynamixel {
             @param enable whether the actuator should be enabled; if set to false
                 it will be disabled
         **/
-        void torque_enable(long long int id, bool enable = true)
+        void torque_enable(typename Protocol::id_t id, bool enable = true)
         {
             StatusPacket<Protocol> status;
             if (Protocol::broadcast_id == id) {

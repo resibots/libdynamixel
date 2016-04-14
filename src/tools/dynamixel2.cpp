@@ -30,24 +30,24 @@ namespace dynamixel {
                 list();
             }
             else if ("change-id" == command) {
-                change_id(vm["id"].as<std::vector<long long int>>());
+                change_id(vm["id"].as<std::vector<id_t>>());
             }
             else if ("change-baudrate" == command) {
                 // TODO: test for Dynamixel Pro actuators
                 if (vm.count("id"))
                     change_baudrate(
-                        vm["id"].as<std::vector<long long int>>(),
+                        vm["id"].as<std::vector<id_t>>(),
                         vm["new-baudrate"].as<unsigned int>());
                 else
                     change_baudrate(vm["new-baudrate"].as<unsigned int>());
             }
             else if ("position" == command) {
-                position(vm["id"].as<std::vector<long long int>>(),
+                position(vm["id"].as<std::vector<id_t>>(),
                     vm["angle"].as<std::vector<double>>());
             }
             else if ("get-position" == command) {
                 if (vm.count("id"))
-                    print_position(vm["id"].as<std::vector<long long int>>());
+                    print_position(vm["id"].as<std::vector<id_t>>());
                 else {
                     print_position();
                 }
@@ -57,7 +57,7 @@ namespace dynamixel {
 
                 if (vm.count("id"))
                     torque_enable(
-                        vm["id"].as<std::vector<long long int>>(),
+                        vm["id"].as<std::vector<id_t>>(),
                         enable);
                 else
                     torque_enable(enable);
@@ -66,6 +66,9 @@ namespace dynamixel {
                 std::cout << "Unrecognized command." << std::endl;
             }
         }
+
+    protected:
+        typedef typename Protocol::id_t id_t;
 
     private:
         Utility<Protocol> _dyn_util;
@@ -84,7 +87,7 @@ namespace dynamixel {
             }
         }
 
-        void change_id(const std::vector<long long int>& ids)
+        void change_id(const std::vector<id_t>& ids)
         {
             _dyn_util.detect_servos();
 
@@ -102,7 +105,7 @@ namespace dynamixel {
             }
         }
 
-        void change_baudrate(const std::vector<long long int>& ids, unsigned int baudrate)
+        void change_baudrate(const std::vector<id_t>& ids, unsigned int baudrate)
         {
             _dyn_util.detect_servos();
 
@@ -116,7 +119,7 @@ namespace dynamixel {
             _dyn_util.change_baudrate(Protocol::broadcast_id, baudrate);
         }
 
-        void position(const std::vector<long long int>& ids, const std::vector<double>& angles)
+        void position(const std::vector<id_t>& ids, const std::vector<double>& angles)
         {
             if (angles.size() == 1) {
                 _dyn_util.detect_servos();
@@ -136,7 +139,7 @@ namespace dynamixel {
                           << std::endl;
         }
 
-        void print_position(const std::vector<long long int>& ids)
+        void print_position(const std::vector<id_t>& ids)
         {
             if (ids.size() == 0)
                 return;
@@ -156,7 +159,7 @@ namespace dynamixel {
         {
             _dyn_util.detect_servos();
 
-            std::pair<std::vector<long long int>, std::vector<double>> angles;
+            std::pair<std::vector<id_t>, std::vector<double>> angles;
             angles = _dyn_util.get_angles();
 
             std::cout << "Angular positions of the actuators:" << std::endl;
@@ -165,7 +168,7 @@ namespace dynamixel {
             }
         }
 
-        void torque_enable(const std::vector<long long int>& ids, bool enable = true)
+        void torque_enable(const std::vector<id_t>& ids, bool enable = true)
         {
             _dyn_util.detect_servos();
 
@@ -294,6 +297,9 @@ void display_help(const std::string program_name,
 
 int main(int argc, char** argv)
 {
+    using Protocol = protocols::Protocol1;
+    typedef typename Protocol::id_t id_t;
+
     std::string port;
     int baudrate = 0, posix_baudrate = 0;
     float timeout;
@@ -359,8 +365,6 @@ int main(int argc, char** argv)
     }
 
     try {
-        using Protocol = protocols::Protocol1;
-
         std::cout << "Opening serial interface" << std::endl
                   << "\tport: " << port << std::endl
                   << "\tbaudrate: " << baudrate << std::endl;
