@@ -14,7 +14,7 @@ namespace dynamixel {
             CrcError(uint8_t id, uint8_t protocol, uint32_t expected, uint32_t received) : _id(id), _protocol(protocol), _expected(expected), _received(received)
             {
                 std::stringstream err_message;
-                err_message << "Status: checksum error while decoding packet with ID " << ((int32_t)id) << ": ";
+                err_message << "Status: checksum error while decoding packet with ID " << (int)id << ": ";
                 err_message << ": expected " << expected << ", received " << received;
                 this->_msg = err_message.str();
             }

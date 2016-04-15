@@ -14,7 +14,8 @@ namespace dynamixel {
             UnpackError(uint8_t protocol) : _protocol(protocol)
             {
                 std::stringstream err_message;
-                err_message << "Unpack: error while unpacking data in protocol: " << _protocol;
+                err_message << "Unpack: error while unpacking data in protocol: "
+                            << (int)_protocol;
                 this->_msg = err_message.str();
             }
 

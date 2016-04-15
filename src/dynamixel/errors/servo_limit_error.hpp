@@ -14,8 +14,10 @@ namespace dynamixel {
             ServoLimitError(uint8_t id, uint32_t min, uint32_t max, uint32_t value, std::string type = "position") : _id(id), _max(max), _min(min), _value(value)
             {
                 std::stringstream err_message;
-                err_message << "Servo: error while setting " << type << " in servo with ID " << _id << ": \n"
-                            << "Minimum: " << _min << ", Maximum: " << _max << ", Given: " << _value;
+                err_message << "Servo: error while setting " << type
+                            << " in servo with ID " << (int)_id << ": \n"
+                            << "Minimum: " << _min << ", Maximum: " << _max
+                            << ", Given: " << _value;
                 this->_msg = err_message.str();
             }
 
