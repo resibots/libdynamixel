@@ -283,7 +283,7 @@ namespace dynamixel {
 
     private:
         Usb2Dynamixel _serial_interface;
-        std::map<typename Protocol::address_t, std::shared_ptr<BaseServo<Protocol>>>
+        std::map<typename Protocol::id_t, std::shared_ptr<BaseServo<Protocol>>>
             _servos;
         bool _scanned;
     };

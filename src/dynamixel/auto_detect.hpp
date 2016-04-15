@@ -8,7 +8,7 @@
 #include "servos.hpp"
 
 namespace dynamixel {
-    inline std::shared_ptr<servos::BaseServo<protocols::Protocol1>> get_servo(protocols::Protocol1::address_t id, uint16_t model)
+    inline std::shared_ptr<servos::BaseServo<protocols::Protocol1>> get_servo(protocols::Protocol1::id_t id, uint16_t model, protocols::Protocol1::address_t selected_protocol)
     {
         switch (model) {
         case servos::Ax12::ct_t::model_number_value:
@@ -32,7 +32,7 @@ namespace dynamixel {
         }
     }
 
-    inline std::shared_ptr<servos::BaseServo<protocols::Protocol2>> get_servo(protocols::Protocol2::address_t id, uint16_t model)
+    inline std::shared_ptr<servos::BaseServo<protocols::Protocol2>> get_servo(protocols::Protocol2::id_t id, uint16_t model, protocols::Protocol2::address_t selected_protocol)
     {
         switch (model) {
         case servos::Xl320::ct_t::model_number_value:
@@ -72,8 +72,12 @@ namespace dynamixel {
         // vector of actuators returned by this function
         std::vector<std::shared_ptr<servos::BaseServo<Protocol>>> res;
 
+        // Dummy variable used only to differenciate between the tow version of
+        // get_servo (protocol 1 or 2)
+        typename Protocol::address_t selected_protocol = 0;
+
         // search through each possible device ID
-        for (typename Protocol::address_t id = 0; id < Protocol::broadcast_id; id++) {
+        for (typename Protocol::id_t id = 0; id < Protocol::broadcast_id; id++) {
             try {
                 // Send a ping. If it is answered, read the actuator model and
                 // instanciate a class of the correct type
@@ -85,7 +89,7 @@ namespace dynamixel {
                     if (controller.recv(status)) {
                         uint16_t model;
                         Protocol::unpack_data(status.parameters(), model);
-                        res.push_back(get_servo(id, model));
+                        res.push_back(get_servo(id, model, selected_protocol));
                     }
                 }
             }
@@ -109,15 +113,19 @@ namespace dynamixel {
         @return vector of actuators
     **/
     template <typename Protocol, typename Controller>
-    inline std::map<typename Protocol::address_t, std::shared_ptr<servos::BaseServo<Protocol>>>
+    inline std::map<typename Protocol::id_t, std::shared_ptr<servos::BaseServo<Protocol>>>
     auto_detect_map(const Controller& controller)
     {
         // vector of actuators returned by this function
-        std::map<typename Protocol::address_t, std::shared_ptr<servos::BaseServo<Protocol>>>
+        std::map<typename Protocol::id_t, std::shared_ptr<servos::BaseServo<Protocol>>>
             res;
 
+        // Dummy variable used only to differenciate between the tow version of
+        // get_servo (protocol 1 or 2)
+        typename Protocol::address_t selected_protocol = 0;
+
         // search through each possible device ID
-        for (typename Protocol::address_t id = 0; id < Protocol::broadcast_id; id++) {
+        for (typename Protocol::id_t id = 0; id < Protocol::broadcast_id; id++) {
             try {
                 // Send a ping. If it is answered, read the actuator model and
                 // instanciate a class of the correct type
@@ -129,7 +137,7 @@ namespace dynamixel {
                     if (controller.recv(status)) {
                         uint16_t model;
                         Protocol::unpack_data(status.parameters(), model);
-                        res[id] = (get_servo(id, model));
+                        res[id] = (get_servo(id, model, selected_protocol));
                     }
                 }
             }

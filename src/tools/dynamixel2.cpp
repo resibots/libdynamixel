@@ -73,7 +73,7 @@ namespace dynamixel {
         void list()
         {
             _dyn_util.detect_servos();
-            std::map<typename Protocol::address_t, std::shared_ptr<BaseServo<Protocol>>>
+            std::map<typename Protocol::id_t, std::shared_ptr<BaseServo<Protocol>>>
                 actuators = _dyn_util.servos();
 
             std::cout << "Connected devices (" << actuators.size() << ") :"
@@ -311,7 +311,7 @@ int main(int argc, char** argv)
             "EXAMPLE: -b 115200")
         ("timeout,t", po::value<float>(&timeout)->default_value(0.02),
             "timeout for the reception of data packets")
-        ("id", po::value<std::vector<id_t>>()->multitoken(),
+        ("id", po::value<std::vector<long long int>>()->multitoken(),
             "one or more ids of devices")
         ("angle", po::value<std::vector<double>>()->multitoken(),
             "desired angle (in radians), used for the \"position\" command")
