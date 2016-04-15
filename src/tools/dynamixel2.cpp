@@ -68,7 +68,7 @@ namespace dynamixel {
         }
 
     protected:
-        typedef typename Protocol::id_t id_t;
+        typedef typename Utility<Protocol>::id_t id_t;
 
     private:
         Utility<Protocol> _dyn_util;
@@ -298,7 +298,7 @@ void display_help(const std::string program_name,
 int main(int argc, char** argv)
 {
     using Protocol = protocols::Protocol1;
-    typedef typename Protocol::id_t id_t;
+    typedef Utility<Protocol>::id_t id_t;
 
     std::string port;
     int baudrate = 0, posix_baudrate = 0;
@@ -317,7 +317,7 @@ int main(int argc, char** argv)
             "EXAMPLE: -b 115200")
         ("timeout,t", po::value<float>(&timeout)->default_value(0.02),
             "timeout for the reception of data packets")
-        ("id", po::value<std::vector<long long int>>()->multitoken(),
+        ("id", po::value<std::vector<id_t>>()->multitoken(),
             "one or more ids of devices")
         ("angle", po::value<std::vector<double>>()->multitoken(),
             "desired angle (in radians), used for the \"position\" command")
