@@ -68,6 +68,59 @@ namespace dynamixel {
             return _servos;
         }
 
+        void write(typename Protocol::id_t id, typename Protocol::address_t address,
+            const std::vector<uint8_t>& data)
+        {
+            _serial_interface.send(
+                typename dynamixel::instructions::Write<Protocol>(id, address, data));
+            StatusPacket<Protocol> status;
+            _serial_interface.recv(status);
+        }
+
+        // TODO: try to return a value, instead of using a reference
+        template <typename T>
+        void read(typename Protocol::id_t id, typename Protocol::address_t address,
+            typename Protocol::length_t length, T& datum)
+        {
+            _serial_interface.send(
+                typename dynamixel::instructions::Read<Protocol>(id, address, length));
+            StatusPacket<Protocol> status;
+            _serial_interface.recv(status);
+
+            // unpack the data in the response and store it in data
+            Protocol::unpack_data(status.parameters(), datum);
+        }
+
+        template <typename T>
+        std::vector<std::pair<id_t, T>>
+        read(typename Protocol::address_t address,
+            typename Protocol::length_t length)
+        {
+            if (!_scanned)
+                throw std::runtime_error("Reading a field for all connected "
+                                         "servos requires that a scan be done "
+                                         "beforehand.");
+
+            std::vector<std::pair<id_t, T>> pairs;
+
+            for (auto servo : _servos) {
+                _serial_interface.send(
+                    typename dynamixel::instructions::Read<Protocol>(
+                        servo.second->id(),
+                        address,
+                        length));
+                StatusPacket<Protocol> status;
+                _serial_interface.recv(status);
+
+                // unpack the data in the response and store it
+                T datum;
+                Protocol::unpack_data(status.parameters(), datum);
+                pairs.push_back(std::make_pair(servo.second->id(), datum));
+            }
+
+            return pairs;
+        }
+
         /** Change the ID of one or all actuators.
             If the target_id argument is set to the broadcast id for the current
             protocol, the IDs of all connected servos will be changed.

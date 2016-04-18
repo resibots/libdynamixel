@@ -105,6 +105,18 @@ namespace dynamixel {
                 res = (((uint16_t)packet[1]) << 8) | ((uint16_t)packet[0]);
             }
 
+            static void unpack_data(const std::vector<uint8_t>& packet, uint32_t& res)
+            {
+                throw errors::Error("unpack_data for unsigned int (32 bits) not "
+                                    "implemented in Protocol1");
+            }
+
+            static void unpack_data(const std::vector<uint8_t>& packet, int32_t& res)
+            {
+                throw errors::Error("unpack_data for int (32 bits) not "
+                                    "implemented in Protocol1");
+            }
+
             /** Decodes the content of a status packet recieved from the servos
 
             This method is only used by the StatusPacket class, to make it generic

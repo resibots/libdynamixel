@@ -1,9 +1,12 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <algorithm>
 #include <dynamixel/dynamixel.hpp>
 #include <cmath>
 #include <boost/program_options.hpp>
+
+#include <stdexcept>
 
 #include "tools/utility.hpp"
 
@@ -28,6 +31,25 @@ namespace dynamixel {
             // TODO: check that the required parameters are given; otherwise display help
             if ("list" == command) {
                 list();
+            }
+            else if ("read" == command) {
+                if (!vm.count("size"))
+                    throw std::runtime_error("the --size option is needed to read data");
+                unsigned short size = vm["size"].as<unsigned short>();
+
+                if (!vm.count("address"))
+                    throw std::runtime_error("the --address option is needed to read data");
+                typename Protocol::address_t address = vm["address"].as<uint16_t>();
+
+                bool is_signed = vm.count("signed");
+
+                if (vm.count("id")) {
+                    std::vector<id_t> ids = vm["id"].as<std::vector<id_t>>();
+                    read(ids, address, size, is_signed);
+                }
+                else {
+                    read(address, size, is_signed);
+                }
             }
             else if ("change-id" == command) {
                 change_id(vm["id"].as<std::vector<id_t>>());
@@ -85,6 +107,83 @@ namespace dynamixel {
                 std::cout << (long long int)actuator.first
                           << "\t" << actuator.second->model_name() << std::endl;
             }
+        }
+
+        void write(id_t id, typename Protocol::address_t address,
+            const std::vector<uint8_t>& data)
+        {
+            _dyn_util.write(id, address, data);
+        }
+
+        void read(std::vector<id_t> ids, typename Protocol::address_t address,
+            unsigned short size, bool is_signed)
+        {
+            if (1 == size) { // one byte of data, unsigned
+                for (auto id : ids) {
+                    uint8_t data;
+                    _dyn_util.read(id, address, 1, data);
+                    std::cout << int(data) << std::endl;
+                }
+            }
+            else if (2 == size) { // two bytes of data, unsigned
+                for (auto id : ids) {
+                    uint16_t data;
+                    _dyn_util.read(id, address, 2, data);
+                    std::cout << data << std::endl;
+                }
+            }
+            else if (4 == size) { // four bytes of data, both unsigned and signed
+                if (is_signed) {
+                    for (auto id : ids) {
+                        uint32_t data = 0;
+                        _dyn_util.read(id, address, 4, data);
+                        std::cout << data << std::endl;
+                    }
+                }
+                else {
+                    for (auto id : ids) {
+                        int32_t data = 0;
+                        _dyn_util.read(id, address, 4, data);
+                        std::cout << data << std::endl;
+                    }
+                }
+            }
+            else {
+                std::cerr << "A valid size (1, 2, 4) for the data has to be specified"
+                          << std::endl;
+            }
+        }
+
+        void read(typename Protocol::address_t address, unsigned short size,
+            bool is_signed)
+        {
+            _dyn_util.detect_servos();
+
+            if (1 == size) { // one byte of data, unsigned
+                print_data(_dyn_util.template read<uint8_t>(address, 1));
+            }
+            else if (2 == size) { // two bytes of data, unsigned
+                print_data(_dyn_util.template read<uint16_t>(address, 2));
+            }
+            else if (4 == size) { // four bytes of data, both unsigned and signed
+                if (is_signed) {
+                    print_data(_dyn_util.template read<uint32_t>(address, 4));
+                }
+                else {
+                    print_data(_dyn_util.template read<int32_t>(address, 4));
+                }
+            }
+            else {
+                std::cerr << "A valid size (1, 2, 4) for the data has to be specified"
+                          << std::endl;
+            }
+        }
+
+        template <typename T>
+        void print_data(std::vector<std::pair<id_t, T>> pairs)
+        {
+            for (auto pair : pairs)
+                std::cout << pair.first << "\t" << (long long int)pair.second << "\n";
         }
 
         void change_id(const std::vector<id_t>& ids)
@@ -206,6 +305,12 @@ void display_help(const std::string program_name,
         "One angle for several ids\n"
         "\tAll listed actuators are moved to the given angle\n\n"
         "\tEXAMPLE: "+program_name+" position --id 1 51 24 5 --angle 3.457";
+    command_help["read"] =
+        "Read data in the memory of a servo.\n"
+        "Requires the --address and --size options.\n"
+        "\n";
+    command_help["write"] =
+        "";
     command_help["get-position"] =
         "Retrieve current angular position of one or more servo, in radian.\n"
         "If given ids, it will ask to the selected servos for their angular\n"
@@ -283,6 +388,8 @@ void display_help(const std::string program_name,
         std::cout << "Usage: " + program_name + " COMMAND [options]\n\n"
             << "Available commands:\n"
             "  list\n"
+            "  read\n"
+            "  write\n"
             "  position\n"
             "  get-position\n"
             "  change-id\n"
@@ -324,7 +431,14 @@ int main(int argc, char** argv)
         ("new-baudrate", po::value<unsigned>(),
             "used by change-baudrate as the new baudrate value to be set")
         ("enable", po::value<bool>(),
-            "enable (or disable) the selected servo(s)");
+            "enable (or disable) the selected servo(s)")
+        ("address,a", po::value<uint16_t>(),
+            "address at which to read or write data, in decimal notation")
+        ("size", po::value<unsigned short>(),
+            "number of bytes of data either read or written from a servo")
+        ("signed",
+            "when reading a field, whether it should be parsed as signed (only "
+            "for protocol 2)");
     // clang-format on
 
     po::options_description hidden("Hidden options");
