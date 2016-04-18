@@ -77,6 +77,18 @@ namespace dynamixel {
             _serial_interface.recv(status);
         }
 
+        /** Read a given number of bytes in a servo's memory and return them.
+
+            The method is templated by it's return type. The template parameter has to match the "lenght" parameter. Here are the admitted length values and corresponding types:
+            - 1: uint8_t
+            - 2: uint16_t
+            - 4: uint32_t or int32_t
+
+            @param id ID of the requested servo
+            @param address address to the first byte to read in the servo's memory
+            @param number of bytes to read
+            @return data retrieved from the servo
+        **/
         template <typename T>
         T read(typename Protocol::id_t id, typename Protocol::address_t address,
             typename Protocol::length_t length)
@@ -92,6 +104,19 @@ namespace dynamixel {
             return datum;
         }
 
+        /** Read a given number of bytes in all servo's memories and return them.
+            All connected servos are asked to return the data in it's memory.
+            Requires a prior detection of connected servos (@see detect_servos).
+
+            The method is templated by it's return type. The template parameter has to match the "lenght" parameter. Here are the admitted length values and corresponding types:
+            - 1: uint8_t
+            - 2: uint16_t
+            - 4: uint32_t or int32_t
+
+            @param address address to the first byte to read in the servo's memory
+            @param number of bytes to read
+            @return vector of pairs; each pair has an ID and a datum
+        **/
         template <typename T>
         std::vector<std::pair<id_t, T>>
         read(typename Protocol::address_t address,

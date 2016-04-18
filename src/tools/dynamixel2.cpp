@@ -307,8 +307,13 @@ void display_help(const std::string program_name,
         "\tEXAMPLE: "+program_name+" position --id 1 51 24 5 --angle 3.457";
     command_help["read"] =
         "Read data in the memory of a servo.\n"
-        "Requires the --address and --size options.\n"
-        "\n";
+        "Requires the --address and --size options. IDs can be providen, to\n"
+        "target specific servos. It also gives a much faster response.\n"
+        "\n"
+        "EXAMPLE: "+program_name+" read --address 36 --size 2 --id 5\n"
+        "\twill display the current position of actuator 2 in ticks (for\n"
+        "\tprotocol1). `size` is the number of bytes that are to be read. As the\n"
+        "\tcurrent position is stored in two bytes, we use `--size 2`.\n";
     command_help["write"] =
         "";
     command_help["get-position"] =
