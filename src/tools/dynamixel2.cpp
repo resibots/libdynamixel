@@ -85,7 +85,7 @@ namespace dynamixel {
                     torque_enable(enable);
             }
             else {
-                std::cout << "Unrecognized command." << std::endl;
+                std::cerr << "Unrecognized command." << std::endl;
             }
         }
 
