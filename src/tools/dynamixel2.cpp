@@ -29,8 +29,23 @@ namespace dynamixel {
             std::string command = vm["command"].as<std::string>();
 
             // TODO: check that the required parameters are given; otherwise display help
+            // TODO: test for Dynamixel Pro actuators
             if ("list" == command) {
                 list();
+            }
+            else if ("write" == command) {
+                long long int data = vm["value"].as<long long int>();
+                unsigned short size = vm["size"].as<unsigned short>();
+                typename Protocol::address_t address = vm["address"].as<uint16_t>();
+                bool is_signed = vm.count("signed");
+
+                if (vm.count("id")) {
+                    std::vector<id_t> ids = vm["id"].as<std::vector<id_t>>();
+                    write(ids, address, data, size, is_signed);
+                }
+                else {
+                    write(address, data, size, is_signed);
+                }
             }
             else if ("read" == command) {
                 if (!vm.count("size"))
@@ -55,7 +70,6 @@ namespace dynamixel {
                 change_id(vm["id"].as<std::vector<id_t>>());
             }
             else if ("change-baudrate" == command) {
-                // TODO: test for Dynamixel Pro actuators
                 if (vm.count("id"))
                     change_baudrate(
                         vm["id"].as<std::vector<id_t>>(),
@@ -109,10 +123,60 @@ namespace dynamixel {
             }
         }
 
-        void write(id_t id, typename Protocol::address_t address,
-            const std::vector<uint8_t>& data)
+        void write(std::vector<id_t> ids, typename Protocol::address_t address,
+            long long int data, unsigned short size, bool is_signed)
         {
-            _dyn_util.write(id, address, data);
+            if (1 == size) { // one byte of data, unsigned
+                for (auto id : ids) {
+                    _dyn_util.template write<uint8_t>(id, address, data);
+                }
+            }
+            else if (2 == size) { // two bytes of data, unsigned
+                for (auto id : ids) {
+                    _dyn_util.template write<uint16_t>(id, address, data);
+                }
+            }
+            else if (4 == size) { // four bytes of data, both unsigned and signed
+                if (is_signed) {
+                    for (auto id : ids) {
+                        _dyn_util.template write<uint32_t>(id, address, data);
+                    }
+                }
+                else {
+                    for (auto id : ids) {
+                        _dyn_util.template write<int32_t>(id, address, data);
+                    }
+                }
+            }
+            else {
+                std::cerr << "A valid size (1, 2, 4) for the data has to be specified"
+                          << std::endl;
+            }
+        }
+
+        void write(typename Protocol::address_t address,
+            long long int data, unsigned short size, bool is_signed)
+        {
+            _dyn_util.detect_servos();
+
+            if (1 == size) { // one byte of data, unsigned
+                _dyn_util.template write<uint8_t>(address, data);
+            }
+            else if (2 == size) { // two bytes of data, unsigned
+                _dyn_util.template write<uint16_t>(address, data);
+            }
+            else if (4 == size) { // four bytes of data, both unsigned and signed
+                if (is_signed) {
+                    _dyn_util.template write<uint32_t>(address, data);
+                }
+                else {
+                    _dyn_util.template write<int32_t>(address, data);
+                }
+            }
+            else {
+                std::cerr << "A valid size (1, 2, 4) for the data has to be specified"
+                          << std::endl;
+            }
         }
 
         void read(std::vector<id_t> ids, typename Protocol::address_t address,
@@ -313,9 +377,19 @@ void display_help(const std::string program_name,
         "EXAMPLE: "+program_name+" read --address 36 --size 2 --id 5\n"
         "\twill display the current position of actuator 2 in ticks (for\n"
         "\tprotocol1). `size` is the number of bytes that are to be read. As the\n"
-        "\tcurrent position is stored in two bytes, we use `--size 2`.\n";
+        "\tcurrent position is stored in two bytes, we use `--size 2`.";
     command_help["write"] =
-        "";
+        "Write some value in a servo's memory.\n"
+        "Requires the --address, --size and --value options. If IDs are also\n"
+        "provided, only the selected devices will be affected by the write.\n"
+        "\n"
+        "CAUTION: this command can have unwanted consequences, specifically if\n"
+        "\tyou don't specify IDs and/or if you change fields like the baudrate\n"
+        "\tor the device's ID.\n"
+        "\n"
+        "EXAMPLE: "+program_name+" write --address 30 --size 2 --value 25 --id 5\n"
+        "\twill write the value 25 in two bytes at address 30 of servo 5.`size`\n"
+        "\tis the number of bytes that are to be written.";
     command_help["get-position"] =
         "Retrieve current angular position of one or more servo, in radian.\n"
         "If given ids, it will ask to the selected servos for their angular\n"
@@ -436,9 +510,11 @@ int main(int argc, char** argv)
         ("new-baudrate", po::value<unsigned>(),
             "used by change-baudrate as the new baudrate value to be set")
         ("enable", po::value<bool>(),
-            "enable (or disable) the selected servo(s)")
+            "enable (1) or disable (0)) the selected servo(s)")
         ("address,a", po::value<uint16_t>(),
             "address at which to read or write data, in decimal notation")
+        ("value,d", po::value<long long int>(),
+            "the value to write when using the `write` command")
         ("size", po::value<unsigned short>(),
             "number of bytes of data either read or written from a servo")
         ("signed",

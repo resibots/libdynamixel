@@ -68,13 +68,39 @@ namespace dynamixel {
             return _servos;
         }
 
+        template <typename T>
         void write(typename Protocol::id_t id, typename Protocol::address_t address,
-            const std::vector<uint8_t>& data)
+            T data)
         {
             _serial_interface.send(
-                typename dynamixel::instructions::Write<Protocol>(id, address, data));
+                typename dynamixel::instructions::Write<Protocol>(
+                    id,
+                    address,
+                    Protocol::pack_data(data)));
             StatusPacket<Protocol> status;
             _serial_interface.recv(status);
+        }
+
+        template <typename T>
+        void write(typename Protocol::address_t address, T data)
+        {
+            if (!_scanned)
+                throw std::runtime_error("Reading a field for all connected "
+                                         "servos requires that a scan be done "
+                                         "beforehand.");
+
+            for (auto servo : _servos) {
+                _serial_interface.send(
+                    typename dynamixel::instructions::RegWrite<Protocol>(
+                        servo.second->id(),
+                        address,
+                        Protocol::pack_data(data)));
+                StatusPacket<Protocol> status;
+                _serial_interface.recv(status);
+            }
+
+            _serial_interface.send(
+                dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
         }
 
         /** Read a given number of bytes in a servo's memory and return them.
