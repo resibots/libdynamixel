@@ -77,18 +77,19 @@ namespace dynamixel {
             _serial_interface.recv(status);
         }
 
-        // TODO: try to return a value, instead of using a reference
         template <typename T>
-        void read(typename Protocol::id_t id, typename Protocol::address_t address,
-            typename Protocol::length_t length, T& datum)
+        T read(typename Protocol::id_t id, typename Protocol::address_t address,
+            typename Protocol::length_t length)
         {
             _serial_interface.send(
                 typename dynamixel::instructions::Read<Protocol>(id, address, length));
             StatusPacket<Protocol> status;
             _serial_interface.recv(status);
 
-            // unpack the data in the response and store it in data
+            // Unpack the data in the response and store it
+            T datum;
             Protocol::unpack_data(status.parameters(), datum);
+            return datum;
         }
 
         template <typename T>

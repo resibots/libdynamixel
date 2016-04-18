@@ -120,31 +120,31 @@ namespace dynamixel {
         {
             if (1 == size) { // one byte of data, unsigned
                 for (auto id : ids) {
-                    uint8_t data;
-                    _dyn_util.read(id, address, 1, data);
-                    std::cout << int(data) << std::endl;
+                    std::cout
+                        << _dyn_util.template read<uint8_t>(id, address, 1)
+                        << "\n";
                 }
             }
             else if (2 == size) { // two bytes of data, unsigned
                 for (auto id : ids) {
-                    uint16_t data;
-                    _dyn_util.read(id, address, 2, data);
-                    std::cout << data << std::endl;
+                    std::cout
+                        << _dyn_util.template read<uint16_t>(id, address, 2)
+                        << "\n";
                 }
             }
             else if (4 == size) { // four bytes of data, both unsigned and signed
                 if (is_signed) {
                     for (auto id : ids) {
-                        uint32_t data = 0;
-                        _dyn_util.read(id, address, 4, data);
-                        std::cout << data << std::endl;
+                        std::cout
+                            << _dyn_util.template read<uint32_t>(id, address, 4)
+                            << "\n";
                     }
                 }
                 else {
                     for (auto id : ids) {
-                        int32_t data = 0;
-                        _dyn_util.read(id, address, 4, data);
-                        std::cout << data << std::endl;
+                        std::cout
+                            << _dyn_util.template read<int32_t>(id, address, 4)
+                            << "\n";
                     }
                 }
             }
