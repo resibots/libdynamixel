@@ -437,7 +437,25 @@ void display_help(const std::string program_name,
         "\tIf you give some IDs, ony these ones will be affected\n"
         "\n"
         "\tEXAMPLE: "+program_name+" change-baudrate -b 57600 --id 5 25\n"
-        "\t\t--new-baudrate 1000000";
+        "\t\t--new-baudrate 1000000\n"
+        "\n"
+        "Allowed baudrates:\n"
+        "| baud     | Protocol 1 | Protocol 2 |\n"
+        "|----------|------------|------------|\n"
+        "| 9600     |     Y      |     Y      |\n"
+        "| 19200    |     Y      |     N      |\n"
+        "| 57600    |     Y      |     Y      |\n"
+        "| 115200   |     Y      |     Y      |\n"
+        "| 200000   |     Y      |     N      |\n"
+        "| 250000   |     Y      |     N      |\n"
+        "| 400000   |     Y      |     N      |\n"
+        "| 500000   |     Y      |     N      |\n"
+        "| 1000000  |     Y      |     Y      |\n"
+        "| 2000000  |     N      |     Y      |\n"
+        "| 3000000  |     N      |     Y      |\n"
+        "| 4000000  |     N      |     Y      |\n"
+        "| 4500000  |     N      |     Y      |\n"
+        "| 10500000 |     N      |     Y      |\n";
     command_help["torque-enable"] =
         "Enable or disable the torque on servo(s).\n"
         "\n"
@@ -500,7 +518,9 @@ int main(int argc, char** argv)
             "EXAMPLE: --port /dev/ttyACM5")
         ("baudrate,b", po::value<unsigned>()->default_value(1000000),
             "baud rate for the communication\n"
-            "EXAMPLE: -b 115200")
+            "EXAMPLE: -b 115200\n"
+            "See the help for the `change-baudrate` command for the accepted "
+            "values")
         ("timeout,t", po::value<float>(&timeout)->default_value(0.02),
             "timeout for the reception of data packets")
         ("id", po::value<std::vector<id_t>>()->multitoken(),
