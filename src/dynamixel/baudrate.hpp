@@ -58,7 +58,7 @@ namespace dynamixel {
         switch (baudrate) {
         case 9600:
             return 0;
-        case 57000:
+        case 57600:
             return 1;
         case 115200:
             return 2;
