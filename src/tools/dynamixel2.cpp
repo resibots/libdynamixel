@@ -88,8 +88,10 @@ namespace dynamixel {
                     print_position();
                 }
             }
-            else if ("torque-enable" == command) {
-                bool enable = vm["enable"].as<bool>();
+            else if ("torque-enable" == command || "relax" == command) {
+                // if the relax command is used, enable is false
+                // otherwise, take the value of parameter `enable`
+                bool enable = "relax" != command && vm["enable"].as<bool>();
 
                 if (vm.count("id"))
                     torque_enable(
@@ -466,6 +468,8 @@ void display_help(const std::string program_name,
         "\n"
         "\t"+program_name+" torque-enable --id 1 11 21 --enable 0\n"
         "\twill disable only servos 1, 11 and 21";
+    command_help["relax"] =
+        "Same as torque-enable with --enable set to 0.";
     //clang-format on
 
     // Write the command specific help message if a command is specified and it
@@ -492,6 +496,7 @@ void display_help(const std::string program_name,
             "  change-id\n"
             "  change-baudrate\n"
             "  torque-enable\n"
+            "  relax\n"
             "Use `"+program_name+" --help COMMAND` to get help for one "
             "command."
             << "\n\n"
