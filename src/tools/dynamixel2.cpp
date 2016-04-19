@@ -1,14 +1,17 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <algorithm>
-#include <dynamixel/dynamixel.hpp>
 #include <cmath>
+#include <algorithm>
+#include <chrono>
+#include <thread> // for a standard-compliant way to sleep
+
 #include <boost/program_options.hpp>
 
-#include <stdexcept>
+#include <dynamixel/dynamixel.hpp>
+#include <tools/utility.hpp>
 
-#include "tools/utility.hpp"
+#include <stdexcept>
 
 using namespace dynamixel;
 namespace po = boost::program_options;
@@ -99,6 +102,14 @@ namespace dynamixel {
                         enable);
                 else
                     torque_enable(enable);
+            }
+            else if ("oscillate" == command) {
+                oscillate(
+                    vm["angular_f"].as<float>(),
+                    vm["amplitude"].as<float>(),
+                    vm["offset"].as<float>(),
+                    vm["phase"].as<float>(),
+                    vm["duration"].as<float>());
             }
             else {
                 std::cerr << "Unrecognized command." << std::endl;
@@ -347,6 +358,46 @@ namespace dynamixel {
             _dyn_util.detect_servos();
             _dyn_util.torque_enable(Protocol::broadcast_id, enable);
         }
+
+        void oscillate(
+            float w,
+            float A,
+            float offset,
+            float Phi,
+            float duration = 10)
+        {
+            using namespace std::chrono;
+
+            _dyn_util.detect_servos();
+
+            steady_clock::time_point t1 = steady_clock::now();
+            long long int t = 0;
+
+            offset += M_PI;
+
+            while (
+                (t = duration_cast<milliseconds>(steady_clock::now() - t1).count())
+                < duration * 1000) {
+
+                double angle = A * sin(t / 1000.0 * w + Phi) + offset;
+                _dyn_util.set_angle(angle);
+                std::this_thread::sleep_for(milliseconds(10));
+            }
+
+            // move to the angle at t=0
+            double angle = A * sin(Phi) + offset;
+            _dyn_util.set_angle(angle);
+        }
+
+        // void oscillate(
+        //     std::vector<id_t> ids,
+        //     std::vector<float> w,
+        //     std::vector<float> A,
+        //     std::vector<float> offset,
+        //     std::vector<float> Phi,
+        //     float duration = 10)
+        // {
+        // }
     };
 }
 
@@ -469,7 +520,21 @@ void display_help(const std::string program_name,
         "\t"+program_name+" torque-enable --id 1 11 21 --enable 0\n"
         "\twill disable only servos 1, 11 and 21";
     command_help["relax"] =
-        "Same as torque-enable with --enable set to 0.";
+        "Same as `torque-enable --enable 0`";
+    command_help["oscillate"] =
+        "Actuate all servos with a sinusoid.\n"
+        "Useful options:\n"
+        "\t--angular_f\n"
+        "\t--amplitude\n"
+        "\t--offset\n"
+        "\t--phase\n"
+        "\t--duration\n"
+        "See the help message for more detail on the role and default value of\n"
+        "each of these options.\n"
+        "\n"
+        "EXAMPLE: "+program_name+" oscillate --duration 20\n"
+        "\twill make all connected servos turn during 20 seconds using the\n"
+        "\tdefault parameters for the sinusoid";
     //clang-format on
 
     // Write the command specific help message if a command is specified and it
@@ -497,6 +562,7 @@ void display_help(const std::string program_name,
             "  change-baudrate\n"
             "  torque-enable\n"
             "  relax\n"
+            "  oscillate\n"
             "Use `"+program_name+" --help COMMAND` to get help for one "
             "command."
             << "\n\n"
@@ -544,7 +610,17 @@ int main(int argc, char** argv)
             "number of bytes of data either read or written from a servo")
         ("signed",
             "when reading a field, whether it should be parsed as signed (only "
-            "for protocol 2)");
+            "for protocol 2)")
+        ("angular_f,w", po::value<float>()->default_value(2*M_PI),
+            "angular frequency used for the oscillate command (in rad/s)")
+        ("amplitude,A", po::value<float>()->default_value(1),
+            "peak amplitude of the movement performed by the oscillate command (in rad)")
+        ("offset,B", po::value<float>()->default_value(0),
+            "offset (in rad) of the angle in oscillate command")
+        ("phase,P", po::value<float>()->default_value(0),
+            "phase shift for the oscillate command")
+        ("duration,d", po::value<float>()->default_value(10.0),
+            "duration, in seconds of the oscillation (can be float)");
     // clang-format on
 
     po::options_description hidden("Hidden options");

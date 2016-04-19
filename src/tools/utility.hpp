@@ -259,6 +259,27 @@ namespace dynamixel {
         }
 
         /** Move servos to a given angle
+            This version moves all servos to the same angle
+
+            @param angle desired angle (rad)
+
+            @throws dynamixel::errors::ServoLimitError if angle is out of the
+                servo's feasible positions
+        **/
+        void set_angle(double angle)
+        {
+            for (auto servo : _servos) {
+                _serial_interface.send(servo.second->reg_goal_position_angle(angle));
+
+                StatusPacket<Protocol> status;
+                _serial_interface.recv(status);
+            }
+
+            _serial_interface.send(
+                dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+        }
+
+        /** Move servos to a given angle
             This version moves each servo to its own angle
 
             @param ids vector of ids for the servos to be moved
