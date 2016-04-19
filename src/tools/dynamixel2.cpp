@@ -583,7 +583,7 @@ int main(int argc, char** argv)
     po::options_description desc("Allowed options");
     // clang-format off
     desc.add_options()
-        ("help,h", "produce help message, also for each command")
+        ("help,h", "produce help message")
         ("port,p", po::value<std::string>()->default_value("/dev/ttyUSB0"),
             "path to the USB to dynamixel interface.\n"
             "EXAMPLE: --port /dev/ttyACM5")
@@ -595,18 +595,18 @@ int main(int argc, char** argv)
         ("timeout,t", po::value<float>(&timeout)->default_value(0.02),
             "timeout for the reception of data packets")
         ("id", po::value<std::vector<id_t>>()->multitoken(),
-            "one or more ids of devices")
+            "one or more IDs of devices")
         ("angle", po::value<std::vector<double>>()->multitoken(),
-            "desired angle (in radians), used for the \"position\" command")
+            "desired angle (in radians), used by the `position` command")
         ("new-baudrate", po::value<unsigned>(),
             "used by change-baudrate as the new baudrate value to be set")
         ("enable", po::value<bool>(),
-            "enable (1) or disable (0)) the selected servo(s)")
+            "enable (1) or disable (0) the selected servo(s)")
         ("address,a", po::value<uint16_t>(),
-            "address at which to read or write data, in decimal notation")
-        ("value,d", po::value<long long int>(),
-            "the value to write when using the `write` command")
-        ("size", po::value<unsigned short>(),
+            "address at which to read or write data (decimal base)")
+        ("value,v", po::value<long long int>(),
+            "value used by the `write` command")
+        ("size,s", po::value<unsigned short>(),
             "number of bytes of data either read or written from a servo")
         ("signed",
             "when reading a field, whether it should be parsed as signed (only "
