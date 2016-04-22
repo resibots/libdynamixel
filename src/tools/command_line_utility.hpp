@@ -84,8 +84,11 @@ namespace dynamixel {
                     change_baudrate(vm["new-baudrate"].as<unsigned int>());
             }
             else if ("position" == command) {
-                position(vm["id"].as<std::vector<id_t>>(),
-                    vm["angle"].as<std::vector<double>>());
+                if (vm.count("id"))
+                    position(vm["id"].as<std::vector<id_t>>(),
+                        vm["angle"].as<std::vector<double>>());
+                else
+                    position(vm["angle"].as<std::vector<double>>());
             }
             else if ("get-position" == command) {
                 if (vm.count("id"))
@@ -309,12 +312,23 @@ namespace dynamixel {
                 _dyn_util.set_angle(ids, angles);
             }
             else
-                std::cout << "Usage for position command: " << std::endl
-                          << "- one angle and several ids of servos that all "
-                             "wil go to the same angle"
-                          << std::endl
-                          << "- as many angles as there are ids, to give target "
+                std::cout << "Usage for position command (with IDs):\n"
+                             "- one angle and several ids of servos that all "
+                             "wil go to the same angle\n"
+                             "- as many angles as there are ids, to give target "
                              "angle for each servo"
+                          << std::endl;
+        }
+
+        void position(const std::vector<double>& angles)
+        {
+            if (angles.size() == 1) {
+                _dyn_util.detect_servos();
+                _dyn_util.set_angle(angles.at(0));
+            }
+            else
+                std::cout << "Usage for position command with no ID:\n"
+                             "give only one angle, applied to all connected servos"
                           << std::endl;
         }
 
