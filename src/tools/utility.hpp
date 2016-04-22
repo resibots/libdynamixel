@@ -321,7 +321,7 @@ namespace dynamixel {
 
             @throws runtime_error if one actuator did not reply (within the timeout)
         **/
-        std::vector<double> get_angles(const std::vector<id_t>& ids) const
+        std::vector<double> get_angle(const std::vector<id_t>& ids) const
         {
             std::vector<double> positions;
 
@@ -354,7 +354,7 @@ namespace dynamixel {
                 (within the timeout)
         **/
         std::pair<std::vector<id_t>, std::vector<double>>
-        get_angles() const
+        get_angle() const
         {
             std::vector<double> positions;
             std::vector<id_t> ids;

@@ -340,7 +340,7 @@ namespace dynamixel {
             _dyn_util.detect_servos();
 
             std::vector<double> positions;
-            positions = _dyn_util.get_angles(ids);
+            positions = _dyn_util.get_angle(ids);
 
             std::cout << "Angular positions of the actuators:" << std::endl;
             for (unsigned i = 0; i < ids.size(); ++i) {
@@ -353,7 +353,7 @@ namespace dynamixel {
             _dyn_util.detect_servos();
 
             std::pair<std::vector<id_t>, std::vector<double>> angles;
-            angles = _dyn_util.get_angles();
+            angles = _dyn_util.get_angle();
 
             std::cout << "Angular positions of the actuators:" << std::endl;
             for (unsigned i = 0; i < angles.first.size(); ++i) {
