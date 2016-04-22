@@ -10,4 +10,4 @@ def configure(conf):
     conf.check_boost(lib='program_options', min_version='1.39')
 
 def build(bld):
-    bld(features='cxx cxxprogram', source='dynamixel2.cpp', target="dynamixel2", includes=". ..", uselib="BOOST", uselib_local="dynamixel")
+    bld(features='cxx cxxprogram', source='dynamixel.cpp', target="dynamixel", includes=". ..", uselib="BOOST", uselib_local="dynamixel")

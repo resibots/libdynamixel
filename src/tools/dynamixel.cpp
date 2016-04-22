@@ -1,662 +1,678 @@
-#ifdef USE_BOOST
-
 #include <iostream>
-#include <algorithm>
-#include <dynamixel/dynamixel.hpp>
+#include <string>
+#include <sstream>
 #include <cmath>
+#include <algorithm>
+#include <chrono>
+#include <thread> // for a standard-compliant way to sleep
+
 #include <boost/program_options.hpp>
 
-#define READ_DURATION 0.02f
+#include <dynamixel/dynamixel.hpp>
+#include <tools/utility.hpp>
+
+#include <stdexcept>
+
 using namespace dynamixel;
+namespace po = boost::program_options;
 
-std::vector<byte_t> scan(Usb2Dynamixel& controller)
-{
-    std::cout << "scanning..." << std::endl;
-    controller.scan_ax12s();
-    const std::vector<byte_t>& ax12_ids = controller.ax12_ids();
-    std::cout << "[dynamixel] " << ax12_ids.size()
-              << " dynamixel are connected" << std::endl;
-    for (size_t i = 0; i < ax12_ids.size(); ++i)
-        std::cout << "id:" << (int)ax12_ids[i] << std::endl;
-    return ax12_ids;
-}
+// TODO: catch exceptions !
 
-namespace baudrates {
-    static const unsigned b1000000 = 1;
-    static const unsigned b115200 = 16;
-    static const unsigned b57600 = 34;
-}
-
-namespace dynamixel_series {
-    static const unsigned AX = 1;
-    static const unsigned MX = 2;
-}
-
-int find_baudrate(unsigned s)
-{
-    switch (s) {
-    case baudrates::b1000000:
-        return B1000000;
-    case baudrates::b115200:
-        return B115200;
-    case baudrates::b57600:
-        return B57600;
-    default:
-        std::cerr << "WARNING: uknown baudrate number " << s << std::endl;
-        return B115200;
-    }
-    return B115200;
-}
-
-void change_baud(Usb2Dynamixel& controller, unsigned baudrate)
-{
-    if (baudrate == baudrates::b1000000 || baudrate == baudrates::b115200 || baudrate == baudrates::b57600) {
-        std::cout << "changing baudrate to " << baudrate << std::endl;
-        controller.send(ax12::ChangeBaudRate(baudrate));
-        std::cout << "done" << std::endl;
-    }
-    else {
-        std::cerr << "ERROR : undefined baudrate (" << baudrate << ")" << std::endl;
-        exit(1);
-    }
-}
-
-void change_id(Usb2Dynamixel& controller, unsigned id)
-{
-    controller.scan_ax12s();
-    const std::vector<byte_t>& ax12_ids = controller.ax12_ids();
-    std::cout << "[ax12] " << ax12_ids.size()
-              << " ax12 are connected" << std::endl;
-    if (ax12_ids.size() != 1) {
-        std::cerr << "you need to connect only ONE dynamixel" << std::endl;
-        return;
-    }
-    std::cout << "changing id of " << (int)ax12_ids[0] << " to " << id << std::endl;
-    controller.send(ax12::ChangeId(ax12_ids[0], (byte_t)id));
-    dynamixel::Status status;
-    controller.recv(READ_DURATION, status);
-    usleep(2.5 * 1e5);
-    std::cout << "new scan:" << std::endl;
-    scan(controller);
-}
-
-void zero(Usb2Dynamixel& controller)
-{
-    std::cout << "setting all dynamixel to zero" << std::endl;
-    std::vector<byte_t> ax12_ids = scan(controller);
-    dynamixel::Status status;
-
-    for (size_t i = 0; i < ax12_ids.size(); ++i) {
-        controller.send(dynamixel::ax12::TorqueEnable(ax12_ids[i], true));
-        controller.recv(READ_DURATION, status);
-    }
-    usleep(1e5);
-    std::vector<int> pos(ax12_ids.size());
-
-    for (size_t i = 0; i < ax12_ids.size(); ++i)
-        if (ax12_ids[i] >= 30) // mx28
-            pos[i] = 2048;
-        else
-            pos[i] = 512;
-    controller.send(ax12::SetPositions(ax12_ids, pos));
-    std::cout << "done" << std::endl;
-}
-
-void init(Usb2Dynamixel& controller)
-{
-    std::cout << "setting all dynamixel to zero" << std::endl;
-    std::vector<byte_t> ax12_ids = scan(controller);
-    dynamixel::Status status;
-
-    for (size_t i = 0; i < ax12_ids.size(); ++i) {
-        controller.send(dynamixel::ax12::TorqueEnable(ax12_ids[i], true));
-        controller.recv(READ_DURATION, status);
-    }
-    usleep(1e5);
-    std::vector<int> pos(ax12_ids.size());
-
-    for (size_t i = 0; i < ax12_ids.size(); ++i)
-        if (ax12_ids[i] >= 30) // mx28
-            pos[i] = 1024;
-        else
-            pos[i] = 512;
-    controller.send(ax12::SetPositions(ax12_ids, pos));
-
-    pos.clear();
-    pos.resize(ax12_ids.size());
-    sleep(1);
-    for (size_t i = 0; i < ax12_ids.size(); ++i)
-        switch ((int)ax12_ids[i]) {
-        case 7:
-            pos[i] = 700;
-            break;
-        case 8:
-            pos[i] = 700;
-            break;
-        case 9:
-            pos[i] = 1023;
-            break;
-        case 10:
-            pos[i] = 00;
-            break;
-        case 11:
-            pos[i] = 300;
-            break;
-        case 12:
-            pos[i] = 300;
-            break;
-
-        default:
-            if (ax12_ids[i] >= 30) // mx28
-                pos[i] = 1024;
-            else
-                pos[i] = 512;
-            break;
+namespace dynamixel {
+    template <class Protocol>
+    class CommandLineUtility {
+    public:
+        CommandLineUtility(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
+            : _dyn_util(name, baudrate, recv_timeout)
+        {
         }
 
-    controller.send(ax12::SetPositions(ax12_ids, pos));
+        void select_command(po::variables_map vm)
+        {
+            std::string command = vm["command"].as<std::string>();
 
-    pos.clear();
-    pos.resize(ax12_ids.size());
-    sleep(1);
-    for (size_t i = 0; i < ax12_ids.size(); ++i)
-        switch ((int)ax12_ids[i]) {
-        case 7:
-            pos[i] = 700;
-            break;
-        case 8:
-            pos[i] = 700;
-            break;
-        case 9:
-            pos[i] = 1023;
-            break;
-        case 10:
-            pos[i] = 00;
-            break;
-        case 11:
-            pos[i] = 300;
-            break;
-        case 12:
-            pos[i] = 300;
-            break;
+            // TODO: check that the required parameters are given; otherwise display help
+            // TODO: test for Dynamixel Pro actuators
+            if ("list" == command) {
+                list();
+            }
+            else if ("write" == command) {
+                long long int data = vm["value"].as<long long int>();
+                unsigned short size = vm["size"].as<unsigned short>();
+                typename Protocol::address_t address = vm["address"].as<uint16_t>();
+                bool is_signed = vm.count("signed");
 
-        default:
-            if (ax12_ids[i] >= 30) // mx28
-                pos[i] = 2048;
-            else
-                pos[i] = 512;
-            break;
+                if (vm.count("id")) {
+                    std::vector<id_t> ids = vm["id"].as<std::vector<id_t>>();
+                    write(ids, address, data, size, is_signed);
+                }
+                else {
+                    write(address, data, size, is_signed);
+                }
+            }
+            else if ("read" == command) {
+                if (!vm.count("size"))
+                    throw std::runtime_error("the --size option is needed to read data");
+                unsigned short size = vm["size"].as<unsigned short>();
+
+                if (!vm.count("address"))
+                    throw std::runtime_error("the --address option is needed to read data");
+                typename Protocol::address_t address = vm["address"].as<uint16_t>();
+
+                bool is_signed = vm.count("signed");
+
+                if (vm.count("id")) {
+                    std::vector<id_t> ids = vm["id"].as<std::vector<id_t>>();
+                    read(ids, address, size, is_signed);
+                }
+                else {
+                    read(address, size, is_signed);
+                }
+            }
+            else if ("change-id" == command) {
+                change_id(vm["id"].as<std::vector<id_t>>());
+            }
+            else if ("change-baudrate" == command) {
+                if (vm.count("id"))
+                    change_baudrate(
+                        vm["id"].as<std::vector<id_t>>(),
+                        vm["new-baudrate"].as<unsigned int>());
+                else
+                    change_baudrate(vm["new-baudrate"].as<unsigned int>());
+            }
+            else if ("position" == command) {
+                position(vm["id"].as<std::vector<id_t>>(),
+                    vm["angle"].as<std::vector<double>>());
+            }
+            else if ("get-position" == command) {
+                if (vm.count("id"))
+                    print_position(vm["id"].as<std::vector<id_t>>());
+                else {
+                    print_position();
+                }
+            }
+            else if ("torque-enable" == command || "relax" == command) {
+                // if the relax command is used, enable is false
+                // otherwise, take the value of parameter `enable`
+                bool enable = "relax" != command && vm["enable"].as<bool>();
+
+                if (vm.count("id"))
+                    torque_enable(
+                        vm["id"].as<std::vector<id_t>>(),
+                        enable);
+                else
+                    torque_enable(enable);
+            }
+            else if ("oscillate" == command) {
+                oscillate(
+                    vm["angular_f"].as<float>(),
+                    vm["amplitude"].as<float>(),
+                    vm["offset"].as<float>(),
+                    vm["phase"].as<float>(),
+                    vm["duration"].as<float>());
+            }
+            else {
+                std::cerr << "Unrecognized command." << std::endl;
+            }
         }
 
-    controller.send(ax12::SetPositions(ax12_ids, pos));
+    protected:
+        typedef typename Utility<Protocol>::id_t id_t;
 
-    pos.clear();
-    pos.resize(ax12_ids.size());
-    sleep(1);
-    for (size_t i = 0; i < ax12_ids.size(); ++i)
-        if (ax12_ids[i] == 8)
-            pos[i] = 350;
-        else if (ax12_ids[i] == 11)
-            pos[i] = 650;
-        else if (ax12_ids[i] >= 30) // mx28
-            pos[i] = 2048;
+    private:
+        Utility<Protocol> _dyn_util;
+
+        void list()
+        {
+            _dyn_util.detect_servos();
+            std::map<typename Protocol::id_t, std::shared_ptr<BaseServo<Protocol>>>
+                actuators = _dyn_util.servos();
+
+            std::cout << "Connected devices (" << actuators.size() << ") :"
+                      << std::endl;
+            for (auto actuator : actuators) {
+                std::cout << (long long int)actuator.first
+                          << "\t" << actuator.second->model_name() << std::endl;
+            }
+        }
+
+        void write(std::vector<id_t> ids, typename Protocol::address_t address,
+            long long int data, unsigned short size, bool is_signed)
+        {
+            if (1 == size) { // one byte of data, unsigned
+                for (auto id : ids) {
+                    _dyn_util.template write<uint8_t>(id, address, data);
+                }
+            }
+            else if (2 == size) { // two bytes of data, unsigned
+                for (auto id : ids) {
+                    _dyn_util.template write<uint16_t>(id, address, data);
+                }
+            }
+            else if (4 == size) { // four bytes of data, both unsigned and signed
+                if (is_signed) {
+                    for (auto id : ids) {
+                        _dyn_util.template write<uint32_t>(id, address, data);
+                    }
+                }
+                else {
+                    for (auto id : ids) {
+                        _dyn_util.template write<int32_t>(id, address, data);
+                    }
+                }
+            }
+            else {
+                std::cerr << "A valid size (1, 2, 4) for the data has to be specified"
+                          << std::endl;
+            }
+        }
+
+        void write(typename Protocol::address_t address,
+            long long int data, unsigned short size, bool is_signed)
+        {
+            _dyn_util.detect_servos();
+
+            if (1 == size) { // one byte of data, unsigned
+                _dyn_util.template write<uint8_t>(address, data);
+            }
+            else if (2 == size) { // two bytes of data, unsigned
+                _dyn_util.template write<uint16_t>(address, data);
+            }
+            else if (4 == size) { // four bytes of data, both unsigned and signed
+                if (is_signed) {
+                    _dyn_util.template write<uint32_t>(address, data);
+                }
+                else {
+                    _dyn_util.template write<int32_t>(address, data);
+                }
+            }
+            else {
+                std::cerr << "A valid size (1, 2, 4) for the data has to be specified"
+                          << std::endl;
+            }
+        }
+
+        void read(std::vector<id_t> ids, typename Protocol::address_t address,
+            unsigned short size, bool is_signed)
+        {
+            if (1 == size) { // one byte of data, unsigned
+                for (auto id : ids) {
+                    std::cout
+                        << _dyn_util.template read<uint8_t>(id, address, 1)
+                        << "\n";
+                }
+            }
+            else if (2 == size) { // two bytes of data, unsigned
+                for (auto id : ids) {
+                    std::cout
+                        << _dyn_util.template read<uint16_t>(id, address, 2)
+                        << "\n";
+                }
+            }
+            else if (4 == size) { // four bytes of data, both unsigned and signed
+                if (is_signed) {
+                    for (auto id : ids) {
+                        std::cout
+                            << _dyn_util.template read<uint32_t>(id, address, 4)
+                            << "\n";
+                    }
+                }
+                else {
+                    for (auto id : ids) {
+                        std::cout
+                            << _dyn_util.template read<int32_t>(id, address, 4)
+                            << "\n";
+                    }
+                }
+            }
+            else {
+                std::cerr << "A valid size (1, 2, 4) for the data has to be specified"
+                          << std::endl;
+            }
+        }
+
+        void read(typename Protocol::address_t address, unsigned short size,
+            bool is_signed)
+        {
+            _dyn_util.detect_servos();
+
+            if (1 == size) { // one byte of data, unsigned
+                print_data(_dyn_util.template read<uint8_t>(address, 1));
+            }
+            else if (2 == size) { // two bytes of data, unsigned
+                print_data(_dyn_util.template read<uint16_t>(address, 2));
+            }
+            else if (4 == size) { // four bytes of data, both unsigned and signed
+                if (is_signed) {
+                    print_data(_dyn_util.template read<uint32_t>(address, 4));
+                }
+                else {
+                    print_data(_dyn_util.template read<int32_t>(address, 4));
+                }
+            }
+            else {
+                std::cerr << "A valid size (1, 2, 4) for the data has to be specified"
+                          << std::endl;
+            }
+        }
+
+        template <typename T>
+        void print_data(std::vector<std::pair<id_t, T>> pairs)
+        {
+            for (auto pair : pairs)
+                std::cout << pair.first << "\t" << (long long int)pair.second << "\n";
+        }
+
+        void change_id(const std::vector<id_t>& ids)
+        {
+            _dyn_util.detect_servos();
+
+            if (0 == ids.size() % 2) {
+                for (unsigned i = 0; i + 1 < ids.size(); i += 2) {
+                    _dyn_util.change_id(ids.at(i), ids.at(i + 1));
+                }
+            }
+            else if (1 == ids.size()) {
+                _dyn_util.change_id(Protocol::broadcast_id, ids.at(0));
+            }
+            else {
+                std::cerr << "Inproper number of parameters for change-id: expecting "
+                          << "only one id or an even number of ids" << std::endl;
+            }
+        }
+
+        void change_baudrate(const std::vector<id_t>& ids, unsigned int baudrate)
+        {
+            _dyn_util.detect_servos();
+
+            for (auto id : ids) {
+                _dyn_util.change_baudrate(id, baudrate);
+            }
+        }
+        void change_baudrate(unsigned int baudrate)
+        {
+            _dyn_util.detect_servos();
+            _dyn_util.change_baudrate(Protocol::broadcast_id, baudrate);
+        }
+
+        void position(const std::vector<id_t>& ids, const std::vector<double>& angles)
+        {
+            if (angles.size() == 1) {
+                _dyn_util.detect_servos();
+                _dyn_util.set_angle(ids, angles.at(0));
+            }
+            else if (ids.size() == angles.size()) {
+                _dyn_util.detect_servos();
+                _dyn_util.set_angle(ids, angles);
+            }
+            else
+                std::cout << "Usage for position command: " << std::endl
+                          << "- one angle and several ids of servos that all "
+                             "wil go to the same angle"
+                          << std::endl
+                          << "- as many angles as there are ids, to give target "
+                             "angle for each servo"
+                          << std::endl;
+        }
+
+        void print_position(const std::vector<id_t>& ids)
+        {
+            if (ids.size() == 0)
+                return;
+
+            _dyn_util.detect_servos();
+
+            std::vector<double> positions;
+            positions = _dyn_util.get_angles(ids);
+
+            std::cout << "Angular positions of the actuators:" << std::endl;
+            for (unsigned i = 0; i < ids.size(); ++i) {
+                std::cout << ids[i] << "\t" << positions[i] << std::endl;
+            }
+        }
+
+        void print_position()
+        {
+            _dyn_util.detect_servos();
+
+            std::pair<std::vector<id_t>, std::vector<double>> angles;
+            angles = _dyn_util.get_angles();
+
+            std::cout << "Angular positions of the actuators:" << std::endl;
+            for (unsigned i = 0; i < angles.first.size(); ++i) {
+                std::cout << angles.first[i] << "\t" << angles.second[i] << std::endl;
+            }
+        }
+
+        void torque_enable(const std::vector<id_t>& ids, bool enable = true)
+        {
+            _dyn_util.detect_servos();
+
+            for (auto id : ids) {
+                _dyn_util.torque_enable(id, enable);
+            }
+        }
+
+        void torque_enable(bool enable = true)
+        {
+            _dyn_util.detect_servos();
+            _dyn_util.torque_enable(Protocol::broadcast_id, enable);
+        }
+
+        void oscillate(
+            float w,
+            float A,
+            float offset,
+            float Phi,
+            float duration = 10)
+        {
+            using namespace std::chrono;
+
+            _dyn_util.detect_servos();
+
+            steady_clock::time_point t1 = steady_clock::now();
+            long long int t = 0;
+
+            offset += M_PI;
+
+            while (
+                (t = duration_cast<milliseconds>(steady_clock::now() - t1).count())
+                < duration * 1000) {
+
+                double angle = A * sin(t / 1000.0 * w + Phi) + offset;
+                _dyn_util.set_angle(angle);
+                std::this_thread::sleep_for(milliseconds(10));
+            }
+
+            // move to the angle at t=0
+            double angle = A * sin(Phi) + offset;
+            _dyn_util.set_angle(angle);
+        }
+
+        // void oscillate(
+        //     std::vector<id_t> ids,
+        //     std::vector<float> w,
+        //     std::vector<float> A,
+        //     std::vector<float> offset,
+        //     std::vector<float> Phi,
+        //     float duration = 10)
+        // {
+        // }
+    };
+}
+
+void display_help(const std::string program_name,
+    const po::options_description& desc, const po::variables_map& vm)
+{
+    std::map<std::string, std::string> command_help;
+    // clang-format off
+    command_help["list"] =
+        "List available actuators. Does not take any optional parameter";
+    command_help["position"] =
+        "Command one or more actuator to go to (a) given position(s). The angles\n"
+        "are in radian.\n"
+        "\n"
+        "An angle for each given servo\n"
+        "\tEach angle is set for the corresponding servo. There must be the same\n"
+        "\tnumber of values for --id and --angle.\n"
+        "\n"
+        "\tEXAMPLE: "+program_name+" position --id 1 5 --angle 1.254 4.189\n"
+        "\twill move actuator 1 to angle 1.254 rad, and 5 to 4.189 rad\n"
+        "\n"
+        "One angle for several ids\n"
+        "\tAll listed actuators are moved to the given angle\n\n"
+        "\tEXAMPLE: "+program_name+" position --id 1 51 24 5 --angle 3.457";
+    command_help["read"] =
+        "Read data in the memory of a servo.\n"
+        "Requires the --address and --size options. IDs can be providen, to\n"
+        "target specific servos. It also gives a much faster response.\n"
+        "\n"
+        "EXAMPLE: "+program_name+" read --address 36 --size 2 --id 5\n"
+        "\twill display the current position of actuator 2 in ticks (for\n"
+        "\tprotocol1). `size` is the number of bytes that are to be read. As the\n"
+        "\tcurrent position is stored in two bytes, we use `--size 2`.";
+    command_help["write"] =
+        "Write some value in a servo's memory.\n"
+        "Requires the --address, --size and --value options. If IDs are also\n"
+        "provided, only the selected devices will be affected by the write.\n"
+        "\n"
+        "CAUTION: this command can have unwanted consequences, specifically if\n"
+        "\tyou don't specify IDs and/or if you change fields like the baudrate\n"
+        "\tor the device's ID.\n"
+        "\n"
+        "EXAMPLE: "+program_name+" write --address 30 --size 2 --value 25 --id 5\n"
+        "\twill write the value 25 in two bytes at address 30 of servo 5.`size`\n"
+        "\tis the number of bytes that are to be written.";
+    command_help["get-position"] =
+        "Retrieve current angular position of one or more servo, in radian.\n"
+        "If given ids, it will ask to the selected servos for their angular\n"
+        "position. Otherwise, it will get it for all available servo.\n"
+        "\n"
+        "EXAMPLES:\n"
+        "\t" + program_name + " get-position --id 1 54\n"
+        "\tgives the positions for servos 1 and 54\n"
+        "\n"
+        "\t" + program_name + " get-position\n"
+        "\tgives the angular position of each connected servo";
+    command_help["change-id"] =
+        "Change the ID of one or more servo.\n"
+        "\n"
+        "For all connected servos\n"
+        "\tIf only one ID is given, all connected servo will get this new ID. It\n"
+        "\tshould only be used if a single servo is connected.\n"
+        "\n"
+        "\tEXAMPLE: "+program_name+" change-id --id 54\n"
+        "\tsets the ID 54 to all connected servos\n"
+        "\n"
+        "For specified actuators\n"
+        "\tRequires pairs of IDs, the first item of each pair being the original\n"
+        "\tID and the second item being the new ID.\n"
+        "\n"
+        "\tEXAMPLES:\n"
+        "\t"+program_name+" change-id --id 5 25\n"
+        "\tset the new ID 25 to actuator 5\n"
+        "\n"
+        "\t"+program_name+" change-id --id 6 5 7 8 9 4\n"
+        "\tdo the following changes in IDs: 6 becomes 5, 7 becomes 8, 9 becomes 4";
+    command_help["change-baudrate"] =
+        "Tell one or more servos to talk at a given baudrate.\n"
+        "For this command to work, like any other one, it has to be sent using\n"
+        "the current baudrate of the servo.\n"
+        "\n"
+        "For all connected servos\n"
+        "\tAll connected servo will talk in the new baudrate.\n"
+        "\n"
+        "\tEXAMPLE: "+program_name+" change-baudrate -b 57600\n"
+        "\t\t--new-baudrate 1000000\n"
+        "\tmake all servos that currently use 57600 baudrate change to 1000000\n"
+        "\n"
+        "For specified actuators\n"
+        "\tIf you give some IDs, ony these ones will be affected\n"
+        "\n"
+        "\tEXAMPLE: "+program_name+" change-baudrate -b 57600 --id 5 25\n"
+        "\t\t--new-baudrate 1000000\n"
+        "\n"
+        "Allowed baudrates:\n"
+        "| baud     | Protocol 1 | Protocol 2 |\n"
+        "|----------|------------|------------|\n"
+        "| 9600     |     Y      |     Y      |\n"
+        "| 19200    |     Y      |     N      |\n"
+        "| 57600    |     Y      |     Y      |\n"
+        "| 115200   |     Y      |     Y      |\n"
+        "| 200000   |     Y      |     N      |\n"
+        "| 250000   |     Y      |     N      |\n"
+        "| 400000   |     Y      |     N      |\n"
+        "| 500000   |     Y      |     N      |\n"
+        "| 1000000  |     Y      |     Y      |\n"
+        "| 2000000  |     N      |     Y      |\n"
+        "| 3000000  |     N      |     Y      |\n"
+        "| 4000000  |     N      |     Y      |\n"
+        "| 4500000  |     N      |     Y      |\n"
+        "| 10500000 |     N      |     Y      |\n";
+    command_help["torque-enable"] =
+        "Enable or disable the torque on servo(s).\n"
+        "\n"
+        "EXAMPLES:\n"
+        "\t"+program_name+" torque-enable --enable 1\n"
+        "\twill affect all connected servos, enabling their output; using 0\n"
+        "\tinstead of 1 would have disabled them\n"
+        "\n"
+        "\t"+program_name+" torque-enable --id 1 11 21 --enable 0\n"
+        "\twill disable only servos 1, 11 and 21";
+    command_help["relax"] =
+        "Same as `torque-enable --enable 0`";
+    command_help["oscillate"] =
+        "Actuate all servos with a sinusoid.\n"
+        "Useful options:\n"
+        "\t--angular_f\n"
+        "\t--amplitude\n"
+        "\t--offset\n"
+        "\t--phase\n"
+        "\t--duration\n"
+        "See the help message for more detail on the role and default value of\n"
+        "each of these options.\n"
+        "\n"
+        "EXAMPLE: "+program_name+" oscillate --duration 20\n"
+        "\twill make all connected servos turn during 20 seconds using the\n"
+        "\tdefault parameters for the sinusoid";
+    //clang-format on
+
+    // Write the command specific help message if a command is specified and it
+    // is one of the supported commands
+    if (vm.count("command")) {
+        std::string command = vm["command"].as<std::string>();
+        std::string help_message;
+
+        if (command_help.count(command))
+            help_message = command_help[command];
         else
-            pos[i] = 512;
+            help_message = "Unrecognized command: " + command;
 
-    controller.send(ax12::SetPositions(ax12_ids, pos));
-
-    std::cout << "done" << std::endl;
-}
-
-void osc(Usb2Dynamixel& controller, unsigned actuator_type)
-{
-    if (actuator_type != dynamixel_series::MX && actuator_type != dynamixel_series::AX) {
-        std::cerr << "Only dynamixels of type MX (2) or AX (1) are supported.\n"
-                  << "Please give the type of actuators you have as an argument" << std::endl;
-        return;
-    }
-
-    std::vector<byte_t> ax12_ids = scan(controller);
-    dynamixel::Status status;
-
-    std::cout << "Oscillating..." << std::endl;
-
-    for (size_t i = 0; i < ax12_ids.size(); ++i) {
-        controller.send(dynamixel::ax12::TorqueEnable(ax12_ids[i], true));
-        controller.recv(READ_DURATION, status);
-    }
-    usleep(1e5);
-    std::vector<int> pos(ax12_ids.size());
-    for (float x = 0; x < 1e10; x += 0.0035) {
-        for (size_t i = 0; i < ax12_ids.size(); ++i)
-            if (actuator_type == dynamixel_series::MX) // mx28
-                pos[i] = 2048 + sin(x) * 50;
-            else if (actuator_type == dynamixel_series::AX)
-                pos[i] = 512 + sin(x / 8.0) * 40;
-        controller.send(ax12::SetPositions(ax12_ids, pos));
-    }
-    std::cout << "done" << std::endl;
-}
-
-void positions(Usb2Dynamixel& controller)
-{
-    std::vector<byte_t> ax12_ids = scan(controller);
-    dynamixel::Status status;
-
-    for (size_t i = 0; i < ax12_ids.size(); ++i) {
-        controller.send(dynamixel::ax12::GetPosition(ax12_ids[i]));
-        controller.recv(READ_DURATION, status);
-        std::cout << (int)ax12_ids[i] << ":" << status.decode16() << std::endl;
-    }
-}
-
-void relax(Usb2Dynamixel& controller)
-{
-    std::cout << "relax..." << std::endl;
-    dynamixel::Status status;
-    std::vector<byte_t> ax12_ids = scan(controller);
-    for (size_t i = 0; i < ax12_ids.size(); ++i) {
-        controller.send(dynamixel::ax12::TorqueEnable(ax12_ids[i], false));
-        controller.recv(READ_DURATION, status);
-    }
-    std::cout << "done" << std::endl;
-}
-
-void resetOverload(Usb2Dynamixel& controller)
-{
-    std::cout << "reset overload error..." << std::endl;
-    dynamixel::Status status;
-    std::vector<byte_t> ax12_ids = scan(controller);
-    int maxTorque = 0;
-    for (size_t i = 0; i < ax12_ids.size(); ++i) {
-        /*controller.send(dynamixel::ax12::ReadData(i,dynamixel::ax12::ctrl::max_torque_lo,2));
-        controller.recv(READ_DURATION, status);
-        //std::cout << (int)ax12_ids[i] << ":" << status.decode16() << std::endl;
-        maxTorque=status.decode16();*/
-
-        //reading present position
-        controller.send(dynamixel::ax12::ReadData(ax12_ids[i], dynamixel::ax12::ctrl::present_pos_lo, 2));
-        controller.recv(READ_DURATION, status);
-        byte_t pos_lo = status.get_params()[0];
-        byte_t pos_hi = status.get_params()[1];
-
-        //setting goal pos to present pos
-        controller.send(dynamixel::ax12::WriteData(ax12_ids[i], dynamixel::ax12::ctrl::goal_position_lo, pos_lo, pos_hi));
-        controller.recv(READ_DURATION, status);
-
-        //setting torque limit
-        controller.send(dynamixel::ax12::WriteData(ax12_ids[i], dynamixel::ax12::ctrl::torque_limit_lo, 255, 3));
-        controller.recv(READ_DURATION, status);
-        std::cout << (int)ax12_ids[i] << ":" << status << std::endl;
-
-        usleep(10);
-        controller.send(dynamixel::ax12::ReadData(ax12_ids[i], dynamixel::ax12::ctrl::present_load_lo, 2));
-        controller.recv(READ_DURATION, status);
-        std::cout << (int)ax12_ids[i] << ":" << status << std::endl;
-        std::cout << "reset id:" << (int)ax12_ids[i] << std::endl;
-    }
-    std::cout << "done" << std::endl;
-}
-
-void getVersion(Usb2Dynamixel& controller)
-{
-    std::cout << "check FW version..." << std::endl;
-    dynamixel::Status status;
-    std::vector<byte_t> ax12_ids = scan(controller);
-
-    for (size_t i = 0; i < ax12_ids.size(); ++i) {
-        controller.send(dynamixel::ax12::ReadData(ax12_ids[i], dynamixel::ax12::ctrl::firmware_version, 1));
-        controller.recv(READ_DURATION, status);
-        std::cout << (int)ax12_ids[i] << " firmeware version :" << (int)status.get_params()[0] << std::endl;
-    }
-    std::cout << "done" << std::endl;
-}
-
-void getTorque(Usb2Dynamixel& controller, unsigned id)
-{
-    std::cout << "read present torque..." << std::endl;
-    dynamixel::Status status;
-
-    while (1) {
-        controller.send(dynamixel::ax12::ReadData(id, dynamixel::ax12::ctrl::present_load_lo, 2));
-        controller.recv(READ_DURATION, status);
-        std::cout << id << " present Torque :" << (int)status.decode16() << std::endl;
-    }
-    std::cout << "done" << std::endl;
-}
-
-void testRoues(Usb2Dynamixel& controller, unsigned arg)
-{
-    int dir = arg - 512;
-
-    std::cout << "testing wheels' direction..." << std::endl;
-    dynamixel::Status status;
-
-    std::vector<byte_t> idsinit(12);
-    idsinit[0] = 21;
-    idsinit[1] = 22;
-    idsinit[2] = 23;
-    idsinit[3] = 24;
-    idsinit[4] = 25;
-    idsinit[5] = 26;
-
-    idsinit[6] = 31;
-    idsinit[7] = 32;
-    idsinit[8] = 33;
-    idsinit[9] = 34;
-    idsinit[10] = 35;
-    idsinit[11] = 36;
-
-    std::vector<int> posinit(12);
-    posinit[0] = 512;
-    posinit[1] = 512;
-    posinit[2] = 512;
-    posinit[3] = 512;
-    posinit[4] = 512;
-    posinit[5] = 512;
-
-    posinit[6] = 2048 + 50;
-    posinit[7] = 2048;
-    posinit[8] = 2048;
-    posinit[9] = 2048 - 150;
-    posinit[10] = 2048 - 200;
-    posinit[11] = 2048;
-
-    controller.send(ax12::SetPositions(idsinit, posinit));
-    controller.recv(READ_DURATION, status);
-
-    std::vector<byte_t> ids(6);
-    ids[0] = 13;
-    ids[1] = 14;
-    ids[2] = 15;
-    ids[3] = 16;
-    ids[4] = 17;
-    ids[5] = 18;
-
-    std::vector<bool> direction(6);
-    if (dir < 256 && dir > -255) {
-        direction[0] = true;
-        direction[1] = true;
-        direction[2] = true;
-        direction[3] = true;
-        direction[4] = true;
-        direction[5] = true;
+        std::cout << help_message << std::endl;
     }
     else {
-        direction[0] = false;
-        direction[1] = false;
-        direction[2] = false;
-        direction[3] = false;
-        direction[4] = false;
-        direction[5] = false;
+        std::cout << "Usage: " + program_name + " COMMAND [options]\n\n"
+            << "Available commands:\n"
+            "  list\n"
+            "  read\n"
+            "  write\n"
+            "  position\n"
+            "  get-position\n"
+            "  change-id\n"
+            "  change-baudrate\n"
+            "  torque-enable\n"
+            "  relax\n"
+            "  oscillate\n"
+            "Use `"+program_name+" --help COMMAND` to get help for one "
+            "command."
+            << "\n\n"
+            << desc;
     }
-
-    std::vector<int> pos(6);
-
-    pos[0] = 200;
-    pos[1] = 200;
-    pos[2] = 200;
-    pos[3] = 200;
-    pos[4] = 200;
-    pos[5] = 200;
-
-    controller.send(ax12::SetSpeeds(ids, pos, direction));
-    controller.recv(READ_DURATION, status);
-
-    ids[0] = 7;
-    ids[1] = 8;
-    ids[2] = 9;
-    ids[3] = 10;
-    ids[4] = 11;
-    ids[5] = 12;
-
-    if (dir > 256)
-        dir = dir - 512;
-    else if (dir < -256)
-        dir = dir + 512;
-
-    while (1) {
-        controller.send(dynamixel::ax12::ReadData(1, dynamixel::ax12::ctrl::present_pos_lo, 2));
-        controller.recv(READ_DURATION, status);
-        std::cout << "1 :  present Position :" << (int)status.decode16() << std::endl;
-        pos[0] = 512 + (int)status.decode16() + dir;
-
-        controller.send(dynamixel::ax12::ReadData(2, dynamixel::ax12::ctrl::present_pos_lo, 2));
-        controller.recv(READ_DURATION, status);
-        std::cout << "2 :  present Position :" << (int)status.decode16() << std::endl;
-        pos[1] = 512 + (int)status.decode16() - 150 + dir;
-
-        controller.send(dynamixel::ax12::ReadData(3, dynamixel::ax12::ctrl::present_pos_lo, 2));
-        controller.recv(READ_DURATION, status);
-        std::cout << "3 :  present Position :" << (int)status.decode16() << std::endl;
-        pos[2] = 512 + (int)status.decode16() + dir;
-
-        controller.send(dynamixel::ax12::ReadData(4, dynamixel::ax12::ctrl::present_pos_lo, 2));
-        controller.recv(READ_DURATION, status);
-        std::cout << "4 :  present Position :" << (int)status.decode16() << std::endl;
-        pos[3] = (int)status.decode16() + dir;
-
-        controller.send(dynamixel::ax12::ReadData(5, dynamixel::ax12::ctrl::present_pos_lo, 2));
-        controller.recv(READ_DURATION, status);
-        std::cout << "5 :  present Position :" << (int)status.decode16() << std::endl;
-        pos[4] = (int)status.decode16() + 150 + dir;
-
-        controller.send(dynamixel::ax12::ReadData(6, dynamixel::ax12::ctrl::present_pos_lo, 2));
-        controller.recv(READ_DURATION, status);
-        std::cout << "6 :  present Position :" << (int)status.decode16() << std::endl;
-        pos[5] = (int)status.decode16() + dir;
-
-        controller.send(ax12::SetPositions(ids, pos));
-        controller.recv(READ_DURATION, status);
-    }
-    std::cout << "done" << std::endl;
-}
-
-void getContacts(Usb2Dynamixel& controller)
-{
-    std::cout << "getting contacts..." << std::endl;
-    dynamixel::Status status;
-
-    while (1) {
-        std::cout << std::endl
-                  << std::endl;
-
-        controller.send(dynamixel::ax12::ReadData(31, dynamixel::ax12::ctrl::present_load_lo, 2));
-        controller.recv(READ_DURATION, status);
-        if ((int)status.decode16() > 1024)
-            std::cout << " leg 0  :"
-                      << "contact" << std::endl;
-        else
-            std::cout << " leg 0  :"
-                      << "no contact\t" << (int)status.decode16() << std::endl;
-        controller.send(dynamixel::ax12::ReadData(32, dynamixel::ax12::ctrl::present_load_lo, 2));
-        controller.recv(READ_DURATION, status);
-        if ((int)status.decode16() > 1024)
-            std::cout << " leg 1  :"
-                      << "contact" << std::endl;
-        else
-            std::cout << " leg 1  :"
-                      << "no contact\t" << (int)status.decode16() << std::endl;
-
-        controller.send(dynamixel::ax12::ReadData(33, dynamixel::ax12::ctrl::present_load_lo, 2));
-        controller.recv(READ_DURATION, status);
-        if ((int)status.decode16() > 1024)
-            std::cout << " leg 2  :"
-                      << "contact" << std::endl;
-        else
-            std::cout << " leg 2  :"
-                      << "no contact\t" << (int)status.decode16() << std::endl;
-
-        controller.send(dynamixel::ax12::ReadData(34, dynamixel::ax12::ctrl::present_load_lo, 2));
-        controller.recv(READ_DURATION, status);
-        if ((int)status.decode16() > 1024)
-            std::cout << " leg 3  :"
-                      << "contact" << std::endl;
-        else
-            std::cout << " leg 3  :"
-                      << "no contact\t" << (int)status.decode16() << std::endl;
-
-        controller.send(dynamixel::ax12::ReadData(35, dynamixel::ax12::ctrl::present_load_lo, 2));
-        controller.recv(READ_DURATION, status);
-        if ((int)status.decode16() > 1024)
-            std::cout << " leg 4  :"
-                      << "contact" << std::endl;
-        else
-            std::cout << " leg 4  :"
-                      << "no contact\t" << (int)status.decode16() << std::endl;
-
-        controller.send(dynamixel::ax12::ReadData(36, dynamixel::ax12::ctrl::present_load_lo, 2));
-        controller.recv(READ_DURATION, status);
-        if ((int)status.decode16() > 1024)
-            std::cout << " leg 5  :"
-                      << "contact" << std::endl;
-        else
-            std::cout << " leg 5  :"
-                      << "no contact\t" << (int)status.decode16() << std::endl;
-
-        usleep(1e5);
-    }
-    std::cout << "done" << std::endl;
-}
-
-/** Set the control mode of an actuator to continuous.
-  *
-  * It allows the servo-motor for continuous rotation and disables position
-  * commands.
-  * @param controller reference to the controller object
-  * @param id id of the actuator affected
-  */
-void continuous_mode(Usb2Dynamixel& controller, int id)
-{
-    std::vector<byte_t> servos = scan(controller);
-    if (std::find(servos.begin(), servos.end(), (byte_t)id) == servos.end()) {
-        std::cout << "The requested ID corresponds to none of the connected "
-                  << "servo-motors." << std::endl;
-        return;
-    }
-
-    dynamixel::Status status;
-
-    // Set the control mode to continuous
-    std::cout << "Set control mode to continuous" << std::endl;
-    controller.send(dynamixel::ax12::SetContinuous((byte_t)id));
-    controller.recv(READ_DURATION, status);
-    std::cout << "done" << std::endl;
-}
-
-/** Set the control mode of an actuator to position.
-  *
-  * It makes the servo-motor move to given positions. Reverts the effect of
-  * `continuous_mode`. In this mode, defining the moving speed affect the speed
-  * at which the servo-motor moves to its target.
-  * @param controller reference to the controller object
-  * @param id id of the actuator affected
-  */
-void position_mode(Usb2Dynamixel& controller, int id)
-{
-    std::vector<byte_t> servos = scan(controller);
-    if (std::find(servos.begin(), servos.end(), (byte_t)id) == servos.end()) {
-        std::cout << "The requested ID corresponds to none of the connected "
-                  << "servo-motors." << std::endl;
-        return;
-    }
-
-    dynamixel::Status status;
-
-    // Set the control mode to continuous
-    std::cout << "Set control mode to position" << std::endl;
-    controller.send(dynamixel::ax12::UnsetContinuous((byte_t)id));
-    controller.recv(READ_DURATION, status);
-    std::cout << "done" << std::endl;
-}
-
-void select_command(const std::string& command, unsigned arg,
-    Usb2Dynamixel& controller)
-{
-    if (command == "scan")
-        scan(controller);
-    else if (command == "change_baud")
-        change_baud(controller, arg); // Done
-    else if (command == "change_id")
-        change_id(controller, arg); // Done
-    else if (command == "zero")
-        zero(controller); // Ignored (covered by more generic position command)
-    else if (command == "relax")
-        relax(controller); // Done
-    else if (command == "reset_overload")
-        resetOverload(controller); // Done
-    else if (command == "get_torque")
-        getTorque(controller, arg); // Ignored (covered by more generic command)
-    else if (command == "get_version")
-        getVersion(controller); // Ignored (covered by more generic command)
-    else if (command == "get_contacts")
-        getContacts(controller); // Ignored
-    else if (command == "init")
-        init(controller); // Ignored
-    else if (command == "test_roues")
-        testRoues(controller, arg); // Ignored
-    else if (command == "positions")
-        positions(controller); // Done
-    else if (command == "osc")
-        osc(controller, arg); // Done
-    else if (command == "continuous_mode")
-        continuous_mode(controller, arg); // Done
-    else if (command == "position_mode")
-        position_mode(controller, arg); // Done
-    else
-        std::cerr << "unknown command:" << command
-                  << " (arg=" << arg << ")" << std::endl;
 }
 
 int main(int argc, char** argv)
 {
-    std::string port = "/dev/ttyUSB0";
-    int baudrate = B1000000;
-    std::string command = "scan";
-    unsigned arg = 0;
-    namespace po = boost::program_options;
+    using Protocol = protocols::Protocol1;
+    typedef Utility<Protocol>::id_t id_t;
+
+    std::string port;
+    int baudrate = 0, posix_baudrate = 0;
+    float timeout;
+    std::string command;
+
     po::options_description desc("Allowed options");
-    desc.add_options()("help,h", "produce help message")("port,p", po::value<std::string>(), "port")("baudrate,b", po::value<unsigned>(),
-        "baud rate for the communication (1=1Mb, 16=115200, 34=57600)")("command,c", po::value<std::string>(),
-        "command [scan, zero, init , change_baud, change_id, relax, get_contacts, test_roues, positions, reset_overload, get_version, get_torque, osc, continuous_mode, position_mode]")("arg,a", po::value<unsigned>(), "argument of the command");
+    // clang-format off
+    desc.add_options()
+        ("help,h", "produce help message")
+        ("port,p", po::value<std::string>()->default_value("/dev/ttyUSB0"),
+            "path to the USB to dynamixel interface.\n"
+            "EXAMPLE: --port /dev/ttyACM5")
+        ("baudrate,b", po::value<unsigned>()->default_value(1000000),
+            "baud rate for the communication\n"
+            "EXAMPLE: -b 115200\n"
+            "See the help for the `change-baudrate` command for the accepted "
+            "values")
+        ("timeout,t", po::value<float>(&timeout)->default_value(0.02),
+            "timeout for the reception of data packets")
+        ("id", po::value<std::vector<id_t>>()->multitoken(),
+            "one or more IDs of devices")
+        ("angle", po::value<std::vector<double>>()->multitoken(),
+            "desired angle (in radians), used by the `position` command")
+        ("new-baudrate", po::value<unsigned>(),
+            "used by change-baudrate as the new baudrate value to be set")
+        ("enable", po::value<bool>(),
+            "enable (1) or disable (0) the selected servo(s)")
+        ("address,a", po::value<uint16_t>(),
+            "address at which to read or write data (decimal base)")
+        ("value,v", po::value<long long int>(),
+            "value used by the `write` command")
+        ("size,s", po::value<unsigned short>(),
+            "number of bytes of data either read or written from a servo")
+        ("signed",
+            "when reading a field, whether it should be parsed as signed (only "
+            "for protocol 2)")
+        ("angular_f,w", po::value<float>()->default_value(2*M_PI),
+            "angular frequency used for the oscillate command (in rad/s)")
+        ("amplitude,A", po::value<float>()->default_value(1),
+            "peak amplitude of the movement performed by the oscillate command (in rad)")
+        ("offset,B", po::value<float>()->default_value(0),
+            "offset (in rad) of the angle in oscillate command")
+        ("phase,P", po::value<float>()->default_value(0),
+            "phase shift for the oscillate command")
+        ("duration,d", po::value<float>()->default_value(10.0),
+            "duration, in seconds of the oscillation (can be float)");
+    // clang-format on
+
+    po::options_description hidden("Hidden options");
+    // clang-format off
+    hidden.add_options()
+        ("command", po::value<std::string>(), "command executed");
+    // clang-format on
+
+    po::options_description cmdline_options;
+    cmdline_options.add(desc).add(hidden);
+
+    po::positional_options_description pos_desc;
+    pos_desc.add("command", 1);
+
+    po::command_line_parser parser{argc, argv};
+    parser.options(cmdline_options).positional(pos_desc);
+    po::parsed_options parsed_options = parser.run();
 
     po::variables_map vm;
-    po::store(po::parse_command_line(argc, argv, desc), vm);
+    po::store(parsed_options, vm);
     po::notify(vm);
+
     if (vm.count("help")) {
-        std::cout << desc << std::endl;
+        display_help(argv[0], desc, vm);
         return 0;
+    }
+    if (vm.count("command"))
+        command = vm["command"].as<std::string>();
+    else {
+        display_help(argv[0], desc, vm);
+        return 1;
     }
     if (vm.count("port"))
         port = vm["port"].as<std::string>();
-    if (vm.count("baudrate"))
-        baudrate = find_baudrate(vm["baudrate"].as<unsigned>());
-    if (vm.count("command"))
-        command = vm["command"].as<std::string>();
-    if (vm.count("arg"))
-        arg = vm["arg"].as<unsigned>();
-
-    std::cout << "port: :" << port << std::endl;
-    std::cout << "baudrate (code): " << baudrate << std::endl;
-    std::cout << "command:[" << command << "]" << std::endl;
-    std::cout << "arg:[" << arg << "]" << std::endl;
+    if (vm.count("baudrate")) {
+        baudrate = vm["baudrate"].as<unsigned>();
+        posix_baudrate = get_baudrate(baudrate);
+    }
 
     try {
-        std::cout << "opening serial..." << std::endl;
-        Usb2Dynamixel controller;
-        controller.open_serial(port, baudrate);
-        std::cout << "serial port open" << std::endl;
-        select_command(command, arg, controller);
+        std::cout << "Opening serial interface" << std::endl
+                  << "\tport: " << port << std::endl
+                  << "\tbaudrate: " << baudrate << std::endl;
+        CommandLineUtility<Protocol> command_line(port, posix_baudrate, timeout);
+        std::cout << "Serial port open." << std::endl;
+
+        std::cout << "\nExecuting the following command" << std::endl
+                  << "\tcommand: " << command << std::endl;
+        command_line.select_command(vm);
     }
-    catch (Error e) {
-        std::cerr << "error (dynamixel): " << e.msg() << std::endl;
+    catch (errors::Error e) {
+        std::cerr << "Error (dynamixel): " << e.msg() << std::endl;
     }
     return 0;
 }
-#else
-#include <iostream>
-int main()
-{
-    std::cerr << "boost is required to compile this tool" << std::endl;
-}
-#endif
