@@ -338,7 +338,8 @@ namespace dynamixel {
             }
             else
                 std::cout << "Usage for position command with no ID:\n"
-                             "give only one angle, applied to all connected servos"
+                             "only one angle is accepted, and applied to all "
+                             "connected servos"
                           << std::endl;
         }
 
