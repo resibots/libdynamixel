@@ -2,6 +2,7 @@
 #define DYNAMIXEL_UTILITY
 
 #include <dynamixel/dynamixel.hpp>
+#include <tools/utility_error.hpp>
 
 #include <map>
 #include <utility> // std::pair
@@ -25,6 +26,10 @@ namespace dynamixel {
         // Therefore, we define this type.
         typedef unsigned short id_t;
 
+        /**
+            @throws dynamixel::errors:Error if an issue was met while attempting
+            to open the serial interface
+        **/
         Utility(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
             : _serial_interface(name, baudrate, recv_timeout), _scanned(false)
         {
@@ -40,6 +45,10 @@ namespace dynamixel {
 
             @param scan_timeout (default 0.01) set a special listening timeout;
                 will only apply for this detection process
+
+            @throws dynamixel::error::UnpackError from auto_detect_map
+            @throws dynamixel::error:Error from auto_detect_map
+
         **/
         void detect_servos(double scan_timeout = 0.01)
         {
@@ -57,17 +66,23 @@ namespace dynamixel {
             timeout.
 
             @return map of ids and (std) shared pointers to BaseServo instances
+
+            @throws errors::UtilityError if you didn't detect connected servos before
         **/
         const std::map<typename Protocol::id_t, std::shared_ptr<BaseServo<Protocol>>>&
         servos() const
         {
-            if (!_scanned)
-                throw std::runtime_error("You need to scan for connected "
-                                         "actuators before trying to retrieve them");
+            check_scanned();
 
             return _servos;
         }
 
+        /** Write a data field in a servo's memory.
+
+            @param id targetted servo
+            @param address address of the first memory block to be modified
+            @param data new value to be written
+        **/
         template <typename T>
         void write(typename Protocol::id_t id, typename Protocol::address_t address,
             T data)
@@ -81,13 +96,20 @@ namespace dynamixel {
             _serial_interface.recv(status);
         }
 
+        /** Write a data field in all connected servo's memories.
+
+            All connected servos will be affected. Requires also to call
+            detect_servos beforehand.
+
+            @param address address of the first memory block to be modified
+            @param data new value to be written
+
+            @throws errors::UtilityError if you didn't detect connected servos before
+        **/
         template <typename T>
         void write(typename Protocol::address_t address, T data)
         {
-            if (!_scanned)
-                throw std::runtime_error("Reading a field for all connected "
-                                         "servos requires that a scan be done "
-                                         "beforehand.");
+            check_scanned();
 
             for (auto servo : _servos) {
                 _serial_interface.send(
@@ -112,7 +134,7 @@ namespace dynamixel {
 
             @param id ID of the requested servo
             @param address address to the first byte to read in the servo's memory
-            @param number of bytes to read
+            @param length number of bytes to read
             @return data retrieved from the servo
         **/
         template <typename T>
@@ -140,18 +162,17 @@ namespace dynamixel {
             - 4: uint32_t or int32_t
 
             @param address address to the first byte to read in the servo's memory
-            @param number of bytes to read
+            @param length number of bytes to read
             @return vector of pairs; each pair has an ID and a datum
+
+            @throws errors::UtilityError if you didn't detect connected servos before
         **/
         template <typename T>
         std::vector<std::pair<id_t, T>>
         read(typename Protocol::address_t address,
             typename Protocol::length_t length)
         {
-            if (!_scanned)
-                throw std::runtime_error("Reading a field for all connected "
-                                         "servos requires that a scan be done "
-                                         "beforehand.");
+            check_scanned();
 
             std::vector<std::pair<id_t, T>> pairs;
 
@@ -179,9 +200,13 @@ namespace dynamixel {
 
             @param id former ID of a servo
             @param new_id new ID of the servo responding to messages sent to target_id.
+
+            @throws errors::UtilityError if you didn't detect connected servos before
         **/
         void change_id(id_t id, id_t new_id)
         {
+            check_scanned();
+
             StatusPacket<Protocol> status;
             if (Protocol::broadcast_id == id) {
                 for (auto servo : _servos) {
@@ -201,9 +226,13 @@ namespace dynamixel {
 
             @param target_id ID of a servo or the broadcast id
             @param baudrate new baudrete of the targetted servo(s).
+
+            @throws errors::UtilityError if you didn't detect connected servos before
         **/
         void change_baudrate(id_t id, unsigned baudrate)
         {
+            check_scanned();
+
             baudrate = get_baudrate_id<Protocol>(baudrate);
 
             StatusPacket<Protocol> status;
@@ -227,9 +256,12 @@ namespace dynamixel {
             @throws out_of_range if the id is not among the detected servos
             @throws dynamixel::errors::ServoLimitError if angle is out of the
                 servo's feasible positions
+            @throws errors::UtilityError if you didn't detect connected servos before
         **/
         void set_angle(id_t id, double angle)
         {
+            check_scanned();
+
             StatusPacket<Protocol> status;
             _serial_interface.send(_servos.at(id)->set_goal_position_angle(angle));
             _serial_interface.recv(status);
@@ -244,9 +276,12 @@ namespace dynamixel {
             @throws out_of_range if the id is not among the detected servos
             @throws dynamixel::errors::ServoLimitError if angle is out of the
                 servo's feasible positions
+            @throws errors::UtilityError if you didn't detect connected servos before
         **/
         void set_angle(const std::vector<id_t>& ids, double angle)
         {
+            check_scanned();
+
             for (auto id : ids) {
                 _serial_interface.send(_servos.at(id)->reg_goal_position_angle(angle));
 
@@ -265,9 +300,12 @@ namespace dynamixel {
 
             @throws dynamixel::errors::ServoLimitError if angle is out of the
                 servo's feasible positions
+            @throws errors::UtilityError if you didn't detect connected servos before
         **/
         void set_angle(double angle)
         {
+            check_scanned();
+
             for (auto servo : _servos) {
                 _serial_interface.send(servo.second->reg_goal_position_angle(angle));
 
@@ -290,16 +328,17 @@ namespace dynamixel {
                 servo's feasible positions
             @throws runtime_error if the ids and angles vectors have different
                 lengths
+            @throws errors::UtilityError if you didn't detect connected servos before
         **/
-        // FIXME: use proper exception classes
         void set_angle(
             const std::vector<id_t>& ids,
             const std::vector<double>& angles)
         {
+            check_scanned();
             if (ids.size() != angles.size())
-                throw std::runtime_error("set_position(vector, vector): the "
-                                         "vectors of IDs and angles should have "
-                                         "the same length");
+                throw errors::UtilityError("set_position(vector, vector): the "
+                                           "vectors of IDs and angles should have "
+                                           "the same length");
 
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.send(
@@ -319,10 +358,13 @@ namespace dynamixel {
             @param ids vector of ids for the servos to querry
             @return vector of angles in the same order as the ids
 
-            @throws runtime_error if one actuator did not reply (within the timeout)
+            @throws errors::Error if one actuator did not reply (within the timeout)
+            @throws errors::UtilityError if you didn't detect connected servos before
         **/
         std::vector<double> get_angle(const std::vector<id_t>& ids) const
         {
+            check_scanned();
+
             std::vector<double> positions;
 
             for (auto id : ids) {
@@ -337,9 +379,9 @@ namespace dynamixel {
                         _servos.at(id)->parse_present_position_angle(status));
                 else {
                     std::stringstream message;
-                    message << "Did not receive any data when reading "
-                            << id << "'s position";
-                    throw std::runtime_error(message.str());
+                    message << id << "did not answer to the request for "
+                            << "its position";
+                    throw errors::Error(message.str());
                 }
             }
 
@@ -350,12 +392,15 @@ namespace dynamixel {
 
             @return vector of all angles of the servos that were detected beforehand
 
-            @throws runtime_error if one of the detected actuator did not reply
+            @throws errors::Error if one of the detected actuator did not reply
                 (within the timeout)
+            @throws errors::UtilityError if you didn't detect connected servos before
         **/
         std::pair<std::vector<id_t>, std::vector<double>>
         get_angle() const
         {
+            check_scanned();
+
             std::vector<double> positions;
             std::vector<id_t> ids;
 
@@ -374,9 +419,9 @@ namespace dynamixel {
                 }
                 else {
                     std::stringstream message;
-                    message << "Did not receive any data when reading "
-                            << servo.first << "'s position";
-                    throw std::runtime_error(message.str());
+                    message << servo.first << "did not answer to the request for "
+                            << "its position";
+                    throw errors::Error(message.str());
                 }
             }
 
@@ -397,9 +442,13 @@ namespace dynamixel {
                 connected servos
             @param enable whether the actuator should be enabled; if set to false
                 it will be disabled
+
+            @throws errors::UtilityError if you didn't detect connected servos before
         **/
         void torque_enable(id_t id, bool enable = true)
         {
+            check_scanned();
+
             StatusPacket<Protocol> status;
             if (Protocol::broadcast_id == id) {
                 for (auto servo : _servos) {
@@ -413,6 +462,19 @@ namespace dynamixel {
                     _servos.at(id)->set_torque_enable((int)enable));
                 _serial_interface.recv(status);
             }
+        }
+
+    protected:
+        /** Check that we scanned for connected servos and throws an exception
+            otherwise.
+
+            @throws dynamixel::errors::UtilityError if scanning was not done
+        **/
+        inline void check_scanned() const
+        {
+            if (!_scanned)
+                throw errors::UtilityError("You need to scan for connected "
+                                           "actuators before trying to retrieve them");
         }
 
     private:

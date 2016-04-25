@@ -19,12 +19,22 @@
 using namespace dynamixel;
 namespace po = boost::program_options;
 
-// TODO: catch exceptions !
+/**
+TODO: catch exceptions !
+many: out_of_range if the id is not among the detected servos
+set-angle: dynamixel::errors::ServoLimitError if angle is out of the servo's feasible positions
+set-angle (vectors): runtime_error if vectors don't have same size
+get-angles: runtime_error if recieved packet is not valid (checksum error or other)
+**/
 
 namespace dynamixel {
     template <class Protocol>
     class CommandLineUtility {
     public:
+        /**
+            @throws dynamixel::errors:Error if an issue was met while attempting
+            to open the serial interface
+        **/
         CommandLineUtility(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
             : _dyn_util(name, baudrate, recv_timeout)
         {
