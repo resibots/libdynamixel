@@ -13,6 +13,7 @@
 
 #include <dynamixel/dynamixel.hpp>
 #include <tools/utility.hpp>
+#include <tools/missing_parameter.hpp> // an exception class
 
 #include <stdexcept>
 
@@ -36,13 +37,16 @@ namespace dynamixel {
         {
             std::string command = vm["command"].as<std::string>();
 
-            // TODO: check that the required parameters are given; otherwise display help
             // TODO: test for Dynamixel Pro actuators
             try {
                 if ("list" == command) {
                     list();
                 }
                 else if ("write" == command) {
+                    std::vector<std::string>
+                        parameters = {"value", "size", "address"};
+                    check_vm(vm, parameters);
+
                     long long int data = vm["value"].as<long long int>();
                     unsigned short size = vm["size"].as<unsigned short>();
                     typename Protocol::address_t address = vm["address"].as<uint16_t>();
@@ -57,13 +61,12 @@ namespace dynamixel {
                     }
                 }
                 else if ("read" == command) {
-                    if (!vm.count("size"))
-                        throw std::runtime_error("the --size option is needed to read data");
-                    unsigned short size = vm["size"].as<unsigned short>();
+                    std::vector<std::string> parameters = {"size", "address"};
+                    check_vm(vm, parameters);
 
-                    if (!vm.count("address"))
-                        throw std::runtime_error("the --address option is needed to read data");
-                    typename Protocol::address_t address = vm["address"].as<uint16_t>();
+                    unsigned short size = vm["size"].as<unsigned short>();
+                    typename Protocol::address_t address
+                        = vm["address"].as<uint16_t>();
 
                     bool is_signed = vm.count("signed");
 
@@ -76,9 +79,12 @@ namespace dynamixel {
                     }
                 }
                 else if ("change-id" == command) {
+                    check_vm(vm, "id");
                     change_id(vm["id"].as<std::vector<id_t>>());
                 }
                 else if ("change-baudrate" == command) {
+                    check_vm(vm, "new-baudrate");
+
                     if (vm.count("id"))
                         change_baudrate(
                             vm["id"].as<std::vector<id_t>>(),
@@ -87,6 +93,8 @@ namespace dynamixel {
                         change_baudrate(vm["new-baudrate"].as<unsigned int>());
                 }
                 else if ("position" == command) {
+                    check_vm(vm, "angle");
+
                     if (vm.count("id"))
                         position(vm["id"].as<std::vector<id_t>>(),
                             vm["angle"].as<std::vector<double>>());
@@ -101,16 +109,19 @@ namespace dynamixel {
                     }
                 }
                 else if ("torque-enable" == command || "relax" == command) {
-                    // if the relax command is used, enable is false
-                    // otherwise, take the value of parameter `enable`
-                    bool enable = "relax" != command && vm["enable"].as<bool>();
+                    check_vm(vm, "enable");
+                    bool enable = vm["enable"].as<bool>();
 
                     if (vm.count("id"))
-                        torque_enable(
-                            vm["id"].as<std::vector<id_t>>(),
-                            enable);
+                        torque_enable(vm["id"].as<std::vector<id_t>>(), enable);
                     else
                         torque_enable(enable);
+                }
+                else if ("relax" == command) {
+                    if (vm.count("id"))
+                        torque_enable(vm["id"].as<std::vector<id_t>>(), false);
+                    else
+                        torque_enable(false);
                 }
                 else if ("oscillate" == command) {
                     oscillate(
@@ -142,6 +153,11 @@ namespace dynamixel {
                           << e.msg() << "\n\n"
                           << "Please report this issue to the developpers." << std::endl;
             }
+            catch (errors::MissingParameter e) {
+                std::cerr << e.msg()
+                          << "Use \"--help " << command << "\" for more information."
+                          << std::endl;
+            }
             catch (errors::Error e) {
                 std::cerr << "Dynamixel error:\n\t" << e.msg() << std::endl;
             }
@@ -149,6 +165,32 @@ namespace dynamixel {
 
     protected:
         typedef typename Utility<Protocol>::id_t id_t;
+
+        void check_vm(const po::variables_map& vm,
+            const std::vector<std::string>& parameters)
+        {
+            bool missing = false;
+            std::vector<std::string> missing_parameters;
+
+            // Check if each required parameter is there and store the missing ones
+            for (auto parameter : parameters) {
+                if (vm[parameter].empty()) {
+                    missing = true;
+                    missing_parameters.push_back(parameter);
+                }
+            }
+
+            // If there are missing parameters, throw an exception to tell the user
+            if (missing)
+                throw errors::MissingParameter(vm["command"].as<std::string>(),
+                    missing_parameters);
+        }
+
+        inline void check_vm(const po::variables_map& vm, std::string parameter)
+        {
+            std::vector<std::string> parameters = {parameter};
+            check_vm(vm, parameters);
+        }
 
     private:
         Utility<Protocol> _dyn_util;

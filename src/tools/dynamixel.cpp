@@ -189,7 +189,7 @@ int main(int argc, char** argv)
     std::string port;
     int baudrate = 0, posix_baudrate = 0;
     float timeout;
-    std::string command;
+    // std::string command;
 
     po::options_description desc("Allowed options");
     // clang-format off
@@ -258,17 +258,29 @@ int main(int argc, char** argv)
         display_help(argv[0], desc, vm);
         return 0;
     }
-    if (vm.count("command"))
-        command = vm["command"].as<std::string>();
-    else {
+    if (!vm.count("command")) {
         display_help(argv[0], desc, vm);
         return 1;
     }
+    // if (vm.count("command"))
+    //     command = vm["command"].as<std::string>();
+    // else {
+    //     display_help(argv[0], desc, vm);
+    //     return 1;
+    // }
     if (vm.count("port"))
         port = vm["port"].as<std::string>();
     if (vm.count("baudrate")) {
         baudrate = vm["baudrate"].as<unsigned>();
         posix_baudrate = get_baudrate(baudrate);
+    }
+    else {
+        // We should never enter here because we define a default value for "baudrate"
+        // so the key should always exist in vm.
+        std::cerr << "Could not read the baudrate information from internal data "
+                  << "structure. Please report this error to the developpers."
+                  << std::endl;
+        return 1;
     }
 
     try {
