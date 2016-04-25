@@ -272,14 +272,15 @@ int main(int argc, char** argv)
     }
 
     try {
-        std::cout << "Opening serial interface" << std::endl
-                  << "\tport: " << port << std::endl
-                  << "\tbaudrate: " << baudrate << std::endl;
+        // TODO: remove the following commented code, formerly used for debug
+        // std::cout << "Opening serial interface" << std::endl
+        //           << "\tport: " << port << std::endl
+        //           << "\tbaudrate: " << baudrate << std::endl;
         CommandLineUtility<Protocol> command_line(port, posix_baudrate, timeout);
-        std::cout << "Serial port open." << std::endl;
+        // std::cout << "Serial port open." << std::endl;
 
-        std::cout << "\nExecuting the following command" << std::endl
-                  << "\tcommand: " << command << std::endl;
+        // std::cout << "\nExecuting the following command" << std::endl
+        //           << "\tcommand: " << command << std::endl;
         command_line.select_command(vm);
     }
     catch (errors::UnpackError e) {

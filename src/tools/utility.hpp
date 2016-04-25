@@ -142,7 +142,7 @@ namespace dynamixel {
             typename Protocol::length_t length)
         {
             _serial_interface.send(
-                typename dynamixel::instructions::Read<Protocol>(id, address, length));
+                typename dynamixel::instructions::Read<Protocol>(id, address, length)); // FIXME: use sizeof for length ??
             StatusPacket<Protocol> status;
             _serial_interface.recv(status);
 

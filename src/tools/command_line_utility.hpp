@@ -21,7 +21,6 @@ namespace po = boost::program_options;
 
 /**
 TODO: catch exceptions !
-many: out_of_range if the id is not among the detected servos
 set-angle: dynamixel::errors::ServoLimitError if angle is out of the servo's feasible positions
 set-angle (vectors): runtime_error if vectors don't have same size
 get-angles: runtime_error if recieved packet is not valid (checksum error or other)
@@ -46,89 +45,96 @@ namespace dynamixel {
 
             // TODO: check that the required parameters are given; otherwise display help
             // TODO: test for Dynamixel Pro actuators
-            if ("list" == command) {
-                list();
-            }
-            else if ("write" == command) {
-                long long int data = vm["value"].as<long long int>();
-                unsigned short size = vm["size"].as<unsigned short>();
-                typename Protocol::address_t address = vm["address"].as<uint16_t>();
-                bool is_signed = vm.count("signed");
+            try {
+                if ("list" == command) {
+                    list();
+                }
+                else if ("write" == command) {
+                    long long int data = vm["value"].as<long long int>();
+                    unsigned short size = vm["size"].as<unsigned short>();
+                    typename Protocol::address_t address = vm["address"].as<uint16_t>();
+                    bool is_signed = vm.count("signed");
 
-                if (vm.count("id")) {
-                    std::vector<id_t> ids = vm["id"].as<std::vector<id_t>>();
-                    write(ids, address, data, size, is_signed);
+                    if (vm.count("id")) {
+                        std::vector<id_t> ids = vm["id"].as<std::vector<id_t>>();
+                        write(ids, address, data, size, is_signed);
+                    }
+                    else {
+                        write(address, data, size, is_signed);
+                    }
+                }
+                else if ("read" == command) {
+                    if (!vm.count("size"))
+                        throw std::runtime_error("the --size option is needed to read data");
+                    unsigned short size = vm["size"].as<unsigned short>();
+
+                    if (!vm.count("address"))
+                        throw std::runtime_error("the --address option is needed to read data");
+                    typename Protocol::address_t address = vm["address"].as<uint16_t>();
+
+                    bool is_signed = vm.count("signed");
+
+                    if (vm.count("id")) {
+                        std::vector<id_t> ids = vm["id"].as<std::vector<id_t>>();
+                        read(ids, address, size, is_signed);
+                    }
+                    else {
+                        read(address, size, is_signed);
+                    }
+                }
+                else if ("change-id" == command) {
+                    change_id(vm["id"].as<std::vector<id_t>>());
+                }
+                else if ("change-baudrate" == command) {
+                    if (vm.count("id"))
+                        change_baudrate(
+                            vm["id"].as<std::vector<id_t>>(),
+                            vm["new-baudrate"].as<unsigned int>());
+                    else
+                        change_baudrate(vm["new-baudrate"].as<unsigned int>());
+                }
+                else if ("position" == command) {
+                    if (vm.count("id"))
+                        position(vm["id"].as<std::vector<id_t>>(),
+                            vm["angle"].as<std::vector<double>>());
+                    else
+                        position(vm["angle"].as<std::vector<double>>());
+                }
+                else if ("get-position" == command) {
+                    if (vm.count("id"))
+                        print_position(vm["id"].as<std::vector<id_t>>());
+                    else {
+                        print_position();
+                    }
+                }
+                else if ("torque-enable" == command || "relax" == command) {
+                    // if the relax command is used, enable is false
+                    // otherwise, take the value of parameter `enable`
+                    bool enable = "relax" != command && vm["enable"].as<bool>();
+
+                    if (vm.count("id"))
+                        torque_enable(
+                            vm["id"].as<std::vector<id_t>>(),
+                            enable);
+                    else
+                        torque_enable(enable);
+                }
+                else if ("oscillate" == command) {
+                    oscillate(
+                        vm["angular_f"].as<float>(),
+                        vm["amplitude"].as<float>(),
+                        vm["offset"].as<float>(),
+                        vm["phase"].as<float>(),
+                        vm["duration"].as<float>());
                 }
                 else {
-                    write(address, data, size, is_signed);
+                    std::cerr << "Unrecognized command." << std::endl;
                 }
             }
-            else if ("read" == command) {
-                if (!vm.count("size"))
-                    throw std::runtime_error("the --size option is needed to read data");
-                unsigned short size = vm["size"].as<unsigned short>();
-
-                if (!vm.count("address"))
-                    throw std::runtime_error("the --address option is needed to read data");
-                typename Protocol::address_t address = vm["address"].as<uint16_t>();
-
-                bool is_signed = vm.count("signed");
-
-                if (vm.count("id")) {
-                    std::vector<id_t> ids = vm["id"].as<std::vector<id_t>>();
-                    read(ids, address, size, is_signed);
-                }
-                else {
-                    read(address, size, is_signed);
-                }
-            }
-            else if ("change-id" == command) {
-                change_id(vm["id"].as<std::vector<id_t>>());
-            }
-            else if ("change-baudrate" == command) {
-                if (vm.count("id"))
-                    change_baudrate(
-                        vm["id"].as<std::vector<id_t>>(),
-                        vm["new-baudrate"].as<unsigned int>());
-                else
-                    change_baudrate(vm["new-baudrate"].as<unsigned int>());
-            }
-            else if ("position" == command) {
-                if (vm.count("id"))
-                    position(vm["id"].as<std::vector<id_t>>(),
-                        vm["angle"].as<std::vector<double>>());
-                else
-                    position(vm["angle"].as<std::vector<double>>());
-            }
-            else if ("get-position" == command) {
-                if (vm.count("id"))
-                    print_position(vm["id"].as<std::vector<id_t>>());
-                else {
-                    print_position();
-                }
-            }
-            else if ("torque-enable" == command || "relax" == command) {
-                // if the relax command is used, enable is false
-                // otherwise, take the value of parameter `enable`
-                bool enable = "relax" != command && vm["enable"].as<bool>();
-
-                if (vm.count("id"))
-                    torque_enable(
-                        vm["id"].as<std::vector<id_t>>(),
-                        enable);
-                else
-                    torque_enable(enable);
-            }
-            else if ("oscillate" == command) {
-                oscillate(
-                    vm["angular_f"].as<float>(),
-                    vm["amplitude"].as<float>(),
-                    vm["offset"].as<float>(),
-                    vm["phase"].as<float>(),
-                    vm["duration"].as<float>());
-            }
-            else {
-                std::cerr << "Unrecognized command." << std::endl;
+            catch (std::out_of_range e) {
+                std::cerr << "An error (out_of_range from " << e.what()
+                          << ") has been catched. You probably used a nonexistant ID."
+                          << std::endl;
             }
         }
 
