@@ -183,14 +183,17 @@ void display_help(const std::string program_name,
 
 int main(int argc, char** argv)
 {
+    // Convenience definitions
     using Protocol = protocols::Protocol1;
     typedef Utility<Protocol>::id_t id_t;
 
+    // Parameters for serial communication
     std::string port;
     int baudrate = 0, posix_baudrate = 0;
     float timeout;
-    // std::string command;
 
+    // Definition of command line options
+    // ==================================
     po::options_description desc("Allowed options");
     // clang-format off
     desc.add_options()
@@ -246,6 +249,8 @@ int main(int argc, char** argv)
     po::positional_options_description pos_desc;
     pos_desc.add("command", 1);
 
+    // Parsing command line options
+    // ============================
     po::command_line_parser parser{argc, argv};
     parser.options(cmdline_options).positional(pos_desc);
     po::parsed_options parsed_options = parser.run();
@@ -254,6 +259,8 @@ int main(int argc, char** argv)
     po::store(parsed_options, vm);
     po::notify(vm);
 
+    // Display of the help messages
+    // ============================
     if (vm.count("help")) {
         display_help(argv[0], desc, vm);
         return 0;
@@ -262,12 +269,8 @@ int main(int argc, char** argv)
         display_help(argv[0], desc, vm);
         return 1;
     }
-    // if (vm.count("command"))
-    //     command = vm["command"].as<std::string>();
-    // else {
-    //     display_help(argv[0], desc, vm);
-    //     return 1;
-    // }
+    // Retriving connexion parameters
+    // ==============================
     if (vm.count("port"))
         port = vm["port"].as<std::string>();
     if (vm.count("baudrate")) {
@@ -283,20 +286,15 @@ int main(int argc, char** argv)
         return 1;
     }
 
+    // Opening serial connexion and executing the user's command
+    // =========================================================
     try {
-        // TODO: remove the following commented code, formerly used for debug
-        // std::cout << "Opening serial interface" << std::endl
-        //           << "\tport: " << port << std::endl
-        //           << "\tbaudrate: " << baudrate << std::endl;
         CommandLineUtility<Protocol> command_line(port, posix_baudrate, timeout);
-        // std::cout << "Serial port open." << std::endl;
-
-        // std::cout << "\nExecuting the following command" << std::endl
-        //           << "\tcommand: " << command << std::endl;
         command_line.select_command(vm);
     }
     catch (errors::Error e) {
         std::cerr << e.msg() << std::endl;
     }
+
     return 0;
 }

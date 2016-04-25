@@ -13,7 +13,7 @@
 
 #include <dynamixel/dynamixel.hpp>
 #include <tools/utility.hpp>
-#include <tools/missing_parameter.hpp> // an exception class
+#include <tools/missing_parameter_error.hpp> // an exception class
 
 #include <stdexcept>
 
