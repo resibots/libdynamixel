@@ -283,18 +283,8 @@ int main(int argc, char** argv)
         //           << "\tcommand: " << command << std::endl;
         command_line.select_command(vm);
     }
-    catch (errors::UnpackError e) {
-        std::cerr << "When attempting to read some data on a servo, we got the "
-                     "following error:\n\t"
-                  << e.msg() << std::endl;
-    }
-    catch (errors::UtilityError e) {
-        std::cerr << "Error due to our bad programming :\n"
-                  << e.msg() << "\n\n"
-                  << "Please report this issue to the developpers." << std::endl;
-    }
     catch (errors::Error e) {
-        std::cerr << "Dynamixel error:\n\t" << e.msg() << std::endl;
+        std::cerr << e.msg() << std::endl;
     }
     return 0;
 }

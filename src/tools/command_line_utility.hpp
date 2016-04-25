@@ -129,8 +129,21 @@ namespace dynamixel {
                           << ") has been catched. You probably used a nonexistant ID."
                           << std::endl;
             }
-            catch (dynamixel::errors::ServoLimitError e) {
+            catch (errors::ServoLimitError e) {
                 std::cerr << e.msg() << std::endl;
+            }
+            catch (errors::UnpackError e) {
+                std::cerr << "When attempting to read some data on a servo, we "
+                          << "got the following error:\n\t"
+                          << e.msg() << std::endl;
+            }
+            catch (errors::UtilityError e) {
+                std::cerr << "Our bad! The following error is our fault :\n"
+                          << e.msg() << "\n\n"
+                          << "Please report this issue to the developpers." << std::endl;
+            }
+            catch (errors::Error e) {
+                std::cerr << "Dynamixel error:\n\t" << e.msg() << std::endl;
             }
         }
 
