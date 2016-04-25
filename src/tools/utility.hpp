@@ -326,9 +326,8 @@ namespace dynamixel {
             @throws out_of_range if the id is not among the detected servos
             @throws dynamixel::errors::ServoLimitError if angle is out of the
                 servo's feasible positions
-            @throws runtime_error if the ids and angles vectors have different
-                lengths
-            @throws errors::UtilityError if you didn't detect connected servos before
+            @throws errors::UtilityError if the ids and angles vectors have different
+                lengths or if you didn't detect connected servos before
         **/
         void set_angle(
             const std::vector<id_t>& ids,

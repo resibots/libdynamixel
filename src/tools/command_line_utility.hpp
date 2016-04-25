@@ -19,13 +19,6 @@
 using namespace dynamixel;
 namespace po = boost::program_options;
 
-/**
-TODO: catch exceptions !
-set-angle: dynamixel::errors::ServoLimitError if angle is out of the servo's feasible positions
-set-angle (vectors): runtime_error if vectors don't have same size
-get-angles: runtime_error if recieved packet is not valid (checksum error or other)
-**/
-
 namespace dynamixel {
     template <class Protocol>
     class CommandLineUtility {
@@ -135,6 +128,9 @@ namespace dynamixel {
                 std::cerr << "An error (out_of_range from " << e.what()
                           << ") has been catched. You probably used a nonexistant ID."
                           << std::endl;
+            }
+            catch (dynamixel::errors::ServoLimitError e) {
+                std::cerr << e.msg() << std::endl;
             }
         }
 
