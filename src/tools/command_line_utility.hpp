@@ -37,7 +37,6 @@ namespace dynamixel {
         {
             std::string command = vm["command"].as<std::string>();
 
-            // TODO: test for Dynamixel Pro actuators
             try {
                 if ("list" == command) {
                     list();
@@ -271,14 +270,15 @@ namespace dynamixel {
             if (1 == size) { // one byte of data, unsigned
                 for (auto id : ids) {
                     std::cout
-                        << _dyn_util.template read<uint8_t>(id, address, 1)
+                        << (unsigned short)_dyn_util.template read<uint8_t>(
+                               id, address)
                         << "\n";
                 }
             }
             else if (2 == size) { // two bytes of data, unsigned
                 for (auto id : ids) {
                     std::cout
-                        << _dyn_util.template read<uint16_t>(id, address, 2)
+                        << _dyn_util.template read<uint16_t>(id, address)
                         << "\n";
                 }
             }
@@ -286,14 +286,14 @@ namespace dynamixel {
                 if (is_signed) {
                     for (auto id : ids) {
                         std::cout
-                            << _dyn_util.template read<uint32_t>(id, address, 4)
+                            << _dyn_util.template read<uint32_t>(id, address)
                             << "\n";
                     }
                 }
                 else {
                     for (auto id : ids) {
                         std::cout
-                            << _dyn_util.template read<int32_t>(id, address, 4)
+                            << _dyn_util.template read<int32_t>(id, address)
                             << "\n";
                     }
                 }
@@ -310,17 +310,17 @@ namespace dynamixel {
             _dyn_util.detect_servos();
 
             if (1 == size) { // one byte of data, unsigned
-                print_data(_dyn_util.template read<uint8_t>(address, 1));
+                print_data(_dyn_util.template read<uint8_t>(address));
             }
             else if (2 == size) { // two bytes of data, unsigned
-                print_data(_dyn_util.template read<uint16_t>(address, 2));
+                print_data(_dyn_util.template read<uint16_t>(address));
             }
             else if (4 == size) { // four bytes of data, both unsigned and signed
                 if (is_signed) {
-                    print_data(_dyn_util.template read<uint32_t>(address, 4));
+                    print_data(_dyn_util.template read<uint32_t>(address));
                 }
                 else {
-                    print_data(_dyn_util.template read<int32_t>(address, 4));
+                    print_data(_dyn_util.template read<int32_t>(address));
                 }
             }
             else {
