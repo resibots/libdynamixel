@@ -15,7 +15,7 @@ namespace dynamixel {
             {
                 std::stringstream err_message;
                 err_message << "Servo: error while setting " << type
-                            << " in servo with ID " << (int)_id << ": \n"
+                            << " in servo with ID " << (long long int)_id << ": \n"
                             << "Minimum: " << _min << ", Maximum: " << _max
                             << ", Given: " << _value;
                 this->_msg = err_message.str();
