@@ -18,13 +18,13 @@ namespace dynamixel {
         @return hardware-specific code for the baudrate
     **/
     template <typename Protocol>
-    uint8_t get_baudrate_id(unsigned int baudrate)
+    inline uint8_t get_baudrate_id(unsigned int baudrate)
     {
         throw errors::Error("There is no baudrate table defined for this protocol");
     }
 
     template <>
-    uint8_t get_baudrate_id<typename protocols::Protocol1>(unsigned int baudrate)
+    inline uint8_t get_baudrate_id<typename protocols::Protocol1>(unsigned int baudrate)
     {
         switch (baudrate) {
         case 9600:
@@ -53,7 +53,7 @@ namespace dynamixel {
     }
 
     template <>
-    uint8_t get_baudrate_id<typename protocols::Protocol2>(unsigned int baudrate)
+    inline uint8_t get_baudrate_id<typename protocols::Protocol2>(unsigned int baudrate)
     {
         switch (baudrate) {
         case 9600:
