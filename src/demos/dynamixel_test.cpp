@@ -17,7 +17,11 @@ int main(int argc, char** argv)
     }
 
     try {
-        Usb2Dynamixel controller(argv[1], B1000000, 0.01);
+      #ifndef __APPLE__
+         Usb2Dynamixel controller(argv[1], B1000000, 0.01);
+      #else
+         Usb2Dynamixel controller(argv[1], B115200, 0.01);
+      #endif
         std::vector<std::shared_ptr<BaseServo<Protocol1>>> servos = auto_detect<Protocol1>(controller);
         StatusPacket<Protocol1> st;
 

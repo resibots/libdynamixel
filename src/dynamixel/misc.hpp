@@ -77,6 +77,7 @@ namespace dynamixel {
         case 230400:
             return B230400;
             break;
+#ifndef __APPLE__
         case 460800:
             return B460800;
             break;
@@ -113,6 +114,7 @@ namespace dynamixel {
         case 4000000:
             return B4000000;
             break;
+#endif
         default:
             std::stringstream err_message;
             err_message << "Invalid baudrate: " << baudrate;
