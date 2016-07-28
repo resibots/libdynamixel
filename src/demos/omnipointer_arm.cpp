@@ -19,7 +19,11 @@ int main(int argc, char** argv)
     }
 
     try {
+#ifndef __APPLE__
         Usb2Dynamixel controller(argv[1], B1000000, 0.01);
+#else
+        Usb2Dynamixel controller(argv[1], B115200, 0.01);
+#endif
         std::vector<double> rads(4);
         rads[0] = std::atof(argv[2]);
         rads[1] = std::atof(argv[3]);
