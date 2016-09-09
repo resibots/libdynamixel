@@ -29,6 +29,11 @@ namespace dynamixel {
 
             Usb2Dynamixel() : _recv_timeout(0.1), _fd(-1) {}
 
+            ~Usb2Dynamixel()
+            {
+                close_serial();
+            }
+
             void open_serial(const std::string& name, int baudrate = B115200)
             {
                 struct termios tio_serial;
@@ -39,7 +44,7 @@ namespace dynamixel {
 
                 _fd = open(name.c_str(), O_RDWR | O_NOCTTY);
                 if (_fd == -1)
-                    throw errors::Error("error opening device:" + name + " " + std::string(strerror(errno)));
+                    throw errors::Error("error opening device " + name + ": " + std::string(strerror(errno)));
 
                 // Serial port setting
                 bzero(&tio_serial, sizeof(tio_serial));

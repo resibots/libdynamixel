@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
+import sys
+sys.path.insert(0, './waf_tools')
 
 import os
 import glob
@@ -15,10 +17,14 @@ def options(opt):
     opt.load('compiler_cxx')
     #opt.add_option('--arm', action='store_true', help='enable arm cross-compilation', dest='arm')
 
+    opt.recurse('src/tools')
+
 
 def configure(conf):
     conf.load('compiler_cxx')
     conf.env['CXXFLAGS'] = '-D_REENTRANT -Wall -finline-functions -Wno-inline  -fPIC -O3 -std=c++11 -ftemplate-depth-128 -Wno-sign-compare'.split(' ')
+
+    conf.recurse('src/tools')
 
     # if conf.options.arm:
     #     conf.setenv('arm', conf.env)
@@ -32,6 +38,7 @@ def configure(conf):
 
 def build(bld):
     bld.recurse('src/demos')
+    bld.recurse('src/tools')
 
     # if ('arm' in bld.all_envs) and (bld.all_envs['arm']['ENABLE_ARM'] is True):
     #     print "arm enabled"
