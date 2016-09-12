@@ -20,7 +20,7 @@ The build system for this library is Waf. Don't run away yet. It has the big adv
 
 udev rule for USB2AX adapter
 ============================
-If you want your USB2AX serial interface to appear in `/dev` as `usb2axN` (where N is a kerne-attributed integer), you can install the udev rule. It is as simple as moving the `usb2ax.rules` file in this repository to the folder for the udev rules. For ubuntu, it is `/etc/udev/rules.d`.
+If you want your USB2AX serial interface to appear in `/dev` as `usb2axN` (where N is a kernel-attributed integer), you can install the udev rule. It is as simple as moving the `usb2ax.rules` file in this repository to the folder for the udev rules. For ubuntu, it is `/etc/udev/rules.d`.
 
 Using the utility
 =================
