@@ -18,6 +18,10 @@ The build system for this library is Waf. Don't run away yet. It has the big adv
 4. setup the proper authorisation  
   please ensure that you have the proper rights to access the serial interfaces. On GNU/Linux, you might have to add your user to the `dialout` group and log out.
 
+udev rule for USB2AX adapter
+============================
+If you want your USB2AX serial interface to appear in `/dev` as `usb2axN` (where N is a kernel-attributed integer), you can install the udev rule. It is as simple as moving the `usb2ax.rules` file in this repository to the folder for the udev rules. For ubuntu, it is `/etc/udev/rules.d`.
+
 Using the utility
 =================
 Since we are right now writing a brand new utility, the user interface is not settled yet and some commands are not implemented. You can still play with the binary `dynamixel2` (the name will change) with the `--help [command]` option to learn how to use it.

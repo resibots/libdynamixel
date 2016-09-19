@@ -1,0 +1,1 @@
+KERNEL=="ttyACM[0-9]", ATTRS{idVendor}=="16d0", ATTRS{idProduct}=="06a7", SYMLINK="usb2ax%n", MODE="660"
