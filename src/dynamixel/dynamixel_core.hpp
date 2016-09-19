@@ -7,5 +7,6 @@
 #include "protocols.hpp"
 #include "errors.hpp"
 #include "misc.hpp"
+#include "baudrate.hpp"
 
 #endif

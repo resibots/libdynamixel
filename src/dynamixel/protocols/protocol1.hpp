@@ -91,6 +91,18 @@ namespace dynamixel {
                 return packed;
             }
 
+            static std::vector<uint8_t> pack_data(uint32_t data)
+            {
+                throw errors::Error("pack_data for unsigned int (32 bits) not "
+                                    "implemented in Protocol1");
+            }
+
+            static std::vector<uint8_t> pack_data(int32_t data)
+            {
+                throw errors::Error("pack_data for int (32 bits) not "
+                                    "implemented in Protocol1");
+            }
+
             static void unpack_data(const std::vector<uint8_t>& packet, uint8_t& res)
             {
                 if (packet.size() == 0)
@@ -103,6 +115,18 @@ namespace dynamixel {
                 if (packet.size() != 2)
                     throw errors::UnpackError(1);
                 res = (((uint16_t)packet[1]) << 8) | ((uint16_t)packet[0]);
+            }
+
+            static void unpack_data(const std::vector<uint8_t>& packet, uint32_t& res)
+            {
+                throw errors::Error("unpack_data for unsigned int (32 bits) not "
+                                    "implemented in Protocol1");
+            }
+
+            static void unpack_data(const std::vector<uint8_t>& packet, int32_t& res)
+            {
+                throw errors::Error("unpack_data for int (32 bits) not "
+                                    "implemented in Protocol1");
             }
 
             /** Decodes the content of a status packet recieved from the servos
