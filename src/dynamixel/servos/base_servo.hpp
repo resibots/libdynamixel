@@ -27,6 +27,13 @@
 
 namespace dynamixel {
     namespace servos {
+        namespace cst {
+            enum OperatingMode {
+                wheel,
+                joint,
+                multi_turn
+            };
+        }
 
         template <typename Protocol>
         class BaseServo {
@@ -128,6 +135,11 @@ namespace dynamixel {
             virtual InstructionPacket<protocol_t> reg_goal_position_angle(double rad) const
             {
                 throw errors::Error("reg_goal_position_angle not implemented in model");
+            }
+
+            virtual InstructionPacket<protocol_t> set_goal_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const
+            {
+                throw errors::Error("set_goal_speed_angle not implemented in model");
             }
 
             virtual InstructionPacket<protocol_t> get_present_position_angle() const

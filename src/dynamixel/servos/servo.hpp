@@ -2,12 +2,12 @@
 #define DYNAMIXEL_SERVOS_SERVO_HPP_
 
 #include <cassert>
-#include <cmath>
 #include <stdint.h>
 
 #include "../instruction_packet.hpp"
 #include "../status_packet.hpp"
 #include "base_servo.hpp"
+#include "protocol_specific_pacquets.hpp"
 #include "../instructions/ping.hpp"
 #include "../instructions/read.hpp"
 #include "../instructions/write.hpp"
@@ -157,6 +157,11 @@ namespace dynamixel {
                 return reg_goal_position(id, pos);
             }
 
+            static inline InstructionPacket<protocol_t> set_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
+            {
+                return ProtocolSpecificPackets<Model, protocol_t>::set_goal_speed_angle(id, rad_per_s, operating_mode);
+            }
+
             InstructionPacket<protocol_t> set_goal_position_angle(double rad) const override
             {
                 return Model::set_goal_position_angle(this->_id, rad);
@@ -175,6 +180,11 @@ namespace dynamixel {
             InstructionPacket<typename Servo<Model>::protocol_t> get_present_position_angle() const override
             {
                 return Model::get_present_position_angle(this->_id);
+            }
+
+            InstructionPacket<protocol_t> set_goal_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
+            {
+                return set_goal_speed_angle(this->_id, rad_per_s, operating_mode);
             }
 
             static double parse_present_position_angle(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st)
