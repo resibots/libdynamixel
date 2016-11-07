@@ -99,6 +99,7 @@ namespace dynamixel {
                 // convert radians per second to ticks
                 typename ct_t::moving_speed_t speed_ticks = round(rad_per_s / (two_pi * ct_t::rpm_per_tick));
 
+                // Check that desired speed is within the actuator's bounds
                 if (!(speed_ticks >= ct_t::min_goal_speed && speed_ticks <= ct_t::max_goal_speed)) {
                     double min_goal_speed = ct_t::min_goal_speed * ct_t::rpm_per_tick * two_pi;
                     double max_goal_speed = ct_t::max_goal_speed * ct_t::rpm_per_tick * two_pi;

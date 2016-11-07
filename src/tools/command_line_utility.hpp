@@ -165,6 +165,13 @@ namespace dynamixel {
     protected:
         typedef typename Utility<Protocol>::id_t id_t;
 
+        /* Search the the required parameters in the boost:program_option's variable map.
+
+           The missing parameters are reported to the user with an exception
+
+           @param variables_map  built by boost::program_option, from the parsed command line arguments
+           @param parameters vector of the names of the required parameters
+        */
         void check_vm(const po::variables_map& vm,
             const std::vector<std::string>& parameters)
         {
@@ -185,6 +192,10 @@ namespace dynamixel {
                     missing_parameters);
         }
 
+        /* Search the the required parameter in the boost:program_option's variable map.
+
+          This version is for a single required parameter.
+        */
         inline void check_vm(const po::variables_map& vm, std::string parameter)
         {
             std::vector<std::string> parameters = {parameter};
