@@ -45,14 +45,41 @@ namespace dynamixel {
         class ProtocolSpecificPackets<M, protocols::Protocol1> {
         public:
             typedef typename ModelTraits<M>::CT ct_t;
+            typedef typename ct_t::moving_speed_t moving_speed_t;
 
             static inline InstructionPacket<protocols::Protocol1> set_goal_speed_angle(
                 typename protocols::Protocol1::id_t id,
                 double rad_per_s,
                 cst::OperatingMode operating_mode)
             {
+                moving_speed_t speed_ticks = angular_speed_to_ticks(id, rad_per_s,
+                    operating_mode);
+
+                return Servo<M>::set_moving_speed(id, speed_ticks);
+            }
+
+            static inline InstructionPacket<protocols::Protocol1> reg_goal_speed_angle(
+                typename protocols::Protocol1::id_t id,
+                double rad_per_s,
+                cst::OperatingMode operating_mode)
+            {
+                moving_speed_t speed_ticks = angular_speed_to_ticks(id, rad_per_s,
+                    operating_mode);
+
+                return Servo<M>::reg_moving_speed(id, speed_ticks);
+            }
+
+        private:
+            // 2 * pi
+            static constexpr double two_pi = 6.28318;
+
+            static inline typename ct_t::moving_speed_t angular_speed_to_ticks(
+                typename protocols::Protocol1::id_t id,
+                double rad_per_s,
+                cst::OperatingMode operating_mode)
+            {
                 // convert radians per second to ticks
-                typename ct_t::moving_speed_t speed_ticks = round(60 * rad_per_s / (two_pi * ct_t::rpm_per_tick));
+                moving_speed_t speed_ticks = round(60 * rad_per_s / (two_pi * ct_t::rpm_per_tick));
 
                 // The actuator is operated as a wheel (continuous rotation)
                 if (operating_mode == cst::wheel) {
@@ -78,26 +105,46 @@ namespace dynamixel {
                     }
                 }
 
-                return Servo<M>::set_moving_speed(id, speed_ticks);
+                return speed_ticks;
             }
-
-        private:
-            // 2 * pi
-            static constexpr double two_pi = 6.28318;
         };
 
         template <class M>
         class ProtocolSpecificPackets<M, protocols::Protocol2> {
         public:
             typedef typename ModelTraits<M>::CT ct_t;
+            typedef typename ct_t::moving_speed_t moving_speed_t;
 
             static inline InstructionPacket<protocols::Protocol2> set_goal_speed_angle(
                 typename protocols::Protocol2::id_t id,
                 double rad_per_s,
                 cst::OperatingMode operating_mode)
             {
+                moving_speed_t speed_ticks = angular_speed_to_ticks(id, rad_per_s);
+
+                return Servo<M>::set_moving_speed(id, speed_ticks);
+            }
+
+            static inline InstructionPacket<protocols::Protocol2> reg_goal_speed_angle(
+                typename protocols::Protocol2::id_t id,
+                double rad_per_s,
+                cst::OperatingMode operating_mode)
+            {
+                moving_speed_t speed_ticks = angular_speed_to_ticks(id, rad_per_s);
+
+                return Servo<M>::reg_moving_speed(id, speed_ticks);
+            }
+
+        private:
+            // 2 * pi
+            static constexpr double two_pi = 6.28318;
+
+            static inline typename ct_t::moving_speed_t angular_speed_to_ticks(
+                typename protocols::Protocol1::id_t id,
+                double rad_per_s)
+            {
                 // convert radians per second to ticks
-                typename ct_t::moving_speed_t speed_ticks = round(rad_per_s / (two_pi * ct_t::rpm_per_tick));
+                moving_speed_t speed_ticks = round(rad_per_s / (two_pi * ct_t::rpm_per_tick));
 
                 // Check that desired speed is within the actuator's bounds
                 if (!(speed_ticks >= ct_t::min_goal_speed && speed_ticks <= ct_t::max_goal_speed)) {
@@ -106,12 +153,8 @@ namespace dynamixel {
                     throw errors::ServoLimitError(id, min_goal_speed, max_goal_speed, rad_per_s, "speed");
                 }
 
-                return Servo<M>::set_moving_speed(id, speed_ticks);
+                return speed_ticks;
             }
-
-        private:
-            // 2 * pi
-            static constexpr double two_pi = 6.28318;
         };
     }
 }

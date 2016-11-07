@@ -139,6 +139,9 @@ namespace dynamixel {
                 return ping_t(this->_id);
             }
 
+            // =================================================================
+            // Position-specific
+
             static inline InstructionPacket<protocol_t> set_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, double rad)
             {
                 double deg = rad * 57.2958;
@@ -155,11 +158,6 @@ namespace dynamixel {
                     throw errors::ServoLimitError(id, ct_t::min_goal_angle_deg, ct_t::max_goal_angle_deg, deg);
                 typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
                 return reg_goal_position(id, pos);
-            }
-
-            static inline InstructionPacket<protocol_t> set_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
-            {
-                return ProtocolSpecificPackets<Model, protocol_t>::set_goal_speed_angle(id, rad_per_s, operating_mode);
             }
 
             InstructionPacket<protocol_t> set_goal_position_angle(double rad) const override
@@ -182,11 +180,6 @@ namespace dynamixel {
                 return Model::get_present_position_angle(this->_id);
             }
 
-            InstructionPacket<protocol_t> set_goal_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
-            {
-                return set_goal_speed_angle(this->_id, rad_per_s, operating_mode);
-            }
-
             static double parse_present_position_angle(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st)
             {
                 typename Servo<Model>::ct_t::present_position_t pos;
@@ -199,6 +192,52 @@ namespace dynamixel {
             double parse_present_position_angle(const StatusPacket<typename Servo<Model>::protocol_t>& st) const override
             {
                 return Model::parse_present_position_angle(this->_id, st);
+            }
+
+            // Bulk operations. Only works if the models are known and they are all the same
+            template <typename Id, typename Pos>
+            static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)
+            {
+                if (ids.size() != pos.size())
+                    throw errors::Error("Instruction: error when setting goal positions: \n\tMismatch in vector size for ids and positions");
+                std::vector<std::vector<uint8_t>> packed(pos.size());
+                for (size_t i = 0; i < pos.size(); i++)
+                    packed[i] = protocol_t::pack_data((typename ct_t::goal_position_t)pos[i]);
+
+                return sync_write_t(ct_t::goal_position, _get_typed<typename protocol_t::id_t>(ids), packed);
+            }
+
+            // =================================================================
+            // Speed-specific
+
+            static inline InstructionPacket<protocol_t> set_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
+            {
+                return ProtocolSpecificPackets<Model, protocol_t>::set_goal_speed_angle(id, rad_per_s, operating_mode);
+            }
+
+            static inline InstructionPacket<protocol_t> reg_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
+            {
+                return ProtocolSpecificPackets<Model, protocol_t>::reg_goal_speed_angle(id, rad_per_s, operating_mode);
+            }
+
+            InstructionPacket<protocol_t> set_goal_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
+            {
+                return Model::set_goal_speed_angle(this->_id, rad_per_s, operating_mode);
+            }
+
+            InstructionPacket<protocol_t> reg_goal_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
+            {
+                return Model::reg_goal_speed_angle(this->_id, rad_per_s, operating_mode);
+            }
+
+            static InstructionPacket<typename Servo<Model>::protocol_t> get_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id)
+            {
+                return get_moving_speed(id);
+            }
+
+            InstructionPacket<typename Servo<Model>::protocol_t> get_goal_speed_angle() const override
+            {
+                return Model::get_goal_speed_angle(this->_id);
             }
 
             // TODO: read speed from dynamixel pros to check that we do get negative values too
@@ -224,19 +263,6 @@ namespace dynamixel {
             double parse_present_joint_speed(const StatusPacket<typename Servo<Model>::protocol_t>& st) const override
             {
                 return Model::parse_present_joint_speed(this->_id, st);
-            }
-
-            // Bulk operations. Only works if the models are known and they are all the same
-            template <typename Id, typename Pos>
-            static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)
-            {
-                if (ids.size() != pos.size())
-                    throw errors::Error("Instruction: error when setting goal positions: \n\tMismatch in vector size for ids and positions");
-                std::vector<std::vector<uint8_t>> packed(pos.size());
-                for (size_t i = 0; i < pos.size(); i++)
-                    packed[i] = protocol_t::pack_data((typename ct_t::goal_position_t)pos[i]);
-
-                return sync_write_t(ct_t::goal_position, _get_typed<typename protocol_t::id_t>(ids), packed);
             }
 
             template <typename Id, typename Speed>
