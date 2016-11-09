@@ -73,13 +73,13 @@ namespace dynamixel {
             // 2 * pi
             static constexpr double two_pi = 6.28318;
 
-            static inline typename ct_t::moving_speed_t angular_speed_to_ticks(
+            static inline moving_speed_t angular_speed_to_ticks(
                 typename protocols::Protocol1::id_t id,
                 double rad_per_s,
                 cst::OperatingMode operating_mode)
             {
                 // convert radians per second to ticks
-                moving_speed_t speed_ticks = round(60 * rad_per_s / (two_pi * ct_t::rpm_per_tick));
+                int32_t speed_ticks = round(60 * rad_per_s / (two_pi * ct_t::rpm_per_tick));
 
                 // The actuator is operated as a wheel (continuous rotation)
                 if (operating_mode == cst::wheel) {
@@ -105,7 +105,7 @@ namespace dynamixel {
                     }
                 }
 
-                return speed_ticks;
+                return (moving_speed_t)speed_ticks;
             }
         };
 
@@ -139,12 +139,12 @@ namespace dynamixel {
             // 2 * pi
             static constexpr double two_pi = 6.28318;
 
-            static inline typename ct_t::moving_speed_t angular_speed_to_ticks(
+            static inline moving_speed_t angular_speed_to_ticks(
                 typename protocols::Protocol1::id_t id,
                 double rad_per_s)
             {
                 // convert radians per second to ticks
-                moving_speed_t speed_ticks = round(60 * rad_per_s / (two_pi * ct_t::rpm_per_tick));
+                int32_t speed_ticks = round(60 * rad_per_s / (two_pi * ct_t::rpm_per_tick));
 
                 // Check that desired speed is within the actuator's bounds
                 if (!(speed_ticks >= ct_t::min_goal_speed && speed_ticks <= ct_t::max_goal_speed)) {
@@ -153,7 +153,7 @@ namespace dynamixel {
                     throw errors::ServoLimitError(id, min_goal_speed, max_goal_speed, rad_per_s, "speed");
                 }
 
-                return speed_ticks;
+                return (moving_speed_t)speed_ticks;
             }
         };
     }
