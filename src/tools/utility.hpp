@@ -437,20 +437,25 @@ namespace dynamixel {
 
             @param ids vector of ids for the concerned servos
             @param speed desired speed (rad/s)
+            @param wheel_mode boolean set to true if the actuators are in wheel
+                mode (defaults to false)
 
             @throws out_of_range if the id is not among the detected servos
             @throws dynamixel::errors::ServoLimitError if speed is out of the
                 servo's feasible bounds
             @throws errors::UtilityError if you didn't detect connected servos before
         **/
-        void set_speed(const std::vector<id_t>& ids, double speed)
+        void set_speed(const std::vector<id_t>& ids, double speed,
+            bool wheel_mode = false)
         {
             check_scanned();
 
             // the new speed is sent to each actuator but they wait for the
             // "Action" (see bellow) command to enact the change
             for (auto id : ids) {
-                _serial_interface.send(_servos.at(id)->reg_goal_speed_angle(speed));
+                _serial_interface.send(_servos.at(id)->reg_goal_speed_angle(
+                    speed,
+                    wheel_mode ? cst::wheel : cst::joint));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);
@@ -467,19 +472,22 @@ namespace dynamixel {
                 (wheel/continuous or position).
 
             @param speed desired speed (rad/s)
+            @param wheel_mode boolean set to true if the actuators are in wheel
+                mode (defaults to false)
 
             @throws dynamixel::errors::ServoLimitError if speed is out of the
                 servo's feasible bounds
             @throws errors::UtilityError if you didn't detect connected servos before
         **/
-        void set_speed(double speed)
+        void set_speed(double speed, bool wheel_mode = false)
         {
             check_scanned();
 
             // the new speed is sent to each actuator but they wait for the
             // "Action" (see bellow) command to enact the change
             for (auto servo : _servos) {
-                _serial_interface.send(servo.second->reg_goal_speed_angle(speed));
+                _serial_interface.send(servo.second->reg_goal_speed_angle(speed,
+                    wheel_mode ? cst::wheel : cst::joint));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);
@@ -497,6 +505,8 @@ namespace dynamixel {
 
             @param ids vector of ids for the servos to be moved
             @param speed vector of angular velocities (rad/s), one for each actuator
+            @param wheel_mode boolean set to true if the actuators are in wheel
+                mode (defaults to false)
 
             @throws out_of_range if the id is not among the detected servos
             @throws dynamixel::errors::ServoLimitError if speed is out of the
@@ -506,7 +516,7 @@ namespace dynamixel {
         **/
         void set_speed(
             const std::vector<id_t>& ids,
-            const std::vector<double>& angles)
+            const std::vector<double>& speeds, bool wheel_mode = false)
         {
             check_scanned();
             if (ids.size() != angles.size())
@@ -516,7 +526,8 @@ namespace dynamixel {
 
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.send(
-                    _servos.at(ids[i])->reg_goal_speed_angle(angles[i]));
+                    _servos.at(ids[i])->reg_goal_speed_angle(speeds[i],
+                        wheel_mode ? cst::wheel : cst::joint));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);

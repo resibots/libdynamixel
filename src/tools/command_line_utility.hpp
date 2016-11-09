@@ -110,11 +110,17 @@ namespace dynamixel {
                 else if ("set-speed" == command) {
                     check_vm(vm, "speed");
 
+                    bool wheel_mode = false;
+                    if (vm.count("wheel-mode"))
+                        wheel_mode = true;
+
                     if (vm.count("id"))
                         speed(vm["id"].as<std::vector<id_t>>(),
-                            vm["speed"].as<std::vector<double>>());
+                            vm["speed"].as<std::vector<double>>(),
+                            wheel_mode);
                     else
-                        speed(vm["speed"].as<std::vector<double>>());
+                        speed(vm["speed"].as<std::vector<double>>(),
+                            wheel_mode);
                 }
                 else if ("get-speed" == command) {
                     if (vm.count("id"))
@@ -455,15 +461,16 @@ namespace dynamixel {
             }
         }
 
-        void speed(const std::vector<id_t>& ids, const std::vector<double>& speeds)
+        void speed(const std::vector<id_t>& ids, const std::vector<double>& speeds,
+            bool wheel_mode = false)
         {
             if (speeds.size() == 1) {
                 _dyn_util.detect_servos();
-                _dyn_util.set_speed(ids, speeds.at(0));
+                _dyn_util.set_speed(ids, speeds.at(0), wheel_mode);
             }
             else if (ids.size() == speeds.size()) {
                 _dyn_util.detect_servos();
-                _dyn_util.set_speed(ids, speeds);
+                _dyn_util.set_speed(ids, speeds, wheel_mode);
             }
             else
                 std::cout << "Usage for set-speed command (with IDs):\n"
@@ -474,11 +481,11 @@ namespace dynamixel {
                           << std::endl;
         }
 
-        void speed(const std::vector<double>& speeds)
+        void speed(const std::vector<double>& speeds, bool wheel_mode = false)
         {
             if (speeds.size() == 1) {
                 _dyn_util.detect_servos();
-                _dyn_util.set_speed(speeds.at(0));
+                _dyn_util.set_speed(speeds.at(0), wheel_mode);
             }
             else
                 std::cout << "Usage for set-speed command with no ID:\n"

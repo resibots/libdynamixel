@@ -241,6 +241,7 @@ int main(int argc, char** argv)
             "desired angle (in radians), used by the `position` command")
         ("speed", po::value<std::vector<double>>()->multitoken(),
             "desired anglular speed (in radians per second), used by the `speed` command")
+        ("wheel-mode", "tell that the selected actuator·s is·are in wheel mode")
         ("new-baudrate", po::value<unsigned>(),
             "used by change-baudrate as the new baudrate value to be set")
         ("enable", po::value<bool>(),
