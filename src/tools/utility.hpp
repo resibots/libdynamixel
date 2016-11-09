@@ -519,10 +519,10 @@ namespace dynamixel {
             const std::vector<double>& speeds, bool wheel_mode = false)
         {
             check_scanned();
-            if (ids.size() != angles.size())
-                throw errors::UtilityError("set_position(vector, vector): the "
-                                           "vectors of IDs and angles should have "
-                                           "the same length");
+            if (ids.size() != speeds.size())
+                throw errors::UtilityError("set_speed(vector, vector): the "
+                                           "vectors of IDs and speeds should "
+                                           "have the same length");
 
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.send(
