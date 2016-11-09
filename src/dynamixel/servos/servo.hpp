@@ -241,7 +241,7 @@ namespace dynamixel {
             }
 
             // TODO: read speed from dynamixel pros to check that we do get negative values too
-            static double parse_present_joint_speed(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st)
+            static double parse_joint_speed(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st)
             {
                 typename Servo<Model>::ct_t::present_speed_t speed;
                 Servo<Model>::protocol_t::unpack_data(st.parameters(), speed);
@@ -260,9 +260,9 @@ namespace dynamixel {
                 return speed_si;
             }
 
-            double parse_present_joint_speed(const StatusPacket<typename Servo<Model>::protocol_t>& st) const override
+            double parse_joint_speed(const StatusPacket<typename Servo<Model>::protocol_t>& st) const override
             {
-                return Model::parse_present_joint_speed(this->_id, st);
+                return Model::parse_joint_speed(this->_id, st);
             }
 
             template <typename Id, typename Speed>
@@ -276,6 +276,9 @@ namespace dynamixel {
 
                 return sync_write_t(ct_t::moving_speed, _get_typed<typename protocol_t::id_t>(ids), packed);
             }
+
+            // =================================================================
+            // Torque-specific
 
             template <typename Id, typename TorqueLimit>
             static InstructionPacket<protocol_t> set_torque_limits(const std::vector<Id>& ids, const std::vector<TorqueLimit>& torque_limits)
