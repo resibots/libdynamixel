@@ -19,20 +19,6 @@ void display_help(const std::string program_name,
     // clang-format off
     command_help["list"] =
         "List available actuators. Does not take any optional parameter";
-    command_help["position"] =
-        "Command one or more actuator to go to (a) given position(s). The angles\n"
-        "are in radian.\n"
-        "\n"
-        "An angle for each given servo\n"
-        "\tEach angle is set for the corresponding servo. There must be the same\n"
-        "\tnumber of values for --id and --angle.\n"
-        "\n"
-        "\tEXAMPLE: "+program_name+" position --id 1 5 --angle 1.254 4.189\n"
-        "\twill move actuator 1 to angle 1.254 rad, and 5 to 4.189 rad\n"
-        "\n"
-        "One angle for several ids\n"
-        "\tAll listed actuators are moved to the given angle\n\n"
-        "\tEXAMPLE: "+program_name+" position --id 1 51 24 5 --angle 3.457";
     command_help["read"] =
         "Read data in the memory of a servo.\n"
         "Requires the --address and --size options. IDs can be providen, to\n"
@@ -54,9 +40,23 @@ void display_help(const std::string program_name,
         "EXAMPLE: "+program_name+" write --address 30 --size 2 --value 25 --id 5\n"
         "\twill write the value 25 in two bytes at address 30 of servo 5.`size`\n"
         "\tis the number of bytes that are to be written.";
+    command_help["position"] =
+        "Command one or more actuator to go to (a) given position(s). The angles\n"
+        "are in radian.\n"
+        "\n"
+        "An angle for each given servo\n"
+        "\tEach angle is set for the corresponding servo. There must be the same\n"
+        "\tnumber of values for --id and --angle.\n"
+        "\n"
+        "\tEXAMPLE: "+program_name+" position --id 1 5 --angle 1.254 4.189\n"
+        "\twill move actuator 1 to angle 1.254 rad, and 5 to 4.189 rad\n"
+        "\n"
+        "One angle for several ids\n"
+        "\tAll listed actuators are moved to the given angle\n\n"
+        "\tEXAMPLE: "+program_name+" position --id 1 51 24 5 --angle 3.457";
     command_help["get-position"] =
         "Retrieve current angular position of one or more servo, in radian.\n"
-        "If given ids, it will ask to the selected servos for their angular\n"
+        "If given ids, it will ask the selected servos for their angular\n"
         "position. Otherwise, it will get it for all available servo.\n"
         "\n"
         "EXAMPLES:\n"
@@ -65,6 +65,31 @@ void display_help(const std::string program_name,
         "\n"
         "\t" + program_name + " get-position\n"
         "\tgives the angular position of each connected servo";
+    command_help["set-speed"] =
+        "Command one or more actuator to move at (a) given angular velocity.\n"
+        "Unit: rad/s\n"
+        "\n"
+        "A value for each given servo\n"
+        "\tEach speed is set for the corresponding servo. There must be the same\n"
+        "\tnumber of values for --id and --speed.\n"
+        "\n"
+        "\tEXAMPLE: "+program_name+" set-speed --id 1 5 --speed 10 3.14\n"
+        "\twill set desired speed for actuator 1 to 10 rad/s, and 5 to 3.14 rad/s\n"
+        "\n"
+        "One value for several ids\n"
+        "\tAll listed actuators are given the same target speed\n\n"
+        "\tEXAMPLE: "+program_name+" set-speed --id 1 51 24 5 --speed 3.14";
+    command_help["get-speed"] =
+        "Retrieve desired angular velocity of one or more servo, in rad/s.\n"
+        "If given ids, it will ask the selected servos for their goal angular\n"
+        "velocity. Otherwise, it will get it for all available servo.\n"
+        "\n"
+        "EXAMPLES:\n"
+        "\t" + program_name + " get-speed --id 1 54\n"
+        "\tgives the goal angular velocity for servos 1 and 54\n"
+        "\n"
+        "\t" + program_name + " get-speed\n"
+        "\tgives the goal angular velocity of each connected servo";
     command_help["change-id"] =
         "Change the ID of one or more servo.\n"
         "\n"
@@ -168,6 +193,8 @@ void display_help(const std::string program_name,
             "  read\n"
             "  write\n"
             "  position\n"
+            "  set-speed\n"
+            "  get-speed\n"
             "  get-position\n"
             "  change-id\n"
             "  change-baudrate\n"
@@ -212,6 +239,8 @@ int main(int argc, char** argv)
             "one or more IDs of devices")
         ("angle", po::value<std::vector<double>>()->multitoken(),
             "desired angle (in radians), used by the `position` command")
+        ("speed", po::value<std::vector<double>>()->multitoken(),
+            "desired anglular speed (in radians per second), used by the `speed` command")
         ("new-baudrate", po::value<unsigned>(),
             "used by change-baudrate as the new baudrate value to be set")
         ("enable", po::value<bool>(),

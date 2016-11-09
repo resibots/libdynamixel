@@ -429,6 +429,180 @@ namespace dynamixel {
             return std::make_pair(ids, positions);
         }
 
+        /** Give a speed target for a given set of servos.
+            This version gives the selected servos one common speed target.
+
+            Note: the behavior of the actuator depends on its control mode
+                (wheel/continuous or position).
+
+            @param ids vector of ids for the concerned servos
+            @param speed desired speed (rad/s)
+
+            @throws out_of_range if the id is not among the detected servos
+            @throws dynamixel::errors::ServoLimitError if speed is out of the
+                servo's feasible bounds
+            @throws errors::UtilityError if you didn't detect connected servos before
+        **/
+        void set_speed(const std::vector<id_t>& ids, double speed)
+        {
+            check_scanned();
+
+            // the new speed is sent to each actuator but they wait for the
+            // "Action" (see bellow) command to enact the change
+            for (auto id : ids) {
+                _serial_interface.send(_servos.at(id)->reg_goal_speed_angle(speed));
+
+                StatusPacket<Protocol> status;
+                _serial_interface.recv(status);
+            }
+
+            _serial_interface.send(
+                dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+        }
+
+        /** Give a speed target for a given set of servos.
+            This version gives all servos the same speed target.
+
+            Note: the behavior of the actuator depends on its control mode
+                (wheel/continuous or position).
+
+            @param speed desired speed (rad/s)
+
+            @throws dynamixel::errors::ServoLimitError if speed is out of the
+                servo's feasible bounds
+            @throws errors::UtilityError if you didn't detect connected servos before
+        **/
+        void set_speed(double speed)
+        {
+            check_scanned();
+
+            // the new speed is sent to each actuator but they wait for the
+            // "Action" (see bellow) command to enact the change
+            for (auto servo : _servos) {
+                _serial_interface.send(servo.second->reg_goal_speed_angle(speed));
+
+                StatusPacket<Protocol> status;
+                _serial_interface.recv(status);
+            }
+
+            _serial_interface.send(
+                dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+        }
+
+        /** Give a speed target for a given set of servos.
+            This version gives each servo a specific speed target.
+
+            Note: the behavior of the actuator depends on its control mode
+                (wheel/continuous or position).
+
+            @param ids vector of ids for the servos to be moved
+            @param speed vector of angular velocities (rad/s), one for each actuator
+
+            @throws out_of_range if the id is not among the detected servos
+            @throws dynamixel::errors::ServoLimitError if speed is out of the
+                servo's feasible bounds
+            @throws errors::UtilityError if the ids and speed vectors have different
+                lengths or if you didn't detect connected servos before
+        **/
+        void set_speed(
+            const std::vector<id_t>& ids,
+            const std::vector<double>& angles)
+        {
+            check_scanned();
+            if (ids.size() != angles.size())
+                throw errors::UtilityError("set_position(vector, vector): the "
+                                           "vectors of IDs and angles should have "
+                                           "the same length");
+
+            for (int i = 0; i < ids.size(); i++) {
+                _serial_interface.send(
+                    _servos.at(ids[i])->reg_goal_speed_angle(angles[i]));
+
+                StatusPacket<Protocol> status;
+                _serial_interface.recv(status);
+            }
+
+            if (ids.size() > 0)
+                _serial_interface.send(
+                    dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+        }
+
+        /** Give goal angular velocity (rad/s) of desired servos
+
+            @param ids vector of ids for the servos to querry
+            @return vector of anglular velocities in the same order as the ids
+
+            @throws errors::Error if one actuator did not reply (within the timeout)
+            @throws errors::UtilityError if you didn't detect connected servos before
+        **/
+        std::vector<double> get_speed(const std::vector<id_t>& ids) const
+        {
+            check_scanned();
+
+            std::vector<double> speeds;
+
+            for (auto id : ids) {
+                StatusPacket<Protocol> status;
+                // request current position
+                _serial_interface.send(_servos.at(id)->get_goal_speed_angle());
+                _serial_interface.recv(status);
+
+                // parse response to get the position
+                if (status.valid())
+                    speeds.push_back(
+                        _servos.at(id)->parse_joint_speed(status));
+                else {
+                    std::stringstream message;
+                    message << id << "did not answer to the request for "
+                            << "its position";
+                    throw errors::Error(message.str());
+                }
+            }
+
+            return speeds;
+        }
+
+        /** Give goal angular velocity (rad/s) of all connected servos
+
+            @return vector of all anglular velocities of the servos that were
+                detected beforehand
+
+            @throws errors::Error if one of the detected actuator did not reply
+                (within the timeout)
+            @throws errors::UtilityError if you didn't detect connected servos before
+        **/
+        std::pair<std::vector<id_t>, std::vector<double>>
+        get_speed() const
+        {
+            check_scanned();
+
+            std::vector<double> speeds;
+            std::vector<id_t> ids;
+
+            for (auto servo : _servos) {
+                StatusPacket<Protocol> status;
+                // request current position
+                _serial_interface.send(
+                    servo.second->get_goal_speed_angle());
+                _serial_interface.recv(status);
+
+                // parse response to get the position
+                if (status.valid()) {
+                    speeds.push_back(
+                        servo.second->parse_joint_speed(status));
+                    ids.push_back(servo.first);
+                }
+                else {
+                    std::stringstream message;
+                    message << servo.first << "did not answer to the request for "
+                            << "its position";
+                    throw errors::Error(message.str());
+                }
+            }
+
+            return std::make_pair(ids, speeds);
+        }
+
         /** Enable (or disable) an actuator.
             By default, it will enable the actuator, unless one gives the `enable`
             argument with value false. Here, enabling an acuator means that it

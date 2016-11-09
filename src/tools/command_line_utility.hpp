@@ -107,6 +107,21 @@ namespace dynamixel {
                         print_position();
                     }
                 }
+                else if ("set-speed" == command) {
+                    check_vm(vm, "speed");
+
+                    if (vm.count("id"))
+                        speed(vm["id"].as<std::vector<id_t>>(),
+                            vm["speed"].as<std::vector<double>>());
+                    else
+                        speed(vm["speed"].as<std::vector<double>>());
+                }
+                else if ("get-speed" == command) {
+                    if (vm.count("id"))
+                        print_speed(vm["id"].as<std::vector<id_t>>());
+                    else
+                        print_speed();
+                }
                 else if ("torque-enable" == command || "relax" == command) {
                     check_vm(vm, "enable");
                     bool enable = vm["enable"].as<bool>();
@@ -421,7 +436,7 @@ namespace dynamixel {
             std::vector<double> positions;
             positions = _dyn_util.get_angle(ids);
 
-            std::cout << "Angular positions of the actuators:" << std::endl;
+            std::cout << "Angular positions of the actuators (rad):" << std::endl;
             for (unsigned i = 0; i < ids.size(); ++i) {
                 std::cout << ids[i] << "\t" << positions[i] << std::endl;
             }
@@ -434,9 +449,70 @@ namespace dynamixel {
             std::pair<std::vector<id_t>, std::vector<double>> angles;
             angles = _dyn_util.get_angle();
 
-            std::cout << "Angular positions of the actuators:" << std::endl;
+            std::cout << "Angular positions of the actuators (rad):" << std::endl;
             for (unsigned i = 0; i < angles.first.size(); ++i) {
                 std::cout << angles.first[i] << "\t" << angles.second[i] << std::endl;
+            }
+        }
+
+        void speed(const std::vector<id_t>& ids, const std::vector<double>& speeds)
+        {
+            if (speeds.size() == 1) {
+                _dyn_util.detect_servos();
+                _dyn_util.set_speed(ids, speeds.at(0));
+            }
+            else if (ids.size() == speeds.size()) {
+                _dyn_util.detect_servos();
+                _dyn_util.set_speed(ids, speeds);
+            }
+            else
+                std::cout << "Usage for set-speed command (with IDs):\n"
+                             "- one speed and several ids of servos that all "
+                             "wil go to at the same angular velocity\n"
+                             "- as many speeds as there are ids, to give target "
+                             "speed for each servo"
+                          << std::endl;
+        }
+
+        void speed(const std::vector<double>& speeds)
+        {
+            if (speeds.size() == 1) {
+                _dyn_util.detect_servos();
+                _dyn_util.set_speed(speeds.at(0));
+            }
+            else
+                std::cout << "Usage for set-speed command with no ID:\n"
+                             "only one speed is accepted, and applied to all "
+                             "connected servos"
+                          << std::endl;
+        }
+
+        void print_speed(const std::vector<id_t>& ids)
+        {
+            if (ids.size() == 0)
+                return;
+
+            _dyn_util.detect_servos();
+
+            std::vector<double> speeds;
+            speeds = _dyn_util.get_speed(ids);
+
+            std::cout << "Goal angular velocities of the actuators (rad/s):" << std::endl;
+            for (unsigned i = 0; i < ids.size(); ++i) {
+                std::cout << ids[i] << "\t" << speeds[i] << std::endl;
+            }
+        }
+
+        void print_speed()
+        {
+            _dyn_util.detect_servos();
+
+            std::pair<std::vector<id_t>, std::vector<double>> speeds;
+            speeds = _dyn_util.get_speed();
+
+            std::cout << "Goal angular velocities of the actuators (rad/s):" << std::endl;
+            for (unsigned i = 0; i < speeds.first.size(); ++i) {
+                std::cout << speeds.first[i] << "\t" << speeds.second[i] << std::endl;
             }
         }
 
