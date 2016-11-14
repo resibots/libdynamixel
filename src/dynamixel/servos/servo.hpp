@@ -7,7 +7,7 @@
 #include "../instruction_packet.hpp"
 #include "../status_packet.hpp"
 #include "base_servo.hpp"
-#include "protocol_specific_pacquets.hpp"
+#include "protocol_specific_packets.hpp"
 #include "../instructions/ping.hpp"
 #include "../instructions/read.hpp"
 #include "../instructions/write.hpp"
