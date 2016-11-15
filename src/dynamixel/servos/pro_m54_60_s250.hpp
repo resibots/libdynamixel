@@ -1,5 +1,5 @@
-#ifndef DYNAMIXEL_SERVOS_PRO_L54_50_S290_HPP_
-#define DYNAMIXEL_SERVOS_PRO_L54_50_S290_HPP_
+#ifndef DYNAMIXEL_SERVOS_PRO_m54_60_S250_HPP_
+#define DYNAMIXEL_SERVOS_PRO_m54_60_S250_HPP_
 
 #include <stdint.h>
 
@@ -8,16 +8,16 @@
 
 namespace dynamixel {
     namespace servos {
-        class ProL5450S290;
+        class ProM5460S250;
 
         template <>
-        struct ModelTraits<ProL5450S290> {
+        struct ModelTraits<ProM5460S250> {
             typedef protocols::Protocol2 protocol_t;
 
             struct CT {
                 static const protocol_t::address_t model_number = 0;
                 typedef uint16_t model_number_t;
-                static const model_number_t model_number_value = 38176;
+                static const model_number_t model_number_value = 46352;
                 static const protocol_t::address_t model_info = 2;
                 typedef uint32_t model_info_t;
                 static const protocol_t::address_t firmware_version = 6;
@@ -68,8 +68,8 @@ namespace dynamixel {
                 typedef uint16_t position_p_gain_t;
                 static const protocol_t::address_t goal_position = 596;
                 typedef int32_t goal_position_t;
-                static const goal_position_t min_goal_position = -103846;
-                static const goal_position_t max_goal_position = 103846;
+                static const goal_position_t min_goal_position = -125700;
+                static const goal_position_t max_goal_position = 125700;
                 static const uint16_t min_goal_angle_deg = 0;
                 static const uint16_t max_goal_angle_deg = 360;
                 static const protocol_t::address_t moving_speed = 600;
@@ -103,13 +103,13 @@ namespace dynamixel {
             };
         };
 
-        class ProL5450S290 : public Servo<ProL5450S290> {
+        class ProM5460S250 : public Servo<ProM5460S250> {
         public:
-            typedef ProL5450S290 Model;
+            typedef ProM5460S250 Model;
 
-            ProL5450S290(typename protocol_t::id_t id) : Servo<ProL5450S290>(id){};
+            ProM5460S250(typename protocol_t::id_t id) : Servo<ProM5460S250>(id){};
 
-            MODEL_NAME(ProL5450S290);
+            MODEL_NAME(ProM5460S250);
 
             // Here we add the fields that are not common to all dynamixels
             READ_WRITE_FIELD(model_info);

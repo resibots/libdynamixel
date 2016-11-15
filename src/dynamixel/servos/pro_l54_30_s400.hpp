@@ -68,8 +68,8 @@ namespace dynamixel {
                 typedef uint16_t position_p_gain_t;
                 static const protocol_t::address_t goal_position = 596;
                 typedef int32_t goal_position_t;
-                static const goal_position_t min_goal_position = -180684;
-                static const goal_position_t max_goal_position = 180684;
+                static const goal_position_t min_goal_position = -144197;
+                static const goal_position_t max_goal_position = 144197;
                 static const uint16_t min_goal_angle_deg = 0;
                 static const uint16_t max_goal_angle_deg = 360;
                 static const protocol_t::address_t moving_speed = 600;
