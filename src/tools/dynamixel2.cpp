@@ -228,7 +228,7 @@ int main(int argc, char** argv)
         ("port,p", po::value<std::string>()->default_value("/dev/ttyUSB0"),
             "path to the USB to dynamixel interface.\n"
             "EXAMPLE: --port /dev/ttyACM5")
-        ("baudrate,b", po::value<unsigned>()->default_value(1000000),
+        ("baudrate,b", po::value<unsigned>()->default_value(57600),
             "baud rate for the communication\n"
             "EXAMPLE: -b 115200\n"
             "See the help for the `change-baudrate` command for the accepted "
