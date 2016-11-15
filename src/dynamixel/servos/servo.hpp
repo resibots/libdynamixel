@@ -2,12 +2,12 @@
 #define DYNAMIXEL_SERVOS_SERVO_HPP_
 
 #include <cassert>
-#include <cmath>
 #include <stdint.h>
 
 #include "../instruction_packet.hpp"
 #include "../status_packet.hpp"
 #include "base_servo.hpp"
+#include "protocol_specific_pacquets.hpp"
 #include "../instructions/ping.hpp"
 #include "../instructions/read.hpp"
 #include "../instructions/write.hpp"
@@ -139,6 +139,9 @@ namespace dynamixel {
                 return ping_t(this->_id);
             }
 
+            // =================================================================
+            // Position-specific
+
             static inline InstructionPacket<protocol_t> set_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, double rad)
             {
                 double deg = rad * 57.2958;
@@ -204,6 +207,64 @@ namespace dynamixel {
                 return sync_write_t(ct_t::goal_position, _get_typed<typename protocol_t::id_t>(ids), packed);
             }
 
+            // =================================================================
+            // Speed-specific
+
+            static inline InstructionPacket<protocol_t> set_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
+            {
+                return ProtocolSpecificPackets<Model, protocol_t>::set_goal_speed_angle(id, rad_per_s, operating_mode);
+            }
+
+            static inline InstructionPacket<protocol_t> reg_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
+            {
+                return ProtocolSpecificPackets<Model, protocol_t>::reg_goal_speed_angle(id, rad_per_s, operating_mode);
+            }
+
+            InstructionPacket<protocol_t> set_goal_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
+            {
+                return Model::set_goal_speed_angle(this->_id, rad_per_s, operating_mode);
+            }
+
+            InstructionPacket<protocol_t> reg_goal_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
+            {
+                return Model::reg_goal_speed_angle(this->_id, rad_per_s, operating_mode);
+            }
+
+            static InstructionPacket<typename Servo<Model>::protocol_t> get_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id)
+            {
+                return get_moving_speed(id);
+            }
+
+            InstructionPacket<typename Servo<Model>::protocol_t> get_goal_speed_angle() const override
+            {
+                return Model::get_goal_speed_angle(this->_id);
+            }
+
+            // TODO: read speed from dynamixel pros to check that we do get negative values too
+            static double parse_joint_speed(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st)
+            {
+                typename Servo<Model>::ct_t::present_speed_t speed;
+                Servo<Model>::protocol_t::unpack_data(st.parameters(), speed);
+
+                int8_t sign;
+                if (Servo<Model>::ct_t::speed_sign_bit) { // the highest bit is used for the sign
+                    sign = speed / Servo<Model>::ct_t::max_goal_speed == 0 ? 1 : -1;
+                    speed = speed % Servo<Model>::ct_t::max_goal_speed;
+                }
+                else {
+                    sign = 1;
+                }
+
+                double speed_rpm = sign * speed * Servo<Model>::ct_t::rpm_per_tick;
+                double speed_si = speed_rpm * 0.104720; // convertion ratio is 2*pi/60
+                return speed_si;
+            }
+
+            double parse_joint_speed(const StatusPacket<typename Servo<Model>::protocol_t>& st) const override
+            {
+                return Model::parse_joint_speed(this->_id, st);
+            }
+
             template <typename Id, typename Speed>
             static InstructionPacket<protocol_t> set_moving_speeds(const std::vector<Id>& ids, const std::vector<Speed>& speeds)
             {
@@ -215,6 +276,9 @@ namespace dynamixel {
 
                 return sync_write_t(ct_t::moving_speed, _get_typed<typename protocol_t::id_t>(ids), packed);
             }
+
+            // =================================================================
+            // Torque-specific
 
             template <typename Id, typename TorqueLimit>
             static InstructionPacket<protocol_t> set_torque_limits(const std::vector<Id>& ids, const std::vector<TorqueLimit>& torque_limits)

@@ -27,6 +27,13 @@
 
 namespace dynamixel {
     namespace servos {
+        namespace cst {
+            enum OperatingMode {
+                wheel,
+                joint,
+                multi_turn
+            };
+        }
 
         template <typename Protocol>
         class BaseServo {
@@ -120,6 +127,9 @@ namespace dynamixel {
                 throw errors::Error("ping not implemented in model");
             }
 
+            // =================================================================
+            // Position-specific
+
             virtual InstructionPacket<protocol_t> set_goal_position_angle(double rad) const
             {
                 throw errors::Error("set_goal_position_angle not implemented in model");
@@ -138,6 +148,29 @@ namespace dynamixel {
             virtual double parse_present_position_angle(const StatusPacket<protocol_t>& st) const
             {
                 throw errors::Error("parse_present_position_angle not implemented in model");
+            }
+
+            // =================================================================
+            // Speed-specific
+
+            virtual InstructionPacket<protocol_t> set_goal_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const
+            {
+                throw errors::Error("set_goal_speed_angle not implemented in model");
+            }
+
+            virtual InstructionPacket<protocol_t> reg_goal_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const
+            {
+                throw errors::Error("reg_goal_speed_angle not implemented in model");
+            }
+
+            virtual InstructionPacket<protocol_t> get_goal_speed_angle() const
+            {
+                throw errors::Error("get_goal_speed_angle not implemented in model");
+            }
+
+            virtual double parse_joint_speed(const StatusPacket<protocol_t>& st) const
+            {
+                throw errors::Error("parse_joint_speed not implemented in model");
             }
 
         protected:

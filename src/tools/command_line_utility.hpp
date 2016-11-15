@@ -107,6 +107,27 @@ namespace dynamixel {
                         print_position();
                     }
                 }
+                else if ("set-speed" == command) {
+                    check_vm(vm, "speed");
+
+                    bool wheel_mode = false;
+                    if (vm.count("wheel-mode"))
+                        wheel_mode = true;
+
+                    if (vm.count("id"))
+                        speed(vm["id"].as<std::vector<id_t>>(),
+                            vm["speed"].as<std::vector<double>>(),
+                            wheel_mode);
+                    else
+                        speed(vm["speed"].as<std::vector<double>>(),
+                            wheel_mode);
+                }
+                else if ("get-speed" == command) {
+                    if (vm.count("id"))
+                        print_speed(vm["id"].as<std::vector<id_t>>());
+                    else
+                        print_speed();
+                }
                 else if ("torque-enable" == command || "relax" == command) {
                     check_vm(vm, "enable");
                     bool enable = vm["enable"].as<bool>();
@@ -165,6 +186,13 @@ namespace dynamixel {
     protected:
         typedef typename Utility<Protocol>::id_t id_t;
 
+        /* Search the the required parameters in the boost:program_option's variable map.
+
+           The missing parameters are reported to the user with an exception
+
+           @param variables_map  built by boost::program_option, from the parsed command line arguments
+           @param parameters vector of the names of the required parameters
+        */
         void check_vm(const po::variables_map& vm,
             const std::vector<std::string>& parameters)
         {
@@ -185,6 +213,10 @@ namespace dynamixel {
                     missing_parameters);
         }
 
+        /* Search the the required parameter in the boost:program_option's variable map.
+
+          This version is for a single required parameter.
+        */
         inline void check_vm(const po::variables_map& vm, std::string parameter)
         {
             std::vector<std::string> parameters = {parameter};
@@ -410,7 +442,7 @@ namespace dynamixel {
             std::vector<double> positions;
             positions = _dyn_util.get_angle(ids);
 
-            std::cout << "Angular positions of the actuators:" << std::endl;
+            std::cout << "Angular positions of the actuators (rad):" << std::endl;
             for (unsigned i = 0; i < ids.size(); ++i) {
                 std::cout << ids[i] << "\t" << positions[i] << std::endl;
             }
@@ -423,9 +455,71 @@ namespace dynamixel {
             std::pair<std::vector<id_t>, std::vector<double>> angles;
             angles = _dyn_util.get_angle();
 
-            std::cout << "Angular positions of the actuators:" << std::endl;
+            std::cout << "Angular positions of the actuators (rad):" << std::endl;
             for (unsigned i = 0; i < angles.first.size(); ++i) {
                 std::cout << angles.first[i] << "\t" << angles.second[i] << std::endl;
+            }
+        }
+
+        void speed(const std::vector<id_t>& ids, const std::vector<double>& speeds,
+            bool wheel_mode = false)
+        {
+            if (speeds.size() == 1) {
+                _dyn_util.detect_servos();
+                _dyn_util.set_speed(ids, speeds.at(0), wheel_mode);
+            }
+            else if (ids.size() == speeds.size()) {
+                _dyn_util.detect_servos();
+                _dyn_util.set_speed(ids, speeds, wheel_mode);
+            }
+            else
+                std::cout << "Usage for set-speed command (with IDs):\n"
+                             "- one speed and several ids of servos that all "
+                             "wil go to at the same angular velocity\n"
+                             "- as many speeds as there are ids, to give target "
+                             "speed for each servo"
+                          << std::endl;
+        }
+
+        void speed(const std::vector<double>& speeds, bool wheel_mode = false)
+        {
+            if (speeds.size() == 1) {
+                _dyn_util.detect_servos();
+                _dyn_util.set_speed(speeds.at(0), wheel_mode);
+            }
+            else
+                std::cout << "Usage for set-speed command with no ID:\n"
+                             "only one speed is accepted, and applied to all "
+                             "connected servos"
+                          << std::endl;
+        }
+
+        void print_speed(const std::vector<id_t>& ids)
+        {
+            if (ids.size() == 0)
+                return;
+
+            _dyn_util.detect_servos();
+
+            std::vector<double> speeds;
+            speeds = _dyn_util.get_speed(ids);
+
+            std::cout << "Goal angular velocities of the actuators (rad/s):" << std::endl;
+            for (unsigned i = 0; i < ids.size(); ++i) {
+                std::cout << ids[i] << "\t" << speeds[i] << std::endl;
+            }
+        }
+
+        void print_speed()
+        {
+            _dyn_util.detect_servos();
+
+            std::pair<std::vector<id_t>, std::vector<double>> speeds;
+            speeds = _dyn_util.get_speed();
+
+            std::cout << "Goal angular velocities of the actuators (rad/s):" << std::endl;
+            for (unsigned i = 0; i < speeds.first.size(); ++i) {
+                std::cout << speeds.first[i] << "\t" << speeds.second[i] << std::endl;
             }
         }
 

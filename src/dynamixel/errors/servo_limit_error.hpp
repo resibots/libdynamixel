@@ -11,7 +11,8 @@ namespace dynamixel {
     namespace errors {
         class ServoLimitError : public Error {
         public:
-            ServoLimitError(uint8_t id, uint32_t min, uint32_t max, uint32_t value, std::string type = "position") : _id(id), _max(max), _min(min), _value(value)
+            template <typename A, typename B, typename C, typename D>
+            ServoLimitError(A id, B min, C max, D value, std::string type = "position") : _id(id), _max(max), _min(min), _value(value)
             {
                 std::stringstream err_message;
                 err_message << "Servo: error while setting " << type
@@ -21,29 +22,29 @@ namespace dynamixel {
                 this->_msg = err_message.str();
             }
 
-            uint8_t id() const
+            int id() const
             {
                 return _id;
             }
 
-            uint32_t value() const
+            double value() const
             {
                 return _value;
             }
 
-            uint32_t max() const
+            double max() const
             {
                 return _max;
             }
 
-            uint32_t min() const
+            double min() const
             {
                 return _min;
             }
 
         private:
-            uint8_t _id;
-            uint32_t _max, _min, _value;
+            int _id;
+            double _max, _min, _value;
         };
     }
 }
