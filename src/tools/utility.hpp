@@ -145,7 +145,13 @@ namespace dynamixel {
                 typename dynamixel::instructions::Read<Protocol>(id, address,
                     sizeof(T)));
             StatusPacket<Protocol> status;
-            _serial_interface.recv(status);
+            if (!_serial_interface.recv(status)) {
+                std::stringstream message;
+                message << "No packet received when timeout ("
+                        << _serial_interface.recv_timeout()
+                        << " s) was reached";
+                throw errors::Error(message.str());
+            }
 
             // Unpack the data in the response and store it
             T datum;
