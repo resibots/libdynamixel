@@ -11,3 +11,4 @@ def configure(conf):
 
 def build(bld):
     bld(features='cxx cxxprogram', source='dynamixel.cpp', target="dynamixel", includes=". ..", uselib="BOOST", uselib_local="dynamixel")
+    bld(features='cxx cxxprogram', source='dynamixel2.cpp', target="p2-dynamixel", includes=". ..", uselib="BOOST", uselib_local="dynamixel")
