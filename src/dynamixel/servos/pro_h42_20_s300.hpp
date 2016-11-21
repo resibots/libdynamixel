@@ -76,7 +76,7 @@ namespace dynamixel {
                 typedef int32_t moving_speed_t;
                 static const moving_speed_t min_goal_speed = INT32_MIN;
                 static const moving_speed_t max_goal_speed = INT32_MAX;
-                static constexpr double rpm_per_tick = 0.114;
+                static constexpr double rpm_per_tick = 1 / 300.;
                 static const bool speed_sign_bit = false;
                 static const protocol_t::address_t goal_torque = 604;
                 typedef uint16_t goal_torque_t;
