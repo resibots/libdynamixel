@@ -211,7 +211,11 @@ void display_help(const std::string program_name,
 int main(int argc, char** argv)
 {
     // Convenience definitions
+    #ifdef PROTOCOL1
     using Protocol = protocols::Protocol1;
+    #else
+    using Protocol = protocols::Protocol2;
+    #endif
     typedef Utility<Protocol>::id_t id_t;
 
     // Parameters for serial communication
@@ -228,7 +232,11 @@ int main(int argc, char** argv)
         ("port,p", po::value<std::string>()->default_value("/dev/ttyUSB0"),
             "path to the USB to dynamixel interface.\n"
             "EXAMPLE: --port /dev/ttyACM5")
+        #ifdef PROTOCOL1
         ("baudrate,b", po::value<unsigned>()->default_value(1000000),
+        #else
+        ("baudrate,b", po::value<unsigned>()->default_value(57600),
+        #endif
             "baud rate for the communication\n"
             "EXAMPLE: -b 115200\n"
             "See the help for the `change-baudrate` command for the accepted "
