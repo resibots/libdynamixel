@@ -262,7 +262,7 @@ int main(int argc, char** argv)
         ("wheel-mode", "tell that the selected actuator·s is·are in wheel mode")
         ("new-baudrate", po::value<unsigned>(),
             "used by change-baudrate as the new baudrate value to be set")
-        ("enable", po::value<bool>(),
+        ("enable", po::value<bool>()->default_value(true),
             "enable (1) or disable (0) the selected servo(s)")
         ("address,a", po::value<uint16_t>(),
             "address at which to read or write data (decimal base)")
