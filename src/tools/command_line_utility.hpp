@@ -137,6 +137,12 @@ namespace dynamixel {
                     else
                         torque_enable(enable);
                 }
+                else if ("get-torque-enable" == command) {
+                    if (vm.count("id"))
+                        print_torque_enable(vm["id"].as<std::vector<id_t>>());
+                    else
+                        print_torque_enable();
+                }
                 else if ("relax" == command) {
                     if (vm.count("id"))
                         torque_enable(vm["id"].as<std::vector<id_t>>(), false);
@@ -514,11 +520,12 @@ namespace dynamixel {
         {
             _dyn_util.detect_servos();
 
-            std::pair<std::vector<id_t>, std::vector<double>> speeds;
-            speeds = _dyn_util.get_speed();
+            std::pair<std::vector<id_t>, std::vector<double>> speeds
+                = _dyn_util.get_speed();
 
-            std::cout << "Goal angular velocities of the actuators (rad/s):" << std::endl;
-            for (unsigned i = 0; i < speeds.first.size(); ++i) {
+            std::cout << "Goal angular velocities of the actuators (rad/s):"
+                      << std::endl;
+            for (uint8_t i = 0; i < speeds.first.size(); ++i) {
                 std::cout << speeds.first[i] << "\t" << speeds.second[i] << std::endl;
             }
         }
@@ -536,6 +543,42 @@ namespace dynamixel {
         {
             _dyn_util.detect_servos();
             _dyn_util.torque_enable(Protocol::broadcast_id, enable);
+        }
+
+        void print_torque_enable(const std::vector<id_t>& ids)
+        {
+            _dyn_util.detect_servos();
+            std::vector<bool> enabled = _dyn_util.get_torque_enable(ids);
+
+            if (ids.size() == 1) {
+                std::cout << "Actuator " << ids[0] << " is "
+                          << (enabled[0] ? "enabled" : "disabled") << std::endl;
+            }
+            else {
+                std::cout << "Enable status for the actuators (1: enabled / 0: disabled):"
+                          << std::endl;
+                // for each selected servo
+                for (uint8_t i = 0; i < ids.size(); ++i) {
+                    std::cout << (unsigned int)ids[i] << "\t"
+                              << enabled[i] << std::endl;
+                }
+            }
+        }
+
+        void
+        print_torque_enable()
+        {
+            _dyn_util.detect_servos();
+            std::pair<std::vector<id_t>, std::vector<bool>> response
+                = _dyn_util.get_torque_enable();
+
+            std::cout << "Enable status for the actuators (1: enabled / 0: disabled):"
+                      << std::endl;
+            // for each servo that responded
+            for (uint8_t i = 0; i < response.first.size(); ++i) {
+                std::cout << (unsigned int)response.first[i] << "\t"
+                          << response.second[i] << std::endl;
+            }
         }
 
         void oscillate(

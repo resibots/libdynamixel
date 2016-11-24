@@ -155,6 +155,15 @@ void display_help(const std::string program_name,
         "\n"
         "\t"+program_name+" torque-enable --id 1 11 21 --enable 0\n"
         "\twill disable only servos 1, 11 and 21";
+    command_help["get-torque-enable"] =
+        "Check whether the torque on servo(s) is enabled.\n"
+        "\n"
+        "EXAMPLES:\n"
+        "\t"+program_name+" get-torque-enable\n"
+        "\twill ask all connected servos\n"
+        "\n"
+        "\t"+program_name+" get-torque-enable --id 1 11 21\n"
+        "\twill only ask only servos with id 1, 11 and 21";
     command_help["relax"] =
         "Same as `torque-enable --enable 0`";
     command_help["oscillate"] =
@@ -199,6 +208,7 @@ void display_help(const std::string program_name,
             "  change-id\n"
             "  change-baudrate\n"
             "  torque-enable\n"
+            "  get-torque-enable\n"
             "  relax\n"
             "  oscillate\n"
             "Use `"+program_name+" --help COMMAND` to get help for one "
@@ -211,7 +221,11 @@ void display_help(const std::string program_name,
 int main(int argc, char** argv)
 {
     // Convenience definitions
+    #ifdef PROTOCOL1
     using Protocol = protocols::Protocol1;
+    #else
+    using Protocol = protocols::Protocol2;
+    #endif
     typedef Utility<Protocol>::id_t id_t;
 
     // Parameters for serial communication
@@ -228,7 +242,11 @@ int main(int argc, char** argv)
         ("port,p", po::value<std::string>()->default_value("/dev/ttyUSB0"),
             "path to the USB to dynamixel interface.\n"
             "EXAMPLE: --port /dev/ttyACM5")
+        #ifdef PROTOCOL1
         ("baudrate,b", po::value<unsigned>()->default_value(1000000),
+        #else
+        ("baudrate,b", po::value<unsigned>()->default_value(57600),
+        #endif
             "baud rate for the communication\n"
             "EXAMPLE: -b 115200\n"
             "See the help for the `change-baudrate` command for the accepted "
@@ -244,7 +262,7 @@ int main(int argc, char** argv)
         ("wheel-mode", "tell that the selected actuator·s is·are in wheel mode")
         ("new-baudrate", po::value<unsigned>(),
             "used by change-baudrate as the new baudrate value to be set")
-        ("enable", po::value<bool>(),
+        ("enable", po::value<bool>()->default_value(true),
             "enable (1) or disable (0) the selected servo(s)")
         ("address,a", po::value<uint16_t>(),
             "address at which to read or write data (decimal base)")
