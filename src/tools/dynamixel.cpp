@@ -155,6 +155,15 @@ void display_help(const std::string program_name,
         "\n"
         "\t"+program_name+" torque-enable --id 1 11 21 --enable 0\n"
         "\twill disable only servos 1, 11 and 21";
+    command_help["get-torque-enable"] =
+        "Check whether the torque on servo(s) is enabled.\n"
+        "\n"
+        "EXAMPLES:\n"
+        "\t"+program_name+" get-torque-enable\n"
+        "\twill ask all connected servos\n"
+        "\n"
+        "\t"+program_name+" get-torque-enable --id 1 11 21\n"
+        "\twill only ask only servos with id 1, 11 and 21";
     command_help["relax"] =
         "Same as `torque-enable --enable 0`";
     command_help["oscillate"] =
@@ -199,6 +208,7 @@ void display_help(const std::string program_name,
             "  change-id\n"
             "  change-baudrate\n"
             "  torque-enable\n"
+            "  get-torque-enable\n"
             "  relax\n"
             "  oscillate\n"
             "Use `"+program_name+" --help COMMAND` to get help for one "

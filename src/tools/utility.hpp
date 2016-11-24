@@ -656,6 +656,86 @@ namespace dynamixel {
             }
         }
 
+        /** Tell whether the selected actuators' torque is enabled.
+
+            @return vector of enablement status for each actuator (boolean)
+
+            @throws errors::Error if one of the detected actuator did not reply
+                (within the timeout)
+            @throws errors::UtilityError if you didn't detect connected servos before
+        **/
+        std::vector<bool>
+        get_torque_enable(std::vector<id_t> ids)
+        {
+            check_scanned();
+
+            std::vector<bool> torque_enable;
+
+            for (auto id : ids) {
+                StatusPacket<Protocol> status;
+
+                // request whether torque is enabled
+                _serial_interface.send(_servos.at(id)->get_torque_enable());
+                _serial_interface.recv(status);
+
+                // parse response to know whether torque is enabled
+                if (status.valid())
+                    torque_enable.push_back(
+                        _servos.at(id)->parse_torque_enable(status));
+                else {
+                    std::stringstream message;
+                    message << id << "did not answer to the request for "
+                            << "its torque enabling status";
+                    throw errors::Error(message.str());
+                }
+            }
+
+            return torque_enable;
+        }
+
+        /** Tell whether the selected actuators' torque is enabled.
+
+            @return std::pair which first element is the vector with the IDs of
+                each actuator and the second element is a vector of enablement
+                status associated to the actuator (boolean)
+
+            @throws errors::Error if one of the detected actuator did not reply
+                (within the timeout)
+            @throws errors::UtilityError if you didn't detect connected servos before
+        **/
+        std::pair<std::vector<id_t>, std::vector<bool>>
+        get_torque_enable()
+        {
+            check_scanned();
+
+            std::vector<id_t> ids;
+            std::vector<bool> torque_enable;
+
+            for (auto servo : _servos) {
+                StatusPacket<Protocol> status;
+
+                // request whether torque is enabled
+                _serial_interface.send(
+                    servo.second->get_torque_enable());
+                _serial_interface.recv(status);
+
+                // parse response to know whether torque is enabled
+                if (status.valid()) {
+                    torque_enable.push_back(
+                        servo.second->parse_torque_enable(status));
+                    ids.push_back(servo.first);
+                }
+                else {
+                    std::stringstream message;
+                    message << servo.first << "did not answer to the request for "
+                            << "its torque enabling status";
+                    throw errors::Error(message.str());
+                }
+            }
+
+            return std::make_pair(ids, torque_enable);
+        }
+
     protected:
         /** Check that we scanned for connected servos and throws an exception
             otherwise.
