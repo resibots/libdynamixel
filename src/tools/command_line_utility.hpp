@@ -520,11 +520,12 @@ namespace dynamixel {
         {
             _dyn_util.detect_servos();
 
-            std::pair<std::vector<id_t>, std::vector<double>> speeds;
-            speeds = _dyn_util.get_speed();
+            std::pair<std::vector<id_t>, std::vector<double>> speeds
+                = _dyn_util.get_speed();
 
-            std::cout << "Goal angular velocities of the actuators (rad/s):" << std::endl;
-            for (unsigned i = 0; i < speeds.first.size(); ++i) {
+            std::cout << "Goal angular velocities of the actuators (rad/s):"
+                      << std::endl;
+            for (uint8_t i = 0; i < speeds.first.size(); ++i) {
                 std::cout << speeds.first[i] << "\t" << speeds.second[i] << std::endl;
             }
         }
