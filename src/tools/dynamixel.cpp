@@ -174,6 +174,7 @@ void display_help(const std::string program_name,
         "\t--offset\n"
         "\t--phase\n"
         "\t--duration\n"
+        "\t--id to restrict oscillation to a set of actuators\n"
         "See the help message for more detail on the role and default value of\n"
         "each of these options.\n"
         "\n"
