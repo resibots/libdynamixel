@@ -609,7 +609,7 @@ namespace dynamixel {
 
             while (
                 (t = duration_cast<milliseconds>(steady_clock::now() - t1).count())
-                < periods * w * 1000) {
+                < periods * 1000 * 2 * M_PI / w) {
 
                 double angle = A * sin(t / 1000.0 * w + Phi) + offset;
                 if (ids.empty())
