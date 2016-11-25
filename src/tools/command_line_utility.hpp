@@ -156,7 +156,7 @@ namespace dynamixel {
                             vm["amplitude"].as<float>(),
                             vm["offset"].as<float>(),
                             vm["phase"].as<float>(),
-                            vm["duration"].as<float>(),
+                            vm["periods"].as<unsigned>(),
                             vm["id"].as<std::vector<id_t>>());
                     else
                         oscillate(
@@ -164,7 +164,7 @@ namespace dynamixel {
                             vm["amplitude"].as<float>(),
                             vm["offset"].as<float>(),
                             vm["phase"].as<float>(),
-                            vm["duration"].as<float>());
+                            vm["periods"].as<unsigned>());
                 }
                 else {
                     std::cerr << "Unrecognized command." << std::endl;
@@ -595,7 +595,7 @@ namespace dynamixel {
             float A,
             float offset,
             float Phi,
-            float duration = 10,
+            float periods = 5,
             std::vector<id_t> ids = std::vector<id_t>())
         {
             using namespace std::chrono;
@@ -609,7 +609,7 @@ namespace dynamixel {
 
             while (
                 (t = duration_cast<milliseconds>(steady_clock::now() - t1).count())
-                < duration * 1000) {
+                < periods * w * 1000) {
 
                 double angle = A * sin(t / 1000.0 * w + Phi) + offset;
                 if (ids.empty())
@@ -626,16 +626,6 @@ namespace dynamixel {
             else
                 _dyn_util.set_angle(ids, angle);
         }
-
-        // void oscillate(
-        //     std::vector<id_t> ids,
-        //     std::vector<float> w,
-        //     std::vector<float> A,
-        //     std::vector<float> offset,
-        //     std::vector<float> Phi,
-        //     float duration = 10)
-        // {
-        // }
     };
 }
 
