@@ -128,7 +128,7 @@ namespace dynamixel {
                     else
                         print_speed();
                 }
-                else if ("torque-enable" == command || "relax" == command) {
+                else if ("torque-enable" == command) {
                     check_vm(vm, "enable");
                     bool enable = vm["enable"].as<bool>();
 
@@ -136,6 +136,12 @@ namespace dynamixel {
                         torque_enable(vm["id"].as<std::vector<id_t>>(), enable);
                     else
                         torque_enable(enable);
+                }
+                else if ("relax" == command) {
+                    if (vm.count("id"))
+                        torque_enable(vm["id"].as<std::vector<id_t>>(), false);
+                    else
+                        torque_enable(false);
                 }
                 else if ("get-torque-enable" == command) {
                     if (vm.count("id"))
