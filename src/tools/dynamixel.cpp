@@ -173,12 +173,13 @@ void display_help(const std::string program_name,
         "\t--amplitude\n"
         "\t--offset\n"
         "\t--phase\n"
-        "\t--duration\n"
+        "\t--periods\n"
+        "\t--id to restrict oscillation to a set of actuators\n"
         "See the help message for more detail on the role and default value of\n"
         "each of these options.\n"
         "\n"
-        "EXAMPLE: "+program_name+" oscillate --duration 20\n"
-        "\twill make all connected servos turn during 20 seconds using the\n"
+        "EXAMPLE: "+program_name+" oscillate --periods 3\n"
+        "\twill make all connected servos turn during 3 periods using the\n"
         "\tdefault parameters for the sinusoid";
     //clang-format on
 
@@ -281,8 +282,8 @@ int main(int argc, char** argv)
             "offset (in rad) of the angle in oscillate command")
         ("phase,P", po::value<float>()->default_value(0),
             "phase shift for the oscillate command")
-        ("duration,d", po::value<float>()->default_value(10.0),
-            "duration, in seconds of the oscillation (can be float)");
+        ("periods,T", po::value<unsigned>()->default_value(5),
+            "number of periods for the oscillation");
     // clang-format on
 
     po::options_description hidden("Hidden options");

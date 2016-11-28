@@ -156,12 +156,21 @@ namespace dynamixel {
                         torque_enable(false);
                 }
                 else if ("oscillate" == command) {
-                    oscillate(
-                        vm["angular_f"].as<float>(),
-                        vm["amplitude"].as<float>(),
-                        vm["offset"].as<float>(),
-                        vm["phase"].as<float>(),
-                        vm["duration"].as<float>());
+                    if (vm.count("id"))
+                        oscillate(
+                            vm["angular_f"].as<float>(),
+                            vm["amplitude"].as<float>(),
+                            vm["offset"].as<float>(),
+                            vm["phase"].as<float>(),
+                            vm["periods"].as<unsigned>(),
+                            vm["id"].as<std::vector<id_t>>());
+                    else
+                        oscillate(
+                            vm["angular_f"].as<float>(),
+                            vm["amplitude"].as<float>(),
+                            vm["offset"].as<float>(),
+                            vm["phase"].as<float>(),
+                            vm["periods"].as<unsigned>());
                 }
                 else {
                     std::cerr << "Unrecognized command." << std::endl;
@@ -592,7 +601,8 @@ namespace dynamixel {
             float A,
             float offset,
             float Phi,
-            float duration = 10)
+            float periods = 5,
+            std::vector<id_t> ids = std::vector<id_t>())
         {
             using namespace std::chrono;
 
@@ -605,27 +615,23 @@ namespace dynamixel {
 
             while (
                 (t = duration_cast<milliseconds>(steady_clock::now() - t1).count())
-                < duration * 1000) {
+                < periods * 1000 * 2 * M_PI / w) {
 
                 double angle = A * sin(t / 1000.0 * w + Phi) + offset;
-                _dyn_util.set_angle(angle);
+                if (ids.empty())
+                    _dyn_util.set_angle(angle);
+                else
+                    _dyn_util.set_angle(ids, angle);
                 std::this_thread::sleep_for(milliseconds(10));
             }
 
             // move to the angle at t=0
             double angle = A * sin(Phi) + offset;
-            _dyn_util.set_angle(angle);
+            if (ids.empty())
+                _dyn_util.set_angle(angle);
+            else
+                _dyn_util.set_angle(ids, angle);
         }
-
-        // void oscillate(
-        //     std::vector<id_t> ids,
-        //     std::vector<float> w,
-        //     std::vector<float> A,
-        //     std::vector<float> offset,
-        //     std::vector<float> Phi,
-        //     float duration = 10)
-        // {
-        // }
     };
 }
 
