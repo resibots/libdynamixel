@@ -26,6 +26,8 @@ Using the utility
 =================
 Since we are right now writing a brand new utility, the user interface is not settled yet and some commands are not implemented. You can still play with the binary `dynamixel2` (the name will change) with the `--help [command]` option to learn how to use it.
 
+> **Caution:** the `get-speed` command gives you the reference speed used in the control loop (if any) and not the current rotational speed of the actuator.
+
 Projects using this library
 ===========================
 
