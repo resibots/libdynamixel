@@ -230,6 +230,7 @@ namespace dynamixel {
                 return Model::reg_goal_speed_angle(this->_id, rad_per_s, operating_mode);
             }
 
+            // These two methods are not necessary, should We delete them ?
             static InstructionPacket<typename Servo<Model>::protocol_t> get_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id)
             {
                 return get_moving_speed(id);
