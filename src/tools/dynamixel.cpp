@@ -318,7 +318,7 @@ int main(int argc, char** argv)
         display_help(argv[0], desc, vm);
         return 1;
     }
-    // Retriving connexion parameters
+    // Retrieving connexion parameters
     // ==============================
     if (vm.count("port"))
         port = vm["port"].as<std::string>();
