@@ -12,7 +12,7 @@ namespace dynamixel {
         class ServoLimitError : public Error {
         public:
             template <typename A, typename B, typename C, typename D>
-            ServoLimitError(A id, B min, C max, D value, std::string type = "position") : _id(id), _max(max), _min(min), _value(value)
+            ServoLimitError(A id, B min, C max, D value, std::string type = "position (rad)") : _id(id), _max(max), _min(min), _value(value)
             {
                 std::stringstream err_message;
                 err_message << "Servo: error while setting " << type

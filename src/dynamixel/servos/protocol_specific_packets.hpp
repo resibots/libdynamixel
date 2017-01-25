@@ -87,7 +87,7 @@ namespace dynamixel {
                     if (!(abs(speed_ticks) >= ct_t::min_goal_speed && abs(speed_ticks) <= ct_t::max_goal_speed)) {
                         double min_goal_speed = -ct_t::max_goal_speed * ct_t::rpm_per_tick * two_pi / 60;
                         double max_goal_speed = ct_t::max_goal_speed * ct_t::rpm_per_tick * two_pi / 60;
-                        throw errors::ServoLimitError(id, min_goal_speed, max_goal_speed, rad_per_s, "speed");
+                        throw errors::ServoLimitError(id, min_goal_speed, max_goal_speed, rad_per_s, "speed (rad/s)");
                     }
 
                     // Move negatives values in the range [ct_t::min_goal_speed,
@@ -101,7 +101,7 @@ namespace dynamixel {
                     if (!(speed_ticks >= ct_t::min_goal_speed && speed_ticks <= ct_t::max_goal_speed)) {
                         double min_goal_speed = ct_t::min_goal_speed * ct_t::rpm_per_tick * two_pi / 60;
                         double max_goal_speed = ct_t::max_goal_speed * ct_t::rpm_per_tick * two_pi / 60;
-                        throw errors::ServoLimitError(id, min_goal_speed, max_goal_speed, rad_per_s, "speed");
+                        throw errors::ServoLimitError(id, min_goal_speed, max_goal_speed, rad_per_s, "speed (rad/s)");
                     }
                 }
 
@@ -150,7 +150,7 @@ namespace dynamixel {
                 if (!(speed_ticks >= ct_t::min_goal_speed && speed_ticks <= ct_t::max_goal_speed)) {
                     double min_goal_speed = ct_t::min_goal_speed * ct_t::rpm_per_tick * two_pi / 60;
                     double max_goal_speed = ct_t::max_goal_speed * ct_t::rpm_per_tick * two_pi / 60;
-                    throw errors::ServoLimitError(id, min_goal_speed, max_goal_speed, rad_per_s, "speed");
+                    throw errors::ServoLimitError(id, min_goal_speed, max_goal_speed, rad_per_s, "speed (rad/s)");
                 }
 
                 return (moving_speed_t)speed_ticks;
