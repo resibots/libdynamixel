@@ -230,17 +230,6 @@ namespace dynamixel {
                 return Model::reg_goal_speed_angle(this->_id, rad_per_s, operating_mode);
             }
 
-            // These two methods are not necessary, should We delete them ?
-            static InstructionPacket<typename Servo<Model>::protocol_t> get_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id)
-            {
-                return get_moving_speed(id);
-            }
-
-            InstructionPacket<typename Servo<Model>::protocol_t> get_goal_speed_angle() const override
-            {
-                return Model::get_goal_speed_angle(this->_id);
-            }
-
             // TODO: read speed from dynamixel pros to check that we do get negative values too
             // FIXME : replace the following by protocol specific methods ?
             static double parse_joint_speed(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st)

@@ -163,11 +163,6 @@ namespace dynamixel {
                 throw errors::Error("reg_goal_speed_angle not implemented in model");
             }
 
-            virtual InstructionPacket<protocol_t> get_goal_speed_angle() const
-            {
-                throw errors::Error("get_goal_speed_angle not implemented in model");
-            }
-
             virtual double parse_joint_speed(const StatusPacket<protocol_t>& st) const
             {
                 throw errors::Error("parse_joint_speed not implemented in model");

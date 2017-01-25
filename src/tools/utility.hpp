@@ -561,7 +561,7 @@ namespace dynamixel {
             for (auto id : ids) {
                 StatusPacket<Protocol> status;
                 // request current position
-                _serial_interface.send(_servos.at(id)->get_goal_speed_angle());
+                _serial_interface.send(_servos.at(id)->get_moving_speed());
                 _serial_interface.recv(status);
 
                 // parse response to get the position
@@ -600,7 +600,7 @@ namespace dynamixel {
                 StatusPacket<Protocol> status;
                 // request current position
                 _serial_interface.send(
-                    servo.second->get_goal_speed_angle());
+                    servo.second->get_moving_speed());
                 _serial_interface.recv(status);
 
                 // parse response to get the position
