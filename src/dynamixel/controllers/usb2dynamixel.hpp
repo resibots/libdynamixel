@@ -21,6 +21,7 @@
 namespace dynamixel {
     namespace controllers {
         class Usb2Dynamixel {
+            // TODO : declare private copy constructor and assignment operator
         public:
             Usb2Dynamixel(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1) : _recv_timeout(recv_timeout), _fd(-1)
             {

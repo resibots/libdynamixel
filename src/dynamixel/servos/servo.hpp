@@ -241,6 +241,7 @@ namespace dynamixel {
             }
 
             // TODO: read speed from dynamixel pros to check that we do get negative values too
+            // FIXME : replace the following by protocol specific methods ?
             static double parse_joint_speed(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st)
             {
                 typename Servo<Model>::ct_t::present_speed_t speed;
