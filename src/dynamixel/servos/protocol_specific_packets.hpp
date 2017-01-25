@@ -32,12 +32,12 @@ namespace dynamixel {
                     on how the values are treated
                 @return a data packet to be sent on the serial line
             **/
-            static inline InstructionPacket<P> set_goal_speed_angle(
+            static inline InstructionPacket<P> set_moving_speed_angle(
                 typename P::id_t id,
                 double rad_per_s,
                 cst::OperatingMode operating_mode = cst::joint)
             {
-                throw errors::Error("set_goal_speed_angle not implemented for this protocol");
+                throw errors::Error("set_moving_speed_angle not implemented for this protocol");
             }
         };
 
@@ -47,7 +47,7 @@ namespace dynamixel {
             typedef typename ModelTraits<M>::CT ct_t;
             typedef typename ct_t::moving_speed_t moving_speed_t;
 
-            static inline InstructionPacket<protocols::Protocol1> set_goal_speed_angle(
+            static inline InstructionPacket<protocols::Protocol1> set_moving_speed_angle(
                 typename protocols::Protocol1::id_t id,
                 double rad_per_s,
                 cst::OperatingMode operating_mode)
@@ -58,7 +58,7 @@ namespace dynamixel {
                 return Servo<M>::set_moving_speed(id, speed_ticks);
             }
 
-            static inline InstructionPacket<protocols::Protocol1> reg_goal_speed_angle(
+            static inline InstructionPacket<protocols::Protocol1> reg_moving_speed_angle(
                 typename protocols::Protocol1::id_t id,
                 double rad_per_s,
                 cst::OperatingMode operating_mode)
@@ -115,7 +115,7 @@ namespace dynamixel {
             typedef typename ModelTraits<M>::CT ct_t;
             typedef typename ct_t::moving_speed_t moving_speed_t;
 
-            static inline InstructionPacket<protocols::Protocol2> set_goal_speed_angle(
+            static inline InstructionPacket<protocols::Protocol2> set_moving_speed_angle(
                 typename protocols::Protocol2::id_t id,
                 double rad_per_s,
                 cst::OperatingMode operating_mode)
@@ -125,7 +125,7 @@ namespace dynamixel {
                 return Servo<M>::set_moving_speed(id, speed_ticks);
             }
 
-            static inline InstructionPacket<protocols::Protocol2> reg_goal_speed_angle(
+            static inline InstructionPacket<protocols::Protocol2> reg_moving_speed_angle(
                 typename protocols::Protocol2::id_t id,
                 double rad_per_s,
                 cst::OperatingMode operating_mode)
