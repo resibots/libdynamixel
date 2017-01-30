@@ -140,7 +140,7 @@ namespace dynamixel {
             static constexpr double two_pi = 6.28318;
 
             static inline moving_speed_t angular_speed_to_ticks(
-                typename protocols::Protocol1::id_t id,
+                typename protocols::Protocol2::id_t id,
                 double rad_per_s)
             {
                 // convert radians per second to ticks
