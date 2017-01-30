@@ -39,6 +39,25 @@ namespace dynamixel {
             {
                 throw errors::Error("set_moving_speed_angle not implemented for this protocol");
             }
+
+            /** Build a packet to set the desired speed on an actuator (in register).
+
+                See the protocol-specific implemetnations for details.
+
+                @param id identifier of the actuator
+                @param rad_per_s rotational speed, in radians per second
+                @param operating_mode (enum) mode in which the actuator is
+                    controlled; for version 1 of the protocol, it has an impact
+                    on how the values are treated
+                @return a data packet to be sent on the serial line
+            **/
+            static inline InstructionPacket<P> reg_moving_speed_angle(
+                typename P::id_t id,
+                double rad_per_s,
+                cst::OperatingMode operating_mode = cst::joint)
+            {
+                throw errors::Error("reg_moving_speed_angle not implemented for this protocol");
+            }
         };
 
         template <class M>
