@@ -281,6 +281,41 @@ namespace dynamixel {
             // =================================================================
             // Torque-specific
 
+            static inline InstructionPacket<protocol_t> set_torque_limit_ratio(typename Servo<Model>::protocol_t::id_t id, double torque_ratio)
+            {
+                return ProtocolSpecificPackets<Model, protocol_t>::set_torque_limit_ratio(id, torque_ratio);
+            }
+
+            static inline InstructionPacket<protocol_t> reg_torque_limit_ratio(typename Servo<Model>::protocol_t::id_t id, double torque_ratio)
+            {
+                return ProtocolSpecificPackets<Model, protocol_t>::reg_torque_limit_ratio(id, torque_ratio);
+            }
+
+            InstructionPacket<protocol_t> set_torque_limit_ratio(double torque_ratio) const override
+            {
+                return Model::set_torque_limit_ratio(this->_id, torque_ratio);
+            }
+
+            InstructionPacket<protocol_t> reg_torque_limit_ratio(double torque_ratio) const override
+            {
+                return Model::reg_torque_limit_ratio(this->_id, torque_ratio);
+            }
+
+            // FIXME : replace the following by protocol specific methods ?
+            static double parse_torque(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st)
+            {
+                // typename Servo<Model>::ct_t::torque_limit_t torque_ticks;
+                // Servo<Model>::protocol_t::unpack_data(st.parameters(), torque_ticks);
+                //
+                // return torque_ticks / 32767.0;
+                return ProtocolSpecificPackets<Model, protocol_t>::parse_torque(st);
+            }
+
+            double parse_torque(const StatusPacket<typename Servo<Model>::protocol_t>& st) const override
+            {
+                return Model::parse_torque(this->_id, st);
+            }
+
             template <typename Id, typename TorqueLimit>
             static InstructionPacket<protocol_t> set_torque_limits(const std::vector<Id>& ids, const std::vector<TorqueLimit>& torque_limits)
             {

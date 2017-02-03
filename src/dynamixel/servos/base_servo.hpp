@@ -173,6 +173,24 @@ namespace dynamixel {
                 throw errors::Error("parse_joint_speed not implemented in model");
             }
 
+            // =================================================================
+            // Torque-specific
+
+            virtual InstructionPacket<protocol_t> set_torque_limit_ratio(double torque_ratio) const
+            {
+                throw errors::Error("set_torque_limit_ratio not implemented in model");
+            }
+
+            virtual InstructionPacket<protocol_t> reg_torque_limit_ratio(double torque_ratio) const
+            {
+                throw errors::Error("reg_torque_limit_ratio not implemented in model");
+            }
+
+            virtual double parse_torque(const StatusPacket<protocol_t>& st) const
+            {
+                throw errors::Error("parse_torque_limit not implemented in model");
+            }
+
         protected:
             BaseServo() {}
         };

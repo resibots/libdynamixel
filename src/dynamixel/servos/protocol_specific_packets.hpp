@@ -39,6 +39,52 @@ namespace dynamixel {
             {
                 throw errors::Error("set_goal_speed_angle not implemented for this protocol");
             }
+
+            /** Build a packet to set torque limit for an actuator.
+
+                See the protocol-specific implementations for details.
+
+                @param id identifier of the actuator
+                @param torque ratio (between 0 and 1) of the actuator's maximum
+                    torque that can be used for the control of the joint
+            **/
+            static inline InstructionPacket<P> set_torque_limit_ratio(
+                typename P::id_t id,
+                double torque_ratio)
+            {
+                throw errors::Error("set_torque_limit_ratio not implemented for this protocol");
+            }
+
+            /** Build a packet to set torque limit for an actuator (in register).
+
+                See the protocol-specific implementations for details.
+
+                @param id identifier of the actuator
+                @param torque ratio (between 0 and 1) of the actuator's maximum
+                    torque that can be used for the control of the joint
+            **/
+            static inline InstructionPacket<P> reg_torque_limit_ratio(
+                typename P::id_t id,
+                double torque_ratio)
+            {
+                throw errors::Error("reg_torque_limit_ratio not implemented for this protocol");
+            }
+
+            /** Unpack torque data recieved from an actuator.
+
+                This can be used to parse torque recieved from any of the
+                torque-related entries in the control table.
+
+                See the protocol-specific implementations for details.
+
+                @param st a StatusPacket containing the torque to be read
+                @return torque ratio (between 0 and 1) of the actuator's maximum
+                    torque capacity
+            **/
+            static double parse_torque(const StatusPacket<P>& st)
+            {
+                throw errors::Error("parse_torque not implemented for this protocol");
+            }
         };
 
         template <class M>
@@ -46,6 +92,7 @@ namespace dynamixel {
         public:
             typedef typename ModelTraits<M>::CT ct_t;
             typedef typename ct_t::moving_speed_t moving_speed_t;
+            typedef typename ct_t::torque_limit_t torque_limit_t;
 
             static inline InstructionPacket<protocols::Protocol1> set_goal_speed_angle(
                 typename protocols::Protocol1::id_t id,
@@ -67,6 +114,33 @@ namespace dynamixel {
                     operating_mode);
 
                 return Servo<M>::reg_moving_speed(id, speed_ticks);
+            }
+
+            static inline InstructionPacket<protocols::Protocol1> set_torque_limit_ratio(
+                typename protocols::Protocol1::id_t id,
+                double torque_ratio)
+            {
+                torque_limit_t torque = torque_ratio_to_ticks(id, torque_ratio);
+
+                return M::set_torque_limit_ratio(id, torque);
+            }
+
+            static inline InstructionPacket<protocols::Protocol1> reg_torque_limit_ratio(
+                typename protocols::Protocol1::id_t id,
+                double torque_ratio)
+            {
+                torque_limit_t torque = torque_ratio_to_ticks(id, torque_ratio);
+
+                return M::reg_torque_limit_ratio(id, torque);
+            }
+
+            static double parse_torque(
+                const StatusPacket<protocols::Protocol1>& st)
+            {
+                torque_limit_t torque_ticks;
+                protocols::Protocol1::unpack_data(st.parameters(), torque_ticks);
+
+                return torque_ticks / 1023.0;
             }
 
         private:
@@ -107,6 +181,21 @@ namespace dynamixel {
 
                 return (moving_speed_t)speed_ticks;
             }
+
+            static inline torque_limit_t torque_ratio_to_ticks(
+                typename protocols::Protocol1::id_t id,
+                double torque_ratio)
+            {
+                // Convert from ratio (range 0 to 1) to ticks (0 to 1023)
+                torque_limit_t torque_ticks = round(torque_ratio * 1023);
+
+                // Check that the command is within bounds of 0 to 1023.
+                if (torque_ticks < 0 || torque_ticks > 1024) {
+                    throw errors::ServoLimitError(id, 0, 1, torque_ratio, "torque limit");
+                }
+
+                return torque_ticks;
+            }
         };
 
         template <class M>
@@ -114,6 +203,7 @@ namespace dynamixel {
         public:
             typedef typename ModelTraits<M>::CT ct_t;
             typedef typename ct_t::moving_speed_t moving_speed_t;
+            typedef typename ct_t::goal_torque_t goal_torque_t;
 
             static inline InstructionPacket<protocols::Protocol2> set_goal_speed_angle(
                 typename protocols::Protocol2::id_t id,
@@ -135,6 +225,36 @@ namespace dynamixel {
                 return Servo<M>::reg_moving_speed(id, speed_ticks);
             }
 
+            static inline InstructionPacket<protocols::Protocol2> set_torque_limit_ratio(
+                typename protocols::Protocol2::id_t id,
+                double torque_ratio)
+            {
+                goal_torque_t torque_ticks = torque_ratio_to_ticks(id, torque_ratio);
+
+                return M::set_goal_torque(id, torque_ticks);
+            }
+
+            static inline InstructionPacket<protocols::Protocol2> reg_torque_limit_ratio(
+                typename protocols::Protocol2::id_t id,
+                double torque_ratio)
+            {
+                goal_torque_t torque_ticks = torque_ratio_to_ticks(id, torque_ratio);
+
+                return M::reg_goal_torque(id, torque_ticks);
+            }
+
+            static double parse_torque(
+                const StatusPacket<protocols::Protocol2>& st)
+            {
+                goal_torque_t torque_ticks;
+                protocols::Protocol2::unpack_data(st.parameters(), torque_ticks);
+
+                if (35072 == ct_t::model_number_value) // Dynamixel Pro L42
+                    return torque_ticks / 1023.0;
+                else // any other Dynmaixel Pro
+                    return torque_ticks / 32767.0;
+            }
+
         private:
             // 2 * pi
             static constexpr double two_pi = 6.28318;
@@ -154,6 +274,38 @@ namespace dynamixel {
                 }
 
                 return (moving_speed_t)speed_ticks;
+            }
+
+            static inline goal_torque_t torque_ratio_to_ticks(
+                typename protocols::Protocol2::id_t id,
+                double torque_ratio)
+            {
+                goal_torque_t torque_ticks;
+
+                if (35072 == ct_t::model_number_value) // Dynamixel Pro L42
+                { // has its own control table sometimes similar to protocol1
+                    // Convert from ratio (range 0 to 1) to ticks (0 to 1023)
+                    torque_ticks = round(torque_ratio * 1023);
+
+                    // Check that the command is within bounds of 0 to 1023.
+                    if (torque_ticks < 0 || torque_ticks > 1024) {
+                        throw errors::ServoLimitError(id, 0, 1, torque_ratio, "torque limit");
+                    }
+                }
+                else // any other Dynmaixel Pro
+                {
+                    // Convert from ratio (range 0 to 1) to ticks (0 to 32767)
+                    // FIXME: this makes an assumption about the range of values.
+                    // Robotis has not answered yet whether values go up to 33000 or 32767.
+                    torque_ticks = round(torque_ratio * 32767);
+
+                    // Check that the command is within bounds of 0 to 32767.
+                    if (torque_ticks < 0 || torque_ticks > 32767) {
+                        throw errors::ServoLimitError(id, 0, 1, torque_ratio, "torque limit");
+                    }
+                }
+
+                return torque_ticks;
             }
         };
     }
