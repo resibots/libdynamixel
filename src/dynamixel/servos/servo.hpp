@@ -14,6 +14,7 @@
 #include "../instructions/reg_write.hpp"
 #include "../instructions/action.hpp"
 #include "../instructions/factory_reset.hpp"
+#include "../instructions/reboot.hpp"
 #include "../instructions/sync_write.hpp"
 #include "model_traits.hpp"
 #include "../errors/error.hpp"
