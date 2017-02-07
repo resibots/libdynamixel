@@ -386,7 +386,7 @@ namespace dynamixel {
                         _servos.at(id)->parse_present_position_angle(status));
                 else {
                     std::stringstream message;
-                    message << id << "did not answer to the request for "
+                    message << (int)id << " did not answer to the request for "
                             << "its position";
                     throw errors::Error(message.str());
                 }
@@ -426,7 +426,7 @@ namespace dynamixel {
                 }
                 else {
                     std::stringstream message;
-                    message << servo.first << "did not answer to the request for "
+                    message << (int)servo.first << " did not answer to the request for "
                             << "its position";
                     throw errors::Error(message.str());
                 }
@@ -570,7 +570,7 @@ namespace dynamixel {
                         _servos.at(id)->parse_joint_speed(status));
                 else {
                     std::stringstream message;
-                    message << id << "did not answer to the request for "
+                    message << (int)id << " did not answer to the request for "
                             << "its position";
                     throw errors::Error(message.str());
                 }
@@ -611,7 +611,7 @@ namespace dynamixel {
                 }
                 else {
                     std::stringstream message;
-                    message << servo.first << "did not answer to the request for "
+                    message << (int)servo.first << " did not answer to the request for "
                             << "its position";
                     throw errors::Error(message.str());
                 }
@@ -684,7 +684,7 @@ namespace dynamixel {
                         _servos.at(id)->parse_torque_enable(status));
                 else {
                     std::stringstream message;
-                    message << id << "did not answer to the request for "
+                    message << (int)id << " did not answer to the request for "
                             << "its torque enabling status";
                     throw errors::Error(message.str());
                 }
@@ -727,7 +727,7 @@ namespace dynamixel {
                 }
                 else {
                     std::stringstream message;
-                    message << servo.first << "did not answer to the request for "
+                    message << (int)servo.first << " did not answer to the request for "
                             << "its torque enabling status";
                     throw errors::Error(message.str());
                 }
