@@ -128,6 +128,8 @@ void display_help(const std::string program_name,
         "\tEXAMPLE: "+program_name+" change-baudrate -b 57600 --id 5 25\n"
         "\t\t--new-baudrate 1000000\n"
         "\n"
+        "CAUTION: the USB2Dynamixel interface only works up to 3 Mbauds!\n"
+        "\n"
         "Allowed baudrates:\n"
         "| baud     | Protocol 1 | Protocol 2 |\n"
         "|----------|------------|------------|\n"
