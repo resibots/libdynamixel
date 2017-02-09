@@ -326,7 +326,13 @@ int main(int argc, char** argv)
         port = vm["port"].as<std::string>();
     if (vm.count("baudrate")) {
         baudrate = vm["baudrate"].as<unsigned>();
-        posix_baudrate = get_baudrate(baudrate);
+        try {
+            posix_baudrate = get_baudrate(baudrate);
+        }
+        catch (errors::Error e) {
+            std::cout << e.msg() << std::endl;
+            return 0;
+        }
     }
     else {
         // We should never enter here because we define a default value for "baudrate"
