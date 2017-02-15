@@ -62,7 +62,7 @@ namespace dynamixel {
                 typedef uint16_t velocity_i_gain_t;
                 static const protocol_t::address_t velocity_p_gain = 27;
                 typedef uint16_t velocity_p_gain_t;
-                static const protocol_t::address_t position_p_gain = 28;
+                static const protocol_t::address_t position_p_gain = 594;
                 typedef uint16_t position_p_gain_t;
                 static const protocol_t::address_t goal_position = 596;
                 typedef int32_t goal_position_t;
