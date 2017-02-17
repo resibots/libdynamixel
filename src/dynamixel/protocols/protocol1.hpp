@@ -129,6 +129,15 @@ namespace dynamixel {
                                     "implemented in Protocol1");
             }
 
+            static bool detect_status_header(const std::vector<uint8_t>& packet)
+            {
+                if (packet.size() >= 1 && packet[0] != 0xFF)
+                    return false;
+                if (packet.size() >= 2 && packet[1] != 0xFF)
+                    return false;
+                return true;
+            }
+
             /** Decodes the content of a status packet recieved from the servos
 
             This method is only used by the StatusPacket class, to make it generic

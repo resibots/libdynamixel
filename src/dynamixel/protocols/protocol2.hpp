@@ -154,6 +154,17 @@ namespace dynamixel {
                 res = (((int32_t)packet[3]) << 24) | (((int32_t)packet[2]) << 16) | (((int32_t)packet[1]) << 8) | ((int32_t)packet[0]);
             }
 
+            static bool detect_status_header(const std::vector<uint8_t>& packet)
+            {
+                if (packet.size() >= 1 && packet[0] != 0xFF)
+                    return false;
+                if (packet.size() >= 2 && packet[1] != 0xFF)
+                    return false;
+                if (packet.size() >= 3 && packet[2] != 0xFD)
+                    return false;
+                return true;
+            }
+
             /** Decodes the content of a status packet recieved from the servos
 
             @see unpack_status in protocol1.hpp

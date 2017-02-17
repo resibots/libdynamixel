@@ -118,15 +118,31 @@ namespace dynamixel {
 
                 do {
                     double current_time = get_time();
-                    uint8_t b;
-                    int res = read(_fd, &b, 1);
+                    uint8_t byte;
+                    int res = read(_fd, &byte, 1);
                     if (res > 0) {
-                        packet.push_back(b);
+                        packet.push_back(byte);
+
+                        if (!T::detect_status_header(packet)) {
+                            std::cout << "Bad packet: ";
+                            for (const auto byte : packet)
+                                std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
+                            std::cout << std::endl;
+                            packet.clear();
+                        }
+                        else {
+                            //  std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
+
+                            done = status.decode_packet(packet);
+                            // if (done) {
+                            //     std::cout << "Good packet: ";
+                            //     for (const auto byte : packet)
+                            //         std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
+                            //     std::cout << std::endl;
+                            // }
+                        }
+
                         time = current_time;
-
-                        //  std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)b << " ";
-
-                        done = status.decode_packet(packet);
                     }
 
                     if (current_time - time > _recv_timeout) {
@@ -136,6 +152,7 @@ namespace dynamixel {
                 } while (!done);
 
                 //std::cout << std::endl;
+                std::cout << std::dec;
 
                 return true;
             }
