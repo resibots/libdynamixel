@@ -154,6 +154,15 @@ namespace dynamixel {
                 res = (((int32_t)packet[3]) << 24) | (((int32_t)packet[2]) << 16) | (((int32_t)packet[1]) << 8) | ((int32_t)packet[0]);
             }
 
+            /** Check if the packet contains a header.
+
+                @see detect_status_header in protocol1.hpp
+
+                @param packet data of the recieved packet
+
+                @return true if and only if a full header was found at the
+                    beginning of the packet
+            **/
             static bool detect_status_header(const std::vector<uint8_t>& packet)
             {
                 if (packet.size() >= 1 && packet[0] != 0xFF)
@@ -175,7 +184,7 @@ namespace dynamixel {
                 if (packet.size() < 11)
                     return false;
 
-                if (packet[0] != 0xFF || packet[1] != 0xFF || packet[2] != 0xFD)
+                if (!detect_status_header(packet))
                     throw errors::Error("Status: bad packet header");
 
                 // the field at position 3 in the packet is a predefined value
