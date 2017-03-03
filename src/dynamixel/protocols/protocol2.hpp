@@ -34,6 +34,12 @@ namespace dynamixel {
                 static const instr_t bulk_write = 0x93;
             };
 
+            enum DecodeState {
+                INVALID,
+                ONGOING,
+                DONE
+            };
+
             static std::vector<uint8_t> pack_instruction(id_t id, instr_t instr)
             {
                 const size_t packet_size = 3 // header
@@ -154,38 +160,22 @@ namespace dynamixel {
                 res = (((int32_t)packet[3]) << 24) | (((int32_t)packet[2]) << 16) | (((int32_t)packet[1]) << 8) | ((int32_t)packet[0]);
             }
 
-            /** Check if the packet contains a header.
-
-                @see detect_status_header in protocol1.hpp
-
-                @param packet data of the recieved packet
-
-                @return true if and only if a full header was found at the
-                    beginning of the packet
-            **/
-            static bool detect_status_header(const std::vector<uint8_t>& packet)
-            {
-                if (packet.size() >= 1 && packet[0] != 0xFF)
-                    return false;
-                if (packet.size() >= 2 && packet[1] != 0xFF)
-                    return false;
-                if (packet.size() >= 3 && packet[2] != 0xFD)
-                    return false;
-                return true;
-            }
-
             /** Decodes the content of a status packet recieved from the servos
 
-            @see unpack_status in protocol1.hpp
-        **/
-            static bool unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters)
+                @see unpack_status in protocol1.hpp
+            **/
+            static DecodeState
+            unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters, bool throw_exceptions = false)
             {
+                if (!detect_status_header(packet)) {
+                    if (throw_exceptions)
+                        throw errors::BadPacket(packet, "Bad packet header");
+                    return INVALID;
+                }
+
                 // 11 is the size of the smallest packets (no params)
                 if (packet.size() < 11)
-                    return false;
-
-                if (!detect_status_header(packet))
-                    throw errors::Error("Status: bad packet header");
+                    return ONGOING;
 
                 // the field at position 3 in the packet is a predefined value
 
@@ -194,18 +184,21 @@ namespace dynamixel {
                 // Check that the actual length of the packet equals the one written
                 // in the packet itself
                 length_t length = (((uint16_t)packet[6]) << 8) | packet[5];
+                if (length < 4) {
+                    if (throw_exceptions) {
+                        std::stringstream message;
+                        message << "Declared packet length (";
+                        message << (int32_t)length << ") is too small.";
+                        throw errors::BadPacket(packet, message.str().c_str());
+                    }
+                    return INVALID;
+                }
                 if (length != packet.size() - 7)
-                    return false;
+                    return ONGOING;
 
                 // the instruction field for a status packet must always be 0x55
                 if (packet[7] != 0x55)
-                    return false;
-
-                uint8_t error = packet[8];
-
-                parameters.clear();
-                for (size_t i = 0; i < length - 4; ++i)
-                    parameters.push_back(packet[9 + i]);
+                    return INVALID;
 
                 // Compute checksum and compare with the one we recieved
                 uint16_t checksum = _checksum(packet);
@@ -213,11 +206,14 @@ namespace dynamixel {
                 if (checksum != recv_checksum)
                     throw errors::CrcError(id, 2, checksum, recv_checksum);
 
+                uint8_t error = packet[8];
+
                 if (error != 0) {
                     std::stringstream err_message;
-                    err_message << ((int32_t)id) << ": ";
+                    err_message << "Actuator with ID " << ((int32_t)id)
+                                << " reported the following error: ";
                     if (error & 0x80)
-                        err_message << "Device alert. Check Hardware Error field from Control Table; ";
+                        err_message << "Device alert, check Hardware Error field from Control Table; ";
 
                     switch (error & 0x7F) {
                     case 0x01:
@@ -243,13 +239,37 @@ namespace dynamixel {
                         break;
                     }
 
-                    throw errors::StatusError(id, 2, error, "Status: error while decoding packet with ID " + err_message.str());
+                    throw errors::StatusError(id, 2, error, err_message.str());
                 }
 
-                return true;
+                parameters.clear();
+                for (size_t i = 0; i < length - 4; ++i)
+                    parameters.push_back(packet[9 + i]);
+
+                return DONE;
             }
 
         protected:
+            /** Check if the packet contains a header.
+
+                @see detect_status_header in protocol1.hpp
+
+                @param packet data of the recieved packet
+
+                @return true if and only if a full header was found at the
+                    beginning of the packet
+            **/
+            static bool detect_status_header(const std::vector<uint8_t>& packet)
+            {
+                if (packet.size() >= 1 && packet[0] != 0xFF)
+                    return false;
+                if (packet.size() >= 2 && packet[1] != 0xFF)
+                    return false;
+                if (packet.size() >= 3 && packet[2] != 0xFD)
+                    return false;
+                return true;
+            }
+
             static uint16_t _checksum(const std::vector<uint8_t>& packet)
             {
                 if (packet.size() == 0)

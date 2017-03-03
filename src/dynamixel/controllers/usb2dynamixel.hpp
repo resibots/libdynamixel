@@ -23,12 +23,14 @@ namespace dynamixel {
         class Usb2Dynamixel {
             // TODO : declare private copy constructor and assignment operator
         public:
-            Usb2Dynamixel(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1) : _recv_timeout(recv_timeout), _fd(-1)
+            Usb2Dynamixel(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
+                : _recv_timeout(recv_timeout), _fd(-1), _report_bad_packet(false)
             {
                 open_serial(name, baudrate);
             }
 
-            Usb2Dynamixel() : _recv_timeout(0.1), _fd(-1) {}
+            Usb2Dynamixel()
+                : _recv_timeout(0.1), _fd(-1), _report_bad_packet(false) {}
 
             ~Usb2Dynamixel()
             {
@@ -105,51 +107,44 @@ namespace dynamixel {
             template <typename T>
             bool recv(StatusPacket<T>& status) const
             {
+                using DecodeState = typename T::DecodeState;
+
                 if (_fd == -1)
                     return false;
 
                 double time = get_time();
-                bool done = false;
+                DecodeState state = DecodeState::ONGOING;
 
                 std::vector<uint8_t> packet;
                 packet.reserve(_recv_buffer_size);
 
-                //std::cout << "Recv: ";
+                //std::cout << "Recieve:" << std::endl;
 
                 do {
                     double current_time = get_time();
                     uint8_t byte;
                     int res = read(_fd, &byte, 1);
                     if (res > 0) {
+                        // std::cout << std::setfill('0') << std::setw(2)
+                        //           << std::hex << (unsigned int)byte << " ";
                         packet.push_back(byte);
 
-                        if (!T::detect_status_header(packet)) {
-                            std::cout << "Bad packet: ";
-                            for (const auto byte : packet)
-                                std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
-                            std::cout << std::endl;
-                            packet.clear();
-                        }
-                        else {
-                            //  std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
+                        state = status.decode_packet(packet, _report_bad_packet);
+                        if (state == DecodeState::INVALID) {
+                            // std::cout << "\tBad packet: ";
+                            // for (const auto byte : packet)
+                            //     std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
+                            // std::cout << std::endl;
 
-                            done = status.decode_packet(packet);
-                            // if (done) {
-                            //     std::cout << "Good packet: ";
-                            //     for (const auto byte : packet)
-                            //         std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
-                            //     std::cout << std::endl;
-                            // }
+                            packet.clear();
                         }
 
                         time = current_time;
                     }
 
-                    if (current_time - time > _recv_timeout) {
-                        //std::cout << std::endl;
+                    if (current_time - time > _recv_timeout)
                         return false;
-                    }
-                } while (!done);
+                } while (state != DecodeState::DONE);
 
                 //std::cout << std::endl;
                 std::cout << std::dec;
@@ -157,10 +152,29 @@ namespace dynamixel {
                 return true;
             }
 
+            /** Enable error reporting for packet issues
+
+                If report_bad_packet is set to true, invalid packet headers and
+                errors in packet size are reported through exceptions.
+            **/
+            void set_report_bad_packet(bool report_bad_packet)
+            {
+                _report_bad_packet = report_bad_packet;
+            }
+
+            /**
+                @see set_report_bad_packet
+            **/
+            bool report_bad_packet()
+            {
+                return _report_bad_packet;
+            }
+
         private:
             double _recv_timeout;
             static const size_t _recv_buffer_size = 256;
             int _fd;
+            bool _report_bad_packet;
         };
     }
 }

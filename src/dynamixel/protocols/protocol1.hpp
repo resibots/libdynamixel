@@ -6,6 +6,7 @@
 #include <cassert>
 #include <sstream>
 
+#include "../errors/bad_packet.hpp"
 #include "../errors/crc_error.hpp"
 #include "../errors/status_error.hpp"
 #include "../errors/unpack_error.hpp"
@@ -29,6 +30,12 @@ namespace dynamixel {
                 static const instr_t action = 0x05;
                 static const instr_t factory_reset = 0x06;
                 static const instr_t sync_write = 0x83;
+            };
+
+            enum DecodeState {
+                INVALID,
+                ONGOING,
+                DONE
             };
 
             static std::vector<uint8_t> pack_instruction(id_t id, instr_t instr)
@@ -129,67 +136,62 @@ namespace dynamixel {
                                     "implemented in Protocol1");
             }
 
-            /** Check if the packet contains a header.
-
-                @param packet data of the recieved packet
-
-                @return true if and only if a full header was found at the
-                    beginning of the packet
-            **/
-            static bool detect_status_header(const std::vector<uint8_t>& packet)
-            {
-                if (packet.size() >= 1 && packet[0] != 0xFF)
-                    return false;
-                if (packet.size() >= 2 && packet[1] != 0xFF)
-                    return false;
-                return true;
-            }
-
             /** Decodes the content of a status packet recieved from the servos
 
-            This method is only used by the StatusPacket class, to make it generic
-            with regard to the protocol version.
+            This method is only used by the StatusPacket class, to make it
+            independent of the protocol version.
 
-            @param packet data of the recieved packet
+            @param packet content of the recieved packet
             @param id id of the sending actuator
             @param parameters parameters of the status packet, filled by unpack_status
+            @param throw_exceptions boolean telling to throw exceptions if the
+                packet is malformed
 
-            @return true if and only if the status packet is valid (well formated)
+            @return the state of the packet unpacking
 
             @see unpack_status in protocol2.hpp
-        **/
-            static bool unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters)
+            **/
+            static DecodeState
+            unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters, bool throw_exceptions = false)
             {
+                if (!detect_status_header(packet)) {
+                    if (throw_exceptions)
+                        throw errors::BadPacket(packet, "Bad packet header");
+                    return INVALID;
+                }
+
                 // 6 is the size of the smallest packets (no params)
                 if (packet.size() < 6)
-                    return false;
-
-                if (!detect_status_header(packet))
-                    throw errors::Error("Status: bad packet header");
+                    return ONGOING;
 
                 id = packet[2];
 
                 // Check that the actual length of the packet equals the one written
                 // in the packet itself
                 length_t length = packet[3];
-                if (packet[3] != packet.size() - 4)
-                    return false;
-
-                uint8_t error = packet[4];
-
-                parameters.clear();
-                for (size_t i = 0; i < length - 2; ++i)
-                    parameters.push_back(packet[5 + i]);
+                if (length < 2) {
+                    if (throw_exceptions) {
+                        std::stringstream message;
+                        message << "Declared packet length (";
+                        message << (int32_t)length << ") is too small.";
+                        throw errors::BadPacket(packet, message.str().c_str());
+                    }
+                    return INVALID;
+                }
+                if (length > packet.size() - 4)
+                    return ONGOING;
 
                 // Compute checksum and compare with the one we recieved
                 uint8_t checksum = _checksum(packet);
-
                 if (checksum != packet.back())
                     throw errors::CrcError(id, 1, checksum, packet.back());
 
+                uint8_t error = packet[4];
+
                 if (error != 0) {
                     std::stringstream err_message;
-                    err_message << ((int32_t)id) << ": ";
+                    err_message << "Actuator with ID " << ((int32_t)id)
+                                << " reported the following error(s): ";
                     if (error & 1) // bit 0
                         err_message << "Input voltage error, ";
                     if (error & 2) // bit 1
@@ -205,13 +207,36 @@ namespace dynamixel {
                     if (error & 64) // bit 6
                         err_message << "Instruction error, ";
 
-                    throw errors::StatusError(id, 1, error, "Status: error while decoding packet with ID " + err_message.str().substr(0, err_message.str().length() - 2));
+                    throw errors::StatusError(id, 1, error,
+                        err_message.str().substr(0, err_message.str().length() - 2));
                 }
 
-                return true;
+                parameters.clear();
+                for (size_t i = 0; i < length - 2; ++i)
+                    parameters.push_back(packet[5 + i]);
+
+                return DONE;
             }
 
         protected:
+            /** Check if the packet contains a header.
+
+                @param packet data of the recieved packet
+
+                @return true if and only if a full header was found at the
+                    beginning of the packet
+            **/
+            static bool detect_status_header(const std::vector<uint8_t>& packet)
+            {
+                if (packet.size() == 0)
+                    return false;
+                if (packet.size() >= 1 && packet[0] != 0xFF)
+                    return false;
+                if (packet.size() >= 2 && packet[1] != 0xFF)
+                    return false;
+                return true;
+            }
+
             static uint8_t _checksum(const std::vector<uint8_t>& packet)
             {
                 if (packet.size() == 0)
