@@ -136,12 +136,12 @@ namespace dynamixel {
                                     "implemented in Protocol1");
             }
 
-            /** Decodes the content of a status packet recieved from the servos
+            /** Decodes the content of a status packet received from the servos
 
             This method is only used by the StatusPacket class, to make it
             independent of the protocol version.
 
-            @param packet content of the recieved packet
+            @param packet content of the received packet
             @param id id of the sending actuator
             @param parameters parameters of the status packet, filled by unpack_status
             @param throw_exceptions boolean telling to throw exceptions if the
@@ -181,7 +181,7 @@ namespace dynamixel {
                 if (length > packet.size() - 4)
                     return ONGOING;
 
-                // Compute checksum and compare with the one we recieved
+                // Compute checksum and compare with the one we received
                 uint8_t checksum = _checksum(packet);
                 if (checksum != packet.back())
                     throw errors::CrcError(id, 1, checksum, packet.back());
@@ -221,7 +221,7 @@ namespace dynamixel {
         protected:
             /** Check if the packet contains a header.
 
-                @param packet data of the recieved packet
+                @param packet data of the received packet
 
                 @return true if and only if a full header was found at the
                     beginning of the packet

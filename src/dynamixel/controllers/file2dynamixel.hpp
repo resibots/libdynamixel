@@ -138,7 +138,7 @@ namespace dynamixel {
                 std::vector<uint8_t> packet;
                 packet.reserve(_recv_buffer_size);
 
-                std::cout << "Recieve:" << std::endl;
+                std::cout << "Receive:" << std::endl;
 
                 do {
                     uint8_t byte;

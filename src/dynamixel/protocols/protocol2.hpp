@@ -160,7 +160,7 @@ namespace dynamixel {
                 res = (((int32_t)packet[3]) << 24) | (((int32_t)packet[2]) << 16) | (((int32_t)packet[1]) << 8) | ((int32_t)packet[0]);
             }
 
-            /** Decodes the content of a status packet recieved from the servos
+            /** Decodes the content of a status packet received from the servos
 
                 @see unpack_status in protocol1.hpp
             **/
@@ -200,7 +200,7 @@ namespace dynamixel {
                 if (packet[7] != 0x55)
                     return INVALID;
 
-                // Compute checksum and compare with the one we recieved
+                // Compute checksum and compare with the one we received
                 uint16_t checksum = _checksum(packet);
                 uint16_t recv_checksum = (((uint16_t)packet.back()) << 8) | packet[packet.size() - 2];
                 if (checksum != recv_checksum)
@@ -254,7 +254,7 @@ namespace dynamixel {
 
                 @see detect_status_header in protocol1.hpp
 
-                @param packet data of the recieved packet
+                @param packet data of the received packet
 
                 @return true if and only if a full header was found at the
                     beginning of the packet
