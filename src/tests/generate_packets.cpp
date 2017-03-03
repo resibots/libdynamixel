@@ -39,6 +39,10 @@ void test_unpack_status_1()
         packet = {0xFD, 0x00, 0x25, 0xFF, 0xDD, 0x00, 0xFF, 0xFF, 0x00, 0x02, 0x00, 0xFD};
         interface.send(packet);
 
+        // a valid packet, except for the checksum
+        packet = {0xFF, 0xFF, 0x00, 0x02, 0x00, 0xF0};
+        interface.send(packet);
+
         // An error is reported by actuator 4 (over-heating and over-load)
         packet = {0xFF, 0xFF, 0x04, 0x02, 0x24, 0xD5};
         interface.send(packet);
@@ -53,7 +57,11 @@ void test_unpack_status_1()
         flags = O_RDONLY;
         interface.open_file("frames.dat", flags);
         interface.recv(status);
+        std::cout << status << std::endl;
         interface.recv(status);
+        std::cout << status << std::endl;
+        interface.recv(status);
+        std::cout << status << std::endl;
         interface.recv(status);
     }
     catch (dynamixel::errors::BadPacket e) {
@@ -86,6 +94,10 @@ void test_unpack_status_2()
         packet = {0xFD, 0x00, 0x25, 0xFF, 0xFF, 0xFD, 0x00, 0x01, 0x07, 0x00, 0x55, 0x00, 0x06, 0x04, 0x26, 0x65, 0x5D};
         interface.send(packet);
 
+        // a valid packet, except for the checksum
+        packet = {0xFF, 0xFF, 0xFD, 0x00, 0x01, 0x07, 0x00, 0x55, 0x00, 0x06, 0x04, 0x26, 0x65, 0x00};
+        interface.send(packet);
+
         // An error is reported by actuator 4 (harware error and result fail)
         packet = {0xFF, 0xFF, 0xFD, 0x00, 0x04, 0x08, 0x00, 0x55, 0x84, 0xA6, 0x00, 0x00, 0x00, 0x8C, 0xE2};
         interface.send(packet);
@@ -99,6 +111,8 @@ void test_unpack_status_2()
             status;
         flags = O_RDONLY;
         interface.open_file("frames.dat", flags);
+        interface.recv(status);
+        std::cout << status << std::endl;
         interface.recv(status);
         std::cout << status << std::endl;
         interface.recv(status);
