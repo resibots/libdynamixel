@@ -167,18 +167,18 @@ namespace dynamixel {
                     }
                 } while (state != DecodeState::DONE && res);
 
-                std::cout << "Status in the end is ";
-                switch (state) {
-                case DecodeState::INVALID:
-                    std::cout << "INVALID";
-                    break;
-                case DecodeState::ONGOING:
-                    std::cout << "ONGOING";
-                    break;
-                case DecodeState::DONE:
-                    std::cout << "DONE";
-                    break;
-                }
+                // std::cout << "Status in the end is ";
+                // switch (state) {
+                // case DecodeState::INVALID:
+                //     std::cout << "INVALID";
+                //     break;
+                // case DecodeState::ONGOING:
+                //     std::cout << "ONGOING";
+                //     break;
+                // case DecodeState::DONE:
+                //     std::cout << "DONE";
+                //     break;
+                // }
                 std::cout << std::endl;
 
                 //std::cout << std::endl;
