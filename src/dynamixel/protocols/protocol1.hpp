@@ -183,8 +183,11 @@ namespace dynamixel {
 
                 // Compute checksum and compare with the one we received
                 uint8_t checksum = _checksum(packet);
-                if (checksum != packet.back())
-                    throw errors::CrcError(id, 1, checksum, packet.back());
+                if (checksum != packet.back()) {
+                    if (throw_exceptions)
+                        throw errors::CrcError(id, 1, checksum, packet.back());
+                    return INVALID;
+                }
 
                 uint8_t error = packet[4];
 
