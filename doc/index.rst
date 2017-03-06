@@ -3,7 +3,7 @@ Libdynamixel's documentation
 
 libdynamixel
 ------------
-libdynamixel is a C++ library for the `Dynamixel <http://en.robotis.com/index/product.php?cate_code=101010>`_ actuators. Its goals are to be fast and to work with most Dynamixels, including the Dynamixel Pro actuators.
+`libdynamixel <https://github.com/resibots/libdynamixel>`__ is a C++ library for the `Dynamixel <http://en.robotis.com/index/product.php?cate_code=101010>`__ actuators. Its goals are to be fast and to work with most Dynamixels, including the Dynamixel Pro actuators.
 
 This library comes with a command line utility that can, among other things, be very convenient for the configuration of your actuators.
 
