@@ -25,4 +25,4 @@ The standard values are:
 - B76800
 - B115200
 
-B1000000 corresponds to :math:`10^6` bauds. It is not a standard POSIX value but is accepted on linux and Mac OS X. This is also the default baud rate for a newly bought actuator.
+B1000000 corresponds to :math:`10^6` bauds. It is not a standard POSIX value but is accepted on linux and Mac OS X.
