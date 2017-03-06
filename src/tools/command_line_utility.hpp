@@ -91,6 +91,12 @@ namespace dynamixel {
                     else
                         change_baudrate(vm["new-baudrate"].as<unsigned int>());
                 }
+                else if ("factory-reset" == command) {
+                    if (vm.count("id"))
+                        factory_reset(vm["id"].as<std::vector<id_t>>());
+                    else
+                        factory_reset();
+                }
                 else if ("position" == command) {
                     check_vm(vm, "angle");
 
@@ -419,6 +425,20 @@ namespace dynamixel {
         {
             _dyn_util.detect_servos();
             _dyn_util.change_baudrate(Protocol::broadcast_id, baudrate);
+        }
+
+        void factory_reset(const std::vector<id_t>& ids)
+        {
+            _dyn_util.detect_servos();
+
+            for (auto id : ids) {
+                _dyn_util.factory_reset(id);
+            }
+        }
+        void factory_reset()
+        {
+            _dyn_util.detect_servos();
+            _dyn_util.factory_reset(Protocol::broadcast_id);
         }
 
         void position(const std::vector<id_t>& ids, const std::vector<double>& angles)

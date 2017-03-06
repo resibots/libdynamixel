@@ -230,7 +230,7 @@ namespace dynamixel {
 
         /** Change the baudrate of one or all actuators.
             If the target_id argument is set to the broadcast id for the current
-            protocol, the IDs of all connected servos will be changed.
+            protocol, the baudrate of all connected servos will be changed.
 
             @param target_id ID of a servo or the broadcast id
             @param baudrate new baudrete of the targetted servo(s).
@@ -252,6 +252,31 @@ namespace dynamixel {
             }
             else {
                 _serial_interface.send(_servos.at(id)->set_baudrate(baudrate));
+                _serial_interface.recv(status);
+            }
+        }
+
+        /** Reset the Control Table to its initial factory default settings.
+            If the target_id argument is set to the broadcast id for the current
+            protocol, all connected servos will be affected.
+
+            @param target_id ID of a servo or the broadcast id
+
+            @throws errors::UtilityError if you didn't detect connected servos before
+        **/
+        void factory_reset(id_t id)
+        {
+            check_scanned();
+
+            StatusPacket<Protocol> status;
+            if (Protocol::broadcast_id == id) {
+                for (auto servo : _servos) {
+                    _serial_interface.send(FactoryReset<Protocol>(servo.first));
+                    _serial_interface.recv(status);
+                }
+            }
+            else {
+                _serial_interface.send(FactoryReset<Protocol>(id));
                 _serial_interface.recv(status);
             }
         }
