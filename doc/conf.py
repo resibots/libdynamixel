@@ -311,5 +311,6 @@ texinfo_documents = [
 intersphinx_mapping = {
     # 'python': ('https://docs.python.org/', None),
     'resibots': ('http://www.resibots.eu/', None),
+    'limbo': ('http://www.resibots.eu/limbo', None),
 }
 intersphinx_timeout = 10
