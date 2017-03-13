@@ -11,6 +11,8 @@ namespace dynamixel {
     template <class Protocol>
     class StatusPacket {
     public:
+        using DecodeState = typename Protocol::DecodeState;
+
         StatusPacket() : _valid(false) {}
 
         bool valid() const { return _valid; }
@@ -29,10 +31,14 @@ namespace dynamixel {
             return _parameters;
         }
 
-        bool decode_packet(const std::vector<uint8_t>& packet)
+        DecodeState decode_packet(const std::vector<uint8_t>& packet, bool report_bad_packet = false)
         {
-            _valid = Protocol::unpack_status(packet, _id, _parameters);
-            return _valid;
+            DecodeState state = Protocol::unpack_status(packet, _id, _parameters, report_bad_packet);
+
+            if (state == DecodeState::DONE)
+                _valid = true;
+
+            return state;
         }
 
         std::ostream& print(std::ostream& os) const
