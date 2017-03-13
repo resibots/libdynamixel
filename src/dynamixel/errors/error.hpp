@@ -25,6 +25,13 @@ namespace dynamixel {
                 return _msg;
             }
 
+            virtual std::ostream& print(std::ostream& os) const
+            {
+                os << _msg;
+
+                return os;
+            }
+
         protected:
             std::string _msg;
         };
@@ -34,6 +41,11 @@ namespace dynamixel {
         {
             if (!value)
                 throw Error(msg + std::string("[") + std::string(file) + "]");
+        }
+
+        inline std::ostream& operator<<(std::ostream& os, const Error& err)
+        {
+            return err.print(os);
         }
     }
 }

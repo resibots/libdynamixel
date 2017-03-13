@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+def configure(bld):
+    pass
+
+def options(bld):
+    pass
+
+def build(bld):
+    bld(features='cxx cxxprogram', source='generate_packets.cpp', target="generate_packets", includes=". ..")
