@@ -62,7 +62,7 @@ namespace dynamixel {
         }
 
         /** Return the connected actuators.
-            If we didn't do a scanning yet, does it with the default recieve
+            If we didn't do a scanning yet, does it with the default receive
             timeout.
 
             @return map of ids and (std) shared pointers to BaseServo instances
