@@ -134,4 +134,3 @@ udev rule for USB2AX adapter
 .. note:: For Gnu/Linux only
 
 To have the `USB2AX <http://www.xevelabs.com/doku.php?id=product:usb2ax:usb2ax>`__ serial interface appear as :file:`/dev/usb2ax{N}` (where N is a kernel-attributed integer), you can install the provided udev rule. It is as simple as moving the :file:`usb2ax.rules` file from the root of the library to the for the udev rules folder. For ubuntu, it is :file:`/etc/udev/rules.d`.
-

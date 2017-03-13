@@ -1,13 +1,13 @@
-Control the position of auto-detected servos
----------------------------------------------
+Detect and control servos with the high level interface
+--------------------------------------------------------
 
 .. highlight:: c++
 
-This tutorial assumes that you have already been able to compile the library. If not, please refer to the related instructions in the :ref:`building` instructions.
+This tutorial assumes that you have already been able to compile and install the library. If not, please refer to the related instructions in the :ref:`building/installation instructions <download_and_compilation>`.
 
-We would like to develop a program that auto-detects all the servos connected to a port and sets their position at :math:`\pi` radians (180 degrees). Our program will have the following usage ::
+We would like to develop a program that auto-detects all the servos connected to a port and sets their position at :math:`\pi` radians (180 degrees). To do so, we are going to use the high level interface of the libdynamixel library. Our program will have the following usage ::
 
-    ./high_level_protocol{1,2} port
+    ./high_level_control port
 
 It requires the port name which is the absolute path to the linux device interfacing with the Dynamixel bus.
 
@@ -80,7 +80,42 @@ Finally, for each of the dected servos we enable it and set its position at :mat
 
 All these commands should be enclosed into a ``try-catch`` since we enabled the exception throwing.
 
-Here's the full file:
+Now we need to create a `wscript` file for our project to compile it with waf (see the :ref:`compilation tutorial <download_and_compilation>` for details):
+
+
+.. code-block:: python
+
+    #!/usr/bin/env python
+
+    def options(opt):
+        pass
+
+    def configure(conf):
+      # Get locations where to search for libdynamixel's headers
+      includes_check = ['/usr/include', '/usr/local/include']
+
+      try:
+        # Find the headers of libdynamixel
+        conf.start_msg('Checking for libdynamixel includes')
+        conf.find_file('dynamixel/dynamixel.hpp', includes_check)
+        conf.end_msg('ok')
+
+        conf.env.INCLUDES_LIBDYNAMIXEL = includes_check
+      except:
+        conf.end_msg('Not found', 'RED')
+      return
+
+    def build(bld):
+        libs = 'LIBDYNAMIXEL BOOST'
+
+        obj = bld(features = 'cxx',
+                  source = 'high_level_control.cpp',
+                  includes = '.',
+                  target = 'high_level_control',
+                  uselib =  libs,
+                  defines = ['PROTOCOL1']) # change this to PROTOCOL2 if you want to use servos that operate with PROTOCOL2
+
+Here's the **high_level_control.cpp** file:
 
 .. literalinclude:: ../../src/tutorials/high_level.cpp
    :language: c++
