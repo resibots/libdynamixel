@@ -20,7 +20,7 @@ The full documentation (including tutorials, guides, and API) is available on th
 Projects using this library
 ===========================
 
-.. image:: http://www.resibots.eu/_images/hexapod.jpg
+.. image:: pics/three_robots.png
    :alt: ResiBots Robots
    :align: center
 
@@ -36,6 +36,7 @@ This library is used in most of the robots designed in ERC project `ResiBots <ht
 Scientific publications
 -----------------------
 This library has been used in many scientific publications, in particular:
+
 * Cully, A., Clune, J. Tarapore, D. and Mouret, J.-B.. "Robots that can adapt like animals." *Nature* 521, no. 7553 (2015): 503-507.
 * Cully, A., and J-B. Mouret. "Evolving a Behavioral Repertoire for a Walking Robot." Evolutionary computation (2016).
 * Koos, S. and Cully, A. and Mouret, J.-B. (2013). "Fast Damage Recovery in Robotics with the T-Resilience Algorithm". *International Journal of Robotics Research*. Vol 32 No 14 Pages 1700-1723.
@@ -47,7 +48,7 @@ This library has been used in many scientific publications, in particular:
 
 ROS interface
 ================
-An optional ROS interface (hardware interface) is available in a separate repository (`dynamixel_control_hw<https://github.com/resibots/dynamixel_control_hw/>`_).
+An optional ROS interface (hardware interface) is available in a separate repository (`dynamixel_control_hw <https://github.com/resibots/dynamixel_control_hw/>`_).
 
 Building
 ========
