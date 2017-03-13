@@ -15,14 +15,14 @@ Dependencies
 
 * python2.x
 * C++
-* `Boost <http://www.boost.org>`_ , with the program_options librariy; `Boost` is mainly used for the command line interface.
+* `Boost <http://www.boost.org>`_ (optional), with the program_options library; `Boost` is optional and only used for the command line utility.
 
 Compilation
 -----------
 
 We use  the `WAF <https://waf.io>`_  build system. Don't run away yet! It has the big advantage of requiring no more than Python installed on your computer. If you use GNU/Linux or Mac OS, you should already have it.
 
-To know why we use waf (and not CMAKE, SCONS, traditional makefiles, etc.), see the :ref:`Limbo FAQ <faq-waf>`.
+To know why we use waf (and not CMAKE, SCONS, traditional makefiles, etc.), see the :ref:`libdynamixel FAQ <faq-waf>`.
 
 Like most build systems, it has a configuration and build steps, described bellow.
 
