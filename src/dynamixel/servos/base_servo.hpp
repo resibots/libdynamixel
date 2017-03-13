@@ -38,18 +38,22 @@ namespace dynamixel {
         template <typename Protocol>
         class BaseServo {
         public:
+            /// type of the protocol (Protocol1 or Protocol2)
             typedef Protocol protocol_t;
 
+            /// ID of the servo
             virtual long long int id() const
             {
                 throw errors::Error("id not implemented in model");
             }
 
+            /// ??
             virtual void id(long long int id)
             {
                 throw errors::Error("id not implemented in model");
             }
 
+            /// Name of the model (e.g. Mx12, Mx28, etc.)
             virtual std::string model_name() const
             {
                 throw errors::Error("model_name not implemented in model");
@@ -121,7 +125,7 @@ namespace dynamixel {
 
             BASE_FIELD(control_mode);
 
-            // Common functionality for the servos that will be implemented in the Servo class (where we know the model)
+            /// Ping the servo
             virtual InstructionPacket<protocol_t> ping() const
             {
                 throw errors::Error("ping not implemented in model");
