@@ -9,6 +9,9 @@
 
 namespace dynamixel {
     namespace errors {
+        /**
+        Abstract class for dynamixel errors
+        **/
         class Error {
         public:
             Error() {}

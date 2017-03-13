@@ -9,6 +9,8 @@
 
 namespace dynamixel {
     namespace errors {
+        /** @ingroup errors
+        **/
         class UnpackError : public Error {
         public:
             UnpackError(uint8_t protocol) : _protocol(protocol)

@@ -9,6 +9,9 @@
 
 namespace dynamixel {
     namespace errors {
+        /** @ingroup errors
+        Triggered when the expected checksum and the received checksum do not match.
+        **/
         class CrcError : public Error {
         public:
             CrcError(uint8_t id, uint8_t protocol, uint32_t expected, uint32_t received) : _id(id), _protocol(protocol), _expected(expected), _received(received)

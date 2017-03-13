@@ -9,6 +9,8 @@
 
 namespace dynamixel {
     namespace errors {
+        /** @ingroup errors
+        **/
         class ServoLimitError : public Error {
         public:
             template <typename A, typename B, typename C, typename D>

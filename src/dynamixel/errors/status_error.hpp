@@ -8,6 +8,8 @@
 
 namespace dynamixel {
     namespace errors {
+        /** @ingroup errors
+        **/
         class StatusError : public Error {
         public:
             StatusError(uint8_t id, uint8_t protocol, uint8_t error_byte, const char* msg) : _id(id), _protocol(protocol), _error_byte(error_byte)
