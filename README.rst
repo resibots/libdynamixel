@@ -7,9 +7,9 @@ This library is for Unix-like systems (GNU/Linux and Mac OSX)
 We also provide a simple command-line tool that allows to change the IDs, the baudrate, the control mode, the position, etc.
 
 Main features
-========
+===============
 * Support for Dynamixel series AX, MX, EX, XL and Pro
-* Support for all instructions and messages of both version 1 and 2 of the Dynamixel communication protocol (most of the code is shared between the two protocols)
+* Support for all instructions and messages of both version 1 and 2 of the Dynamixel communication protocol (including torque control, speed control, etc.)
 * Full C++11 API
 
 Documentation
@@ -19,11 +19,11 @@ The full documentation (including tutorials, guides, and API) is available on th
 
 Projects using this library
 ===========================
-This library is used in most of the robots designed in ERC project `ResiBots <http://www.resibots.eu>`_ (funded by the European Research Council), in particular :
+This library is used in most of the robots designed in ERC project `ResiBots <http://www.resibots.eu/photos.html>`_ (funded by the European Research Council), in particular :
 * several 18-DOFs hexapod robots (based on MX-28 actuators);
 * a mobile manipulator based on Dynamixel Pro actuators and the Kuka Youbot (omnidirectionnal platform);
 * a wheel-legged hybrid robot (based on MX-128 actuators);
-* several small arms.
+* several small arms (based on Crustcrawler kits and MX actuators).
 
 *We would be pleased to hear from you if you use this library in one of your projects.*
 
@@ -36,6 +36,8 @@ This library has been used in many scientific publications, in particular:
 * Koos, S. and Mouret, J.-B. and Doncieux, S. (2013). "The Transferability Approach: Crossing the Reality Gap in Evolutionary Robotics". *IEEE Transactions on Evolutionary Computation*. Vol 17 No 1 Pages 122 - 145
 * Koos, S. and Mouret, J-B. (2011). "Online Discovery of Locomotion Modes for Wheel-Legged Hybrid Robots: a Transferability-based Approach". *Proceedings of CLAWAR*, World Scientific Publishing Co., publisher. Pages 70-77.
 * Koos, S. and Mouret, J.-B. and Doncieux, S. (2010). "Crossing the Reality Gap in Evolutionary Robotics by Promoting Transferable Controllers". *GECCO'10: Proceedings of the 12th annual conference on Genetic and evolutionary computation* ACM, publisher . Pages 119--126.
+
+*Please let us know if you use this library in a scientific publication.*
 
 ROS interface
 ================
