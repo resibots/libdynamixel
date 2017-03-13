@@ -128,10 +128,10 @@ html_theme = 'sphinx_resibots_theme'
 html_theme_options = {
     "logo_only": True,
     "logo_url": "http://www.resibots.eu",
-    'breadcrumb_root': 'Limbo', # set a custom name to the breacumb root
+    'breadcrumb_root': 'libdynamixel', # set a custom name to the breacumb root
     'contact_url': 'mailto:jean-baptiste.mouret@inria.fr', # add a "Contact us link" at the bottom with URL
-    'toc_befores': [("Project's website", "http://www.resibots.eu"), ("Limbo (BO library)", "http://www.resibots.eu/limbo/")],
-    "toc_afters": [('github', 'http://github.com/resibots' )],
+    'toc_befores': [("Project's website", "http://www.resibots.eu"), ("libdynamixel (dynamixel library)", "http://www.resibots.eu/libdynamixel/")],
+    "toc_afters": [('github', 'http://github.com/resibots/libdynamixel' )],
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -316,5 +316,6 @@ intersphinx_mapping = {
     # 'python': ('https://docs.python.org/', None),
     'resibots': ('http://www.resibots.eu/', None),
     'limbo': ('http://www.resibots.eu/limbo', None),
+    'libdynamixel': ('http://www.resibots.eu/libdynamixel', None),
 }
 intersphinx_timeout = 10
