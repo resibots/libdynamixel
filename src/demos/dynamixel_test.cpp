@@ -29,7 +29,7 @@ int main(int argc, char** argv)
             std::cout << "Detected an " << servo->model_name() << " with ID " << servo->id() << std::endl;
             controller.send(servo->set_torque_enable(1));
             controller.recv(st);
-            controller.send(servo->set_goal_speed_angle(1));
+            controller.send(servo->set_moving_speed_angle(1));
             controller.recv(st);
             controller.send(servo->set_goal_position_angle(M_PI));
             controller.recv(st);

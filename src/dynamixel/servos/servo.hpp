@@ -211,34 +211,24 @@ namespace dynamixel {
             // =================================================================
             // Speed-specific
 
-            static inline InstructionPacket<protocol_t> set_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
+            static inline InstructionPacket<protocol_t> set_moving_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
             {
-                return ProtocolSpecificPackets<Model, protocol_t>::set_goal_speed_angle(id, rad_per_s, operating_mode);
+                return ProtocolSpecificPackets<Model, protocol_t>::set_moving_speed_angle(id, rad_per_s, operating_mode);
             }
 
-            static inline InstructionPacket<protocol_t> reg_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
+            static inline InstructionPacket<protocol_t> reg_moving_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
             {
-                return ProtocolSpecificPackets<Model, protocol_t>::reg_goal_speed_angle(id, rad_per_s, operating_mode);
+                return ProtocolSpecificPackets<Model, protocol_t>::reg_moving_speed_angle(id, rad_per_s, operating_mode);
             }
 
-            InstructionPacket<protocol_t> set_goal_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
+            InstructionPacket<protocol_t> set_moving_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
             {
-                return Model::set_goal_speed_angle(this->_id, rad_per_s, operating_mode);
+                return Model::set_moving_speed_angle(this->_id, rad_per_s, operating_mode);
             }
 
-            InstructionPacket<protocol_t> reg_goal_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
+            InstructionPacket<protocol_t> reg_moving_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
             {
-                return Model::reg_goal_speed_angle(this->_id, rad_per_s, operating_mode);
-            }
-
-            static InstructionPacket<typename Servo<Model>::protocol_t> get_goal_speed_angle(typename Servo<Model>::protocol_t::id_t id)
-            {
-                return get_moving_speed(id);
-            }
-
-            InstructionPacket<typename Servo<Model>::protocol_t> get_goal_speed_angle() const override
-            {
-                return Model::get_goal_speed_angle(this->_id);
+                return Model::reg_moving_speed_angle(this->_id, rad_per_s, operating_mode);
             }
 
             // TODO: read speed from dynamixel pros to check that we do get negative values too

@@ -147,6 +147,15 @@ void display_help(const std::string program_name,
         "| 4000000  |     N      |     Y      |\n"
         "| 4500000  |     N      |     Y      |\n"
         "| 10500000 |     N      |     Y      |\n";
+    command_help["factory-reset"] =
+        "Reset the Control Table to its initial factory default settings.\n"
+        "\n"
+        "EXAMPLES:\n"
+        "\t"+program_name+" factory-reset --id 11\n"
+        "\tresets actuator with id 11\n"
+        "\n"
+        "\t"+program_name+" factory-reset\n"
+        "\tresets all connected actuators\n";
     command_help["torque-enable"] =
         "Enable or disable the torque on servo(s).\n"
         "\n"
@@ -210,6 +219,7 @@ void display_help(const std::string program_name,
             "  get-position\n"
             "  change-id\n"
             "  change-baudrate\n"
+            "  factory-reset\n"
             "  torque-enable\n"
             "  get-torque-enable\n"
             "  relax\n"

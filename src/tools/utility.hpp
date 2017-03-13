@@ -230,7 +230,7 @@ namespace dynamixel {
 
         /** Change the baudrate of one or all actuators.
             If the target_id argument is set to the broadcast id for the current
-            protocol, the IDs of all connected servos will be changed.
+            protocol, the baudrate of all connected servos will be changed.
 
             @param target_id ID of a servo or the broadcast id
             @param baudrate new baudrete of the targetted servo(s).
@@ -252,6 +252,31 @@ namespace dynamixel {
             }
             else {
                 _serial_interface.send(_servos.at(id)->set_baudrate(baudrate));
+                _serial_interface.recv(status);
+            }
+        }
+
+        /** Reset the Control Table to its initial factory default settings.
+            If the target_id argument is set to the broadcast id for the current
+            protocol, all connected servos will be affected.
+
+            @param target_id ID of a servo or the broadcast id
+
+            @throws errors::UtilityError if you didn't detect connected servos before
+        **/
+        void factory_reset(id_t id)
+        {
+            check_scanned();
+
+            StatusPacket<Protocol> status;
+            if (Protocol::broadcast_id == id) {
+                for (auto servo : _servos) {
+                    _serial_interface.send(FactoryReset<Protocol>(servo.first));
+                    _serial_interface.recv(status);
+                }
+            }
+            else {
+                _serial_interface.send(FactoryReset<Protocol>(id));
                 _serial_interface.recv(status);
             }
         }
@@ -459,7 +484,7 @@ namespace dynamixel {
             // the new speed is sent to each actuator but they wait for the
             // "Action" (see bellow) command to enact the change
             for (auto id : ids) {
-                _serial_interface.send(_servos.at(id)->reg_goal_speed_angle(
+                _serial_interface.send(_servos.at(id)->reg_moving_speed_angle(
                     speed,
                     wheel_mode ? cst::wheel : cst::joint));
 
@@ -492,7 +517,7 @@ namespace dynamixel {
             // the new speed is sent to each actuator but they wait for the
             // "Action" (see bellow) command to enact the change
             for (auto servo : _servos) {
-                _serial_interface.send(servo.second->reg_goal_speed_angle(speed,
+                _serial_interface.send(servo.second->reg_moving_speed_angle(speed,
                     wheel_mode ? cst::wheel : cst::joint));
 
                 StatusPacket<Protocol> status;
@@ -532,7 +557,7 @@ namespace dynamixel {
 
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.send(
-                    _servos.at(ids[i])->reg_goal_speed_angle(speeds[i],
+                    _servos.at(ids[i])->reg_moving_speed_angle(speeds[i],
                         wheel_mode ? cst::wheel : cst::joint));
 
                 StatusPacket<Protocol> status;
@@ -561,7 +586,7 @@ namespace dynamixel {
             for (auto id : ids) {
                 StatusPacket<Protocol> status;
                 // request current position
-                _serial_interface.send(_servos.at(id)->get_goal_speed_angle());
+                _serial_interface.send(_servos.at(id)->get_moving_speed());
                 _serial_interface.recv(status);
 
                 // parse response to get the position
@@ -600,7 +625,7 @@ namespace dynamixel {
                 StatusPacket<Protocol> status;
                 // request current position
                 _serial_interface.send(
-                    servo.second->get_goal_speed_angle());
+                    servo.second->get_moving_speed());
                 _serial_interface.recv(status);
 
                 // parse response to get the position
