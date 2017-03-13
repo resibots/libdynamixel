@@ -5,4 +5,3 @@ Reference
   :maxdepth: 2
 
   architecture
-  baudrates

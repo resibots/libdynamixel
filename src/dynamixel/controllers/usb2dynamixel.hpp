@@ -23,12 +23,22 @@ namespace dynamixel {
         class Usb2Dynamixel {
             // TODO : declare private copy constructor and assignment operator
         public:
+            /** With this constructor a serial connection is opened or it
+                throws an exception
+
+                @see open_serial
+
+                @param name see open_serial
+                @param baudrate see open_serial
+                @param recv_timeout timeout (in seconds) for the recv method
+
+                @throws errors::Error see open_serial
+            **/
             Usb2Dynamixel(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
                 : _recv_timeout(recv_timeout), _fd(-1), _report_bad_packet(false)
             {
                 open_serial(name, baudrate);
             }
-
             Usb2Dynamixel()
                 : _recv_timeout(0.1), _fd(-1), _report_bad_packet(false) {}
 
@@ -37,6 +47,40 @@ namespace dynamixel {
                 close_serial();
             }
 
+            /** Open the serial port for communication with the servos
+
+                @param name path to the UNIX serial port, usually ends like "ttyUSBx"
+                    or "ttyACMx" where x is an integer
+                @param baudrate represent the communication speed; it is defined as
+                    an integer by the operating system. the standard values are:
+                    \verbatim embed:rst
+                        * B0
+                        * B50
+                        * B75
+                        * B110
+                        * B134
+                        * B150
+                        * B200
+                        * B300
+                        * B600
+                        * B1200
+                        * B1800
+                        * B2400
+                        * B4800
+                        * B9600
+                        * B19200
+                        * B38400
+                        * B57600
+                        * B76800
+                        * B115200
+                    B1000000 corresponds to :math:`10^6` bauds. It is not a standard
+                    POSIX value but is accepted on GNU/Linux.
+                    \endverbatim
+
+                @throws errors::Error either if the connection is already open
+                    or if we fail to open it; the exception message gives more
+                    details on the cause
+            **/
             void open_serial(const std::string& name, int baudrate = B115200)
             {
                 struct termios tio_serial;
