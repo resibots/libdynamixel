@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="model__traits_8hpp" kind="file" language="C++">
+    <compoundname>model_traits.hpp</compoundname>
+    <includedby refid="protocol__specific__packets_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp</includedby>
+    <includedby refid="servo_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/servo.hpp</includedby>
+    <invincdepgraph>
+      <node id="1440">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp</label>
+        <link refid="mx28_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1436">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12w.hpp</label>
+        <link refid="ax12w_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1451">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp</label>
+        <link refid="pro__l54__30__s500_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1448">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_40_s250.hpp</label>
+        <link refid="pro__m54__40__s250_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1424">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/model_traits.hpp</label>
+        <link refid="model_traits.hpp"/>
+        <childnode refid="1425" relation="include">
+        </childnode>
+        <childnode refid="1426" relation="include">
+        </childnode>
+      </node>
+      <node id="1434">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers.hpp</label>
+        <link refid="controllers_8hpp"/>
+        <childnode refid="1435" relation="include">
+        </childnode>
+      </node>
+      <node id="1427">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp</label>
+        <link refid="ax12_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1439">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx12.hpp</label>
+        <link refid="mx12_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1428">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos.hpp</label>
+        <link refid="servos_8hpp"/>
+        <childnode refid="1429" relation="include">
+        </childnode>
+        <childnode refid="1431" relation="include">
+        </childnode>
+        <childnode refid="1430" relation="include">
+        </childnode>
+      </node>
+      <node id="1441">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx64.hpp</label>
+        <link refid="mx64_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1438">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ex106.hpp</label>
+        <link refid="ex106_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1453">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_50_s500.hpp</label>
+        <link refid="pro__l54__50__s500_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1447">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_60_s250.hpp</label>
+        <link refid="pro__m54__60__s250_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1425">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp</label>
+        <link refid="protocol__specific__packets_8hpp"/>
+        <childnode refid="1426" relation="include">
+        </childnode>
+      </node>
+      <node id="1452">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_50_s290.hpp</label>
+        <link refid="pro__l54__50__s290_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1430">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel.hpp</label>
+        <link refid="dynamixel_8hpp"/>
+      </node>
+      <node id="1445">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_h54_100_s500.hpp</label>
+        <link refid="pro__h54__100__s500_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1426">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/servo.hpp</label>
+        <link refid="servo_8hpp"/>
+        <childnode refid="1427" relation="include">
+        </childnode>
+        <childnode refid="1436" relation="include">
+        </childnode>
+        <childnode refid="1437" relation="include">
+        </childnode>
+        <childnode refid="1438" relation="include">
+        </childnode>
+        <childnode refid="1439" relation="include">
+        </childnode>
+        <childnode refid="1440" relation="include">
+        </childnode>
+        <childnode refid="1441" relation="include">
+        </childnode>
+        <childnode refid="1442" relation="include">
+        </childnode>
+        <childnode refid="1443" relation="include">
+        </childnode>
+        <childnode refid="1444" relation="include">
+        </childnode>
+        <childnode refid="1445" relation="include">
+        </childnode>
+        <childnode refid="1446" relation="include">
+        </childnode>
+        <childnode refid="1447" relation="include">
+        </childnode>
+        <childnode refid="1448" relation="include">
+        </childnode>
+        <childnode refid="1449" relation="include">
+        </childnode>
+        <childnode refid="1450" relation="include">
+        </childnode>
+        <childnode refid="1451" relation="include">
+        </childnode>
+        <childnode refid="1452" relation="include">
+        </childnode>
+        <childnode refid="1453" relation="include">
+        </childnode>
+        <childnode refid="1454" relation="include">
+        </childnode>
+      </node>
+      <node id="1443">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/xl320.hpp</label>
+        <link refid="xl320_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1433">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp</label>
+        <link refid="usb2dynamixel_8hpp"/>
+        <childnode refid="1434" relation="include">
+        </childnode>
+      </node>
+      <node id="1431">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/misc.hpp</label>
+        <link refid="misc_8hpp"/>
+        <childnode refid="1432" relation="include">
+        </childnode>
+        <childnode refid="1433" relation="include">
+        </childnode>
+        <childnode refid="1435" relation="include">
+        </childnode>
+      </node>
+      <node id="1437">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax18.hpp</label>
+        <link refid="ax18_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1454">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l42_10_s300.hpp</label>
+        <link refid="pro__l42__10__s300_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1446">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_h42_20_s300.hpp</label>
+        <link refid="pro__h42__20__s300_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1432">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/file2dynamixel.hpp</label>
+        <link refid="file2dynamixel_8hpp"/>
+      </node>
+      <node id="1442">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx106.hpp</label>
+        <link refid="mx106_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1429">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp</label>
+        <link refid="auto__detect_8hpp"/>
+        <childnode refid="1430" relation="include">
+        </childnode>
+      </node>
+      <node id="1444">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_h54_200_s500.hpp</label>
+        <link refid="pro__h54__200__s500_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1435">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel_core.hpp</label>
+        <link refid="dynamixel__core_8hpp"/>
+        <childnode refid="1430" relation="include">
+        </childnode>
+      </node>
+      <node id="1450">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s400.hpp</label>
+        <link refid="pro__l54__30__s400_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+      <node id="1449">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp</label>
+        <link refid="pro__m42__10__s260_8hpp"/>
+        <childnode refid="1428" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits" prot="public">dynamixel::servos::ModelTraits</innerclass>
+    <innernamespace refid="namespacedynamixel">dynamixel</innernamespace>
+    <innernamespace refid="namespacedynamixel_1_1servos">dynamixel::servos</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DYNAMIXEL_SERVOS_MODEL_TRAITS_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DYNAMIXEL_SERVOS_MODEL_TRAITS_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamixel" kindref="compound">dynamixel</ref><sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">servos<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Model&gt;</highlight></codeline>
+<codeline lineno="7" refid="structdynamixel_1_1servos_1_1_model_traits" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdynamixel_1_1servos_1_1_model_traits" kindref="compound">ModelTraits</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>traits<sp/>define<sp/>the<sp/>protocol<sp/>and<sp/>control<sp/>table<sp/>of<sp/>each<sp/>model</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>It<sp/>is<sp/>expected<sp/>to<sp/>have<sp/>a<sp/>typedef<sp/>called<sp/>protocol_t<sp/>and<sp/>a<sp/>struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>called<sp/>CT,<sp/>on<sp/>which<sp/>the<sp/>addresses<sp/>and<sp/>sizes<sp/>of<sp/>the<sp/>control<sp/>table</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>are<sp/>added<sp/>as<sp/>static<sp/>const<sp/>protocol_t::address_t<sp/>and<sp/>typedef<sp/>(u)int8/16/32_t</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>respectively</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/model_traits.hpp"/>
+  </compounddef>
+</doxygen>

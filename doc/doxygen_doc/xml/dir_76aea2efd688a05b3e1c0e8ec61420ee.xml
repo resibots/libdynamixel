@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_76aea2efd688a05b3e1c0e8ec61420ee" kind="dir">
+    <compoundname>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions</compoundname>
+    <innerfile refid="action_8hpp">action.hpp</innerfile>
+    <innerfile refid="factory__reset_8hpp">factory_reset.hpp</innerfile>
+    <innerfile refid="ping_8hpp">ping.hpp</innerfile>
+    <innerfile refid="read_8hpp">read.hpp</innerfile>
+    <innerfile refid="reboot_8hpp">reboot.hpp</innerfile>
+    <innerfile refid="reg__write_8hpp">reg_write.hpp</innerfile>
+    <innerfile refid="sync__write_8hpp">sync_write.hpp</innerfile>
+    <innerfile refid="write_8hpp">write.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/"/>
+  </compounddef>
+</doxygen>

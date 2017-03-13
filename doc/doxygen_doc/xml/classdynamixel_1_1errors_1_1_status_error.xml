@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1errors_1_1_status_error" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::errors::StatusError</compoundname>
+    <basecompoundref refid="classdynamixel_1_1errors_1_1_error" prot="public" virt="non-virtual">dynamixel::errors::Error</basecompoundref>
+    <includes refid="status__error_8hpp" local="no">dynamixel/errors/status_error.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_status_error_1a8db74bac6ebfac158aa0c7063ad7a066" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::errors::StatusError::_id</definition>
+        <argsstring></argsstring>
+        <name>_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" line="41" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_status_error_1a260381b41b74d472d00078d33bb9ca60" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::errors::StatusError::_protocol</definition>
+        <argsstring></argsstring>
+        <name>_protocol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" line="41" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_status_error_1a57756e7879e57bf8952c41382a00255f" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::errors::StatusError::_error_byte</definition>
+        <argsstring></argsstring>
+        <name>_error_byte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" line="41" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_status_error_1aa65b6cfb661ee568e3d0de5f2dc39636" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::errors::StatusError::StatusError</definition>
+        <argsstring>(uint8_t id, uint8_t protocol, uint8_t error_byte, const char *msg)</argsstring>
+        <name>StatusError</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>protocol</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>error_byte</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" line="15" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_status_error_1ab1e22738b41152348644db7128c01413" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::errors::StatusError::StatusError</definition>
+        <argsstring>(uint8_t id, uint8_t protocol, uint8_t error_byte, const std::string &amp;msg)</argsstring>
+        <name>StatusError</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>protocol</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>error_byte</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" line="20" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_status_error_1ad3906f0bf46d880e9724502fc511118f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::errors::StatusError::id</definition>
+        <argsstring>() const </argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" line="25" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_status_error_1a14fedbd79a5ff732a420c268f1580761" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::errors::StatusError::protocol</definition>
+        <argsstring>() const </argsstring>
+        <name>protocol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" line="30" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_status_error_1a13f34f9b438f50df8e4a762e4211f7c0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::errors::StatusError::error_byte</definition>
+        <argsstring>() const </argsstring>
+        <name>error_byte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" line="35" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="264">
+        <label>dynamixel::errors::Error</label>
+        <link refid="classdynamixel_1_1errors_1_1_error"/>
+      </node>
+      <node id="263">
+        <label>dynamixel::errors::StatusError</label>
+        <link refid="classdynamixel_1_1errors_1_1_status_error"/>
+        <childnode refid="264" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="266">
+        <label>dynamixel::errors::Error</label>
+        <link refid="classdynamixel_1_1errors_1_1_error"/>
+      </node>
+      <node id="265">
+        <label>dynamixel::errors::StatusError</label>
+        <link refid="classdynamixel_1_1errors_1_1_status_error"/>
+        <childnode refid="266" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" line="13" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/status_error.hpp" bodystart="13" bodyend="42"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1errors_1_1_status_error_1a57756e7879e57bf8952c41382a00255f" prot="private" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>_error_byte</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_status_error_1a8db74bac6ebfac158aa0c7063ad7a066" prot="private" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>_id</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_status_error_1a260381b41b74d472d00078d33bb9ca60" prot="private" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>_protocol</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a7d5d5cc0fea73ae2db4ca84035c7fbfe" prot="public" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1ad41dbbe9f237dbc204eba731de65be5a" prot="public" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1ab404696702c69bd2e8c49f6032a718f8" prot="public" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_status_error_1a13f34f9b438f50df8e4a762e4211f7c0" prot="public" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>error_byte</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_status_error_1ad3906f0bf46d880e9724502fc511118f" prot="public" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>id</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a4c0804f137545e62204c49fca4c30dcb" prot="public" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>msg</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a12887a555c126d7e3a8ae8425730c8be" prot="public" virt="virtual"><scope>dynamixel::errors::StatusError</scope><name>print</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_status_error_1a14fedbd79a5ff732a420c268f1580761" prot="public" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>protocol</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_status_error_1aa65b6cfb661ee568e3d0de5f2dc39636" prot="public" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>StatusError</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_status_error_1ab1e22738b41152348644db7128c01413" prot="public" virt="non-virtual"><scope>dynamixel::errors::StatusError</scope><name>StatusError</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

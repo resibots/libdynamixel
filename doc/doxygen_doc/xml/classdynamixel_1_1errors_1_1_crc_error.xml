@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1errors_1_1_crc_error" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::errors::CrcError</compoundname>
+    <basecompoundref refid="classdynamixel_1_1errors_1_1_error" prot="public" virt="non-virtual">dynamixel::errors::Error</basecompoundref>
+    <includes refid="crc__error_8hpp" local="no">dynamixel/errors/crc_error.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_crc_error_1a730824ae77ae2a3ea92a66bccf4fe142" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::errors::CrcError::_id</definition>
+        <argsstring></argsstring>
+        <name>_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" line="47" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_crc_error_1a7a0a64d86b9eeaac54f56ccba008b18f" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::errors::CrcError::_protocol</definition>
+        <argsstring></argsstring>
+        <name>_protocol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" line="47" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_crc_error_1a1f58a68b6d1733ba33d6d34f28b3a55e" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t dynamixel::errors::CrcError::_expected</definition>
+        <argsstring></argsstring>
+        <name>_expected</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" line="48" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_crc_error_1a07cdcf9b53ff5ff408add46dc57076e5" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t dynamixel::errors::CrcError::_received</definition>
+        <argsstring></argsstring>
+        <name>_received</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" line="48" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_crc_error_1a2aaa5fc1ec34b700c5f610b08ddb0199" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::errors::CrcError::CrcError</definition>
+        <argsstring>(uint8_t id, uint8_t protocol, uint32_t expected, uint32_t received)</argsstring>
+        <name>CrcError</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>protocol</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>expected</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>received</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" line="17" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" bodystart="17" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_crc_error_1a392c3a9df96a85ab8e0437ffe61b08f8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::errors::CrcError::id</definition>
+        <argsstring>() const </argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" line="26" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_crc_error_1acf3ae167b281f8b0ce6f4ca36eea3b83" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::errors::CrcError::protocol</definition>
+        <argsstring>() const </argsstring>
+        <name>protocol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" line="31" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_crc_error_1a9d1848929cf03a801406a59f3bc0d8e6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t dynamixel::errors::CrcError::expected</definition>
+        <argsstring>() const </argsstring>
+        <name>expected</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" line="36" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_crc_error_1afa3c4446e36cb87f3eec0f7cdc9bbfa4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t dynamixel::errors::CrcError::received</definition>
+        <argsstring>() const </argsstring>
+        <name>received</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" line="41" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" bodystart="41" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Triggered when the expected checksum and the received checksum do not match. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="29">
+        <label>dynamixel::errors::Error</label>
+        <link refid="classdynamixel_1_1errors_1_1_error"/>
+      </node>
+      <node id="28">
+        <label>dynamixel::errors::CrcError</label>
+        <link refid="classdynamixel_1_1errors_1_1_crc_error"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="31">
+        <label>dynamixel::errors::Error</label>
+        <link refid="classdynamixel_1_1errors_1_1_error"/>
+      </node>
+      <node id="30">
+        <label>dynamixel::errors::CrcError</label>
+        <link refid="classdynamixel_1_1errors_1_1_crc_error"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" line="15" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/crc_error.hpp" bodystart="15" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1errors_1_1_crc_error_1a1f58a68b6d1733ba33d6d34f28b3a55e" prot="private" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>_expected</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_crc_error_1a730824ae77ae2a3ea92a66bccf4fe142" prot="private" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>_id</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_crc_error_1a7a0a64d86b9eeaac54f56ccba008b18f" prot="private" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>_protocol</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_crc_error_1a07cdcf9b53ff5ff408add46dc57076e5" prot="private" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>_received</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_crc_error_1a2aaa5fc1ec34b700c5f610b08ddb0199" prot="public" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>CrcError</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a7d5d5cc0fea73ae2db4ca84035c7fbfe" prot="public" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1ad41dbbe9f237dbc204eba731de65be5a" prot="public" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1ab404696702c69bd2e8c49f6032a718f8" prot="public" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_crc_error_1a9d1848929cf03a801406a59f3bc0d8e6" prot="public" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>expected</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_crc_error_1a392c3a9df96a85ab8e0437ffe61b08f8" prot="public" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>id</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a4c0804f137545e62204c49fca4c30dcb" prot="public" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>msg</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a12887a555c126d7e3a8ae8425730c8be" prot="public" virt="virtual"><scope>dynamixel::errors::CrcError</scope><name>print</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_crc_error_1acf3ae167b281f8b0ce6f4ca36eea3b83" prot="public" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>protocol</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_crc_error_1afa3c4446e36cb87f3eec0f7cdc9bbfa4" prot="public" virt="non-virtual"><scope>dynamixel::errors::CrcError</scope><name>received</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

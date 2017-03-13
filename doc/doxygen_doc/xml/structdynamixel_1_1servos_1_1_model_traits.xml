@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="structdynamixel_1_1servos_1_1_model_traits" kind="struct" language="C++" prot="public">
+    <compoundname>dynamixel::servos::ModelTraits</compoundname>
+    <includes refid="model__traits_8hpp" local="no">dynamixel/servos/model_traits.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Model</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/model_traits.hpp" line="7" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/model_traits.hpp" bodystart="7" bodyend="8"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

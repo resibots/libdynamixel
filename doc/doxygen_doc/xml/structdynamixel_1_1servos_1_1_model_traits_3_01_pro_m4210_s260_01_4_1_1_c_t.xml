@@ -1,0 +1,1255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t" kind="struct" language="C++" prot="public">
+    <compoundname>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</compoundname>
+    <includes refid="pro__m42__10__s260_8hpp" local="no">dynamixel/servos/pro_m42_10_s260.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a3e0919ca335fb75729948aa13f33665e" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::model_number_t</definition>
+        <argsstring></argsstring>
+        <name>model_number_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="19" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aae59fcc97dc6b3630c1f615c6db9a0c2" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::model_info_t</definition>
+        <argsstring></argsstring>
+        <name>model_info_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="22" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ababb0f57102b92a42f6fe2194d9ce31d" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::firmware_version_t</definition>
+        <argsstring></argsstring>
+        <name>firmware_version_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="24" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a664a9e82ba106b5a7406bc191eeaa02a" prot="public" static="no">
+        <type><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1a38d9cae72cd86213cca74e718c240429" kindref="member">protocol_t::id_t</ref></type>
+        <definition>typedef protocol_t::id_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::id_t</definition>
+        <argsstring></argsstring>
+        <name>id_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="26" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab9ed1da8c187158b55be6fc13cb483d4" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::baudrate_t</definition>
+        <argsstring></argsstring>
+        <name>baudrate_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="28" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ac8aeff45a83e8c258cdae6f7bbb34c43" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::return_delay_time_t</definition>
+        <argsstring></argsstring>
+        <name>return_delay_time_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="30" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a9a67b94a698974f3989c42cc485133cc" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::operating_mode_t</definition>
+        <argsstring></argsstring>
+        <name>operating_mode_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="32" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a192cc667a727fa0df3d1e77e9ad0754c" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::homing_offset_t</definition>
+        <argsstring></argsstring>
+        <name>homing_offset_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="34" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a6e2e0f460481d8dfc4881ab4f9bcb118" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::moving_threshold_t</definition>
+        <argsstring></argsstring>
+        <name>moving_threshold_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="36" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a08362fcc12ea28092b3ea164f6b99888" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::highest_temperature_limit_t</definition>
+        <argsstring></argsstring>
+        <name>highest_temperature_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="38" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0c382e284dd84afb35bf681d5ab81b3f" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::highest_voltage_limit_t</definition>
+        <argsstring></argsstring>
+        <name>highest_voltage_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="40" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aeb7c59032058fc4edc3e27bf62b942af" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::lowest_voltage_limit_t</definition>
+        <argsstring></argsstring>
+        <name>lowest_voltage_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="42" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0649e421c6d04eab965cd7e5b364362d" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::acceleration_limit_t</definition>
+        <argsstring></argsstring>
+        <name>acceleration_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="44" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a6cc6f5392b6635a2aee700587c4c75c2" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::torque_limit_t</definition>
+        <argsstring></argsstring>
+        <name>torque_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="46" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a048cf8b709c9437ab0e835937f86dd19" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::speed_limit_t</definition>
+        <argsstring></argsstring>
+        <name>speed_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="48" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0ee13353d9f7deb02c9ea9ef32c6a93b" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::max_position_limit_t</definition>
+        <argsstring></argsstring>
+        <name>max_position_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="50" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a68fa86fdc2785ac78e5114c77ba0e75e" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::min_position_limit_t</definition>
+        <argsstring></argsstring>
+        <name>min_position_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="52" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a53fcae216bf2cc32483344c574f07b6e" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::alarm_shutdown_t</definition>
+        <argsstring></argsstring>
+        <name>alarm_shutdown_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="54" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a19b3f85db8f6b3b281024a6e48473680" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::torque_enable_t</definition>
+        <argsstring></argsstring>
+        <name>torque_enable_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="56" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1abfeb0aceec94d45397200f4ee7ea8bfb" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::led_r_t</definition>
+        <argsstring></argsstring>
+        <name>led_r_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="58" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a9959bc21d9e609e917e74641fbb7c84f" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::led_g_t</definition>
+        <argsstring></argsstring>
+        <name>led_g_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="60" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ac98cf9ba928987fde6833170be37e562" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::led_b_t</definition>
+        <argsstring></argsstring>
+        <name>led_b_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="62" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a8f63902c9b09e4213ccb412729e1fb90" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::velocity_i_gain_t</definition>
+        <argsstring></argsstring>
+        <name>velocity_i_gain_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="64" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aec213bcfad3487c1bf1609138fbcc7e8" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::velocity_p_gain_t</definition>
+        <argsstring></argsstring>
+        <name>velocity_p_gain_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="66" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0ee6d0e0fe28da8c93658ae0f4aee20a" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::position_p_gain_t</definition>
+        <argsstring></argsstring>
+        <name>position_p_gain_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="68" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab52e2e59af2b7f985efc023bbd0de5f9" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::goal_position_t</definition>
+        <argsstring></argsstring>
+        <name>goal_position_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="70" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a394db66d5339e14644d9ad0e172ee06c" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::moving_speed_t</definition>
+        <argsstring></argsstring>
+        <name>moving_speed_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="76" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2dbaf377008821d415298be3d3dcda58" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::goal_torque_t</definition>
+        <argsstring></argsstring>
+        <name>goal_torque_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="82" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a098d557aaf83e01c83648d8f299bc3b0" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::goal_acceleration_t</definition>
+        <argsstring></argsstring>
+        <name>goal_acceleration_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="84" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2787e7aca011e0fdc38283188ae4b96f" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::moving_t</definition>
+        <argsstring></argsstring>
+        <name>moving_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="86" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a67a677ec01e17b85f26300d7ab2b4387" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::present_position_t</definition>
+        <argsstring></argsstring>
+        <name>present_position_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="88" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab7d0c00ebd2612bc561263538b084516" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::present_speed_t</definition>
+        <argsstring></argsstring>
+        <name>present_speed_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="90" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a91ab0fd38ced5a131f6d66c36a1ccff7" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::current_t</definition>
+        <argsstring></argsstring>
+        <name>current_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="92" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ae6cb12b4c6ebc4c52b3e199e72a3e127" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::present_voltage_t</definition>
+        <argsstring></argsstring>
+        <name>present_voltage_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="94" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ad815e117081e8523e0174d7290996fd7" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::present_temperature_t</definition>
+        <argsstring></argsstring>
+        <name>present_temperature_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="96" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a4c4aa6469f09ab2092729bc0d5574ca0" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::registered_t</definition>
+        <argsstring></argsstring>
+        <name>registered_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="98" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a218b3ec18c4792e4a84620ad89b6f773" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::status_return_level_t</definition>
+        <argsstring></argsstring>
+        <name>status_return_level_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="100" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aa90931c7bc13548c35f33226c7cc65ad" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::hardware_error_status_t</definition>
+        <argsstring></argsstring>
+        <name>hardware_error_status_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="102" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1adc38881a7ef99f7fff87746ced98d692" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::model_number</definition>
+        <argsstring></argsstring>
+        <name>model_number</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="18" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1affb5f81a0f8079f191e1b71a0a4b895e" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a3e0919ca335fb75729948aa13f33665e" kindref="member">model_number_t</ref></type>
+        <definition>const model_number_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::model_number_value</definition>
+        <argsstring></argsstring>
+        <name>model_number_value</name>
+        <initializer>= 43288</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="20" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a280d244fb1c9ec87408fc20d9af53969" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::model_info</definition>
+        <argsstring></argsstring>
+        <name>model_info</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="21" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a1bc134662ccaddda4f42fb8351e310d6" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::firmware_version</definition>
+        <argsstring></argsstring>
+        <name>firmware_version</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="23" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a85b861d0d08dc80f213872f11586745c" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="25" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a9edbf3f00131995dac356715236c2052" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::baudrate</definition>
+        <argsstring></argsstring>
+        <name>baudrate</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="27" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a4464d1377d5fb05784fb09ea6bd14d55" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::return_delay_time</definition>
+        <argsstring></argsstring>
+        <name>return_delay_time</name>
+        <initializer>= 9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="29" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a3ee2ecca82f2d4babff437defcef7498" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::operating_mode</definition>
+        <argsstring></argsstring>
+        <name>operating_mode</name>
+        <initializer>= 11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="31" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a173b085ee999810f9f639a97d4d85eb8" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::homing_offset</definition>
+        <argsstring></argsstring>
+        <name>homing_offset</name>
+        <initializer>= 13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="33" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0ef8761d7a1431b7086215ebe0dfbe7f" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::moving_threshold</definition>
+        <argsstring></argsstring>
+        <name>moving_threshold</name>
+        <initializer>= 17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="35" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2eb0e413c6c0f1c2d9f0e1e89d8e30c9" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::highest_temperature_limit</definition>
+        <argsstring></argsstring>
+        <name>highest_temperature_limit</name>
+        <initializer>= 21</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="37" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a7af7f42573c0ba91d03d42e93db7ab73" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::highest_voltage_limit</definition>
+        <argsstring></argsstring>
+        <name>highest_voltage_limit</name>
+        <initializer>= 22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="39" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2e759e3ce7d6e5d42d0f8c02a48b8411" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::lowest_voltage_limit</definition>
+        <argsstring></argsstring>
+        <name>lowest_voltage_limit</name>
+        <initializer>= 24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="41" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a669b196089badb4911569ce7958bbd65" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::acceleration_limit</definition>
+        <argsstring></argsstring>
+        <name>acceleration_limit</name>
+        <initializer>= 26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="43" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2e2c52320edaadb8b3396cfa713fbd64" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::torque_limit</definition>
+        <argsstring></argsstring>
+        <name>torque_limit</name>
+        <initializer>= 30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="45" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab9c711ea87621f122fb29c57bf2c9762" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::speed_limit</definition>
+        <argsstring></argsstring>
+        <name>speed_limit</name>
+        <initializer>= 32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="47" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aa82ff5a2239cfdb012571f62ce401789" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::max_position_limit</definition>
+        <argsstring></argsstring>
+        <name>max_position_limit</name>
+        <initializer>= 36</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="49" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ac25dba948570abc42b6531c1fc1f5951" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::min_position_limit</definition>
+        <argsstring></argsstring>
+        <name>min_position_limit</name>
+        <initializer>= 40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="51" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1af165c2fe4af4cf781224d0327f3365ba" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::alarm_shutdown</definition>
+        <argsstring></argsstring>
+        <name>alarm_shutdown</name>
+        <initializer>= 48</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="53" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab9c4b0e85a68f81fcf8d1a20f0430ff9" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::torque_enable</definition>
+        <argsstring></argsstring>
+        <name>torque_enable</name>
+        <initializer>= 562</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="55" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0eef393d2b8853db6d673e4c41e1879b" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::led_r</definition>
+        <argsstring></argsstring>
+        <name>led_r</name>
+        <initializer>= 563</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="57" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0b075e4810c16f0e734f1831bedc948a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::led_g</definition>
+        <argsstring></argsstring>
+        <name>led_g</name>
+        <initializer>= 564</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="59" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aa77077ee22b44a16b7e8d94c606346fa" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::led_b</definition>
+        <argsstring></argsstring>
+        <name>led_b</name>
+        <initializer>= 565</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="61" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ac45c584e34c133dbb96fc1efa6c1f08a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::velocity_i_gain</definition>
+        <argsstring></argsstring>
+        <name>velocity_i_gain</name>
+        <initializer>= 586</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="63" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a5215fcc5863f28fafa01d7b6e8b692eb" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::velocity_p_gain</definition>
+        <argsstring></argsstring>
+        <name>velocity_p_gain</name>
+        <initializer>= 588</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="65" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a9ba3075fdb6b53f9446d18a5d897bd32" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::position_p_gain</definition>
+        <argsstring></argsstring>
+        <name>position_p_gain</name>
+        <initializer>= 594</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="67" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a8933d730c959bbe435176ecbd88e364a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::goal_position</definition>
+        <argsstring></argsstring>
+        <name>goal_position</name>
+        <initializer>= 596</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="69" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0456f392d5d3d63d13d50d9142eb3128" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab52e2e59af2b7f985efc023bbd0de5f9" kindref="member">goal_position_t</ref></type>
+        <definition>const goal_position_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::min_goal_position</definition>
+        <argsstring></argsstring>
+        <name>min_goal_position</name>
+        <initializer>= -131584</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="71" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a727deb776b124bad45fca09323398588" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab52e2e59af2b7f985efc023bbd0de5f9" kindref="member">goal_position_t</ref></type>
+        <definition>const goal_position_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::max_goal_position</definition>
+        <argsstring></argsstring>
+        <name>max_goal_position</name>
+        <initializer>= 131584</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="72" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aaebe4da5a5e07660e4ea8353b5e9bc86" prot="public" static="yes" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::min_goal_angle_deg</definition>
+        <argsstring></argsstring>
+        <name>min_goal_angle_deg</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="73" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aaae9940d95371c05406575f5741b33a8" prot="public" static="yes" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::max_goal_angle_deg</definition>
+        <argsstring></argsstring>
+        <name>max_goal_angle_deg</name>
+        <initializer>= 360</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="74" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aedd75a374c0cc8a848b87c5c498f7ced" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::moving_speed</definition>
+        <argsstring></argsstring>
+        <name>moving_speed</name>
+        <initializer>= 600</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="75" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a148acb8de9e720fe805f81befefb1b55" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a394db66d5339e14644d9ad0e172ee06c" kindref="member">moving_speed_t</ref></type>
+        <definition>const moving_speed_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::min_goal_speed</definition>
+        <argsstring></argsstring>
+        <name>min_goal_speed</name>
+        <initializer>= INT32_MIN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="77" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a4dd5547c8d47d1cf880b2cd002d0e130" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a394db66d5339e14644d9ad0e172ee06c" kindref="member">moving_speed_t</ref></type>
+        <definition>const moving_speed_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::max_goal_speed</definition>
+        <argsstring></argsstring>
+        <name>max_goal_speed</name>
+        <initializer>= INT32_MAX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="78" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a93c87867527f6bf02c4e4e83bd7b116a" prot="public" static="yes" mutable="no">
+        <type>constexpr double</type>
+        <definition>constexpr double dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::rpm_per_tick</definition>
+        <argsstring></argsstring>
+        <name>rpm_per_tick</name>
+        <initializer>= 1 / 260.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="79" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a3e136ab1c16f22b4d74d5d0c8b440634" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::speed_sign_bit</definition>
+        <argsstring></argsstring>
+        <name>speed_sign_bit</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="80" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a4501736ac4f2ede15a1c7fcb22e7c90d" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::goal_torque</definition>
+        <argsstring></argsstring>
+        <name>goal_torque</name>
+        <initializer>= 604</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="81" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a4d72220428bbad5f0812962ba2545bf2" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::goal_acceleration</definition>
+        <argsstring></argsstring>
+        <name>goal_acceleration</name>
+        <initializer>= 606</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="83" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a8a1d0776883b9507a62b90271930a0f6" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::moving</definition>
+        <argsstring></argsstring>
+        <name>moving</name>
+        <initializer>= 610</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="85" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1afbcb22f668c9b08c07f8fe6cb8563846" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::present_position</definition>
+        <argsstring></argsstring>
+        <name>present_position</name>
+        <initializer>= 611</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="87" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1af1469375f5a6632ada1c5c5a54fa6157" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::present_speed</definition>
+        <argsstring></argsstring>
+        <name>present_speed</name>
+        <initializer>= 615</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="89" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2bce86bc0ea5718765f14ccf68eaa4d4" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::current</definition>
+        <argsstring></argsstring>
+        <name>current</name>
+        <initializer>= 621</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="91" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ad565246d60671eefb7f5c3500b5d2c20" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::present_voltage</definition>
+        <argsstring></argsstring>
+        <name>present_voltage</name>
+        <initializer>= 623</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="93" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a58b2d08f78db45c0523838448a281de5" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::present_temperature</definition>
+        <argsstring></argsstring>
+        <name>present_temperature</name>
+        <initializer>= 625</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="95" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1abf9f94a175dfb3e98024fb19974a7cab" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::registered</definition>
+        <argsstring></argsstring>
+        <name>registered</name>
+        <initializer>= 890</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="97" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a52abe73e995cd96334fc4cf573d64ce1" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::status_return_level</definition>
+        <argsstring></argsstring>
+        <name>status_return_level</name>
+        <initializer>= 891</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="99" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a80373427c29d27de49ef16d87ff1e099" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT::hardware_error_status</definition>
+        <argsstring></argsstring>
+        <name>hardware_error_status</name>
+        <initializer>= 892</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="101" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" line="17" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp" bodystart="17" bodyend="103"/>
+    <listofallmembers>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a669b196089badb4911569ce7958bbd65" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>acceleration_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0649e421c6d04eab965cd7e5b364362d" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>acceleration_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1af165c2fe4af4cf781224d0327f3365ba" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>alarm_shutdown</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a53fcae216bf2cc32483344c574f07b6e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>alarm_shutdown_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a9edbf3f00131995dac356715236c2052" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>baudrate</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab9ed1da8c187158b55be6fc13cb483d4" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>baudrate_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2bce86bc0ea5718765f14ccf68eaa4d4" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>current</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a91ab0fd38ced5a131f6d66c36a1ccff7" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>current_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a1bc134662ccaddda4f42fb8351e310d6" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>firmware_version</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ababb0f57102b92a42f6fe2194d9ce31d" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>firmware_version_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a4d72220428bbad5f0812962ba2545bf2" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>goal_acceleration</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a098d557aaf83e01c83648d8f299bc3b0" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>goal_acceleration_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a8933d730c959bbe435176ecbd88e364a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab52e2e59af2b7f985efc023bbd0de5f9" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>goal_position_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a4501736ac4f2ede15a1c7fcb22e7c90d" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>goal_torque</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2dbaf377008821d415298be3d3dcda58" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>goal_torque_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a80373427c29d27de49ef16d87ff1e099" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>hardware_error_status</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aa90931c7bc13548c35f33226c7cc65ad" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>hardware_error_status_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2eb0e413c6c0f1c2d9f0e1e89d8e30c9" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>highest_temperature_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a08362fcc12ea28092b3ea164f6b99888" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>highest_temperature_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a7af7f42573c0ba91d03d42e93db7ab73" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>highest_voltage_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0c382e284dd84afb35bf681d5ab81b3f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>highest_voltage_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a173b085ee999810f9f639a97d4d85eb8" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>homing_offset</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a192cc667a727fa0df3d1e77e9ad0754c" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>homing_offset_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a85b861d0d08dc80f213872f11586745c" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>id</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a664a9e82ba106b5a7406bc191eeaa02a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>id_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aa77077ee22b44a16b7e8d94c606346fa" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>led_b</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ac98cf9ba928987fde6833170be37e562" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>led_b_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0b075e4810c16f0e734f1831bedc948a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>led_g</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a9959bc21d9e609e917e74641fbb7c84f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>led_g_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0eef393d2b8853db6d673e4c41e1879b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>led_r</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1abfeb0aceec94d45397200f4ee7ea8bfb" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>led_r_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2e759e3ce7d6e5d42d0f8c02a48b8411" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>lowest_voltage_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aeb7c59032058fc4edc3e27bf62b942af" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>lowest_voltage_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aaae9940d95371c05406575f5741b33a8" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>max_goal_angle_deg</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a727deb776b124bad45fca09323398588" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>max_goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a4dd5547c8d47d1cf880b2cd002d0e130" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>max_goal_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aa82ff5a2239cfdb012571f62ce401789" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>max_position_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0ee13353d9f7deb02c9ea9ef32c6a93b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>max_position_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aaebe4da5a5e07660e4ea8353b5e9bc86" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>min_goal_angle_deg</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0456f392d5d3d63d13d50d9142eb3128" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>min_goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a148acb8de9e720fe805f81befefb1b55" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>min_goal_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ac25dba948570abc42b6531c1fc1f5951" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>min_position_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a68fa86fdc2785ac78e5114c77ba0e75e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>min_position_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a280d244fb1c9ec87408fc20d9af53969" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>model_info</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aae59fcc97dc6b3630c1f615c6db9a0c2" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>model_info_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1adc38881a7ef99f7fff87746ced98d692" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>model_number</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a3e0919ca335fb75729948aa13f33665e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>model_number_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1affb5f81a0f8079f191e1b71a0a4b895e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>model_number_value</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a8a1d0776883b9507a62b90271930a0f6" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>moving</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aedd75a374c0cc8a848b87c5c498f7ced" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>moving_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a394db66d5339e14644d9ad0e172ee06c" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>moving_speed_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2787e7aca011e0fdc38283188ae4b96f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>moving_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0ef8761d7a1431b7086215ebe0dfbe7f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>moving_threshold</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a6e2e0f460481d8dfc4881ab4f9bcb118" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>moving_threshold_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a3ee2ecca82f2d4babff437defcef7498" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>operating_mode</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a9a67b94a698974f3989c42cc485133cc" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>operating_mode_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a9ba3075fdb6b53f9446d18a5d897bd32" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>position_p_gain</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a0ee6d0e0fe28da8c93658ae0f4aee20a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>position_p_gain_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1afbcb22f668c9b08c07f8fe6cb8563846" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>present_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a67a677ec01e17b85f26300d7ab2b4387" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>present_position_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1af1469375f5a6632ada1c5c5a54fa6157" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>present_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab7d0c00ebd2612bc561263538b084516" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>present_speed_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a58b2d08f78db45c0523838448a281de5" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>present_temperature</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ad815e117081e8523e0174d7290996fd7" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>present_temperature_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ad565246d60671eefb7f5c3500b5d2c20" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>present_voltage</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ae6cb12b4c6ebc4c52b3e199e72a3e127" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>present_voltage_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1abf9f94a175dfb3e98024fb19974a7cab" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>registered</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a4c4aa6469f09ab2092729bc0d5574ca0" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>registered_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a4464d1377d5fb05784fb09ea6bd14d55" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>return_delay_time</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ac8aeff45a83e8c258cdae6f7bbb34c43" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>return_delay_time_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a93c87867527f6bf02c4e4e83bd7b116a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>rpm_per_tick</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab9c711ea87621f122fb29c57bf2c9762" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>speed_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a048cf8b709c9437ab0e835937f86dd19" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>speed_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a3e136ab1c16f22b4d74d5d0c8b440634" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>speed_sign_bit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a52abe73e995cd96334fc4cf573d64ce1" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>status_return_level</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a218b3ec18c4792e4a84620ad89b6f773" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>status_return_level_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ab9c4b0e85a68f81fcf8d1a20f0430ff9" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>torque_enable</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a19b3f85db8f6b3b281024a6e48473680" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>torque_enable_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a2e2c52320edaadb8b3396cfa713fbd64" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>torque_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a6cc6f5392b6635a2aee700587c4c75c2" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>torque_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1ac45c584e34c133dbb96fc1efa6c1f08a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>velocity_i_gain</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a8f63902c9b09e4213ccb412729e1fb90" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>velocity_i_gain_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1a5215fcc5863f28fafa01d7b6e8b692eb" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>velocity_p_gain</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4_1_1_c_t_1aec213bcfad3487c1bf1609138fbcc7e8" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;::CT</scope><name>velocity_p_gain_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

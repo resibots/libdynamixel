@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1errors_1_1_servo_limit_error" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::errors::ServoLimitError</compoundname>
+    <basecompoundref refid="classdynamixel_1_1errors_1_1_error" prot="public" virt="non-virtual">dynamixel::errors::Error</basecompoundref>
+    <includes refid="servo__limit__error_8hpp" local="no">dynamixel/errors/servo_limit_error.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_servo_limit_error_1a68869742e2f31723478d8cf276da786e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int dynamixel::errors::ServoLimitError::_id</definition>
+        <argsstring></argsstring>
+        <name>_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" line="48" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_servo_limit_error_1a87f8638aee382ce2e069debb9c31600c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double dynamixel::errors::ServoLimitError::_max</definition>
+        <argsstring></argsstring>
+        <name>_max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" line="49" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_servo_limit_error_1afc66b30bf346960b69982d42f06950b1" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double dynamixel::errors::ServoLimitError::_min</definition>
+        <argsstring></argsstring>
+        <name>_min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" line="49" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_servo_limit_error_1a2f15f713b5c1e7c86a34523fb0853768" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double dynamixel::errors::ServoLimitError::_value</definition>
+        <argsstring></argsstring>
+        <name>_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" line="49" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_servo_limit_error_1a9842f08e63de3321b3e9831ecf015522" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename A</type>
+          </param>
+          <param>
+            <type>typename B</type>
+          </param>
+          <param>
+            <type>typename C</type>
+          </param>
+          <param>
+            <type>typename D</type>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>dynamixel::errors::ServoLimitError::ServoLimitError</definition>
+        <argsstring>(A id, B min, C max, D value, std::string type=&quot;position (rad)&quot;)</argsstring>
+        <name>ServoLimitError</name>
+        <param>
+          <type>A</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>B</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>C</type>
+          <declname>max</declname>
+        </param>
+        <param>
+          <type>D</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>type</declname>
+          <defval>&quot;position (rad)&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" line="17" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" bodystart="17" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_servo_limit_error_1ad77b7c7a51f0d70a67d80b052695e480" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int dynamixel::errors::ServoLimitError::id</definition>
+        <argsstring>() const </argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" line="27" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_servo_limit_error_1a0fea6859f0d41a69b3c5d8b0b60e6f46" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double dynamixel::errors::ServoLimitError::value</definition>
+        <argsstring>() const </argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" line="32" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_servo_limit_error_1ab217bc704f4e0874e4f87d650da7f5ae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double dynamixel::errors::ServoLimitError::max</definition>
+        <argsstring>() const </argsstring>
+        <name>max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" line="37" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_servo_limit_error_1a7efb82a1b5d008dbf9951fa0008ab71d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double dynamixel::errors::ServoLimitError::min</definition>
+        <argsstring>() const </argsstring>
+        <name>min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" line="42" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="260">
+        <label>dynamixel::errors::Error</label>
+        <link refid="classdynamixel_1_1errors_1_1_error"/>
+      </node>
+      <node id="259">
+        <label>dynamixel::errors::ServoLimitError</label>
+        <link refid="classdynamixel_1_1errors_1_1_servo_limit_error"/>
+        <childnode refid="260" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="262">
+        <label>dynamixel::errors::Error</label>
+        <link refid="classdynamixel_1_1errors_1_1_error"/>
+      </node>
+      <node id="261">
+        <label>dynamixel::errors::ServoLimitError</label>
+        <link refid="classdynamixel_1_1errors_1_1_servo_limit_error"/>
+        <childnode refid="262" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" line="14" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/servo_limit_error.hpp" bodystart="14" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1errors_1_1_servo_limit_error_1a68869742e2f31723478d8cf276da786e" prot="private" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>_id</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_servo_limit_error_1a87f8638aee382ce2e069debb9c31600c" prot="private" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>_max</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_servo_limit_error_1afc66b30bf346960b69982d42f06950b1" prot="private" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>_min</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_servo_limit_error_1a2f15f713b5c1e7c86a34523fb0853768" prot="private" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>_value</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a7d5d5cc0fea73ae2db4ca84035c7fbfe" prot="public" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1ad41dbbe9f237dbc204eba731de65be5a" prot="public" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1ab404696702c69bd2e8c49f6032a718f8" prot="public" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_servo_limit_error_1ad77b7c7a51f0d70a67d80b052695e480" prot="public" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>id</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_servo_limit_error_1ab217bc704f4e0874e4f87d650da7f5ae" prot="public" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>max</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_servo_limit_error_1a7efb82a1b5d008dbf9951fa0008ab71d" prot="public" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>min</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a4c0804f137545e62204c49fca4c30dcb" prot="public" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>msg</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a12887a555c126d7e3a8ae8425730c8be" prot="public" virt="virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>print</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_servo_limit_error_1a9842f08e63de3321b3e9831ecf015522" prot="public" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>ServoLimitError</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_servo_limit_error_1a0fea6859f0d41a69b3c5d8b0b60e6f46" prot="public" virt="non-virtual"><scope>dynamixel::errors::ServoLimitError</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

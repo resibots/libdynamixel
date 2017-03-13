@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="namespacedynamixel" kind="namespace" language="C++">
+    <compoundname>dynamixel</compoundname>
+    <innerclass refid="classdynamixel_1_1_instruction_packet" prot="public">dynamixel::InstructionPacket</innerclass>
+    <innerclass refid="classdynamixel_1_1_status_packet" prot="public">dynamixel::StatusPacket</innerclass>
+    <innernamespace refid="namespacedynamixel_1_1controllers">dynamixel::controllers</innernamespace>
+    <innernamespace refid="namespacedynamixel_1_1errors">dynamixel::errors</innernamespace>
+    <innernamespace refid="namespacedynamixel_1_1instructions">dynamixel::instructions</innernamespace>
+    <innernamespace refid="namespacedynamixel_1_1protocols">dynamixel::protocols</innernamespace>
+    <innernamespace refid="namespacedynamixel_1_1servos">dynamixel::servos</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacedynamixel_1a7ec8c7739824c939b1e8689bf731ade1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo" kindref="compound">servos::BaseServo</ref>&lt; <ref refid="classdynamixel_1_1protocols_1_1_protocol1" kindref="compound">protocols::Protocol1</ref> &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;servos::BaseServo&lt;protocols::Protocol1&gt; &gt; dynamixel::get_servo</definition>
+        <argsstring>(protocols::Protocol1::id_t id, uint16_t model, protocols::Protocol1::address_t selected_protocol)</argsstring>
+        <name>get_servo</name>
+        <param>
+          <type><ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a1d4dfa22b01f80b1876d14f539d52b5c" kindref="member">protocols::Protocol1::id_t</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type><ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocols::Protocol1::address_t</ref></type>
+          <declname>selected_protocol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp" line="11" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp" bodystart="11" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacedynamixel_1aea272226c2da972ad4c097190e330c9a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo" kindref="compound">servos::BaseServo</ref>&lt; <ref refid="classdynamixel_1_1protocols_1_1_protocol2" kindref="compound">protocols::Protocol2</ref> &gt; &gt;</type>
+        <definition>std::shared_ptr&lt;servos::BaseServo&lt;protocols::Protocol2&gt; &gt; dynamixel::get_servo</definition>
+        <argsstring>(protocols::Protocol2::id_t id, uint16_t model, protocols::Protocol2::address_t selected_protocol)</argsstring>
+        <name>get_servo</name>
+        <param>
+          <type><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1a38d9cae72cd86213cca74e718c240429" kindref="member">protocols::Protocol2::id_t</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocols::Protocol2::address_t</ref></type>
+          <declname>selected_protocol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp" line="35" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp" bodystart="35" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacedynamixel_1a6e322b3a15fdc7fa93d1b0a221586b56" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Protocol</type>
+          </param>
+          <param>
+            <type>typename Controller</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo" kindref="compound">servos::BaseServo</ref>&lt; Protocol &gt; &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;servos::BaseServo&lt;Protocol&gt; &gt; &gt; dynamixel::auto_detect</definition>
+        <argsstring>(const Controller &amp;controller)</argsstring>
+        <name>auto_detect</name>
+        <param>
+          <type>const Controller &amp;</type>
+          <declname>controller</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Auto-detect all connected actuators using a given protocol.</para><para>The template parameter Controller is inferred from the function&apos;s parameter. Conversely, it is compulsory to specify the protocol version: either <ref refid="classdynamixel_1_1protocols_1_1_protocol1" kindref="compound">dynamixel::protocols::Protocol1</ref> or <ref refid="classdynamixel_1_1protocols_1_1_protocol2" kindref="compound">dynamixel::protocols::Protocol2</ref>.</para><para>The returned vector contains objects corresponding to the actuators that were found. You can use these objects to do all actions that are possible with the Dynamixel actuators.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>controller</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object handling the USB to dynamixel interface, instance of the <ref refid="classdynamixel_1_1controllers_1_1_usb2_dynamixel" kindref="compound">dynamixel::controllers::Usb2Dynamixel</ref> class </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector of actuators </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp" line="82" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp" bodystart="82" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacedynamixel_1a89e3fa5a92c07ce07c925cad243be30e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Protocol</type>
+          </param>
+          <param>
+            <type>typename Controller</type>
+          </param>
+        </templateparamlist>
+        <type>std::map&lt; typename Protocol::id_t, std::shared_ptr&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo" kindref="compound">servos::BaseServo</ref>&lt; Protocol &gt; &gt; &gt;</type>
+        <definition>std::map&lt;typename Protocol::id_t, std::shared_ptr&lt;servos::BaseServo&lt;Protocol&gt; &gt; &gt; dynamixel::auto_detect_map</definition>
+        <argsstring>(const Controller &amp;controller)</argsstring>
+        <name>auto_detect_map</name>
+        <param>
+          <type>const Controller &amp;</type>
+          <declname>controller</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Auto-detect all connected actuators using a given protocol.</para><para>This function does the same as auto_detect but instead of returning a vector, it gives a map from ID to object.</para><para><simplesect kind="see"><para><ref refid="namespacedynamixel_1a6e322b3a15fdc7fa93d1b0a221586b56" kindref="member">auto_detect</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>controller</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object handling the USB to dynamixel interface, instance of the <ref refid="classdynamixel_1_1controllers_1_1_usb2_dynamixel" kindref="compound">dynamixel::controllers::Usb2Dynamixel</ref> class </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>vector of actuators </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>dynamixel::errors::Errors</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if there is a problem during send </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classdynamixel_1_1errors_1_1_unpack_error" kindref="compound">dynamixel::errors::UnpackError</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if the size of received packet is not correct </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp" line="132" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp" bodystart="132" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacedynamixel_1a216c62a8f9df141fab312731c3b53e72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Protocol</type>
+          </param>
+        </templateparamlist>
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::get_baudrate_id</definition>
+        <argsstring>(unsigned int baudrate)</argsstring>
+        <name>get_baudrate_id</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>baudrate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The template specifications of this method are used to set the baudrate of the servos.</para><para>Their internal memory represent the baudrates with special codes that we need to convert from the baudrate value.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>baudrate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the baudrate we want the device to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>hardware-specific code for the baudrate </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/baudrate.hpp" line="21" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/baudrate.hpp" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacedynamixel_1ae77bdfd178526277d3bce4737f547162" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+        </templateparamlist>
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::get_baudrate_id&lt; typename protocols::Protocol1 &gt;</definition>
+        <argsstring>(unsigned int baudrate)</argsstring>
+        <name>get_baudrate_id&lt; typename protocols::Protocol1 &gt;</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>baudrate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/baudrate.hpp" line="27" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/baudrate.hpp" bodystart="27" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacedynamixel_1ab6b5217673e0e3c5c23abf55e07d5567" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+        </templateparamlist>
+        <type>uint8_t</type>
+        <definition>uint8_t dynamixel::get_baudrate_id&lt; typename protocols::Protocol2 &gt;</definition>
+        <argsstring>(unsigned int baudrate)</argsstring>
+        <name>get_baudrate_id&lt; typename protocols::Protocol2 &gt;</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>baudrate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/baudrate.hpp" line="56" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/baudrate.hpp" bodystart="56" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacedynamixel_1a417600652fdc7e13c3864c0b49e75bea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double dynamixel::get_time</definition>
+        <argsstring>()</argsstring>
+        <name>get_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/misc.hpp" line="13" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/misc.hpp" bodystart="13" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacedynamixel_1a64191927480fd78f80fc400b536ac814" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int dynamixel::get_baudrate</definition>
+        <argsstring>(const unsigned int baudrate)</argsstring>
+        <name>get_baudrate</name>
+        <param>
+          <type>const unsigned int</type>
+          <declname>baudrate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/misc.hpp" line="20" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/misc.hpp" bodystart="20" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacedynamixel_1ace8a1ad2a4848e2b1e428dbcb7bd9bed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Protocol</type>
+          </param>
+        </templateparamlist>
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; dynamixel::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const StatusPacket&lt; Protocol &gt; &amp;st)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classdynamixel_1_1_status_packet" kindref="compound">StatusPacket</ref>&lt; Protocol &gt; &amp;</type>
+          <declname>st</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="67" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="67" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp" line="10" column="1"/>
+  </compounddef>
+</doxygen>

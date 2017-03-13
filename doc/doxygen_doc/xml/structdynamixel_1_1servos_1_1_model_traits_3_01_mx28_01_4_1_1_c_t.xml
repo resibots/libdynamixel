@@ -1,0 +1,1139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t" kind="struct" language="C++" prot="public">
+    <compoundname>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</compoundname>
+    <includes refid="mx28_8hpp" local="no">dynamixel/servos/mx28.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1aefe1a29d5146e147d135c1f0acb53505" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::model_number_t</definition>
+        <argsstring></argsstring>
+        <name>model_number_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="19" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a29a1406d5c42461a7c6a67f14a24995b" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::firmware_version_t</definition>
+        <argsstring></argsstring>
+        <name>firmware_version_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="22" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1abeada4bb714b657c9e68b5659687719a" prot="public" static="no">
+        <type><ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a1d4dfa22b01f80b1876d14f539d52b5c" kindref="member">protocol_t::id_t</ref></type>
+        <definition>typedef protocol_t::id_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::id_t</definition>
+        <argsstring></argsstring>
+        <name>id_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="24" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a880f9df55e1318bbdd08349f2d37f943" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::baudrate_t</definition>
+        <argsstring></argsstring>
+        <name>baudrate_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="26" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1acccaddb803e01784bbf2a188fb78d70c" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::return_delay_time_t</definition>
+        <argsstring></argsstring>
+        <name>return_delay_time_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="28" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7df577b40348ee815a72655d99c36ea8" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::cw_angle_limit_t</definition>
+        <argsstring></argsstring>
+        <name>cw_angle_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="30" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ac71e9003bdd4e822292228e7b14a852b" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::ccw_angle_limit_t</definition>
+        <argsstring></argsstring>
+        <name>ccw_angle_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="32" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a6da8442cdeb118bf11cf43248751f048" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::highest_temperature_limit_t</definition>
+        <argsstring></argsstring>
+        <name>highest_temperature_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="34" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a30106162949f3e2530f017061366a485" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::lowest_voltage_limit_t</definition>
+        <argsstring></argsstring>
+        <name>lowest_voltage_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="36" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1acc8758bf9b8adeeea3e05c31452ba817" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::highest_voltage_limit_t</definition>
+        <argsstring></argsstring>
+        <name>highest_voltage_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="38" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a09f3a7bd34aecf876f45c39d49e68d9d" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::max_torque_t</definition>
+        <argsstring></argsstring>
+        <name>max_torque_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="40" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ab7c7d7a6f174e0de90d7a15f23919d68" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::status_return_level_t</definition>
+        <argsstring></argsstring>
+        <name>status_return_level_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="42" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1af9a30c3d24adc472da51a3fa3af1b64e" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::alarm_led_t</definition>
+        <argsstring></argsstring>
+        <name>alarm_led_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="44" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a1992529e6f2de343f9223350547f1cc6" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::alarm_shutdown_t</definition>
+        <argsstring></argsstring>
+        <name>alarm_shutdown_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="46" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7d62c8e1b91e7abdc3e0a40408ea257e" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::multi_turn_offset_t</definition>
+        <argsstring></argsstring>
+        <name>multi_turn_offset_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="48" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a6a7d7aaf282834afabb782f5d40e7116" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::resolution_divider_t</definition>
+        <argsstring></argsstring>
+        <name>resolution_divider_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="50" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4bfea761915609e34c68b545fe57a8c6" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::torque_enable_t</definition>
+        <argsstring></argsstring>
+        <name>torque_enable_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="52" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ace994d308a570c967c944f90d5a8dd30" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::led_t</definition>
+        <argsstring></argsstring>
+        <name>led_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="54" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ae4ce5803dba633741a7c877280c23085" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::d_gain_t</definition>
+        <argsstring></argsstring>
+        <name>d_gain_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="56" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a682b84c9c241574bba484ac09f5f4f20" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::i_gain_t</definition>
+        <argsstring></argsstring>
+        <name>i_gain_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="58" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a06655befd97a8e42044ba72f2870178b" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::p_gain_t</definition>
+        <argsstring></argsstring>
+        <name>p_gain_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="60" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a2a21e80c695ce8840149b281ed9e5d28" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::goal_position_t</definition>
+        <argsstring></argsstring>
+        <name>goal_position_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="62" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a901aa8deec6e2eeebe38986f4ec1a2d8" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::moving_speed_t</definition>
+        <argsstring></argsstring>
+        <name>moving_speed_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="68" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a418e386ee5c30a82a04d06cd3469b93e" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::torque_limit_t</definition>
+        <argsstring></argsstring>
+        <name>torque_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="74" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a243a6450847a7a66fef20cd8128253e0" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::present_position_t</definition>
+        <argsstring></argsstring>
+        <name>present_position_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="76" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a267e57f50da28e002e6a58339b880851" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::present_speed_t</definition>
+        <argsstring></argsstring>
+        <name>present_speed_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="78" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a25cbea11831a198cde77ead07b71dfee" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::present_load_t</definition>
+        <argsstring></argsstring>
+        <name>present_load_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="80" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4543561b2a671a931c4fad3b2dbf2300" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::present_voltage_t</definition>
+        <argsstring></argsstring>
+        <name>present_voltage_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="82" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a51567688610142dc060c066256aabe63" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::present_temperature_t</definition>
+        <argsstring></argsstring>
+        <name>present_temperature_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="84" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a13d66792665df0d697b040c4d59519e1" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::registered_t</definition>
+        <argsstring></argsstring>
+        <name>registered_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="86" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a942ee733e0dd4baba34be33c9055e397" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::moving_t</definition>
+        <argsstring></argsstring>
+        <name>moving_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="88" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a3e968f80a15707e6bf3bb050cf013dcd" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::lock_t</definition>
+        <argsstring></argsstring>
+        <name>lock_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="90" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a6a0f5c17d6d63460a000b137f88865b3" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::punch_t</definition>
+        <argsstring></argsstring>
+        <name>punch_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="92" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ad0fc3eee171078bf455143bb6a0fb3f6" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::goal_acceleration_t</definition>
+        <argsstring></argsstring>
+        <name>goal_acceleration_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="94" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ae6879364a9e5cb3851b5ae54e3949b06" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::model_number</definition>
+        <argsstring></argsstring>
+        <name>model_number</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="18" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ad467c7989119a67655d95b8a5b64924a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1aefe1a29d5146e147d135c1f0acb53505" kindref="member">model_number_t</ref></type>
+        <definition>const model_number_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::model_number_value</definition>
+        <argsstring></argsstring>
+        <name>model_number_value</name>
+        <initializer>= 29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="20" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a2fa60f9edb0fd757f04185f1fd268df4" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::firmware_version</definition>
+        <argsstring></argsstring>
+        <name>firmware_version</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="21" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ade05071a1c12ba450273e54c272a057c" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="23" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a13233401da09a7394cb525c5088d6de8" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::baudrate</definition>
+        <argsstring></argsstring>
+        <name>baudrate</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="25" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7dae10e98d8e8d80731768b43df3ac2a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::return_delay_time</definition>
+        <argsstring></argsstring>
+        <name>return_delay_time</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="27" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a1bd4c903faaa1452cf4f401b841365ff" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::cw_angle_limit</definition>
+        <argsstring></argsstring>
+        <name>cw_angle_limit</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="29" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ac258bbf5e4dc3eb415e3bb90e1119602" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::ccw_angle_limit</definition>
+        <argsstring></argsstring>
+        <name>ccw_angle_limit</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="31" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a9f8858c6c11236224c621d2c6aa50459" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::highest_temperature_limit</definition>
+        <argsstring></argsstring>
+        <name>highest_temperature_limit</name>
+        <initializer>= 11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="33" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a3f8a66254c2422b27bd8d226d0ca7072" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::lowest_voltage_limit</definition>
+        <argsstring></argsstring>
+        <name>lowest_voltage_limit</name>
+        <initializer>= 12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="35" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ab79a698f63162538466548a142c343fe" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::highest_voltage_limit</definition>
+        <argsstring></argsstring>
+        <name>highest_voltage_limit</name>
+        <initializer>= 13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="37" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7adcba23e2d668473e33a3016d73ac96" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::max_torque</definition>
+        <argsstring></argsstring>
+        <name>max_torque</name>
+        <initializer>= 14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="39" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a6440b867d4ce245168f155bed633211e" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::status_return_level</definition>
+        <argsstring></argsstring>
+        <name>status_return_level</name>
+        <initializer>= 16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="41" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a64a8985f1aa2ea952b98a59571bfdc36" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::alarm_led</definition>
+        <argsstring></argsstring>
+        <name>alarm_led</name>
+        <initializer>= 17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="43" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4e3342c00812e5c4961c52f6c6165390" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::alarm_shutdown</definition>
+        <argsstring></argsstring>
+        <name>alarm_shutdown</name>
+        <initializer>= 18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="45" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a251ecf648a70b03c4e0afd734d222942" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::multi_turn_offset</definition>
+        <argsstring></argsstring>
+        <name>multi_turn_offset</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="47" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ad22a4c0ad1683972c5e5435eb458e1e4" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::resolution_divider</definition>
+        <argsstring></argsstring>
+        <name>resolution_divider</name>
+        <initializer>= 22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="49" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4aef6f10002851aee9ec792fd9b1744d" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::torque_enable</definition>
+        <argsstring></argsstring>
+        <name>torque_enable</name>
+        <initializer>= 24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="51" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ad25d00525b5e1dc73810dbd55f36546e" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::led</definition>
+        <argsstring></argsstring>
+        <name>led</name>
+        <initializer>= 25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="53" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ae61cbe1fe820c4c898508829fe83e191" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::d_gain</definition>
+        <argsstring></argsstring>
+        <name>d_gain</name>
+        <initializer>= 26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="55" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1afa797c57553c6cd60aae4f40eea269cd" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::i_gain</definition>
+        <argsstring></argsstring>
+        <name>i_gain</name>
+        <initializer>= 27</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="57" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a3698edf1bc3a74857a9c853ad5fccdba" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::p_gain</definition>
+        <argsstring></argsstring>
+        <name>p_gain</name>
+        <initializer>= 28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="59" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a0249d20fe922a884ebe6397d52ea0c9f" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::goal_position</definition>
+        <argsstring></argsstring>
+        <name>goal_position</name>
+        <initializer>= 30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="61" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a3c0207ef4747c09840f92453ca697b74" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a2a21e80c695ce8840149b281ed9e5d28" kindref="member">goal_position_t</ref></type>
+        <definition>const goal_position_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::min_goal_position</definition>
+        <argsstring></argsstring>
+        <name>min_goal_position</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="63" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4379a3279256e58d455b8d610ac8bc6d" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a2a21e80c695ce8840149b281ed9e5d28" kindref="member">goal_position_t</ref></type>
+        <definition>const goal_position_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::max_goal_position</definition>
+        <argsstring></argsstring>
+        <name>max_goal_position</name>
+        <initializer>= 4095</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="64" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4e1369df6f2a22cc595d08672235ad12" prot="public" static="yes" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::min_goal_angle_deg</definition>
+        <argsstring></argsstring>
+        <name>min_goal_angle_deg</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="65" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4f25a5b30958ea340dea237bbc40bd93" prot="public" static="yes" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::max_goal_angle_deg</definition>
+        <argsstring></argsstring>
+        <name>max_goal_angle_deg</name>
+        <initializer>= 360</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="66" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a317638cbe646f73ffa19f6f270e933c2" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::moving_speed</definition>
+        <argsstring></argsstring>
+        <name>moving_speed</name>
+        <initializer>= 32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="67" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1aef39affe15167a4b4f3625048efd4c1d" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a901aa8deec6e2eeebe38986f4ec1a2d8" kindref="member">moving_speed_t</ref></type>
+        <definition>const moving_speed_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::min_goal_speed</definition>
+        <argsstring></argsstring>
+        <name>min_goal_speed</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="69" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a640914ec6c2a644c0de489aa9055ccb2" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a901aa8deec6e2eeebe38986f4ec1a2d8" kindref="member">moving_speed_t</ref></type>
+        <definition>const moving_speed_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::max_goal_speed</definition>
+        <argsstring></argsstring>
+        <name>max_goal_speed</name>
+        <initializer>= 1023</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="70" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a0502f02669ac8a0873c208b50b777b68" prot="public" static="yes" mutable="no">
+        <type>constexpr double</type>
+        <definition>constexpr double dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::rpm_per_tick</definition>
+        <argsstring></argsstring>
+        <name>rpm_per_tick</name>
+        <initializer>= 0.114</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="71" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7562ec76bb63f8f4c795474bece38324" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::speed_sign_bit</definition>
+        <argsstring></argsstring>
+        <name>speed_sign_bit</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="72" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1aea2d3c35d6d70ec41e6e1e1bf32534df" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::torque_limit</definition>
+        <argsstring></argsstring>
+        <name>torque_limit</name>
+        <initializer>= 34</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="73" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1add44565330b483b73d797487ce714557" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::present_position</definition>
+        <argsstring></argsstring>
+        <name>present_position</name>
+        <initializer>= 36</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="75" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1adcd1cea20b2b107385ac0f3821ee32ad" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::present_speed</definition>
+        <argsstring></argsstring>
+        <name>present_speed</name>
+        <initializer>= 38</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="77" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7744655982150037c63aa378f10fcdea" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::present_load</definition>
+        <argsstring></argsstring>
+        <name>present_load</name>
+        <initializer>= 40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="79" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a62888417a7f049a0616dc2697a14cfe4" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::present_voltage</definition>
+        <argsstring></argsstring>
+        <name>present_voltage</name>
+        <initializer>= 42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="81" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1aea4b3961bacb48971a56a7de471f5e7f" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::present_temperature</definition>
+        <argsstring></argsstring>
+        <name>present_temperature</name>
+        <initializer>= 43</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="83" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a579db7e4cd86cbfb77e53cbc31348d5a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::registered</definition>
+        <argsstring></argsstring>
+        <name>registered</name>
+        <initializer>= 44</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="85" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a939d1759d66b7204a78e7712c747ed8f" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::moving</definition>
+        <argsstring></argsstring>
+        <name>moving</name>
+        <initializer>= 46</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="87" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ab169e4b88e4285f9a2a38cc4152fa068" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <initializer>= 47</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="89" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a5b058f4ac3d985723e0b3dd01bc31804" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::punch</definition>
+        <argsstring></argsstring>
+        <name>punch</name>
+        <initializer>= 48</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="91" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7013cd163e365fb78f38e52c7bab71a0" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT::goal_acceleration</definition>
+        <argsstring></argsstring>
+        <name>goal_acceleration</name>
+        <initializer>= 73</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="93" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" line="17" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp" bodystart="17" bodyend="95"/>
+    <listofallmembers>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a64a8985f1aa2ea952b98a59571bfdc36" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>alarm_led</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1af9a30c3d24adc472da51a3fa3af1b64e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>alarm_led_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4e3342c00812e5c4961c52f6c6165390" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>alarm_shutdown</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a1992529e6f2de343f9223350547f1cc6" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>alarm_shutdown_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a13233401da09a7394cb525c5088d6de8" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>baudrate</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a880f9df55e1318bbdd08349f2d37f943" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>baudrate_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ac258bbf5e4dc3eb415e3bb90e1119602" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>ccw_angle_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ac71e9003bdd4e822292228e7b14a852b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>ccw_angle_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a1bd4c903faaa1452cf4f401b841365ff" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>cw_angle_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7df577b40348ee815a72655d99c36ea8" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>cw_angle_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ae61cbe1fe820c4c898508829fe83e191" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>d_gain</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ae4ce5803dba633741a7c877280c23085" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>d_gain_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a2fa60f9edb0fd757f04185f1fd268df4" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>firmware_version</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a29a1406d5c42461a7c6a67f14a24995b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>firmware_version_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7013cd163e365fb78f38e52c7bab71a0" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>goal_acceleration</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ad0fc3eee171078bf455143bb6a0fb3f6" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>goal_acceleration_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a0249d20fe922a884ebe6397d52ea0c9f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a2a21e80c695ce8840149b281ed9e5d28" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>goal_position_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a9f8858c6c11236224c621d2c6aa50459" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>highest_temperature_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a6da8442cdeb118bf11cf43248751f048" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>highest_temperature_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ab79a698f63162538466548a142c343fe" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>highest_voltage_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1acc8758bf9b8adeeea3e05c31452ba817" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>highest_voltage_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1afa797c57553c6cd60aae4f40eea269cd" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>i_gain</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a682b84c9c241574bba484ac09f5f4f20" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>i_gain_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ade05071a1c12ba450273e54c272a057c" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>id</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1abeada4bb714b657c9e68b5659687719a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>id_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ad25d00525b5e1dc73810dbd55f36546e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>led</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ace994d308a570c967c944f90d5a8dd30" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>led_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ab169e4b88e4285f9a2a38cc4152fa068" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>lock</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a3e968f80a15707e6bf3bb050cf013dcd" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>lock_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a3f8a66254c2422b27bd8d226d0ca7072" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>lowest_voltage_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a30106162949f3e2530f017061366a485" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>lowest_voltage_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4f25a5b30958ea340dea237bbc40bd93" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>max_goal_angle_deg</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4379a3279256e58d455b8d610ac8bc6d" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>max_goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a640914ec6c2a644c0de489aa9055ccb2" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>max_goal_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7adcba23e2d668473e33a3016d73ac96" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>max_torque</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a09f3a7bd34aecf876f45c39d49e68d9d" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>max_torque_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4e1369df6f2a22cc595d08672235ad12" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>min_goal_angle_deg</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a3c0207ef4747c09840f92453ca697b74" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>min_goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1aef39affe15167a4b4f3625048efd4c1d" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>min_goal_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ae6879364a9e5cb3851b5ae54e3949b06" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>model_number</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1aefe1a29d5146e147d135c1f0acb53505" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>model_number_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ad467c7989119a67655d95b8a5b64924a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>model_number_value</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a939d1759d66b7204a78e7712c747ed8f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>moving</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a317638cbe646f73ffa19f6f270e933c2" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>moving_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a901aa8deec6e2eeebe38986f4ec1a2d8" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>moving_speed_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a942ee733e0dd4baba34be33c9055e397" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>moving_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a251ecf648a70b03c4e0afd734d222942" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>multi_turn_offset</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7d62c8e1b91e7abdc3e0a40408ea257e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>multi_turn_offset_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a3698edf1bc3a74857a9c853ad5fccdba" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>p_gain</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a06655befd97a8e42044ba72f2870178b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>p_gain_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7744655982150037c63aa378f10fcdea" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>present_load</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a25cbea11831a198cde77ead07b71dfee" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>present_load_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1add44565330b483b73d797487ce714557" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>present_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a243a6450847a7a66fef20cd8128253e0" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>present_position_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1adcd1cea20b2b107385ac0f3821ee32ad" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>present_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a267e57f50da28e002e6a58339b880851" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>present_speed_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1aea4b3961bacb48971a56a7de471f5e7f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>present_temperature</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a51567688610142dc060c066256aabe63" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>present_temperature_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a62888417a7f049a0616dc2697a14cfe4" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>present_voltage</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4543561b2a671a931c4fad3b2dbf2300" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>present_voltage_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a5b058f4ac3d985723e0b3dd01bc31804" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>punch</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a6a0f5c17d6d63460a000b137f88865b3" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>punch_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a579db7e4cd86cbfb77e53cbc31348d5a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>registered</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a13d66792665df0d697b040c4d59519e1" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>registered_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ad22a4c0ad1683972c5e5435eb458e1e4" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>resolution_divider</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a6a7d7aaf282834afabb782f5d40e7116" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>resolution_divider_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7dae10e98d8e8d80731768b43df3ac2a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>return_delay_time</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1acccaddb803e01784bbf2a188fb78d70c" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>return_delay_time_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a0502f02669ac8a0873c208b50b777b68" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>rpm_per_tick</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a7562ec76bb63f8f4c795474bece38324" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>speed_sign_bit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a6440b867d4ce245168f155bed633211e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>status_return_level</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1ab7c7d7a6f174e0de90d7a15f23919d68" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>status_return_level_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4aef6f10002851aee9ec792fd9b1744d" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>torque_enable</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a4bfea761915609e34c68b545fe57a8c6" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>torque_enable_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1aea2d3c35d6d70ec41e6e1e1bf32534df" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>torque_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4_1_1_c_t_1a418e386ee5c30a82a04d06cd3469b93e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Mx28 &gt;::CT</scope><name>torque_limit_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

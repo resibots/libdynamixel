@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1errors_1_1_error" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::errors::Error</compoundname>
+    <derivedcompoundref refid="classdynamixel_1_1errors_1_1_bad_packet" prot="public" virt="non-virtual">dynamixel::errors::BadPacket</derivedcompoundref>
+    <derivedcompoundref refid="classdynamixel_1_1errors_1_1_crc_error" prot="public" virt="non-virtual">dynamixel::errors::CrcError</derivedcompoundref>
+    <derivedcompoundref refid="classdynamixel_1_1errors_1_1_servo_limit_error" prot="public" virt="non-virtual">dynamixel::errors::ServoLimitError</derivedcompoundref>
+    <derivedcompoundref refid="classdynamixel_1_1errors_1_1_status_error" prot="public" virt="non-virtual">dynamixel::errors::StatusError</derivedcompoundref>
+    <derivedcompoundref refid="classdynamixel_1_1errors_1_1_unpack_error" prot="public" virt="non-virtual">dynamixel::errors::UnpackError</derivedcompoundref>
+    <includes refid="error_8hpp" local="no">dynamixel/errors/error.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_error_1a9c705027839376820892624f601d5365" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string dynamixel::errors::Error::_msg</definition>
+        <argsstring></argsstring>
+        <name>_msg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" line="39" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_error_1a7d5d5cc0fea73ae2db4ca84035c7fbfe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::errors::Error::Error</definition>
+        <argsstring>()</argsstring>
+        <name>Error</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" line="17" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_error_1ad41dbbe9f237dbc204eba731de65be5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::errors::Error::Error</definition>
+        <argsstring>(const char *msg)</argsstring>
+        <name>Error</name>
+        <param>
+          <type>const char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" line="18" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_error_1ab404696702c69bd2e8c49f6032a718f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::errors::Error::Error</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>Error</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" line="19" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_error_1a4c0804f137545e62204c49fca4c30dcb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string&amp; dynamixel::errors::Error::msg</definition>
+        <argsstring>() const </argsstring>
+        <name>msg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" line="26" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_error_1a12887a555c126d7e3a8ae8425730c8be" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::ostream &amp;</type>
+        <definition>virtual std::ostream&amp; dynamixel::errors::Error::print</definition>
+        <argsstring>(std::ostream &amp;os) const </argsstring>
+        <name>print</name>
+        <reimplementedby refid="classdynamixel_1_1errors_1_1_bad_packet_1af0b78897b3dc6d5455a0581ad587771a">print</reimplementedby>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" line="31" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" bodystart="31" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Abstract class for dynamixel errors </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="72">
+        <label>dynamixel::errors::Error</label>
+        <link refid="classdynamixel_1_1errors_1_1_error"/>
+      </node>
+      <node id="77">
+        <label>dynamixel::errors::UnpackError</label>
+        <link refid="classdynamixel_1_1errors_1_1_unpack_error"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>dynamixel::errors::CrcError</label>
+        <link refid="classdynamixel_1_1errors_1_1_crc_error"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>dynamixel::errors::BadPacket</label>
+        <link refid="classdynamixel_1_1errors_1_1_bad_packet"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>dynamixel::errors::ServoLimitError</label>
+        <link refid="classdynamixel_1_1errors_1_1_servo_limit_error"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>dynamixel::errors::StatusError</label>
+        <link refid="classdynamixel_1_1errors_1_1_status_error"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" line="15" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" bodystart="15" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a9c705027839376820892624f601d5365" prot="private" virt="non-virtual"><scope>dynamixel::errors::Error</scope><name>_msg</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a7d5d5cc0fea73ae2db4ca84035c7fbfe" prot="public" virt="non-virtual"><scope>dynamixel::errors::Error</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1ad41dbbe9f237dbc204eba731de65be5a" prot="public" virt="non-virtual"><scope>dynamixel::errors::Error</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1ab404696702c69bd2e8c49f6032a718f8" prot="public" virt="non-virtual"><scope>dynamixel::errors::Error</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a4c0804f137545e62204c49fca4c30dcb" prot="public" virt="non-virtual"><scope>dynamixel::errors::Error</scope><name>msg</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a12887a555c126d7e3a8ae8425730c8be" prot="public" virt="virtual"><scope>dynamixel::errors::Error</scope><name>print</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

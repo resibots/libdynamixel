@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_a9e9543d56249baf6783fe9532c43b4a" kind="dir">
+    <compoundname>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos</compoundname>
+    <innerfile refid="ax12_8hpp">ax12.hpp</innerfile>
+    <innerfile refid="ax12w_8hpp">ax12w.hpp</innerfile>
+    <innerfile refid="ax18_8hpp">ax18.hpp</innerfile>
+    <innerfile refid="base__servo_8hpp">base_servo.hpp</innerfile>
+    <innerfile refid="ex106_8hpp">ex106.hpp</innerfile>
+    <innerfile refid="model__traits_8hpp">model_traits.hpp</innerfile>
+    <innerfile refid="mx106_8hpp">mx106.hpp</innerfile>
+    <innerfile refid="mx12_8hpp">mx12.hpp</innerfile>
+    <innerfile refid="mx28_8hpp">mx28.hpp</innerfile>
+    <innerfile refid="mx64_8hpp">mx64.hpp</innerfile>
+    <innerfile refid="pro__h42__20__s300_8hpp">pro_h42_20_s300.hpp</innerfile>
+    <innerfile refid="pro__h54__100__s500_8hpp">pro_h54_100_s500.hpp</innerfile>
+    <innerfile refid="pro__h54__200__s500_8hpp">pro_h54_200_s500.hpp</innerfile>
+    <innerfile refid="pro__l42__10__s300_8hpp">pro_l42_10_s300.hpp</innerfile>
+    <innerfile refid="pro__l54__30__s400_8hpp">pro_l54_30_s400.hpp</innerfile>
+    <innerfile refid="pro__l54__30__s500_8hpp">pro_l54_30_s500.hpp</innerfile>
+    <innerfile refid="pro__l54__50__s290_8hpp">pro_l54_50_s290.hpp</innerfile>
+    <innerfile refid="pro__l54__50__s500_8hpp">pro_l54_50_s500.hpp</innerfile>
+    <innerfile refid="pro__m42__10__s260_8hpp">pro_m42_10_s260.hpp</innerfile>
+    <innerfile refid="pro__m54__40__s250_8hpp">pro_m54_40_s250.hpp</innerfile>
+    <innerfile refid="pro__m54__60__s250_8hpp">pro_m54_60_s250.hpp</innerfile>
+    <innerfile refid="protocol__specific__packets_8hpp">protocol_specific_packets.hpp</innerfile>
+    <innerfile refid="servo_8hpp">servo.hpp</innerfile>
+    <innerfile refid="xl320_8hpp">xl320.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/"/>
+  </compounddef>
+</doxygen>

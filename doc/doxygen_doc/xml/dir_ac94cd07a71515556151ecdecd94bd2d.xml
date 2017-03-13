@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_ac94cd07a71515556151ecdecd94bd2d" kind="dir">
+    <compoundname>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers</compoundname>
+    <innerfile refid="file2dynamixel_8hpp">file2dynamixel.hpp</innerfile>
+    <innerfile refid="usb2dynamixel_8hpp">usb2dynamixel.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/"/>
+  </compounddef>
+</doxygen>

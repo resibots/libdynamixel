@@ -1,0 +1,171 @@
+\hypertarget{namespacedynamixel}{}\section{dynamixel Namespace Reference}
+\label{namespacedynamixel}\index{dynamixel@{dynamixel}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacedynamixel_1_1controllers}{controllers}
+\item 
+ \hyperlink{namespacedynamixel_1_1errors}{errors}
+\item 
+ \hyperlink{namespacedynamixel_1_1instructions}{instructions}
+\item 
+ \hyperlink{namespacedynamixel_1_1protocols}{protocols}
+\item 
+ \hyperlink{namespacedynamixel_1_1servos}{servos}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdynamixel_1_1_instruction_packet}{Instruction\+Packet}
+\item 
+class \hyperlink{classdynamixel_1_1_status_packet}{Status\+Packet}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classdynamixel_1_1servos_1_1_base_servo}{servos\+::\+Base\+Servo}$<$ \hyperlink{classdynamixel_1_1protocols_1_1_protocol1}{protocols\+::\+Protocol1} $>$ $>$ \hyperlink{namespacedynamixel_a7ec8c7739824c939b1e8689bf731ade1}{get\+\_\+servo} (\hyperlink{classdynamixel_1_1protocols_1_1_protocol1_a1d4dfa22b01f80b1876d14f539d52b5c}{protocols\+::\+Protocol1\+::id\+\_\+t} id, uint16\+\_\+t model, \hyperlink{classdynamixel_1_1protocols_1_1_protocol1_a4383ba392b57ea00dd0273c6da5e8a65}{protocols\+::\+Protocol1\+::address\+\_\+t} selected\+\_\+protocol)
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classdynamixel_1_1servos_1_1_base_servo}{servos\+::\+Base\+Servo}$<$ \hyperlink{classdynamixel_1_1protocols_1_1_protocol2}{protocols\+::\+Protocol2} $>$ $>$ \hyperlink{namespacedynamixel_aea272226c2da972ad4c097190e330c9a}{get\+\_\+servo} (\hyperlink{classdynamixel_1_1protocols_1_1_protocol2_a38d9cae72cd86213cca74e718c240429}{protocols\+::\+Protocol2\+::id\+\_\+t} id, uint16\+\_\+t model, \hyperlink{classdynamixel_1_1protocols_1_1_protocol2_ac5d0ba762aa1f860c0187d9e64982941}{protocols\+::\+Protocol2\+::address\+\_\+t} selected\+\_\+protocol)
+\item 
+{\footnotesize template$<$typename Protocol , typename Controller $>$ }\\std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{classdynamixel_1_1servos_1_1_base_servo}{servos\+::\+Base\+Servo}$<$ Protocol $>$ $>$ $>$ \hyperlink{namespacedynamixel_a6e322b3a15fdc7fa93d1b0a221586b56}{auto\+\_\+detect} (const Controller \&controller)
+\item 
+{\footnotesize template$<$typename Protocol , typename Controller $>$ }\\std\+::map$<$ typename Protocol\+::id\+\_\+t, std\+::shared\+\_\+ptr$<$ \hyperlink{classdynamixel_1_1servos_1_1_base_servo}{servos\+::\+Base\+Servo}$<$ Protocol $>$ $>$ $>$ \hyperlink{namespacedynamixel_a89e3fa5a92c07ce07c925cad243be30e}{auto\+\_\+detect\+\_\+map} (const Controller \&controller)
+\item 
+{\footnotesize template$<$typename Protocol $>$ }\\uint8\+\_\+t \hyperlink{namespacedynamixel_a216c62a8f9df141fab312731c3b53e72}{get\+\_\+baudrate\+\_\+id} (unsigned int baudrate)
+\item 
+{\footnotesize template$<$$>$ }\\uint8\+\_\+t \hyperlink{namespacedynamixel_ae77bdfd178526277d3bce4737f547162}{get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol1 $>$} (unsigned int baudrate)
+\item 
+{\footnotesize template$<$$>$ }\\uint8\+\_\+t \hyperlink{namespacedynamixel_ab6b5217673e0e3c5c23abf55e07d5567}{get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol2 $>$} (unsigned int baudrate)
+\item 
+double \hyperlink{namespacedynamixel_a417600652fdc7e13c3864c0b49e75bea}{get\+\_\+time} ()
+\item 
+int \hyperlink{namespacedynamixel_a64191927480fd78f80fc400b536ac814}{get\+\_\+baudrate} (const unsigned int baudrate)
+\item 
+{\footnotesize template$<$typename Protocol $>$ }\\std\+::ostream \& \hyperlink{namespacedynamixel_ace8a1ad2a4848e2b1e428dbcb7bd9bed}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classdynamixel_1_1_status_packet}{Status\+Packet}$<$ Protocol $>$ \&st)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespacedynamixel_a6e322b3a15fdc7fa93d1b0a221586b56}{}\index{dynamixel@{dynamixel}!auto\+\_\+detect@{auto\+\_\+detect}}
+\index{auto\+\_\+detect@{auto\+\_\+detect}!dynamixel@{dynamixel}}
+\subsubsection[{auto\+\_\+detect}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Protocol , typename Controller $>$ std\+::vector$<$std\+::shared\+\_\+ptr$<${\bf servos\+::\+Base\+Servo}$<$Protocol$>$ $>$ $>$ dynamixel\+::auto\+\_\+detect (
+\begin{DoxyParamCaption}
+\item[{const Controller \&}]{controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacedynamixel_a6e322b3a15fdc7fa93d1b0a221586b56}
+Auto-\/detect all connected actuators using a given protocol.
+
+The template parameter Controller is inferred from the function\textquotesingle{}s parameter. Conversely, it is compulsory to specify the protocol version\+: either \hyperlink{classdynamixel_1_1protocols_1_1_protocol1}{dynamixel\+::protocols\+::\+Protocol1} or \hyperlink{classdynamixel_1_1protocols_1_1_protocol2}{dynamixel\+::protocols\+::\+Protocol2}.
+
+The returned vector contains objects corresponding to the actuators that were found. You can use these objects to do all actions that are possible with the Dynamixel actuators.
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & object handling the U\+S\+B to dynamixel interface, instance of the \hyperlink{classdynamixel_1_1controllers_1_1_usb2_dynamixel}{dynamixel\+::controllers\+::\+Usb2\+Dynamixel} class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of actuators 
+\end{DoxyReturn}
+\hypertarget{namespacedynamixel_a89e3fa5a92c07ce07c925cad243be30e}{}\index{dynamixel@{dynamixel}!auto\+\_\+detect\+\_\+map@{auto\+\_\+detect\+\_\+map}}
+\index{auto\+\_\+detect\+\_\+map@{auto\+\_\+detect\+\_\+map}!dynamixel@{dynamixel}}
+\subsubsection[{auto\+\_\+detect\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Protocol , typename Controller $>$ std\+::map$<$typename Protocol\+::id\+\_\+t, std\+::shared\+\_\+ptr$<${\bf servos\+::\+Base\+Servo}$<$Protocol$>$ $>$ $>$ dynamixel\+::auto\+\_\+detect\+\_\+map (
+\begin{DoxyParamCaption}
+\item[{const Controller \&}]{controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacedynamixel_a89e3fa5a92c07ce07c925cad243be30e}
+Auto-\/detect all connected actuators using a given protocol.
+
+This function does the same as auto\+\_\+detect but instead of returning a vector, it gives a map from I\+D to object.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{namespacedynamixel_a6e322b3a15fdc7fa93d1b0a221586b56}{auto\+\_\+detect}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & object handling the U\+S\+B to dynamixel interface, instance of the \hyperlink{classdynamixel_1_1controllers_1_1_usb2_dynamixel}{dynamixel\+::controllers\+::\+Usb2\+Dynamixel} class \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of actuators 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em dynamixel\+::errors\+::\+Errors} & if there is a problem during send \\
+\hline
+{\em \hyperlink{classdynamixel_1_1errors_1_1_unpack_error}{dynamixel\+::errors\+::\+Unpack\+Error}} & if the size of received packet is not correct \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{namespacedynamixel_a64191927480fd78f80fc400b536ac814}{}\index{dynamixel@{dynamixel}!get\+\_\+baudrate@{get\+\_\+baudrate}}
+\index{get\+\_\+baudrate@{get\+\_\+baudrate}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+baudrate}]{\setlength{\rightskip}{0pt plus 5cm}int dynamixel\+::get\+\_\+baudrate (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{baudrate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacedynamixel_a64191927480fd78f80fc400b536ac814}
+\hypertarget{namespacedynamixel_a216c62a8f9df141fab312731c3b53e72}{}\index{dynamixel@{dynamixel}!get\+\_\+baudrate\+\_\+id@{get\+\_\+baudrate\+\_\+id}}
+\index{get\+\_\+baudrate\+\_\+id@{get\+\_\+baudrate\+\_\+id}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+baudrate\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Protocol $>$ uint8\+\_\+t dynamixel\+::get\+\_\+baudrate\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{baudrate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacedynamixel_a216c62a8f9df141fab312731c3b53e72}
+The template specifications of this method are used to set the baudrate of the servos.
+
+Their internal memory represent the baudrates with special codes that we need to convert from the baudrate value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em baudrate} & the baudrate we want the device to use \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hardware-\/specific code for the baudrate 
+\end{DoxyReturn}
+\hypertarget{namespacedynamixel_ae77bdfd178526277d3bce4737f547162}{}\index{dynamixel@{dynamixel}!get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol1 $>$@{get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol1 $>$}}
+\index{get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol1 $>$@{get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol1 $>$}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol1 $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ uint8\+\_\+t {\bf dynamixel\+::get\+\_\+baudrate\+\_\+id}$<$ typename {\bf protocols\+::\+Protocol1} $>$ (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{baudrate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacedynamixel_ae77bdfd178526277d3bce4737f547162}
+\hypertarget{namespacedynamixel_ab6b5217673e0e3c5c23abf55e07d5567}{}\index{dynamixel@{dynamixel}!get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol2 $>$@{get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol2 $>$}}
+\index{get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol2 $>$@{get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol2 $>$}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+baudrate\+\_\+id$<$ typename protocols\+::\+Protocol2 $>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ uint8\+\_\+t {\bf dynamixel\+::get\+\_\+baudrate\+\_\+id}$<$ typename {\bf protocols\+::\+Protocol2} $>$ (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{baudrate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacedynamixel_ab6b5217673e0e3c5c23abf55e07d5567}
+\hypertarget{namespacedynamixel_a7ec8c7739824c939b1e8689bf731ade1}{}\index{dynamixel@{dynamixel}!get\+\_\+servo@{get\+\_\+servo}}
+\index{get\+\_\+servo@{get\+\_\+servo}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+servo}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf servos\+::\+Base\+Servo}$<${\bf protocols\+::\+Protocol1}$>$ $>$ dynamixel\+::get\+\_\+servo (
+\begin{DoxyParamCaption}
+\item[{{\bf protocols\+::\+Protocol1\+::id\+\_\+t}}]{id, }
+\item[{uint16\+\_\+t}]{model, }
+\item[{{\bf protocols\+::\+Protocol1\+::address\+\_\+t}}]{selected\+\_\+protocol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacedynamixel_a7ec8c7739824c939b1e8689bf731ade1}
+\hypertarget{namespacedynamixel_aea272226c2da972ad4c097190e330c9a}{}\index{dynamixel@{dynamixel}!get\+\_\+servo@{get\+\_\+servo}}
+\index{get\+\_\+servo@{get\+\_\+servo}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+servo}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<${\bf servos\+::\+Base\+Servo}$<${\bf protocols\+::\+Protocol2}$>$ $>$ dynamixel\+::get\+\_\+servo (
+\begin{DoxyParamCaption}
+\item[{{\bf protocols\+::\+Protocol2\+::id\+\_\+t}}]{id, }
+\item[{uint16\+\_\+t}]{model, }
+\item[{{\bf protocols\+::\+Protocol2\+::address\+\_\+t}}]{selected\+\_\+protocol}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacedynamixel_aea272226c2da972ad4c097190e330c9a}
+\hypertarget{namespacedynamixel_a417600652fdc7e13c3864c0b49e75bea}{}\index{dynamixel@{dynamixel}!get\+\_\+time@{get\+\_\+time}}
+\index{get\+\_\+time@{get\+\_\+time}!dynamixel@{dynamixel}}
+\subsubsection[{get\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}double dynamixel\+::get\+\_\+time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacedynamixel_a417600652fdc7e13c3864c0b49e75bea}
+\hypertarget{namespacedynamixel_ace8a1ad2a4848e2b1e428dbcb7bd9bed}{}\index{dynamixel@{dynamixel}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!dynamixel@{dynamixel}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Protocol $>$ std\+::ostream\& dynamixel\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{const {\bf Status\+Packet}$<$ Protocol $>$ \&}]{st}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacedynamixel_ace8a1ad2a4848e2b1e428dbcb7bd9bed}

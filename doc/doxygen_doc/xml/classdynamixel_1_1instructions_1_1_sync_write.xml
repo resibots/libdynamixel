@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1instructions_1_1_sync_write" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::instructions::SyncWrite</compoundname>
+    <basecompoundref refid="classdynamixel_1_1_instruction_packet" prot="public" virt="non-virtual">dynamixel::InstructionPacket&lt; T &gt;</basecompoundref>
+    <includes refid="sync__write_8hpp" local="no">dynamixel/instructions/sync_write.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel_1_1instructions_1_1_sync_write_1abdc2dccf51359a99809088bc128da91b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::instructions::SyncWrite&lt; T &gt;::SyncWrite</definition>
+        <argsstring>(typename T::address_t address, const std::vector&lt; typename T::id_t &gt; &amp;ids, const std::vector&lt; std::vector&lt; uint8_t &gt;&gt; &amp;data)</argsstring>
+        <name>SyncWrite</name>
+        <param>
+          <type>typename T::address_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; typename T::id_t &gt; &amp;</type>
+          <declname>ids</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; uint8_t &gt;&gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/sync_write.hpp" line="17" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/sync_write.hpp" bodystart="17" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classdynamixel_1_1instructions_1_1_sync_write_1a252a19d9f41d85cbe4f60a93d57727de" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; dynamixel::instructions::SyncWrite&lt; T &gt;::_get_parameters</definition>
+        <argsstring>(uint8_t address, const std::vector&lt; typename T::id_t &gt; &amp;ids, const std::vector&lt; std::vector&lt; uint8_t &gt;&gt; &amp;data)</argsstring>
+        <name>_get_parameters</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; typename T::id_t &gt; &amp;</type>
+          <declname>ids</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; uint8_t &gt;&gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/sync_write.hpp" line="22" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/sync_write.hpp" bodystart="22" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1instructions_1_1_sync_write_1a6000ac509e7afe325a4652e870638842" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; dynamixel::instructions::SyncWrite&lt; T &gt;::_get_parameters</definition>
+        <argsstring>(uint16_t address, const std::vector&lt; typename T::id_t &gt; &amp;ids, const std::vector&lt; std::vector&lt; uint8_t &gt;&gt; &amp;data)</argsstring>
+        <name>_get_parameters</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; typename T::id_t &gt; &amp;</type>
+          <declname>ids</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; uint8_t &gt;&gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/sync_write.hpp" line="51" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/sync_write.hpp" bodystart="51" bodyend="80"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="270">
+        <label>dynamixel::InstructionPacket&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1_instruction_packet"/>
+      </node>
+      <node id="269">
+        <label>dynamixel::instructions::SyncWrite&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1instructions_1_1_sync_write"/>
+        <childnode refid="270" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="272">
+        <label>dynamixel::InstructionPacket&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1_instruction_packet"/>
+      </node>
+      <node id="271">
+        <label>dynamixel::instructions::SyncWrite&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1instructions_1_1_sync_write"/>
+        <childnode refid="272" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/sync_write.hpp" line="15" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/sync_write.hpp" bodystart="15" bodyend="81"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1instructions_1_1_sync_write_1a252a19d9f41d85cbe4f60a93d57727de" prot="private" virt="non-virtual"><scope>dynamixel::instructions::SyncWrite</scope><name>_get_parameters</name></member>
+      <member refid="classdynamixel_1_1instructions_1_1_sync_write_1a6000ac509e7afe325a4652e870638842" prot="private" virt="non-virtual"><scope>dynamixel::instructions::SyncWrite</scope><name>_get_parameters</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1a9a642ac2e80dc38172166b0508101bb8" prot="public" virt="non-virtual"><scope>dynamixel::instructions::SyncWrite</scope><name>data</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1ae625382db5cdf81fae590ce1333876fc" prot="public" virt="non-virtual"><scope>dynamixel::instructions::SyncWrite</scope><name>InstructionPacket</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1acf0044f4cf51aa48cff9309dea20dfcb" prot="public" virt="non-virtual"><scope>dynamixel::instructions::SyncWrite</scope><name>InstructionPacket</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1a3558052abebd5412847bb2c2652f2897" prot="public" virt="non-virtual"><scope>dynamixel::instructions::SyncWrite</scope><name>operator[]</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1ae4fc2dccdf71efe15934fce93e1b7222" prot="public" virt="non-virtual"><scope>dynamixel::instructions::SyncWrite</scope><name>size</name></member>
+      <member refid="classdynamixel_1_1instructions_1_1_sync_write_1abdc2dccf51359a99809088bc128da91b" prot="public" virt="non-virtual"><scope>dynamixel::instructions::SyncWrite</scope><name>SyncWrite</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

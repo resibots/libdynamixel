@@ -1,0 +1,388 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="instruction__packet_8hpp" kind="file" language="C++">
+    <compoundname>instruction_packet.hpp</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="servo_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/servo.hpp</includedby>
+    <includedby refid="base__servo_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp</includedby>
+    <includedby refid="protocol__specific__packets_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp</includedby>
+    <includedby refid="ping_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/ping.hpp</includedby>
+    <includedby refid="read_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/read.hpp</includedby>
+    <includedby refid="write_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/write.hpp</includedby>
+    <includedby refid="reg__write_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/reg_write.hpp</includedby>
+    <includedby refid="action_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/action.hpp</includedby>
+    <includedby refid="factory__reset_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/factory_reset.hpp</includedby>
+    <includedby refid="reboot_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/reboot.hpp</includedby>
+    <includedby refid="sync__write_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/sync_write.hpp</includedby>
+    <includedby refid="file2dynamixel_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/file2dynamixel.hpp</includedby>
+    <includedby refid="usb2dynamixel_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp</includedby>
+    <includedby refid="dynamixel__core_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel_core.hpp</includedby>
+    <incdepgraph>
+      <node id="665">
+        <label>stdint.h</label>
+      </node>
+      <node id="664">
+        <label>vector</label>
+      </node>
+      <node id="663">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instruction_packet.hpp</label>
+        <link refid="instruction_packet.hpp"/>
+        <childnode refid="664" relation="include">
+        </childnode>
+        <childnode refid="665" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="698">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/ping.hpp</label>
+        <link refid="ping_8hpp"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+      </node>
+      <node id="681">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp</label>
+        <link refid="mx28_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="703">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/factory_reset.hpp</label>
+        <link refid="factory__reset_8hpp"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+      </node>
+      <node id="677">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12w.hpp</label>
+        <link refid="ax12w_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="692">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp</label>
+        <link refid="pro__l54__30__s500_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="689">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_40_s250.hpp</label>
+        <link refid="pro__m54__40__s250_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="675">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers.hpp</label>
+        <link refid="controllers_8hpp"/>
+        <childnode refid="676" relation="include">
+        </childnode>
+      </node>
+      <node id="668">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp</label>
+        <link refid="ax12_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="680">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx12.hpp</label>
+        <link refid="mx12_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="669">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos.hpp</label>
+        <link refid="servos_8hpp"/>
+        <childnode refid="670" relation="include">
+        </childnode>
+        <childnode refid="672" relation="include">
+        </childnode>
+        <childnode refid="671" relation="include">
+        </childnode>
+      </node>
+      <node id="682">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx64.hpp</label>
+        <link refid="mx64_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="679">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ex106.hpp</label>
+        <link refid="ex106_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="700">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/write.hpp</label>
+        <link refid="write_8hpp"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+      </node>
+      <node id="694">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_50_s500.hpp</label>
+        <link refid="pro__l54__50__s500_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="688">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_60_s250.hpp</label>
+        <link refid="pro__m54__60__s250_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="697">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp</label>
+        <link refid="protocol__specific__packets_8hpp"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+      </node>
+      <node id="699">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/read.hpp</label>
+        <link refid="read_8hpp"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+      </node>
+      <node id="696">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp</label>
+        <link refid="base__servo_8hpp"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+        <childnode refid="697" relation="include">
+        </childnode>
+      </node>
+      <node id="693">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_50_s290.hpp</label>
+        <link refid="pro__l54__50__s290_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="702">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/action.hpp</label>
+        <link refid="action_8hpp"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+      </node>
+      <node id="704">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/reboot.hpp</label>
+        <link refid="reboot_8hpp"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+      </node>
+      <node id="671">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel.hpp</label>
+        <link refid="dynamixel_8hpp"/>
+      </node>
+      <node id="686">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_h54_100_s500.hpp</label>
+        <link refid="pro__h54__100__s500_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="667">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/servo.hpp</label>
+        <link refid="servo_8hpp"/>
+        <childnode refid="668" relation="include">
+        </childnode>
+        <childnode refid="677" relation="include">
+        </childnode>
+        <childnode refid="678" relation="include">
+        </childnode>
+        <childnode refid="679" relation="include">
+        </childnode>
+        <childnode refid="680" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
+        </childnode>
+        <childnode refid="682" relation="include">
+        </childnode>
+        <childnode refid="683" relation="include">
+        </childnode>
+        <childnode refid="684" relation="include">
+        </childnode>
+        <childnode refid="685" relation="include">
+        </childnode>
+        <childnode refid="686" relation="include">
+        </childnode>
+        <childnode refid="687" relation="include">
+        </childnode>
+        <childnode refid="688" relation="include">
+        </childnode>
+        <childnode refid="689" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+        <childnode refid="691" relation="include">
+        </childnode>
+        <childnode refid="692" relation="include">
+        </childnode>
+        <childnode refid="693" relation="include">
+        </childnode>
+        <childnode refid="694" relation="include">
+        </childnode>
+        <childnode refid="695" relation="include">
+        </childnode>
+      </node>
+      <node id="684">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/xl320.hpp</label>
+        <link refid="xl320_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="674">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp</label>
+        <link refid="usb2dynamixel_8hpp"/>
+        <childnode refid="675" relation="include">
+        </childnode>
+      </node>
+      <node id="672">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/misc.hpp</label>
+        <link refid="misc_8hpp"/>
+        <childnode refid="673" relation="include">
+        </childnode>
+        <childnode refid="674" relation="include">
+        </childnode>
+        <childnode refid="676" relation="include">
+        </childnode>
+      </node>
+      <node id="705">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/sync_write.hpp</label>
+        <link refid="sync__write_8hpp"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+      </node>
+      <node id="678">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax18.hpp</label>
+        <link refid="ax18_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="695">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l42_10_s300.hpp</label>
+        <link refid="pro__l42__10__s300_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="687">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_h42_20_s300.hpp</label>
+        <link refid="pro__h42__20__s300_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="673">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/file2dynamixel.hpp</label>
+        <link refid="file2dynamixel_8hpp"/>
+      </node>
+      <node id="683">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx106.hpp</label>
+        <link refid="mx106_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="701">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/reg_write.hpp</label>
+        <link refid="reg__write_8hpp"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+      </node>
+      <node id="670">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp</label>
+        <link refid="auto__detect_8hpp"/>
+        <childnode refid="671" relation="include">
+        </childnode>
+      </node>
+      <node id="685">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_h54_200_s500.hpp</label>
+        <link refid="pro__h54__200__s500_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="676">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel_core.hpp</label>
+        <link refid="dynamixel__core_8hpp"/>
+        <childnode refid="671" relation="include">
+        </childnode>
+      </node>
+      <node id="666">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instruction_packet.hpp</label>
+        <link refid="instruction_packet.hpp"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+        <childnode refid="696" relation="include">
+        </childnode>
+        <childnode refid="697" relation="include">
+        </childnode>
+        <childnode refid="698" relation="include">
+        </childnode>
+        <childnode refid="699" relation="include">
+        </childnode>
+        <childnode refid="700" relation="include">
+        </childnode>
+        <childnode refid="701" relation="include">
+        </childnode>
+        <childnode refid="702" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="704" relation="include">
+        </childnode>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="673" relation="include">
+        </childnode>
+        <childnode refid="674" relation="include">
+        </childnode>
+        <childnode refid="676" relation="include">
+        </childnode>
+      </node>
+      <node id="691">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s400.hpp</label>
+        <link refid="pro__l54__30__s400_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="690">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp</label>
+        <link refid="pro__m42__10__s260_8hpp"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classdynamixel_1_1_instruction_packet" prot="public">dynamixel::InstructionPacket</innerclass>
+    <innernamespace refid="namespacedynamixel">dynamixel</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DYNAMIXEL_INSTRUCTION_PACKET_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DYNAMIXEL_INSTRUCTION_PACKET_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamixel" kindref="compound">dynamixel</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Protocol&gt;</highlight></codeline>
+<codeline lineno="14" refid="classdynamixel_1_1_instruction_packet" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16" refid="classdynamixel_1_1_instruction_packet_1ae625382db5cdf81fae590ce1333876fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1_instruction_packet_1ae625382db5cdf81fae590ce1333876fc" kindref="member">InstructionPacket</ref>(</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Protocol::id_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Protocol::instr_t<sp/>instr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;uint8_t&gt;&amp;<sp/>parameters)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>_packet(Protocol::pack_instruction(id,<sp/>instr,<sp/>parameters))<sp/>{}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="classdynamixel_1_1_instruction_packet_1acf0044f4cf51aa48cff9309dea20dfcb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1_instruction_packet_1acf0044f4cf51aa48cff9309dea20dfcb" kindref="member">InstructionPacket</ref>(</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Protocol::id_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Protocol::instr_t<sp/>instr)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>_packet(Protocol::pack_instruction(id,<sp/>instr))<sp/>{}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classdynamixel_1_1_instruction_packet_1ae4fc2dccdf71efe15934fce93e1b7222" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1_instruction_packet_1ae4fc2dccdf71efe15934fce93e1b7222" kindref="member">size</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_packet.size();<sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="classdynamixel_1_1_instruction_packet_1a3558052abebd5412847bb2c2652f2897" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="classdynamixel_1_1_instruction_packet_1a3558052abebd5412847bb2c2652f2897" kindref="member">operator[]</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>pos)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_packet[pos];<sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classdynamixel_1_1_instruction_packet_1a9a642ac2e80dc38172166b0508101bb8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/><ref refid="classdynamixel_1_1_instruction_packet_1a9a642ac2e80dc38172166b0508101bb8" kindref="member">data</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;_packet.front();<sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;uint8_t&gt;<sp/>_packet;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instruction_packet.hpp"/>
+  </compounddef>
+</doxygen>

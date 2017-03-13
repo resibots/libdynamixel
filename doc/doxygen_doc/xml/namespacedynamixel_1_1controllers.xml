@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="namespacedynamixel_1_1controllers" kind="namespace" language="C++">
+    <compoundname>dynamixel::controllers</compoundname>
+    <innerclass refid="classdynamixel_1_1controllers_1_1_file2_dynamixel" prot="public">dynamixel::controllers::File2Dynamixel</innerclass>
+    <innerclass refid="classdynamixel_1_1controllers_1_1_usb2_dynamixel" prot="public">dynamixel::controllers::Usb2Dynamixel</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/file2dynamixel.hpp" line="23" column="1"/>
+  </compounddef>
+</doxygen>

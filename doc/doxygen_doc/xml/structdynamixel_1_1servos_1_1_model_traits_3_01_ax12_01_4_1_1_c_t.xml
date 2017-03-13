@@ -1,0 +1,1081 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t" kind="struct" language="C++" prot="public">
+    <compoundname>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</compoundname>
+    <includes refid="ax12_8hpp" local="no">dynamixel/servos/ax12.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1af7cc7d1015e115bb5cee55f69160a20b" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::model_number_t</definition>
+        <argsstring></argsstring>
+        <name>model_number_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="19" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a081478d3259bb860884584ad45f345f5" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::firmware_version_t</definition>
+        <argsstring></argsstring>
+        <name>firmware_version_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="22" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a0c872d4cb05d243b3a1ad358a6b036b4" prot="public" static="no">
+        <type><ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a1d4dfa22b01f80b1876d14f539d52b5c" kindref="member">protocol_t::id_t</ref></type>
+        <definition>typedef protocol_t::id_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::id_t</definition>
+        <argsstring></argsstring>
+        <name>id_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="24" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a72a5f288d96c6eceb04aaf15d0006da1" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::baudrate_t</definition>
+        <argsstring></argsstring>
+        <name>baudrate_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="26" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a6dca5b5fe3adf16a9fa8ccc9d26a08a6" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::return_delay_time_t</definition>
+        <argsstring></argsstring>
+        <name>return_delay_time_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="28" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a6f204c4baeeeaa1c8a78b3660db77b93" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::cw_angle_limit_t</definition>
+        <argsstring></argsstring>
+        <name>cw_angle_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="30" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a6c07271575b0f9d66e3629b163cc87e3" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::ccw_angle_limit_t</definition>
+        <argsstring></argsstring>
+        <name>ccw_angle_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="32" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a927ba4cfd2e68533b00e9db76589297e" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::highest_temperature_limit_t</definition>
+        <argsstring></argsstring>
+        <name>highest_temperature_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="34" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a72cfdfd8425b57d9b2cad7ecf5cea18a" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::lowest_voltage_limit_t</definition>
+        <argsstring></argsstring>
+        <name>lowest_voltage_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="36" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a0ec896de7f99023cdf96e38d9a214005" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::highest_voltage_limit_t</definition>
+        <argsstring></argsstring>
+        <name>highest_voltage_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="38" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a426746f28397608a2e790ef6316dc34e" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::max_torque_t</definition>
+        <argsstring></argsstring>
+        <name>max_torque_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="40" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aa88aa0e9989bb854cc46babc1af6cb6b" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::status_return_level_t</definition>
+        <argsstring></argsstring>
+        <name>status_return_level_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="42" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ac93eef0c9868d500579432907cd20d1e" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::alarm_led_t</definition>
+        <argsstring></argsstring>
+        <name>alarm_led_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="44" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a6b24e11ff21c93d9a7bc349e673e8855" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::alarm_shutdown_t</definition>
+        <argsstring></argsstring>
+        <name>alarm_shutdown_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="46" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a3d99ff8f3e572df17184f79e37ffa714" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::torque_enable_t</definition>
+        <argsstring></argsstring>
+        <name>torque_enable_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="48" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a553021c58ce77060381d3d757709c76a" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::led_t</definition>
+        <argsstring></argsstring>
+        <name>led_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="50" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a9e4073f1e3379524ebe340d053820f84" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::cw_compliance_margin_t</definition>
+        <argsstring></argsstring>
+        <name>cw_compliance_margin_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="52" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a92b5c43ed5faad4b4e1cc9363e5ecfed" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::ccw_compliance_margin_t</definition>
+        <argsstring></argsstring>
+        <name>ccw_compliance_margin_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="54" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ab97da97e81716924c61b11ae85954399" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::cw_compliance_slope_t</definition>
+        <argsstring></argsstring>
+        <name>cw_compliance_slope_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="56" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1af8ec3714d72e7ea828c570a217c9f23e" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::ccw_compliance_slope_t</definition>
+        <argsstring></argsstring>
+        <name>ccw_compliance_slope_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="58" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a7309531129a6cd06f1ce590efeb2b8e0" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::goal_position_t</definition>
+        <argsstring></argsstring>
+        <name>goal_position_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="60" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a24884b1ed34e8cea2479b3d3b70cc278" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::moving_speed_t</definition>
+        <argsstring></argsstring>
+        <name>moving_speed_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="66" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1acf60519762b645c78f05eb7cd19b943e" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::torque_limit_t</definition>
+        <argsstring></argsstring>
+        <name>torque_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="74" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a5c4a35e58c836ce0534ef32fcaf4b391" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::present_position_t</definition>
+        <argsstring></argsstring>
+        <name>present_position_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="76" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ac14ddc74cc1462aae48c827e19e21081" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::present_speed_t</definition>
+        <argsstring></argsstring>
+        <name>present_speed_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="78" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a4559bc7f6aa979f78479ff7345fb2e26" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::present_load_t</definition>
+        <argsstring></argsstring>
+        <name>present_load_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="80" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a86ed76f5847382a6f9294b1dce71357e" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::present_voltage_t</definition>
+        <argsstring></argsstring>
+        <name>present_voltage_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="82" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a1014b5b83a6ec05538b80d87907c0c5b" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::present_temperature_t</definition>
+        <argsstring></argsstring>
+        <name>present_temperature_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="84" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a3929ddffb6d53a5b3cf89d0fc516bd53" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::registered_t</definition>
+        <argsstring></argsstring>
+        <name>registered_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="86" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1abead5fe9d36a2381313b42aacc5d28f2" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::moving_t</definition>
+        <argsstring></argsstring>
+        <name>moving_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="88" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ad7457ad61b93faee650df398279079bd" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::lock_t</definition>
+        <argsstring></argsstring>
+        <name>lock_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="90" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ac92a6c5b696ec40ee9c28b1a61cc10d1" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::punch_t</definition>
+        <argsstring></argsstring>
+        <name>punch_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="92" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a673c0c7643480bfd68e9299014448165" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::model_number</definition>
+        <argsstring></argsstring>
+        <name>model_number</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="18" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1af8846f952da9bf31c5ee45bcc2801487" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1af7cc7d1015e115bb5cee55f69160a20b" kindref="member">model_number_t</ref></type>
+        <definition>const model_number_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::model_number_value</definition>
+        <argsstring></argsstring>
+        <name>model_number_value</name>
+        <initializer>= 12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="20" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a5c92cfb561d383df6c913086eb607d0a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::firmware_version</definition>
+        <argsstring></argsstring>
+        <name>firmware_version</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="21" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a03c91776807cbf7aa49695bfaabc5833" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="23" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a53f812b015d1c75e9d611bd2f33cd4c6" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::baudrate</definition>
+        <argsstring></argsstring>
+        <name>baudrate</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="25" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aa9e6a375bb5dfcdf7903173eaa48df7e" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::return_delay_time</definition>
+        <argsstring></argsstring>
+        <name>return_delay_time</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="27" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a593e47fe284fc2a43ce6ba46095722db" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::cw_angle_limit</definition>
+        <argsstring></argsstring>
+        <name>cw_angle_limit</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="29" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1af3da0e9ec6f13ce490f6feae024ee244" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::ccw_angle_limit</definition>
+        <argsstring></argsstring>
+        <name>ccw_angle_limit</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="31" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aa45891b1686a136d93966768504f44a7" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::highest_temperature_limit</definition>
+        <argsstring></argsstring>
+        <name>highest_temperature_limit</name>
+        <initializer>= 11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="33" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aec1ad10af97e31b0e4a4c336e0794115" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::lowest_voltage_limit</definition>
+        <argsstring></argsstring>
+        <name>lowest_voltage_limit</name>
+        <initializer>= 12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="35" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a41a1e2d1626f87076ea68390f4eb1f2e" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::highest_voltage_limit</definition>
+        <argsstring></argsstring>
+        <name>highest_voltage_limit</name>
+        <initializer>= 13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="37" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1abd14c7899d6d17437f5f0cd7e410703b" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::max_torque</definition>
+        <argsstring></argsstring>
+        <name>max_torque</name>
+        <initializer>= 14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="39" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a7bcae11cf5577cb60a240e71a36238b4" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::status_return_level</definition>
+        <argsstring></argsstring>
+        <name>status_return_level</name>
+        <initializer>= 16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="41" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a2f7f455eea0104a1d7f1c05864810a9a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::alarm_led</definition>
+        <argsstring></argsstring>
+        <name>alarm_led</name>
+        <initializer>= 17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="43" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aac563ab88b7bdbee350d6365f84820bb" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::alarm_shutdown</definition>
+        <argsstring></argsstring>
+        <name>alarm_shutdown</name>
+        <initializer>= 18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="45" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ae11a5bf65de3c1e9df9d103d3f255a4a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::torque_enable</definition>
+        <argsstring></argsstring>
+        <name>torque_enable</name>
+        <initializer>= 24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="47" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a907f8ce11ba0cb0ff45ad7b71d00a260" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::led</definition>
+        <argsstring></argsstring>
+        <name>led</name>
+        <initializer>= 25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="49" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aeb26f523dc8ae231458d4ab9ae26e05f" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::cw_compliance_margin</definition>
+        <argsstring></argsstring>
+        <name>cw_compliance_margin</name>
+        <initializer>= 26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="51" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ae3e9514a63cb9c2dd77aa8aad27321ab" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::ccw_compliance_margin</definition>
+        <argsstring></argsstring>
+        <name>ccw_compliance_margin</name>
+        <initializer>= 27</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="53" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ae4b2c2df7735f9a314827455256a2646" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::cw_compliance_slope</definition>
+        <argsstring></argsstring>
+        <name>cw_compliance_slope</name>
+        <initializer>= 28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="55" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a353bc41ff71d231480ace48d9176164d" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::ccw_compliance_slope</definition>
+        <argsstring></argsstring>
+        <name>ccw_compliance_slope</name>
+        <initializer>= 29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="57" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a4c4608fa80af04ad0689bb2ffb2ad715" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::goal_position</definition>
+        <argsstring></argsstring>
+        <name>goal_position</name>
+        <initializer>= 30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="59" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aad4e5705e79bd8a936a2328a5dd5b437" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a7309531129a6cd06f1ce590efeb2b8e0" kindref="member">goal_position_t</ref></type>
+        <definition>const goal_position_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::min_goal_position</definition>
+        <argsstring></argsstring>
+        <name>min_goal_position</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="61" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a68895fa9290e999fc77c2a185595c324" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a7309531129a6cd06f1ce590efeb2b8e0" kindref="member">goal_position_t</ref></type>
+        <definition>const goal_position_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::max_goal_position</definition>
+        <argsstring></argsstring>
+        <name>max_goal_position</name>
+        <initializer>= 1023</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="62" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aebbf6b60d953347e0a7b58695530d2f4" prot="public" static="yes" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::min_goal_angle_deg</definition>
+        <argsstring></argsstring>
+        <name>min_goal_angle_deg</name>
+        <initializer>= 30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="63" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ad5d7361e896e463c24fec32d08002720" prot="public" static="yes" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::max_goal_angle_deg</definition>
+        <argsstring></argsstring>
+        <name>max_goal_angle_deg</name>
+        <initializer>= 330</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="64" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a5986b28e4d4d17de3842a80dd4da9287" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::moving_speed</definition>
+        <argsstring></argsstring>
+        <name>moving_speed</name>
+        <initializer>= 32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="65" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a725a7a0f3d6e2d690ee71f7ddb114ccb" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a24884b1ed34e8cea2479b3d3b70cc278" kindref="member">moving_speed_t</ref></type>
+        <definition>const moving_speed_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::min_goal_speed</definition>
+        <argsstring></argsstring>
+        <name>min_goal_speed</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="68" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ac09588bc15c811f55a0063f370f7ccc6" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a24884b1ed34e8cea2479b3d3b70cc278" kindref="member">moving_speed_t</ref></type>
+        <definition>const moving_speed_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::max_goal_speed</definition>
+        <argsstring></argsstring>
+        <name>max_goal_speed</name>
+        <initializer>= 1023</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="69" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aef16cd261f48e871e2324f1626578a54" prot="public" static="yes" mutable="no">
+        <type>constexpr double</type>
+        <definition>constexpr double dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::rpm_per_tick</definition>
+        <argsstring></argsstring>
+        <name>rpm_per_tick</name>
+        <initializer>= 0.111</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="70" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a4160f31e7d5ad212d29894762d49fb23" prot="public" static="yes" mutable="no">
+        <type>constexpr bool</type>
+        <definition>constexpr bool dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::speed_sign_bit</definition>
+        <argsstring></argsstring>
+        <name>speed_sign_bit</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="71" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a1ab6f1b0cb3adf858747828c5011c7c2" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::torque_limit</definition>
+        <argsstring></argsstring>
+        <name>torque_limit</name>
+        <initializer>= 34</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="73" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a2dfaea1f6fdce950db032ff28ef13699" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::present_position</definition>
+        <argsstring></argsstring>
+        <name>present_position</name>
+        <initializer>= 36</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="75" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ae33fc3e6278ee9269a7fbdf1972c354f" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::present_speed</definition>
+        <argsstring></argsstring>
+        <name>present_speed</name>
+        <initializer>= 38</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="77" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a55aed3a9da9a5bb141ac3599eb651790" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::present_load</definition>
+        <argsstring></argsstring>
+        <name>present_load</name>
+        <initializer>= 40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="79" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aeb1cf48b5e3dfcfa3f0481c61f8e1d38" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::present_voltage</definition>
+        <argsstring></argsstring>
+        <name>present_voltage</name>
+        <initializer>= 42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="81" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ae06072199abdd03dab37e3c25b9093f1" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::present_temperature</definition>
+        <argsstring></argsstring>
+        <name>present_temperature</name>
+        <initializer>= 43</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="83" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ab736e0f0fb8d1e8ccaf7a459f2409bd9" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::registered</definition>
+        <argsstring></argsstring>
+        <name>registered</name>
+        <initializer>= 44</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="85" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a71c4b89dae50e93eda83ab6eeb26fdd1" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::moving</definition>
+        <argsstring></argsstring>
+        <name>moving</name>
+        <initializer>= 46</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="87" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1acdb5614c08120df08a2b550a02b071ad" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <initializer>= 47</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="89" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a7171f71fd3888ca18f1771efeb3fceac" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT::punch</definition>
+        <argsstring></argsstring>
+        <name>punch</name>
+        <initializer>= 48</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="91" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="17" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" bodystart="17" bodyend="93"/>
+    <listofallmembers>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a2f7f455eea0104a1d7f1c05864810a9a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>alarm_led</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ac93eef0c9868d500579432907cd20d1e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>alarm_led_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aac563ab88b7bdbee350d6365f84820bb" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>alarm_shutdown</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a6b24e11ff21c93d9a7bc349e673e8855" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>alarm_shutdown_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a53f812b015d1c75e9d611bd2f33cd4c6" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>baudrate</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a72a5f288d96c6eceb04aaf15d0006da1" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>baudrate_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1af3da0e9ec6f13ce490f6feae024ee244" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>ccw_angle_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a6c07271575b0f9d66e3629b163cc87e3" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>ccw_angle_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ae3e9514a63cb9c2dd77aa8aad27321ab" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>ccw_compliance_margin</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a92b5c43ed5faad4b4e1cc9363e5ecfed" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>ccw_compliance_margin_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a353bc41ff71d231480ace48d9176164d" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>ccw_compliance_slope</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1af8ec3714d72e7ea828c570a217c9f23e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>ccw_compliance_slope_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a593e47fe284fc2a43ce6ba46095722db" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>cw_angle_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a6f204c4baeeeaa1c8a78b3660db77b93" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>cw_angle_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aeb26f523dc8ae231458d4ab9ae26e05f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>cw_compliance_margin</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a9e4073f1e3379524ebe340d053820f84" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>cw_compliance_margin_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ae4b2c2df7735f9a314827455256a2646" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>cw_compliance_slope</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ab97da97e81716924c61b11ae85954399" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>cw_compliance_slope_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a5c92cfb561d383df6c913086eb607d0a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>firmware_version</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a081478d3259bb860884584ad45f345f5" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>firmware_version_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a4c4608fa80af04ad0689bb2ffb2ad715" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a7309531129a6cd06f1ce590efeb2b8e0" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>goal_position_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aa45891b1686a136d93966768504f44a7" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>highest_temperature_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a927ba4cfd2e68533b00e9db76589297e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>highest_temperature_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a41a1e2d1626f87076ea68390f4eb1f2e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>highest_voltage_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a0ec896de7f99023cdf96e38d9a214005" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>highest_voltage_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a03c91776807cbf7aa49695bfaabc5833" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>id</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a0c872d4cb05d243b3a1ad358a6b036b4" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>id_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a907f8ce11ba0cb0ff45ad7b71d00a260" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>led</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a553021c58ce77060381d3d757709c76a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>led_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1acdb5614c08120df08a2b550a02b071ad" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>lock</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ad7457ad61b93faee650df398279079bd" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>lock_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aec1ad10af97e31b0e4a4c336e0794115" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>lowest_voltage_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a72cfdfd8425b57d9b2cad7ecf5cea18a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>lowest_voltage_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ad5d7361e896e463c24fec32d08002720" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>max_goal_angle_deg</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a68895fa9290e999fc77c2a185595c324" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>max_goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ac09588bc15c811f55a0063f370f7ccc6" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>max_goal_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1abd14c7899d6d17437f5f0cd7e410703b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>max_torque</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a426746f28397608a2e790ef6316dc34e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>max_torque_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aebbf6b60d953347e0a7b58695530d2f4" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>min_goal_angle_deg</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aad4e5705e79bd8a936a2328a5dd5b437" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>min_goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a725a7a0f3d6e2d690ee71f7ddb114ccb" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>min_goal_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a673c0c7643480bfd68e9299014448165" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>model_number</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1af7cc7d1015e115bb5cee55f69160a20b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>model_number_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1af8846f952da9bf31c5ee45bcc2801487" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>model_number_value</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a71c4b89dae50e93eda83ab6eeb26fdd1" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>moving</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a5986b28e4d4d17de3842a80dd4da9287" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>moving_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a24884b1ed34e8cea2479b3d3b70cc278" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>moving_speed_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1abead5fe9d36a2381313b42aacc5d28f2" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>moving_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a55aed3a9da9a5bb141ac3599eb651790" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>present_load</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a4559bc7f6aa979f78479ff7345fb2e26" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>present_load_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a2dfaea1f6fdce950db032ff28ef13699" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>present_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a5c4a35e58c836ce0534ef32fcaf4b391" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>present_position_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ae33fc3e6278ee9269a7fbdf1972c354f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>present_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ac14ddc74cc1462aae48c827e19e21081" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>present_speed_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ae06072199abdd03dab37e3c25b9093f1" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>present_temperature</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a1014b5b83a6ec05538b80d87907c0c5b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>present_temperature_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aeb1cf48b5e3dfcfa3f0481c61f8e1d38" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>present_voltage</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a86ed76f5847382a6f9294b1dce71357e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>present_voltage_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a7171f71fd3888ca18f1771efeb3fceac" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>punch</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ac92a6c5b696ec40ee9c28b1a61cc10d1" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>punch_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ab736e0f0fb8d1e8ccaf7a459f2409bd9" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>registered</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a3929ddffb6d53a5b3cf89d0fc516bd53" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>registered_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aa9e6a375bb5dfcdf7903173eaa48df7e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>return_delay_time</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a6dca5b5fe3adf16a9fa8ccc9d26a08a6" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>return_delay_time_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aef16cd261f48e871e2324f1626578a54" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>rpm_per_tick</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a4160f31e7d5ad212d29894762d49fb23" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>speed_sign_bit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a7bcae11cf5577cb60a240e71a36238b4" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>status_return_level</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1aa88aa0e9989bb854cc46babc1af6cb6b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>status_return_level_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1ae11a5bf65de3c1e9df9d103d3f255a4a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>torque_enable</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a3d99ff8f3e572df17184f79e37ffa714" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>torque_enable_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1a1ab6f1b0cb3adf858747828c5011c7c2" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>torque_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4_1_1_c_t_1acf60519762b645c78f05eb7cd19b943e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; Ax12 &gt;::CT</scope><name>torque_limit_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

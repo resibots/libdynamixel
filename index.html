@@ -98,6 +98,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Libdynamixel&#8217;s documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_api.html">High level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="low_level_api.html">Low level API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
 </ul>
 
@@ -154,7 +156,7 @@
 <h1>Libdynamixel&#8217;s documentation<a class="headerlink" href="#libdynamixel-s-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="libdynamixel">
 <h2>libdynamixel<a class="headerlink" href="#libdynamixel" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://github.com/resibots/libdynamixel">libdynamixel</a> is a C++ library for the <a class="reference external" href="http://en.robotis.com/index/product.php?cate_code=101010">Dynamixel</a> actuators. Its goals are to be fast and to work with most Dynamixels, including the Dynamixel Pro actuators.</p>
+<p><a class="reference external" href="https://github.com/resibots/libdynamixel">libdynamixel</a> is a C++11 library for the <a class="reference external" href="http://en.robotis.com/index/product.php?cate_code=101010">Dynamixel</a> actuators. Its goals are to be fast and to work with most Dynamixels, including the Dynamixel Pro actuators.</p>
 <p>This library comes with a command line utility that can, among other things, be very convenient for the configuration of your actuators.</p>
 </div>
 <div class="section" id="features">
@@ -162,7 +164,7 @@
 <ul class="simple">
 <li>supports Dynamixel series AX, MX, EX, XL and Pro</li>
 <li>supports all instructions and messages of both version 1 and 2 of the Dynamixel communication protocol</li>
-<li>full C++ api<ul>
+<li>full C++11 api<ul>
 <li>template-based API for fast and low-level access</li>
 <li>class-based unified API abstracting away the differences between the actuators (as long as they use the same Dynamixel protocol).</li>
 </ul>
@@ -180,6 +182,13 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorials/quick_start.html">Quick Start</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/download_and_compilation.html">Download and Compilation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/motor_control.html">Control one actuator&#8217;s position or speed</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_api.html">High level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="low_level_api.html">Low level API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="low_level_api.html#controllers">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="low_level_api.html#instructions-packets">Instructions Packets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="low_level_api.html#errors">Errors</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a><ul>

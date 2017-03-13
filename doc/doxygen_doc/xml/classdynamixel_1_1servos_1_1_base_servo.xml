@@ -1,0 +1,1418 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1servos_1_1_base_servo" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::servos::BaseServo</compoundname>
+    <includes refid="base__servo_8hpp" local="no">dynamixel/servos/base_servo.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>Protocol</declname>
+        <defname>Protocol</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" prot="public" static="no">
+        <type>Protocol</type>
+        <definition>typedef Protocol dynamixel::servos::BaseServo&lt; Protocol &gt;::protocol_t</definition>
+        <argsstring></argsstring>
+        <name>protocol_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="41" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a191c1596a4fcbe43cc7b9292f83e196b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>long long int</type>
+        <definition>virtual long long int dynamixel::servos::BaseServo&lt; Protocol &gt;::id</definition>
+        <argsstring>() const </argsstring>
+        <name>id</name>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="43" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a20e7410262e37dcd177e81a41d78d8ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void dynamixel::servos::BaseServo&lt; Protocol &gt;::id</definition>
+        <argsstring>(long long int id)</argsstring>
+        <name>id</name>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a866e0cdb2ee9f3c622305634368b18f2">id</reimplementedby>
+        <param>
+          <type>long long int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="48" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a0878d6f74b1a26bf23fa53a296fd8283" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string dynamixel::servos::BaseServo&lt; Protocol &gt;::model_name</definition>
+        <argsstring>() const </argsstring>
+        <name>model_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="53" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(model_number)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>model_number</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="60" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aa700a94b75b928640dbcd887417db861" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(firmware_version)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>firmware_version</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="61" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1af3eded69e54365d754ba7715c9af57ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(id)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type><ref refid="classdynamixel_1_1servos_1_1_base_servo_1a191c1596a4fcbe43cc7b9292f83e196b" kindref="member">id</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="62" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a48bfb690093b070720aa7ca522ab6b1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(baudrate)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>baudrate</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="63" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1abe54af60eda15894e0be32fe7c447906" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(return_delay_time)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>return_delay_time</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="64" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ac3c0ffaea0c5adb2245a875bdd0d9a15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(highest_temperature_limit)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>highest_temperature_limit</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="65" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a012af5ca86e8020bf3bd95f2abed4bcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(highest_voltage_limit)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>highest_voltage_limit</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="66" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ade5dee7e7e3029b7a9779b726f763112" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(lowest_voltage_limit)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>lowest_voltage_limit</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="67" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a1133c7f435ceb0d82542f609034c7b6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(status_return_level)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>status_return_level</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a9b009f5190906b3851daf59d55b7cb8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(alarm_shutdown)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>alarm_shutdown</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aa7c4e55ffcd9f798807d7192df7c9a11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(torque_enable)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>torque_enable</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="70" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1afa45f82edf10091dccc4cacf8731f466" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(goal_position)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>goal_position</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a3319c8cbd3faf82f56f4b3d24a88007d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(moving_speed)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>moving_speed</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="72" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a33900c9ece00c4a137d60a2084cdb05e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(present_position)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>present_position</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="73" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a84ddc664e4dbd299a218d06f7cd77201" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(present_speed)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>present_speed</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ab5167c0a8fec3502cac03b94d2724647" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(present_voltage)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>present_voltage</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="75" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1adebb7ca3f7e87a284b9211d1f94a0dda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(present_temperature)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>present_temperature</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="76" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a2c06de53ab5b5e8d910da1dfd172e4f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(registered)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>registered</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="77" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a46fc43c764852d3aa1a1b839b367af7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(moving)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>moving</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="78" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ad6f5dae7112bf5ada32bfcab4bdf2249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(cw_angle_limit)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>cw_angle_limit</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ac18bbfd90b36bc38b484f250e0e73395" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(ccw_angle_limit)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>ccw_angle_limit</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="81" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a66d87963957d700b0cb3e5489280102d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(drive_mode)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>drive_mode</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="82" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1abfb2b375965a742dae13df7324a340a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(max_torque)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>max_torque</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="83" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a6590f524917293ab98556346bac1981f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(alarm_led)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>alarm_led</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a70470a70099add231dd287d5b69a3e05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(led)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>led</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="85" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1abe0a74eeee4b456096d1ae2a114d91c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(cw_compliance_margin)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>cw_compliance_margin</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aab9dc28556b2f869338111a3169829d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(ccw_compliance_margin)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>ccw_compliance_margin</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="87" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a3b9a6dda5ecd09debc17fe9fb72d255b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(cw_compliance_slope)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>cw_compliance_slope</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a84e568db5fcd8725ace1873c56545e39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(ccw_compliance_slope)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>ccw_compliance_slope</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="89" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a33d2a6eed08c33fc4786404dd5399daa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(torque_limit)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>torque_limit</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aa2e7a577c80aea887b05b53c76578acf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(present_load)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>present_load</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="91" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a6a1cc09047bac429e7b50cf69a59e2e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(lock)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>lock</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="92" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ab9dde35a6228cfe48b2a58b0ab679de5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(punch)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>punch</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="93" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a13f8ab07c4c2274c9b0191c7bb43a159" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(sensed_current)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>sensed_current</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="94" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aa57f1bf9f68d5ff6bbee12ad9de25f03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(multi_turn_offset)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>multi_turn_offset</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="96" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a046123a7102b0f8576a5379244dab59f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(resolution_divider)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>resolution_divider</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a2faa22f6a3eb0ec3e01e4ca427f11ddd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(d_gain)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>d_gain</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="98" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a2f96570d1a8c874bc38bfe53c19d6bba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(i_gain)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>i_gain</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="99" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a49e5eeb24d2f0a56e6450dffd8bd6d9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(p_gain)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>p_gain</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="100" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a3e081b1577bbe5571cfcf277ebaeb90a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(current)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>current</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="101" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a828703bacd6f83b91a4c4bbe7cb45d7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(torque_control_mode_enabled)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>torque_control_mode_enabled</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="102" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1af4433354d94851217d5931b528be26a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(goal_torque)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>goal_torque</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="103" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a87f4340b3d3c266be54fe22cb0573128" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(goal_acceleration)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>goal_acceleration</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a534b4f6823ed8c8c2e2b650d76aef90a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(model_info)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>model_info</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1afe1a1fd0d8a3195fc053186729e493d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(operating_mode)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>operating_mode</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="107" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a3feb535f2ec0d53f4b8dbb873e78875a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(homing_offset)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>homing_offset</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="108" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ae380e8c4a76f8377bdb7112b3ad3fa68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(moving_threshold)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>moving_threshold</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="109" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a17a48b48ed6277f17477656977c373e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(acceleration_limit)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>acceleration_limit</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="110" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a28a3e801191c864226610c99163b906a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(speed_limit)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>speed_limit</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a8f269d5d442445a4744e6404b5cb2c58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(max_position_limit)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>max_position_limit</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="112" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aaefe353baec0ad45d9310e985da01fd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(min_position_limit)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>min_position_limit</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="113" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a2675879e1916600b4251a8798dda7792" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(led_r)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>led_r</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="114" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ad004618d6add77d2a3599dfe0a9b8be2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(led_g)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>led_g</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="115" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1afbf232f99d9b318714936dd12fd71474" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(led_b)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>led_b</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="116" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a87e0bff5c474582d9bbd1ffe45f91da5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(velocity_i_gain)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>velocity_i_gain</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="117" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a3ecd90f9f9c23eefeb298508ce7d26d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(velocity_p_gain)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>velocity_p_gain</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="118" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a0aa14b2dc61dafdb0e1e238a37e57083" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(position_p_gain)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>position_p_gain</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="119" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a8a5b6f0cccde10173a942d1da92a4064" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(hardware_error_status)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>hardware_error_status</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="120" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ad9fe76845a8b139921b35b7d346480e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BASE_FIELD</definition>
+        <argsstring>(control_mode)</argsstring>
+        <name>BASE_FIELD</name>
+        <param>
+          <type>control_mode</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="122" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1adae0a44afbebfb03343d325648387301" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
+        <definition>virtual InstructionPacket&lt;protocol_t&gt; dynamixel::servos::BaseServo&lt; Protocol &gt;::ping</definition>
+        <argsstring>() const </argsstring>
+        <name>ping</name>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="125" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="125" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ac91b383ed4ba24ccc142fe6cb08479fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
+        <definition>virtual InstructionPacket&lt;protocol_t&gt; dynamixel::servos::BaseServo&lt; Protocol &gt;::set_goal_position_angle</definition>
+        <argsstring>(double rad) const </argsstring>
+        <name>set_goal_position_angle</name>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a02827789424669a3e34d5e87b7446bdd">set_goal_position_angle</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>rad</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="133" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="133" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a5912ce58f8d174bcccd07ef75fef6a6b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
+        <definition>virtual InstructionPacket&lt;protocol_t&gt; dynamixel::servos::BaseServo&lt; Protocol &gt;::reg_goal_position_angle</definition>
+        <argsstring>(double rad) const </argsstring>
+        <name>reg_goal_position_angle</name>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1ac435a6f8e971bd1db3d7456edb97cf03">reg_goal_position_angle</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>rad</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="138" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a26a0ccb64fcefde496e1f45ed6462125" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
+        <definition>virtual InstructionPacket&lt;protocol_t&gt; dynamixel::servos::BaseServo&lt; Protocol &gt;::get_present_position_angle</definition>
+        <argsstring>() const </argsstring>
+        <name>get_present_position_angle</name>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a28c5330eed1d17ae41b0bbf5268d09e6">get_present_position_angle</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="143" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a235479ae2b41314f2d5f9492a1b09b44" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>virtual double dynamixel::servos::BaseServo&lt; Protocol &gt;::parse_present_position_angle</definition>
+        <argsstring>(const StatusPacket&lt; protocol_t &gt; &amp;st) const </argsstring>
+        <name>parse_present_position_angle</name>
+        <param>
+          <type>const <ref refid="classdynamixel_1_1_status_packet" kindref="compound">StatusPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt; &amp;</type>
+          <declname>st</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="148" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="148" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a5a976fa54ae637537b03596befcb7529" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
+        <definition>virtual InstructionPacket&lt;protocol_t&gt; dynamixel::servos::BaseServo&lt; Protocol &gt;::set_moving_speed_angle</definition>
+        <argsstring>(double rad_per_s, cst::OperatingMode operating_mode=cst::joint) const </argsstring>
+        <name>set_moving_speed_angle</name>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a35e4d514a5a87ae20c80e36b95a7a894">set_moving_speed_angle</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>rad_per_s</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809" kindref="member">cst::OperatingMode</ref></type>
+          <declname>operating_mode</declname>
+          <defval><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a1fdfcfad31f04d24b25c0842e9d99c48" kindref="member">cst::joint</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="156" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="156" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a2b9b43a25ff078a54031f58e752a177e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
+        <definition>virtual InstructionPacket&lt;protocol_t&gt; dynamixel::servos::BaseServo&lt; Protocol &gt;::reg_moving_speed_angle</definition>
+        <argsstring>(double rad_per_s, cst::OperatingMode operating_mode=cst::joint) const </argsstring>
+        <name>reg_moving_speed_angle</name>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a31c0e19f19709071556585881b36e2a6">reg_moving_speed_angle</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>rad_per_s</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809" kindref="member">cst::OperatingMode</ref></type>
+          <declname>operating_mode</declname>
+          <defval><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a1fdfcfad31f04d24b25c0842e9d99c48" kindref="member">cst::joint</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="161" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="161" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a1fec786a4f11bd3febc4c6122e33cab5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>virtual double dynamixel::servos::BaseServo&lt; Protocol &gt;::parse_joint_speed</definition>
+        <argsstring>(const StatusPacket&lt; protocol_t &gt; &amp;st) const </argsstring>
+        <name>parse_joint_speed</name>
+        <param>
+          <type>const <ref refid="classdynamixel_1_1_status_packet" kindref="compound">StatusPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt; &amp;</type>
+          <declname>st</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="166" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="166" bodyend="169"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a07902ef06aaad9500d6097c56651aafc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::servos::BaseServo&lt; Protocol &gt;::BaseServo</definition>
+        <argsstring>()</argsstring>
+        <name>BaseServo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="172" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="172" bodyend="172"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="39" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="39" bodyend="173"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1aa700a94b75b928640dbcd887417db861" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1af3eded69e54365d754ba7715c9af57ae" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a48bfb690093b070720aa7ca522ab6b1a" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1abe54af60eda15894e0be32fe7c447906" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ac3c0ffaea0c5adb2245a875bdd0d9a15" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a012af5ca86e8020bf3bd95f2abed4bcd" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ade5dee7e7e3029b7a9779b726f763112" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a1133c7f435ceb0d82542f609034c7b6a" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a9b009f5190906b3851daf59d55b7cb8b" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1aa7c4e55ffcd9f798807d7192df7c9a11" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1afa45f82edf10091dccc4cacf8731f466" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a3319c8cbd3faf82f56f4b3d24a88007d" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a33900c9ece00c4a137d60a2084cdb05e" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a84ddc664e4dbd299a218d06f7cd77201" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ab5167c0a8fec3502cac03b94d2724647" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1adebb7ca3f7e87a284b9211d1f94a0dda" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a2c06de53ab5b5e8d910da1dfd172e4f5" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a46fc43c764852d3aa1a1b839b367af7c" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ad6f5dae7112bf5ada32bfcab4bdf2249" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ac18bbfd90b36bc38b484f250e0e73395" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a66d87963957d700b0cb3e5489280102d" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1abfb2b375965a742dae13df7324a340a9" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a6590f524917293ab98556346bac1981f" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a70470a70099add231dd287d5b69a3e05" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1abe0a74eeee4b456096d1ae2a114d91c2" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1aab9dc28556b2f869338111a3169829d9" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a3b9a6dda5ecd09debc17fe9fb72d255b" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a84e568db5fcd8725ace1873c56545e39" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a33d2a6eed08c33fc4786404dd5399daa" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1aa2e7a577c80aea887b05b53c76578acf" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a6a1cc09047bac429e7b50cf69a59e2e7" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ab9dde35a6228cfe48b2a58b0ab679de5" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a13f8ab07c4c2274c9b0191c7bb43a159" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1aa57f1bf9f68d5ff6bbee12ad9de25f03" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a046123a7102b0f8576a5379244dab59f" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a2faa22f6a3eb0ec3e01e4ca427f11ddd" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a2f96570d1a8c874bc38bfe53c19d6bba" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a49e5eeb24d2f0a56e6450dffd8bd6d9c" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a3e081b1577bbe5571cfcf277ebaeb90a" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a828703bacd6f83b91a4c4bbe7cb45d7e" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1af4433354d94851217d5931b528be26a1" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a87f4340b3d3c266be54fe22cb0573128" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a534b4f6823ed8c8c2e2b650d76aef90a" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1afe1a1fd0d8a3195fc053186729e493d7" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a3feb535f2ec0d53f4b8dbb873e78875a" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ae380e8c4a76f8377bdb7112b3ad3fa68" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a17a48b48ed6277f17477656977c373e3" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a28a3e801191c864226610c99163b906a" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a8f269d5d442445a4744e6404b5cb2c58" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1aaefe353baec0ad45d9310e985da01fd7" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a2675879e1916600b4251a8798dda7792" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ad004618d6add77d2a3599dfe0a9b8be2" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1afbf232f99d9b318714936dd12fd71474" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a87e0bff5c474582d9bbd1ffe45f91da5" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a3ecd90f9f9c23eefeb298508ce7d26d9" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a0aa14b2dc61dafdb0e1e238a37e57083" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a8a5b6f0cccde10173a942d1da92a4064" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ad9fe76845a8b139921b35b7d346480e1" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a07902ef06aaad9500d6097c56651aafc" prot="private" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BaseServo</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a26a0ccb64fcefde496e1f45ed6462125" prot="public" virt="virtual"><scope>dynamixel::servos::BaseServo</scope><name>get_present_position_angle</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a191c1596a4fcbe43cc7b9292f83e196b" prot="public" virt="virtual"><scope>dynamixel::servos::BaseServo</scope><name>id</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a20e7410262e37dcd177e81a41d78d8ba" prot="public" virt="virtual"><scope>dynamixel::servos::BaseServo</scope><name>id</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a0878d6f74b1a26bf23fa53a296fd8283" prot="public" virt="virtual"><scope>dynamixel::servos::BaseServo</scope><name>model_name</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a1fec786a4f11bd3febc4c6122e33cab5" prot="public" virt="virtual"><scope>dynamixel::servos::BaseServo</scope><name>parse_joint_speed</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a235479ae2b41314f2d5f9492a1b09b44" prot="public" virt="virtual"><scope>dynamixel::servos::BaseServo</scope><name>parse_present_position_angle</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1adae0a44afbebfb03343d325648387301" prot="public" virt="virtual"><scope>dynamixel::servos::BaseServo</scope><name>ping</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>protocol_t</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a5912ce58f8d174bcccd07ef75fef6a6b" prot="public" virt="virtual"><scope>dynamixel::servos::BaseServo</scope><name>reg_goal_position_angle</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a2b9b43a25ff078a54031f58e752a177e" prot="public" virt="virtual"><scope>dynamixel::servos::BaseServo</scope><name>reg_moving_speed_angle</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1ac91b383ed4ba24ccc142fe6cb08479fe" prot="public" virt="virtual"><scope>dynamixel::servos::BaseServo</scope><name>set_goal_position_angle</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_base_servo_1a5a976fa54ae637537b03596befcb7529" prot="public" virt="virtual"><scope>dynamixel::servos::BaseServo</scope><name>set_moving_speed_angle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="namespacedynamixel_1_1servos" kind="namespace" language="C++">
+    <compoundname>dynamixel::servos</compoundname>
+    <innerclass refid="classdynamixel_1_1servos_1_1_ax12" prot="public">dynamixel::servos::Ax12</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_ax12_w" prot="public">dynamixel::servos::Ax12W</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_ax18" prot="public">dynamixel::servos::Ax18</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_base_servo" prot="public">dynamixel::servos::BaseServo</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_ex106" prot="public">dynamixel::servos::Ex106</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits" prot="public">dynamixel::servos::ModelTraits</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_01_4" prot="public">dynamixel::servos::ModelTraits&lt; Ax12 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax12_w_01_4" prot="public">dynamixel::servos::ModelTraits&lt; Ax12W &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ax18_01_4" prot="public">dynamixel::servos::ModelTraits&lt; Ax18 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_ex106_01_4" prot="public">dynamixel::servos::ModelTraits&lt; Ex106 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx106_01_4" prot="public">dynamixel::servos::ModelTraits&lt; Mx106 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx12_01_4" prot="public">dynamixel::servos::ModelTraits&lt; Mx12 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx28_01_4" prot="public">dynamixel::servos::ModelTraits&lt; Mx28 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_mx64_01_4" prot="public">dynamixel::servos::ModelTraits&lt; Mx64 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_h4220_s300_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProH4220S300 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_h54100_s500_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProH54100S500 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_h54200_s500_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProH54200S500 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l4210_s300_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProL4210S300 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s400_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProL5430S400 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5450_s290_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProL5450S290 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5450_s500_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProL5450S500 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m4210_s260_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProM4210S260 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5440_s250_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProM5440S250 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProM5460S250 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_xl320_01_4" prot="public">dynamixel::servos::ModelTraits&lt; Xl320 &gt;</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_mx106" prot="public">dynamixel::servos::Mx106</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_mx12" prot="public">dynamixel::servos::Mx12</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_mx28" prot="public">dynamixel::servos::Mx28</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_mx64" prot="public">dynamixel::servos::Mx64</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_h4220_s300" prot="public">dynamixel::servos::ProH4220S300</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_h54100_s500" prot="public">dynamixel::servos::ProH54100S500</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_h54200_s500" prot="public">dynamixel::servos::ProH54200S500</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_l4210_s300" prot="public">dynamixel::servos::ProL4210S300</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_l5430_s400" prot="public">dynamixel::servos::ProL5430S400</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_l5430_s500" prot="public">dynamixel::servos::ProL5430S500</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_l5450_s290" prot="public">dynamixel::servos::ProL5450S290</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_l5450_s500" prot="public">dynamixel::servos::ProL5450S500</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_m4210_s260" prot="public">dynamixel::servos::ProM4210S260</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_m5440_s250" prot="public">dynamixel::servos::ProM5440S250</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_m5460_s250" prot="public">dynamixel::servos::ProM5460S250</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_protocol_specific_packets" prot="public">dynamixel::servos::ProtocolSpecificPackets</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol1_01_4" prot="public">dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol1 &gt;</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4" prot="public">dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_servo" prot="public">dynamixel::servos::Servo</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_xl320" prot="public">dynamixel::servos::Xl320</innerclass>
+    <innernamespace refid="namespacedynamixel_1_1servos_1_1cst">dynamixel::servos::cst</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp" line="10" column="1"/>
+  </compounddef>
+</doxygen>

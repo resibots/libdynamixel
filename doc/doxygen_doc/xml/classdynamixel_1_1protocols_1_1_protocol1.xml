@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1protocols_1_1_protocol1" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::protocols::Protocol1</compoundname>
+    <includes refid="protocol1_8hpp" local="no">dynamixel/protocols/protocol1.hpp</includes>
+    <innerclass refid="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions" prot="public">dynamixel::protocols::Protocol1::Instructions</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classdynamixel_1_1protocols_1_1_protocol1_1a84867f282d00506d43ebca811925fbcc" prot="public" static="no">
+        <name>DecodeState</name>
+        <enumvalue id="classdynamixel_1_1protocols_1_1_protocol1_1a84867f282d00506d43ebca811925fbcca2735c69e905cf95470f9e383355a130b" prot="public">
+          <name>INVALID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classdynamixel_1_1protocols_1_1_protocol1_1a84867f282d00506d43ebca811925fbcca527e017e69d1c32dd1cbf06765d71d78" prot="public">
+          <name>ONGOING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classdynamixel_1_1protocols_1_1_protocol1_1a84867f282d00506d43ebca811925fbccac417bdba2b956d4e604a2765a656c84c" prot="public">
+          <name>DONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="35" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="35" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classdynamixel_1_1protocols_1_1_protocol1_1a1d4dfa22b01f80b1876d14f539d52b5c" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::protocols::Protocol1::id_t</definition>
+        <argsstring></argsstring>
+        <name>id_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="18" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classdynamixel_1_1protocols_1_1_protocol1_1a572dc8c0871ecdf3d62c4f58fbcfd454" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::protocols::Protocol1::instr_t</definition>
+        <argsstring></argsstring>
+        <name>instr_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="19" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::protocols::Protocol1::address_t</definition>
+        <argsstring></argsstring>
+        <name>address_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="20" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classdynamixel_1_1protocols_1_1_protocol1_1acd6456c39a2f75de2db3d730941027cc" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::protocols::Protocol1::length_t</definition>
+        <argsstring></argsstring>
+        <name>length_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="21" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classdynamixel_1_1protocols_1_1_protocol1_1ac14fd1ffbfadfccf29a923149f416de2" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a1d4dfa22b01f80b1876d14f539d52b5c" kindref="member">id_t</ref></type>
+        <definition>const id_t dynamixel::protocols::Protocol1::broadcast_id</definition>
+        <argsstring></argsstring>
+        <name>broadcast_id</name>
+        <initializer>= 0xFE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="23" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1ac2eaf7383aedc5fc0b61d2b84328b4a9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>static std::vector&lt;uint8_t&gt; dynamixel::protocols::Protocol1::pack_instruction</definition>
+        <argsstring>(id_t id, instr_t instr)</argsstring>
+        <name>pack_instruction</name>
+        <param>
+          <type><ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a1d4dfa22b01f80b1876d14f539d52b5c" kindref="member">id_t</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a572dc8c0871ecdf3d62c4f58fbcfd454" kindref="member">instr_t</ref></type>
+          <declname>instr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="41" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="41" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1a2286b86dca486be62e82b9ad9b60cf66" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>static std::vector&lt;uint8_t&gt; dynamixel::protocols::Protocol1::pack_instruction</definition>
+        <argsstring>(id_t id, instr_t instr, const std::vector&lt; uint8_t &gt; &amp;parameters)</argsstring>
+        <name>pack_instruction</name>
+        <param>
+          <type><ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a1d4dfa22b01f80b1876d14f539d52b5c" kindref="member">id_t</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type><ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a572dc8c0871ecdf3d62c4f58fbcfd454" kindref="member">instr_t</ref></type>
+          <declname>instr</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>parameters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="61" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="61" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1a760708ffe05dabe2a6f25b0a5f9a5080" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>static std::vector&lt;uint8_t&gt; dynamixel::protocols::Protocol1::pack_data</definition>
+        <argsstring>(uint8_t data)</argsstring>
+        <name>pack_data</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="86" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="86" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1af24d6a0f3565518334ddaff39b562843" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>static std::vector&lt;uint8_t&gt; dynamixel::protocols::Protocol1::pack_data</definition>
+        <argsstring>(uint16_t data)</argsstring>
+        <name>pack_data</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="93" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="93" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1a3e69c4c9c6b66571f7771dd46f25e008" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>static std::vector&lt;uint8_t&gt; dynamixel::protocols::Protocol1::pack_data</definition>
+        <argsstring>(uint32_t data)</argsstring>
+        <name>pack_data</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="101" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="101" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1af5cd815ec062a17369bc91aac1d88830" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>static std::vector&lt;uint8_t&gt; dynamixel::protocols::Protocol1::pack_data</definition>
+        <argsstring>(int32_t data)</argsstring>
+        <name>pack_data</name>
+        <param>
+          <type>int32_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="107" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="107" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1ab70c9b89bc4664cdc112dac5e73b9a7f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void dynamixel::protocols::Protocol1::unpack_data</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;packet, uint8_t &amp;res)</argsstring>
+        <name>unpack_data</name>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type>uint8_t &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="113" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="113" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1a3c5b9e4fed65b82f1db4b7f28684c8bb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void dynamixel::protocols::Protocol1::unpack_data</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;packet, uint16_t &amp;res)</argsstring>
+        <name>unpack_data</name>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="120" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="120" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1aa1235753ab679394e53a2e5db2d9f443" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void dynamixel::protocols::Protocol1::unpack_data</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;packet, uint32_t &amp;res)</argsstring>
+        <name>unpack_data</name>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="127" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="127" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1ac5c7564982fadaeb0ff1e1d2163e4cea" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void dynamixel::protocols::Protocol1::unpack_data</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;packet, int32_t &amp;res)</argsstring>
+        <name>unpack_data</name>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type>int32_t &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="133" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="133" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1a4f79051bd5a2d77fd30eadaa16740b77" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a84867f282d00506d43ebca811925fbcc" kindref="member">DecodeState</ref></type>
+        <definition>static DecodeState dynamixel::protocols::Protocol1::unpack_status</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;packet, id_t &amp;id, std::vector&lt; uint8_t &gt; &amp;parameters, bool throw_exceptions=false)</argsstring>
+        <name>unpack_status</name>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type><ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a1d4dfa22b01f80b1876d14f539d52b5c" kindref="member">id_t</ref> &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>parameters</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>throw_exceptions</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decodes the content of a status packet received from the servos</para><para>This method is only used by the <ref refid="classdynamixel_1_1_status_packet" kindref="compound">StatusPacket</ref> class, to make it independent of the protocol version.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>packet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>content of the received packet </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of the sending actuator </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parameters</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>parameters of the status packet, filled by unpack_status </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>throw_exceptions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>boolean telling to throw exceptions if the packet is malformed</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the state of the packet unpacking</para></simplesect>
+<simplesect kind="see"><para><ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a4f79051bd5a2d77fd30eadaa16740b77" kindref="member">unpack_status</ref> in <ref refid="protocol2_8hpp" kindref="compound">protocol2.hpp</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="155" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="155" bodyend="222"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1a5d36d7d1091c0795f2b70f3cbfc1f031" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool dynamixel::protocols::Protocol1::detect_status_header</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;packet)</argsstring>
+        <name>detect_status_header</name>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if the packet contains a header.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>packet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data of the received packet</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if and only if a full header was found at the beginning of the packet </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="232" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="232" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1protocols_1_1_protocol1_1ae658722036b4850310b114ee8ae1825d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>static uint8_t dynamixel::protocols::Protocol1::_checksum</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;packet)</argsstring>
+        <name>_checksum</name>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="243" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="243" bodyend="254"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="16" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="16" bodyend="255"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1ae658722036b4850310b114ee8ae1825d" prot="private" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>_checksum</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a4383ba392b57ea00dd0273c6da5e8a65" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>address_t</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1ac14fd1ffbfadfccf29a923149f416de2" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>broadcast_id</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a84867f282d00506d43ebca811925fbcc" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>DecodeState</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a5d36d7d1091c0795f2b70f3cbfc1f031" prot="private" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>detect_status_header</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a84867f282d00506d43ebca811925fbccac417bdba2b956d4e604a2765a656c84c" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>DONE</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a1d4dfa22b01f80b1876d14f539d52b5c" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>id_t</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a572dc8c0871ecdf3d62c4f58fbcfd454" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>instr_t</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a84867f282d00506d43ebca811925fbcca2735c69e905cf95470f9e383355a130b" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>INVALID</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1acd6456c39a2f75de2db3d730941027cc" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>length_t</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a84867f282d00506d43ebca811925fbcca527e017e69d1c32dd1cbf06765d71d78" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>ONGOING</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a760708ffe05dabe2a6f25b0a5f9a5080" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>pack_data</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1af24d6a0f3565518334ddaff39b562843" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>pack_data</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a3e69c4c9c6b66571f7771dd46f25e008" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>pack_data</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1af5cd815ec062a17369bc91aac1d88830" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>pack_data</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1ac2eaf7383aedc5fc0b61d2b84328b4a9" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>pack_instruction</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a2286b86dca486be62e82b9ad9b60cf66" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>pack_instruction</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1ab70c9b89bc4664cdc112dac5e73b9a7f" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>unpack_data</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a3c5b9e4fed65b82f1db4b7f28684c8bb" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>unpack_data</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1aa1235753ab679394e53a2e5db2d9f443" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>unpack_data</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1ac5c7564982fadaeb0ff1e1d2163e4cea" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>unpack_data</name></member>
+      <member refid="classdynamixel_1_1protocols_1_1_protocol1_1a4f79051bd5a2d77fd30eadaa16740b77" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1</scope><name>unpack_status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

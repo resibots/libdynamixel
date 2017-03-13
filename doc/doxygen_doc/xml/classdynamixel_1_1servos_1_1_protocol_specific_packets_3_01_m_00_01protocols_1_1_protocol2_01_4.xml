@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;</compoundname>
+    <includes refid="protocol__specific__packets_8hpp" local="no">dynamixel/servos/protocol_specific_packets.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class M</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a145dc648f17fe5d401b917095a28e13f" prot="public" static="no">
+        <type><ref refid="structdynamixel_1_1servos_1_1_model_traits" kindref="compound">ModelTraits</ref>&lt; M &gt;::CT</type>
+        <definition>typedef ModelTraits&lt;M&gt;::CT dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;::ct_t</definition>
+        <argsstring></argsstring>
+        <name>ct_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" line="134" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a8772c5840284f3a4f63b31f439084ab0" prot="public" static="no">
+        <type>ct_t::moving_speed_t</type>
+        <definition>typedef ct_t::moving_speed_t dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;::moving_speed_t</definition>
+        <argsstring></argsstring>
+        <name>moving_speed_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" line="135" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a31b07ea4a13afe53fd8352931e33838f" prot="private" static="yes" mutable="no">
+        <type>constexpr double</type>
+        <definition>constexpr double dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;::two_pi</definition>
+        <argsstring></argsstring>
+        <name>two_pi</name>
+        <initializer>= 6.28318</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" line="159" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a366ea0ab92847a3cbacdb398934cabbb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1protocols_1_1_protocol2" kindref="compound">protocols::Protocol2</ref> &gt;</type>
+        <definition>static InstructionPacket&lt;protocols::Protocol2&gt; dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;::set_moving_speed_angle</definition>
+        <argsstring>(typename protocols::Protocol2::id_t id, double rad_per_s, cst::OperatingMode operating_mode)</argsstring>
+        <name>set_moving_speed_angle</name>
+        <param>
+          <type>typename <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1a38d9cae72cd86213cca74e718c240429" kindref="member">protocols::Protocol2::id_t</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>rad_per_s</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809" kindref="member">cst::OperatingMode</ref></type>
+          <declname>operating_mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" line="137" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" bodystart="137" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a3dcf288a975f802ad748220e5e6ae52f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1protocols_1_1_protocol2" kindref="compound">protocols::Protocol2</ref> &gt;</type>
+        <definition>static InstructionPacket&lt;protocols::Protocol2&gt; dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;::reg_moving_speed_angle</definition>
+        <argsstring>(typename protocols::Protocol2::id_t id, double rad_per_s, cst::OperatingMode operating_mode)</argsstring>
+        <name>reg_moving_speed_angle</name>
+        <param>
+          <type>typename <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1a38d9cae72cd86213cca74e718c240429" kindref="member">protocols::Protocol2::id_t</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>rad_per_s</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809" kindref="member">cst::OperatingMode</ref></type>
+          <declname>operating_mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" line="147" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" bodystart="147" bodyend="155"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a85933f42fd29b6d3eff0198e8ebcd692" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a8772c5840284f3a4f63b31f439084ab0" kindref="member">moving_speed_t</ref></type>
+        <definition>static moving_speed_t dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;::angular_speed_to_ticks</definition>
+        <argsstring>(typename protocols::Protocol2::id_t id, double rad_per_s)</argsstring>
+        <name>angular_speed_to_ticks</name>
+        <param>
+          <type>typename <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1a38d9cae72cd86213cca74e718c240429" kindref="member">protocols::Protocol2::id_t</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>rad_per_s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" line="161" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" bodystart="161" bodyend="176"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" line="132" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" bodystart="132" bodyend="177"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a85933f42fd29b6d3eff0198e8ebcd692" prot="private" virt="non-virtual"><scope>dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;</scope><name>angular_speed_to_ticks</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a145dc648f17fe5d401b917095a28e13f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;</scope><name>ct_t</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a8772c5840284f3a4f63b31f439084ab0" prot="public" virt="non-virtual"><scope>dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;</scope><name>moving_speed_t</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a3dcf288a975f802ad748220e5e6ae52f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;</scope><name>reg_moving_speed_angle</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a366ea0ab92847a3cbacdb398934cabbb" prot="public" virt="non-virtual"><scope>dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;</scope><name>set_moving_speed_angle</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_3_01_m_00_01protocols_1_1_protocol2_01_4_1a31b07ea4a13afe53fd8352931e33838f" prot="private" virt="non-virtual"><scope>dynamixel::servos::ProtocolSpecificPackets&lt; M, protocols::Protocol2 &gt;</scope><name>two_pi</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

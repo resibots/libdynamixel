@@ -1,0 +1,495 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="base__servo_8hpp" kind="file" language="C++">
+    <compoundname>base_servo.hpp</compoundname>
+    <includes refid="instruction__packet_8hpp" local="yes">../instruction_packet.hpp</includes>
+    <includes refid="error_8hpp" local="yes">../errors/error.hpp</includes>
+    <includedby refid="servo_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/servo.hpp</includedby>
+    <includedby refid="protocol__specific__packets_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp</includedby>
+    <incdepgraph>
+      <node id="1350">
+        <label>stdint.h</label>
+      </node>
+      <node id="1352">
+        <label>string</label>
+      </node>
+      <node id="1351">
+        <label>../errors/error.hpp</label>
+        <link refid="error_8hpp"/>
+        <childnode refid="1352" relation="include">
+        </childnode>
+      </node>
+      <node id="1347">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp</label>
+        <link refid="base_servo.hpp"/>
+        <childnode refid="1348" relation="include">
+        </childnode>
+        <childnode refid="1351" relation="include">
+        </childnode>
+      </node>
+      <node id="1349">
+        <label>vector</label>
+      </node>
+      <node id="1348">
+        <label>../instruction_packet.hpp</label>
+        <link refid="instruction__packet_8hpp"/>
+        <childnode refid="1349" relation="include">
+        </childnode>
+        <childnode refid="1350" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1368">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx28.hpp</label>
+        <link refid="mx28_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1364">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12w.hpp</label>
+        <link refid="ax12w_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1379">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp</label>
+        <link refid="pro__l54__30__s500_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1376">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_40_s250.hpp</label>
+        <link refid="pro__m54__40__s250_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1362">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers.hpp</label>
+        <link refid="controllers_8hpp"/>
+        <childnode refid="1363" relation="include">
+        </childnode>
+      </node>
+      <node id="1355">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax12.hpp</label>
+        <link refid="ax12_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1367">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx12.hpp</label>
+        <link refid="mx12_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1356">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos.hpp</label>
+        <link refid="servos_8hpp"/>
+        <childnode refid="1357" relation="include">
+        </childnode>
+        <childnode refid="1359" relation="include">
+        </childnode>
+        <childnode refid="1358" relation="include">
+        </childnode>
+      </node>
+      <node id="1369">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx64.hpp</label>
+        <link refid="mx64_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1366">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ex106.hpp</label>
+        <link refid="ex106_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1381">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_50_s500.hpp</label>
+        <link refid="pro__l54__50__s500_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1375">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_60_s250.hpp</label>
+        <link refid="pro__m54__60__s250_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1383">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp</label>
+        <link refid="protocol__specific__packets_8hpp"/>
+        <childnode refid="1354" relation="include">
+        </childnode>
+      </node>
+      <node id="1353">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp</label>
+        <link refid="base_servo.hpp"/>
+        <childnode refid="1354" relation="include">
+        </childnode>
+        <childnode refid="1383" relation="include">
+        </childnode>
+      </node>
+      <node id="1380">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_50_s290.hpp</label>
+        <link refid="pro__l54__50__s290_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1358">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel.hpp</label>
+        <link refid="dynamixel_8hpp"/>
+      </node>
+      <node id="1373">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_h54_100_s500.hpp</label>
+        <link refid="pro__h54__100__s500_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1354">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/servo.hpp</label>
+        <link refid="servo_8hpp"/>
+        <childnode refid="1355" relation="include">
+        </childnode>
+        <childnode refid="1364" relation="include">
+        </childnode>
+        <childnode refid="1365" relation="include">
+        </childnode>
+        <childnode refid="1366" relation="include">
+        </childnode>
+        <childnode refid="1367" relation="include">
+        </childnode>
+        <childnode refid="1368" relation="include">
+        </childnode>
+        <childnode refid="1369" relation="include">
+        </childnode>
+        <childnode refid="1370" relation="include">
+        </childnode>
+        <childnode refid="1371" relation="include">
+        </childnode>
+        <childnode refid="1372" relation="include">
+        </childnode>
+        <childnode refid="1373" relation="include">
+        </childnode>
+        <childnode refid="1374" relation="include">
+        </childnode>
+        <childnode refid="1375" relation="include">
+        </childnode>
+        <childnode refid="1376" relation="include">
+        </childnode>
+        <childnode refid="1377" relation="include">
+        </childnode>
+        <childnode refid="1378" relation="include">
+        </childnode>
+        <childnode refid="1379" relation="include">
+        </childnode>
+        <childnode refid="1380" relation="include">
+        </childnode>
+        <childnode refid="1381" relation="include">
+        </childnode>
+        <childnode refid="1382" relation="include">
+        </childnode>
+      </node>
+      <node id="1371">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/xl320.hpp</label>
+        <link refid="xl320_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1361">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp</label>
+        <link refid="usb2dynamixel_8hpp"/>
+        <childnode refid="1362" relation="include">
+        </childnode>
+      </node>
+      <node id="1359">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/misc.hpp</label>
+        <link refid="misc_8hpp"/>
+        <childnode refid="1360" relation="include">
+        </childnode>
+        <childnode refid="1361" relation="include">
+        </childnode>
+        <childnode refid="1363" relation="include">
+        </childnode>
+      </node>
+      <node id="1365">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/ax18.hpp</label>
+        <link refid="ax18_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1382">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l42_10_s300.hpp</label>
+        <link refid="pro__l42__10__s300_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1374">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_h42_20_s300.hpp</label>
+        <link refid="pro__h42__20__s300_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1360">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/file2dynamixel.hpp</label>
+        <link refid="file2dynamixel_8hpp"/>
+      </node>
+      <node id="1370">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/mx106.hpp</label>
+        <link refid="mx106_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1357">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp</label>
+        <link refid="auto__detect_8hpp"/>
+        <childnode refid="1358" relation="include">
+        </childnode>
+      </node>
+      <node id="1372">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_h54_200_s500.hpp</label>
+        <link refid="pro__h54__200__s500_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1363">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel_core.hpp</label>
+        <link refid="dynamixel__core_8hpp"/>
+        <childnode refid="1358" relation="include">
+        </childnode>
+      </node>
+      <node id="1378">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s400.hpp</label>
+        <link refid="pro__l54__30__s400_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+      <node id="1377">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m42_10_s260.hpp</label>
+        <link refid="pro__m42__10__s260_8hpp"/>
+        <childnode refid="1356" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classdynamixel_1_1servos_1_1_base_servo" prot="public">dynamixel::servos::BaseServo</innerclass>
+    <innernamespace refid="namespacedynamixel">dynamixel</innernamespace>
+    <innernamespace refid="namespacedynamixel_1_1servos">dynamixel::servos</innernamespace>
+    <innernamespace refid="namespacedynamixel_1_1servos_1_1cst">dynamixel::servos::cst</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="base__servo_8hpp_1a5ec331024d39ec59489b74a6af01d758" prot="public" static="no">
+        <name>BASE_FIELD</name>
+        <param><defname>Name</defname></param>
+        <initializer>virtual InstructionPacket&lt;protocol_t&gt; get_##Name() const                     \
+    {                                                                            \
+        throw errors::Error(&quot;get_&quot; #Name &quot; not implemented in model&quot;);           \
+    }                                                                            \
+                                                                                 \
+    virtual long long int parse_##Name(const StatusPacket&lt;protocol_t&gt;&amp; st) const \
+    {                                                                            \
+        throw errors::Error(&quot;parse_&quot; #Name &quot; not implemented in model&quot;);         \
+    }                                                                            \
+                                                                                 \
+    virtual InstructionPacket&lt;protocol_t&gt; set_##Name(long long int value) const  \
+    {                                                                            \
+        throw errors::Error(&quot;set_&quot; #Name &quot; not implemented in model&quot;);           \
+    }                                                                            \
+                                                                                 \
+    virtual InstructionPacket&lt;protocol_t&gt; reg_##Name(long long int value) const  \
+    {                                                                            \
+        throw errors::Error(&quot;reg_&quot; #Name &quot; not implemented in model&quot;);           \
+    }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="7" column="9" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DYNAMIXEL_SERVOS_BASE_SERVO_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DYNAMIXEL_SERVOS_BASE_SERVO_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../instruction_packet.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../errors/error.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="base__servo_8hpp_1a5ec331024d39ec59489b74a6af01d758" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BASE_FIELD(Name)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="8"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>virtual<sp/>InstructionPacket&lt;protocol_t&gt;<sp/>get_##Name()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>errors::Error(&quot;get_&quot;<sp/>#Name<sp/>&quot;<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>virtual<sp/>long<sp/>long<sp/>int<sp/>parse_##Name(const<sp/>StatusPacket&lt;protocol_t&gt;&amp;<sp/>st)<sp/>const<sp/>\</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>errors::Error(&quot;parse_&quot;<sp/>#Name<sp/>&quot;<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>virtual<sp/>InstructionPacket&lt;protocol_t&gt;<sp/>set_##Name(long<sp/>long<sp/>int<sp/>value)<sp/>const<sp/><sp/>\</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>errors::Error(&quot;set_&quot;<sp/>#Name<sp/>&quot;<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>virtual<sp/>InstructionPacket&lt;protocol_t&gt;<sp/>reg_##Name(long<sp/>long<sp/>int<sp/>value)<sp/>const<sp/><sp/>\</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>errors::Error(&quot;reg_&quot;<sp/>#Name<sp/>&quot;<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamixel" kindref="compound">dynamixel</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">servos<sp/>{</highlight></codeline>
+<codeline lineno="30" refid="namespacedynamixel_1_1servos_1_1cst" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">cst<sp/>{</highlight></codeline>
+<codeline lineno="31" refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809" kindref="member">OperatingMode</ref><sp/>{</highlight></codeline>
+<codeline lineno="32" refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a01e3275de344ad8e2011c6acda431280" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a01e3275de344ad8e2011c6acda431280" kindref="member">wheel</ref>,</highlight></codeline>
+<codeline lineno="33" refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a1fdfcfad31f04d24b25c0842e9d99c48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a1fdfcfad31f04d24b25c0842e9d99c48" kindref="member">joint</ref>,</highlight></codeline>
+<codeline lineno="34" refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809ac4453992c6d6fcd9a66eb6331fd8c945" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809ac4453992c6d6fcd9a66eb6331fd8c945" kindref="member">multi_turn</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Protocol&gt;</highlight></codeline>
+<codeline lineno="39" refid="classdynamixel_1_1servos_1_1_base_servo" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classdynamixel_1_1servos_1_1_base_servo" kindref="compound">BaseServo</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41" refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Protocol<sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classdynamixel_1_1servos_1_1_base_servo_1a191c1596a4fcbe43cc7b9292f83e196b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1a191c1596a4fcbe43cc7b9292f83e196b" kindref="member">id</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="44"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref>(</highlight><highlight class="stringliteral">&quot;id<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classdynamixel_1_1servos_1_1_base_servo_1a20e7410262e37dcd177e81a41d78d8ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1a20e7410262e37dcd177e81a41d78d8ba" kindref="member">id</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref>(</highlight><highlight class="stringliteral">&quot;id<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classdynamixel_1_1servos_1_1_base_servo_1a0878d6f74b1a26bf23fa53a296fd8283" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1a0878d6f74b1a26bf23fa53a296fd8283" kindref="member">model_name</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="54"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref>(</highlight><highlight class="stringliteral">&quot;model_name<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>All<sp/>the<sp/>memory<sp/>addresses<sp/>of<sp/>all<sp/>the<sp/>models<sp/>need<sp/>to<sp/>be<sp/>declared<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Then,<sp/>the<sp/>concrete<sp/>model<sp/>classes<sp/>override<sp/>the<sp/>ones<sp/>that<sp/>they<sp/>have</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(model_number);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(firmware_version);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(baudrate);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(return_delay_time);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(highest_temperature_limit);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(highest_voltage_limit);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(lowest_voltage_limit);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(status_return_level);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(alarm_shutdown);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(torque_enable);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(goal_position);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(moving_speed);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(present_position);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(present_speed);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(present_voltage);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(present_temperature);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(registered);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(moving);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(cw_angle_limit);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(ccw_angle_limit);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(drive_mode);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(max_torque);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(alarm_led);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(led);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(cw_compliance_margin);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(ccw_compliance_margin);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(cw_compliance_slope);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(ccw_compliance_slope);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(torque_limit);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(present_load);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(lock);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(punch);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(sensed_current);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(multi_turn_offset);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(resolution_divider);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(d_gain);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(i_gain);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(p_gain);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(current);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(torque_control_mode_enabled);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(goal_torque);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(goal_acceleration);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(model_info);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(operating_mode);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(homing_offset);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(moving_threshold);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(acceleration_limit);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(speed_limit);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(max_position_limit);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(min_position_limit);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(led_r);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(led_g);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(led_b);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(velocity_i_gain);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(velocity_p_gain);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(position_p_gain);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(hardware_error_status);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" kindref="member">BASE_FIELD</ref>(control_mode);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Common<sp/>functionality<sp/>for<sp/>the<sp/>servos<sp/>that<sp/>will<sp/>be<sp/>implemented<sp/>in<sp/>the<sp/>Servo<sp/>class<sp/>(where<sp/>we<sp/>know<sp/>the<sp/>model)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="classdynamixel_1_1servos_1_1_base_servo_1adae0a44afbebfb03343d325648387301" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket&lt;protocol_t&gt;</ref><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1adae0a44afbebfb03343d325648387301" kindref="member">ping</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="126"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref>(</highlight><highlight class="stringliteral">&quot;ping<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>=================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Position-specific</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="classdynamixel_1_1servos_1_1_base_servo_1ac91b383ed4ba24ccc142fe6cb08479fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket&lt;protocol_t&gt;</ref><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac91b383ed4ba24ccc142fe6cb08479fe" kindref="member">set_goal_position_angle</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rad)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="134"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref>(</highlight><highlight class="stringliteral">&quot;set_goal_position_angle<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="classdynamixel_1_1servos_1_1_base_servo_1a5912ce58f8d174bcccd07ef75fef6a6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket&lt;protocol_t&gt;</ref><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1a5912ce58f8d174bcccd07ef75fef6a6b" kindref="member">reg_goal_position_angle</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rad)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="139"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref>(</highlight><highlight class="stringliteral">&quot;reg_goal_position_angle<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="classdynamixel_1_1servos_1_1_base_servo_1a26a0ccb64fcefde496e1f45ed6462125" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket&lt;protocol_t&gt;</ref><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1a26a0ccb64fcefde496e1f45ed6462125" kindref="member">get_present_position_angle</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="144"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref>(</highlight><highlight class="stringliteral">&quot;get_present_position_angle<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="classdynamixel_1_1servos_1_1_base_servo_1a235479ae2b41314f2d5f9492a1b09b44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1a235479ae2b41314f2d5f9492a1b09b44" kindref="member">parse_present_position_angle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1_status_packet" kindref="compound">StatusPacket&lt;protocol_t&gt;</ref>&amp;<sp/>st)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="149"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref>(</highlight><highlight class="stringliteral">&quot;parse_present_position_angle<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>=================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Speed-specific</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="classdynamixel_1_1servos_1_1_base_servo_1a5a976fa54ae637537b03596befcb7529" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket&lt;protocol_t&gt;</ref><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1a5a976fa54ae637537b03596befcb7529" kindref="member">set_moving_speed_angle</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rad_per_s,<sp/><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809" kindref="member">cst::OperatingMode</ref><sp/>operating_mode<sp/>=<sp/><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a1fdfcfad31f04d24b25c0842e9d99c48" kindref="member">cst::joint</ref>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="157"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref>(</highlight><highlight class="stringliteral">&quot;set_moving_speed_angle<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="classdynamixel_1_1servos_1_1_base_servo_1a2b9b43a25ff078a54031f58e752a177e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket&lt;protocol_t&gt;</ref><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1a2b9b43a25ff078a54031f58e752a177e" kindref="member">reg_moving_speed_angle</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rad_per_s,<sp/><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809" kindref="member">cst::OperatingMode</ref><sp/>operating_mode<sp/>=<sp/><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a1fdfcfad31f04d24b25c0842e9d99c48" kindref="member">cst::joint</ref>)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="162"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref>(</highlight><highlight class="stringliteral">&quot;reg_moving_speed_angle<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="classdynamixel_1_1servos_1_1_base_servo_1a1fec786a4f11bd3febc4c6122e33cab5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo_1a1fec786a4f11bd3febc4c6122e33cab5" kindref="member">parse_joint_speed</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1_status_packet" kindref="compound">StatusPacket&lt;protocol_t&gt;</ref>&amp;<sp/>st)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="167"><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref>(</highlight><highlight class="stringliteral">&quot;parse_joint_speed<sp/>not<sp/>implemented<sp/>in<sp/>model&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_base_servo" kindref="compound">BaseServo</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp"/>
+  </compounddef>
+</doxygen>

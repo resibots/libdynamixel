@@ -1,0 +1,22 @@
+\hypertarget{auto__detect_8hpp}{}\section{/tmp/doc\+\_\+dynamixel/libdynamixel/src/dynamixel/auto\+\_\+detect.hpp File Reference}
+\label{auto__detect_8hpp}\index{/tmp/doc\+\_\+dynamixel/libdynamixel/src/dynamixel/auto\+\_\+detect.\+hpp@{/tmp/doc\+\_\+dynamixel/libdynamixel/src/dynamixel/auto\+\_\+detect.\+hpp}}
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include \char`\"{}errors/error.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}servos.\+hpp\char`\"{}}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacedynamixel}{dynamixel}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ servos\+::\+Base\+Servo$<$ protocols\+::\+Protocol1 $>$ $>$ \hyperlink{namespacedynamixel_a7ec8c7739824c939b1e8689bf731ade1}{dynamixel\+::get\+\_\+servo} (protocols\+::\+Protocol1\+::id\+\_\+t id, uint16\+\_\+t model, protocols\+::\+Protocol1\+::address\+\_\+t selected\+\_\+protocol)
+\item 
+std\+::shared\+\_\+ptr$<$ servos\+::\+Base\+Servo$<$ protocols\+::\+Protocol2 $>$ $>$ \hyperlink{namespacedynamixel_aea272226c2da972ad4c097190e330c9a}{dynamixel\+::get\+\_\+servo} (protocols\+::\+Protocol2\+::id\+\_\+t id, uint16\+\_\+t model, protocols\+::\+Protocol2\+::address\+\_\+t selected\+\_\+protocol)
+\item 
+{\footnotesize template$<$typename Protocol , typename Controller $>$ }\\std\+::vector$<$ std\+::shared\+\_\+ptr$<$ servos\+::\+Base\+Servo$<$ Protocol $>$ $>$ $>$ \hyperlink{namespacedynamixel_a6e322b3a15fdc7fa93d1b0a221586b56}{dynamixel\+::auto\+\_\+detect} (const Controller \&controller)
+\item 
+{\footnotesize template$<$typename Protocol , typename Controller $>$ }\\std\+::map$<$ typename Protocol\+::id\+\_\+t, std\+::shared\+\_\+ptr$<$ servos\+::\+Base\+Servo$<$ Protocol $>$ $>$ $>$ \hyperlink{namespacedynamixel_a89e3fa5a92c07ce07c925cad243be30e}{dynamixel\+::auto\+\_\+detect\+\_\+map} (const Controller \&controller)
+\end{DoxyCompactItemize}

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="namespacedynamixel_1_1servos_1_1cst" kind="namespace" language="C++">
+    <compoundname>dynamixel::servos::cst</compoundname>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809" prot="public" static="no">
+        <name>OperatingMode</name>
+        <enumvalue id="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a01e3275de344ad8e2011c6acda431280" prot="public">
+          <name>wheel</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a1fdfcfad31f04d24b25c0842e9d99c48" prot="public">
+          <name>joint</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809ac4453992c6d6fcd9a66eb6331fd8c945" prot="public">
+          <name>multi_turn</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="31" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="31" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="30" column="1"/>
+  </compounddef>
+</doxygen>

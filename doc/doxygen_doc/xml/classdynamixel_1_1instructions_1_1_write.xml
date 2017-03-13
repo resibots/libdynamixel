@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1instructions_1_1_write" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::instructions::Write</compoundname>
+    <basecompoundref refid="classdynamixel_1_1_instruction_packet" prot="public" virt="non-virtual">dynamixel::InstructionPacket&lt; T &gt;</basecompoundref>
+    <includes refid="write_8hpp" local="no">dynamixel/instructions/write.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel_1_1instructions_1_1_write_1ac83e3b43c47f5f65c9a749d8d58cc421" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::instructions::Write&lt; T &gt;::Write</definition>
+        <argsstring>(typename T::id_t id, typename T::address_t address, const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>Write</name>
+        <param>
+          <type>typename T::id_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>typename T::address_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/write.hpp" line="15" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/write.hpp" bodystart="15" bodyend="17"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classdynamixel_1_1instructions_1_1_write_1a88bdb5d334d19d53470604ff527cc406" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; dynamixel::instructions::Write&lt; T &gt;::_get_parameters</definition>
+        <argsstring>(uint8_t address, const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>_get_parameters</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/write.hpp" line="20" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/write.hpp" bodystart="20" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1instructions_1_1_write_1ab8e2635d5a9ae4be73b3de9a25aa7861" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; dynamixel::instructions::Write&lt; T &gt;::_get_parameters</definition>
+        <argsstring>(uint16_t address, const std::vector&lt; uint8_t &gt; &amp;data)</argsstring>
+        <name>_get_parameters</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/write.hpp" line="32" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/write.hpp" bodystart="32" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="280">
+        <label>dynamixel::InstructionPacket&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1_instruction_packet"/>
+      </node>
+      <node id="279">
+        <label>dynamixel::instructions::Write&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1instructions_1_1_write"/>
+        <childnode refid="280" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="282">
+        <label>dynamixel::InstructionPacket&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1_instruction_packet"/>
+      </node>
+      <node id="281">
+        <label>dynamixel::instructions::Write&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1instructions_1_1_write"/>
+        <childnode refid="282" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/write.hpp" line="13" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/write.hpp" bodystart="13" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1instructions_1_1_write_1a88bdb5d334d19d53470604ff527cc406" prot="private" virt="non-virtual"><scope>dynamixel::instructions::Write</scope><name>_get_parameters</name></member>
+      <member refid="classdynamixel_1_1instructions_1_1_write_1ab8e2635d5a9ae4be73b3de9a25aa7861" prot="private" virt="non-virtual"><scope>dynamixel::instructions::Write</scope><name>_get_parameters</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1a9a642ac2e80dc38172166b0508101bb8" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Write</scope><name>data</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1ae625382db5cdf81fae590ce1333876fc" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Write</scope><name>InstructionPacket</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1acf0044f4cf51aa48cff9309dea20dfcb" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Write</scope><name>InstructionPacket</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1a3558052abebd5412847bb2c2652f2897" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Write</scope><name>operator[]</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1ae4fc2dccdf71efe15934fce93e1b7222" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Write</scope><name>size</name></member>
+      <member refid="classdynamixel_1_1instructions_1_1_write_1ac83e3b43c47f5f65c9a749d8d58cc421" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Write</scope><name>Write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,189 @@
+\hypertarget{servo_8hpp}{}\section{/tmp/doc\+\_\+dynamixel/libdynamixel/src/dynamixel/servos/servo.hpp File Reference}
+\label{servo_8hpp}\index{/tmp/doc\+\_\+dynamixel/libdynamixel/src/dynamixel/servos/servo.\+hpp@{/tmp/doc\+\_\+dynamixel/libdynamixel/src/dynamixel/servos/servo.\+hpp}}
+{\ttfamily \#include $<$cassert$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../instruction\+\_\+packet.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../status\+\_\+packet.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}base\+\_\+servo.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}protocol\+\_\+specific\+\_\+packets.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../instructions/ping.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../instructions/read.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../instructions/write.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../instructions/reg\+\_\+write.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../instructions/action.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../instructions/factory\+\_\+reset.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../instructions/reboot.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../instructions/sync\+\_\+write.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}model\+\_\+traits.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../errors/error.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../errors/servo\+\_\+limit\+\_\+error.\+hpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdynamixel_1_1servos_1_1_servo}{dynamixel\+::servos\+::\+Servo$<$ Model $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacedynamixel}{dynamixel}
+\item 
+ \hyperlink{namespacedynamixel_1_1servos}{dynamixel\+::servos}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{servo_8hpp_a1d6eca4a90ee5c17481810b2faf894e6}{M\+O\+D\+E\+L\+\_\+\+N\+A\+M\+E}(Name)
+\item 
+\#define \hyperlink{servo_8hpp_ae49206ace739d1296e98f4456273da32}{R\+E\+A\+D\+\_\+\+F\+I\+E\+L\+D}(Name)
+\item 
+\#define \hyperlink{servo_8hpp_a0f49f125be6d3a04bb796d357ef4250d}{W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D}(Name)
+\item 
+\#define \hyperlink{servo_8hpp_a94c86e0fa11151f2af21ff5a5b8ebd80}{R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D}(Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{servo_8hpp_a1d6eca4a90ee5c17481810b2faf894e6}{}\index{servo.\+hpp@{servo.\+hpp}!M\+O\+D\+E\+L\+\_\+\+N\+A\+M\+E@{M\+O\+D\+E\+L\+\_\+\+N\+A\+M\+E}}
+\index{M\+O\+D\+E\+L\+\_\+\+N\+A\+M\+E@{M\+O\+D\+E\+L\+\_\+\+N\+A\+M\+E}!servo.\+hpp@{servo.\+hpp}}
+\subsubsection[{M\+O\+D\+E\+L\+\_\+\+N\+A\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+O\+D\+E\+L\+\_\+\+N\+A\+M\+E(
+\begin{DoxyParamCaption}
+\item[{}]{Name}
+\end{DoxyParamCaption}
+)}\label{servo_8hpp_a1d6eca4a90ee5c17481810b2faf894e6}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+std::string model\_name() const override \(\backslash\)
+    \{                                       \(\backslash\)
+        return #Name;                       \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{servo_8hpp_ae49206ace739d1296e98f4456273da32}{}\index{servo.\+hpp@{servo.\+hpp}!R\+E\+A\+D\+\_\+\+F\+I\+E\+L\+D@{R\+E\+A\+D\+\_\+\+F\+I\+E\+L\+D}}
+\index{R\+E\+A\+D\+\_\+\+F\+I\+E\+L\+D@{R\+E\+A\+D\+\_\+\+F\+I\+E\+L\+D}!servo.\+hpp@{servo.\+hpp}}
+\subsubsection[{R\+E\+A\+D\+\_\+\+F\+I\+E\+L\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+A\+D\+\_\+\+F\+I\+E\+L\+D(
+\begin{DoxyParamCaption}
+\item[{}]{Name}
+\end{DoxyParamCaption}
+)}\label{servo_8hpp_ae49206ace739d1296e98f4456273da32}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{static} InstructionPacket<typename Servo<Model>::protocol\_t> get\_##Name(\textcolor{keyword}{typename} 
+      Servo<Model>::protocol\_t::id\_t \textcolor{keywordtype}{id})                                               \(\backslash\)
+    \{                                                                                                      
+                                                                \(\backslash\)
+        return \textcolor{keyword}{typename} Servo<Model>::read\_t(\textcolor{keywordtype}{id}, Servo<Model>::ct\_t::Name, \textcolor{keyword}{sizeof}(\textcolor{keyword}{typename} 
+      Servo<Model>::ct\_t::Name##\_t));                                           \(\backslash\)
+    \}                                                                                                      
+                                                                \(\backslash\)
+                                                                                                           
+                                                                \(\backslash\)
+    static \textcolor{keyword}{typename} Servo<Model>::ct\_t::Name##\_t parse\_##Name(\textcolor{keyword}{typename} Servo<Model>::protocol\_t::id\_t \textcolor{keywordtype}{id}, \textcolor{keyword}{
+      const} StatusPacket<\textcolor{keyword}{typename} Servo<Model>::protocol\_t>& st) \(\backslash\)
+    \{                                                                                                      
+                                                                \(\backslash\)
+        typename Servo<Model>::ct\_t::Name##\_t res;                                                         
+                                                                \(\backslash\)
+        Servo<Model>::protocol\_t::unpack\_data(st.parameters(), res);                                       
+                                                                \(\backslash\)
+        return res;                                                                                        
+                                                                \(\backslash\)
+    \}                                                                                                      
+                                                                \(\backslash\)
+                                                                                                           
+                                                                \(\backslash\)
+    InstructionPacket<typename Servo<Model>::protocol\_t> get\_##Name() const override                       
+                                                                \(\backslash\)
+    \{                                                                                                      
+                                                                \(\backslash\)
+        return Model::get\_##Name(this->\_id);                                                               
+                                                                \(\backslash\)
+    \}                                                                                                      
+                                                                \(\backslash\)
+                                                                                                           
+                                                                \(\backslash\)
+    long \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} parse\_##Name(\textcolor{keyword}{const} StatusPacket<\textcolor{keyword}{typename} Servo<Model>::protocol\_t>& st) const override   
+                                                                \(\backslash\)
+    \{                                                                                                      
+                                                                \(\backslash\)
+        return \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(Model::parse\_##Name(this->\_id, st));                             
+                                                                \(\backslash\)
+    \}
+\end{DoxyCode}
+\hypertarget{servo_8hpp_a94c86e0fa11151f2af21ff5a5b8ebd80}{}\index{servo.\+hpp@{servo.\+hpp}!R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D@{R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D}}
+\index{R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D@{R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D}!servo.\+hpp@{servo.\+hpp}}
+\subsubsection[{R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+A\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D(
+\begin{DoxyParamCaption}
+\item[{}]{Name}
+\end{DoxyParamCaption}
+)}\label{servo_8hpp_a94c86e0fa11151f2af21ff5a5b8ebd80}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\hyperlink{servo_8hpp_ae49206ace739d1296e98f4456273da32}{READ\_FIELD}(Name)           \hyperlink{servo_8hpp_a0f49f125be6d3a04bb796d357ef4250d}{\(\backslash\)}
+\hyperlink{servo_8hpp_a0f49f125be6d3a04bb796d357ef4250d}{    WRITE\_FIELD}(Name)
+\end{DoxyCode}
+\hypertarget{servo_8hpp_a0f49f125be6d3a04bb796d357ef4250d}{}\index{servo.\+hpp@{servo.\+hpp}!W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D@{W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D}}
+\index{W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D@{W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D}!servo.\+hpp@{servo.\+hpp}}
+\subsubsection[{W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+R\+I\+T\+E\+\_\+\+F\+I\+E\+L\+D(
+\begin{DoxyParamCaption}
+\item[{}]{Name}
+\end{DoxyParamCaption}
+)}\label{servo_8hpp_a0f49f125be6d3a04bb796d357ef4250d}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{static} \textcolor{keyword}{inline} InstructionPacket<typename Servo<Model>::protocol\_t> set\_##Name(\textcolor{keyword}{typename} 
+      Servo<Model>::protocol\_t::id\_t \textcolor{keywordtype}{id}, \textcolor{keyword}{typename} Servo<Model>::ct\_t::Name##\_t value) \(\backslash\)
+    \{                                                                                                      
+                                                                      \(\backslash\)
+        return \textcolor{keyword}{typename} Servo<Model>::write\_t(\textcolor{keywordtype}{id}, Servo<Model>::ct\_t::Name, 
+      Servo<Model>::protocol\_t::pack\_data(value));                                                   \(\backslash\)
+    \}                                                                                                      
+                                                                      \(\backslash\)
+                                                                                                           
+                                                                      \(\backslash\)
+    static \textcolor{keyword}{inline} InstructionPacket<typename Servo<Model>::protocol\_t> reg\_##Name(\textcolor{keyword}{typename} 
+      Servo<Model>::protocol\_t::id\_t \textcolor{keywordtype}{id}, \textcolor{keyword}{typename} Servo<Model>::ct\_t::Name##\_t value) \(\backslash\)
+    \{                                                                                                      
+                                                                      \(\backslash\)
+        return \textcolor{keyword}{typename} Servo<Model>::reg\_write\_t(\textcolor{keywordtype}{id}, Servo<Model>::ct\_t::Name, 
+      Servo<Model>::protocol\_t::pack\_data(value));                                               \(\backslash\)
+    \}                                                                                                      
+                                                                      \(\backslash\)
+                                                                                                           
+                                                                      \(\backslash\)
+    inline InstructionPacket<typename Servo<Model>::protocol\_t> set\_##Name(\textcolor{keyword}{typename} 
+      Servo<Model>::ct\_t::Name##\_t value) \textcolor{keyword}{const}                                              \(\backslash\)
+    \{                                                                                                      
+                                                                      \(\backslash\)
+        return Model::set\_##Name(this->\_id, value);                                                        
+                                                                      \(\backslash\)
+    \}                                                                                                      
+                                                                      \(\backslash\)
+                                                                                                           
+                                                                      \(\backslash\)
+    inline InstructionPacket<typename Servo<Model>::protocol\_t> reg\_##Name(\textcolor{keyword}{typename} 
+      Servo<Model>::ct\_t::Name##\_t value) \textcolor{keyword}{const}                                              \(\backslash\)
+    \{                                                                                                      
+                                                                      \(\backslash\)
+        return Model::reg\_##Name(this->\_id, value);                                                        
+                                                                      \(\backslash\)
+    \}                                                                                                      
+                                                                      \(\backslash\)
+                                                                                                           
+                                                                      \(\backslash\)
+    inline InstructionPacket<typename Servo<Model>::protocol\_t> set\_##Name(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} value) \textcolor{keyword}{const} \textcolor{keyword}{
+      override}                                                             \(\backslash\)
+    \{                                                                                                      
+                                                                      \(\backslash\)
+        return this->set\_##Name(\textcolor{keyword}{static\_cast<}typename Servo<Model>::ct\_t::Name##\_t\textcolor{keyword}{>}(value));                
+                                                                      \(\backslash\)
+    \}                                                                                                      
+                                                                      \(\backslash\)
+                                                                                                           
+                                                                      \(\backslash\)
+    inline InstructionPacket<typename Servo<Model>::protocol\_t> reg\_##Name(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} value) \textcolor{keyword}{const} \textcolor{keyword}{
+      override}                                                             \(\backslash\)
+    \{                                                                                                      
+                                                                      \(\backslash\)
+        return this->reg\_##Name(\textcolor{keyword}{static\_cast<}typename Servo<Model>::ct\_t::Name##\_t\textcolor{keyword}{>}(value));                
+                                                                      \(\backslash\)
+    \}
+\end{DoxyCode}

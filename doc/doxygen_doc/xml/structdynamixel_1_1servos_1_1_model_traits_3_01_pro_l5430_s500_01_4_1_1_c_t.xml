@@ -1,0 +1,1255 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t" kind="struct" language="C++" prot="public">
+    <compoundname>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</compoundname>
+    <includes refid="pro__l54__30__s500_8hpp" local="no">dynamixel/servos/pro_l54_30_s500.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a8fc0b4f5d3f3fd8d2ea2d3a5d5562053" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::model_number_t</definition>
+        <argsstring></argsstring>
+        <name>model_number_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="19" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a784fd80b25a8322dec90fd1fbf230e0d" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::model_info_t</definition>
+        <argsstring></argsstring>
+        <name>model_info_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="22" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1adffdcfa7078d6ba494522fd9459df8b3" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::firmware_version_t</definition>
+        <argsstring></argsstring>
+        <name>firmware_version_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="24" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad0cb8cf7d03f95b4882afb0cc68e9c40" prot="public" static="no">
+        <type><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1a38d9cae72cd86213cca74e718c240429" kindref="member">protocol_t::id_t</ref></type>
+        <definition>typedef protocol_t::id_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::id_t</definition>
+        <argsstring></argsstring>
+        <name>id_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="26" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a347bb6a0e70a1e0e0ae28fcaadf81d19" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::baudrate_t</definition>
+        <argsstring></argsstring>
+        <name>baudrate_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="28" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ac9b88a0fb2168bdbb38a6b2a11930707" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::return_delay_time_t</definition>
+        <argsstring></argsstring>
+        <name>return_delay_time_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="30" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a935b8cf935f77c6b4704e2522463a912" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::operating_mode_t</definition>
+        <argsstring></argsstring>
+        <name>operating_mode_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="32" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a28ecc9ce1821f84239ba1f3df631080f" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::homing_offset_t</definition>
+        <argsstring></argsstring>
+        <name>homing_offset_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="34" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad6383879129eaf82bd539d3550124632" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::moving_threshold_t</definition>
+        <argsstring></argsstring>
+        <name>moving_threshold_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="36" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ac8228158de05b45d537d47fa3443fcf7" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::highest_temperature_limit_t</definition>
+        <argsstring></argsstring>
+        <name>highest_temperature_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="38" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a6e0b9c41083c8704422bb59b9faa25c0" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::highest_voltage_limit_t</definition>
+        <argsstring></argsstring>
+        <name>highest_voltage_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="40" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a5e2a69ae6765c42171607d622b8e425e" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::lowest_voltage_limit_t</definition>
+        <argsstring></argsstring>
+        <name>lowest_voltage_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="42" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aa464da410cac7fa75363628cfa992e09" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::acceleration_limit_t</definition>
+        <argsstring></argsstring>
+        <name>acceleration_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="44" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1abeb7f66796f90d2c3e945e822a8448d2" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::torque_limit_t</definition>
+        <argsstring></argsstring>
+        <name>torque_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="46" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ab0bca94a141af914a29d1f7d649438b4" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::speed_limit_t</definition>
+        <argsstring></argsstring>
+        <name>speed_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="48" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a5fca8bbb0a351f4f840149eeb648cf6e" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::max_position_limit_t</definition>
+        <argsstring></argsstring>
+        <name>max_position_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="50" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a3f9361f594eeabcd472b99d615933e91" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::min_position_limit_t</definition>
+        <argsstring></argsstring>
+        <name>min_position_limit_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="52" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad0b0652d5263b7b0c4c675805d46bfb8" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::alarm_shutdown_t</definition>
+        <argsstring></argsstring>
+        <name>alarm_shutdown_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="54" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aa784d8bad987dce97d7a07957d628d22" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::torque_enable_t</definition>
+        <argsstring></argsstring>
+        <name>torque_enable_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="56" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a0ea678fb7dce83407fa74d08a270e2ec" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::led_r_t</definition>
+        <argsstring></argsstring>
+        <name>led_r_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="58" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a4a4c227e0c2cb994f2f3b2798baec458" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::led_g_t</definition>
+        <argsstring></argsstring>
+        <name>led_g_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="60" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a569319b136817971bf154dcbada02d2b" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::led_b_t</definition>
+        <argsstring></argsstring>
+        <name>led_b_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="62" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad613d26c5cae27507f887e7f8d6f89a0" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::velocity_i_gain_t</definition>
+        <argsstring></argsstring>
+        <name>velocity_i_gain_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="64" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ac013657236b19042a6294af98846055e" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::velocity_p_gain_t</definition>
+        <argsstring></argsstring>
+        <name>velocity_p_gain_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="66" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a77a480ffccea3074d537a11f22d4d2f0" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::position_p_gain_t</definition>
+        <argsstring></argsstring>
+        <name>position_p_gain_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="68" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a3e12c4d045d1de697dba96085e1f4098" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::goal_position_t</definition>
+        <argsstring></argsstring>
+        <name>goal_position_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="70" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ab1bd88a0b5726999eff5568e69e61c3d" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::moving_speed_t</definition>
+        <argsstring></argsstring>
+        <name>moving_speed_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="76" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ace567214ca113ae1a933f870f36cfc80" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::goal_torque_t</definition>
+        <argsstring></argsstring>
+        <name>goal_torque_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="82" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1af162c72bd659317f6a0a3854c8e598df" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::goal_acceleration_t</definition>
+        <argsstring></argsstring>
+        <name>goal_acceleration_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="84" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a67b7854da409bd58d5c2735715b7485e" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::moving_t</definition>
+        <argsstring></argsstring>
+        <name>moving_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="86" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a8d6ec436981b3d5ef1c8648bf7555ff4" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::present_position_t</definition>
+        <argsstring></argsstring>
+        <name>present_position_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="88" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a30f1710cf20df9d745414badc6f5b138" prot="public" static="no">
+        <type>int32_t</type>
+        <definition>typedef int32_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::present_speed_t</definition>
+        <argsstring></argsstring>
+        <name>present_speed_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="90" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a94b61cd4ce4fac7eac39c60473ef5901" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::current_t</definition>
+        <argsstring></argsstring>
+        <name>current_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="92" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a53a769a5b4ad70c99c3ef7de1e8debe1" prot="public" static="no">
+        <type>uint16_t</type>
+        <definition>typedef uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::present_voltage_t</definition>
+        <argsstring></argsstring>
+        <name>present_voltage_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="94" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a93de5c2c9ddbf64f25071aaf4c5a8d46" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::present_temperature_t</definition>
+        <argsstring></argsstring>
+        <name>present_temperature_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="96" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad76db939cecf32e71651f6f4b9e15d0b" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::registered_t</definition>
+        <argsstring></argsstring>
+        <name>registered_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="98" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad068d80578a7055a12d2a02010e73d8c" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::status_return_level_t</definition>
+        <argsstring></argsstring>
+        <name>status_return_level_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="100" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1af3397a9273742bf6a339bba240b84492" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::hardware_error_status_t</definition>
+        <argsstring></argsstring>
+        <name>hardware_error_status_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="102" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a9a081f4f0dcec6350e8bbafe4b7d0b49" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::model_number</definition>
+        <argsstring></argsstring>
+        <name>model_number</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="18" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a0c20326b9ff3d722149b346e48f747e0" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a8fc0b4f5d3f3fd8d2ea2d3a5d5562053" kindref="member">model_number_t</ref></type>
+        <definition>const model_number_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::model_number_value</definition>
+        <argsstring></argsstring>
+        <name>model_number_value</name>
+        <initializer>= 37896</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="20" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a463283a14027e3fcf391cba9c8935c1a" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::model_info</definition>
+        <argsstring></argsstring>
+        <name>model_info</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="21" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1afc0657cd5532e709e852aa281eee5482" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::firmware_version</definition>
+        <argsstring></argsstring>
+        <name>firmware_version</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="23" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a5ce3ef51b477706831a4fbc338a73dcc" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <initializer>= 7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="25" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ab31db3797569a26922e3224371fa0719" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::baudrate</definition>
+        <argsstring></argsstring>
+        <name>baudrate</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="27" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1afdafad500ba27fdb375b75f167c580e1" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::return_delay_time</definition>
+        <argsstring></argsstring>
+        <name>return_delay_time</name>
+        <initializer>= 9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="29" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a8a6d5faec1937580f07658d06a0085da" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::operating_mode</definition>
+        <argsstring></argsstring>
+        <name>operating_mode</name>
+        <initializer>= 11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="31" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a9fd11348ea9bb5f3897733407452189e" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::homing_offset</definition>
+        <argsstring></argsstring>
+        <name>homing_offset</name>
+        <initializer>= 13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="33" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a15430c240617d9676d6816cd82abcaf8" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::moving_threshold</definition>
+        <argsstring></argsstring>
+        <name>moving_threshold</name>
+        <initializer>= 17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="35" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1af078158126e11b6eeff6a94ece932c34" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::highest_temperature_limit</definition>
+        <argsstring></argsstring>
+        <name>highest_temperature_limit</name>
+        <initializer>= 21</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="37" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1acf17400d0bd3bc08b4613eb168b151ae" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::highest_voltage_limit</definition>
+        <argsstring></argsstring>
+        <name>highest_voltage_limit</name>
+        <initializer>= 22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="39" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a9695f58798bdbf96ee7282bd188d9699" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::lowest_voltage_limit</definition>
+        <argsstring></argsstring>
+        <name>lowest_voltage_limit</name>
+        <initializer>= 24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="41" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a7548199bcdce3c9a6dfb522b3dc6f31b" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::acceleration_limit</definition>
+        <argsstring></argsstring>
+        <name>acceleration_limit</name>
+        <initializer>= 26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="43" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a50ee79f64b61aa03a370e4bc2f55cb38" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::torque_limit</definition>
+        <argsstring></argsstring>
+        <name>torque_limit</name>
+        <initializer>= 30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="45" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a93eb34085ba1c0a0ed8bd7efc8122c76" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::speed_limit</definition>
+        <argsstring></argsstring>
+        <name>speed_limit</name>
+        <initializer>= 32</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="47" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a7dc59752f99ef31c82eabfd1df74bc09" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::max_position_limit</definition>
+        <argsstring></argsstring>
+        <name>max_position_limit</name>
+        <initializer>= 36</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="49" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ace86fdeed7288414567437d978929691" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::min_position_limit</definition>
+        <argsstring></argsstring>
+        <name>min_position_limit</name>
+        <initializer>= 40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="51" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a90fe632d53815ee353b9f0a4e1e32a71" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::alarm_shutdown</definition>
+        <argsstring></argsstring>
+        <name>alarm_shutdown</name>
+        <initializer>= 48</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="53" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a4a993ca9d468f8ba0c7e699a16b004d5" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::torque_enable</definition>
+        <argsstring></argsstring>
+        <name>torque_enable</name>
+        <initializer>= 562</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="55" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a5175b0679bf7336a0e9cb3934445554c" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::led_r</definition>
+        <argsstring></argsstring>
+        <name>led_r</name>
+        <initializer>= 563</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="57" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a6eaf06dfd719c831c51989e8954f83af" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::led_g</definition>
+        <argsstring></argsstring>
+        <name>led_g</name>
+        <initializer>= 564</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="59" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a9d8cf92975daf120cdf7f6cb448a8bfa" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::led_b</definition>
+        <argsstring></argsstring>
+        <name>led_b</name>
+        <initializer>= 565</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="61" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad10e1217ce2e776ec790444f4f2a147f" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::velocity_i_gain</definition>
+        <argsstring></argsstring>
+        <name>velocity_i_gain</name>
+        <initializer>= 586</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="63" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad39c3621b051576709612be62a26f9a1" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::velocity_p_gain</definition>
+        <argsstring></argsstring>
+        <name>velocity_p_gain</name>
+        <initializer>= 588</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="65" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a10b1622343978e96b35058fd08772801" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::position_p_gain</definition>
+        <argsstring></argsstring>
+        <name>position_p_gain</name>
+        <initializer>= 594</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="67" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a5c05140e9592a10bf4779e7c8d651253" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::goal_position</definition>
+        <argsstring></argsstring>
+        <name>goal_position</name>
+        <initializer>= 596</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="69" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aa8d61633202a1c4175febe256a722c75" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a3e12c4d045d1de697dba96085e1f4098" kindref="member">goal_position_t</ref></type>
+        <definition>const goal_position_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::min_goal_position</definition>
+        <argsstring></argsstring>
+        <name>min_goal_position</name>
+        <initializer>= -180684</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="71" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad92b0b4c2b3a3a45ebf3eab77747aa22" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a3e12c4d045d1de697dba96085e1f4098" kindref="member">goal_position_t</ref></type>
+        <definition>const goal_position_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::max_goal_position</definition>
+        <argsstring></argsstring>
+        <name>max_goal_position</name>
+        <initializer>= 180684</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="72" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1adab849a4e2cf3f37c3a2ef0116539775" prot="public" static="yes" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::min_goal_angle_deg</definition>
+        <argsstring></argsstring>
+        <name>min_goal_angle_deg</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="73" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aa4c1fee58fda50f45b4a74bb3c0d67a8" prot="public" static="yes" mutable="no">
+        <type>const uint16_t</type>
+        <definition>const uint16_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::max_goal_angle_deg</definition>
+        <argsstring></argsstring>
+        <name>max_goal_angle_deg</name>
+        <initializer>= 360</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="74" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a1ec53701871e83cf1c58f20d9c46f442" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::moving_speed</definition>
+        <argsstring></argsstring>
+        <name>moving_speed</name>
+        <initializer>= 600</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="75" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a279b582de135f93b6aa168d7bbe900fc" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ab1bd88a0b5726999eff5568e69e61c3d" kindref="member">moving_speed_t</ref></type>
+        <definition>const moving_speed_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::min_goal_speed</definition>
+        <argsstring></argsstring>
+        <name>min_goal_speed</name>
+        <initializer>= INT32_MIN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="77" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a41d219c8cddbce6efd5b6af1e10bf15f" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ab1bd88a0b5726999eff5568e69e61c3d" kindref="member">moving_speed_t</ref></type>
+        <definition>const moving_speed_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::max_goal_speed</definition>
+        <argsstring></argsstring>
+        <name>max_goal_speed</name>
+        <initializer>= INT32_MAX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="78" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a76d8f3d7b5b9de630cc0e6b2028ff4ce" prot="public" static="yes" mutable="no">
+        <type>constexpr double</type>
+        <definition>constexpr double dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::rpm_per_tick</definition>
+        <argsstring></argsstring>
+        <name>rpm_per_tick</name>
+        <initializer>= 1 / 500.</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="79" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aed14920a019135ea48e3718f56de8591" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::speed_sign_bit</definition>
+        <argsstring></argsstring>
+        <name>speed_sign_bit</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="80" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a884dceee3d9d441994c6bc15a2e95770" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::goal_torque</definition>
+        <argsstring></argsstring>
+        <name>goal_torque</name>
+        <initializer>= 604</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="81" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aef3561d9555b9380a6d3c5bf6bc25a98" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::goal_acceleration</definition>
+        <argsstring></argsstring>
+        <name>goal_acceleration</name>
+        <initializer>= 606</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="83" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a3ea5a1fc6f0ebfb64e12fe11fd921535" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::moving</definition>
+        <argsstring></argsstring>
+        <name>moving</name>
+        <initializer>= 610</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="85" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a713764b59525abf7c3008c384ba5dde3" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::present_position</definition>
+        <argsstring></argsstring>
+        <name>present_position</name>
+        <initializer>= 611</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="87" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a2a0fb25391235d41f57e641762bc41bf" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::present_speed</definition>
+        <argsstring></argsstring>
+        <name>present_speed</name>
+        <initializer>= 615</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="89" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a8832824e3b112f2f93d555d088bc179b" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::current</definition>
+        <argsstring></argsstring>
+        <name>current</name>
+        <initializer>= 621</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="91" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a247f3d3eaac36d1a93c9470d14732579" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::present_voltage</definition>
+        <argsstring></argsstring>
+        <name>present_voltage</name>
+        <initializer>= 623</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="93" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a880149cefd39eaf8b9e3354c35a821bf" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::present_temperature</definition>
+        <argsstring></argsstring>
+        <name>present_temperature</name>
+        <initializer>= 625</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="95" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad51b52318e6237455f37242bb1b3aa12" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::registered</definition>
+        <argsstring></argsstring>
+        <name>registered</name>
+        <initializer>= 890</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="97" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a3c4ca9598234e8a76d6ae8fbf90b4c6e" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::status_return_level</definition>
+        <argsstring></argsstring>
+        <name>status_return_level</name>
+        <initializer>= 891</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="99" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1acfac589f12353daae57aaa83dd0a00b8" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref></type>
+        <definition>const protocol_t::address_t dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT::hardware_error_status</definition>
+        <argsstring></argsstring>
+        <name>hardware_error_status</name>
+        <initializer>= 892</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="101" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" line="17" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_l54_30_s500.hpp" bodystart="17" bodyend="103"/>
+    <listofallmembers>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a7548199bcdce3c9a6dfb522b3dc6f31b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>acceleration_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aa464da410cac7fa75363628cfa992e09" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>acceleration_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a90fe632d53815ee353b9f0a4e1e32a71" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>alarm_shutdown</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad0b0652d5263b7b0c4c675805d46bfb8" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>alarm_shutdown_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ab31db3797569a26922e3224371fa0719" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>baudrate</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a347bb6a0e70a1e0e0ae28fcaadf81d19" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>baudrate_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a8832824e3b112f2f93d555d088bc179b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>current</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a94b61cd4ce4fac7eac39c60473ef5901" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>current_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1afc0657cd5532e709e852aa281eee5482" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>firmware_version</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1adffdcfa7078d6ba494522fd9459df8b3" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>firmware_version_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aef3561d9555b9380a6d3c5bf6bc25a98" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>goal_acceleration</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1af162c72bd659317f6a0a3854c8e598df" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>goal_acceleration_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a5c05140e9592a10bf4779e7c8d651253" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a3e12c4d045d1de697dba96085e1f4098" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>goal_position_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a884dceee3d9d441994c6bc15a2e95770" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>goal_torque</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ace567214ca113ae1a933f870f36cfc80" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>goal_torque_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1acfac589f12353daae57aaa83dd0a00b8" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>hardware_error_status</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1af3397a9273742bf6a339bba240b84492" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>hardware_error_status_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1af078158126e11b6eeff6a94ece932c34" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>highest_temperature_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ac8228158de05b45d537d47fa3443fcf7" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>highest_temperature_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1acf17400d0bd3bc08b4613eb168b151ae" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>highest_voltage_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a6e0b9c41083c8704422bb59b9faa25c0" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>highest_voltage_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a9fd11348ea9bb5f3897733407452189e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>homing_offset</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a28ecc9ce1821f84239ba1f3df631080f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>homing_offset_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a5ce3ef51b477706831a4fbc338a73dcc" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>id</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad0cb8cf7d03f95b4882afb0cc68e9c40" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>id_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a9d8cf92975daf120cdf7f6cb448a8bfa" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>led_b</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a569319b136817971bf154dcbada02d2b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>led_b_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a6eaf06dfd719c831c51989e8954f83af" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>led_g</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a4a4c227e0c2cb994f2f3b2798baec458" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>led_g_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a5175b0679bf7336a0e9cb3934445554c" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>led_r</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a0ea678fb7dce83407fa74d08a270e2ec" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>led_r_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a9695f58798bdbf96ee7282bd188d9699" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>lowest_voltage_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a5e2a69ae6765c42171607d622b8e425e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>lowest_voltage_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aa4c1fee58fda50f45b4a74bb3c0d67a8" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>max_goal_angle_deg</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad92b0b4c2b3a3a45ebf3eab77747aa22" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>max_goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a41d219c8cddbce6efd5b6af1e10bf15f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>max_goal_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a7dc59752f99ef31c82eabfd1df74bc09" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>max_position_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a5fca8bbb0a351f4f840149eeb648cf6e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>max_position_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1adab849a4e2cf3f37c3a2ef0116539775" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>min_goal_angle_deg</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aa8d61633202a1c4175febe256a722c75" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>min_goal_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a279b582de135f93b6aa168d7bbe900fc" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>min_goal_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ace86fdeed7288414567437d978929691" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>min_position_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a3f9361f594eeabcd472b99d615933e91" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>min_position_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a463283a14027e3fcf391cba9c8935c1a" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>model_info</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a784fd80b25a8322dec90fd1fbf230e0d" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>model_info_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a9a081f4f0dcec6350e8bbafe4b7d0b49" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>model_number</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a8fc0b4f5d3f3fd8d2ea2d3a5d5562053" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>model_number_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a0c20326b9ff3d722149b346e48f747e0" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>model_number_value</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a3ea5a1fc6f0ebfb64e12fe11fd921535" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>moving</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a1ec53701871e83cf1c58f20d9c46f442" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>moving_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ab1bd88a0b5726999eff5568e69e61c3d" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>moving_speed_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a67b7854da409bd58d5c2735715b7485e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>moving_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a15430c240617d9676d6816cd82abcaf8" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>moving_threshold</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad6383879129eaf82bd539d3550124632" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>moving_threshold_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a8a6d5faec1937580f07658d06a0085da" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>operating_mode</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a935b8cf935f77c6b4704e2522463a912" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>operating_mode_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a10b1622343978e96b35058fd08772801" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>position_p_gain</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a77a480ffccea3074d537a11f22d4d2f0" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>position_p_gain_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a713764b59525abf7c3008c384ba5dde3" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>present_position</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a8d6ec436981b3d5ef1c8648bf7555ff4" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>present_position_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a2a0fb25391235d41f57e641762bc41bf" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>present_speed</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a30f1710cf20df9d745414badc6f5b138" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>present_speed_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a880149cefd39eaf8b9e3354c35a821bf" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>present_temperature</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a93de5c2c9ddbf64f25071aaf4c5a8d46" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>present_temperature_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a247f3d3eaac36d1a93c9470d14732579" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>present_voltage</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a53a769a5b4ad70c99c3ef7de1e8debe1" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>present_voltage_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad51b52318e6237455f37242bb1b3aa12" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>registered</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad76db939cecf32e71651f6f4b9e15d0b" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>registered_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1afdafad500ba27fdb375b75f167c580e1" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>return_delay_time</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ac9b88a0fb2168bdbb38a6b2a11930707" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>return_delay_time_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a76d8f3d7b5b9de630cc0e6b2028ff4ce" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>rpm_per_tick</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a93eb34085ba1c0a0ed8bd7efc8122c76" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>speed_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ab0bca94a141af914a29d1f7d649438b4" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>speed_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aed14920a019135ea48e3718f56de8591" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>speed_sign_bit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a3c4ca9598234e8a76d6ae8fbf90b4c6e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>status_return_level</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad068d80578a7055a12d2a02010e73d8c" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>status_return_level_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a4a993ca9d468f8ba0c7e699a16b004d5" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>torque_enable</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1aa784d8bad987dce97d7a07957d628d22" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>torque_enable_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1a50ee79f64b61aa03a370e4bc2f55cb38" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>torque_limit</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1abeb7f66796f90d2c3e945e822a8448d2" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>torque_limit_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad10e1217ce2e776ec790444f4f2a147f" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>velocity_i_gain</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad613d26c5cae27507f887e7f8d6f89a0" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>velocity_i_gain_t</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ad39c3621b051576709612be62a26f9a1" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>velocity_p_gain</name></member>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t_1ac013657236b19042a6294af98846055e" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</scope><name>velocity_p_gain_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

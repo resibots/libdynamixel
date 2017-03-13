@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1instructions_1_1_reboot" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::instructions::Reboot</compoundname>
+    <basecompoundref refid="classdynamixel_1_1_instruction_packet" prot="public" virt="non-virtual">dynamixel::InstructionPacket&lt; T &gt;</basecompoundref>
+    <includes refid="reboot_8hpp" local="no">dynamixel/instructions/reboot.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel_1_1instructions_1_1_reboot_1ae515529475db9b95350250c3d96af427" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::instructions::Reboot&lt; T &gt;::Reboot</definition>
+        <argsstring>(typename T::id_t id)</argsstring>
+        <name>Reboot</name>
+        <param>
+          <type>typename T::id_t</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/reboot.hpp" line="14" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/reboot.hpp" bodystart="14" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="248">
+        <label>dynamixel::InstructionPacket&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1_instruction_packet"/>
+      </node>
+      <node id="247">
+        <label>dynamixel::instructions::Reboot&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1instructions_1_1_reboot"/>
+        <childnode refid="248" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="250">
+        <label>dynamixel::InstructionPacket&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1_instruction_packet"/>
+      </node>
+      <node id="249">
+        <label>dynamixel::instructions::Reboot&lt; T &gt;</label>
+        <link refid="classdynamixel_1_1instructions_1_1_reboot"/>
+        <childnode refid="250" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/reboot.hpp" line="12" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions/reboot.hpp" bodystart="12" bodyend="16"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1_instruction_packet_1a9a642ac2e80dc38172166b0508101bb8" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Reboot</scope><name>data</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1ae625382db5cdf81fae590ce1333876fc" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Reboot</scope><name>InstructionPacket</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1acf0044f4cf51aa48cff9309dea20dfcb" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Reboot</scope><name>InstructionPacket</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1a3558052abebd5412847bb2c2652f2897" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Reboot</scope><name>operator[]</name></member>
+      <member refid="classdynamixel_1_1instructions_1_1_reboot_1ae515529475db9b95350250c3d96af427" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Reboot</scope><name>Reboot</name></member>
+      <member refid="classdynamixel_1_1_instruction_packet_1ae4fc2dccdf71efe15934fce93e1b7222" prot="public" virt="non-virtual"><scope>dynamixel::instructions::Reboot</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

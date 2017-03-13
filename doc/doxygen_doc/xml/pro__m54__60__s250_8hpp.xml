@@ -1,0 +1,504 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="pro__m54__60__s250_8hpp" kind="file" language="C++">
+    <compoundname>pro_m54_60_s250.hpp</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="servo_8hpp" local="yes">servo.hpp</includes>
+    <includes refid="protocol2_8hpp" local="yes">../protocols/protocol2.hpp</includes>
+    <includedby refid="servos_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos.hpp</includedby>
+    <incdepgraph>
+      <node id="2023">
+        <label>../instructions/ping.hpp</label>
+        <link refid="ping_8hpp"/>
+        <childnode refid="2005" relation="include">
+        </childnode>
+      </node>
+      <node id="2028">
+        <label>../instructions/factory_reset.hpp</label>
+        <link refid="factory__reset_8hpp"/>
+        <childnode refid="2005" relation="include">
+        </childnode>
+      </node>
+      <node id="2018">
+        <label>../errors/status_error.hpp</label>
+        <link refid="status__error_8hpp"/>
+        <childnode refid="2009" relation="include">
+        </childnode>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+      </node>
+      <node id="2002">
+        <label>stdint.h</label>
+      </node>
+      <node id="2021">
+        <label>model_traits.hpp</label>
+        <link refid="model__traits_8hpp"/>
+      </node>
+      <node id="2014">
+        <label>protocols/protocol1.hpp</label>
+        <link refid="protocol1_8hpp"/>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2006" relation="include">
+        </childnode>
+        <childnode refid="2004" relation="include">
+        </childnode>
+        <childnode refid="2015" relation="include">
+        </childnode>
+        <childnode refid="2016" relation="include">
+        </childnode>
+        <childnode refid="2017" relation="include">
+        </childnode>
+        <childnode refid="2018" relation="include">
+        </childnode>
+        <childnode refid="2019" relation="include">
+        </childnode>
+      </node>
+      <node id="2012">
+        <label>cmath</label>
+      </node>
+      <node id="2004">
+        <label>cassert</label>
+      </node>
+      <node id="2009">
+        <label>string</label>
+      </node>
+      <node id="2019">
+        <label>../errors/unpack_error.hpp</label>
+        <link refid="unpack__error_8hpp"/>
+        <childnode refid="2009" relation="include">
+        </childnode>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2015" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+      </node>
+      <node id="2008">
+        <label>./errors/error.hpp</label>
+        <link refid="error_8hpp"/>
+        <childnode refid="2009" relation="include">
+        </childnode>
+      </node>
+      <node id="2025">
+        <label>../instructions/write.hpp</label>
+        <link refid="write_8hpp"/>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2005" relation="include">
+        </childnode>
+      </node>
+      <node id="2001">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_60_s250.hpp</label>
+        <link refid="pro_m54_60_s250.hpp"/>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2003" relation="include">
+        </childnode>
+        <childnode refid="2020" relation="include">
+        </childnode>
+      </node>
+      <node id="2011">
+        <label>protocol_specific_packets.hpp</label>
+        <link refid="protocol__specific__packets_8hpp"/>
+        <childnode refid="2012" relation="include">
+        </childnode>
+        <childnode refid="2005" relation="include">
+        </childnode>
+        <childnode refid="2013" relation="include">
+        </childnode>
+        <childnode refid="2010" relation="include">
+        </childnode>
+        <childnode refid="2021" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+        <childnode refid="2022" relation="include">
+        </childnode>
+      </node>
+      <node id="2024">
+        <label>../instructions/read.hpp</label>
+        <link refid="read_8hpp"/>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2005" relation="include">
+        </childnode>
+      </node>
+      <node id="2020">
+        <label>protocols/protocol2.hpp</label>
+        <link refid="protocol2_8hpp"/>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2006" relation="include">
+        </childnode>
+        <childnode refid="2004" relation="include">
+        </childnode>
+        <childnode refid="2015" relation="include">
+        </childnode>
+        <childnode refid="2017" relation="include">
+        </childnode>
+        <childnode refid="2018" relation="include">
+        </childnode>
+      </node>
+      <node id="2010">
+        <label>base_servo.hpp</label>
+        <link refid="base__servo_8hpp"/>
+        <childnode refid="2005" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+      </node>
+      <node id="2022">
+        <label>../errors/servo_limit_error.hpp</label>
+        <link refid="servo__limit__error_8hpp"/>
+        <childnode refid="2009" relation="include">
+        </childnode>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2015" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+      </node>
+      <node id="2006">
+        <label>vector</label>
+      </node>
+      <node id="2015">
+        <label>sstream</label>
+      </node>
+      <node id="2027">
+        <label>../instructions/action.hpp</label>
+        <link refid="action_8hpp"/>
+        <childnode refid="2005" relation="include">
+        </childnode>
+      </node>
+      <node id="2029">
+        <label>../instructions/reboot.hpp</label>
+        <link refid="reboot_8hpp"/>
+        <childnode refid="2005" relation="include">
+        </childnode>
+      </node>
+      <node id="2003">
+        <label>servo.hpp</label>
+        <link refid="servo_8hpp"/>
+        <childnode refid="2004" relation="include">
+        </childnode>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2005" relation="include">
+        </childnode>
+        <childnode refid="2007" relation="include">
+        </childnode>
+        <childnode refid="2010" relation="include">
+        </childnode>
+        <childnode refid="2011" relation="include">
+        </childnode>
+        <childnode refid="2023" relation="include">
+        </childnode>
+        <childnode refid="2024" relation="include">
+        </childnode>
+        <childnode refid="2025" relation="include">
+        </childnode>
+        <childnode refid="2026" relation="include">
+        </childnode>
+        <childnode refid="2027" relation="include">
+        </childnode>
+        <childnode refid="2028" relation="include">
+        </childnode>
+        <childnode refid="2029" relation="include">
+        </childnode>
+        <childnode refid="2030" relation="include">
+        </childnode>
+        <childnode refid="2021" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+        <childnode refid="2022" relation="include">
+        </childnode>
+      </node>
+      <node id="2030">
+        <label>../instructions/sync_write.hpp</label>
+        <link refid="sync__write_8hpp"/>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2004" relation="include">
+        </childnode>
+        <childnode refid="2005" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+      </node>
+      <node id="2007">
+        <label>../status_packet.hpp</label>
+        <link refid="status__packet_8hpp"/>
+        <childnode refid="2006" relation="include">
+        </childnode>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2004" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+      </node>
+      <node id="2013">
+        <label>../protocols.hpp</label>
+        <link refid="protocols_8hpp"/>
+        <childnode refid="2014" relation="include">
+        </childnode>
+        <childnode refid="2020" relation="include">
+        </childnode>
+      </node>
+      <node id="2017">
+        <label>../errors/crc_error.hpp</label>
+        <link refid="crc__error_8hpp"/>
+        <childnode refid="2009" relation="include">
+        </childnode>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2015" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+      </node>
+      <node id="2026">
+        <label>../instructions/reg_write.hpp</label>
+        <link refid="reg__write_8hpp"/>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2005" relation="include">
+        </childnode>
+      </node>
+      <node id="2016">
+        <label>../errors/bad_packet.hpp</label>
+        <link refid="bad__packet_8hpp"/>
+        <childnode refid="2009" relation="include">
+        </childnode>
+        <childnode refid="2002" relation="include">
+        </childnode>
+        <childnode refid="2008" relation="include">
+        </childnode>
+      </node>
+      <node id="2005">
+        <label>../instruction_packet.hpp</label>
+        <link refid="instruction__packet_8hpp"/>
+        <childnode refid="2006" relation="include">
+        </childnode>
+        <childnode refid="2002" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2038">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers.hpp</label>
+        <link refid="controllers_8hpp"/>
+        <childnode refid="2039" relation="include">
+        </childnode>
+      </node>
+      <node id="2032">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos.hpp</label>
+        <link refid="servos_8hpp"/>
+        <childnode refid="2033" relation="include">
+        </childnode>
+        <childnode refid="2035" relation="include">
+        </childnode>
+        <childnode refid="2034" relation="include">
+        </childnode>
+      </node>
+      <node id="2031">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_60_s250.hpp</label>
+        <link refid="pro_m54_60_s250.hpp"/>
+        <childnode refid="2032" relation="include">
+        </childnode>
+      </node>
+      <node id="2034">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel.hpp</label>
+        <link refid="dynamixel_8hpp"/>
+      </node>
+      <node id="2037">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp</label>
+        <link refid="usb2dynamixel_8hpp"/>
+        <childnode refid="2038" relation="include">
+        </childnode>
+      </node>
+      <node id="2035">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/misc.hpp</label>
+        <link refid="misc_8hpp"/>
+        <childnode refid="2036" relation="include">
+        </childnode>
+        <childnode refid="2037" relation="include">
+        </childnode>
+        <childnode refid="2039" relation="include">
+        </childnode>
+      </node>
+      <node id="2036">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/file2dynamixel.hpp</label>
+        <link refid="file2dynamixel_8hpp"/>
+      </node>
+      <node id="2033">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/auto_detect.hpp</label>
+        <link refid="auto__detect_8hpp"/>
+        <childnode refid="2034" relation="include">
+        </childnode>
+      </node>
+      <node id="2039">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel_core.hpp</label>
+        <link refid="dynamixel__core_8hpp"/>
+        <childnode refid="2034" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4" prot="public">dynamixel::servos::ModelTraits&lt; ProM5460S250 &gt;</innerclass>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t" prot="public">dynamixel::servos::ModelTraits&lt; ProM5460S250 &gt;::CT</innerclass>
+    <innerclass refid="classdynamixel_1_1servos_1_1_pro_m5460_s250" prot="public">dynamixel::servos::ProM5460S250</innerclass>
+    <innernamespace refid="namespacedynamixel">dynamixel</innernamespace>
+    <innernamespace refid="namespacedynamixel_1_1servos">dynamixel::servos</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DYNAMIXEL_SERVOS_PRO_m54_60_S250_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DYNAMIXEL_SERVOS_PRO_m54_60_S250_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="servo_8hpp" kindref="compound">servo.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../protocols/protocol2.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacedynamixel" kindref="compound">dynamixel</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">servos<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ProM5460S250;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;&gt;</highlight></codeline>
+<codeline lineno="14" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdynamixel_1_1servos_1_1_model_traits" kindref="compound">ModelTraits</ref>&lt;<ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250" kindref="compound">ProM5460S250</ref>&gt;<sp/>{</highlight></codeline>
+<codeline lineno="15" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1a6f40001a9ef73dd09907f4af6dc74783" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2" kindref="compound">protocols::Protocol2</ref><sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1a6f40001a9ef73dd09907f4af6dc74783" kindref="member">protocol_t</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">CT<sp/>{</highlight></codeline>
+<codeline lineno="18" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aff1499d18b4b0effb3358363ad981206" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>model_number<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="19" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a8708dbc10449af47f9bd946ef8e121a3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a8708dbc10449af47f9bd946ef8e121a3" kindref="member">model_number_t</ref>;</highlight></codeline>
+<codeline lineno="20" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ae552d72550e5a0d0f5fcc718ed769f24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>model_number_t<sp/>model_number_value<sp/>=<sp/>46352;</highlight></codeline>
+<codeline lineno="21" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a95aa0cbc92e718ac763963065b3d432f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>model_info<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="22" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1acca444616aa0de68623e7d2a05936938" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1acca444616aa0de68623e7d2a05936938" kindref="member">model_info_t</ref>;</highlight></codeline>
+<codeline lineno="23" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a22e44819aeeda531c9650963af620d0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>firmware_version<sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="24" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a3785f458e852428f5a15acf11b00e8dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a3785f458e852428f5a15acf11b00e8dc" kindref="member">firmware_version_t</ref>;</highlight></codeline>
+<codeline lineno="25" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a241fb5036f1b7992b508e18b23ee68d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>7;</highlight></codeline>
+<codeline lineno="26" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ae19fc31829b87438f95e064dc8bd9581" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1a38d9cae72cd86213cca74e718c240429" kindref="member">protocol_t::id_t</ref><sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ae19fc31829b87438f95e064dc8bd9581" kindref="member">id_t</ref>;</highlight></codeline>
+<codeline lineno="27" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a8624fd3c5c4cd1d6fa771ba706407659" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>baudrate<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="28" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a87edd278021f482be69b74b242b4dd85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a87edd278021f482be69b74b242b4dd85" kindref="member">baudrate_t</ref>;</highlight></codeline>
+<codeline lineno="29" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a23f6f6aa946323571a343237c989f661" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>return_delay_time<sp/>=<sp/>9;</highlight></codeline>
+<codeline lineno="30" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a2608dd5d7cf66640233b42b6e8e3ba62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a2608dd5d7cf66640233b42b6e8e3ba62" kindref="member">return_delay_time_t</ref>;</highlight></codeline>
+<codeline lineno="31" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a5f42982c5b7aea03aefc6c792ef2e194" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>operating_mode<sp/>=<sp/>11;</highlight></codeline>
+<codeline lineno="32" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a2d0b4a54817a868719ee43951e5bbd51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a2d0b4a54817a868719ee43951e5bbd51" kindref="member">operating_mode_t</ref>;</highlight></codeline>
+<codeline lineno="33" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a19bcc078662bb678ea11d7745ade6ab7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>homing_offset<sp/>=<sp/>13;</highlight></codeline>
+<codeline lineno="34" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a449a95b182d661d54294ce12efcc10c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a449a95b182d661d54294ce12efcc10c2" kindref="member">homing_offset_t</ref>;</highlight></codeline>
+<codeline lineno="35" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ac1d2164d3c39fc160d91ed1be72b1662" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>moving_threshold<sp/>=<sp/>17;</highlight></codeline>
+<codeline lineno="36" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a7a9d735161efcf28eaa51cb08c9de425" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a7a9d735161efcf28eaa51cb08c9de425" kindref="member">moving_threshold_t</ref>;</highlight></codeline>
+<codeline lineno="37" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ac4c1777e2e007c3ac5b82e53d9f45958" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>highest_temperature_limit<sp/>=<sp/>21;</highlight></codeline>
+<codeline lineno="38" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ae6ddf034e2dd055fdcfb6ae9af7ed043" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ae6ddf034e2dd055fdcfb6ae9af7ed043" kindref="member">highest_temperature_limit_t</ref>;</highlight></codeline>
+<codeline lineno="39" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aa36c406816e9657639c8ce35b3a2cdfb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>highest_voltage_limit<sp/>=<sp/>22;</highlight></codeline>
+<codeline lineno="40" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1adff7deab3e64453fe1f4a2f5fae3f885" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1adff7deab3e64453fe1f4a2f5fae3f885" kindref="member">highest_voltage_limit_t</ref>;</highlight></codeline>
+<codeline lineno="41" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a3702f124192abb3f0981cde9d856a86f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>lowest_voltage_limit<sp/>=<sp/>24;</highlight></codeline>
+<codeline lineno="42" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a163b42390ab2c3b26c7339e541698e3b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a163b42390ab2c3b26c7339e541698e3b" kindref="member">lowest_voltage_limit_t</ref>;</highlight></codeline>
+<codeline lineno="43" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aca3ecd5624620f93b0b7f64b6017aa30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>acceleration_limit<sp/>=<sp/>26;</highlight></codeline>
+<codeline lineno="44" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a5a4724ba158125a1fce8f8014495a813" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a5a4724ba158125a1fce8f8014495a813" kindref="member">acceleration_limit_t</ref>;</highlight></codeline>
+<codeline lineno="45" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ac2ce98fd51e3bd4cff04f5df1c461752" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>torque_limit<sp/>=<sp/>30;</highlight></codeline>
+<codeline lineno="46" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ad23a08cef970da059f8fce59cfba15a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ad23a08cef970da059f8fce59cfba15a9" kindref="member">torque_limit_t</ref>;</highlight></codeline>
+<codeline lineno="47" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ab4634588ebabff3a22ee7337d71ee37e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>speed_limit<sp/>=<sp/>32;</highlight></codeline>
+<codeline lineno="48" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a4e0674c54672fcef0bc99abc015c3185" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a4e0674c54672fcef0bc99abc015c3185" kindref="member">speed_limit_t</ref>;</highlight></codeline>
+<codeline lineno="49" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a52b8581a934b3ecc96b1651a5a65bc85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>max_position_limit<sp/>=<sp/>36;</highlight></codeline>
+<codeline lineno="50" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1abb6a5bf4afb52616fac3f28b98fc38b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1abb6a5bf4afb52616fac3f28b98fc38b4" kindref="member">max_position_limit_t</ref>;</highlight></codeline>
+<codeline lineno="51" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ad93983568abd3725f9a86baca6ca88a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>min_position_limit<sp/>=<sp/>40;</highlight></codeline>
+<codeline lineno="52" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aee3e8a3e5c4f5c77df405530e8f796ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aee3e8a3e5c4f5c77df405530e8f796ac" kindref="member">min_position_limit_t</ref>;</highlight></codeline>
+<codeline lineno="53" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a2708cc8a17b04f43c569ca14b1ae220e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>alarm_shutdown<sp/>=<sp/>48;</highlight></codeline>
+<codeline lineno="54" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a379ad3156b89bf4c344a06feeb416e02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a379ad3156b89bf4c344a06feeb416e02" kindref="member">alarm_shutdown_t</ref>;</highlight></codeline>
+<codeline lineno="55" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aad273fb97cdfaaa4b4b5f626ce5fead1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>torque_enable<sp/>=<sp/>562;</highlight></codeline>
+<codeline lineno="56" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a8c3a1c42fe8de9888ef5d7e468b2e474" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a8c3a1c42fe8de9888ef5d7e468b2e474" kindref="member">torque_enable_t</ref>;</highlight></codeline>
+<codeline lineno="57" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aa55aedb2a7b4ac08db9eba4d2768d624" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>led_r<sp/>=<sp/>563;</highlight></codeline>
+<codeline lineno="58" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1afbb6a9df8329bffb766184fd0442ae0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1afbb6a9df8329bffb766184fd0442ae0f" kindref="member">led_r_t</ref>;</highlight></codeline>
+<codeline lineno="59" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a6d0e3d4f92338cfb16bedda643cbb7db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>led_g<sp/>=<sp/>564;</highlight></codeline>
+<codeline lineno="60" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a84fb9ca69b4ca31699d4a45dd70a9e61" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a84fb9ca69b4ca31699d4a45dd70a9e61" kindref="member">led_g_t</ref>;</highlight></codeline>
+<codeline lineno="61" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a59befb2c329132b7cb54587accc94ff9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>led_b<sp/>=<sp/>565;</highlight></codeline>
+<codeline lineno="62" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a1808c802c360eb63ace0cb79d6a0cd24" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a1808c802c360eb63ace0cb79d6a0cd24" kindref="member">led_b_t</ref>;</highlight></codeline>
+<codeline lineno="63" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a624dbdfccd43095e5f07ae740cd47f98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>velocity_i_gain<sp/>=<sp/>586;</highlight></codeline>
+<codeline lineno="64" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aa43192401ae46e2f2857523b5d3cec97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aa43192401ae46e2f2857523b5d3cec97" kindref="member">velocity_i_gain_t</ref>;</highlight></codeline>
+<codeline lineno="65" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ac1b2e2b1e6c3e7b8af39dd171c254394" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>velocity_p_gain<sp/>=<sp/>588;</highlight></codeline>
+<codeline lineno="66" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ae416bd2aeee35b4b5ca9cf3b43c3d490" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ae416bd2aeee35b4b5ca9cf3b43c3d490" kindref="member">velocity_p_gain_t</ref>;</highlight></codeline>
+<codeline lineno="67" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aa5644fdaee5a4455981c1897c7e10193" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>position_p_gain<sp/>=<sp/>594;</highlight></codeline>
+<codeline lineno="68" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a0a8f701f2c877b68566c9a7dd1bd066b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a0a8f701f2c877b68566c9a7dd1bd066b" kindref="member">position_p_gain_t</ref>;</highlight></codeline>
+<codeline lineno="69" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1af6fb4fc4a7e2af14b011806ecb871325" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>goal_position<sp/>=<sp/>596;</highlight></codeline>
+<codeline lineno="70" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a058aefef46a415267974e8eb812ec121" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a058aefef46a415267974e8eb812ec121" kindref="member">goal_position_t</ref>;</highlight></codeline>
+<codeline lineno="71" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1adcbbbf51253052625877e1f3aa596921" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>goal_position_t<sp/>min_goal_position<sp/>=<sp/>-125700;</highlight></codeline>
+<codeline lineno="72" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aa632af4ecdd86fa4db0b26f55ea01241" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>goal_position_t<sp/>max_goal_position<sp/>=<sp/>125700;</highlight></codeline>
+<codeline lineno="73" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a65c6aea5851d0df561ef9cdf9b452fc0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>min_goal_angle_deg<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="74" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a1866dddb33c03ab2f507e8fe3ab06d6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>max_goal_angle_deg<sp/>=<sp/>360;</highlight></codeline>
+<codeline lineno="75" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a869834b760b1eabb833753c5f87d3d1a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>moving_speed<sp/>=<sp/>600;</highlight></codeline>
+<codeline lineno="76" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ac1ab9472cfe59a55cdbdbb95b2fa086b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ac1ab9472cfe59a55cdbdbb95b2fa086b" kindref="member">moving_speed_t</ref>;</highlight></codeline>
+<codeline lineno="77" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a0be22fecb2f29b5bcb874f53db2e6dc7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>moving_speed_t<sp/>min_goal_speed<sp/>=<sp/>INT32_MIN;</highlight></codeline>
+<codeline lineno="78" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a2e715fe3806295e69f53b1403a4ad915" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>moving_speed_t<sp/>max_goal_speed<sp/>=<sp/>INT32_MAX;</highlight></codeline>
+<codeline lineno="79" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a234efebbdc8e69ea167728590c6ef4fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>rpm_per_tick<sp/>=<sp/>1<sp/>/<sp/>250.;</highlight></codeline>
+<codeline lineno="80" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ab23eacc26b5a150bea4460015ddc888f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>speed_sign_bit<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="81" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1af117db3d7be8cedf4f2f45956d04dfcc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>goal_torque<sp/>=<sp/>604;</highlight></codeline>
+<codeline lineno="82" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a70b4fe55b4439fc7de70b7c1fe2a1d19" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a70b4fe55b4439fc7de70b7c1fe2a1d19" kindref="member">goal_torque_t</ref>;</highlight></codeline>
+<codeline lineno="83" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ae294751fbc1a59526d860ba9ac803ad1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>goal_acceleration<sp/>=<sp/>606;</highlight></codeline>
+<codeline lineno="84" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a1939016d59b8d76c80d9dd12e9b3582f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a1939016d59b8d76c80d9dd12e9b3582f" kindref="member">goal_acceleration_t</ref>;</highlight></codeline>
+<codeline lineno="85" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ac8b39d17097a706d840ca24dfd433479" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>moving<sp/>=<sp/>610;</highlight></codeline>
+<codeline lineno="86" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ab5196e11af710aff4e3170505bbc2e7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ab5196e11af710aff4e3170505bbc2e7d" kindref="member">moving_t</ref>;</highlight></codeline>
+<codeline lineno="87" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a9ab1903b6adbfd8ced2f3ead08af9779" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>present_position<sp/>=<sp/>611;</highlight></codeline>
+<codeline lineno="88" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1af6a45e93f16aee9de13f8f16120130b7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1af6a45e93f16aee9de13f8f16120130b7" kindref="member">present_position_t</ref>;</highlight></codeline>
+<codeline lineno="89" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1ab3e420f2328e3a30e6b86487a00611d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>present_speed<sp/>=<sp/>615;</highlight></codeline>
+<codeline lineno="90" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a8fb0cf4d2b7dd66bbfce23504b646a73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int32_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a8fb0cf4d2b7dd66bbfce23504b646a73" kindref="member">present_speed_t</ref>;</highlight></codeline>
+<codeline lineno="91" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a78329e520997d32258fd06c405da2567" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>current<sp/>=<sp/>621;</highlight></codeline>
+<codeline lineno="92" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a8888bb26cf42cbe5c6f11d3f13f9fc35" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a8888bb26cf42cbe5c6f11d3f13f9fc35" kindref="member">current_t</ref>;</highlight></codeline>
+<codeline lineno="93" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a25d4deb27666c918ff8a9993335b0c2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>present_voltage<sp/>=<sp/>623;</highlight></codeline>
+<codeline lineno="94" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1af6cc3a43e9c975fd65e1f95c53abcc74" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1af6cc3a43e9c975fd65e1f95c53abcc74" kindref="member">present_voltage_t</ref>;</highlight></codeline>
+<codeline lineno="95" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a883bdc7a4733440b51adbc2e55206aaf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>present_temperature<sp/>=<sp/>625;</highlight></codeline>
+<codeline lineno="96" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aa59e5abd9ddbd311e6026814bb5afb38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aa59e5abd9ddbd311e6026814bb5afb38" kindref="member">present_temperature_t</ref>;</highlight></codeline>
+<codeline lineno="97" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a8b455e05d5e37a5dfa127f4c4fb23b63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>registered<sp/>=<sp/>890;</highlight></codeline>
+<codeline lineno="98" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a9e842b62ba628500d7cbd10129a88b4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a9e842b62ba628500d7cbd10129a88b4f" kindref="member">registered_t</ref>;</highlight></codeline>
+<codeline lineno="99" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aa40bba07a82d6a8026d5b1bd9a0ce38f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>status_return_level<sp/>=<sp/>891;</highlight></codeline>
+<codeline lineno="100" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aec471cf176fedad58fb763e6e1d846e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1aec471cf176fedad58fb763e6e1d846e5" kindref="member">status_return_level_t</ref>;</highlight></codeline>
+<codeline lineno="101" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a35c925b4a4eba3c5d66ae3744a5d74f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1protocols_1_1_protocol2_1ac5d0ba762aa1f860c0187d9e64982941" kindref="member">protocol_t::address_t</ref><sp/>hardware_error_status<sp/>=<sp/>892;</highlight></codeline>
+<codeline lineno="102" refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a5cc11a04cde64fb0b857b15f1f8d45bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5460_s250_01_4_1_1_c_t_1a5cc11a04cde64fb0b857b15f1f8d45bd" kindref="member">hardware_error_status_t</ref>;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="classdynamixel_1_1servos_1_1_pro_m5460_s250" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250" kindref="compound">ProM5460S250</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1servos_1_1_servo" kindref="compound">Servo</ref>&lt;ProM5460S250&gt;<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="108" refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a99797d680a3d653e54cb396207b7e7a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250" kindref="compound">ProM5460S250</ref><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a99797d680a3d653e54cb396207b7e7a7" kindref="member">Model</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1ab6654ef454e1159aec5b5530e5fa24aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1ab6654ef454e1159aec5b5530e5fa24aa" kindref="member">ProM5460S250</ref>(</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>protocol_t::id_t<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/>:<sp/><ref refid="classdynamixel_1_1servos_1_1_servo" kindref="compound">Servo</ref>&lt;<ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250" kindref="compound">ProM5460S250</ref>&gt;(id){};</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a3de076aa893c2c7ee4d5cb44b9c3290c" kindref="member">MODEL_NAME</ref>(<ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250" kindref="compound">ProM5460S250</ref>);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Here<sp/>we<sp/>add<sp/>the<sp/>fields<sp/>that<sp/>are<sp/>not<sp/>common<sp/>to<sp/>all<sp/>dynamixels</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(model_info);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(operating_mode);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(homing_offset);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(moving_threshold);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(acceleration_limit);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(torque_limit);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(speed_limit);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(max_position_limit);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(min_position_limit);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(led_r);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(led_g);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(led_b);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(velocity_i_gain);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(velocity_p_gain);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(position_p_gain);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(goal_torque);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1a76e2307edb9cc8b19bb9be7694edb586" kindref="member">READ_WRITE_FIELD</ref>(goal_acceleration);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1af37a898cc4780fc838d0e0bfb33a26f2" kindref="member">READ_FIELD</ref>(current);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamixel_1_1servos_1_1_pro_m5460_s250_1af37a898cc4780fc838d0e0bfb33a26f2" kindref="member">READ_FIELD</ref>(hardware_error_status);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_60_s250.hpp"/>
+  </compounddef>
+</doxygen>

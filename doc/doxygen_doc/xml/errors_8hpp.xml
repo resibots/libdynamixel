@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="errors_8hpp" kind="file" language="C++">
+    <compoundname>errors.hpp</compoundname>
+    <includes refid="error_8hpp" local="yes">errors/error.hpp</includes>
+    <includes refid="bad__packet_8hpp" local="yes">errors/bad_packet.hpp</includes>
+    <includes refid="crc__error_8hpp" local="yes">errors/crc_error.hpp</includes>
+    <includes refid="servo__limit__error_8hpp" local="yes">errors/servo_limit_error.hpp</includes>
+    <includes refid="status__error_8hpp" local="yes">errors/status_error.hpp</includes>
+    <includes refid="unpack__error_8hpp" local="yes">errors/unpack_error.hpp</includes>
+    <includedby refid="dynamixel__core_8hpp" local="yes">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel_core.hpp</includedby>
+    <incdepgraph>
+      <node id="415">
+        <label>errors/status_error.hpp</label>
+        <link refid="status__error_8hpp"/>
+        <childnode refid="409" relation="include">
+        </childnode>
+        <childnode refid="411" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+      </node>
+      <node id="411">
+        <label>stdint.h</label>
+      </node>
+      <node id="409">
+        <label>string</label>
+      </node>
+      <node id="416">
+        <label>errors/unpack_error.hpp</label>
+        <link refid="unpack__error_8hpp"/>
+        <childnode refid="409" relation="include">
+        </childnode>
+        <childnode refid="411" relation="include">
+        </childnode>
+        <childnode refid="413" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+      </node>
+      <node id="408">
+        <label>errors/error.hpp</label>
+        <link refid="error_8hpp"/>
+        <childnode refid="409" relation="include">
+        </childnode>
+      </node>
+      <node id="407">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors.hpp</label>
+        <link refid="errors.hpp"/>
+        <childnode refid="408" relation="include">
+        </childnode>
+        <childnode refid="410" relation="include">
+        </childnode>
+        <childnode refid="412" relation="include">
+        </childnode>
+        <childnode refid="414" relation="include">
+        </childnode>
+        <childnode refid="415" relation="include">
+        </childnode>
+        <childnode refid="416" relation="include">
+        </childnode>
+      </node>
+      <node id="414">
+        <label>errors/servo_limit_error.hpp</label>
+        <link refid="servo__limit__error_8hpp"/>
+        <childnode refid="409" relation="include">
+        </childnode>
+        <childnode refid="411" relation="include">
+        </childnode>
+        <childnode refid="413" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+      </node>
+      <node id="413">
+        <label>sstream</label>
+      </node>
+      <node id="412">
+        <label>errors/crc_error.hpp</label>
+        <link refid="crc__error_8hpp"/>
+        <childnode refid="409" relation="include">
+        </childnode>
+        <childnode refid="411" relation="include">
+        </childnode>
+        <childnode refid="413" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+      </node>
+      <node id="410">
+        <label>errors/bad_packet.hpp</label>
+        <link refid="bad__packet_8hpp"/>
+        <childnode refid="409" relation="include">
+        </childnode>
+        <childnode refid="411" relation="include">
+        </childnode>
+        <childnode refid="408" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="417">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors.hpp</label>
+        <link refid="errors.hpp"/>
+        <childnode refid="418" relation="include">
+        </childnode>
+      </node>
+      <node id="419">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel.hpp</label>
+        <link refid="dynamixel_8hpp"/>
+      </node>
+      <node id="418">
+        <label>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/dynamixel_core.hpp</label>
+        <link refid="dynamixel__core_8hpp"/>
+        <childnode refid="419" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DYNAMIXEL_ERRORS_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DYNAMIXEL_ERRORS_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="error_8hpp" kindref="compound">errors/error.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bad__packet_8hpp" kindref="compound">errors/bad_packet.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="crc__error_8hpp" kindref="compound">errors/crc_error.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="servo__limit__error_8hpp" kindref="compound">errors/servo_limit_error.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="status__error_8hpp" kindref="compound">errors/status_error.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="unpack__error_8hpp" kindref="compound">errors/unpack_error.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors.hpp"/>
+  </compounddef>
+</doxygen>

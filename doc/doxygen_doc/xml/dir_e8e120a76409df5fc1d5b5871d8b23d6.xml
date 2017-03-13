@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_e8e120a76409df5fc1d5b5871d8b23d6" kind="dir">
+    <compoundname>/tmp/doc_dynamixel/libdynamixel/src/dynamixel</compoundname>
+    <innerdir refid="dir_ac94cd07a71515556151ecdecd94bd2d">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers</innerdir>
+    <innerdir refid="dir_499a3c511cb777d25e9d55b3f188c5db">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors</innerdir>
+    <innerdir refid="dir_76aea2efd688a05b3e1c0e8ec61420ee">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/instructions</innerdir>
+    <innerdir refid="dir_104a64d1c0ae5cf7faabe787d32d5206">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols</innerdir>
+    <innerdir refid="dir_a9e9543d56249baf6783fe9532c43b4a">/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos</innerdir>
+    <innerfile refid="auto__detect_8hpp">auto_detect.hpp</innerfile>
+    <innerfile refid="baudrate_8hpp">baudrate.hpp</innerfile>
+    <innerfile refid="controllers_8hpp">controllers.hpp</innerfile>
+    <innerfile refid="dynamixel_8hpp">dynamixel.hpp</innerfile>
+    <innerfile refid="dynamixel__core_8hpp">dynamixel_core.hpp</innerfile>
+    <innerfile refid="errors_8hpp">errors.hpp</innerfile>
+    <innerfile refid="instruction__packet_8hpp">instruction_packet.hpp</innerfile>
+    <innerfile refid="misc_8hpp">misc.hpp</innerfile>
+    <innerfile refid="protocols_8hpp">protocols.hpp</innerfile>
+    <innerfile refid="servos_8hpp">servos.hpp</innerfile>
+    <innerfile refid="status__packet_8hpp">status_packet.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/"/>
+  </compounddef>
+</doxygen>

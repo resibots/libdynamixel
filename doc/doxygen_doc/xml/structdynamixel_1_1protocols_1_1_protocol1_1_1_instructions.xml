@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions" kind="struct" language="C++" prot="public">
+    <compoundname>dynamixel::protocols::Protocol1::Instructions</compoundname>
+    <includes refid="protocol1_8hpp" local="no">dynamixel/protocols/protocol1.hpp</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1a5f3c4f45c13704cd4e16857b9703381f" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a572dc8c0871ecdf3d62c4f58fbcfd454" kindref="member">instr_t</ref></type>
+        <definition>const instr_t dynamixel::protocols::Protocol1::Instructions::ping</definition>
+        <argsstring></argsstring>
+        <name>ping</name>
+        <initializer>= 0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="26" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1aef0342001d9a7c736febe04cf5add82d" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a572dc8c0871ecdf3d62c4f58fbcfd454" kindref="member">instr_t</ref></type>
+        <definition>const instr_t dynamixel::protocols::Protocol1::Instructions::read</definition>
+        <argsstring></argsstring>
+        <name>read</name>
+        <initializer>= 0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="27" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1ac41fa9bb55c7a922e39d12b120cd9e51" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a572dc8c0871ecdf3d62c4f58fbcfd454" kindref="member">instr_t</ref></type>
+        <definition>const instr_t dynamixel::protocols::Protocol1::Instructions::write</definition>
+        <argsstring></argsstring>
+        <name>write</name>
+        <initializer>= 0x03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="28" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1a5618595565df6a1a550b6b7f8d3566e7" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a572dc8c0871ecdf3d62c4f58fbcfd454" kindref="member">instr_t</ref></type>
+        <definition>const instr_t dynamixel::protocols::Protocol1::Instructions::reg_write</definition>
+        <argsstring></argsstring>
+        <name>reg_write</name>
+        <initializer>= 0x4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="29" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1a4d59693b1b5c280190abb42a8dec9fb3" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a572dc8c0871ecdf3d62c4f58fbcfd454" kindref="member">instr_t</ref></type>
+        <definition>const instr_t dynamixel::protocols::Protocol1::Instructions::action</definition>
+        <argsstring></argsstring>
+        <name>action</name>
+        <initializer>= 0x05</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="30" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1a8e98cd7b24b3c22979188178628c2285" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a572dc8c0871ecdf3d62c4f58fbcfd454" kindref="member">instr_t</ref></type>
+        <definition>const instr_t dynamixel::protocols::Protocol1::Instructions::factory_reset</definition>
+        <argsstring></argsstring>
+        <name>factory_reset</name>
+        <initializer>= 0x06</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="31" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1a557c148ebb26337a93396e26e4998c4e" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classdynamixel_1_1protocols_1_1_protocol1_1a572dc8c0871ecdf3d62c4f58fbcfd454" kindref="member">instr_t</ref></type>
+        <definition>const instr_t dynamixel::protocols::Protocol1::Instructions::sync_write</definition>
+        <argsstring></argsstring>
+        <name>sync_write</name>
+        <initializer>= 0x83</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="32" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" line="25" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols/protocol1.hpp" bodystart="25" bodyend="33"/>
+    <listofallmembers>
+      <member refid="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1a4d59693b1b5c280190abb42a8dec9fb3" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1::Instructions</scope><name>action</name></member>
+      <member refid="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1a8e98cd7b24b3c22979188178628c2285" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1::Instructions</scope><name>factory_reset</name></member>
+      <member refid="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1a5f3c4f45c13704cd4e16857b9703381f" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1::Instructions</scope><name>ping</name></member>
+      <member refid="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1aef0342001d9a7c736febe04cf5add82d" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1::Instructions</scope><name>read</name></member>
+      <member refid="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1a5618595565df6a1a550b6b7f8d3566e7" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1::Instructions</scope><name>reg_write</name></member>
+      <member refid="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1a557c148ebb26337a93396e26e4998c4e" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1::Instructions</scope><name>sync_write</name></member>
+      <member refid="structdynamixel_1_1protocols_1_1_protocol1_1_1_instructions_1ac41fa9bb55c7a922e39d12b120cd9e51" prot="public" virt="non-virtual"><scope>dynamixel::protocols::Protocol1::Instructions</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

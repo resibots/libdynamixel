@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1errors_1_1_bad_packet" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::errors::BadPacket</compoundname>
+    <basecompoundref refid="classdynamixel_1_1errors_1_1_error" prot="public" virt="non-virtual">dynamixel::errors::Error</basecompoundref>
+    <includes refid="bad__packet_8hpp" local="no">dynamixel/errors/bad_packet.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdynamixel_1_1errors_1_1_bad_packet_1a9e30e556263d4973c1aeed892ee20bc2" prot="private" static="no" mutable="no">
+        <type>const std::vector&lt; uint8_t &gt;</type>
+        <definition>const std::vector&lt;uint8_t&gt; dynamixel::errors::BadPacket::_packet</definition>
+        <argsstring></argsstring>
+        <name>_packet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/bad_packet.hpp" line="40" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/bad_packet.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_bad_packet_1a385334ee5fc394f31a81136372e98a60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>dynamixel::errors::BadPacket::BadPacket</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; packet, const char *msg)</argsstring>
+        <name>BadPacket</name>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt;</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/bad_packet.hpp" line="14" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/bad_packet.hpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_bad_packet_1aaf00423aacd71b96254eb2c4a724400c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; uint8_t &gt;</type>
+        <definition>const std::vector&lt;uint8_t&gt; dynamixel::errors::BadPacket::packet</definition>
+        <argsstring>() const </argsstring>
+        <name>packet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/bad_packet.hpp" line="19" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/bad_packet.hpp" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1errors_1_1_bad_packet_1af0b78897b3dc6d5455a0581ad587771a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::ostream &amp;</type>
+        <definition>virtual std::ostream&amp; dynamixel::errors::BadPacket::print</definition>
+        <argsstring>(std::ostream &amp;os) const override</argsstring>
+        <name>print</name>
+        <reimplements refid="classdynamixel_1_1errors_1_1_error_1a12887a555c126d7e3a8ae8425730c8be">print</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/bad_packet.hpp" line="24" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/bad_packet.hpp" bodystart="24" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="23">
+        <label>dynamixel::errors::Error</label>
+        <link refid="classdynamixel_1_1errors_1_1_error"/>
+      </node>
+      <node id="22">
+        <label>dynamixel::errors::BadPacket</label>
+        <link refid="classdynamixel_1_1errors_1_1_bad_packet"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="25">
+        <label>dynamixel::errors::Error</label>
+        <link refid="classdynamixel_1_1errors_1_1_error"/>
+      </node>
+      <node id="24">
+        <label>dynamixel::errors::BadPacket</label>
+        <link refid="classdynamixel_1_1errors_1_1_bad_packet"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/bad_packet.hpp" line="12" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/bad_packet.hpp" bodystart="12" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1errors_1_1_bad_packet_1a9e30e556263d4973c1aeed892ee20bc2" prot="private" virt="non-virtual"><scope>dynamixel::errors::BadPacket</scope><name>_packet</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_bad_packet_1a385334ee5fc394f31a81136372e98a60" prot="public" virt="non-virtual"><scope>dynamixel::errors::BadPacket</scope><name>BadPacket</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a7d5d5cc0fea73ae2db4ca84035c7fbfe" prot="public" virt="non-virtual"><scope>dynamixel::errors::BadPacket</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1ad41dbbe9f237dbc204eba731de65be5a" prot="public" virt="non-virtual"><scope>dynamixel::errors::BadPacket</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1ab404696702c69bd2e8c49f6032a718f8" prot="public" virt="non-virtual"><scope>dynamixel::errors::BadPacket</scope><name>Error</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_error_1a4c0804f137545e62204c49fca4c30dcb" prot="public" virt="non-virtual"><scope>dynamixel::errors::BadPacket</scope><name>msg</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_bad_packet_1aaf00423aacd71b96254eb2c4a724400c" prot="public" virt="non-virtual"><scope>dynamixel::errors::BadPacket</scope><name>packet</name></member>
+      <member refid="classdynamixel_1_1errors_1_1_bad_packet_1af0b78897b3dc6d5455a0581ad587771a" prot="public" virt="virtual"><scope>dynamixel::errors::BadPacket</scope><name>print</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

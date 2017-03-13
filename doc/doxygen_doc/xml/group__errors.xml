@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="group__errors" kind="group">
+    <compoundname>errors</compoundname>
+    <title>Errors</title>
+    <innerclass refid="classdynamixel_1_1errors_1_1_crc_error" prot="public">dynamixel::errors::CrcError</innerclass>
+    <innerclass refid="classdynamixel_1_1errors_1_1_servo_limit_error" prot="public">dynamixel::errors::ServoLimitError</innerclass>
+    <innerclass refid="classdynamixel_1_1errors_1_1_status_error" prot="public">dynamixel::errors::StatusError</innerclass>
+    <innerclass refid="classdynamixel_1_1errors_1_1_unpack_error" prot="public">dynamixel::errors::UnpackError</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,63 @@
+\hypertarget{base__servo_8hpp}{}\section{/tmp/doc\+\_\+dynamixel/libdynamixel/src/dynamixel/servos/base\+\_\+servo.hpp File Reference}
+\label{base__servo_8hpp}\index{/tmp/doc\+\_\+dynamixel/libdynamixel/src/dynamixel/servos/base\+\_\+servo.\+hpp@{/tmp/doc\+\_\+dynamixel/libdynamixel/src/dynamixel/servos/base\+\_\+servo.\+hpp}}
+{\ttfamily \#include \char`\"{}../instruction\+\_\+packet.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../errors/error.\+hpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdynamixel_1_1servos_1_1_base_servo}{dynamixel\+::servos\+::\+Base\+Servo$<$ Protocol $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacedynamixel}{dynamixel}
+\item 
+ \hyperlink{namespacedynamixel_1_1servos}{dynamixel\+::servos}
+\item 
+ \hyperlink{namespacedynamixel_1_1servos_1_1cst}{dynamixel\+::servos\+::cst}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{base__servo_8hpp_a5ec331024d39ec59489b74a6af01d758}{B\+A\+S\+E\+\_\+\+F\+I\+E\+L\+D}(Name)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespacedynamixel_1_1servos_1_1cst_ac17b5608f65c6495114d34f8efc4d809}{dynamixel\+::servos\+::cst\+::\+Operating\+Mode} \{ \hyperlink{namespacedynamixel_1_1servos_1_1cst_ac17b5608f65c6495114d34f8efc4d809a01e3275de344ad8e2011c6acda431280}{dynamixel\+::servos\+::cst\+::wheel}, 
+\hyperlink{namespacedynamixel_1_1servos_1_1cst_ac17b5608f65c6495114d34f8efc4d809a1fdfcfad31f04d24b25c0842e9d99c48}{dynamixel\+::servos\+::cst\+::joint}, 
+\hyperlink{namespacedynamixel_1_1servos_1_1cst_ac17b5608f65c6495114d34f8efc4d809ac4453992c6d6fcd9a66eb6331fd8c945}{dynamixel\+::servos\+::cst\+::multi\+\_\+turn}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{base__servo_8hpp_a5ec331024d39ec59489b74a6af01d758}{}\index{base\+\_\+servo.\+hpp@{base\+\_\+servo.\+hpp}!B\+A\+S\+E\+\_\+\+F\+I\+E\+L\+D@{B\+A\+S\+E\+\_\+\+F\+I\+E\+L\+D}}
+\index{B\+A\+S\+E\+\_\+\+F\+I\+E\+L\+D@{B\+A\+S\+E\+\_\+\+F\+I\+E\+L\+D}!base\+\_\+servo.\+hpp@{base\+\_\+servo.\+hpp}}
+\subsubsection[{B\+A\+S\+E\+\_\+\+F\+I\+E\+L\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+A\+S\+E\+\_\+\+F\+I\+E\+L\+D(
+\begin{DoxyParamCaption}
+\item[{}]{Name}
+\end{DoxyParamCaption}
+)}\label{base__servo_8hpp_a5ec331024d39ec59489b74a6af01d758}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{virtual} InstructionPacket<protocol\_t> get\_##Name() const                     \(\backslash\)
+    \{                                                                            \(\backslash\)
+        throw errors::Error(\textcolor{stringliteral}{"get\_"} #Name \textcolor{stringliteral}{" not implemented in model"});           \(\backslash\)
+    \}                                                                            \(\backslash\)
+                                                                                 \(\backslash\)
+    virtual \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} parse\_##Name(\textcolor{keyword}{const} StatusPacket<protocol\_t>& st) \textcolor{keyword}{const} \(\backslash\)
+    \{                                                                            \(\backslash\)
+        throw errors::Error(\textcolor{stringliteral}{"parse\_"} #Name \textcolor{stringliteral}{" not implemented in model"});         \(\backslash\)
+    \}                                                                            \(\backslash\)
+                                                                                 \(\backslash\)
+    virtual InstructionPacket<protocol\_t> set\_##Name(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} value) \textcolor{keyword}{const}  \(\backslash\)
+    \{                                                                            \(\backslash\)
+        throw errors::Error(\textcolor{stringliteral}{"set\_"} #Name \textcolor{stringliteral}{" not implemented in model"});           \(\backslash\)
+    \}                                                                            \(\backslash\)
+                                                                                 \(\backslash\)
+    virtual InstructionPacket<protocol\_t> reg\_##Name(\textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} value) \textcolor{keyword}{const}  \(\backslash\)
+    \{                                                                            \(\backslash\)
+        throw errors::Error(\textcolor{stringliteral}{"reg\_"} #Name \textcolor{stringliteral}{" not implemented in model"});           \(\backslash\)
+    \}
+\end{DoxyCode}

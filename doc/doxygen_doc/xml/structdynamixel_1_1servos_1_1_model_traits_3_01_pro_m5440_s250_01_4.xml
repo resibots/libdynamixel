@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5440_s250_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>dynamixel::servos::ModelTraits&lt; ProM5440S250 &gt;</compoundname>
+    <includes refid="pro__m54__40__s250_8hpp" local="no">dynamixel/servos/pro_m54_40_s250.hpp</includes>
+    <innerclass refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5440_s250_01_4_1_1_c_t" prot="public">dynamixel::servos::ModelTraits&lt; ProM5440S250 &gt;::CT</innerclass>
+    <templateparamlist>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5440_s250_01_4_1afd94f6cce163097901ea4d7ff080ab34" prot="public" static="no">
+        <type><ref refid="classdynamixel_1_1protocols_1_1_protocol2" kindref="compound">protocols::Protocol2</ref></type>
+        <definition>typedef protocols::Protocol2 dynamixel::servos::ModelTraits&lt; ProM5440S250 &gt;::protocol_t</definition>
+        <argsstring></argsstring>
+        <name>protocol_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_40_s250.hpp" line="15" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_40_s250.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_40_s250.hpp" line="14" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/pro_m54_40_s250.hpp" bodystart="14" bodyend="104"/>
+    <listofallmembers>
+      <member refid="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_m5440_s250_01_4_1afd94f6cce163097901ea4d7ff080ab34" prot="public" virt="non-virtual"><scope>dynamixel::servos::ModelTraits&lt; ProM5440S250 &gt;</scope><name>protocol_t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

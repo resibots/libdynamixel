@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classdynamixel_1_1servos_1_1_protocol_specific_packets" kind="class" language="C++" prot="public">
+    <compoundname>dynamixel::servos::ProtocolSpecificPackets</compoundname>
+    <includes refid="protocol__specific__packets_8hpp" local="no">dynamixel/servos/protocol_specific_packets.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>class M</type>
+      </param>
+      <param>
+        <type>class P</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classdynamixel_1_1servos_1_1_protocol_specific_packets_1a908d795bf5c78a638ed18616f38baf51" prot="public" static="no">
+        <type><ref refid="structdynamixel_1_1servos_1_1_model_traits" kindref="compound">ModelTraits</ref>&lt; M &gt;::CT</type>
+        <definition>typedef ModelTraits&lt;M&gt;::CT dynamixel::servos::ProtocolSpecificPackets&lt; M, P &gt;::ct_t</definition>
+        <argsstring></argsstring>
+        <name>ct_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" line="22" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_protocol_specific_packets_1a46e78c8b23086c2388b22209f6539dab" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; P &gt;</type>
+        <definition>static InstructionPacket&lt;P&gt; dynamixel::servos::ProtocolSpecificPackets&lt; M, P &gt;::set_moving_speed_angle</definition>
+        <argsstring>(typename P::id_t id, double rad_per_s, cst::OperatingMode operating_mode=cst::joint)</argsstring>
+        <name>set_moving_speed_angle</name>
+        <param>
+          <type>typename P::id_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>rad_per_s</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809" kindref="member">cst::OperatingMode</ref></type>
+          <declname>operating_mode</declname>
+          <defval><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a1fdfcfad31f04d24b25c0842e9d99c48" kindref="member">cst::joint</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Build a packet to set the desired speed on an actuator.</para><para>See the protocol-specific implemetnations for details.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>identifier of the actuator </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rad_per_s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rotational speed, in radians per second </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>operating_mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(enum) mode in which the actuator is controlled; for version 1 of the protocol, it has an impact on how the values are treated </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a data packet to be sent on the serial line </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" line="35" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" bodystart="35" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamixel_1_1servos_1_1_protocol_specific_packets_1a92127d3d5f0a6a257bf076266d7f8389" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; P &gt;</type>
+        <definition>static InstructionPacket&lt;P&gt; dynamixel::servos::ProtocolSpecificPackets&lt; M, P &gt;::reg_moving_speed_angle</definition>
+        <argsstring>(typename P::id_t id, double rad_per_s, cst::OperatingMode operating_mode=cst::joint)</argsstring>
+        <name>reg_moving_speed_angle</name>
+        <param>
+          <type>typename P::id_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>rad_per_s</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809" kindref="member">cst::OperatingMode</ref></type>
+          <declname>operating_mode</declname>
+          <defval><ref refid="namespacedynamixel_1_1servos_1_1cst_1ac17b5608f65c6495114d34f8efc4d809a1fdfcfad31f04d24b25c0842e9d99c48" kindref="member">cst::joint</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Build a packet to set the desired speed on an actuator (in register).</para><para>See the protocol-specific implemetnations for details.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>identifier of the actuator </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rad_per_s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rotational speed, in radians per second </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>operating_mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(enum) mode in which the actuator is controlled; for version 1 of the protocol, it has an impact on how the values are treated </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a data packet to be sent on the serial line </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" line="54" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" bodystart="54" bodyend="60"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" line="20" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/protocol_specific_packets.hpp" bodystart="20" bodyend="61"/>
+    <listofallmembers>
+      <member refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_1a908d795bf5c78a638ed18616f38baf51" prot="public" virt="non-virtual"><scope>dynamixel::servos::ProtocolSpecificPackets</scope><name>ct_t</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_1a92127d3d5f0a6a257bf076266d7f8389" prot="public" virt="non-virtual"><scope>dynamixel::servos::ProtocolSpecificPackets</scope><name>reg_moving_speed_angle</name></member>
+      <member refid="classdynamixel_1_1servos_1_1_protocol_specific_packets_1a46e78c8b23086c2388b22209f6539dab" prot="public" virt="non-virtual"><scope>dynamixel::servos::ProtocolSpecificPackets</scope><name>set_moving_speed_angle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

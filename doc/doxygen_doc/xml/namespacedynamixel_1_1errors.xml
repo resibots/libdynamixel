@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="namespacedynamixel_1_1errors" kind="namespace" language="C++">
+    <compoundname>dynamixel::errors</compoundname>
+    <innerclass refid="classdynamixel_1_1errors_1_1_bad_packet" prot="public">dynamixel::errors::BadPacket</innerclass>
+    <innerclass refid="classdynamixel_1_1errors_1_1_crc_error" prot="public">dynamixel::errors::CrcError</innerclass>
+    <innerclass refid="classdynamixel_1_1errors_1_1_error" prot="public">dynamixel::errors::Error</innerclass>
+    <innerclass refid="classdynamixel_1_1errors_1_1_servo_limit_error" prot="public">dynamixel::errors::ServoLimitError</innerclass>
+    <innerclass refid="classdynamixel_1_1errors_1_1_status_error" prot="public">dynamixel::errors::StatusError</innerclass>
+    <innerclass refid="classdynamixel_1_1errors_1_1_unpack_error" prot="public">dynamixel::errors::UnpackError</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacedynamixel_1_1errors_1a8ce9eb21754f795d22794487c25d0b2d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void dynamixel::errors::check</definition>
+        <argsstring>(const char *file, int line, bool value, const std::string &amp;msg)</argsstring>
+        <name>check</name>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" line="42" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacedynamixel_1_1errors_1a214a77c7d6b433bdfe2ad7beec08d7f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; dynamixel::errors::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const Error &amp;err)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">Error</ref> &amp;</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" line="49" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/error.hpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/errors/bad_packet.hpp" line="10" column="1"/>
+  </compounddef>
+</doxygen>

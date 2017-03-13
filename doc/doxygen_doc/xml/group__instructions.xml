@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="group__instructions" kind="group">
+    <compoundname>instructions</compoundname>
+    <title>Instructions</title>
+    <innerclass refid="classdynamixel_1_1instructions_1_1_action" prot="public">dynamixel::instructions::Action</innerclass>
+    <innerclass refid="classdynamixel_1_1instructions_1_1_factory_reset" prot="public">dynamixel::instructions::FactoryReset</innerclass>
+    <innerclass refid="classdynamixel_1_1instructions_1_1_ping" prot="public">dynamixel::instructions::Ping</innerclass>
+    <innerclass refid="classdynamixel_1_1instructions_1_1_read" prot="public">dynamixel::instructions::Read</innerclass>
+    <innerclass refid="classdynamixel_1_1instructions_1_1_reboot" prot="public">dynamixel::instructions::Reboot</innerclass>
+    <innerclass refid="classdynamixel_1_1instructions_1_1_reg_write" prot="public">dynamixel::instructions::RegWrite</innerclass>
+    <innerclass refid="classdynamixel_1_1instructions_1_1_sync_write" prot="public">dynamixel::instructions::SyncWrite</innerclass>
+    <innerclass refid="classdynamixel_1_1instructions_1_1_write" prot="public">dynamixel::instructions::Write</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

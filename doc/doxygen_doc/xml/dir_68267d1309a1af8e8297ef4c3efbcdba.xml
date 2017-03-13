@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>/tmp/doc_dynamixel/libdynamixel/src</compoundname>
+    <innerdir refid="dir_e8e120a76409df5fc1d5b5871d8b23d6">/tmp/doc_dynamixel/libdynamixel/src/dynamixel</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/"/>
+  </compounddef>
+</doxygen>
