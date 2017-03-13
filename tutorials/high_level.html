@@ -1,0 +1,533 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Detect and control servos with the high level interface &mdash; libdynamixel 2.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+
+  
+    <link rel="top" title="libdynamixel 2.1 documentation" href="../index.html"/>
+        <link rel="up" title="Tutorials" href="index.html"/>
+        <link rel="next" title="Control servos with the low level interface" href="low_level.html"/>
+        <link rel="prev" title="Download and Compilation" href="download_and_compilation.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+          
+
+          
+            <a href="http://www.resibots.eu">
+          
+
+          
+            
+            <img src="../_static/resibots_logo_black_200px.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="resibots-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+                  <a class="caption" href="http://www.resibots.eu">Project's website</a>
+              
+                  <a class="caption" href="http://www.resibots.eu/libdynamixel/">libdynamixel (dynamixel library)</a>
+              
+            
+
+            
+            
+                <p class="caption"><span class="caption-text">Libdynamixel</span></p>
+<ul class="simple">
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Libdynamixel&#8217;s documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quick_start.html">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_and_compilation.html">Download and Compilation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Detect and control servos with the high level interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c-code-with-comments">C++ Code with comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#buildind-with-waf">Buildind with Waf</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="low_level.html">Control servos with the low level interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../high_level_api.html">High level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../low_level_api.html">Low level API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a></li>
+</ul>
+
+            
+
+            
+            
+              
+                <a class="caption" href="http://github.com/resibots/libdynamixel">github</a>
+              
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">libdynamixel</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">libdynamixel</a> &raquo;</li>
+    
+      <li><a href="index.html">Tutorials</a> &raquo;</li>
+    
+    <li>Detect and control servos with the high level interface</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="../_sources/tutorials/high_level.txt" rel="nofollow"> View page source</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="detect-and-control-servos-with-the-high-level-interface">
+<h1>Detect and control servos with the high level interface<a class="headerlink" href="#detect-and-control-servos-with-the-high-level-interface" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial assumes that you have already been able to compile and install the library. If not, please refer to the related instructions in the <a class="reference internal" href="download_and_compilation.html#download-and-compilation"><span>building/installation instructions</span></a>.</p>
+<p>We would like to develop a program that auto-detects all the servos connected to a port, sets their position at <span class="math">\(\pi\)</span> radians (180 degrees) and then reads the position that they have to verify that they got to the desired one. To do so, we are going to use the high level interface of the libdynamixel library. Our program will have the following usage</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="p">.</span><span class="o">/</span><span class="n">high_level_control</span> <span class="n">port</span>
+</pre></div>
+</div>
+<p>It requires the port name which is the absolute path to the linux device interfacing with the Dynamixel bus.</p>
+<p>Depending on the interface device you use, the device name would look like <code class="docutils literal"><span class="pre">ttyACMx</span></code> or <code class="docutils literal"><span class="pre">ttyUSBx</span></code> with x being an integer</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">To be able to access this interface, you usually need special rights. On ubuntu, you either have to belong to the <em>dialout</em> group or to run the generated programs as superuser.</p>
+</div>
+</div>
+<div class="section" id="c-code-with-comments">
+<h2>C++ Code with comments<a class="headerlink" href="#c-code-with-comments" title="Permalink to this headline">¶</a></h2>
+<p>We begin with including the required files:</p>
+<div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &lt;dynamixel/dynamixel.hpp&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>We are expecting the port name as a command line parameter:</p>
+<div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// We need to know to which port/device our servos are connected</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Usage: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; device/port&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>We select which protocol our servos are utilizing by using the C++ preprocessor:</p>
+<div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// Define protocol</span>
+<span class="cp">#ifdef PROTOCOL1</span>
+    <span class="k">using</span> <span class="kt">protocol_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">protocols</span><span class="o">::</span><span class="n">Protocol1</span><span class="p">;</span>
+<span class="cp">#else</span>
+    <span class="k">using</span> <span class="kt">protocol_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">protocols</span><span class="o">::</span><span class="n">Protocol2</span><span class="p">;</span>
+<span class="cp">#endif</span>
+</pre></div>
+</td></tr></table></div>
+<p>We first create a <code class="docutils literal"><span class="pre">Usb2Dynamixel</span></code> object with default parameters:</p>
+<div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// Create a new Usb2Dynamixel controller with default parameters</span>
+<span class="n">dynamixel</span><span class="o">::</span><span class="n">controllers</span><span class="o">::</span><span class="n">Usb2Dynamixel</span> <span class="n">controller</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Next, we want to establish a connection with the desired port:</p>
+<div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// Always use try-catch when connecting to a device/port</span>
+<span class="n">try</span> <span class="p">{</span>
+    <span class="c1">// connect to device/port</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">open_serial</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">errors</span><span class="o">::</span><span class="n">Error</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Something bad happened</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Error (dynamixel): &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">msg</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Note that we should always enclose the connection to the serial port with a <code class="docutils literal"><span class="pre">try-catch</span></code>, since connecting to serial devices could always have some unexpected errors. Similarly, we would like our <code class="docutils literal"><span class="pre">Usb2Dynamixel</span></code> controller to notify us for possible errors. To do this, we must enable it as follows:</p>
+<blockquote>
+<div><div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// Enable throwing exceptions -- by default all errors are ignored/silenced</span>
+<span class="n">controller</span><span class="p">.</span><span class="n">set_report_bad_packet</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<p>Next, we try to detect all the connected servos:</p>
+<div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// auto-detect scans all possible IDs and returns the connected servos</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">servos</span><span class="o">::</span><span class="n">BaseServo</span><span class="o">&lt;</span><span class="kt">protocol_t</span><span class="o">&gt;&gt;&gt;</span> <span class="n">servos</span>
+    <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">auto_detect</span><span class="o">&lt;</span><span class="kt">protocol_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">controller</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Finally, for each of the dected servos we enable it and set its position at <span class="math">\(\pi\)</span> radians:</p>
+<div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// For each servo detected</span>
+<span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">servo</span> <span class="p">:</span> <span class="n">servos</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Print the name and id of the servo</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Detected an &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">servo</span><span class="o">-&gt;</span><span class="n">model_name</span><span class="p">()</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot; with ID &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">servo</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">dynamixel</span><span class="o">::</span><span class="n">StatusPacket</span><span class="o">&lt;</span><span class="kt">protocol_t</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>
+    <span class="c1">// Enable torque</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">servo</span><span class="o">-&gt;</span><span class="n">set_torque_enable</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">st</span><span class="p">);</span>
+
+    <span class="c1">// Put it in position of pi</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">servo</span><span class="o">-&gt;</span><span class="n">set_goal_position_angle</span><span class="p">(</span><span class="n">M_PI</span><span class="p">));</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">st</span><span class="p">);</span>
+
+    <span class="c1">// Sleep for a bit to allow the servo to reach the position</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="c1">// Request the current position of the servo</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">servo</span><span class="o">-&gt;</span><span class="n">get_present_position_angle</span><span class="p">());</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">st</span><span class="p">);</span>
+
+    <span class="c1">// Parse the position from the packet received</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">valid</span><span class="p">())</span> <span class="c1">// check if valid response</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="n">servo</span><span class="o">-&gt;</span><span class="n">parse_present_position_angle</span><span class="p">(</span><span class="n">st</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;It went to the angle: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;. &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="s">&quot;Error: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">M_PI</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">M_PI</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Could not read the angle of the servo.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>All these commands should be enclosed into a <code class="docutils literal"><span class="pre">try-catch</span></code> since we enabled the exception throwing.</p>
+<p>Here&#8217;s the <strong>high_level_control.cpp</strong> file:</p>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &lt;dynamixel/dynamixel.hpp&gt;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// We need to know to which port/device our servos are connected</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Usage: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; device/port&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="c1">// Define protocol</span>
+<span class="cp">#ifdef PROTOCOL1</span>
+    <span class="k">using</span> <span class="kt">protocol_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">protocols</span><span class="o">::</span><span class="n">Protocol1</span><span class="p">;</span>
+<span class="cp">#else</span>
+    <span class="k">using</span> <span class="kt">protocol_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">protocols</span><span class="o">::</span><span class="n">Protocol2</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+    <span class="c1">// Create a new Usb2Dynamixel controller with default parameters</span>
+    <span class="n">dynamixel</span><span class="o">::</span><span class="n">controllers</span><span class="o">::</span><span class="n">Usb2Dynamixel</span> <span class="n">controller</span><span class="p">;</span>
+
+    <span class="c1">// Always use try-catch when connecting to a device/port</span>
+    <span class="n">try</span> <span class="p">{</span>
+        <span class="c1">// connect to device/port</span>
+        <span class="n">controller</span><span class="p">.</span><span class="n">open_serial</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">errors</span><span class="o">::</span><span class="n">Error</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Something bad happened</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Error (dynamixel): &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">msg</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Enable throwing exceptions -- by default all errors are ignored/silenced</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">set_report_bad_packet</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+    <span class="c1">// We want to catch exceptions</span>
+    <span class="n">try</span> <span class="p">{</span>
+        <span class="c1">// auto-detect scans all possible IDs and returns the connected servos</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">servos</span><span class="o">::</span><span class="n">BaseServo</span><span class="o">&lt;</span><span class="kt">protocol_t</span><span class="o">&gt;&gt;&gt;</span> <span class="n">servos</span>
+            <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">auto_detect</span><span class="o">&lt;</span><span class="kt">protocol_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">controller</span><span class="p">);</span>
+
+        <span class="c1">// For each servo detected</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">servo</span> <span class="p">:</span> <span class="n">servos</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Print the name and id of the servo</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Detected an &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">servo</span><span class="o">-&gt;</span><span class="n">model_name</span><span class="p">()</span>
+                      <span class="o">&lt;&lt;</span> <span class="s">&quot; with ID &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">servo</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+            <span class="n">dynamixel</span><span class="o">::</span><span class="n">StatusPacket</span><span class="o">&lt;</span><span class="kt">protocol_t</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>
+            <span class="c1">// Enable torque</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">servo</span><span class="o">-&gt;</span><span class="n">set_torque_enable</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">st</span><span class="p">);</span>
+
+            <span class="c1">// Put it in position of pi</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">servo</span><span class="o">-&gt;</span><span class="n">set_goal_position_angle</span><span class="p">(</span><span class="n">M_PI</span><span class="p">));</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">st</span><span class="p">);</span>
+
+            <span class="c1">// Sleep for a bit to allow the servo to reach the position</span>
+            <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+            <span class="c1">// Request the current position of the servo</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">servo</span><span class="o">-&gt;</span><span class="n">get_present_position_angle</span><span class="p">());</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">st</span><span class="p">);</span>
+
+            <span class="c1">// Parse the position from the packet received</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">valid</span><span class="p">())</span> <span class="c1">// check if valid response</span>
+            <span class="p">{</span>
+                <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="n">servo</span><span class="o">-&gt;</span><span class="n">parse_present_position_angle</span><span class="p">(</span><span class="n">st</span><span class="p">);</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;It went to the angle: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;. &quot;</span>
+                          <span class="o">&lt;&lt;</span> <span class="s">&quot;Error: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">M_PI</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">M_PI</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Could not read the angle of the servo.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">errors</span><span class="o">::</span><span class="n">Error</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Something bad happened</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Error (dynamixel): &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">msg</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="buildind-with-waf">
+<h2>Buildind with Waf<a class="headerlink" href="#buildind-with-waf" title="Permalink to this headline">¶</a></h2>
+<p>Now we need to create a <cite>wscript</cite> file for our project to compile it with waf (see the <a class="reference internal" href="download_and_compilation.html#download-and-compilation"><span>compilation tutorial</span></a> for details):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+
+<span class="k">def</span> <span class="nf">options</span><span class="p">(</span><span class="n">opt</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">configure</span><span class="p">(</span><span class="n">conf</span><span class="p">):</span>
+  <span class="c"># Get locations where to search for libdynamixel&#39;s headers</span>
+  <span class="n">includes_check</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;/usr/include&#39;</span><span class="p">,</span> <span class="s">&#39;/usr/local/include&#39;</span><span class="p">]</span>
+
+  <span class="k">try</span><span class="p">:</span>
+    <span class="c"># Find the headers of libdynamixel</span>
+    <span class="n">conf</span><span class="o">.</span><span class="n">start_msg</span><span class="p">(</span><span class="s">&#39;Checking for libdynamixel includes&#39;</span><span class="p">)</span>
+    <span class="n">conf</span><span class="o">.</span><span class="n">find_file</span><span class="p">(</span><span class="s">&#39;dynamixel/dynamixel.hpp&#39;</span><span class="p">,</span> <span class="n">includes_check</span><span class="p">)</span>
+    <span class="n">conf</span><span class="o">.</span><span class="n">end_msg</span><span class="p">(</span><span class="s">&#39;ok&#39;</span><span class="p">)</span>
+
+    <span class="n">conf</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">INCLUDES_LIBDYNAMIXEL</span> <span class="o">=</span> <span class="n">includes_check</span>
+  <span class="k">except</span><span class="p">:</span>
+    <span class="n">conf</span><span class="o">.</span><span class="n">end_msg</span><span class="p">(</span><span class="s">&#39;Not found&#39;</span><span class="p">,</span> <span class="s">&#39;RED&#39;</span><span class="p">)</span>
+  <span class="k">return</span>
+
+<span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">bld</span><span class="p">):</span>
+    <span class="n">libs</span> <span class="o">=</span> <span class="s">&#39;LIBDYNAMIXEL BOOST&#39;</span>
+
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">bld</span><span class="p">(</span><span class="n">features</span> <span class="o">=</span> <span class="s">&#39;cxx&#39;</span><span class="p">,</span>
+              <span class="n">source</span> <span class="o">=</span> <span class="s">&#39;high_level_control.cpp&#39;</span><span class="p">,</span>
+              <span class="n">includes</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="p">,</span>
+              <span class="n">target</span> <span class="o">=</span> <span class="s">&#39;high_level_control&#39;</span><span class="p">,</span>
+              <span class="n">uselib</span> <span class="o">=</span>  <span class="n">libs</span><span class="p">,</span>
+              <span class="n">defines</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;PROTOCOL1&#39;</span><span class="p">])</span> <span class="c"># change this to PROTOCOL2 if you want to use servos that operate with PROTOCOL2</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="low_level.html" class="btn btn-neutral float-right" title="Control servos with the low level interface" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="download_and_compilation.html" class="btn btn-neutral" title="Download and Compilation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo" class="wy-footer">
+    <div role="contentinfo">
+      <p>
+          &copy; Copyright 2015, Jean-Baptiste Mouret, Federico Allocati, Antoine Cully, Dorian Goepp.
+
+      
+      
+        <br/>
+        <a href="mailto:jean-baptiste.mouret@inria.fr"> Contact us </a>
+      
+      </p>
+    </div>
+    <div class="wy-footer-aside">
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> modified for <a href="http://resibots.eu">Resibots</a>.
+    </div>
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxResibotsTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

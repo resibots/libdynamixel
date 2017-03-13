@@ -87,7 +87,7 @@
               
                   <a class="caption" href="http://www.resibots.eu">Project's website</a>
               
-                  <a class="caption" href="http://www.resibots.eu/limbo/">Limbo (BO library)</a>
+                  <a class="caption" href="http://www.resibots.eu/libdynamixel/">libdynamixel (dynamixel library)</a>
               
             
 
@@ -107,6 +107,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#instructions">Instructions</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#status-packets-statuspacket">Status packets (StatusPacket)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#errors">Errors</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#abstract-class-error">Abstract class (Error)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#error-classes">Error classes</a></li>
@@ -122,7 +123,7 @@
             
             
               
-                <a class="caption" href="http://github.com/resibots">github</a>
+                <a class="caption" href="http://github.com/resibots/libdynamixel">github</a>
               
             
           
@@ -150,7 +151,7 @@
 
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Limbo</a> &raquo;</li>
+    <li><a href="index.html">libdynamixel</a> &raquo;</li>
     
     <li>Low level API</li>
     <li class="wy-breadcrumbs-aside">
@@ -231,7 +232,7 @@
 <dt>
 <em class="property">template </em>&lt;<em class="property">typename</em> T&gt;</dt>
 <dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel4recvER12StatusPacketI1TE">
-<span id="dynamixel::controllers::Usb2Dynamixel::recv__StatusPacket:T:R"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1a763efb6a72f8d776ce80c37a4a8ff3ca"></span>bool <code class="descname">recv</code><span class="sig-paren">(</span>StatusPacket&lt;T&gt; &amp;<em>status</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel4recvER12StatusPacketI1TE" title="Permalink to this definition">¶</a></dt>
+<span id="dynamixel::controllers::Usb2Dynamixel::recv__StatusPacket:T:R"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1a763efb6a72f8d776ce80c37a4a8ff3ca"></span>bool <code class="descname">recv</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv2N9dynamixel12StatusPacketE" title="dynamixel::StatusPacket">StatusPacket</a>&lt;T&gt; &amp;<em>status</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel4recvER12StatusPacketI1TE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -259,12 +260,23 @@
 <h2>Instructions Packets<a class="headerlink" href="#instructions-packets" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="abstract-class-instructionpacket">
 <h3>Abstract class (InstructionPacket)<a class="headerlink" href="#abstract-class-instructionpacket" title="Permalink to this headline">¶</a></h3>
+<p>For details about instructions, see:</p>
+<ul class="simple">
+<li>protocol 1: <a class="reference external" href="http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_instruction.htm">http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_instruction.htm</a></li>
+<li>protocol 2: <a class="reference external" href="http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm">http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm</a></li>
+</ul>
 <dl class="class">
 <dt>
 <span class="target" id="libdynamixelclassdynamixel_1_1_instruction_packet"></span><em class="property">template </em>&lt;class <em>Protocol</em>&gt;</dt>
 <dt id="_CPPv2N9dynamixel17InstructionPacketE">
 <span id="dynamixel::InstructionPacket"></span><em class="property">class </em><code class="descclassname">dynamixel::</code><code class="descname">InstructionPacket</code><a class="headerlink" href="#_CPPv2N9dynamixel17InstructionPacketE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract class for instructions </p>
+<dd><p>Abstract class for instructions <dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd>Protocol1: <a class="reference external" href="http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_packet.htm">http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_packet.htm</a> </dd>
+<dt><strong>See</strong></dt>
+<dd>Protocol2: <a class="reference external" href="http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm">http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm</a> </dd>
+</dl>
+</p>
 <div class="breathe-sectiondef container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="function">
@@ -368,6 +380,65 @@
 </dd></dl>
 
 </div>
+</div>
+<div class="section" id="status-packets-statuspacket">
+<h2>Status packets (StatusPacket)<a class="headerlink" href="#status-packets-statuspacket" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<span class="target" id="libdynamixelclassdynamixel_1_1_status_packet"></span><em class="property">template </em>&lt;class <em>Protocol</em>&gt;</dt>
+<dt id="_CPPv2N9dynamixel12StatusPacketE">
+<span id="dynamixel::StatusPacket"></span><em class="property">class </em><code class="descclassname">dynamixel::</code><code class="descname">StatusPacket</code><a class="headerlink" href="#_CPPv2N9dynamixel12StatusPacketE" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents packets that are received on the bus.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd>Protocol1: <a class="reference external" href="http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_packet.htm#Status_Packet">http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_packet.htm#Status_Packet</a> </dd>
+<dt><strong>See</strong></dt>
+<dd>Protocol2: <a class="reference external" href="http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm">http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm</a> </dd>
+</dl>
+</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt>
+<span class="target" id="libdynamixelclassdynamixel_1_1_status_packet_1a8503d43f735f141c2faa37aaac8abbc6"></span><em class="property">typedef </em><code class="descname">using dynamixel::StatusPacket&lt; Protocol &gt;::DecodeState =  typename Protocol::DecodeState</code></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N9dynamixel12StatusPacket12StatusPacketEv">
+<span id="dynamixel::StatusPacket::StatusPacket"></span><span class="target" id="libdynamixelclassdynamixel_1_1_status_packet_1a569c906dc127b35054910ee24ac3106d"></span><code class="descname">StatusPacket</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel12StatusPacket12StatusPacketEv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel12StatusPacket5validEv">
+<span id="dynamixel::StatusPacket::valid"></span><span class="target" id="libdynamixelclassdynamixel_1_1_status_packet_1a238434acc73f5fee202c72165119bce7"></span>bool <code class="descname">valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9dynamixel12StatusPacket5validEv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel12StatusPacket2idEv">
+<span id="dynamixel::StatusPacket::id"></span><span class="target" id="libdynamixelclassdynamixel_1_1_status_packet_1a10276952e07fde88f3c735e8566286a8"></span>Protocol::id_t <code class="descname">id</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9dynamixel12StatusPacket2idEv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel12StatusPacket10parametersEv">
+<span id="dynamixel::StatusPacket::parameters"></span><span class="target" id="libdynamixelclassdynamixel_1_1_status_packet_1a6705f215ee512e2de94f3a4108a5b008"></span><em class="property">const</em> std::vector&lt;uint8_t&gt; &amp;<code class="descname">parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9dynamixel12StatusPacket10parametersEv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel12StatusPacket13decode_packetERKNSt6vectorI7uint8_tEEb">
+<span id="dynamixel::StatusPacket::decode_packet__std::vector:uint8_t:CR.b"></span><span class="target" id="libdynamixelclassdynamixel_1_1_status_packet_1afa5050d362fd97326a3114207544f735"></span>DecodeState <code class="descname">decode_packet</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;uint8_t&gt; &amp;<em>packet</em>, bool <em>report_bad_packet</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel12StatusPacket13decode_packetERKNSt6vectorI7uint8_tEEb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel12StatusPacket5printERNSt7ostreamE">
+<span id="dynamixel::StatusPacket::print__osR"></span><span class="target" id="libdynamixelclassdynamixel_1_1_status_packet_1a5a1e1ffbe173e1da4a0947d48150ed43"></span>std::ostream &amp;<code class="descname">print</code><span class="sig-paren">(</span>std::ostream &amp;<em>os</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9dynamixel12StatusPacket5printERNSt7ostreamE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
 </div>
 <div class="section" id="errors">
 <h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>

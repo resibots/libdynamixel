@@ -8,16 +8,16 @@
 \begin{DoxyCompactItemize}
 \item 
 typedef Protocol \hyperlink{classdynamixel_1_1servos_1_1_base_servo_ac484c11279ee2576a9a3bb8c940e0baf}{protocol\+\_\+t}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em type of the protocol (Protocol1 or Protocol2) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual long long int \hyperlink{classdynamixel_1_1servos_1_1_base_servo_a191c1596a4fcbe43cc7b9292f83e196b}{id} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em I\+D of the servo. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classdynamixel_1_1servos_1_1_base_servo_a20e7410262e37dcd177e81a41d78d8ba}{id} (long long int id)
-\item 
+\begin{DoxyCompactList}\small\item\em ?? \end{DoxyCompactList}\item 
 virtual std\+::string \hyperlink{classdynamixel_1_1servos_1_1_base_servo_a0878d6f74b1a26bf23fa53a296fd8283}{model\+\_\+name} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Name of the model (e.\+g. \hyperlink{classdynamixel_1_1servos_1_1_mx12}{Mx12}, \hyperlink{classdynamixel_1_1servos_1_1_mx28}{Mx28}, etc.) \end{DoxyCompactList}\item 
 \hyperlink{classdynamixel_1_1servos_1_1_base_servo_ae136ad4ba45eddc402d3638f42d4cbbd}{B\+A\+S\+E\+\_\+\+F\+I\+E\+L\+D} (model\+\_\+number)
 \item 
 \hyperlink{classdynamixel_1_1servos_1_1_base_servo_aa700a94b75b928640dbcd887417db861}{B\+A\+S\+E\+\_\+\+F\+I\+E\+L\+D} (firmware\+\_\+version)
@@ -137,7 +137,7 @@ virtual std\+::string \hyperlink{classdynamixel_1_1servos_1_1_base_servo_a0878d6
 \hyperlink{classdynamixel_1_1servos_1_1_base_servo_ad9fe76845a8b139921b35b7d346480e1}{B\+A\+S\+E\+\_\+\+F\+I\+E\+L\+D} (control\+\_\+mode)
 \item 
 virtual \hyperlink{classdynamixel_1_1_instruction_packet}{Instruction\+Packet}$<$ \hyperlink{classdynamixel_1_1servos_1_1_base_servo_ac484c11279ee2576a9a3bb8c940e0baf}{protocol\+\_\+t} $>$ \hyperlink{classdynamixel_1_1servos_1_1_base_servo_adae0a44afbebfb03343d325648387301}{ping} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Ping the servo. \end{DoxyCompactList}\item 
 virtual \hyperlink{classdynamixel_1_1_instruction_packet}{Instruction\+Packet}$<$ \hyperlink{classdynamixel_1_1servos_1_1_base_servo_ac484c11279ee2576a9a3bb8c940e0baf}{protocol\+\_\+t} $>$ \hyperlink{classdynamixel_1_1servos_1_1_base_servo_ac91b383ed4ba24ccc142fe6cb08479fe}{set\+\_\+goal\+\_\+position\+\_\+angle} (double rad) const 
 \item 
 virtual \hyperlink{classdynamixel_1_1_instruction_packet}{Instruction\+Packet}$<$ \hyperlink{classdynamixel_1_1servos_1_1_base_servo_ac484c11279ee2576a9a3bb8c940e0baf}{protocol\+\_\+t} $>$ \hyperlink{classdynamixel_1_1servos_1_1_base_servo_a5912ce58f8d174bcccd07ef75fef6a6b}{reg\+\_\+goal\+\_\+position\+\_\+angle} (double rad) const 
@@ -158,6 +158,10 @@ virtual double \hyperlink{classdynamixel_1_1servos_1_1_base_servo_a1fec786a4f11b
 \hypertarget{classdynamixel_1_1servos_1_1_base_servo_ac484c11279ee2576a9a3bb8c940e0baf}{}\index{dynamixel\+::servos\+::\+Base\+Servo@{dynamixel\+::servos\+::\+Base\+Servo}!protocol\+\_\+t@{protocol\+\_\+t}}
 \index{protocol\+\_\+t@{protocol\+\_\+t}!dynamixel\+::servos\+::\+Base\+Servo@{dynamixel\+::servos\+::\+Base\+Servo}}
 \subsubsection[{protocol\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Protocol$>$ typedef Protocol {\bf dynamixel\+::servos\+::\+Base\+Servo}$<$ Protocol $>$\+::{\bf protocol\+\_\+t}}\label{classdynamixel_1_1servos_1_1_base_servo_ac484c11279ee2576a9a3bb8c940e0baf}
+
+
+type of the protocol (Protocol1 or Protocol2) 
+
 
 
 \subsection{Member Function Documentation}
@@ -594,6 +598,10 @@ Reimplemented in \hyperlink{classdynamixel_1_1servos_1_1_servo_a28c5330eed1d17ae
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdynamixel_1_1servos_1_1_base_servo_a191c1596a4fcbe43cc7b9292f83e196b}
 
 
+I\+D of the servo. 
+
+
+
 Reimplemented in \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Model $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Mx28 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Ex106 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5430\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Xl320 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Pro\+M5460\+S250 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L4210\+S300 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5450\+S290 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5450\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5430\+S400 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Mx64 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Pro\+H4220\+S300 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Pro\+H54200\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Ax12\+W $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Ax12 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Mx106 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Pro\+H54100\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Ax18 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Pro\+M5440\+S250 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Pro\+M4210\+S260 $>$}, and \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7bb57b76706e1cc57}{dynamixel\+::servos\+::\+Servo$<$ Mx12 $>$}.
 
 \hypertarget{classdynamixel_1_1servos_1_1_base_servo_a20e7410262e37dcd177e81a41d78d8ba}{}\index{dynamixel\+::servos\+::\+Base\+Servo@{dynamixel\+::servos\+::\+Base\+Servo}!id@{id}}
@@ -605,6 +613,10 @@ Reimplemented in \hyperlink{classdynamixel_1_1servos_1_1_servo_a2d022081672e25a7
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdynamixel_1_1servos_1_1_base_servo_a20e7410262e37dcd177e81a41d78d8ba}
 
 
+?? 
+
+
+
 Reimplemented in \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Model $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Mx28 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Ex106 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5430\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Xl320 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Pro\+M5460\+S250 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L4210\+S300 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5450\+S290 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5450\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5430\+S400 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Mx64 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Pro\+H4220\+S300 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Pro\+H54200\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Ax12\+W $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Ax12 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Mx106 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Pro\+H54100\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Ax18 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Pro\+M5440\+S250 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Pro\+M4210\+S260 $>$}, and \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c622305634368b18f2}{dynamixel\+::servos\+::\+Servo$<$ Mx12 $>$}.
 
 \hypertarget{classdynamixel_1_1servos_1_1_base_servo_a0878d6f74b1a26bf23fa53a296fd8283}{}\index{dynamixel\+::servos\+::\+Base\+Servo@{dynamixel\+::servos\+::\+Base\+Servo}!model\+\_\+name@{model\+\_\+name}}
@@ -614,6 +626,10 @@ Reimplemented in \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c6
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdynamixel_1_1servos_1_1_base_servo_a0878d6f74b1a26bf23fa53a296fd8283}
+
+
+Name of the model (e.\+g. \hyperlink{classdynamixel_1_1servos_1_1_mx12}{Mx12}, \hyperlink{classdynamixel_1_1servos_1_1_mx28}{Mx28}, etc.) 
+
 \hypertarget{classdynamixel_1_1servos_1_1_base_servo_a1fec786a4f11bd3febc4c6122e33cab5}{}\index{dynamixel\+::servos\+::\+Base\+Servo@{dynamixel\+::servos\+::\+Base\+Servo}!parse\+\_\+joint\+\_\+speed@{parse\+\_\+joint\+\_\+speed}}
 \index{parse\+\_\+joint\+\_\+speed@{parse\+\_\+joint\+\_\+speed}!dynamixel\+::servos\+::\+Base\+Servo@{dynamixel\+::servos\+::\+Base\+Servo}}
 \subsubsection[{parse\+\_\+joint\+\_\+speed}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Protocol$>$ virtual double {\bf dynamixel\+::servos\+::\+Base\+Servo}$<$ Protocol $>$\+::parse\+\_\+joint\+\_\+speed (
@@ -635,6 +651,10 @@ Reimplemented in \hyperlink{classdynamixel_1_1servos_1_1_servo_a866e0cdb2ee9f3c6
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdynamixel_1_1servos_1_1_base_servo_adae0a44afbebfb03343d325648387301}
+
+
+Ping the servo. 
+
 
 
 Reimplemented in \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Model $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Mx28 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Ex106 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5430\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Xl320 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Pro\+M5460\+S250 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L4210\+S300 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5450\+S290 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5450\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Pro\+L5430\+S400 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Mx64 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Pro\+H4220\+S300 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Pro\+H54200\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Ax12\+W $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Ax12 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Mx106 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Pro\+H54100\+S500 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Ax18 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Pro\+M5440\+S250 $>$}, \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Pro\+M4210\+S260 $>$}, and \hyperlink{classdynamixel_1_1servos_1_1_servo_a9a471486d0ec100d485c5fb4af114d38}{dynamixel\+::servos\+::\+Servo$<$ Mx12 $>$}.

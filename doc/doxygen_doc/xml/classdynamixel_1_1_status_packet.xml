@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="14" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="14" bodyend="-1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="20" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="20" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="61" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="61" bodyend="-1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="67" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel_1_1_status_packet_1a03638cd22213950cd5a6d8b79186def1" prot="private" static="no" mutable="no">
         <type>Protocol::id_t</type>
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="62" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="62" bodyend="-1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="68" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel_1_1_status_packet_1ad8bbf88d16e5a24079935c9caffad122" prot="private" static="no" mutable="no">
         <type>std::vector&lt; uint8_t &gt;</type>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="63" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="63" bodyend="-1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="69" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="69" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="16" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="16" bodyend="16"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="22" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="22" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1_status_packet_1a238434acc73f5fee202c72165119bce7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="18" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="18" bodyend="18"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="24" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="24" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1_status_packet_1a10276952e07fde88f3c735e8566286a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>Protocol::id_t</type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="20" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="20" bodyend="25"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="26" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="26" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1_status_packet_1a6705f215ee512e2de94f3a4108a5b008" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>const std::vector&lt; uint8_t &gt; &amp;</type>
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="27" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="27" bodyend="32"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="33" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="33" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1_status_packet_1afa5050d362fd97326a3114207544f735" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classdynamixel_1_1_status_packet_1a8503d43f735f141c2faa37aaac8abbc6" kindref="member">DecodeState</ref></type>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="34" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="34" bodyend="42"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="40" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="40" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1_status_packet_1a5a1e1ffbe173e1da4a0947d48150ed43" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -156,14 +156,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="44" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="44" bodyend="58"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="50" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="50" bodyend="64"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
-    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="12" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="12" bodyend="64"/>
+<para>This class represents packets that are received on the bus.</para><para><simplesect kind="see"><para>Protocol1: <ulink url="http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_packet.htm#Status_Packet">http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_packet.htm#Status_Packet</ulink> </para></simplesect>
+<simplesect kind="see"><para>Protocol2: <ulink url="http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm">http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm</ulink> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" line="18" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/status_packet.hpp" bodystart="18" bodyend="70"/>
     <listofallmembers>
       <member refid="classdynamixel_1_1_status_packet_1a03638cd22213950cd5a6d8b79186def1" prot="private" virt="non-virtual"><scope>dynamixel::StatusPacket</scope><name>_id</name></member>
       <member refid="classdynamixel_1_1_status_packet_1ad8bbf88d16e5a24079935c9caffad122" prot="private" virt="non-virtual"><scope>dynamixel::StatusPacket</scope><name>_parameters</name></member>

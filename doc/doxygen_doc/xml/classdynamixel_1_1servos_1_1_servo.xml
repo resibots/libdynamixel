@@ -153,7 +153,7 @@
         <name>id</name>
         <reimplements refid="classdynamixel_1_1servos_1_1_base_servo_1a191c1596a4fcbe43cc7b9292f83e196b">id</reimplements>
         <briefdescription>
-        </briefdescription>
+<para>ID of the servo. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -171,7 +171,7 @@
           <declname>id</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>?? </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -489,7 +489,7 @@
         <name>ping</name>
         <reimplements refid="classdynamixel_1_1servos_1_1_base_servo_1adae0a44afbebfb03343d325648387301">ping</reimplements>
         <briefdescription>
-        </briefdescription>
+<para>Ping the servo. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>

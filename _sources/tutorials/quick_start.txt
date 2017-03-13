@@ -8,7 +8,7 @@ Dependencies :
 
 - python2.x
 - C++
-- Boost C++
+- Boost C++ (optional) with the *program_options* lib only.
 
 .. highlight:: shell
 
@@ -25,19 +25,15 @@ The build system for this library is Waf. Don't run away yet. It has the big adv
 
 For more options and troubleshooting, see the :ref:`Compilation tutorial <download_and_compilation>`.
 
-Command line interface
+Command line utility
 ----------------------
 
-You get the ``dynamixel`` toolset and the demo programms compiled in the ``build/default/src`` folder.
+You get the ``dynamixel`` command line utility compiled in the ``build/src`` folder.
 
 .. note:: the ``get-speed`` command gives you the reference speed used in the control table (if any) and not the current rotational speed of the actuator.
 
-Demo programms
---------------
+To run the command line utility run the following from the root of the repo::
 
-You get the ``dynamixel`` toolset and the demo programms compiled in the ``build/default/src`` folder.
+    ./build/src/tools/dynamixel COMMAND [options]
 
-For now, the demo programs are not at a working stage and should not be used. Conversely, ``dynamixel`` is a working program that we use regularly.
-
-Library
--------
+For a quick overview of the commands and options available check the :ref:`quick start for the tool <quick_utility>`. Type ``./build/src/tools/dynamixel -h`` for the (detailed) help message of the utility.

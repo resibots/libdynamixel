@@ -88,7 +88,7 @@
               
                   <a class="caption" href="http://www.resibots.eu">Project's website</a>
               
-                  <a class="caption" href="http://www.resibots.eu/limbo/">Limbo (BO library)</a>
+                  <a class="caption" href="http://www.resibots.eu/libdynamixel/">libdynamixel (dynamixel library)</a>
               
             
 
@@ -102,13 +102,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="">Quick Start</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#building">Building</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#command-line-interface">Command line interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#demo-programms">Demo programms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#library">Library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-utility">Command line utility</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="download_and_compilation.html">Download and Compilation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="motor_control.html">Control one actuator&#8217;s position or speed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="high_level.html">Detect and control servos with the high level interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="low_level.html">Control servos with the low level interface</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../high_level_api.html">High level API</a></li>
@@ -121,7 +120,7 @@
             
             
               
-                <a class="caption" href="http://github.com/resibots">github</a>
+                <a class="caption" href="http://github.com/resibots/libdynamixel">github</a>
               
             
           
@@ -149,7 +148,7 @@
 
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Limbo</a> &raquo;</li>
+    <li><a href="../index.html">libdynamixel</a> &raquo;</li>
     
       <li><a href="index.html">Tutorials</a> &raquo;</li>
     
@@ -175,7 +174,7 @@
 <ul class="simple">
 <li>python2.x</li>
 <li>C++</li>
-<li>Boost C++</li>
+<li>Boost C++ (optional) with the <em>program_options</em> lib only.</li>
 </ul>
 <p>The build system for this library is Waf. Don&#8217;t run away yet. It has the big advantage of requiring no more than Python installed on your computer. If you run a GNU/Linux OS or Mac OS, you should already have it. Here is how we compile and install it:</p>
 <ol class="arabic">
@@ -206,21 +205,18 @@
 </ol>
 <p>For more options and troubleshooting, see the <a class="reference internal" href="download_and_compilation.html#download-and-compilation"><span>Compilation tutorial</span></a>.</p>
 </div>
-<div class="section" id="command-line-interface">
-<h2>Command line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h2>
-<p>You get the <code class="docutils literal"><span class="pre">dynamixel</span></code> toolset and the demo programms compiled in the <code class="docutils literal"><span class="pre">build/default/src</span></code> folder.</p>
+<div class="section" id="command-line-utility">
+<h2>Command line utility<a class="headerlink" href="#command-line-utility" title="Permalink to this headline">¶</a></h2>
+<p>You get the <code class="docutils literal"><span class="pre">dynamixel</span></code> command line utility compiled in the <code class="docutils literal"><span class="pre">build/src</span></code> folder.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">the <code class="docutils literal"><span class="pre">get-speed</span></code> command gives you the reference speed used in the control table (if any) and not the current rotational speed of the actuator.</p>
 </div>
+<p>To run the command line utility run the following from the root of the repo:</p>
+<div class="highlight-shell"><div class="highlight"><pre>./build/src/tools/dynamixel COMMAND <span class="o">[</span>options<span class="o">]</span>
+</pre></div>
 </div>
-<div class="section" id="demo-programms">
-<h2>Demo programms<a class="headerlink" href="#demo-programms" title="Permalink to this headline">¶</a></h2>
-<p>You get the <code class="docutils literal"><span class="pre">dynamixel</span></code> toolset and the demo programms compiled in the <code class="docutils literal"><span class="pre">build/default/src</span></code> folder.</p>
-<p>For now, the demo programs are not at a working stage and should not be used. Conversely, <code class="docutils literal"><span class="pre">dynamixel</span></code> is a working program that we use regularly.</p>
-</div>
-<div class="section" id="library">
-<h2>Library<a class="headerlink" href="#library" title="Permalink to this headline">¶</a></h2>
+<p>For a quick overview of the commands and options available check the <span class="xref std std-ref">quick start for the tool</span>. Type <code class="docutils literal"><span class="pre">./build/src/tools/dynamixel</span> <span class="pre">-h</span></code> for the (detailed) help message of the utility.</p>
 </div>
 </div>
 

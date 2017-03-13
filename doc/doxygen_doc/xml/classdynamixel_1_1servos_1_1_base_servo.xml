@@ -17,12 +17,12 @@
         <argsstring></argsstring>
         <name>protocol_t</name>
         <briefdescription>
-        </briefdescription>
+<para>type of the protocol (Protocol1 or Protocol2) </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="41" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="41" bodyend="-1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="42" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="42" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -53,12 +53,12 @@
         <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
         <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a2d022081672e25a7bb57b76706e1cc57">id</reimplementedby>
         <briefdescription>
-        </briefdescription>
+<para>ID of the servo. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="43" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="43" bodyend="46"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="45" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="45" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a20e7410262e37dcd177e81a41d78d8ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -91,12 +91,12 @@
           <declname>id</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>?? </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="48" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="48" bodyend="51"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="51" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="51" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a0878d6f74b1a26bf23fa53a296fd8283" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>std::string</type>
@@ -104,12 +104,12 @@
         <argsstring>() const </argsstring>
         <name>model_name</name>
         <briefdescription>
-        </briefdescription>
+<para>Name of the model (e.g. <ref refid="classdynamixel_1_1servos_1_1_mx12" kindref="compound">Mx12</ref>, <ref refid="classdynamixel_1_1servos_1_1_mx28" kindref="compound">Mx28</ref>, etc.) </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="53" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="53" bodyend="56"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="57" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="57" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="60" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="64" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aa700a94b75b928640dbcd887417db861" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="61" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="65" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1af3eded69e54365d754ba7715c9af57ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -157,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="62" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="66" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a48bfb690093b070720aa7ca522ab6b1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -173,7 +173,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="63" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="67" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1abe54af60eda15894e0be32fe7c447906" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -189,7 +189,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="64" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="68" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ac3c0ffaea0c5adb2245a875bdd0d9a15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -205,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="65" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="69" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a012af5ca86e8020bf3bd95f2abed4bcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -221,7 +221,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="66" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="70" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ade5dee7e7e3029b7a9779b726f763112" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -237,7 +237,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="67" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="71" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a1133c7f435ceb0d82542f609034c7b6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -253,7 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="68" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="72" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a9b009f5190906b3851daf59d55b7cb8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -269,7 +269,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="69" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="73" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aa7c4e55ffcd9f798807d7192df7c9a11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -285,7 +285,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="70" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="74" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1afa45f82edf10091dccc4cacf8731f466" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -301,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="71" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="75" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a3319c8cbd3faf82f56f4b3d24a88007d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -317,7 +317,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="72" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="76" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a33900c9ece00c4a137d60a2084cdb05e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -333,7 +333,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="73" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="77" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a84ddc664e4dbd299a218d06f7cd77201" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -349,7 +349,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="74" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="78" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ab5167c0a8fec3502cac03b94d2724647" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -365,7 +365,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="75" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="79" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1adebb7ca3f7e87a284b9211d1f94a0dda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -381,7 +381,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="76" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="80" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a2c06de53ab5b5e8d910da1dfd172e4f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -397,7 +397,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="77" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="81" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a46fc43c764852d3aa1a1b839b367af7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -413,7 +413,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="78" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="82" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ad6f5dae7112bf5ada32bfcab4bdf2249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -429,7 +429,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="80" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="84" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ac18bbfd90b36bc38b484f250e0e73395" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -445,7 +445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="81" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="85" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a66d87963957d700b0cb3e5489280102d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -461,7 +461,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="82" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="86" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1abfb2b375965a742dae13df7324a340a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -477,7 +477,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="83" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="87" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a6590f524917293ab98556346bac1981f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -493,7 +493,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="84" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="88" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a70470a70099add231dd287d5b69a3e05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -509,7 +509,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="85" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="89" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1abe0a74eeee4b456096d1ae2a114d91c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -525,7 +525,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="86" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="90" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aab9dc28556b2f869338111a3169829d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -541,7 +541,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="87" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="91" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a3b9a6dda5ecd09debc17fe9fb72d255b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -557,7 +557,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="88" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="92" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a84e568db5fcd8725ace1873c56545e39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -573,7 +573,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="89" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="93" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a33d2a6eed08c33fc4786404dd5399daa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -589,7 +589,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="90" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="94" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aa2e7a577c80aea887b05b53c76578acf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -605,7 +605,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="91" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="95" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a6a1cc09047bac429e7b50cf69a59e2e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -621,7 +621,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="92" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="96" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ab9dde35a6228cfe48b2a58b0ab679de5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -637,7 +637,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="93" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="97" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a13f8ab07c4c2274c9b0191c7bb43a159" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -653,7 +653,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="94" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="98" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aa57f1bf9f68d5ff6bbee12ad9de25f03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -669,7 +669,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="96" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="100" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a046123a7102b0f8576a5379244dab59f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -685,7 +685,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="97" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="101" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a2faa22f6a3eb0ec3e01e4ca427f11ddd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -701,7 +701,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="98" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="102" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a2f96570d1a8c874bc38bfe53c19d6bba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -717,7 +717,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="99" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="103" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a49e5eeb24d2f0a56e6450dffd8bd6d9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -733,7 +733,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="100" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="104" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a3e081b1577bbe5571cfcf277ebaeb90a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -749,7 +749,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="101" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="105" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a828703bacd6f83b91a4c4bbe7cb45d7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -765,7 +765,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="102" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="106" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1af4433354d94851217d5931b528be26a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -781,7 +781,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="103" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="107" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a87f4340b3d3c266be54fe22cb0573128" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -797,7 +797,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="104" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="108" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a534b4f6823ed8c8c2e2b650d76aef90a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -813,7 +813,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="106" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="110" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1afe1a1fd0d8a3195fc053186729e493d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -829,7 +829,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="107" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="111" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a3feb535f2ec0d53f4b8dbb873e78875a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -845,7 +845,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="108" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="112" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ae380e8c4a76f8377bdb7112b3ad3fa68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -861,7 +861,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="109" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="113" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a17a48b48ed6277f17477656977c373e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -877,7 +877,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="110" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="114" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a28a3e801191c864226610c99163b906a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -893,7 +893,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="111" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="115" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a8f269d5d442445a4744e6404b5cb2c58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -909,7 +909,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="112" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="116" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1aaefe353baec0ad45d9310e985da01fd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -925,7 +925,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="113" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="117" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a2675879e1916600b4251a8798dda7792" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -941,7 +941,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="114" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="118" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ad004618d6add77d2a3599dfe0a9b8be2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -957,7 +957,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="115" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="119" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1afbf232f99d9b318714936dd12fd71474" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -973,7 +973,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="116" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="120" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a87e0bff5c474582d9bbd1ffe45f91da5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -989,7 +989,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="117" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="121" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a3ecd90f9f9c23eefeb298508ce7d26d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1005,7 +1005,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="118" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="122" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a0aa14b2dc61dafdb0e1e238a37e57083" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1021,7 +1021,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="119" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="123" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a8a5b6f0cccde10173a942d1da92a4064" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1037,7 +1037,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="120" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="124" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ad9fe76845a8b139921b35b7d346480e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1053,7 +1053,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="122" column="1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="126" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1adae0a44afbebfb03343d325648387301" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
@@ -1082,12 +1082,12 @@
         <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
         <reimplementedby refid="classdynamixel_1_1servos_1_1_servo_1a9a471486d0ec100d485c5fb4af114d38">ping</reimplementedby>
         <briefdescription>
-        </briefdescription>
+<para>Ping the servo. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="125" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="125" bodyend="128"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="129" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="129" bodyend="132"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1ac91b383ed4ba24ccc142fe6cb08479fe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
@@ -1125,7 +1125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="133" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="133" bodyend="136"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="137" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="137" bodyend="140"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a5912ce58f8d174bcccd07ef75fef6a6b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
@@ -1163,7 +1163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="138" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="138" bodyend="141"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="142" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="142" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a26a0ccb64fcefde496e1f45ed6462125" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
@@ -1197,7 +1197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="143" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="143" bodyend="146"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="147" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="147" bodyend="150"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a235479ae2b41314f2d5f9492a1b09b44" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>double</type>
@@ -1214,7 +1214,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="148" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="148" bodyend="151"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="152" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="152" bodyend="155"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a5a976fa54ae637537b03596befcb7529" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
@@ -1257,7 +1257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="156" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="156" bodyend="159"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="160" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="160" bodyend="163"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a2b9b43a25ff078a54031f58e752a177e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type><ref refid="classdynamixel_1_1_instruction_packet" kindref="compound">InstructionPacket</ref>&lt; <ref refid="classdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf" kindref="member">protocol_t</ref> &gt;</type>
@@ -1300,7 +1300,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="161" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="161" bodyend="164"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="165" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="165" bodyend="168"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1servos_1_1_base_servo_1a1fec786a4f11bd3febc4c6122e33cab5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
         <type>double</type>
@@ -1317,7 +1317,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="166" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="166" bodyend="169"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="170" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="170" bodyend="173"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -1332,14 +1332,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="172" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="172" bodyend="172"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="176" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="176" bodyend="176"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="39" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="39" bodyend="173"/>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" line="39" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos/base_servo.hpp" bodystart="39" bodyend="177"/>
     <listofallmembers>
       <member refid="classdynamixel_1_1servos_1_1_base_servo_1ae136ad4ba45eddc402d3638f42d4cbbd" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>
       <member refid="classdynamixel_1_1servos_1_1_base_servo_1aa700a94b75b928640dbcd887417db861" prot="public" virt="non-virtual"><scope>dynamixel::servos::BaseServo</scope><name>BASE_FIELD</name></member>

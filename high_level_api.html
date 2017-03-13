@@ -29,7 +29,7 @@
   
     <link rel="top" title="libdynamixel 2.1 documentation" href="index.html"/>
         <link rel="next" title="Low level API" href="low_level_api.html"/>
-        <link rel="prev" title="Control one actuator’s position or speed" href="tutorials/motor_control.html"/> 
+        <link rel="prev" title="Control servos with the low level interface" href="tutorials/low_level.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -87,7 +87,7 @@
               
                   <a class="caption" href="http://www.resibots.eu">Project's website</a>
               
-                  <a class="caption" href="http://www.resibots.eu/limbo/">Limbo (BO library)</a>
+                  <a class="caption" href="http://www.resibots.eu/libdynamixel/">libdynamixel (dynamixel library)</a>
               
             
 
@@ -99,7 +99,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Libdynamixel&#8217;s documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">High level API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">High level API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#auto-detection-of-servos">Auto-detection of servos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#servo-object-servobase">Servo object (ServoBase)</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="low_level_api.html">Low level API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
 </ul>
@@ -109,7 +113,7 @@
             
             
               
-                <a class="caption" href="http://github.com/resibots">github</a>
+                <a class="caption" href="http://github.com/resibots/libdynamixel">github</a>
               
             
           
@@ -137,7 +141,7 @@
 
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Limbo</a> &raquo;</li>
+    <li><a href="index.html">libdynamixel</a> &raquo;</li>
     
     <li>High level API</li>
     <li class="wy-breadcrumbs-aside">
@@ -155,6 +159,108 @@
             
   <div class="section" id="high-level-api">
 <h1>High level API<a class="headerlink" href="#high-level-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="auto-detection-of-servos">
+<h2>Auto-detection of servos<a class="headerlink" href="#auto-detection-of-servos" title="Permalink to this headline">¶</a></h2>
+<p>There are two versions of the auto detection, one that returns a vector and one that returns a map.</p>
+<dl class="function">
+<dt>
+<em class="property">template </em>&lt;<em class="property">typename</em> Protocol, <em class="property">typename</em> Controller&gt;</dt>
+<dt id="_CPPv2N9dynamixel11auto_detectERK10Controller">
+<span id="dynamixel::auto_detect__ControllerCR"></span><span class="target" id="libdynamixelnamespacedynamixel_1a6e322b3a15fdc7fa93d1b0a221586b56"></span>std::vector&lt;std::shared_ptr&lt;servos::<a class="reference internal" href="#_CPPv2N9dynamixel6servos9BaseServoE" title="dynamixel::servos::BaseServo">BaseServo</a>&lt;Protocol&gt;&gt;&gt; <code class="descclassname">dynamixel::</code><code class="descname">auto_detect</code><span class="sig-paren">(</span><em class="property">const</em> Controller &amp;<em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11auto_detectERK10Controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auto-detect all connected actuators using a given protocol.</p>
+<p>The template parameter Controller is inferred from the function&#8217;s parameter. Conversely, it is compulsory to specify the protocol version: either dynamixel::protocols::Protocol1 or dynamixel::protocols::Protocol2.</p>
+<p>The returned vector contains objects corresponding to the actuators that were found. You can use these objects to do all actions that are possible with the Dynamixel actuators.</p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>vector of actuators </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">controller</span></code> - <p>object handling the USB to dynamixel interface, instance of the <a class="reference internal" href="low_level_api.html#libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel"><span>dynamixel::controllers::Usb2Dynamixel</span></a> class </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">template </em>&lt;<em class="property">typename</em> Protocol, <em class="property">typename</em> Controller&gt;</dt>
+<dt id="_CPPv2N9dynamixel15auto_detect_mapERK10Controller">
+<span id="dynamixel::auto_detect_map__ControllerCR"></span><span class="target" id="libdynamixelnamespacedynamixel_1a89e3fa5a92c07ce07c925cad243be30e"></span>std::map&lt;<em class="property">typename</em> Protocol::id_t, std::shared_ptr&lt;servos::<a class="reference internal" href="#_CPPv2N9dynamixel6servos9BaseServoE" title="dynamixel::servos::BaseServo">BaseServo</a>&lt;Protocol&gt;&gt;&gt; <code class="descclassname">dynamixel::</code><code class="descname">auto_detect_map</code><span class="sig-paren">(</span><em class="property">const</em> Controller &amp;<em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel15auto_detect_mapERK10Controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auto-detect all connected actuators using a given protocol.</p>
+<p>This function does the same as auto_detect but instead of returning a vector, it gives a map from ID to object.</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#libdynamixelnamespacedynamixel_1a6e322b3a15fdc7fa93d1b0a221586b56"><span>auto_detect</span></a></dd>
+<dt><strong>Return</strong></dt>
+<dd>vector of actuators </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">controller</span></code> - <p>object handling the USB to dynamixel interface, instance of the <a class="reference internal" href="low_level_api.html#libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel"><span>dynamixel::controllers::Usb2Dynamixel</span></a> class </p>
+</li>
+</ul>
+</dd>
+<dt><strong>Exceptions</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">dynamixel::errors::Errors</span></code> - <p>if there is a problem during send </p>
+</li>
+<li><code class="first docutils literal"><a class="reference internal" href="low_level_api.html#libdynamixelclassdynamixel_1_1errors_1_1_unpack_error"><span><span class="pre">dynamixel::errors::UnpackError</span></span></a></code> - <p>if the size of received packet is not correct </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="servo-object-servobase">
+<h2>Servo object (ServoBase)<a class="headerlink" href="#servo-object-servobase" title="Permalink to this headline">¶</a></h2>
+<p>The auto-detection will return <code class="docutils literal"><span class="pre">ServoBase</span></code> objects (that is, objects of sub-classes of <code class="docutils literal"><span class="pre">ServoBase</span></code>)</p>
+<dl class="class">
+<dt>
+<span class="target" id="libdynamixelclassdynamixel_1_1servos_1_1_base_servo"></span><em class="property">template </em>&lt;typename <em>Protocol</em>&gt;</dt>
+<dt id="_CPPv2N9dynamixel6servos9BaseServoE">
+<span id="dynamixel::servos::BaseServo"></span><em class="property">class </em><code class="descclassname">dynamixel::servos::</code><code class="descname">BaseServo</code><a class="headerlink" href="#_CPPv2N9dynamixel6servos9BaseServoE" title="Permalink to this definition">¶</a></dt>
+<dd><div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt id="_CPPv2N9dynamixel6servos9BaseServo10protocol_tE">
+<span id="dynamixel::servos::BaseServo::protocol_t"></span><span class="target" id="libdynamixelclassdynamixel_1_1servos_1_1_base_servo_1ac484c11279ee2576a9a3bb8c940e0baf"></span><em class="property">typedef </em>Protocol <code class="descname">protocol_t</code><a class="headerlink" href="#_CPPv2N9dynamixel6servos9BaseServo10protocol_tE" title="Permalink to this definition">¶</a></dt>
+<dd><p>type of the protocol (Protocol1 or Protocol2) </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N9dynamixel6servos9BaseServo2idEv">
+<span id="dynamixel::servos::BaseServo::id"></span>virtual <span class="target" id="libdynamixelclassdynamixel_1_1servos_1_1_base_servo_1a191c1596a4fcbe43cc7b9292f83e196b"></span>long long int <code class="descname">id</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9dynamixel6servos9BaseServo2idEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>ID of the servo. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel6servos9BaseServo2idEx">
+<span id="dynamixel::servos::BaseServo::id__l-l-i"></span>virtual <span class="target" id="libdynamixelclassdynamixel_1_1servos_1_1_base_servo_1a20e7410262e37dcd177e81a41d78d8ba"></span>void <code class="descname">id</code><span class="sig-paren">(</span>long long int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel6servos9BaseServo2idEx" title="Permalink to this definition">¶</a></dt>
+<dd><p>?? </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel6servos9BaseServo10model_nameEv">
+<span id="dynamixel::servos::BaseServo::model_name"></span>virtual <span class="target" id="libdynamixelclassdynamixel_1_1servos_1_1_base_servo_1a0878d6f74b1a26bf23fa53a296fd8283"></span>std::string <code class="descname">model_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9dynamixel6servos9BaseServo10model_nameEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the model (e.g. Mx12, Mx28, etc.) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel6servos9BaseServo4pingEv">
+<span id="dynamixel::servos::BaseServo::ping"></span>virtual <span class="target" id="libdynamixelclassdynamixel_1_1servos_1_1_base_servo_1adae0a44afbebfb03343d325648387301"></span><a class="reference internal" href="low_level_api.html#_CPPv2N9dynamixel17InstructionPacketE" title="dynamixel::InstructionPacket">InstructionPacket</a>&lt;<a class="reference internal" href="#_CPPv2N9dynamixel6servos9BaseServo10protocol_tE" title="dynamixel::servos::BaseServo::protocol_t">protocol_t</a>&gt; <code class="descname">ping</code><span class="sig-paren">(</span><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9dynamixel6servos9BaseServo4pingEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ping the servo. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
 </div>
 
 
@@ -167,7 +273,7 @@
         <a href="low_level_api.html" class="btn btn-neutral float-right" title="Low level API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tutorials/motor_control.html" class="btn btn-neutral" title="Control one actuator’s position or speed" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tutorials/low_level.html" class="btn btn-neutral" title="Control servos with the low level interface" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
