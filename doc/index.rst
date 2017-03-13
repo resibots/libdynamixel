@@ -29,6 +29,8 @@ Contents
 
   self
   tutorials/index
+  high_level_api.rst
+  low_level_api.rst
   reference/index
 
 Indices and tables
