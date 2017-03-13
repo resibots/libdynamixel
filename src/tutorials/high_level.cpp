@@ -30,7 +30,7 @@ int main(int argc, char** argv)
         return 0;
     }
 
-    // Enable throwing exceptions -- by default all errors are ignored
+    // Enable throwing exceptions -- by default all errors are ignored/silenced
     controller.set_report_bad_packet(true);
 
     // We want to catch exceptions
