@@ -34,6 +34,7 @@ def configure(conf):
 def build(bld):
     bld.recurse('src/demos')
     bld.recurse('src/tools')
+    bld.recurse('src/tutorials')
     if bld.options.tests:
         bld.recurse('src/tests')
 

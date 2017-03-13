@@ -1,0 +1,11 @@
+def build(bld):
+    obj = bld.program(features='cxx',
+                      source='high_level.cpp',
+                      includes='. ..',
+                      target='high_level_protocol2')
+
+    obj = bld.program(features='cxx',
+                      source='high_level.cpp',
+                      includes='. ..',
+                      target='high_level_protocol1',
+                      defines=['PROTOCOL1'])
