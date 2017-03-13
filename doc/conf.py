@@ -34,8 +34,12 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
-    'sphinx.ext.ifconfig'
+    'sphinx.ext.ifconfig',
+    'breathe'
 ]
+
+breathe_projects = { "libdynamixel": "doxygen_doc/xml/" }
+breathe_default_project = "libdynamixel"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
