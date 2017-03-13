@@ -1,6 +1,6 @@
 libdynamixel
 ============
-libdynamixel is a C++11, header-only interface to the `Dynamixel <http://en.robotis.com/index/product.php?cate_code=101010>`_ actuators that aims at being lightweight and highly flexible. This library is NOT the `official dynamixel SDK provided by Robotis <TODO>`_, but it provides a similar service.
+libdynamixel is a C++11, header-only interface to the `Dynamixel <http://en.robotis.com/index/product.php?cate_code=101010>`_ actuators that aims at being lightweight and highly flexible. This library is NOT the `official dynamixel SDK provided by Robotis <https://github.com/ROBOTIS-GIT/DynamixelSDK>`_, but it provides a similar service.
 
 This library is for Unix-like systems (GNU/Linux and Mac OSX)
 
@@ -66,7 +66,6 @@ The build system for this library is Waf. Don't run away yet. It has the big adv
 
 You get the ``dynamixel`` toolset and the demo programms compiled in the ``build/default/src`` folder.
 
-For now, the demo programs are not at a working stage and should not be used. Conversely, ``dynamixel`` is a working program that we use regularly.
 
 udev rule for USB2AX adapter
 ============================
@@ -83,7 +82,7 @@ Alternative software
 
 Inria FLOWERS team developped `pybot <http://poppy-project.github.io/poppy-docs/pypot/doc/index.html>`_, a python library to control a Dynamixel-based robot.
 
-The official `Robotis SDK <TODO>`_.
+The official `Robotis SDK <https://github.com/ROBOTIS-GIT/DynamixelSDK>`_.
 
 License and authors
 ===================
