@@ -19,6 +19,12 @@ The full documentation (including tutorials, guides, and API) is available on th
 
 Projects using this library
 ===========================
+
+.. image:: http://www.resibots.eu/_images/hexapod.jpg
+   :alt: ResiBots Robots
+   :align: center
+
+
 This library is used in most of the robots designed in ERC project `ResiBots <http://www.resibots.eu/photos.html>`_ (funded by the European Research Council), in particular :
 * several 18-DOFs hexapod robots (based on MX-28 actuators);
 * a mobile manipulator based on Dynamixel Pro actuators and the Kuka Youbot (omnidirectionnal platform);
