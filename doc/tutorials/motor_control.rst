@@ -5,7 +5,7 @@ Detect and control servos with the high level interface
 
 This tutorial assumes that you have already been able to compile and install the library. If not, please refer to the related instructions in the :ref:`building/installation instructions <download_and_compilation>`.
 
-We would like to develop a program that auto-detects all the servos connected to a port and sets their position at :math:`\pi` radians (180 degrees). To do so, we are going to use the high level interface of the libdynamixel library. Our program will have the following usage ::
+We would like to develop a program that auto-detects all the servos connected to a port, sets their position at :math:`\pi` radians (180 degrees) and then reads the position that they have to verify that they got to the desired one. To do so, we are going to use the high level interface of the libdynamixel library. Our program will have the following usage ::
 
     ./high_level_control port
 
@@ -75,7 +75,7 @@ Finally, for each of the dected servos we enable it and set its position at :mat
 .. literalinclude:: ../../src/tutorials/high_level.cpp
    :language: c++
    :linenos:
-   :lines: 42-56
+   :lines: 42-73
    :dedent: 8
 
 All these commands should be enclosed into a ``try-catch`` since we enabled the exception throwing.

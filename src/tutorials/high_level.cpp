@@ -53,6 +53,23 @@ int main(int argc, char** argv)
             // Put it in position of pi
             controller.send(servo->set_goal_position_angle(M_PI));
             controller.recv(st);
+
+            // Sleep for a bit to allow the servo to reach the position
+            sleep(1);
+
+            // Request the current position of the servo
+            controller.send(servo->get_present_position_angle());
+            controller.recv(st);
+
+            // Parse the position from the packet received
+            if (st.valid()) // check if valid response
+            {
+                double a = servo->parse_present_position_angle(st);
+                std::cout << "It went to the angle: " << a << ". "
+                          << "Error: " << std::sqrt((a - M_PI) * (a - M_PI)) << std::endl;
+            }
+            else
+                std::cout << "Could not read the angle of the servo." << std::endl;
         }
     }
     catch (const dynamixel::errors::Error& e) {
