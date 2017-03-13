@@ -15,7 +15,7 @@ Dependencies
 
 * python2.x
 * C++
-* `Boost <http://www.boost.org>`_ (optional), with the program_options library; `Boost` is optional and only used for the command line utility.
+* `Boost <http://www.boost.org>`_ (optional), with the *program_options* lib only; `Boost` is optional and only used for the command line utility.
 
 Compilation
 -----------
@@ -78,7 +78,7 @@ Depending on your compiler, there may be some warnings, but the output should en
 Installation
 ~~~~~~~~~~~~
 
-It is possible, although not necessary, to have the library installed globally (or to the path given with ``--prefix``)::
+It is necessary to have the library installed globally (or to the path given with ``--prefix``) if you want to use it in your projects::
 
     ./waf install
 

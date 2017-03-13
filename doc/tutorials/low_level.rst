@@ -1,7 +1,10 @@
 Control servos with the low level interface
----------------------------------------------
+=============================================
 
 .. highlight:: c++
+
+Description
+------------
 
 This tutorial assumes that you have already been able to compile and install the library. If not, please refer to the related instructions in the :ref:`building/installation instructions <download_and_compilation>`.
 
@@ -16,6 +19,9 @@ Depending on the interface device you use, the device name would look like ``tty
 .. warning::
 
     To be able to access this interface, you usually need special rights. On ubuntu, you either have to belong to the *dialout* group or to run the generated programs as superuser.
+
+C++ Code with comments
+-----------------------
 
 We begin with including the required files:
 
@@ -73,8 +79,15 @@ Finally, for each actuator we enable it, set its maximum speed and set its posit
 
 All these commands should be enclosed into a ``try-catch`` since we enabled the exception throwing.
 
-Now we need to create a `wscript` file for our project to compile it with waf (see the :ref:`compilation tutorial <download_and_compilation>` for details):
+Here's the **low_level_control.cpp** file:
 
+.. literalinclude:: ../../src/tutorials/low_level.cpp
+   :language: c++
+
+Buildind with Waf
+------------------
+
+Now we need to create a `wscript` file for our project to compile it with waf (see the :ref:`compilation tutorial <download_and_compilation>` for details):
 
 .. code-block:: python
 
@@ -106,8 +119,3 @@ Now we need to create a `wscript` file for our project to compile it with waf (s
                   includes = '.',
                   target = 'low_level_control',
                   uselib =  libs)
-
-Here's the **low_level_control.cpp** file:
-
-.. literalinclude:: ../../src/tutorials/low_level.cpp
-   :language: c++
