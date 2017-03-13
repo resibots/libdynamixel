@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Download and Compilation &mdash; libdynamixel 2.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+
+  
+    <link rel="top" title="libdynamixel 2.1 documentation" href="../index.html"/>
+        <link rel="up" title="Tutorials" href="index.html"/>
+        <link rel="next" title="Control one actuator’s position or speed" href="motor_control.html"/>
+        <link rel="prev" title="Quick Start" href="quick_start.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+          
+
+          
+            <a href="http://www.resibots.eu">
+          
+
+          
+            
+            <img src="../_static/resibots_logo_black_200px.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="resibots-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+                  <a class="caption" href="http://www.resibots.eu">Project's website</a>
+              
+                  <a class="caption" href="http://www.resibots.eu/limbo/">Limbo (BO library)</a>
+              
+            
+
+            
+            
+                <p class="caption"><span class="caption-text">Libdynamixel</span></p>
+<ul class="simple">
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Libdynamixel&#8217;s documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quick_start.html">Quick Start</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Download and Compilation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#download">Download</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#compilation">Compilation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build">Build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-of-the-serial-interfaces">Configuration of the serial interfaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-the-documentation">Building the documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#udev-rule-for-usb2ax-adapter">udev rule for USB2AX adapter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="motor_control.html">Control one actuator&#8217;s position or speed</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a></li>
+</ul>
+
+            
+
+            
+            
+              
+                <a class="caption" href="http://github.com/resibots">github</a>
+              
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">libdynamixel</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Limbo</a> &raquo;</li>
+    
+      <li><a href="index.html">Tutorials</a> &raquo;</li>
+    
+    <li>Download and Compilation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="../_sources/tutorials/download_and_compilation.txt" rel="nofollow"> View page source</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="download-and-compilation">
+<span id="id1"></span><h1>Download and Compilation<a class="headerlink" href="#download-and-compilation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="download">
+<h2>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<p>To get <strong>libdynamixel</strong>, simply clone the source code from <a class="reference external" href="https://github.com/resibots/libdynamixel.git">https://github.com/resibots/libdynamixel.git</a> with git, or <a class="reference external" href="https://github.com/resibots/libdynamixel/archive/master.zip">download it as a zip</a>.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">We whould handle versions here and propose to download version 2.1 that should be published at the same time as the documentation.</p>
+</div>
+<div class="section" id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>python2.x</li>
+<li>C++</li>
+<li><a class="reference external" href="http://www.boost.org">Boost</a> , with the program_options librariy; <cite>Boost</cite> is mainly used for the command line interface.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="compilation">
+<h2>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline">¶</a></h2>
+<p>We use  the <a class="reference external" href="https://waf.io">WAF</a>  build system. Don&#8217;t run away yet! It has the big advantage of requiring no more than Python installed on your computer. If you use GNU/Linux or Mac OS, you should already have it.</p>
+<p>To know why we use waf (and not CMAKE, SCONS, traditional makefiles, etc.), see the <a class="reference external" href="http://www.resibots.eu/limbo/faq.html#faq-waf" title="(in limbo v0.0)"><span class="xref std std-ref">Limbo FAQ</span></a>.</p>
+<p>Like most build systems, it has a configuration and build steps, described bellow.</p>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">Make sure that the waf file has execution rights.</p>
+</div>
+<p>The first step is to configure your waf environment. For this, assuming that you are in the root directory of libdynamixel, you have to run the command:</p>
+<div class="highlight-shell"><div class="highlight"><pre>./waf configure
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">add <code class="docutils literal"><span class="pre">--prefix</span> <span class="pre">PATH/TO/INSTALL</span></code> if you want to install it to a specific location</p>
+</div>
+<p>If everything is okay, you should expect an output like this:</p>
+<div class="highlight-shell"><div class="highlight"><pre>Setting top to                           : /path/to/libdynamixel
+Setting out to                           : /path/to/libdynamixel
+Checking <span class="k">for</span> <span class="s1">&#39;g++&#39;</span> <span class="o">(</span>C++ compiler<span class="o">)</span>        : not found
+Checking <span class="k">for</span> <span class="s1">&#39;clang++&#39;</span> <span class="o">(</span>C++ compiler<span class="o">)</span>    : /usr/bin/clang++
+Checking boost includes                  : 1_58
+Checking boost libs                      : ok
+CXXFLAGS:<span class="o">[</span><span class="s1">&#39;-D_REENTRANT&#39;</span>, <span class="s1">&#39;-Wall&#39;</span>, <span class="s1">&#39;-finline-functions&#39;</span>, <span class="s1">&#39;-Wno-inline&#39;</span>,
+    <span class="s1">&#39;&#39;</span>,     <span class="s1">&#39;-fPIC&#39;</span>, <span class="s1">&#39;-O3&#39;</span>, <span class="s1">&#39;-std=c++11&#39;</span>, <span class="s1">&#39;-ftemplate-depth-128&#39;</span>,
+    <span class="s1">&#39;-Wno-sign-compare&#39;</span><span class="o">]</span>
+<span class="s1">&#39;configure&#39;</span> finished successfully <span class="o">(</span>0.221s<span class="o">)</span>
+</pre></div>
+</div>
+<p>The actual ouput may differ, depending on your configuration and installed libraries.</p>
+<p>Waf should automatically detect the libraries if they where installed in the default folders, but if it doesn&#8217;t,
+you can use the following command-line options to indicate where they are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">--boost-includes</span> <span class="pre">/path/to/boost-includes</span></code> [.h]</li>
+<li><code class="docutils literal"><span class="pre">--boost-libs</span> <span class="pre">/path/to/boost-libraries</span></code> [.a, .so, .dynlib]</li>
+</ul>
+</div>
+<div class="section" id="build">
+<h3>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
+<p>The second step is to run the build command:</p>
+<div class="highlight-shell"><div class="highlight"><pre>./waf build
+</pre></div>
+</div>
+<p>Depending on your compiler, there may be some warnings, but the output should end with the following line:</p>
+<div class="highlight-none"><div class="highlight"><pre>&#39;build&#39; finished successfully (time in sec)
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<p>It is possible, although not necessary, to have the library installed globally (or to the path given with <code class="docutils literal"><span class="pre">--prefix</span></code>):</p>
+<div class="highlight-shell"><div class="highlight"><pre>./waf install
+</pre></div>
+</div>
+<p>When globally installed, this command should require super-user rights (e.g. <code class="docutils literal"><span class="pre">sudo</span></code>).</p>
+</div>
+<div class="section" id="configuration-of-the-serial-interfaces">
+<h3>Configuration of the serial interfaces<a class="headerlink" href="#configuration-of-the-serial-interfaces" title="Permalink to this headline">¶</a></h3>
+<p>Please ensure that you have the proper rights to access the serial interfaces. On GNU/Linux, you might have to add your user to the <code class="docutils literal"><span class="pre">dialout</span></code> group and log out.</p>
+</div>
+<div class="section" id="building-the-documentation">
+<h3>Building the documentation<a class="headerlink" href="#building-the-documentation" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This section is only useful for developers who need to update the documentation.</p>
+</div>
+<p>Install sphinx via pip:</p>
+<div class="highlight-shell"><div class="highlight"><pre>sudo pip install Sphinx
+sudo pip install sphinxcontrib-bibtex
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">On Mac OSX, do not use <cite>brew install sphinx</cite> because this is not the right sphinx</p>
+</div>
+<p>Install the Resibots theme for Sphinx:</p>
+<div class="highlight-shell"><div class="highlight"><pre>git clone https://github.com/resibots/sphinx_resibots_theme
+<span class="nb">export</span> <span class="nv">SPHINX_RESIBOTS_THEME</span><span class="o">=</span><span class="s2">&quot;/home/me/path/to/sphinx_resibots_theme&quot;</span>
+</pre></div>
+</div>
+<p>Install <a class="reference external" href="https://breathe.readthedocs.io/en/latest/">breathe</a> via pip:</p>
+<div class="highlight-shell"><div class="highlight"><pre>sudo pip install breathe
+</pre></div>
+</div>
+<p>Install <a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/">doxygen</a> via your package manager (e.g. apt-get / brew):</p>
+<div class="highlight-shell"><div class="highlight"><pre>apt-get install doxygen
+</pre></div>
+</div>
+<p>In the <cite>doc</cite> directory:</p>
+<div class="highlight-shell"><div class="highlight"><pre>make html
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>About sphinx and ReStructuredText:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://sphinx-doc.org/tutorial.html">There is a tutorial</a>,</li>
+<li><a class="reference external" href="http://sphinx-doc.org/rest.html">Primer for ReStructuredText</a>, the markup language of Sphinx,</li>
+<li><a class="reference external" href="http://sphinx-doc.org/markup/index.html">markup specific to Sphinx</a>,</li>
+<li><a class="reference external" href="http://sphinx-doc.org/domains.html#id2">About C++ in Sphinx</a></li>
+<li><a class="reference external" href="https://breathe.readthedocs.org/en/latest/">Breathe (bridge between sphinx and doxygen)</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="udev-rule-for-usb2ax-adapter">
+<h2>udev rule for USB2AX adapter<a class="headerlink" href="#udev-rule-for-usb2ax-adapter" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For Gnu/Linux only</p>
+</div>
+<p>To have the <a class="reference external" href="http://www.xevelabs.com/doku.php?id=product:usb2ax:usb2ax">USB2AX</a> serial interface appear as <code class="file docutils literal"><span class="pre">/dev/usb2ax</span><em><span class="pre">N</span></em></code> (where N is a kernel-attributed integer), you can install the provided udev rule. It is as simple as moving the <code class="file docutils literal"><span class="pre">usb2ax.rules</span></code> file from the root of the library to the for the udev rules folder. For ubuntu, it is <code class="file docutils literal"><span class="pre">/etc/udev/rules.d</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="motor_control.html" class="btn btn-neutral float-right" title="Control one actuator’s position or speed" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quick_start.html" class="btn btn-neutral" title="Quick Start" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo" class="wy-footer">
+    <div role="contentinfo">
+      <p>
+          &copy; Copyright 2015, Jean-Baptiste Mouret, Federico Allocati, Antoine Cully, Dorian Goepp.
+
+      
+      
+        <br/>
+        <a href="mailto:jean-baptiste.mouret@inria.fr"> Contact us </a>
+      
+      </p>
+    </div>
+    <div class="wy-footer-aside">
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> modified for <a href="http://resibots.eu">Resibots</a>.
+    </div>
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxResibotsTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

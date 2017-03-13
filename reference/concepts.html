@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Concepts underlying the design of the library &mdash; libdynamixel 2.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+
+  
+    <link rel="top" title="libdynamixel 2.1 documentation" href="../index.html"/>
+        <link rel="up" title="Reference" href="index.html"/>
+        <link rel="next" title="Baud rates to use on the actuator’s baudrates" href="baudrates.html"/>
+        <link rel="prev" title="Reference" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+          
+
+          
+            <a href="http://www.resibots.eu">
+          
+
+          
+            
+            <img src="../_static/resibots_logo_black_200px.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="resibots-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+                  <a class="caption" href="http://www.resibots.eu">Project's website</a>
+              
+                  <a class="caption" href="http://www.resibots.eu/limbo/">Limbo (BO library)</a>
+              
+            
+
+            
+            
+                <p class="caption"><span class="caption-text">Libdynamixel</span></p>
+<ul class="simple">
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Libdynamixel&#8217;s documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Concepts underlying the design of the library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-two-protocols">The two protocols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#serial-interface">Serial interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instructions-and-status-report">Instructions and status report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model-traints">Model traints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base-servo-servo-and-actuator-classes">Base servo, Servo and actuator classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#protocol-specific-packets">Protocol-specific packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exception-classes">Exception classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="baudrates.html">Baud rates to use on the actuator&#8217;s baudrates</a></li>
+</ul>
+</li>
+</ul>
+
+            
+
+            
+            
+              
+                <a class="caption" href="http://github.com/resibots">github</a>
+              
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">libdynamixel</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Limbo</a> &raquo;</li>
+    
+      <li><a href="index.html">Reference</a> &raquo;</li>
+    
+    <li>Concepts underlying the design of the library</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="../_sources/reference/concepts.txt" rel="nofollow"> View page source</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="concepts-underlying-the-design-of-the-library">
+<h1>Concepts underlying the design of the library<a class="headerlink" href="#concepts-underlying-the-design-of-the-library" title="Permalink to this headline">¶</a></h1>
+<p>In this document we will describe the way the communication with dynamixel actuators works and how it is done with this library.</p>
+<div class="section" id="the-two-protocols">
+<h2>The two protocols<a class="headerlink" href="#the-two-protocols" title="Permalink to this headline">¶</a></h2>
+<p>Robotis designed two version of its communication protocol. We have a class for each protocol containing:</p>
+<ul class="simple">
+<li>type definitions for protocol-specific data</li>
+<li>codes for the instructions allowed in the protocol</li>
+<li>methods to pack to be sent and unpack the data that was received</li>
+</ul>
+<p>Unless said overwise, everything written bellow is common to versions 1 and 2 of the communication protocols.</p>
+</div>
+<div class="section" id="serial-interface">
+<h2>Serial interface<a class="headerlink" href="#serial-interface" title="Permalink to this headline">¶</a></h2>
+<p>The client interacts with Dynamixels by sending instructions and receiving status reports. These are packed in data frames that are usually sent through a USB to serial interface (such as <a class="reference external" href="http://www.xevelabs.com/doku.php?id=product:usb2ax:usb2ax">USB2AX</a> and <a class="reference external" href="http://www.robotis-shop-en.com/?act=shop_en.goods_view&amp;GS=1289&amp;keyword=USB2Dynamixel">USB2DYNAMIXEL</a>).</p>
+<p>In this library, the interface is managed by an instance of <code class="code docutils literal"><span class="pre">controllers::Usb2Dynamixel</span></code> (compatible with USB2AX).</p>
+</div>
+<div class="section" id="instructions-and-status-report">
+<h2>Instructions and status report<a class="headerlink" href="#instructions-and-status-report" title="Permalink to this headline">¶</a></h2>
+<p>A class is defined for each instruction and templated with the protocol. Here are the instructions currently supported:</p>
+<ul class="simple">
+<li><code class="code docutils literal"><span class="pre">Ping&lt;Protocol&gt;</span></code>: check that an actuator responds</li>
+<li><code class="code docutils literal"><span class="pre">Read&lt;Protocol&gt;</span></code>: read some data in the RAM or ROM of the actuator</li>
+<li><code class="code docutils literal"><span class="pre">Write&lt;Protocol&gt;</span></code>: write some data in the RAM or ROM of the actuator</li>
+<li><code class="code docutils literal"><span class="pre">RegWrite&lt;Protocol&gt;</span></code>: register a write instruction to be performed later, on receival of the action instruction</li>
+<li><code class="code docutils literal"><span class="pre">Action&lt;Protocol&gt;</span></code>: trigger the registered write instruction</li>
+<li><code class="code docutils literal"><span class="pre">FactoryReset&lt;Protocol&gt;</span></code>: reset the ROM of the actuator to factory defaults</li>
+<li><code class="code docutils literal"><span class="pre">SyncWrite&lt;Protocol&gt;</span></code>: simultaneously write data for selveral servos (one memory address, many servos, many data)</li>
+<li><code class="code docutils literal"><span class="pre">Reboot&lt;Protocol&gt;</span></code> (only for protocol 2)</li>
+</ul>
+<p>Likewise, the <code class="code docutils literal"><span class="pre">StatusPacket&lt;Protocol&gt;</span></code> class is for the status report packet. A status packet can report errors in the communication or related to an actuators. For instance, a checksum error or an overheating error. Such packets are sent in response to all packets, unless sent to the broadcast ID. Some actuators also allow to configure after which instructions a status report is sent.</p>
+</div>
+<div class="section" id="model-traints">
+<h2>Model traints<a class="headerlink" href="#model-traints" title="Permalink to this headline">¶</a></h2>
+<p>A templated class <code class="code docutils literal"><span class="pre">ModelTraints&lt;typename</span> <span class="pre">Model&gt;</span></code>, is explicitely specialised for each supported actuator, holding model-specific information such as the control table (including address, size of each entry). This makes a unified yet extensible interface to all actuators.</p>
+<p>Aside from the control table, the <code class="code docutils literal"><span class="pre">ModelTraits</span></code> class also defines the protocol accepted by each servo.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">give a link to the list of supported actuators</p>
+</div>
+</div>
+<div class="section" id="base-servo-servo-and-actuator-classes">
+<h2>Base servo, Servo and actuator classes<a class="headerlink" href="#base-servo-servo-and-actuator-classes" title="Permalink to this headline">¶</a></h2>
+<p>A class is defined for each actuator. For instance, the MX 28 actuators have the class <code class="code docutils literal"><span class="pre">Mx28</span></code>. These are children class of <code class="code docutils literal"><span class="pre">Servo&lt;typename</span> <span class="pre">Protocol&gt;</span></code> and <code class="code docutils literal"><span class="pre">BaseServo&lt;typename</span> <span class="pre">Protocol&gt;</span></code>. The latter declares the methods to access and modify the fields of all possible control tables but the definition of these methods throws an &#8220;not implemented&#8221; exception. <code class="code docutils literal"><span class="pre">Servo</span></code> on the other hand defines the least common denimonator of methods. The remainder fields are defined in the actuator&#8217;s class.</p>
+</div>
+<div class="section" id="protocol-specific-packets">
+<h2>Protocol-specific packets<a class="headerlink" href="#protocol-specific-packets" title="Permalink to this headline">¶</a></h2>
+<p>There are some operations that are comon to all actuators using a given protocol. This templated class is for these operations, such as converting the speed from unit-less integer to radians per second.</p>
+</div>
+<div class="section" id="exception-classes">
+<h2>Exception classes<a class="headerlink" href="#exception-classes" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="baudrates.html" class="btn btn-neutral float-right" title="Baud rates to use on the actuator’s baudrates" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Reference" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo" class="wy-footer">
+    <div role="contentinfo">
+      <p>
+          &copy; Copyright 2015, Jean-Baptiste Mouret, Federico Allocati, Antoine Cully, Dorian Goepp.
+
+      
+      
+        <br/>
+        <a href="mailto:jean-baptiste.mouret@inria.fr"> Contact us </a>
+      
+      </p>
+    </div>
+    <div class="wy-footer-aside">
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> modified for <a href="http://resibots.eu">Resibots</a>.
+    </div>
+    <div style="clear: both;"></div>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxResibotsTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

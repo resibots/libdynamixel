@@ -1,0 +1,15 @@
+build/
+
+# Files specific to the Waf build system
+.lock-*
+.waf-*
+
+# Python compiled files
+*.pyc
+
+# Clang-format style files
+.clang-format
+
+# Generated content of the documentation
+_build/
+
