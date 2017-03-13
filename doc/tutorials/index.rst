@@ -6,4 +6,4 @@ Tutorials
 
   quick_start
   download_and_compilation
-  motor_control
+  high_level

@@ -269,4 +269,3 @@ def check_boost(self, *k, **kw):
 	if Logs.verbose:
 		Logs.pprint('CYAN', '	path : %s' % path)
 		Logs.pprint('CYAN', '	libs : %s' % libs)
-
