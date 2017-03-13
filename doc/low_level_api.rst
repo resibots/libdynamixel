@@ -1,9 +1,9 @@
 Low level API
-============================
+=============
 
 
 Controllers
---------------
+-----------
 .. doxygenclass:: dynamixel::controllers::Usb2Dynamixel
   :members:
   :undoc-members:
@@ -11,10 +11,10 @@ Controllers
 
 
 Instructions Packets
----------------------
+--------------------
 
 Abstract class (InstructionPacket)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 For details about instructions, see:
 
 * protocol 1: http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_instruction.htm
@@ -25,12 +25,12 @@ For details about instructions, see:
   :undoc-members:
 
 Instructions
-^^^^^^^^^^^^^
+^^^^^^^^^^^^
 .. doxygengroup:: instructions
    :members:
 
 Status packets (StatusPacket)
----------------------
+-----------------------------
 
 .. doxygenclass:: dynamixel::StatusPacket
   :members:
