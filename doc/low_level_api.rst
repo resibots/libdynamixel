@@ -25,6 +25,13 @@ Instructions
 .. doxygengroup:: instructions
    :members:
 
+Status packets (StatusPacket)
+---------------------
+
+.. doxygenclass:: dynamixel::StatusPacket
+  :members:
+  :undoc-members:
+
 Errors
 ------
 

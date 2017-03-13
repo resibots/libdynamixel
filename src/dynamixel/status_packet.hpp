@@ -8,6 +8,12 @@
 #include "./errors/error.hpp"
 
 namespace dynamixel {
+    /**
+      This class represents packets that are received on the bus.
+      
+      @see Protocol1: http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_packet.htm
+      @see Protocol2: http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm
+    **/
     template <class Protocol>
     class StatusPacket {
     public:
