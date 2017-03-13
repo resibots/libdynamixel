@@ -6,6 +6,8 @@
 
 namespace dynamixel {
     namespace instructions {
+        /** @ingroup instructions
+        **/
         template <class T>
         class Reboot : public InstructionPacket<T> {
         public:

@@ -13,6 +13,18 @@ Controllers
 Instructions Packets
 ---------------------
 
+Abstract class (InstructionPacket)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. doxygenclass:: dynamixel::InstructionPacket
+  :members:
+  :undoc-members:
+
+Instructions
+^^^^^^^^^^^^^
+.. doxygengroup:: instructions
+   :members:
+
 Errors
 ------
 

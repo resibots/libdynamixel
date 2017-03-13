@@ -4,7 +4,12 @@
 #include <vector>
 #include <stdint.h>
 
+///@defgroup instructions
+
 namespace dynamixel {
+    /**
+      Abstract class for instructions
+    **/
     template <class Protocol>
     class InstructionPacket {
     public:
