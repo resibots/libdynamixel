@@ -8,7 +8,7 @@ Dependencies :
 
 - python2.x
 - C++
-- Boost C++ (optional)
+- Boost C++ (optional) with the *program_options* lib only.
 
 .. highlight:: shell
 
