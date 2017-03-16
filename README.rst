@@ -14,7 +14,7 @@ Main features
 * Full C++11 API
 * An optional ROS interface (hardware interface) is available in a separate repository (`dynamixel_control_hw <https://github.com/resibots/dynamixel_control_hw/>`_).
 
-Documentation
+`Documentation <http://www.resibots.eu/libdynamixel>`_
 ==============
 The full documentation (including tutorials, guides, and API) is available on the `ResiBots website <http://www.resibots.eu/libdynamixel>`_
 
