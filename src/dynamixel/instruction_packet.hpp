@@ -8,9 +8,12 @@
 
 namespace dynamixel {
     /**
-      Abstract class for instructions
-      @see Protocol1: http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_packet.htm
-      @see Protocol2: http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm
+        Abstract class for instructions
+
+        @see Robotis' documentation for
+            [protocol1](http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_packet.htm)
+            and [protocol2](http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm)
+
     **/
     template <class Protocol>
     class InstructionPacket {

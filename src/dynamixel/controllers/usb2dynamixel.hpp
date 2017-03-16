@@ -51,9 +51,10 @@ namespace dynamixel {
 
                 @param name path to the UNIX serial port, usually ends like "ttyUSBx"
                     or "ttyACMx" where x is an integer
-                @param baudrate represent the communication speed; it is defined as
-                    an integer by the operating system. the standard values are:
+                @param baudrate represent the communication speed; it is defined
+                    by the operating system. the standard values are:
                     \verbatim embed:rst
+
                         * B0
                         * B50
                         * B75
@@ -73,6 +74,7 @@ namespace dynamixel {
                         * B57600
                         * B76800
                         * B115200
+
                     B1000000 corresponds to :math:`10^6` bauds. It is not a standard
                     POSIX value but is accepted on GNU/Linux.
                     \endverbatim
@@ -111,6 +113,8 @@ namespace dynamixel {
                 tcsetattr(_fd, TCSANOW, &tio_serial);
             }
 
+            /** Close the serial port
+            **/
             void close_serial()
             {
                 close(_fd);
