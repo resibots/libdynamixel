@@ -20,7 +20,7 @@ The full documentation (including tutorials, guides, and API) is available on th
 Projects using this library
 ===========================
 
-.. image:: http://github.com/resibots/libdynamixel/doc/pics/three_robots.png 
+.. image:: doc/pics/three_robots.png
    :alt: ResiBots Robots
    :align: center
 
