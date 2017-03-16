@@ -130,7 +130,10 @@ html_theme_options = {
     "logo_url": "http://www.resibots.eu",
     'breadcrumb_root': 'libdynamixel', # set a custom name to the breacumb root
     'contact_url': 'mailto:jean-baptiste.mouret@inria.fr', # add a "Contact us link" at the bottom with URL
-    'toc_befores': [("Project's website", "http://www.resibots.eu"), ("libdynamixel (dynamixel library)", "http://www.resibots.eu/libdynamixel/")],
+    'toc_befores': [
+        ("Project's website", "http://www.resibots.eu"),
+        ("Limbo (BO library)", "http://www.resibots.eu/limbo/")
+        ],
     "toc_afters": [('github', 'http://github.com/resibots/libdynamixel' )],
 }
 
