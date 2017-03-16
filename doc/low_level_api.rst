@@ -1,15 +1,6 @@
 Low level API
 =============
 
-
-Controllers
------------
-.. doxygenclass:: dynamixel::controllers::Usb2Dynamixel
-  :members:
-  :undoc-members:
-
-
-
 Instructions Packets
 --------------------
 
