@@ -12,6 +12,7 @@ Main features
 * Support for Dynamixel series AX, MX, EX, XL and Pro
 * Support for all instructions and messages of both version 1 and 2 of the Dynamixel communication protocol (including torque control, speed control, etc.)
 * Full C++11 API
+* An optional ROS interface (hardware interface) is available in a separate repository (`dynamixel_control_hw <https://github.com/resibots/dynamixel_control_hw/>`_).
 
 Documentation
 ==============
@@ -47,10 +48,6 @@ This library has been used in many scientific publications, in particular:
 * Koos, S. and Mouret, J.-B. and Doncieux, S. (2010). "Crossing the Reality Gap in Evolutionary Robotics by Promoting Transferable Controllers". *GECCO'10: Proceedings of the 12th annual conference on Genetic and evolutionary computation* ACM, publisher . Pages 119--126.
 
 *Please let us know if you use this library in a scientific publication.*
-
-ROS interface
-================
-An optional ROS interface (hardware interface) is available in a separate repository (`dynamixel_control_hw <https://github.com/resibots/dynamixel_control_hw/>`_).
 
 Building
 ========
