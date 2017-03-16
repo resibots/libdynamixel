@@ -8,6 +8,7 @@ We also provide a simple command-line tool that allows to change the IDs, the ba
 
 Main features
 ===============
+
 * Support for Dynamixel series AX, MX, EX, XL and Pro
 * Support for all instructions and messages of both version 1 and 2 of the Dynamixel communication protocol (including torque control, speed control, etc.)
 * Full C++11 API
@@ -26,6 +27,7 @@ Projects using this library
 
 
 This library is used in most of the robots designed in ERC project `ResiBots <http://www.resibots.eu/photos.html>`_ (funded by the European Research Council), in particular :
+
 * several 18-DOFs hexapod robots (based on MX-28 actuators);
 * a mobile manipulator based on Dynamixel Pro actuators and the Kuka Youbot (omnidirectionnal platform);
 * a wheel-legged hybrid robot (based on MX-128 actuators);
