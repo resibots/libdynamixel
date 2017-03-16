@@ -79,9 +79,8 @@ This library is actively used and regularly developped. If you need some help, f
 Alternative software
 ====================
 
-Inria FLOWERS team developped `pybot <http://poppy-project.github.io/poppy-docs/pypot/doc/index.html>`_, a python library to control a Dynamixel-based robot.
-
-The official `Robotis SDK <https://github.com/ROBOTIS-GIT/DynamixelSDK>`_.
+* Inria FLOWERS team developped `pybot <http://poppy-project.github.io/poppy-docs/pypot/doc/index.html>`_, a python library to control a Dynamixel-based robot.
+* The official `Robotis SDK <https://github.com/ROBOTIS-GIT/DynamixelSDK>`_.
 
 License and authors
 ===================
