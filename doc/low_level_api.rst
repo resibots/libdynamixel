@@ -15,17 +15,16 @@ Instructions Packets
 
 Abstract class (InstructionPacket)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-For details about instructions, see:
 
-* protocol 1: http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_instruction.htm
-* protocol 2: http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm
+For details about instructions, see Robotis' documentation for `protocol 1 <http://support.robotis.com/en/product/actuator/dynamixel/communication/dxl_instruction.htm>`__ and `protocol 2 <http://support.robotis.com/en/product/actuator/dynamixel_pro/communication/instruction_status_packet.htm>`__.
 
 .. doxygenclass:: dynamixel::InstructionPacket
-  :members:
-  :undoc-members:
+   :members:
+   :undoc-members:
 
 Instructions
 ^^^^^^^^^^^^
+
 .. doxygengroup:: instructions
    :members:
 
@@ -33,22 +32,24 @@ Status packets (StatusPacket)
 -----------------------------
 
 .. doxygenclass:: dynamixel::StatusPacket
-  :members:
-  :undoc-members:
+   :members:
+   :undoc-members:
 
 Errors
 ------
 
 Abstract class (Error)
 ^^^^^^^^^^^^^^^^^^^^^^^
+
 All errors derive from ``dynamixel::error::Error``:
 
 .. doxygenclass:: dynamixel::errors::Error
-  :members:
-  :undoc-members:
+   :members:
+   :undoc-members:
 
 
 Error classes
 ^^^^^^^^^^^^^^
+
 .. doxygengroup:: errors
    :members:
