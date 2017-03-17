@@ -16,10 +16,10 @@ There are two versions of the auto detection, one that returns a vector and one 
 
 .. doxygenfunction:: dynamixel::auto_detect_map
 
-Servo object (ServoBase)
+Servo object (BaseServo)
 ------------------------
 
-The auto-detection will return ``ServoBase`` objects (that is, objects of sub-classes of ``ServoBase``)
+The auto-detection will return ``BaseServo`` objects (that is, objects of sub-classes of ``BaseServo``)
 
 .. doxygenclass:: dynamixel::servos::BaseServo
   :members:
