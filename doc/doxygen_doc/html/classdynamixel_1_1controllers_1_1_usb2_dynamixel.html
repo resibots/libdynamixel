@@ -168,6 +168,22 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>With this constructor a serial connection is opened or it throws an exception</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classdynamixel_1_1controllers_1_1_usb2_dynamixel.html#af9d57bff8175e6c5b84ceb27cc712691">open_serial</a></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>see open_serial </td></tr>
+    <tr><td class="paramname">baudrate</td><td>see open_serial </td></tr>
+    <tr><td class="paramname">recv_timeout</td><td>timeout (in seconds) for the recv method</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classdynamixel_1_1errors_1_1_error.html">errors::Error</a></td><td>see open_serial </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -238,6 +254,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Close the serial port </p>
 
 </div>
 </div>
@@ -318,6 +335,43 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Open the serial port for communication with the servos</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>path to the UNIX serial port, usually ends like "ttyUSBx" or "ttyACMx" where x is an integer </td></tr>
+    <tr><td class="paramname">baudrate</td><td>represent the communication speed; it is defined by the operating system. the standard values are: <pre class="fragment">embed:rst
+
+        * B0
+        * B50
+        * B75
+        * B110
+        * B134
+        * B150
+        * B200
+        * B300
+        * B600
+        * B1200
+        * B1800
+        * B2400
+        * B4800
+        * B9600
+        * B19200
+        * B38400
+        * B57600
+        * B76800
+        * B115200
+
+    B1000000 corresponds to :math:`10^6` bauds. It is not a standard
+    POSIX value but is accepted on GNU/Linux.</pre></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classdynamixel_1_1errors_1_1_error.html">errors::Error</a></td><td>either if the connection is already open or if we fail to open it; the exception message gives more details on the cause </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -476,7 +530,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 16 2017 01:00:09 for libdynamixel by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 17 2017 01:00:07 for libdynamixel by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

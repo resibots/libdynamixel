@@ -45,6 +45,25 @@ bool \hyperlink{classdynamixel_1_1controllers_1_1_usb2_dynamixel_aab1409ea3c11db
 \item[{double}]{recv\+\_\+timeout = {\ttfamily 0.1}}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classdynamixel_1_1controllers_1_1_usb2_dynamixel_aa3baa5452d4935a9eac5a912fccda71d}
+With this constructor a serial connection is opened or it throws an exception
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classdynamixel_1_1controllers_1_1_usb2_dynamixel_af9d57bff8175e6c5b84ceb27cc712691}{open\+\_\+serial}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & see open\+\_\+serial \\
+\hline
+{\em baudrate} & see open\+\_\+serial \\
+\hline
+{\em recv\+\_\+timeout} & timeout (in seconds) for the recv method\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdynamixel_1_1errors_1_1_error}{errors\+::\+Error}} & see open\+\_\+serial \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classdynamixel_1_1controllers_1_1_usb2_dynamixel_af37a6c8e673f42919d26be8852607c0c}{}\index{dynamixel\+::controllers\+::\+Usb2\+Dynamixel@{dynamixel\+::controllers\+::\+Usb2\+Dynamixel}!Usb2\+Dynamixel@{Usb2\+Dynamixel}}
 \index{Usb2\+Dynamixel@{Usb2\+Dynamixel}!dynamixel\+::controllers\+::\+Usb2\+Dynamixel@{dynamixel\+::controllers\+::\+Usb2\+Dynamixel}}
 \subsubsection[{Usb2\+Dynamixel}]{\setlength{\rightskip}{0pt plus 5cm}dynamixel\+::controllers\+::\+Usb2\+Dynamixel\+::\+Usb2\+Dynamixel (
@@ -69,7 +88,7 @@ bool \hyperlink{classdynamixel_1_1controllers_1_1_usb2_dynamixel_aab1409ea3c11db
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classdynamixel_1_1controllers_1_1_usb2_dynamixel_a305726735f3fc48ab8f68e93f7c82207}
-\hypertarget{classdynamixel_1_1controllers_1_1_usb2_dynamixel_a0c0e47a2c3f1ccd6424430dd6891184f}{}\index{dynamixel\+::controllers\+::\+Usb2\+Dynamixel@{dynamixel\+::controllers\+::\+Usb2\+Dynamixel}!flush@{flush}}
+Close the serial port \hypertarget{classdynamixel_1_1controllers_1_1_usb2_dynamixel_a0c0e47a2c3f1ccd6424430dd6891184f}{}\index{dynamixel\+::controllers\+::\+Usb2\+Dynamixel@{dynamixel\+::controllers\+::\+Usb2\+Dynamixel}!flush@{flush}}
 \index{flush@{flush}!dynamixel\+::controllers\+::\+Usb2\+Dynamixel@{dynamixel\+::controllers\+::\+Usb2\+Dynamixel}}
 \subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}void dynamixel\+::controllers\+::\+Usb2\+Dynamixel\+::flush (
 \begin{DoxyParamCaption}
@@ -91,6 +110,44 @@ bool \hyperlink{classdynamixel_1_1controllers_1_1_usb2_dynamixel_aab1409ea3c11db
 \item[{int}]{baudrate = {\ttfamily B115200}}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\label{classdynamixel_1_1controllers_1_1_usb2_dynamixel_af9d57bff8175e6c5b84ceb27cc712691}
+Open the serial port for communication with the servos
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & path to the U\+N\+I\+X serial port, usually ends like \char`\"{}tty\+U\+S\+Bx\char`\"{} or \char`\"{}tty\+A\+C\+Mx\char`\"{} where x is an integer \\
+\hline
+{\em baudrate} & represent the communication speed; it is defined by the operating system. the standard values are\+: \begin{DoxyVerb}embed:rst
+
+        * B0
+        * B50
+        * B75
+        * B110
+        * B134
+        * B150
+        * B200
+        * B300
+        * B600
+        * B1200
+        * B1800
+        * B2400
+        * B4800
+        * B9600
+        * B19200
+        * B38400
+        * B57600
+        * B76800
+        * B115200
+
+    B1000000 corresponds to :math:`10^6` bauds. It is not a standard
+    POSIX value but is accepted on GNU/Linux.\end{DoxyVerb}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{classdynamixel_1_1errors_1_1_error}{errors\+::\+Error}} & either if the connection is already open or if we fail to open it; the exception message gives more details on the cause \\
+\hline
+\end{DoxyExceptions}
 \hypertarget{classdynamixel_1_1controllers_1_1_usb2_dynamixel_a763efb6a72f8d776ce80c37a4a8ff3ca}{}\index{dynamixel\+::controllers\+::\+Usb2\+Dynamixel@{dynamixel\+::controllers\+::\+Usb2\+Dynamixel}!recv@{recv}}
 \index{recv@{recv}!dynamixel\+::controllers\+::\+Usb2\+Dynamixel@{dynamixel\+::controllers\+::\+Usb2\+Dynamixel}}
 \subsubsection[{recv}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool dynamixel\+::controllers\+::\+Usb2\+Dynamixel\+::recv (

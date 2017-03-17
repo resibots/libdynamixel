@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="174" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="174" bodyend="-1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="222" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="222" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1a69b809bbb9f2686f293700a92c1988b2" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="176" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="176" bodyend="-1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="224" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="224" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1ab9d5db1969bd35035a2942de714f6b31" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="177" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="177" bodyend="-1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="225" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="225" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-attrib">
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="175" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="175" bodyend="-1"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="223" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="223" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -83,10 +83,41 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>With this constructor a serial connection is opened or it throws an exception</para><para><simplesect kind="see"><para><ref refid="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1af9d57bff8175e6c5b84ceb27cc712691" kindref="member">open_serial</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>see open_serial </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>baudrate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>see open_serial </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>recv_timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>timeout (in seconds) for the recv method</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>see open_serial </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="26" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="26" bodyend="30"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="37" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="37" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1af37a6c8e673f42919d26be8852607c0c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -99,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="32" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="32" bodyend="33"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="42" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="42" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1ae83bb405d882ee185f4172c61592b89c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -112,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="35" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="35" bodyend="38"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="45" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="45" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1af9d57bff8175e6c5b84ceb27cc712691" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -131,10 +162,56 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Open the serial port for communication with the servos</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>path to the UNIX serial port, usually ends like &quot;ttyUSBx&quot; or &quot;ttyACMx&quot; where x is an integer </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>baudrate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>represent the communication speed; it is defined by the operating system. the standard values are: <verbatim>embed:rst
+
+        * B0
+        * B50
+        * B75
+        * B110
+        * B134
+        * B150
+        * B200
+        * B300
+        * B600
+        * B1200
+        * B1800
+        * B2400
+        * B4800
+        * B9600
+        * B19200
+        * B38400
+        * B57600
+        * B76800
+        * B115200
+
+    B1000000 corresponds to :math:`10^6` bauds. It is not a standard
+    POSIX value but is accepted on GNU/Linux.</verbatim></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classdynamixel_1_1errors_1_1_error" kindref="compound">errors::Error</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>either if the connection is already open or if we fail to open it; the exception message gives more details on the cause </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="40" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="40" bodyend="68"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="86" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="86" bodyend="114"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1a305726735f3fc48ab8f68e93f7c82207" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -144,10 +221,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Close the serial port </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="70" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="70" bodyend="74"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="118" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="118" bodyend="122"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1a49292efb6f4ac4c063ce079be40ef5f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -160,7 +237,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="76" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="76" bodyend="76"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="124" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="124" bodyend="124"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1a0c0e47a2c3f1ccd6424430dd6891184f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -173,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="78" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="78" bodyend="78"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="126" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="126" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1a37d9c93fd6d863b90015972a4fa77639" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -186,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="80" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="80" bodyend="80"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="128" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="128" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1a2e592ebefd50aa3794d811bb945d96e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -203,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="82" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="82" bodyend="82"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="130" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="130" bodyend="130"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1a6b96c7c1468a319c77492352eb32ec7d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -225,7 +302,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="86" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="86" bodyend="104"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="134" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="134" bodyend="152"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1a763efb6a72f8d776ce80c37a4a8ff3ca" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -247,7 +324,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="108" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="108" bodyend="153"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="156" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="156" bodyend="201"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1a27db1e82d646a8dcf43754004c00b3a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -264,7 +341,7 @@
 <para>Enable error reporting for packet issues</para><para>If report_bad_packet is set to true, invalid packet headers and errors in packet size are reported through exceptions. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="160" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="160" bodyend="163"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="208" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="208" bodyend="211"/>
       </memberdef>
       <memberdef kind="function" id="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1aab1409ea3c11db5852919384fca23ada" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -278,14 +355,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="168" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="168" bodyend="171"/>
+        <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="216" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="216" bodyend="219"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="23" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="23" bodyend="178"/>
+    <location file="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" line="23" column="1" bodyfile="/tmp/doc_dynamixel/libdynamixel/src/dynamixel/controllers/usb2dynamixel.hpp" bodystart="23" bodyend="226"/>
     <listofallmembers>
       <member refid="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1a69b809bbb9f2686f293700a92c1988b2" prot="private" virt="non-virtual"><scope>dynamixel::controllers::Usb2Dynamixel</scope><name>_fd</name></member>
       <member refid="classdynamixel_1_1controllers_1_1_usb2_dynamixel_1aa2779a5e9468430c8d8f3933e0fc61df" prot="private" virt="non-virtual"><scope>dynamixel::controllers::Usb2Dynamixel</scope><name>_recv_buffer_size</name></member>

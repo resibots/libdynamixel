@@ -88,7 +88,7 @@
               
                   <a class="caption" href="http://www.resibots.eu">Project's website</a>
               
-                  <a class="caption" href="http://www.resibots.eu/libdynamixel/">libdynamixel (dynamixel library)</a>
+                  <a class="caption" href="http://www.resibots.eu/limbo/">Limbo (BO library)</a>
               
             
 
@@ -250,13 +250,11 @@
 </pre></div>
 </td></tr></table></div>
 <p>Note that we should always enclose the connection to the serial port with a <code class="docutils literal"><span class="pre">try-catch</span></code>, since connecting to serial devices could always have some unexpected errors. Similarly, we would like our <code class="docutils literal"><span class="pre">Usb2Dynamixel</span></code> controller to notify us for possible errors. To do this, we must enable it as follows:</p>
-<blockquote>
-<div><div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// Enable throwing exceptions -- by default all errors are ignored/silenced</span>
 <span class="n">controller</span><span class="p">.</span><span class="n">set_report_bad_packet</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-</div></blockquote>
 <p>Next, we try to detect all the connected servos:</p>
 <div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2

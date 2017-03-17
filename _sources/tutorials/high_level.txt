@@ -62,11 +62,11 @@ Next, we want to establish a connection with the desired port:
 
 Note that we should always enclose the connection to the serial port with a ``try-catch``, since connecting to serial devices could always have some unexpected errors. Similarly, we would like our ``Usb2Dynamixel`` controller to notify us for possible errors. To do this, we must enable it as follows:
 
- .. literalinclude:: ../../src/tutorials/high_level.cpp
-    :language: c++
-    :linenos:
-    :lines: 33-34
-    :dedent: 4
+.. literalinclude:: ../../src/tutorials/high_level.cpp
+   :language: c++
+   :linenos:
+   :lines: 33-34
+   :dedent: 4
 
 Next, we try to detect all the connected servos:
 

@@ -87,7 +87,7 @@
               
                   <a class="caption" href="http://www.resibots.eu">Project's website</a>
               
-                  <a class="caption" href="http://www.resibots.eu/libdynamixel/">libdynamixel (dynamixel library)</a>
+                  <a class="caption" href="http://www.resibots.eu/limbo/">Limbo (BO library)</a>
               
             
 
@@ -100,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html">Libdynamixel&#8217;s documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/index.html">Tutorials</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">High level API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#controllers">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#auto-detection-of-servos">Auto-detection of servos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#servo-object-servobase">Servo object (ServoBase)</a></li>
 </ul>
@@ -159,6 +160,159 @@
             
   <div class="section" id="high-level-api">
 <h1>High level API<a class="headerlink" href="#high-level-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="controllers">
+<h2>Controllers<a class="headerlink" href="#controllers" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2DynamixelE">
+<span id="dynamixel::controllers::Usb2Dynamixel"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel"></span><em class="property">class </em><code class="descclassname">dynamixel::controllers::</code><code class="descname">Usb2Dynamixel</code><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2DynamixelE" title="Permalink to this definition">¶</a></dt>
+<dd><div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel13Usb2DynamixelERKNSt6stringEid">
+<span id="dynamixel::controllers::Usb2Dynamixel::Usb2Dynamixel__ssCR.i.double"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1aa3baa5452d4935a9eac5a912fccda71d"></span><code class="descname">Usb2Dynamixel</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, int <em>baudrate</em> = B115200, double <em>recv_timeout</em> = 0.1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel13Usb2DynamixelERKNSt6stringEid" title="Permalink to this definition">¶</a></dt>
+<dd><p>With this constructor a serial connection is opened or it throws an exception</p>
+<p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1af9d57bff8175e6c5b84ceb27cc712691"><span>open_serial</span></a></dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">name</span></code> - <p>see open_serial </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">baudrate</span></code> - <p>see open_serial </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">recv_timeout</span></code> - <p>timeout (in seconds) for the recv method</p>
+</li>
+</ul>
+</dd>
+<dt><strong>Exceptions</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><a class="reference internal" href="low_level_api.html#libdynamixelclassdynamixel_1_1errors_1_1_error"><span><span class="pre">errors::Error</span></span></a></code> - <p>see open_serial </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel13Usb2DynamixelEv">
+<span id="dynamixel::controllers::Usb2Dynamixel::Usb2Dynamixel"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1af37a6c8e673f42919d26be8852607c0c"></span><code class="descname">Usb2Dynamixel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel13Usb2DynamixelEv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2DynamixelD0Ev">
+<span id="dynamixel::controllers::Usb2Dynamixel::~Usb2Dynamixel"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1ae83bb405d882ee185f4172c61592b89c"></span><code class="descname">~Usb2Dynamixel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2DynamixelD0Ev" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel11open_serialERKNSt6stringEi">
+<span id="dynamixel::controllers::Usb2Dynamixel::open_serial__ssCR.i"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1af9d57bff8175e6c5b84ceb27cc712691"></span>void <code class="descname">open_serial</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, int <em>baudrate</em> = B115200<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel11open_serialERKNSt6stringEi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the serial port for communication with the servos</p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">name</span></code> - <p>path to the UNIX serial port, usually ends like &#8220;ttyUSBx&#8221; or &#8220;ttyACMx&#8221; where x is an integer </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">baudrate</span></code> - <p>represent the communication speed; it is defined by the operating system. the standard values are: <blockquote>
+<div><ul class="simple">
+<li>B0</li>
+<li>B50</li>
+<li>B75</li>
+<li>B110</li>
+<li>B134</li>
+<li>B150</li>
+<li>B200</li>
+<li>B300</li>
+<li>B600</li>
+<li>B1200</li>
+<li>B1800</li>
+<li>B2400</li>
+<li>B4800</li>
+<li>B9600</li>
+<li>B19200</li>
+<li>B38400</li>
+<li>B57600</li>
+<li>B76800</li>
+<li>B115200</li>
+</ul>
+</div></blockquote>
+<p>B1000000 corresponds to <span class="math">\(10^6\)</span> bauds. It is not a standard
+POSIX value but is accepted on GNU/Linux.</p>
+</p>
+</li>
+</ul>
+</dd>
+<dt><strong>Exceptions</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><a class="reference internal" href="low_level_api.html#libdynamixelclassdynamixel_1_1errors_1_1_error"><span><span class="pre">errors::Error</span></span></a></code> - <p>either if the connection is already open or if we fail to open it; the exception message gives more details on the cause </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel12close_serialEv">
+<span id="dynamixel::controllers::Usb2Dynamixel::close_serial"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1a305726735f3fc48ab8f68e93f7c82207"></span>void <code class="descname">close_serial</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel12close_serialEv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the serial port </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel7is_openEv">
+<span id="dynamixel::controllers::Usb2Dynamixel::is_open"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1a49292efb6f4ac4c063ce079be40ef5f5"></span>bool <code class="descname">is_open</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel7is_openEv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel5flushEv">
+<span id="dynamixel::controllers::Usb2Dynamixel::flush"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1a0c0e47a2c3f1ccd6424430dd6891184f"></span>void <code class="descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel5flushEv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel12recv_timeoutEv">
+<span id="dynamixel::controllers::Usb2Dynamixel::recv_timeout"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1a37d9c93fd6d863b90015972a4fa77639"></span>double <code class="descname">recv_timeout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel12recv_timeoutEv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel16set_recv_timeoutEd">
+<span id="dynamixel::controllers::Usb2Dynamixel::set_recv_timeout__double"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1a2e592ebefd50aa3794d811bb945d96e9"></span>void <code class="descname">set_recv_timeout</code><span class="sig-paren">(</span>double <em>recv_timeout</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel16set_recv_timeoutEd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">template </em>&lt;<em class="property">typename</em> T&gt;</dt>
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel4sendERK17InstructionPacketI1TE">
+<span id="dynamixel::controllers::Usb2Dynamixel::send__InstructionPacket:T:CR"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1a6b96c7c1468a319c77492352eb32ec7d"></span>void <code class="descname">send</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="low_level_api.html#_CPPv2N9dynamixel17InstructionPacketE" title="dynamixel::InstructionPacket">InstructionPacket</a>&lt;T&gt; &amp;<em>packet</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel4sendERK17InstructionPacketI1TE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">template </em>&lt;<em class="property">typename</em> T&gt;</dt>
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel4recvER12StatusPacketI1TE">
+<span id="dynamixel::controllers::Usb2Dynamixel::recv__StatusPacket:T:R"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1a763efb6a72f8d776ce80c37a4a8ff3ca"></span>bool <code class="descname">recv</code><span class="sig-paren">(</span><a class="reference internal" href="low_level_api.html#_CPPv2N9dynamixel12StatusPacketE" title="dynamixel::StatusPacket">StatusPacket</a>&lt;T&gt; &amp;<em>status</em><span class="sig-paren">)</span> const<a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel4recvER12StatusPacketI1TE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel21set_report_bad_packetEb">
+<span id="dynamixel::controllers::Usb2Dynamixel::set_report_bad_packet__b"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1a27db1e82d646a8dcf43754004c00b3a1"></span>void <code class="descname">set_report_bad_packet</code><span class="sig-paren">(</span>bool <em>report_bad_packet</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel21set_report_bad_packetEb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable error reporting for packet issues</p>
+<p>If report_bad_packet is set to true, invalid packet headers and errors in packet size are reported through exceptions. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv2N9dynamixel11controllers13Usb2Dynamixel17report_bad_packetEv">
+<span id="dynamixel::controllers::Usb2Dynamixel::report_bad_packet"></span><span class="target" id="libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1aab1409ea3c11db5852919384fca23ada"></span>bool <code class="descname">report_bad_packet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N9dynamixel11controllers13Usb2Dynamixel17report_bad_packetEv" title="Permalink to this definition">¶</a></dt>
+<dd><p><dl class="docutils">
+<dt><strong>See</strong></dt>
+<dd><a class="reference internal" href="#libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel_1a27db1e82d646a8dcf43754004c00b3a1"><span>set_report_bad_packet</span></a> </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
 <div class="section" id="auto-detection-of-servos">
 <h2>Auto-detection of servos<a class="headerlink" href="#auto-detection-of-servos" title="Permalink to this headline">¶</a></h2>
 <p>There are two versions of the auto detection, one that returns a vector and one that returns a map.</p>
@@ -175,7 +329,7 @@
 <dd>vector of actuators </dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">controller</span></code> - <p>object handling the USB to dynamixel interface, instance of the <a class="reference internal" href="low_level_api.html#libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel"><span>dynamixel::controllers::Usb2Dynamixel</span></a> class </p>
+<li><code class="first docutils literal"><span class="pre">controller</span></code> - <p>object handling the USB to dynamixel interface, instance of the <a class="reference internal" href="#libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel"><span>dynamixel::controllers::Usb2Dynamixel</span></a> class </p>
 </li>
 </ul>
 </dd>
@@ -197,7 +351,7 @@
 <dd>vector of actuators </dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last">
-<li><code class="first docutils literal"><span class="pre">controller</span></code> - <p>object handling the USB to dynamixel interface, instance of the <a class="reference internal" href="low_level_api.html#libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel"><span>dynamixel::controllers::Usb2Dynamixel</span></a> class </p>
+<li><code class="first docutils literal"><span class="pre">controller</span></code> - <p>object handling the USB to dynamixel interface, instance of the <a class="reference internal" href="#libdynamixelclassdynamixel_1_1controllers_1_1_usb2_dynamixel"><span>dynamixel::controllers::Usb2Dynamixel</span></a> class </p>
 </li>
 </ul>
 </dd>
