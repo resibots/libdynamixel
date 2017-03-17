@@ -123,7 +123,7 @@ namespace dynamixel {
         @param controller object handling the USB to dynamixel interface, instance
             of the dynamixel::controllers::Usb2Dynamixel class
         @return vector of actuators
-        @throws dynamixel::errors::Errors if there is a problem during send
+        @throws dynamixel::errors::Error if there is a problem during send
         @throws dynamixel::errors::UnpackError if the size of received packet is
             not correct
     **/
