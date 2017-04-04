@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="structdynamixel_1_1servos_1_1_model_traits_3_01_ax18_01_4" kind="struct" language="C++" prot="public">
     <compoundname>dynamixel::servos::ModelTraits&lt; Ax18 &gt;</compoundname>
     <includes refid="ax18_8hpp" local="no">dynamixel/servos/ax18.hpp</includes>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="classdynamixel_1_1errors_1_1_servo_limit_error" kind="class" language="C++" prot="public">
     <compoundname>dynamixel::errors::ServoLimitError</compoundname>
     <basecompoundref refid="classdynamixel_1_1errors_1_1_error" prot="public" virt="non-virtual">dynamixel::errors::Error</basecompoundref>

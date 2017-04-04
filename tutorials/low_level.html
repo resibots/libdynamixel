@@ -189,10 +189,10 @@
 <div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include &lt;iostream&gt;</span>
-<span class="cp">#include &lt;dynamixel/dynamixel_core.hpp&gt;</span>
-<span class="cp">#include &lt;dynamixel/servos/mx106.hpp&gt;</span>
-<span class="cp">#include &lt;dynamixel/servos/mx28.hpp&gt;</span>
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;dynamixel/dynamixel_core.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;dynamixel/servos/mx106.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;dynamixel/servos/mx28.hpp&gt;</span><span class="cp"></span>
 </pre></div>
 </td></tr></table></div>
 <p>We are expecting the port name as a command line parameter:</p>
@@ -228,7 +228,7 @@
  8
  9
 10</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// Always use try-catch when connecting to a device/port</span>
-<span class="n">try</span> <span class="p">{</span>
+<span class="k">try</span> <span class="p">{</span>
     <span class="c1">// connect to device/port</span>
     <span class="n">controller</span><span class="p">.</span><span class="n">open_serial</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
 <span class="p">}</span>
@@ -289,48 +289,48 @@
 31
 32
 33
-34</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">dynamixel</span><span class="o">::</span><span class="n">StatusPacket</span><span class="o">&lt;</span><span class="kt">protocol_t</span><span class="o">&gt;</span> <span class="n">status</span><span class="p">;</span>
+34</pre></div></td><td class="code"><div class="highlight"><pre><span class="n">dynamixel</span><span class="o">::</span><span class="n">StatusPacket</span><span class="o">&lt;</span><span class="n">protocol_t</span><span class="o">&gt;</span> <span class="n">status</span><span class="p">;</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mx_106_ids</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">using</span> <span class="kt">mx106_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">servos</span><span class="o">::</span><span class="n">Mx106</span><span class="p">;</span>
+    <span class="k">using</span> <span class="n">mx106_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">servos</span><span class="o">::</span><span class="n">Mx106</span><span class="p">;</span>
     <span class="c1">// Enable torque</span>
-    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx106_t</span><span class="o">::</span><span class="n">set_torque_enable</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">));</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx106_t</span><span class="o">::</span><span class="n">set_torque_enable</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">));</span>
     <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 
     <span class="c1">// Set the moving speed of the actuator</span>
-    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx106_t</span><span class="o">::</span><span class="n">set_moving_speed</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">50</span><span class="p">));</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx106_t</span><span class="o">::</span><span class="n">set_moving_speed</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">50</span><span class="p">));</span>
     <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 
     <span class="c1">// Write goal position in register of the actuator</span>
-    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx106_t</span><span class="o">::</span><span class="n">reg_goal_position_angle</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M_PI</span><span class="p">));</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx106_t</span><span class="o">::</span><span class="n">reg_goal_position_angle</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M_PI</span><span class="p">));</span>
     <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mx_28_ids</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">using</span> <span class="kt">mx28_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">servos</span><span class="o">::</span><span class="n">Mx28</span><span class="p">;</span>
+    <span class="k">using</span> <span class="n">mx28_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">servos</span><span class="o">::</span><span class="n">Mx28</span><span class="p">;</span>
     <span class="c1">// Enable torque</span>
-    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx28_t</span><span class="o">::</span><span class="n">set_torque_enable</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">));</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx28_t</span><span class="o">::</span><span class="n">set_torque_enable</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">));</span>
     <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 
     <span class="c1">// Set the moving speed of the actuator</span>
-    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx28_t</span><span class="o">::</span><span class="n">set_moving_speed</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">50</span><span class="p">));</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx28_t</span><span class="o">::</span><span class="n">set_moving_speed</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">50</span><span class="p">));</span>
     <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 
     <span class="c1">// Write goal position in register of the actuator</span>
-    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx28_t</span><span class="o">::</span><span class="n">reg_goal_position_angle</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M_PI</span><span class="p">));</span>
+    <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx28_t</span><span class="o">::</span><span class="n">reg_goal_position_angle</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M_PI</span><span class="p">));</span>
     <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="c1">// Send broadcast action</span>
-<span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">instructions</span><span class="o">::</span><span class="n">Action</span><span class="o">&lt;</span><span class="kt">protocol_t</span><span class="o">&gt;</span><span class="p">(</span><span class="kt">protocol_t</span><span class="o">::</span><span class="n">broadcast_id</span><span class="p">));</span>
+<span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">instructions</span><span class="o">::</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">protocol_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">protocol_t</span><span class="o">::</span><span class="n">broadcast_id</span><span class="p">));</span>
 </pre></div>
 </td></tr></table></div>
 <p>All these commands should be enclosed into a <code class="docutils literal"><span class="pre">try-catch</span></code> since we enabled the exception throwing.</p>
 <p>Here&#8217;s the <strong>low_level_control.cpp</strong> file:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include &lt;iostream&gt;</span>
-<span class="cp">#include &lt;dynamixel/dynamixel_core.hpp&gt;</span>
-<span class="cp">#include &lt;dynamixel/servos/mx106.hpp&gt;</span>
-<span class="cp">#include &lt;dynamixel/servos/mx28.hpp&gt;</span>
+<div class="highlight-c++"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;dynamixel/dynamixel_core.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;dynamixel/servos/mx106.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;dynamixel/servos/mx28.hpp&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
@@ -344,7 +344,7 @@
     <span class="n">dynamixel</span><span class="o">::</span><span class="n">controllers</span><span class="o">::</span><span class="n">Usb2Dynamixel</span> <span class="n">controller</span><span class="p">;</span>
 
     <span class="c1">// Always use try-catch when connecting to a device/port</span>
-    <span class="n">try</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
         <span class="c1">// connect to device/port</span>
         <span class="n">controller</span><span class="p">.</span><span class="n">open_serial</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
     <span class="p">}</span>
@@ -361,44 +361,44 @@
     <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">mx_106_ids</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">};</span> <span class="c1">// we have 2 MX106 with IDs 1 and 2</span>
     <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">mx_28_ids</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span> <span class="c1">// we have 2 MX28 with IDs 3 and 4</span>
 
-    <span class="k">using</span> <span class="kt">protocol_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">protocols</span><span class="o">::</span><span class="n">Protocol1</span><span class="p">;</span>
+    <span class="k">using</span> <span class="n">protocol_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">protocols</span><span class="o">::</span><span class="n">Protocol1</span><span class="p">;</span>
 
     <span class="c1">// We want to catch exceptions</span>
-    <span class="n">try</span> <span class="p">{</span>
-        <span class="n">dynamixel</span><span class="o">::</span><span class="n">StatusPacket</span><span class="o">&lt;</span><span class="kt">protocol_t</span><span class="o">&gt;</span> <span class="n">status</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="n">dynamixel</span><span class="o">::</span><span class="n">StatusPacket</span><span class="o">&lt;</span><span class="n">protocol_t</span><span class="o">&gt;</span> <span class="n">status</span><span class="p">;</span>
 
         <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mx_106_ids</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">using</span> <span class="kt">mx106_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">servos</span><span class="o">::</span><span class="n">Mx106</span><span class="p">;</span>
+            <span class="k">using</span> <span class="n">mx106_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">servos</span><span class="o">::</span><span class="n">Mx106</span><span class="p">;</span>
             <span class="c1">// Enable torque</span>
-            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx106_t</span><span class="o">::</span><span class="n">set_torque_enable</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">));</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx106_t</span><span class="o">::</span><span class="n">set_torque_enable</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">));</span>
             <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 
             <span class="c1">// Set the moving speed of the actuator</span>
-            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx106_t</span><span class="o">::</span><span class="n">set_moving_speed</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">50</span><span class="p">));</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx106_t</span><span class="o">::</span><span class="n">set_moving_speed</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">50</span><span class="p">));</span>
             <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 
             <span class="c1">// Write goal position in register of the actuator</span>
-            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx106_t</span><span class="o">::</span><span class="n">reg_goal_position_angle</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M_PI</span><span class="p">));</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx106_t</span><span class="o">::</span><span class="n">reg_goal_position_angle</span><span class="p">(</span><span class="n">mx_106_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M_PI</span><span class="p">));</span>
             <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
         <span class="p">}</span>
 
         <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mx_28_ids</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">using</span> <span class="kt">mx28_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">servos</span><span class="o">::</span><span class="n">Mx28</span><span class="p">;</span>
+            <span class="k">using</span> <span class="n">mx28_t</span> <span class="o">=</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">servos</span><span class="o">::</span><span class="n">Mx28</span><span class="p">;</span>
             <span class="c1">// Enable torque</span>
-            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx28_t</span><span class="o">::</span><span class="n">set_torque_enable</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">));</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx28_t</span><span class="o">::</span><span class="n">set_torque_enable</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">1</span><span class="p">));</span>
             <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 
             <span class="c1">// Set the moving speed of the actuator</span>
-            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx28_t</span><span class="o">::</span><span class="n">set_moving_speed</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">50</span><span class="p">));</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx28_t</span><span class="o">::</span><span class="n">set_moving_speed</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">50</span><span class="p">));</span>
             <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
 
             <span class="c1">// Write goal position in register of the actuator</span>
-            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="kt">mx28_t</span><span class="o">::</span><span class="n">reg_goal_position_angle</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M_PI</span><span class="p">));</span>
+            <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">mx28_t</span><span class="o">::</span><span class="n">reg_goal_position_angle</span><span class="p">(</span><span class="n">mx_28_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M_PI</span><span class="p">));</span>
             <span class="n">controller</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
         <span class="p">}</span>
 
         <span class="c1">// Send broadcast action</span>
-        <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">instructions</span><span class="o">::</span><span class="n">Action</span><span class="o">&lt;</span><span class="kt">protocol_t</span><span class="o">&gt;</span><span class="p">(</span><span class="kt">protocol_t</span><span class="o">::</span><span class="n">broadcast_id</span><span class="p">));</span>
+        <span class="n">controller</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">dynamixel</span><span class="o">::</span><span class="n">instructions</span><span class="o">::</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">protocol_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">protocol_t</span><span class="o">::</span><span class="n">broadcast_id</span><span class="p">));</span>
     <span class="p">}</span>
     <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">dynamixel</span><span class="o">::</span><span class="n">errors</span><span class="o">::</span><span class="n">Error</span><span class="o">&amp;</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Something bad happened</span>
@@ -413,33 +413,33 @@
 <div class="section" id="buildind-with-waf">
 <h2>Buildind with Waf<a class="headerlink" href="#buildind-with-waf" title="Permalink to this headline">¶</a></h2>
 <p>Now we need to create a <cite>wscript</cite> file for our project to compile it with waf (see the <a class="reference internal" href="download_and_compilation.html#download-and-compilation"><span>compilation tutorial</span></a> for details):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="ch">#!/usr/bin/env python</span>
 
 <span class="k">def</span> <span class="nf">options</span><span class="p">(</span><span class="n">opt</span><span class="p">):</span>
     <span class="k">pass</span>
 
 <span class="k">def</span> <span class="nf">configure</span><span class="p">(</span><span class="n">conf</span><span class="p">):</span>
-  <span class="c"># Get locations where to search for libdynamixel&#39;s headers</span>
-  <span class="n">includes_check</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;/usr/include&#39;</span><span class="p">,</span> <span class="s">&#39;/usr/local/include&#39;</span><span class="p">]</span>
+  <span class="c1"># Get locations where to search for libdynamixel&#39;s headers</span>
+  <span class="n">includes_check</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/usr/include&#39;</span><span class="p">,</span> <span class="s1">&#39;/usr/local/include&#39;</span><span class="p">]</span>
 
   <span class="k">try</span><span class="p">:</span>
-    <span class="c"># Find the headers of libdynamixel</span>
-    <span class="n">conf</span><span class="o">.</span><span class="n">start_msg</span><span class="p">(</span><span class="s">&#39;Checking for libdynamixel includes&#39;</span><span class="p">)</span>
-    <span class="n">conf</span><span class="o">.</span><span class="n">find_file</span><span class="p">(</span><span class="s">&#39;dynamixel/dynamixel.hpp&#39;</span><span class="p">,</span> <span class="n">includes_check</span><span class="p">)</span>
-    <span class="n">conf</span><span class="o">.</span><span class="n">end_msg</span><span class="p">(</span><span class="s">&#39;ok&#39;</span><span class="p">)</span>
+    <span class="c1"># Find the headers of libdynamixel</span>
+    <span class="n">conf</span><span class="o">.</span><span class="n">start_msg</span><span class="p">(</span><span class="s1">&#39;Checking for libdynamixel includes&#39;</span><span class="p">)</span>
+    <span class="n">conf</span><span class="o">.</span><span class="n">find_file</span><span class="p">(</span><span class="s1">&#39;dynamixel/dynamixel.hpp&#39;</span><span class="p">,</span> <span class="n">includes_check</span><span class="p">)</span>
+    <span class="n">conf</span><span class="o">.</span><span class="n">end_msg</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
 
     <span class="n">conf</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">INCLUDES_LIBDYNAMIXEL</span> <span class="o">=</span> <span class="n">includes_check</span>
   <span class="k">except</span><span class="p">:</span>
-    <span class="n">conf</span><span class="o">.</span><span class="n">end_msg</span><span class="p">(</span><span class="s">&#39;Not found&#39;</span><span class="p">,</span> <span class="s">&#39;RED&#39;</span><span class="p">)</span>
+    <span class="n">conf</span><span class="o">.</span><span class="n">end_msg</span><span class="p">(</span><span class="s1">&#39;Not found&#39;</span><span class="p">,</span> <span class="s1">&#39;RED&#39;</span><span class="p">)</span>
   <span class="k">return</span>
 
 <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">bld</span><span class="p">):</span>
-    <span class="n">libs</span> <span class="o">=</span> <span class="s">&#39;LIBDYNAMIXEL BOOST&#39;</span>
+    <span class="n">libs</span> <span class="o">=</span> <span class="s1">&#39;LIBDYNAMIXEL BOOST&#39;</span>
 
-    <span class="n">obj</span> <span class="o">=</span> <span class="n">bld</span><span class="p">(</span><span class="n">features</span> <span class="o">=</span> <span class="s">&#39;cxx&#39;</span><span class="p">,</span>
-              <span class="n">source</span> <span class="o">=</span> <span class="s">&#39;low_level_control.cpp&#39;</span><span class="p">,</span>
-              <span class="n">includes</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="p">,</span>
-              <span class="n">target</span> <span class="o">=</span> <span class="s">&#39;low_level_control&#39;</span><span class="p">,</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">bld</span><span class="p">(</span><span class="n">features</span> <span class="o">=</span> <span class="s1">&#39;cxx&#39;</span><span class="p">,</span>
+              <span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;low_level_control.cpp&#39;</span><span class="p">,</span>
+              <span class="n">includes</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+              <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;low_level_control&#39;</span><span class="p">,</span>
               <span class="n">uselib</span> <span class="o">=</span>  <span class="n">libs</span><span class="p">)</span>
 </pre></div>
 </div>

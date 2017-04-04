@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="dir_a9e9543d56249baf6783fe9532c43b4a" kind="dir">
     <compoundname>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/servos</compoundname>
     <innerfile refid="ax12_8hpp">ax12.hpp</innerfile>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="dir_104a64d1c0ae5cf7faabe787d32d5206" kind="dir">
     <compoundname>/tmp/doc_dynamixel/libdynamixel/src/dynamixel/protocols</compoundname>
     <innerfile refid="protocol1_8hpp">protocol1.hpp</innerfile>

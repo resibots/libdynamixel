@@ -7,7 +7,7 @@
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef \hyperlink{structdynamixel_1_1servos_1_1_model_traits}{Model\+Traits}$<$ M $>$\+::C\+T \hyperlink{classdynamixel_1_1servos_1_1_protocol_specific_packets_a908d795bf5c78a638ed18616f38baf51}{ct\+\_\+t}
+typedef \hyperlink{structdynamixel_1_1servos_1_1_model_traits}{Model\+Traits}$<$ M $>$\+::CT \hyperlink{classdynamixel_1_1servos_1_1_protocol_specific_packets_a908d795bf5c78a638ed18616f38baf51}{ct\+\_\+t}
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -19,21 +19,21 @@ static \hyperlink{classdynamixel_1_1_instruction_packet}{Instruction\+Packet}$<$
 
 
 \subsection{Member Typedef Documentation}
-\hypertarget{classdynamixel_1_1servos_1_1_protocol_specific_packets_a908d795bf5c78a638ed18616f38baf51}{}\index{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets@{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}!ct\+\_\+t@{ct\+\_\+t}}
+\index{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets@{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}!ct\+\_\+t@{ct\+\_\+t}}
 \index{ct\+\_\+t@{ct\+\_\+t}!dynamixel\+::servos\+::\+Protocol\+Specific\+Packets@{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}}
-\subsubsection[{ct\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M , class P $>$ typedef {\bf Model\+Traits}$<$M$>$\+::C\+T {\bf dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}$<$ M, P $>$\+::{\bf ct\+\_\+t}}\label{classdynamixel_1_1servos_1_1_protocol_specific_packets_a908d795bf5c78a638ed18616f38baf51}
+\subsubsection[{\texorpdfstring{ct\+\_\+t}{ct_t}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M , class P $>$ typedef {\bf Model\+Traits}$<$M$>$\+::CT {\bf dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}$<$ M, P $>$\+::{\bf ct\+\_\+t}}\hypertarget{classdynamixel_1_1servos_1_1_protocol_specific_packets_a908d795bf5c78a638ed18616f38baf51}{}\label{classdynamixel_1_1servos_1_1_protocol_specific_packets_a908d795bf5c78a638ed18616f38baf51}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classdynamixel_1_1servos_1_1_protocol_specific_packets_a92127d3d5f0a6a257bf076266d7f8389}{}\index{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets@{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}!reg\+\_\+moving\+\_\+speed\+\_\+angle@{reg\+\_\+moving\+\_\+speed\+\_\+angle}}
+\index{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets@{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}!reg\+\_\+moving\+\_\+speed\+\_\+angle@{reg\+\_\+moving\+\_\+speed\+\_\+angle}}
 \index{reg\+\_\+moving\+\_\+speed\+\_\+angle@{reg\+\_\+moving\+\_\+speed\+\_\+angle}!dynamixel\+::servos\+::\+Protocol\+Specific\+Packets@{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}}
-\subsubsection[{reg\+\_\+moving\+\_\+speed\+\_\+angle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M , class P $>$ static {\bf Instruction\+Packet}$<$P$>$ {\bf dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}$<$ M, P $>$\+::reg\+\_\+moving\+\_\+speed\+\_\+angle (
+\subsubsection[{\texorpdfstring{reg\+\_\+moving\+\_\+speed\+\_\+angle(typename P\+::id\+\_\+t id, double rad\+\_\+per\+\_\+s, cst\+::\+Operating\+Mode operating\+\_\+mode=cst\+::joint)}{reg_moving_speed_angle(typename P::id_t id, double rad_per_s, cst::OperatingMode operating_mode=cst::joint)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M , class P $>$ static {\bf Instruction\+Packet}$<$P$>$ {\bf dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}$<$ M, P $>$\+::reg\+\_\+moving\+\_\+speed\+\_\+angle (
 \begin{DoxyParamCaption}
 \item[{typename P\+::id\+\_\+t}]{id, }
 \item[{double}]{rad\+\_\+per\+\_\+s, }
 \item[{{\bf cst\+::\+Operating\+Mode}}]{operating\+\_\+mode = {\ttfamily {\bf cst\+::joint}}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdynamixel_1_1servos_1_1_protocol_specific_packets_a92127d3d5f0a6a257bf076266d7f8389}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classdynamixel_1_1servos_1_1_protocol_specific_packets_a92127d3d5f0a6a257bf076266d7f8389}{}\label{classdynamixel_1_1servos_1_1_protocol_specific_packets_a92127d3d5f0a6a257bf076266d7f8389}
 Build a packet to set the desired speed on an actuator (in register).
 
 See the protocol-\/specific implemetnations for details.
@@ -50,15 +50,15 @@ See the protocol-\/specific implemetnations for details.
 \begin{DoxyReturn}{Returns}
 a data packet to be sent on the serial line 
 \end{DoxyReturn}
-\hypertarget{classdynamixel_1_1servos_1_1_protocol_specific_packets_a46e78c8b23086c2388b22209f6539dab}{}\index{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets@{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}!set\+\_\+moving\+\_\+speed\+\_\+angle@{set\+\_\+moving\+\_\+speed\+\_\+angle}}
+\index{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets@{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}!set\+\_\+moving\+\_\+speed\+\_\+angle@{set\+\_\+moving\+\_\+speed\+\_\+angle}}
 \index{set\+\_\+moving\+\_\+speed\+\_\+angle@{set\+\_\+moving\+\_\+speed\+\_\+angle}!dynamixel\+::servos\+::\+Protocol\+Specific\+Packets@{dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}}
-\subsubsection[{set\+\_\+moving\+\_\+speed\+\_\+angle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M , class P $>$ static {\bf Instruction\+Packet}$<$P$>$ {\bf dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}$<$ M, P $>$\+::set\+\_\+moving\+\_\+speed\+\_\+angle (
+\subsubsection[{\texorpdfstring{set\+\_\+moving\+\_\+speed\+\_\+angle(typename P\+::id\+\_\+t id, double rad\+\_\+per\+\_\+s, cst\+::\+Operating\+Mode operating\+\_\+mode=cst\+::joint)}{set_moving_speed_angle(typename P::id_t id, double rad_per_s, cst::OperatingMode operating_mode=cst::joint)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M , class P $>$ static {\bf Instruction\+Packet}$<$P$>$ {\bf dynamixel\+::servos\+::\+Protocol\+Specific\+Packets}$<$ M, P $>$\+::set\+\_\+moving\+\_\+speed\+\_\+angle (
 \begin{DoxyParamCaption}
 \item[{typename P\+::id\+\_\+t}]{id, }
 \item[{double}]{rad\+\_\+per\+\_\+s, }
 \item[{{\bf cst\+::\+Operating\+Mode}}]{operating\+\_\+mode = {\ttfamily {\bf cst\+::joint}}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdynamixel_1_1servos_1_1_protocol_specific_packets_a46e78c8b23086c2388b22209f6539dab}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classdynamixel_1_1servos_1_1_protocol_specific_packets_a46e78c8b23086c2388b22209f6539dab}{}\label{classdynamixel_1_1servos_1_1_protocol_specific_packets_a46e78c8b23086c2388b22209f6539dab}
 Build a packet to set the desired speed on an actuator.
 
 See the protocol-\/specific implemetnations for details.

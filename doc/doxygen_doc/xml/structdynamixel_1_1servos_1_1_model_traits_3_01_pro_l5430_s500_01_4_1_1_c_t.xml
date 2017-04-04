@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="structdynamixel_1_1servos_1_1_model_traits_3_01_pro_l5430_s500_01_4_1_1_c_t" kind="struct" language="C++" prot="public">
     <compoundname>dynamixel::servos::ModelTraits&lt; ProL5430S500 &gt;::CT</compoundname>
     <includes refid="pro__l54__30__s500_8hpp" local="no">dynamixel/servos/pro_l54_30_s500.hpp</includes>
