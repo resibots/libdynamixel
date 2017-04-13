@@ -5,6 +5,11 @@ libdynamixel is a C++ interface to the dynamixel actuators. Currently, we have l
 
 The work is in progress, the documentation too, please be clement.
 
+Documentation
+=============
+
+The full documentation is here: http://www.resibots.eu/libdynamixel/ 
+
 Compilation and installation
 ============================
 The build system for this library is Waf. Don't run away yet. It has the big advantage of requiring no more than Python installed on your computer. If you run a GNU/Linux OS or Mac OS, you should already have it. Here is how we compile and install it:
