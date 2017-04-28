@@ -8,11 +8,16 @@
 #include "errors/error.hpp"
 
 namespace dynamixel {
-    /** The template specifications of this method are used to set the baudrate
-        of the servos.
+    /** Use this template function to set the baudrate of the servos.
 
-        Their internal memory represent the baudrates with special codes that we
-        need to convert from the baudrate value.
+        It will provide you with the code corresponding to the requested baudrate.
+        This value is to be put in the control table of a servo.
+
+        Since the codes are different for Protocol 1 and Protocol 2, this function
+        is templated by the protocol version.
+
+        @raise dynamixel::errors::Error
+            Such an exception is raised if a non-existing baudrate is requested.
 
         @param baudrate the baudrate we want the device to use
         @return hardware-specific code for the baudrate
