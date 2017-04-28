@@ -1,6 +1,8 @@
 High level API
 ===============
 
+.. _controllers:
+
 Controllers
 -----------
 For now there is only one controller class called ``Usb2Dynamixel``. It handles the USB to serial interface, be it the official USB2Dynamixel or the `USB2AX`_. More contcretely, this is the class you use to send and recieve packets on the servos' bus.
@@ -43,7 +45,7 @@ Class definition
 
 Methods for access to the control table
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following methods are defined for all fields found in at least a servo's control table. If one tries to access or change a field that does not exist in the control table of the servo at hand, an exception will be raised. The exception is of type :code:`errors::Error` and contains the message "*some_method* not implemented in model" where *some_method* is the name of a method.
+The following methods are defined for all fields found in at least a servo's control table. If one tries to access or change a field that does not exist in the control table of the servo at hand, an exception will be raised. The exception is of type :cpp:class:`dynamixel::errors::Error` and contains the message "*some_method* not implemented in model" where *some_method* is the name of a method.
 
 .. note:: see :ref:`supported_actuators_and_fields` for the fields available for each supported servo model and their names in Libdynamixel.
 
