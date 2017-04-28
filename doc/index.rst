@@ -7,6 +7,8 @@ libdynamixel
 
 This library comes with a command line utility that can, among other things, be very convenient for the configuration of your actuators.
 
+.. todo:: link to command line utility
+
 Features
 --------
 
