@@ -58,7 +58,7 @@ int main(int argc, char** argv)
             sleep(1);
 
             // Request the current position of the servo
-            controller.send(servo->get_present_position_angle());
+            controller.send(servo->get_present_position());
             controller.recv(st);
 
             // Parse the position from the packet received
