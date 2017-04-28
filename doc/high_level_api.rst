@@ -76,3 +76,8 @@ The following methods are defined for all fields found in at least a servo's con
 
     serial_interface.send(
       dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+
+Other utility functions
+-----------------------
+
+.. doxygenfunction:: dynamixel::get_baudrate_id
