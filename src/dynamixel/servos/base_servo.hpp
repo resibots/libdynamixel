@@ -38,7 +38,7 @@ namespace dynamixel {
         template <typename Protocol>
         class BaseServo {
         public:
-            /// type of the protocol (Protocol1 or Protocol2)
+            /// type of the protocol (Protocol1 or Protocol2) for this servo
             typedef Protocol protocol_t;
 
             /// ID of the servo
@@ -47,7 +47,8 @@ namespace dynamixel {
                 throw errors::Error("id not implemented in model");
             }
 
-            /// ??
+            /// DO NOT use this method. It shall be removed. To change an
+            /// actuator's ID, use set_id
             virtual void id(long long int id)
             {
                 throw errors::Error("id not implemented in model");
@@ -58,6 +59,15 @@ namespace dynamixel {
             {
                 throw errors::Error("model_name not implemented in model");
             }
+
+            /** @name Generic setters and getters
+                @{
+                \fn virtual BaseServo::InstructionPacket<protocol_t> get_NAME() const
+                \brief Get the value NAME from the control table
+                \return InstructionPacket to be sent to the actuator to ask for
+                    the field value
+                @}
+            **/
 
             // All the memory addresses of all the models need to be declared here
             // Then, the concrete model classes override the ones that they have
@@ -132,45 +142,69 @@ namespace dynamixel {
             }
 
             // =================================================================
-            // Position-specific
+            /** @name Position-specific methods
+                These methods allow to speak in radians with the actuators,
+                abstracting away the model-specific ticks to angle ratios.
+            **/
+            ///@{
 
+            /// Set the actuator's angle to a given angle in radian
             virtual InstructionPacket<protocol_t> set_goal_position_angle(double rad) const
             {
                 throw errors::Error("set_goal_position_angle not implemented in model");
             }
 
+            /// Register the instruction to set the actuator's angle to a given
+            /// angle in radian
             virtual InstructionPacket<protocol_t> reg_goal_position_angle(double rad) const
             {
                 throw errors::Error("reg_goal_position_angle not implemented in model");
             }
 
+            /// Use get_present_position instead! This method duplicates
+            /// get_present_position and shall be removed at some point.
             virtual InstructionPacket<protocol_t> get_present_position_angle() const
             {
                 throw errors::Error("get_present_position_angle not implemented in model");
             }
 
+            /// Convert the received position from unitless value to radians and
+            /// return it
             virtual double parse_present_position_angle(const StatusPacket<protocol_t>& st) const
             {
                 throw errors::Error("parse_present_position_angle not implemented in model");
             }
 
-            // =================================================================
-            // Speed-specific
+            ///@}
 
+            // =================================================================
+            /** @name Speed-specific methods
+                These methods allow to speak in radians/s with the actuators,
+                abstracting away the model-specific tick to speed conversion.
+            **/
+            ///@{
+
+            /// Set the actuator's speed to a given value in radians per second
             virtual InstructionPacket<protocol_t> set_moving_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const
             {
                 throw errors::Error("set_moving_speed_angle not implemented in model");
             }
 
+            /// Register the instruction to set the actuator's speed to a given
+            /// value in radians per second
             virtual InstructionPacket<protocol_t> reg_moving_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const
             {
                 throw errors::Error("reg_moving_speed_angle not implemented in model");
             }
 
+            /// Convert the received speed from unitless value to radians per
+            /// second and return it
             virtual double parse_joint_speed(const StatusPacket<protocol_t>& st) const
             {
                 throw errors::Error("parse_joint_speed not implemented in model");
             }
+
+            ///@}
 
         protected:
             BaseServo() {}
