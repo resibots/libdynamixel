@@ -4,6 +4,8 @@ Low level API
 Instructions Packets
 --------------------
 
+.. note:: For *instruction packets* to be sent and *status packet* to be received, one needs a :ref:`controller<controllers>`, such as :cpp:class:`dynamixel::controllers::Usb2Dynamixel`.
+
 Abstract class (InstructionPacket)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -21,6 +23,8 @@ Instructions
 
 Status packets (StatusPacket)
 -----------------------------
+
+.. note:: For *instruction packets* to be sent and *status packet* to be received, one needs a :ref:`controller<controllers>`, such as :cpp:class:`dynamixel::controllers::Usb2Dynamixel`.
 
 .. doxygenclass:: dynamixel::StatusPacket
    :members:
