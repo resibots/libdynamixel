@@ -17,7 +17,7 @@ Features
 * full C++11 api
 
   * template-based API for fast and low-level access
-  * class-based unified API abstracting away the differences between the actuators (as long as they use the same Dynamixel protocol).
+  * class-based unified API that abstracts away the differences between the actuators (as long as they use the same Dynamixel protocol).
 
 Contents
 --------
