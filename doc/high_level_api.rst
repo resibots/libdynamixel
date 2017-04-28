@@ -3,6 +3,9 @@ High level API
 
 Controllers
 -----------
+For now there is only one controller class called ``Usb2Dynamixel``. It handles the USB to serial interface, be it the official USB2Dynamixel or the `USB2AX`_.
+
+.. _USB2AX: http://www.xevelabs.com/doku.php?id=product:usb2ax:usb2ax
 
 .. doxygenclass:: dynamixel::controllers::Usb2Dynamixel
    :members:

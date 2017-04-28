@@ -19,7 +19,9 @@ The client interacts with Dynamixels by sending instructions and receiving statu
 Serial interface
 ----------------
 
-All communication with the dynamixel has to go through a serial interface. We support both `USB2AX <http://www.xevelabs.com/doku.php?id=product:usb2ax:usb2ax>`__ and `USB2DYNAMIXEL <http://www.robotis-shop-en.com/?act=shop_en.goods_view&GS=1289&keyword=USB2Dynamixel>`__ in the class :cpp:class:`controllers::Usb2Dynamixel`. Other serial interfaces should also work.
+All communication with the dynamixel has to go through a serial interface. We support both `USB2AX`_ and `USB2DYNAMIXEL <http://www.robotis-shop-en.com/?act=shop_en.goods_view&GS=1289&keyword=USB2Dynamixel>`__ in the class :cpp:class:`controllers::Usb2Dynamixel`. Other serial interfaces should also work.
+
+.. _USB2AX: http://www.xevelabs.com/doku.php?id=product:usb2ax:usb2ax
 
 Instructions and status report
 ------------------------------
