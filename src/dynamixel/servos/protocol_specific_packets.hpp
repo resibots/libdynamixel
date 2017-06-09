@@ -166,7 +166,7 @@ namespace dynamixel {
                 int32_t speed_ticks = round(60 * rad_per_s / (two_pi * ct_t::rpm_per_tick));
 
                 // Check that desired speed is within the actuator's bounds
-                if (!(speed_ticks >= ct_t::min_goal_speed && speed_ticks <= ct_t::max_goal_speed)) {
+                if (!(abs(speed_ticks) <= ct_t::max_goal_speed)) {
                     double min_goal_speed = ct_t::min_goal_speed * ct_t::rpm_per_tick * two_pi / 60;
                     double max_goal_speed = ct_t::max_goal_speed * ct_t::rpm_per_tick * two_pi / 60;
                     throw errors::ServoLimitError(id, min_goal_speed, max_goal_speed, rad_per_s, "speed (rad/s)");
