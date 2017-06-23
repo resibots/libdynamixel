@@ -79,7 +79,9 @@ namespace dynamixel {
         @return vector of actuators
     **/
     template <typename Protocol, typename Controller>
-    inline std::vector<std::shared_ptr<servos::BaseServo<Protocol>>> auto_detect(const Controller& controller)
+    inline std::vector<std::shared_ptr<servos::BaseServo<Protocol>>> auto_detect(
+        const Controller& controller,
+        std::vector<Protocol::id_t>& ids = null) // FIXME: how to make empty vector reference ?
     {
         // vector of actuators returned by this function
         std::vector<std::shared_ptr<servos::BaseServo<Protocol>>> res;
@@ -88,8 +90,13 @@ namespace dynamixel {
         // get_servo (protocol 1 or 2)
         typename Protocol::address_t selected_protocol = 0;
 
+        if (ids == null) {
+            ids = range(0, Protocol::broadcast_id); // FIXME
+            // FIXME: if only it could work like a python generator
+        }
+
         // search through each possible device ID
-        for (typename Protocol::id_t id = 0; id < Protocol::broadcast_id; id++) {
+        for (typename Protocol::id_t id : ids) {
             try {
                 // Send a ping. If it is answered, read the actuator model and
                 // instanciate a class of the correct type
@@ -111,6 +118,15 @@ namespace dynamixel {
         }
 
         return res;
+    }
+
+    // FIXME : how to make this method be of vector type ?
+    template <class T>
+    T range_generator(T lower, T upper)
+    {
+        static T current = lower;
+        if (current < upper)
+            reutrn current++; // FIXME : or ++current ?
     }
 
     /** Auto-detect all connected actuators using a given protocol.
@@ -163,6 +179,6 @@ namespace dynamixel {
 
         return res;
     }
-}
+} // namespace dynamixel
 
 #endif
