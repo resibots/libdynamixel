@@ -600,8 +600,7 @@ namespace dynamixel {
             }
         }
 
-        void
-        print_torque_enable()
+        void print_torque_enable()
         {
             _dyn_util.detect_servos();
             std::pair<std::vector<id_t>, std::vector<bool>> response
@@ -653,6 +652,6 @@ namespace dynamixel {
                 _dyn_util.set_angle(ids, angle);
         }
     };
-}
+} // namespace dynamixel
 
 #endif

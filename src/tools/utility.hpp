@@ -808,6 +808,6 @@ namespace dynamixel {
             _servos;
         bool _scanned;
     };
-}
+} // namespace dynamixel
 
 #endif
