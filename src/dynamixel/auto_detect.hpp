@@ -64,6 +64,45 @@ namespace dynamixel {
         }
     }
 
+    /** Send a ping to an ID. If it is answered, read the actuator model and
+        instanciate a class of the correct type.
+
+        @param id value, from 1 to 254 identifiying an actuator
+
+        @return std::shared_ptr to a servo object if we got an answer
+    **/
+    template <typename Protocol, typename Controller>
+    inline std::shared_ptr<servos::BaseServo<Protocol>>
+    find_servo(const Controller& controller, typename Protocol::id_t id)
+    {
+        // Dummy variable used only to differenciate between the tow version of
+        // get_servo (protocol 1 or 2)
+        typename Protocol::address_t selected_protocol = 0;
+
+        try {
+            // send a ping.
+            controller.send(instructions::Ping<Protocol>(id));
+            StatusPacket<Protocol> status;
+
+            if (controller.recv(status) && status.id() == id) {
+                // get actuator model
+                controller.send(instructions::Read<Protocol>(id, 0, 2));
+                if (controller.recv(status)) {
+                    uint16_t model;
+                    Protocol::unpack_data(status.parameters(), model);
+                    return get_servo(id, model, selected_protocol);
+                }
+            }
+        }
+        catch (const errors::Error&) {
+            // TODO: This behavior is "dangerous". We should at least tell the
+            //       user something is happening, or give the option for this
+            //       function to re-raise exceptions
+        }
+
+        return std::shared_ptr<servos::BaseServo<Protocol>>();
+    }
+
     /** Auto-detect all connected actuators using a given protocol.
 
         The template parameter Controller is inferred from the function's
@@ -79,54 +118,54 @@ namespace dynamixel {
         @return vector of actuators
     **/
     template <typename Protocol, typename Controller>
-    inline std::vector<std::shared_ptr<servos::BaseServo<Protocol>>> auto_detect(
-        const Controller& controller,
-        std::vector<Protocol::id_t>& ids = null) // FIXME: how to make empty vector reference ?
+    inline std::vector<std::shared_ptr<servos::BaseServo<Protocol>>>
+    auto_detect(const Controller& controller)
     {
+        using ServoPtr = std::shared_ptr<servos::BaseServo<Protocol>>;
+
         // vector of actuators returned by this function
-        std::vector<std::shared_ptr<servos::BaseServo<Protocol>>> res;
-
-        // Dummy variable used only to differenciate between the tow version of
-        // get_servo (protocol 1 or 2)
-        typename Protocol::address_t selected_protocol = 0;
-
-        if (ids == null) {
-            ids = range(0, Protocol::broadcast_id); // FIXME
-            // FIXME: if only it could work like a python generator
-        }
+        std::vector<ServoPtr> res;
 
         // search through each possible device ID
-        for (typename Protocol::id_t id : ids) {
-            try {
-                // Send a ping. If it is answered, read the actuator model and
-                // instanciate a class of the correct type
-                controller.send(instructions::Ping<Protocol>(id));
-                StatusPacket<Protocol> status;
-                if (controller.recv(status) && status.id() == id) {
-                    // get actuator model
-                    controller.send(instructions::Read<Protocol>(id, 0, 2));
-                    if (controller.recv(status)) {
-                        uint16_t model;
-                        Protocol::unpack_data(status.parameters(), model);
-                        res.push_back(get_servo(id, model, selected_protocol));
-                    }
-                }
-            }
-            catch (const errors::Error&) {
-                continue;
-            }
+        for (typename Protocol::id_t id = 0; id < Protocol::broadcast_id; id++) {
+            ServoPtr servo = find_servo<Protocol>(controller, id);
+            if (servo)
+                res.push_back(servo);
         }
 
         return res;
     }
 
-    // FIXME : how to make this method be of vector type ?
-    template <class T>
-    T range_generator(T lower, T upper)
+    /** Auto-detect all connected actuators using a given protocol
+
+        @see template <typename Protocol, typename Controller>
+            inline std::vector<std::shared_ptr<servos::BaseServo<Protocol>>>
+            auto_detect(const Controller& controller)
+
+        @param controller object handling the USB to dynamixel interface, instance
+            of the dynamixel::controllers::Usb2Dynamixel class
+        @param ids vector of ids (1-254) that will be searched
+        @return vector of actuators
+    **/
+    template <typename Protocol, typename Controller>
+    inline std::vector<std::shared_ptr<servos::BaseServo<Protocol>>>
+    auto_detect(
+        const Controller& controller,
+        const std::vector<typename Protocol::id_t>& ids)
     {
-        static T current = lower;
-        if (current < upper)
-            reutrn current++; // FIXME : or ++current ?
+        using ServoPtr = std::shared_ptr<servos::BaseServo<Protocol>>;
+
+        // vector of actuators returned by this function
+        std::vector<ServoPtr> res;
+
+        // search through each possible device ID
+        for (typename Protocol::id_t id : ids) {
+            ServoPtr servo = find_servo<Protocol>(controller, id);
+            if (servo)
+                res.push_back(servo);
+        }
+
+        return res;
     }
 
     /** Auto-detect all connected actuators using a given protocol.
@@ -147,34 +186,50 @@ namespace dynamixel {
     inline std::map<typename Protocol::id_t, std::shared_ptr<servos::BaseServo<Protocol>>>
     auto_detect_map(const Controller& controller)
     {
-        // vector of actuators returned by this function
-        std::map<typename Protocol::id_t, std::shared_ptr<servos::BaseServo<Protocol>>>
-            res;
+        using ServoPtr = std::shared_ptr<servos::BaseServo<Protocol>>;
 
-        // Dummy variable used only to differenciate between the two versions of
-        // get_servo (protocol 1 or 2)
-        typename Protocol::address_t selected_protocol = 0;
+        // vector of actuators returned by this function
+        std::map<typename Protocol::id_t, ServoPtr> res;
 
         // search through each possible device ID
         for (typename Protocol::id_t id = 0; id < Protocol::broadcast_id; id++) {
-            try {
-                // Send a ping. If it is answered, read the actuator model and
-                // instanciate a class of the correct type
-                controller.send(instructions::Ping<Protocol>(id));
-                StatusPacket<Protocol> status;
-                if (controller.recv(status) && status.id() == id) {
-                    // get actuator model
-                    controller.send(instructions::Read<Protocol>(id, 0, 2));
-                    if (controller.recv(status)) {
-                        uint16_t model;
-                        Protocol::unpack_data(status.parameters(), model);
-                        res[id] = (get_servo(id, model, selected_protocol));
-                    }
-                }
-            }
-            catch (const errors::Error&) {
-                continue;
-            }
+            ServoPtr servo = find_servo<Protocol>(controller, id);
+            if (servo)
+                res[id] = servo;
+        }
+
+        return res;
+    }
+
+    /** Auto-detect all connected actuators using a given protocol.
+
+        @see template <typename Protocol, typename Controller>
+            inline std::map<typename Protocol::id_t, std::shared_ptr<servos::BaseServo<Protocol>>>
+            auto_detect_map(const Controller& controller)
+
+        @param controller object handling the USB to dynamixel interface, instance
+            of the dynamixel::controllers::Usb2Dynamixel class
+        @return vector of actuators
+        @throws dynamixel::errors::Errors if there is a problem during send
+        @throws dynamixel::errors::UnpackError if the size of received packet is
+            not correct
+    **/
+    template <typename Protocol, typename Controller>
+    inline std::map<typename Protocol::id_t, std::shared_ptr<servos::BaseServo<Protocol>>>
+    auto_detect_map(
+        const Controller& controller,
+        const std::vector<typename Protocol::id_t>& ids)
+    {
+        using ServoPtr = std::shared_ptr<servos::BaseServo<Protocol>>;
+
+        // vector of actuators returned by this function
+        std::map<typename Protocol::id_t, ServoPtr> res;
+
+        // search through each possible device ID
+        for (typename Protocol::id_t id : ids) {
+            ServoPtr servo = find_servo<Protocol>(controller, id);
+            if (servo)
+                res[id] = servo;
         }
 
         return res;
