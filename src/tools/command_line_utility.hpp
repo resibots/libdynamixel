@@ -416,7 +416,7 @@ namespace dynamixel {
 
         void change_baudrate(const std::vector<id_t>& ids, unsigned int baudrate)
         {
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
 
             for (auto id : ids) {
                 _dyn_util.change_baudrate(id, baudrate);
@@ -430,7 +430,7 @@ namespace dynamixel {
 
         void factory_reset(const std::vector<id_t>& ids)
         {
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
 
             for (auto id : ids) {
                 _dyn_util.factory_reset(id);
@@ -445,11 +445,11 @@ namespace dynamixel {
         void position(const std::vector<id_t>& ids, const std::vector<double>& angles)
         {
             if (angles.size() == 1) {
-                _dyn_util.detect_servos();
+                _dyn_util.detect_servos(ids);
                 _dyn_util.set_angle(ids, angles.at(0));
             }
             else if (ids.size() == angles.size()) {
-                _dyn_util.detect_servos();
+                _dyn_util.detect_servos(ids);
                 _dyn_util.set_angle(ids, angles);
             }
             else
@@ -479,7 +479,7 @@ namespace dynamixel {
             if (ids.size() == 0)
                 return;
 
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
 
             std::vector<double> positions;
             positions = _dyn_util.get_angle(ids);
@@ -507,11 +507,11 @@ namespace dynamixel {
             bool wheel_mode = false)
         {
             if (speeds.size() == 1) {
-                _dyn_util.detect_servos();
+                _dyn_util.detect_servos(ids);
                 _dyn_util.set_speed(ids, speeds.at(0), wheel_mode);
             }
             else if (ids.size() == speeds.size()) {
-                _dyn_util.detect_servos();
+                _dyn_util.detect_servos(ids);
                 _dyn_util.set_speed(ids, speeds, wheel_mode);
             }
             else
@@ -541,7 +541,7 @@ namespace dynamixel {
             if (ids.size() == 0)
                 return;
 
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
 
             std::vector<double> speeds;
             speeds = _dyn_util.get_speed(ids);
@@ -568,7 +568,7 @@ namespace dynamixel {
 
         void torque_enable(const std::vector<id_t>& ids, bool enable = true)
         {
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
 
             for (auto id : ids) {
                 _dyn_util.torque_enable(id, enable);
@@ -583,7 +583,7 @@ namespace dynamixel {
 
         void print_torque_enable(const std::vector<id_t>& ids)
         {
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
             std::vector<bool> enabled = _dyn_util.get_torque_enable(ids);
 
             if (ids.size() == 1) {
