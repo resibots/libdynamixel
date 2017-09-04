@@ -27,11 +27,16 @@ namespace dynamixel {
         typedef unsigned short id_t;
 
         /**
+
+            @param scan_timeout (default 0.05) set a special listening timeout;
+                will only apply for this detection process
+
             @throws dynamixel::errors:Error if an issue was met while attempting
             to open the serial interface
         **/
-        Utility(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
-            : _serial_interface(name, baudrate, recv_timeout), _scanned(false)
+        Utility(const std::string& name, int baudrate = B115200,
+            double recv_timeout = 0.1, double scan_timeout = 0.05)
+            : _serial_interface(name, baudrate, recv_timeout), _scanned(false), _scan_timeout(scan_timeout)
         {
         }
 
@@ -43,17 +48,14 @@ namespace dynamixel {
             interface and talking at a given baudrate. Also, they have to speak
             the same protocol you use to talk to them.
 
-            @param scan_timeout (default 0.01) set a special listening timeout;
-                will only apply for this detection process
-
             @throws dynamixel::error::UnpackError from auto_detect_map
             @throws dynamixel::error:Error from auto_detect_map
 
         **/
-        void detect_servos(double scan_timeout = 0.01)
+        void detect_servos()
         {
             double original_timeout = _serial_interface.recv_timeout();
-            _serial_interface.set_recv_timeout(scan_timeout);
+            _serial_interface.set_recv_timeout(_scan_timeout);
 
             _servos = auto_detect_map<Protocol>(_serial_interface);
             _scanned = true;
@@ -779,7 +781,8 @@ namespace dynamixel {
         std::map<typename Protocol::id_t, std::shared_ptr<BaseServo<Protocol>>>
             _servos;
         bool _scanned;
+        double _scan_timeout;
     };
-}
+} // namespace dynamixel
 
 #endif
