@@ -266,7 +266,7 @@ int main(int argc, char** argv)
             "values")
         ("timeout,t", po::value<double>(&timeout)->default_value(0.02),
             "timeout for the reception of data packets")
-        ("scan-timeout", po::value<double>(&scan_timeout)->default_value(0.02),
+        ("scan-timeout", po::value<double>(&scan_timeout)->default_value(0.05),
             "timeout for the scanning, to search for available servos")
         ("id", po::value<std::vector<id_t>>()->multitoken(),
             "one or more IDs of devices")
