@@ -72,17 +72,15 @@ namespace dynamixel {
             @see detect_servos(double scan_timeout = 0.01)
 
             @param ids vector of servo ID to be searched for
-            @param scan_timeout (default 0.01) set a special listening timeout;
-                will only apply for this detection process
 
             @throws dynamixel::error::UnpackError from auto_detect_map
             @throws dynamixel::error:Error from auto_detect_map
 
         **/
-        void detect_servos(const std::vector<id_t>& ids, double scan_timeout = 0.01)
+        void detect_servos(const std::vector<id_t>& ids)
         {
             double original_timeout = _serial_interface.recv_timeout();
-            _serial_interface.set_recv_timeout(scan_timeout);
+            _serial_interface.set_recv_timeout(_scan_timeout);
 
             std::vector<typename Protocol::id_t> ids_right_type(ids.begin(), ids.end());
             _servos = auto_detect_map<Protocol>(_serial_interface, ids_right_type);
