@@ -244,7 +244,7 @@ int main(int argc, char** argv)
     // Parameters for serial communication
     std::string port;
     int baudrate = 0, posix_baudrate = 0;
-    float timeout;
+    double timeout, scan_timeout;
 
     // Definition of command line options
     // ==================================
@@ -264,8 +264,10 @@ int main(int argc, char** argv)
             "EXAMPLE: -b 115200\n"
             "See the help for the `change-baudrate` command for the accepted "
             "values")
-        ("timeout,t", po::value<float>(&timeout)->default_value(0.02),
+        ("timeout,t", po::value<double>(&timeout)->default_value(0.02),
             "timeout for the reception of data packets")
+        ("scan-timeout", po::value<double>(&scan_timeout)->default_value(0.05),
+            "timeout for the scanning, to search for available servos")
         ("id", po::value<std::vector<id_t>>()->multitoken(),
             "one or more IDs of devices")
         ("angle", po::value<std::vector<double>>()->multitoken(),
@@ -356,7 +358,8 @@ int main(int argc, char** argv)
     // Opening serial connexion and executing the user's command
     // =========================================================
     try {
-        CommandLineUtility<Protocol> command_line(port, posix_baudrate, timeout);
+        CommandLineUtility<Protocol> command_line(port, posix_baudrate, timeout,
+            scan_timeout);
         command_line.select_command(vm);
     }
     catch (errors::Error e) {

@@ -28,8 +28,9 @@ namespace dynamixel {
             @throws dynamixel::errors:Error if an issue was met while attempting
             to open the serial interface
         **/
-        CommandLineUtility(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
-            : _dyn_util(name, baudrate, recv_timeout)
+        CommandLineUtility(const std::string& name, int baudrate = B115200,
+            double recv_timeout = 0.1, double scan_timeout = 0.05)
+            : _dyn_util(name, baudrate, recv_timeout, scan_timeout)
         {
         }
 
