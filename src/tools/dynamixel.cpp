@@ -314,13 +314,18 @@ int main(int argc, char** argv)
 
     // Parsing command line options
     // ============================
-    po::command_line_parser parser{argc, argv};
-    parser.options(cmdline_options).positional(pos_desc);
-    po::parsed_options parsed_options = parser.run();
-
     po::variables_map vm;
-    po::store(parsed_options, vm);
-    po::notify(vm);
+    try {
+        po::command_line_parser parser{argc, argv};
+        parser.options(cmdline_options).positional(pos_desc);
+        po::parsed_options parsed_options = parser.run();
+
+        po::store(parsed_options, vm);
+        po::notify(vm);
+    }
+    catch (po::error& e) {
+        std::cerr << "Parsing error: " << e.what() << std::endl;
+    }
 
     // Display of the help messages
     // ============================
