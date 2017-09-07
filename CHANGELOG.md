@@ -10,3 +10,4 @@
 - [Improvement] add information on the unit in error message for position and speed limit overflow
 - [Command line] allow to set timeout for the scan for connected servos
 - [Command line] catch exceptions raised by boost::program_options when improper options are used
+- [Improvement] the UnpackError tells the user how many bytes arrived and were expected
