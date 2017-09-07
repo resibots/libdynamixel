@@ -113,14 +113,14 @@ namespace dynamixel {
             static void unpack_data(const std::vector<uint8_t>& packet, uint8_t& res)
             {
                 if (packet.size() == 0)
-                    throw errors::UnpackError(1);
+                    throw errors::UnpackError(1, packet.size(), 0);
                 res = packet[0];
             }
 
             static void unpack_data(const std::vector<uint8_t>& packet, uint16_t& res)
             {
                 if (packet.size() != 2)
-                    throw errors::UnpackError(1);
+                    throw errors::UnpackError(1, packet.size(), 2);
                 res = (((uint16_t)packet[1]) << 8) | ((uint16_t)packet[0]);
             }
 
@@ -253,7 +253,7 @@ namespace dynamixel {
                 return ~checksum;
             }
         };
-    }
-}
+    } // namespace protocols
+} // namespace dynamixel
 
 #endif
