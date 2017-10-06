@@ -134,8 +134,8 @@ namespace dynamixel {
 
             static void unpack_data(const std::vector<uint8_t>& packet, uint8_t& res)
             {
-                if (packet.size() == 0)
-                    throw errors::UnpackError(2, packet.size(), 0);
+                if (packet.size() != 1)
+                    throw errors::UnpackError(2, packet.size(), 1);
                 res = packet[0];
             }
 
