@@ -63,6 +63,32 @@ namespace dynamixel {
             _serial_interface.set_recv_timeout(original_timeout);
         }
 
+        /** Detect the connected servos on the bus.
+            These servos are then stored internally and you can use the other
+            methods to send them orders or get data about them.
+
+            This method looks only for the servos requested through the parameter ids
+
+            @see detect_servos(double scan_timeout = 0.01)
+
+            @param ids vector of servo ID to be searched for
+
+            @throws dynamixel::error::UnpackError from auto_detect_map
+            @throws dynamixel::error:Error from auto_detect_map
+
+        **/
+        void detect_servos(const std::vector<id_t>& ids)
+        {
+            double original_timeout = _serial_interface.recv_timeout();
+            _serial_interface.set_recv_timeout(_scan_timeout);
+
+            std::vector<typename Protocol::id_t> ids_right_type(ids.begin(), ids.end());
+            _servos = auto_detect_map<Protocol>(_serial_interface, ids_right_type);
+            _scanned = true;
+
+            _serial_interface.set_recv_timeout(original_timeout);
+        }
+
         /** Return the connected actuators.
             If we didn't do a scanning yet, does it with the default receive
             timeout.
