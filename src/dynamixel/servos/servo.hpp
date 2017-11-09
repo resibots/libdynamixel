@@ -147,7 +147,12 @@ namespace dynamixel {
             {
                 double deg = rad * 57.2958;
                 if (!(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg))
-                    throw errors::ServoLimitError(id, ct_t::min_goal_angle_deg, ct_t::max_goal_angle_deg, deg);
+                    throw errors::ServoLimitError(
+                        id,
+                        ct_t::min_goal_angle_deg * 0.01745, // convert from deg to rad
+                        ct_t::max_goal_angle_deg * 0.01745,
+                        rad
+                        );
                 typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
                 return set_goal_position(id, pos);
             }
@@ -156,7 +161,12 @@ namespace dynamixel {
             {
                 double deg = rad * 57.2958;
                 if (!(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg))
-                    throw errors::ServoLimitError(id, ct_t::min_goal_angle_deg, ct_t::max_goal_angle_deg, deg);
+                    throw errors::ServoLimitError(
+                        id,
+                        ct_t::min_goal_angle_deg * 0.01745,
+                        ct_t::max_goal_angle_deg * 0.01745,
+                        rad
+                        );
                 typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
                 return reg_goal_position(id, pos);
             }
