@@ -147,7 +147,7 @@ namespace dynamixel {
                 } while (state != DecodeState::DONE);
 
                 //std::cout << std::endl;
-                std::cout << std::dec;
+                // std::cout << std::dec;
 
                 return true;
             }
