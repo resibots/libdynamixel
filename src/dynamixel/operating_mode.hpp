@@ -88,6 +88,12 @@ namespace dynamixel {
             return OperatingMode::unknown;
     }
 
+    /** Query an actuator for its operating mode.
+
+        Dynamixel actuators can be controlled in a few modes, depending on the model. For instance the Dynamixel Pro L54-50-S500-R has the following modes: position, torque, velocity and extended position control. For actuators using Protocol1, there are usually only two modes : position (joint) and velocity (wheel).
+
+        For more informations on the modes, refer to the official Robotis documentation.
+    **/
     template <class Controller, class Protocol>
     OperatingMode operating_mode(Controller& controller, typename Protocol::id_t id)
     {
