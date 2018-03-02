@@ -14,7 +14,7 @@ namespace dynamixel {
             relay an exception raised during its operation.
     **/
     template <class Controller>
-    inline OperatingMode operating_mode(
+    inline OperatingMode operating_mode_impl(
         Controller& controller,
         typename Protocol1::id_t id,
         typename Protocol1::address_t selected_protocol)
@@ -57,7 +57,7 @@ namespace dynamixel {
             relay an exception raised during its operation.
     **/
     template <class Controller>
-    inline OperatingMode operating_mode(
+    inline OperatingMode operating_mode_impl(
         Controller& controller,
         typename Protocol2::id_t id,
         typename Protocol2::address_t selected_protocol)
@@ -86,6 +86,14 @@ namespace dynamixel {
             return OperatingMode::multi_turn;
         else
             return OperatingMode::unknown;
+    }
+
+    template <class Controller, class Protocol>
+    OperatingMode operating_mode(Controller& controller, typename Protocol::id_t id)
+    {
+        // dummy variable to enforce protocol; only its type is used, its value is not used
+        typename Protocol::address_t selected_protocol = 0;
+        return operating_mode_impl(controller, id, selected_protocol);
     }
 } // namespace dynamixel
 #endif
