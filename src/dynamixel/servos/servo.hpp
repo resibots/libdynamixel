@@ -309,7 +309,7 @@ namespace dynamixel {
 
             typename protocol_t::id_t _id;
         };
-    }
-}
+    } // namespace servos
+} // namespace dynamixel
 
 #endif

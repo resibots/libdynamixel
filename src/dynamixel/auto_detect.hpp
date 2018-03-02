@@ -75,7 +75,7 @@ namespace dynamixel {
     inline std::shared_ptr<servos::BaseServo<Protocol>>
     find_servo(const Controller& controller, typename Protocol::id_t id)
     {
-        // Dummy variable used only to differenciate between the tow version of
+        // Dummy variable used only to differenciate between the two version of
         // get_servo (protocol 1 or 2)
         typename Protocol::address_t selected_protocol = 0;
 
