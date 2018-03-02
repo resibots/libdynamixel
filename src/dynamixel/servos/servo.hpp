@@ -221,22 +221,22 @@ namespace dynamixel {
             // =================================================================
             // Speed-specific
 
-            static inline InstructionPacket<protocol_t> set_moving_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
+            static inline InstructionPacket<protocol_t> set_moving_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, OperatingMode operating_mode)
             {
                 return ProtocolSpecificPackets<Model, protocol_t>::set_moving_speed_angle(id, rad_per_s, operating_mode);
             }
 
-            static inline InstructionPacket<protocol_t> reg_moving_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
+            static inline InstructionPacket<protocol_t> reg_moving_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, OperatingMode operating_mode)
             {
                 return ProtocolSpecificPackets<Model, protocol_t>::reg_moving_speed_angle(id, rad_per_s, operating_mode);
             }
 
-            InstructionPacket<protocol_t> set_moving_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
+            InstructionPacket<protocol_t> set_moving_speed_angle(double rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const override
             {
                 return Model::set_moving_speed_angle(this->_id, rad_per_s, operating_mode);
             }
 
-            InstructionPacket<protocol_t> reg_moving_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
+            InstructionPacket<protocol_t> reg_moving_speed_angle(double rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const override
             {
                 return Model::reg_moving_speed_angle(this->_id, rad_per_s, operating_mode);
             }

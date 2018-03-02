@@ -35,7 +35,7 @@ namespace dynamixel {
             static inline InstructionPacket<P> set_moving_speed_angle(
                 typename P::id_t id,
                 double rad_per_s,
-                cst::OperatingMode operating_mode = cst::joint)
+                OperatingMode operating_mode = OperatingMode::joint)
             {
                 throw errors::Error("set_moving_speed_angle not implemented for this protocol");
             }
@@ -54,7 +54,7 @@ namespace dynamixel {
             static inline InstructionPacket<P> reg_moving_speed_angle(
                 typename P::id_t id,
                 double rad_per_s,
-                cst::OperatingMode operating_mode = cst::joint)
+                OperatingMode operating_mode = OperatingMode::joint)
             {
                 throw errors::Error("reg_moving_speed_angle not implemented for this protocol");
             }
@@ -69,7 +69,7 @@ namespace dynamixel {
             static inline InstructionPacket<protocols::Protocol1> set_moving_speed_angle(
                 typename protocols::Protocol1::id_t id,
                 double rad_per_s,
-                cst::OperatingMode operating_mode)
+                OperatingMode operating_mode)
             {
                 moving_speed_t speed_ticks = angular_speed_to_ticks(id, rad_per_s,
                     operating_mode);
@@ -80,7 +80,7 @@ namespace dynamixel {
             static inline InstructionPacket<protocols::Protocol1> reg_moving_speed_angle(
                 typename protocols::Protocol1::id_t id,
                 double rad_per_s,
-                cst::OperatingMode operating_mode)
+                OperatingMode operating_mode)
             {
                 moving_speed_t speed_ticks = angular_speed_to_ticks(id, rad_per_s,
                     operating_mode);
@@ -95,13 +95,13 @@ namespace dynamixel {
             static inline moving_speed_t angular_speed_to_ticks(
                 typename protocols::Protocol1::id_t id,
                 double rad_per_s,
-                cst::OperatingMode operating_mode)
+                OperatingMode operating_mode)
             {
                 // convert radians per second to ticks
                 int32_t speed_ticks = round(60 * rad_per_s / (two_pi * ct_t::rpm_per_tick));
 
                 // The actuator is operated as a wheel (continuous rotation)
-                if (operating_mode == cst::wheel) {
+                if (operating_mode == OperatingMode::wheel) {
                     // Check that desired speed is within the actuator's bounds
                     if (!(abs(speed_ticks) >= ct_t::min_goal_speed && abs(speed_ticks) <= ct_t::max_goal_speed)) {
                         double min_goal_speed = -ct_t::max_goal_speed * ct_t::rpm_per_tick * two_pi / 60;
@@ -116,7 +116,7 @@ namespace dynamixel {
                     }
                 }
                 // The actuator is operated as a joint (not continuous rotation)
-                else if (operating_mode == cst::joint) {
+                else if (operating_mode == OperatingMode::joint) {
                     if (!(speed_ticks >= ct_t::min_goal_speed && speed_ticks <= ct_t::max_goal_speed)) {
                         double min_goal_speed = ct_t::min_goal_speed * ct_t::rpm_per_tick * two_pi / 60;
                         double max_goal_speed = ct_t::max_goal_speed * ct_t::rpm_per_tick * two_pi / 60;
@@ -137,7 +137,7 @@ namespace dynamixel {
             static inline InstructionPacket<protocols::Protocol2> set_moving_speed_angle(
                 typename protocols::Protocol2::id_t id,
                 double rad_per_s,
-                cst::OperatingMode operating_mode)
+                OperatingMode operating_mode)
             {
                 moving_speed_t speed_ticks = angular_speed_to_ticks(id, rad_per_s);
 
@@ -147,7 +147,7 @@ namespace dynamixel {
             static inline InstructionPacket<protocols::Protocol2> reg_moving_speed_angle(
                 typename protocols::Protocol2::id_t id,
                 double rad_per_s,
-                cst::OperatingMode operating_mode)
+                OperatingMode operating_mode)
             {
                 moving_speed_t speed_ticks = angular_speed_to_ticks(id, rad_per_s);
 
@@ -175,7 +175,7 @@ namespace dynamixel {
                 return (moving_speed_t)speed_ticks;
             }
         };
-    }
-}
+    } // namespace servos
+} // namespace dynamixel
 
 #endif // DYNAMIXEL_SERVOS_PROTOSPECIFICPACKETS_HPP_

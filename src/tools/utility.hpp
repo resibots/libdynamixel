@@ -514,7 +514,7 @@ namespace dynamixel {
             for (auto id : ids) {
                 _serial_interface.send(_servos.at(id)->reg_moving_speed_angle(
                     speed,
-                    wheel_mode ? cst::wheel : cst::joint));
+                    wheel_mode ? OperatingMode::wheel : OperatingMode::joint));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);
@@ -546,7 +546,7 @@ namespace dynamixel {
             // "Action" (see bellow) command to enact the change
             for (auto servo : _servos) {
                 _serial_interface.send(servo.second->reg_moving_speed_angle(speed,
-                    wheel_mode ? cst::wheel : cst::joint));
+                    wheel_mode ? OperatingMode::wheel : OperatingMode::joint));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);
@@ -586,7 +586,7 @@ namespace dynamixel {
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.send(
                     _servos.at(ids[i])->reg_moving_speed_angle(speeds[i],
-                        wheel_mode ? cst::wheel : cst::joint));
+                        wheel_mode ? OperatingMode::wheel : OperatingMode::joint));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);
