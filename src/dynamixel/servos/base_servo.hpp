@@ -27,6 +27,7 @@
 
 namespace dynamixel {
     enum class OperatingMode {
+        torque,
         wheel,
         joint,
         multi_turn,
