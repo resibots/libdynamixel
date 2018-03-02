@@ -14,10 +14,9 @@ namespace dynamixel {
             relay an exception raised during its operation.
     **/
     template <class Controller>
-    inline OperatingMode operating_mode_impl(
+    inline OperatingMode operating_mode_p1(
         Controller& controller,
-        typename Protocol1::id_t id,
-        typename Protocol1::address_t selected_protocol)
+        typename Protocol1::id_t id)
     {
         uint16_t cw_angle_limit, ccw_angle_limit;
 
@@ -57,10 +56,9 @@ namespace dynamixel {
             relay an exception raised during its operation.
     **/
     template <class Controller>
-    inline OperatingMode operating_mode_impl(
+    inline OperatingMode operating_mode_p2(
         Controller& controller,
-        typename Protocol2::id_t id,
-        typename Protocol2::address_t selected_protocol)
+        typename Protocol2::id_t id)
     {
         uint8_t mode;
 
@@ -97,9 +95,10 @@ namespace dynamixel {
     template <class Controller, class Protocol>
     OperatingMode operating_mode(Controller& controller, typename Protocol::id_t id)
     {
-        // dummy variable to enforce protocol; only its type is used, its value is not used
-        typename Protocol::address_t selected_protocol = 0;
-        return operating_mode_impl(controller, id, selected_protocol);
+        if (1 == Protocol::version)
+            return operating_mode_p1(controller, id);
+        else if (2 == Protocol::version)
+            return operating_mode_p2(controller, id);
     }
 } // namespace dynamixel
 #endif
