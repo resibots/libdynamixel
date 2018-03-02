@@ -13,6 +13,9 @@ namespace dynamixel {
     namespace protocols {
         class Protocol2 {
         public:
+            // version of the protocol
+            static constexpr uint8_t version = 2;
+
             typedef uint8_t id_t;
             typedef uint8_t instr_t;
             typedef uint16_t address_t;
