@@ -23,6 +23,6 @@ namespace dynamixel {
     protected:
         std::vector<uint8_t> _packet;
     };
-}
+} // namespace dynamixel
 
 #endif

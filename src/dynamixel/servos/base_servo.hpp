@@ -171,7 +171,7 @@ namespace dynamixel {
         protected:
             BaseServo() {}
         };
-    }
-}
+    } // namespace servos
+} // namespace dynamixel
 
 #endif

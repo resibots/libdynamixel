@@ -68,6 +68,6 @@ namespace dynamixel {
     {
         return st.print(os);
     }
-}
+} // namespace dynamixel
 
 #endif
