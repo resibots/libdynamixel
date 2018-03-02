@@ -26,14 +26,13 @@
     }
 
 namespace dynamixel {
+    enum class OperatingMode {
+        wheel,
+        joint,
+        multi_turn,
+        unknown
+    };
     namespace servos {
-        namespace cst {
-            enum OperatingMode {
-                wheel,
-                joint,
-                multi_turn
-            };
-        }
 
         template <typename Protocol>
         class BaseServo {
@@ -153,12 +152,12 @@ namespace dynamixel {
             // =================================================================
             // Speed-specific
 
-            virtual InstructionPacket<protocol_t> set_moving_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const
+            virtual InstructionPacket<protocol_t> set_moving_speed_angle(double rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const
             {
                 throw errors::Error("set_moving_speed_angle not implemented in model");
             }
 
-            virtual InstructionPacket<protocol_t> reg_moving_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const
+            virtual InstructionPacket<protocol_t> reg_moving_speed_angle(double rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const
             {
                 throw errors::Error("reg_moving_speed_angle not implemented in model");
             }
