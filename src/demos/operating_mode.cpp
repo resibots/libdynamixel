@@ -46,7 +46,6 @@ int main(int argc, char** argv)
         // Default baudrate for the dynamixel pro is 57600, you might have to
         // chage the line below
         Usb2Dynamixel controller(argv[1], B1000000, 0.05);
-        std::vector<Protocol2::id_t> ids = {1, 2, 3, 4, 5};
 
         int protocol_version = atoi(argv[2]);
         std::cout << "Protocol version " << protocol_version << std::endl;
@@ -58,7 +57,7 @@ int main(int argc, char** argv)
                     std::string str_mode = string_operating_mode<Protocol1>(controller, servo->id());
                     std::cout << "Detected an " << servo->model_name()
                               << " with ID " << servo->id()
-                              << " and working in " << str_mode << " mode" << std::endl;
+                              << ", in " << str_mode << " mode" << std::endl;
                 }
             }
             else {
@@ -66,14 +65,14 @@ int main(int argc, char** argv)
             }
         }
         else if (2 == protocol_version) {
-            std::vector<std::shared_ptr<BaseServo<Protocol2>>> servos_2 = auto_detect<Protocol2>(controller, ids);
+            std::vector<std::shared_ptr<BaseServo<Protocol2>>> servos_2 = auto_detect<Protocol2>(controller);
 
             if (servos_2.size()) {
                 for (auto servo : servos_2) {
                     std::string str_mode = string_operating_mode<Protocol2>(controller, servo->id());
                     std::cout << "Detected an " << servo->model_name()
                               << " with ID " << servo->id()
-                              << " and working in " << str_mode << " mode" << std::endl;
+                              << ", in " << str_mode << " mode" << std::endl;
                 }
             }
             else {
