@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <stdint.h>
+#include <cstddef> // for size-t
 
 namespace dynamixel {
     template <class Protocol>

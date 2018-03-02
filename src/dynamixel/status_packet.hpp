@@ -4,6 +4,7 @@
 #include <vector>
 #include <stdint.h>
 #include <cassert>
+#include <iostream>
 
 #include "./errors/error.hpp"
 
