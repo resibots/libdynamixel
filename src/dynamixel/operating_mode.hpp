@@ -5,6 +5,7 @@
 #include "servos.hpp"
 
 #include <sstream>
+#include <string>
 
 namespace dynamixel {
     using namespace protocols;
@@ -99,6 +100,29 @@ namespace dynamixel {
             return operating_mode_p1(controller, id);
         else if (2 == Protocol::version)
             return operating_mode_p2(controller, id);
+    }
+
+    /// Give the string name for an operating mode
+    std::string mode2str(OperatingMode mode)
+    {
+        switch (mode) {
+        case OperatingMode::torque:
+            return "torque";
+            break;
+        case OperatingMode::wheel:
+            return "wheel";
+            break;
+        case OperatingMode::joint:
+            return "joint";
+            break;
+        case OperatingMode::multi_turn:
+            return "multi_turn";
+            break;
+        case OperatingMode::unknown:
+        default:
+            return "unknown";
+            break;
+        }
     }
 } // namespace dynamixel
 #endif
