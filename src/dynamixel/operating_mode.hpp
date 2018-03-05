@@ -92,7 +92,7 @@ namespace dynamixel {
 
         For more informations on the modes, refer to the official Robotis documentation.
     **/
-    template <class Controller, class Protocol>
+    template <class Protocol, class Controller>
     OperatingMode operating_mode(Controller& controller, typename Protocol::id_t id)
     {
         if (1 == Protocol::version)

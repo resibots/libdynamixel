@@ -14,7 +14,7 @@ using namespace protocols;
 template <class Protocol>
 std::string string_operating_mode(Usb2Dynamixel& controller, typename Protocol::id_t id)
 {
-    OperatingMode mode = operating_mode<Usb2Dynamixel, Protocol>(controller, id);
+    OperatingMode mode = operating_mode<Protocol>(controller, id);
 
     std::string str_mode;
     switch (mode) {
