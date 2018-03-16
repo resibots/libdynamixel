@@ -121,6 +121,25 @@ namespace dynamixel {
 
             BASE_FIELD(control_mode);
 
+            BASE_FIELD(secondary_id);
+            BASE_FIELD(protocol_version);
+            BASE_FIELD(pwm_limit);
+            BASE_FIELD(current_limit);
+            BASE_FIELD(position_d_gain);
+            BASE_FIELD(position_i_gain);
+            BASE_FIELD(feedforward_2nd_gain);
+            BASE_FIELD(feedforward_1st_gain);
+            BASE_FIELD(bus_watchdog);
+            BASE_FIELD(goal_pwm);
+            BASE_FIELD(goal_current);
+            BASE_FIELD(profile_acceleration);
+            BASE_FIELD(profile_speed);
+            BASE_FIELD(realtime_tick);
+            BASE_FIELD(moving_status);
+            BASE_FIELD(present_pwm);
+            BASE_FIELD(speed_trajectory);
+            BASE_FIELD(position_trajectory);
+
             // Common functionality for the servos that will be implemented in the Servo class (where we know the model)
             virtual InstructionPacket<protocol_t> ping() const
             {
