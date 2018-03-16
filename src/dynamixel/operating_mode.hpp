@@ -38,8 +38,8 @@ namespace dynamixel {
 
         if (!controller.recv(status)) {
             std::stringstream message;
-            message << "No viable response from the actuator " << (int)id << " from"
-                    << " request for its counter-clockwise angle limit.";
+            message << "No viable response from the actuator " << (int)id << " to the "
+                    << "request for its counter-clockwise angle limit.";
             throw errors::Error(message.str());
         }
         Protocol1::unpack_data(status.parameters(), ccw_angle_limit);
@@ -69,8 +69,8 @@ namespace dynamixel {
 
         if (!controller.recv(status)) {
             std::stringstream message;
-            message << "No viable response from the actuator " << (int)id << " from"
-                    << " request for its clockwise angle limit.";
+            message << "No viable response from the actuator " << (int)id << " to the "
+                    << "request for its operating mode.";
             throw errors::Error(message.str());
         }
         Protocol2::unpack_data(status.parameters(), mode);
