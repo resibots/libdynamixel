@@ -9,6 +9,7 @@
 #include "servos/mx28.hpp"
 #include "servos/mx64.hpp"
 #include "servos/mx106.hpp"
+#include "servos/mx106_p2.hpp"
 #include "servos/xl320.hpp"
 #include "servos/pro_h54_200_s500.hpp"
 #include "servos/pro_h54_100_s500.hpp"
