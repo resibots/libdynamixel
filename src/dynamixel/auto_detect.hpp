@@ -61,6 +61,8 @@ namespace dynamixel {
             return std::make_shared<servos::ProM4210S260>(id);
         case servos::Mx28P2::ct_t::model_number_value:
             return std::make_shared<servos::Mx28P2>(id);
+        case servos::Mx64P2::ct_t::model_number_value:
+            return std::make_shared<servos::Mx64P2>(id);
         case servos::Mx106P2::ct_t::model_number_value:
             return std::make_shared<servos::Mx106P2>(id);
         default:
