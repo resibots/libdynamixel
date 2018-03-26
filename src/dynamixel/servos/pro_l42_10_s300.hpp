@@ -58,10 +58,10 @@ namespace dynamixel {
                 typedef uint8_t led_g_t;
                 static const protocol_t::address_t led_b = 565;
                 typedef uint8_t led_b_t;
-                static const protocol_t::address_t velocity_i_gain = 586;
-                typedef uint16_t velocity_i_gain_t;
-                static const protocol_t::address_t velocity_p_gain = 588;
-                typedef uint16_t velocity_p_gain_t;
+                static const protocol_t::address_t position_d_gain = 590;
+                typedef uint16_t position_d_gain_t;
+                static const protocol_t::address_t position_i_gain = 592;
+                typedef uint16_t position_i_gain_t;
                 static const protocol_t::address_t position_p_gain = 594;
                 typedef uint16_t position_p_gain_t;
                 static const protocol_t::address_t goal_position = 596;
@@ -121,15 +121,15 @@ namespace dynamixel {
             READ_WRITE_FIELD(led_r);
             READ_WRITE_FIELD(led_g);
             READ_WRITE_FIELD(led_b);
-            READ_WRITE_FIELD(velocity_i_gain);
-            READ_WRITE_FIELD(velocity_p_gain);
+            READ_WRITE_FIELD(position_d_gain);
+            READ_WRITE_FIELD(position_i_gain);
             READ_WRITE_FIELD(position_p_gain);
             READ_WRITE_FIELD(goal_torque);
             READ_WRITE_FIELD(goal_acceleration);
             READ_FIELD(current);
             READ_FIELD(hardware_error_status);
         };
-    }
-}
+    } // namespace servos
+} // namespace dynamixel
 
 #endif
