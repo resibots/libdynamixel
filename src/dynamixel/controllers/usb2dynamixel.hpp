@@ -19,6 +19,57 @@
 #include "../status_packet.hpp"
 
 namespace dynamixel {
+    /** Give an explanation for the error number associated to `write`.
+
+        @param error number, usually the value of errno
+        @return std::string of the explanation
+    **/
+    std::string write_error_string(int error_number)
+    {
+        switch (error_number) {
+        case EAGAIN:
+            return "EAGAIN: The file descriptor fd refers to a file other than "
+                   "a socket and has been marked nonblocking (O_NONBLOCK), and "
+                   "the write would block.";
+        // On some OS, EWOULDBLOCK has the same value as EAGAIN and would hence not compile.
+        // case EWOULDBLOCK:
+        //     return "EWOULDBLOCK: The file descriptor fd refers to a socket "
+        //            "and has been marked nonblocking (O_NONBLOCK), and the "
+        //            "write would block.";
+        case EBADF:
+            return "EBADF: fd is not a valid file descriptor or is not open for writing.";
+        case EDESTADDRREQ:
+            return "EDESTADDRREQ: fd refers to a datagram socket for which a "
+                   "peer address has not been set using connect(2).";
+        case EDQUOT:
+            return "EDQUOT: The user's quota of disk blocks on the file system "
+                   "containing the file referred to by fd has been exhausted.";
+        case EFAULT:
+            return "EFAULT: buf is outside your accessible address space.";
+        case EFBIG:
+            return "EFBIG: An attempt was made to write a file that exceeds the "
+                   "implementation-defined maximum file size or the process's "
+                   "file size limit, or to write at a position past the maximum "
+                   "allowed offset.";
+        case EINTR:
+            return "EINTR: The call was interrupted by a signal before any data "
+                   "was written; see signal(7).";
+        case EINVAL:
+            return "EINVAL: fd is attached to an object which is unsuitable for "
+                   "writing; or the file was opened with the O_DIRECT flag, and "
+                   "either the address specified in buf, the value specified in "
+                   "count, or the current file offset is not suitably aligned.";
+        case EIO:
+            return "EIO: A low-level I/O error occurred while modifying the inode.";
+        case ENOSPC:
+            return "ENOSPC: The device containing the file referred to by fd "
+                   "has no room for the data.";
+        case EPIPE:
+            return "EPIPE: fd is connected to a pipe or socket whose reading end is closed.";
+        }
+        return "";
+    }
+
     namespace controllers {
         class Usb2Dynamixel {
             // TODO : declare private copy constructor and assignment operator
@@ -88,14 +139,17 @@ namespace dynamixel {
                 if (_fd == -1)
                     return;
 
-                int ret = write(_fd, packet.data(), packet.size());
+                const int ret = write(_fd, packet.data(), packet.size());
 
                 /*std::cout << "Send: ";
             for (size_t i = 0; i < packet.size(); ++i)
                 std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)packet[i] << " ";
             std::cout << std::endl;*/
 
-                if (ret != packet.size()) {
+                if (ret == -1) {
+                    throw errors::Error("Usb2Dynamixel::Send write error " + write_error_string(errno));
+                }
+                else if (ret != packet.size()) {
                     std::stringstream ofs;
                     perror("write:");
                     ofs << "written= " << ret << " size=" << packet.size();
