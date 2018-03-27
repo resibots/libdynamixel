@@ -86,8 +86,8 @@ namespace dynamixel {
                 typedef int32_t present_position_t;
                 static const protocol_t::address_t present_speed = 615;
                 typedef int32_t present_speed_t;
-                static const protocol_t::address_t current = 621;
-                typedef uint16_t current_t;
+                static const protocol_t::address_t present_current = 621;
+                typedef uint16_t present_current_t;
                 static const protocol_t::address_t present_voltage = 623;
                 typedef uint16_t present_voltage_t;
                 static const protocol_t::address_t present_temperature = 625;
@@ -126,7 +126,7 @@ namespace dynamixel {
             READ_WRITE_FIELD(position_p_gain);
             READ_WRITE_FIELD(goal_torque);
             READ_WRITE_FIELD(goal_acceleration);
-            READ_FIELD(current);
+            READ_FIELD(present_current);
             READ_FIELD(hardware_error_status);
         };
     } // namespace servos

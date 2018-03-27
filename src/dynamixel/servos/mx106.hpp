@@ -92,8 +92,8 @@ namespace dynamixel {
                 typedef uint8_t lock_t;
                 static const protocol_t::address_t punch = 48;
                 typedef uint16_t punch_t;
-                static const protocol_t::address_t current = 68;
-                typedef uint16_t current_t;
+                static const protocol_t::address_t present_current = 68;
+                typedef uint16_t present_current_t;
                 static const protocol_t::address_t torque_control_mode_enabled = 70;
                 typedef uint8_t torque_control_mode_enabled_t;
                 static const protocol_t::address_t goal_torque = 71;
@@ -127,7 +127,7 @@ namespace dynamixel {
             READ_FIELD(present_load);
             READ_WRITE_FIELD(lock);
             READ_WRITE_FIELD(punch);
-            READ_FIELD(current);
+            READ_FIELD(present_current);
             READ_WRITE_FIELD(torque_control_mode_enabled);
             READ_WRITE_FIELD(goal_torque);
             READ_WRITE_FIELD(goal_acceleration);
