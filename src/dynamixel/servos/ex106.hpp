@@ -90,8 +90,8 @@ namespace dynamixel {
                 typedef uint8_t lock_t;
                 static const protocol_t::address_t punch = 48;
                 typedef uint16_t punch_t;
-                static const protocol_t::address_t sensed_current = 56;
-                typedef uint16_t sensed_current_t;
+                static const protocol_t::address_t present_current = 56;
+                typedef uint16_t present_current_t;
             };
         };
 
@@ -118,7 +118,7 @@ namespace dynamixel {
             READ_FIELD(present_load);
             READ_WRITE_FIELD(lock);
             READ_WRITE_FIELD(punch);
-            READ_FIELD(sensed_current);
+            READ_FIELD(present_current);
         };
     }
 }

@@ -30,8 +30,8 @@ namespace dynamixel {
                 typedef uint16_t cw_angle_limit_t;
                 static const protocol_t::address_t ccw_angle_limit = 8;
                 typedef uint16_t ccw_angle_limit_t;
-                static const protocol_t::address_t control_mode = 11;
-                typedef uint8_t control_mode_t;
+                static const protocol_t::address_t operating_mode = 11;
+                typedef uint8_t operating_mode_t;
                 static const protocol_t::address_t highest_temperature_limit = 12;
                 typedef uint8_t highest_temperature_limit_t;
                 static const protocol_t::address_t lowest_voltage_limit = 13;
@@ -100,7 +100,7 @@ namespace dynamixel {
             // Here we add the fields that are not common to all dynamixels
             READ_WRITE_FIELD(cw_angle_limit);
             READ_WRITE_FIELD(ccw_angle_limit);
-            READ_WRITE_FIELD(control_mode);
+            READ_WRITE_FIELD(operating_mode);
             READ_WRITE_FIELD(max_torque);
             READ_WRITE_FIELD(led);
             READ_WRITE_FIELD(position_d_gain);

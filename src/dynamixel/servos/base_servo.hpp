@@ -85,7 +85,7 @@ namespace dynamixel {
             // Extra fields for models with protocol 2
             // ---------------------------------------
             BASE_FIELD(model_info);
-            BASE_FIELD(operating_mode);
+            BASE_FIELD(operating_mode); // Also for EX-106+
             BASE_FIELD(homing_offset); // Not for L42
             BASE_FIELD(moving_threshold);
             BASE_FIELD(acceleration_limit);
@@ -131,8 +131,7 @@ namespace dynamixel {
             BASE_FIELD(lock);
             BASE_FIELD(punch);
             // Only for MX-106 and MX-64 {
-            // TODO: replace sensed_current and current with present_current everywhere
-            BASE_FIELD(sensed_current); // Also EX-106+ and corresponds to "present_current" for protocol 2
+            BASE_FIELD(present_current); // Also EX-106+
             BASE_FIELD(torque_control_mode_enabled);
             BASE_FIELD(goal_torque);
             // } Only for MX-106 and MX-64
@@ -164,9 +163,6 @@ namespace dynamixel {
             BASE_FIELD(speed_trajectory);
             BASE_FIELD(position_trajectory);
             // } Only MX with protocol 2
-
-            BASE_FIELD(current); // FIXME: duplicate with sensed_current
-            BASE_FIELD(control_mode); // FIXME: duplicate with operating_mode
 
             // Common functionality for the servos that will be implemented in the Servo class (where we know the model)
             virtual InstructionPacket<protocol_t> ping() const

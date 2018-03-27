@@ -114,8 +114,8 @@ namespace dynamixel {
                 typedef uint8_t moving_status_t;
                 static const protocol_t::address_t present_pwm = 124;
                 typedef uint16_t present_pwm_t;
-                static const protocol_t::address_t current = 126;
-                typedef uint16_t current_t;
+                static const protocol_t::address_t present_current = 126;
+                typedef uint16_t present_current_t;
                 static const protocol_t::address_t present_speed = 128;
                 typedef int32_t present_speed_t;
                 static const protocol_t::address_t present_position = 132;
@@ -170,7 +170,7 @@ namespace dynamixel {
             READ_FIELD(realtime_tick);
             READ_FIELD(moving_status);
             READ_FIELD(present_pwm);
-            READ_FIELD(current);
+            READ_FIELD(present_current);
             READ_FIELD(speed_trajectory);
             READ_FIELD(position_trajectory);
         };
