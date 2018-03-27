@@ -107,9 +107,11 @@ namespace dynamixel {
             // ---------------------------------
             BASE_FIELD(torque_enable);
             BASE_FIELD(led);
-            BASE_FIELD(d_gain); // FIXME: should be replaced with position_*_gain
-            BASE_FIELD(i_gain);
-            BASE_FIELD(p_gain);
+            // Only protocol 1, L42 and MX protocol 2 {
+            BASE_FIELD(position_d_gain);
+            BASE_FIELD(position_i_gain);
+            // } Only protocol 1, L42 and MX protocol 2
+            BASE_FIELD(position_p_gain);
             // Only for AX series and EX-106+ {
             BASE_FIELD(cw_compliance_margin);
             BASE_FIELD(ccw_compliance_margin);
@@ -147,11 +149,6 @@ namespace dynamixel {
             BASE_FIELD(velocity_i_gain);
             BASE_FIELD(velocity_p_gain);
             // } Not for L42
-            // Only L42 and MX protocol 2 {
-            BASE_FIELD(position_d_gain);
-            BASE_FIELD(position_i_gain);
-            // } Only L42 and MX protocol 2
-            BASE_FIELD(position_p_gain);
             BASE_FIELD(hardware_error_status);
             // Only MX with protocol 2 {
             BASE_FIELD(feedforward_2nd_gain);
