@@ -1,4 +1,9 @@
+## March, 26th 2018
+
+- [Improvement] Add support to MX series using protocol 2
+
 ## March, 2nd 2018
+
 - [Improvement] `operating_mode` functions to get the operating mode (position or velocity) of servo-motors
 - [API change] the operating mode (wheel or joint) is now defined as a scoped enum, thus used like `dynamixel::OpertingMode::wheel`
 - [Deprecation] removed method `get_goal_speed_angle` that only duplicated `get_moving_speed` and brought nothing
