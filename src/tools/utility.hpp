@@ -34,7 +34,7 @@ namespace dynamixel {
             @throws dynamixel::errors:Error if an issue was met while attempting
             to open the serial interface
         **/
-        Utility(const std::string& name, int baudrate = B115200,
+        Utility(const std::string& name, int baudrate = get_baudrate(115200),
             double recv_timeout = 0.1, double scan_timeout = 0.05)
             : _serial_interface(name, baudrate, recv_timeout), _scanned(false), _scan_timeout(scan_timeout)
         {

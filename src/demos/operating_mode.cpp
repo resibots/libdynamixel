@@ -1,6 +1,5 @@
 
 #include <dynamixel/dynamixel.hpp>
-#include <dynamixel/operating_mode.hpp>
 
 #include <string.h>
 #include <string>
@@ -45,7 +44,7 @@ int main(int argc, char** argv)
     try {
         // Default baudrate for the dynamixel pro is 57600, you might have to
         // change the line below
-        Usb2Dynamixel controller(argv[1], B1000000, 0.05);
+        Usb2Dynamixel controller(argv[1], get_baudrate(1000000), 0.05);
 
         int protocol_version = atoi(argv[2]);
         std::cout << "Protocol version " << protocol_version << std::endl;
