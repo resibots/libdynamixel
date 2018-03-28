@@ -365,6 +365,7 @@ int main(int argc, char** argv)
     try {
         CommandLineUtility<Protocol> command_line(port, posix_baudrate, timeout,
             scan_timeout);
+
         command_line.select_command(vm);
     }
     catch (errors::Error e) {
