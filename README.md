@@ -27,6 +27,12 @@ udev rule for USB2AX adapter
 ============================
 If you want your USB2AX serial interface to appear in `/dev` as `usb2axN` (where N is a kernel-attributed integer), you can install the udev rule. It is as simple as moving the `usb2ax.rules` file in this repository to the folder for the udev rules. For ubuntu, it is `/etc/udev/rules.d`.
 
+Using Libdynamixel on Mac
+=========================
+Libdynamixel works fine on OSX, but OSX does not support the 1Mb mode (the fastest speed is 115200 bauds).
+
+In addition, be careful that two TTYs are created when you use a USB adapter (e.g., libdynamixel): something like `/dev/tty.usbserial-AI03QF2R` and something like `/dev/cu.usbserial-AI03QF2R`. You NEED to use `/dev/cu.usbserial-*` and NOT `tty.usbserial-*` (this is because tty.usbserial is designed for modems and requires an `DND` signal -- that we do not send).
+
 Using the utility
 =================
 Since we are right now writing a brand new utility, the user interface is not settled yet and some commands are not implemented. You can still play with the binary `dynamixel2` (the name will change) with the `--help [command]` option to learn how to use it.
