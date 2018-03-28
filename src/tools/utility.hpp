@@ -342,7 +342,6 @@ namespace dynamixel {
         void set_angle(const std::vector<id_t>& ids, double angle)
         {
             check_scanned();
-
             for (auto id : ids) {
                 _serial_interface.send(_servos.at(id)->reg_goal_position_angle(angle));
 
@@ -352,6 +351,7 @@ namespace dynamixel {
 
             _serial_interface.send(
                 dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+
         }
 
         /** Move servos to a given angle
@@ -399,7 +399,6 @@ namespace dynamixel {
                 throw errors::UtilityError("set_position(vector, vector): the "
                                            "vectors of IDs and angles should have "
                                            "the same length");
-
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.send(
                     _servos.at(ids[i])->reg_goal_position_angle(angles[i]));

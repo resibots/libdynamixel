@@ -185,7 +185,7 @@ namespace dynamixel {
             }
             catch (std::out_of_range e) {
                 std::cerr << "An error (out_of_range from " << e.what()
-                          << ") has been catched. You probably used a nonexistant ID."
+                          << ") has been caught. You probably used a nonexistent ID."
                           << std::endl;
             }
             catch (errors::ServoLimitError e) {

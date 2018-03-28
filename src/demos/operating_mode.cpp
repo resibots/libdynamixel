@@ -44,7 +44,7 @@ int main(int argc, char** argv)
 
     try {
         // Default baudrate for the dynamixel pro is 57600, you might have to
-        // chage the line below
+        // change the line below
         Usb2Dynamixel controller(argv[1], B1000000, 0.05);
 
         int protocol_version = atoi(argv[2]);
