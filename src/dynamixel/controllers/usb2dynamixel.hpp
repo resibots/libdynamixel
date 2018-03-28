@@ -94,7 +94,7 @@ namespace dynamixel {
 
                 // Firstly, check that there is no active connexion
                 if (_fd != -1)
-                    throw errors::Error("error attempting to open device " + name + ": an other connexion is active; call `close serial` before opening a new connexion");
+                    throw errors::Error("error attempting to open device " + name + ": an other connection is active; call `close serial` before opening a new connection");
 
                 _fd = open(name.c_str(), O_RDWR | O_NOCTTY);
                 if (_fd == -1)
@@ -120,6 +120,12 @@ namespace dynamixel {
 
             void close_serial()
             {
+                // apparently the mac does not flush everything
+                // before closing the fd (Linux does)
+                //... which can cause the last packet to be ignored
+            #ifdef __APPLE__
+                usleep(1000);
+            #endif
                 close(_fd);
                 _fd = -1;
             }
