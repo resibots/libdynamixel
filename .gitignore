@@ -9,3 +9,6 @@ build/
 
 # Clang-format style files
 .clang-format
+
+# Visual Studio code
+.vscode
