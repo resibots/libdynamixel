@@ -10,6 +10,7 @@
 #include "protocol_specific_packets.hpp"
 #include "../instructions/ping.hpp"
 #include "../instructions/read.hpp"
+#include "../instructions/bulk_read.hpp"
 #include "../instructions/write.hpp"
 #include "../instructions/reg_write.hpp"
 #include "../instructions/action.hpp"
@@ -30,6 +31,11 @@
     static InstructionPacket<typename Servo<Model>::protocol_t> get_##Name(typename Servo<Model>::protocol_t::id_t id)                                               \
     {                                                                                                                                                                \
         return typename Servo<Model>::read_t(id, Servo<Model>::ct_t::Name, sizeof(typename Servo<Model>::ct_t::Name##_t));                                           \
+    }                                                                                                                                                                \
+                                                                                                                                                                     \
+    static InstructionPacket<typename Servo<Model>::protocol_t> get_##Name(std::vector<typename Servo<Model>::protocol_t::id_t> ids)                                 \
+    {                                                                                                                                                                \
+        return typename Servo<Model>::bulk_read_t(ids, Servo<Model>::ct_t::Name, sizeof(typename Servo<Model>::ct_t::Name##_t));                                     \
     }                                                                                                                                                                \
                                                                                                                                                                      \
     static typename Servo<Model>::ct_t::Name##_t parse_##Name(typename Servo<Model>::protocol_t::id_t id, const StatusPacket<typename Servo<Model>::protocol_t>& st) \
@@ -53,6 +59,12 @@
     static inline InstructionPacket<typename Servo<Model>::protocol_t> set_##Name(typename Servo<Model>::protocol_t::id_t id, typename Servo<Model>::ct_t::Name##_t value) \
     {                                                                                                                                                                      \
         return typename Servo<Model>::write_t(id, Servo<Model>::ct_t::Name, Servo<Model>::protocol_t::pack_data(value));                                                   \
+    }                                                                                                                                                                      \
+                                                                                                                                                                           \
+    static inline InstructionPacket<typename Servo<Model>::protocol_t> set_##Name(std::vector<typename Servo<Model>::protocol_t::id_t> ids,                                \
+        std::vector<typename Servo<Model>::ct_t::Name##_t> values)                                                                                                         \
+    {                                                                                                                                                                      \
+        return typename Servo<Model>::sync_write_t(Servo<Model>::ct_t::Name, ids, Servo<Model>::protocol_t::pack_data(values));                                            \
     }                                                                                                                                                                      \
                                                                                                                                                                            \
     static inline InstructionPacket<typename Servo<Model>::protocol_t> reg_##Name(typename Servo<Model>::protocol_t::id_t id, typename Servo<Model>::ct_t::Name##_t value) \
@@ -94,6 +106,7 @@ namespace dynamixel {
             typedef typename ModelTraits<Model>::CT ct_t;
             typedef instructions::Ping<protocol_t> ping_t;
             typedef instructions::Read<protocol_t> read_t;
+            typedef instructions::BulkRead<protocol_t> bulk_read_t;
             typedef instructions::Write<protocol_t> write_t;
             typedef instructions::RegWrite<protocol_t> reg_write_t;
             typedef instructions::Action<protocol_t> action_t;

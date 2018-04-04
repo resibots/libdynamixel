@@ -33,6 +33,8 @@ namespace dynamixel {
                 static const instr_t action = 0x05;
                 static const instr_t factory_reset = 0x06;
                 static const instr_t sync_write = 0x83;
+                // available only for the MX series
+                static const instr_t bulk_read = 0x92;
             };
 
             enum DecodeState {
@@ -108,6 +110,51 @@ namespace dynamixel {
             }
 
             static std::vector<uint8_t> pack_data(int32_t data)
+            {
+                throw errors::Error("pack_data for int (32 bits) not "
+                                    "implemented in Protocol1");
+            }
+
+            static std::vector<std::vector<uint8_t>> pack_data(const std::vector<uint8_t>& data)
+            {
+                if (data.size() == 0)
+                    throw errors::Error("pack_data was given an empty "
+                                        "data vector");
+
+                std::vector<std::vector<uint8_t>> packed(data.size());
+                // std::vector<std::vector<uint8_t>> packed(data.size());
+                for (auto datum : data) {
+                    packed.push_back(pack_data(datum));
+                }
+                return packed;
+            }
+
+            static std::vector<std::vector<uint8_t>> pack_data(const std::vector<uint16_t>& data)
+            {
+                if (data.size() == 0)
+                    throw errors::Error("pack_data was given an empty "
+                                        "data vector");
+
+                std::vector<std::vector<uint8_t>> packed(data.size());
+                for (auto datum : data) {
+                    packed.push_back(pack_data(datum));
+                }
+                return packed;
+                // std::vector<uint8_t> packed(2 * data.size());
+                // for (auto datum : data) {
+                //     packed.push_back((uint8_t)(datum & 0xFF));
+                //     packed.push_back((uint8_t)((datum >> 8) & 0xFF));
+                // }
+                // return packed;
+            }
+
+            static std::vector<std::vector<uint8_t>> pack_data(const std::vector<uint32_t>& data)
+            {
+                throw errors::Error("pack_data for unsigned int (32 bits) not "
+                                    "implemented in Protocol1");
+            }
+
+            static std::vector<std::vector<uint8_t>> pack_data(const std::vector<int32_t>& data)
             {
                 throw errors::Error("pack_data for int (32 bits) not "
                                     "implemented in Protocol1");

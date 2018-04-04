@@ -135,6 +135,78 @@ namespace dynamixel {
                 return packed;
             }
 
+            template <typename DType>
+            static std::vector<std::vector<uint8_t>>
+            pack_data(const std::vector<DType>& data)
+            {
+                std::vector<std::vector<uint8_t>> packed(data.size());
+                for (auto datum : data) {
+                    packed.push_back(pack_data(datum));
+                }
+                return packed;
+            }
+
+            // static std::vector<std::vector<uint8_t>>
+            // pack_data(const std::vector<uint8_t>& data)
+            // {
+            //     if (data.size() == 0)
+            //         throw errors::Error("pack_data was given an empty "
+            //                             "data vector");
+
+            //     return data;
+            // }
+
+            // static std::vector<std::vector<uint8_t>>
+            // pack_data(const std::vector<uint16_t>& data)
+            // {
+            //     if (data.size() == 0)
+            //         throw errors::Error("pack_data was given an empty "
+            //                             "data vector");
+
+            //     std::vector<uint8_t> packed(2 * data.size());
+            //     for (auto datum : data) {
+            //         packed.push_back((uint8_t)(datum & 0xFF));
+            //         packed.push_back((uint8_t)((datum >> 8) & 0xFF));
+            //     }
+            //     return packed;
+            // }
+
+            // static std::vector<std::vector<uint8_t>>
+            // pack_data(const std::vector<uint32_t>& data)
+            // {
+            //     if (data.size() == 0)
+            //         throw errors::Error("pack_data was given an empty "
+            //                             "data vector");
+
+            //     std::vector<uint8_t> packed(4 * data.size());
+            //     for (auto datum : data) {
+            //         packed.push_back((uint8_t)(datum & 0xFF));
+            //         packed.push_back((uint8_t)((datum >> 8) & 0xFF));
+            //         packed.push_back((uint8_t)((datum >> 16) & 0xFF));
+            //         packed.push_back((uint8_t)((datum >> 24) & 0xFF));
+            //     }
+
+            //     return packed;
+            // }
+
+            // static std::vector<std::vector<uint8_t>>
+            // pack_data(const std::vector<int32_t>& data)
+            // {
+            //     if (data.size() == 0)
+            //         throw errors::Error("pack_data was given an empty "
+            //                             "data vector");
+
+            //     std::vector<uint8_t> packed(4 * data.size());
+            //     for (auto datum : data) {
+            //         packed.push_back((uint8_t)(datum & 0xFF));
+            //         packed.push_back((uint8_t)((datum >> 8) & 0xFF));
+            //         packed.push_back((uint8_t)((datum >> 16) & 0xFF));
+            //         packed.push_back((uint8_t)((datum >> 24) & 0xFF));
+            //     }
+
+            //     return packed;
+            // }
+
             static void unpack_data(const std::vector<uint8_t>& packet, uint8_t& res)
             {
                 if (packet.size() != 1)

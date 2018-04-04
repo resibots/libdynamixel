@@ -1,3 +1,7 @@
+## March, 28th 2018
+
+- [API change] Add support for the bulk_read command (works only for MX series or protocol2)
+
 ## March, 26th 2018
 
 - [Improvement] Add support to MX series using protocol 2
