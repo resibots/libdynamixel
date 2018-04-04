@@ -40,7 +40,13 @@ namespace dynamixel {
 
             try {
                 if ("list" == command) {
-                    list();
+                    if (vm.count("id")) {
+                        std::vector<id_t> ids = vm["id"].as<std::vector<id_t>>();
+                        list(ids);
+                    }
+                    else {
+                        list();
+                    }
                 }
                 else if ("write" == command) {
                     std::vector<std::string>
@@ -260,7 +266,21 @@ namespace dynamixel {
             std::map<typename Protocol::id_t, std::shared_ptr<BaseServo<Protocol>>>
                 actuators = _dyn_util.servos();
 
-            std::cout << "Connected devices (" << actuators.size() << ") :"
+            std::cout << "Connected devices (" << actuators.size() << "):"
+                      << std::endl;
+            for (auto actuator : actuators) {
+                std::cout << (long long int)actuator.first
+                          << "\t" << actuator.second->model_name() << std::endl;
+            }
+        }
+
+        void list(std::vector<id_t> ids)
+        {
+            _dyn_util.detect_servos(ids);
+            std::map<typename Protocol::id_t, std::shared_ptr<BaseServo<Protocol>>>
+                actuators = _dyn_util.servos();
+
+            std::cout << "Connected devices (" << actuators.size() << "):"
                       << std::endl;
             for (auto actuator : actuators) {
                 std::cout << (long long int)actuator.first
