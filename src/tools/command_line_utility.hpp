@@ -646,7 +646,7 @@ namespace dynamixel {
         {
             using namespace std::chrono;
 
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
 
             steady_clock::time_point t1 = steady_clock::now();
             long long int t = 0;

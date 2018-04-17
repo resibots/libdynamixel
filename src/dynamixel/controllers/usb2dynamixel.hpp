@@ -96,7 +96,7 @@ namespace dynamixel {
                 if (_fd != -1)
                     throw errors::Error("error attempting to open device " + name + ": an other connection is active; call `close serial` before opening a new connection");
 
-                _fd = open(name.c_str(), O_RDWR | O_NOCTTY);
+                _fd = open(name.c_str(), O_RDWR | O_NOCTTY | O_NONBLOCK);
                 if (_fd == -1)
                     throw errors::Error("error opening device " + name + ": " + std::string(strerror(errno)));
 
