@@ -65,15 +65,33 @@ namespace dynamixel {
             return std::make_shared<servos::Mx64P2>(id);
         case servos::Mx106P2::ct_t::model_number_value:
             return std::make_shared<servos::Mx106P2>(id);
+        case servos::Xm430W210::ct_t::model_number_value:
+            return std::make_shared<servos::Xm430W210>(id);
+        case servos::Xm430W250::ct_t::model_number_value:
+            return std::make_shared<servos::Xm430W250>(id);
+        case servos::Xm430W350::ct_t::model_number_value:
+            return std::make_shared<servos::Xm430W350>(id);
+        case servos::Xm540W150::ct_t::model_number_value:
+            return std::make_shared<servos::Xm540W150>(id);
+        case servos::Xm540W270::ct_t::model_number_value:
+            return std::make_shared<servos::Xm540W270>(id);
+        case servos::Xh430W210::ct_t::model_number_value:
+            return std::make_shared<servos::Xh430W210>(id);
+        case servos::Xh430W350::ct_t::model_number_value:
+            return std::make_shared<servos::Xh430W350>(id);
+        case servos::Xh430V210::ct_t::model_number_value:
+            return std::make_shared<servos::Xh430V210>(id);
+        case servos::Xh430V350::ct_t::model_number_value:
+            return std::make_shared<servos::Xh430V350>(id);
         default:
             throw errors::Error("Unrecognized model number");
         }
     }
 
     /** Send a ping to an ID. If it is answered, read the actuator model and
-        instanciate a class of the correct type.
+        instantiate a class of the correct type.
 
-        @param id value, from 1 to 254 identifiying an actuator
+        @param id value, from 1 to 254 identifying an actuator
 
         @return std::shared_ptr to a servo object if we got an answer
     **/
@@ -81,7 +99,7 @@ namespace dynamixel {
     inline std::shared_ptr<servos::BaseServo<Protocol>>
     find_servo(const Controller& controller, typename Protocol::id_t id)
     {
-        // Dummy variable used only to differenciate between the two version of
+        // Dummy variable used only to differentiate between the two version of
         // get_servo (protocol 1 or 2)
         typename Protocol::address_t selected_protocol = 0;
 
