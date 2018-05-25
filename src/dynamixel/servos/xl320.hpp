@@ -30,8 +30,8 @@ namespace dynamixel {
                 typedef uint16_t cw_angle_limit_t;
                 static const protocol_t::address_t ccw_angle_limit = 8;
                 typedef uint16_t ccw_angle_limit_t;
-                static const protocol_t::address_t control_mode = 11;
-                typedef uint8_t control_mode_t;
+                static const protocol_t::address_t operating_mode = 11;
+                typedef uint8_t operating_mode_t;
                 static const protocol_t::address_t highest_temperature_limit = 12;
                 typedef uint8_t highest_temperature_limit_t;
                 static const protocol_t::address_t lowest_voltage_limit = 13;
@@ -48,12 +48,12 @@ namespace dynamixel {
                 typedef uint8_t torque_enable_t;
                 static const protocol_t::address_t led = 25;
                 typedef uint8_t led_t;
-                static const protocol_t::address_t d_gain = 27;
-                typedef uint8_t d_gain_t;
-                static const protocol_t::address_t i_gain = 28;
-                typedef uint8_t i_gain_t;
-                static const protocol_t::address_t p_gain = 29;
-                typedef uint8_t p_gain_t;
+                static const protocol_t::address_t position_d_gain = 27;
+                typedef uint8_t position_d_gain_t;
+                static const protocol_t::address_t position_i_gain = 28;
+                typedef uint8_t position_i_gain_t;
+                static const protocol_t::address_t position_p_gain = 29;
+                typedef uint8_t position_p_gain_t;
                 static const protocol_t::address_t goal_position = 30;
                 typedef uint16_t goal_position_t;
                 static const goal_position_t min_goal_position = 0;
@@ -100,12 +100,12 @@ namespace dynamixel {
             // Here we add the fields that are not common to all dynamixels
             READ_WRITE_FIELD(cw_angle_limit);
             READ_WRITE_FIELD(ccw_angle_limit);
-            READ_WRITE_FIELD(control_mode);
+            READ_WRITE_FIELD(operating_mode);
             READ_WRITE_FIELD(max_torque);
             READ_WRITE_FIELD(led);
-            READ_WRITE_FIELD(d_gain);
-            READ_WRITE_FIELD(i_gain);
-            READ_WRITE_FIELD(p_gain);
+            READ_WRITE_FIELD(position_d_gain);
+            READ_WRITE_FIELD(position_i_gain);
+            READ_WRITE_FIELD(position_p_gain);
             READ_WRITE_FIELD(goal_torque);
             READ_FIELD(present_load);
             READ_FIELD(hardware_error_status);

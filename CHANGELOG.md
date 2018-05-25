@@ -5,6 +5,14 @@
 ## March, 26th 2018
 
 - [Improvement] Add support to MX series using protocol 2
+- [API change] rename control table fields:
+  - _original: new_
+  - d_gain: position_d_gain
+  - i_gain: position_i_gain
+  - p_gain: position_p_gain
+  - current: present_current
+  - sensed_current: present_current
+  - control_mode: operating_mode
 
 ## March, 2nd 2018
 

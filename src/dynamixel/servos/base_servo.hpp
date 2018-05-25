@@ -57,76 +57,99 @@ namespace dynamixel {
 
             // All the memory addresses of all the models need to be declared here
             // Then, the concrete model classes override the ones that they have
+
+            // EEPROM
+            // ======
+
+            // Fields for models with protocol 1
+            // ---------------------------------
             BASE_FIELD(model_number);
             BASE_FIELD(firmware_version);
             BASE_FIELD(id);
             BASE_FIELD(baudrate);
             BASE_FIELD(return_delay_time);
-            BASE_FIELD(highest_temperature_limit);
-            BASE_FIELD(highest_voltage_limit);
-            BASE_FIELD(lowest_voltage_limit);
-            BASE_FIELD(status_return_level);
-            BASE_FIELD(alarm_shutdown);
-            BASE_FIELD(torque_enable);
-            BASE_FIELD(goal_position);
-            BASE_FIELD(moving_speed);
-            BASE_FIELD(present_position);
-            BASE_FIELD(present_speed);
-            BASE_FIELD(present_voltage);
-            BASE_FIELD(present_temperature);
-            BASE_FIELD(registered);
-            BASE_FIELD(moving);
-
             BASE_FIELD(cw_angle_limit);
             BASE_FIELD(ccw_angle_limit);
-            BASE_FIELD(drive_mode);
+            BASE_FIELD(drive_mode); // Only for MX-106 and EX-106+
+            BASE_FIELD(highest_temperature_limit);
+            BASE_FIELD(lowest_voltage_limit);
+            BASE_FIELD(highest_voltage_limit);
             BASE_FIELD(max_torque);
             BASE_FIELD(alarm_led);
-            BASE_FIELD(led);
-            BASE_FIELD(cw_compliance_margin);
-            BASE_FIELD(ccw_compliance_margin);
-            BASE_FIELD(cw_compliance_slope);
-            BASE_FIELD(ccw_compliance_slope);
-            BASE_FIELD(torque_limit);
-            BASE_FIELD(present_load);
-            BASE_FIELD(lock);
-            BASE_FIELD(punch);
-            BASE_FIELD(sensed_current);
-
+            BASE_FIELD(alarm_shutdown); // Corresponds to "shutdown" in protocol 2
+            // Only for MX-series {
             BASE_FIELD(multi_turn_offset);
             BASE_FIELD(resolution_divider);
-            BASE_FIELD(d_gain);
-            BASE_FIELD(i_gain);
-            BASE_FIELD(p_gain);
-            BASE_FIELD(current);
-            BASE_FIELD(torque_control_mode_enabled);
-            BASE_FIELD(goal_torque);
-            BASE_FIELD(goal_acceleration);
+            // } Only for MX-series
 
+            // Extra fields for models with protocol 2
+            // ---------------------------------------
             BASE_FIELD(model_info);
-            BASE_FIELD(operating_mode);
-            BASE_FIELD(homing_offset);
+            BASE_FIELD(operating_mode); // Also for EX-106+
+            BASE_FIELD(homing_offset); // Not for L42
             BASE_FIELD(moving_threshold);
             BASE_FIELD(acceleration_limit);
+            // BASE_FIELD(torque_limit) // FIXME: This field is in RAM for protocol 1 devices and in EEPROM for the dynamixel Pro series. For the former, this field is replaced with max_torque
             BASE_FIELD(speed_limit);
-            BASE_FIELD(max_position_limit);
-            BASE_FIELD(min_position_limit);
-            BASE_FIELD(led_r);
-            BASE_FIELD(led_g);
-            BASE_FIELD(led_b);
-            BASE_FIELD(velocity_i_gain);
-            BASE_FIELD(velocity_p_gain);
-            BASE_FIELD(position_p_gain);
-            BASE_FIELD(hardware_error_status);
-
-            BASE_FIELD(control_mode);
-
+            BASE_FIELD(max_position_limit); // FIXME: these two fields could be replaced with cw_angle_limit
+            BASE_FIELD(min_position_limit); // and ccw_angle_limit
+            // MX with protocol 2 only {
             BASE_FIELD(secondary_id);
             BASE_FIELD(protocol_version);
             BASE_FIELD(pwm_limit);
             BASE_FIELD(current_limit);
+            // } MX with protocol 2 only
+
+            // RAM
+            // ===
+
+            // Fields for models with protocol 1
+            // ---------------------------------
+            BASE_FIELD(torque_enable);
+            BASE_FIELD(led);
+            // Only protocol 1, L42 and MX protocol 2 {
             BASE_FIELD(position_d_gain);
             BASE_FIELD(position_i_gain);
+            // } Only protocol 1, L42 and MX protocol 2
+            BASE_FIELD(position_p_gain);
+            // Only for AX series and EX-106+ {
+            BASE_FIELD(cw_compliance_margin);
+            BASE_FIELD(ccw_compliance_margin);
+            BASE_FIELD(cw_compliance_slope);
+            BASE_FIELD(ccw_compliance_slope);
+            // } Only for AX series and EX-106+
+            BASE_FIELD(goal_position);
+            BASE_FIELD(moving_speed); // for protocol 2 means "goal_velocity"
+            BASE_FIELD(torque_limit);
+            BASE_FIELD(present_position);
+            BASE_FIELD(present_speed);
+            BASE_FIELD(present_load);
+            BASE_FIELD(present_voltage);
+            BASE_FIELD(present_temperature);
+            BASE_FIELD(registered);
+            BASE_FIELD(moving);
+            BASE_FIELD(lock);
+            BASE_FIELD(punch);
+            // Only for MX-106 and MX-64 {
+            BASE_FIELD(present_current); // Also EX-106+
+            BASE_FIELD(torque_control_mode_enabled);
+            BASE_FIELD(goal_torque);
+            // } Only for MX-106 and MX-64
+            BASE_FIELD(goal_acceleration); // Only for MX series
+
+            // Extra fields for models with protocol 2
+            // ---------------------------------------
+            // Only MX protocol 2
+            BASE_FIELD(status_return_level);
+            BASE_FIELD(led_r);
+            BASE_FIELD(led_g);
+            BASE_FIELD(led_b);
+            // Not for L42 {
+            BASE_FIELD(velocity_i_gain);
+            BASE_FIELD(velocity_p_gain);
+            // } Not for L42
+            BASE_FIELD(hardware_error_status);
+            // Only MX with protocol 2 {
             BASE_FIELD(feedforward_2nd_gain);
             BASE_FIELD(feedforward_1st_gain);
             BASE_FIELD(bus_watchdog);
@@ -139,6 +162,7 @@ namespace dynamixel {
             BASE_FIELD(present_pwm);
             BASE_FIELD(speed_trajectory);
             BASE_FIELD(position_trajectory);
+            // } Only MX with protocol 2
 
             // Common functionality for the servos that will be implemented in the Servo class (where we know the model)
             virtual InstructionPacket<protocol_t> ping() const
