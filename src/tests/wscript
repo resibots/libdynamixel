@@ -9,3 +9,4 @@ def options(bld):
 
 def build(bld):
     bld(features='cxx cxxprogram', source='generate_packets.cpp', target="generate_packets", includes=". ..")
+    bld(features='cxx cxxprogram', source='communication_timing.cpp', target="communication_timing", includes=". ..")

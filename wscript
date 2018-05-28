@@ -16,6 +16,7 @@ blddir = 'build'
 def options(opt):
     opt.load('compiler_cxx')
     opt.add_option('--tests', action='store_true', help='compile tests or not', dest='tests')
+    opt.add_option('--demos', action='store_true', help='compile demos or not', dest='demos')
 
     opt.recurse('src/tools')
     # opt.recurse('src/tests')
@@ -32,8 +33,9 @@ def configure(conf):
 
 
 def build(bld):
-    bld.recurse('src/demos')
     bld.recurse('src/tools')
+    if bld.options.demos:
+        bld.recurse('src/demos')
     if bld.options.tests:
         bld.recurse('src/tests')
 
