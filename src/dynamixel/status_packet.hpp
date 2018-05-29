@@ -1,10 +1,10 @@
 #ifndef DYNAMIXEL_STATUS_PACKET_HPP_
 #define DYNAMIXEL_STATUS_PACKET_HPP_
 
-#include <vector>
-#include <stdint.h>
 #include <cassert>
 #include <iostream>
+#include <stdint.h>
+#include <vector>
 
 #include "./errors/error.hpp"
 
@@ -32,9 +32,11 @@ namespace dynamixel {
             return _parameters;
         }
 
-        DecodeState decode_packet(const std::vector<uint8_t>& packet, bool report_bad_packet = false)
+        DecodeState decode_packet(const std::vector<uint8_t>& packet, 
+            typename Protocol::length_t& length, bool report_bad_packet = false)
         {
-            DecodeState state = Protocol::unpack_status(packet, _id, _parameters, report_bad_packet);
+            DecodeState state = Protocol::unpack_status(packet, _id,
+                _parameters, length, report_bad_packet);
 
             if (state == DecodeState::DONE)
                 _valid = true;

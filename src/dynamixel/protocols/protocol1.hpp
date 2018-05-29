@@ -1,10 +1,10 @@
 #ifndef DYNAMIXEL_PROTOCOLS_PROTOCOL1_HPP_
 #define DYNAMIXEL_PROTOCOLS_PROTOCOL1_HPP_
 
-#include <stdint.h>
-#include <vector>
 #include <cassert>
 #include <sstream>
+#include <stdint.h>
+#include <vector>
 
 #include "../errors/bad_packet.hpp"
 #include "../errors/crc_error.hpp"
@@ -202,7 +202,9 @@ namespace dynamixel {
             @see unpack_status in protocol2.hpp
             **/
             static DecodeState
-            unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters, bool throw_exceptions = false)
+            unpack_status(const std::vector<uint8_t>& packet, id_t& id,
+                std::vector<uint8_t>& parameters, length_t& length,
+                bool throw_exceptions = false)
             {
                 if (!detect_status_header(packet)) {
                     if (throw_exceptions)
@@ -218,7 +220,10 @@ namespace dynamixel {
 
                 // Check that the actual length of the packet equals the one written
                 // in the packet itself
-                length_t length = packet[3];
+                // ---------------------------------------------------------
+                // FIXME: oroginal version is `length_t length = packet[3];`
+                // ---------------------------------------------------------
+                length = packet[3];
                 if (length < 2) {
                     if (throw_exceptions) {
                         std::stringstream message;

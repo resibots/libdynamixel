@@ -240,7 +240,9 @@ namespace dynamixel {
                 @see unpack_status in protocol1.hpp
             **/
             static DecodeState
-            unpack_status(const std::vector<uint8_t>& packet, id_t& id, std::vector<uint8_t>& parameters, bool throw_exceptions = false)
+            unpack_status(const std::vector<uint8_t>& packet, id_t& id,
+                std::vector<uint8_t>& parameters, length_t& length,
+                bool throw_exceptions = false)
             {
                 if (!detect_status_header(packet)) {
                     if (throw_exceptions)
@@ -258,7 +260,10 @@ namespace dynamixel {
 
                 // Check that the actual length of the packet equals the one written
                 // in the packet itself
-                length_t length = (((uint16_t)packet[6]) << 8) | packet[5];
+                // ---------------------------------------------------------
+                // FIXME: oroginal version is `length_t length = (((uint16_t)packet[6]) << 8) | packet[5];`
+                // ---------------------------------------------------------
+                length = (((uint16_t)packet[6]) << 8) | packet[5];
                 if (length < 4) {
                     if (throw_exceptions) {
                         std::stringstream message;

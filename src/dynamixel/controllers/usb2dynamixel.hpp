@@ -1,21 +1,21 @@
 #ifndef DYNAMIXEL_CONTROLLERS_USB2DYNAMIXEL_HPP_
 #define DYNAMIXEL_CONTROLLERS_USB2DYNAMIXEL_HPP_
 
-#include <fcntl.h>
-#include <errno.h>
-#include <termios.h>
-#include <vector>
 #include <cstdio>
-#include <stdint.h>
-#include <unistd.h>
-#include <iostream>
 #include <cstring>
-#include <sstream>
+#include <errno.h>
+#include <fcntl.h>
 #include <iomanip>
+#include <iostream>
+#include <sstream>
+#include <stdint.h>
+#include <termios.h>
+#include <unistd.h>
+#include <vector>
 
 #include "../errors/error.hpp"
-#include "../misc.hpp"
 #include "../instruction_packet.hpp"
+#include "../misc.hpp"
 #include "../status_packet.hpp"
 
 namespace dynamixel {
@@ -96,6 +96,7 @@ namespace dynamixel {
                 if (_fd != -1)
                     throw errors::Error("error attempting to open device " + name + ": an other connection is active; call `close serial` before opening a new connection");
 
+                // _fd = open(name.c_str(), O_RDWR | O_NOCTTY);
                 _fd = open(name.c_str(), O_RDWR | O_NOCTTY | O_NONBLOCK);
                 if (_fd == -1)
                     throw errors::Error("error opening device " + name + ": " + std::string(strerror(errno)));
@@ -123,9 +124,9 @@ namespace dynamixel {
                 // apparently the mac does not flush everything
                 // before closing the fd (Linux does)
                 //... which can cause the last packet to be ignored
-            #ifdef __APPLE__
+#ifdef __APPLE__
                 usleep(1000);
-            #endif
+#endif
                 close(_fd);
                 _fd = -1;
             }
@@ -172,7 +173,7 @@ namespace dynamixel {
                 if (_fd == -1)
                     return false;
 
-                double time = get_time();
+                double start_time = get_time();
                 DecodeState state = DecodeState::ONGOING;
 
                 std::vector<uint8_t> packet;
@@ -180,17 +181,27 @@ namespace dynamixel {
 
                 //std::cout << "Receive:" << std::endl;
 
+                unsigned int iterations = 0, new_byte = 0, wrong_byte = 0;
+
                 do {
                     double current_time = get_time();
+                    if (current_time - start_time > _recv_timeout)
+                        return false;
+
+                    ++iterations;
                     uint8_t byte;
+                    
                     int res = read(_fd, &byte, 1);
                     if (res > 0) {
+                        ++new_byte;
                         // std::cout << std::setfill('0') << std::setw(2)
                         //           << std::hex << (unsigned int)byte << " ";
                         packet.push_back(byte);
 
-                        state = status.decode_packet(packet, _report_bad_packet);
+                        typename T::length_t length = 0;
+                        state = status.decode_packet(packet, length, _report_bad_packet);
                         if (state == DecodeState::INVALID) {
+                            ++wrong_byte;
                             // std::cout << "\tBad packet: ";
                             // for (const auto byte : packet)
                             //     std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
@@ -199,15 +210,95 @@ namespace dynamixel {
                             packet.clear();
                         }
 
-                        time = current_time;
+                        // start_time = current_time;
                     }
-
-                    if (current_time - time > _recv_timeout)
-                        return false;
+                    else if (res == -1) {
+                        std::string message = "The following error occurred while reading incoming data from the servos: ";
+                        message += strerror(errno);
+                        throw errors::Error(message);
+                    }
                 } while (state != DecodeState::DONE);
 
                 //std::cout << std::endl;
                 // std::cout << std::dec;
+
+                std::cout << "Number of (iterations, new bytes, wrong bytes): "
+                          << iterations << ", "
+                          << new_byte << ", "
+                          << wrong_byte << ", "
+                          << std::endl;
+
+                return true;
+            }
+
+            // general receive
+            template <typename T>
+            bool recv_multibyte(StatusPacket<T>& status) const
+            {
+                using DecodeState = typename T::DecodeState;
+#define WORD_SIZE 20
+
+                if (_fd == -1)
+                    return false;
+
+                double start_time = get_time();
+                DecodeState state = DecodeState::ONGOING;
+
+                std::vector<uint8_t> packet;
+                packet.reserve(_recv_buffer_size);
+                typename T::length_t read_length = 6; // minimal size of a packet of protocol 1
+
+                //std::cout << "Receive:" << std::endl;
+
+                unsigned int iterations = 0, new_byte = 0, wrong_byte = 0;
+
+                do {
+                    double current_time = get_time();
+                    if (current_time - start_time > _recv_timeout)
+                        return false;
+
+                    ++iterations;
+                    uint8_t data[WORD_SIZE];
+
+                    read_length = (read_length > WORD_SIZE) ? WORD_SIZE : read_length;
+                    int res = read(_fd, data, static_cast<size_t>(read_length));
+                    if (res > 0) {
+                        ++new_byte;
+                        // std::cout << std::setfill('0') << std::setw(2)
+                        //           << std::hex << (unsigned int)byte << " ";
+                        for (size_t i = 0; i < res; ++i) {
+                            packet.push_back(data[i]);
+                        }
+
+                        state = status.decode_packet(packet, read_length, _report_bad_packet);
+                        if (state == DecodeState::INVALID) {
+                            ++wrong_byte;
+                            // std::cout << "\tBad packet: ";
+                            // for (const auto byte : packet)
+                            //     std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
+                            // std::cout << std::endl;
+
+                            packet.erase(packet.begin());
+                            // packet.clear();
+                        }
+
+                        // start_time = current_time;
+                    }
+                    else if (res == -1) {
+                        std::string message = "The following error occurred while reading incoming data from the servos: ";
+                        message += strerror(errno);
+                        throw errors::Error(message);
+                    }
+                } while (state != DecodeState::DONE);
+
+                //std::cout << std::endl;
+                // std::cout << std::dec;
+
+                std::cout << "Number of (iterations, new bytes, wrong bytes): "
+                          << iterations << ", "
+                          << new_byte << ", "
+                          << wrong_byte << ", "
+                          << std::endl;
 
                 return true;
             }

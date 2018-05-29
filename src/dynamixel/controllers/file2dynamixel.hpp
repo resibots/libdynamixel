@@ -1,22 +1,22 @@
 #ifndef DYNAMIXEL_CONTROLLERS_FILE2DYNAMIXEL_HPP_
 #define DYNAMIXEL_CONTROLLERS_FILE2DYNAMIXEL_HPP_
 
-#include <fcntl.h>
-#include <errno.h>
-#include <termios.h>
-#include <vector>
 #include <cstdio>
-#include <stdint.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <iostream>
 #include <cstring>
-#include <sstream>
+#include <errno.h>
+#include <fcntl.h>
 #include <iomanip>
+#include <iostream>
+#include <sstream>
+#include <stdint.h>
+#include <sys/types.h>
+#include <termios.h>
+#include <unistd.h>
+#include <vector>
 
 #include "../errors/error.hpp"
-#include "../misc.hpp"
 #include "../instruction_packet.hpp"
+#include "../misc.hpp"
 #include "../status_packet.hpp"
 
 namespace dynamixel {
@@ -149,7 +149,9 @@ namespace dynamixel {
                         //           << std::hex << (unsigned int)byte << " ";
                         packet.push_back(byte);
 
-                        state = status.decode_packet(packet, _report_bad_packet);
+                        typename T::length_t dummy_variable = 0;
+                        state = status.decode_packet(packet, dummy_variable,
+                            _report_bad_packet);
                         if (state == DecodeState::INVALID) {
                             std::cout << "\tBad packet: ";
                             for (const auto byte : packet)
