@@ -165,7 +165,7 @@ namespace dynamixel {
             READ_FIELD(realtime_tick);
             READ_FIELD(moving_status);
             READ_FIELD(present_pwm);
-            READ_FIELD(current);
+            // READ_FIELD(current);
             READ_FIELD(speed_trajectory);
             READ_FIELD(position_trajectory);
         };
