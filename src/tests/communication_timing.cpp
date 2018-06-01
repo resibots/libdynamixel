@@ -16,8 +16,8 @@ int main(int argc, char** argv)
     dynamixel::StatusPacket<dynamixel::protocols::Protocol1> status;
 
     try {
-        dynamixel::controllers::Usb2Dynamixel io(argv[1], B57600, recv_timeout);
-        // dynamixel::controllers::Usb2Dynamixel io(argv[1], B1000000, recv_timeout);
+        // dynamixel::controllers::Usb2Dynamixel io(argv[1], B57600, recv_timeout);
+        dynamixel::controllers::Usb2Dynamixel io(argv[1], B1000000, recv_timeout);
         bool success = false;
 
         std::chrono::time_point<std::chrono::system_clock>
@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 
         while (true) {
             send_start = std::chrono::system_clock::now();
-            io.send(dynamixel::servos::Mx28::get_present_position_angle(3));
+            io.send(dynamixel::servos::Mx28::get_present_position_angle(1));
             send_end = std::chrono::system_clock::now();
 
             // std::this_thread::sleep_for(std::chrono::microseconds(20000));

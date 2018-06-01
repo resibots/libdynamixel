@@ -1,15 +1,22 @@
+/** Evaluate round-trip time with DynamixelSDK.
+ * This code is meant to be compiled within the Dynamixel SDK. It would not work with libdynamixel.
+ * It is the complement of communication_timing.cpp used to compare the performance of both libraries.
+ */
+
 #include <fnctl.h>
 #include <termios.h>
 #define STDINF_FILENO 0
 
+#include <cstdlib>
+#include <iostream>
 #include <stdio.h>
-#include <stdlib.h>
+#include <thread>
 
 #include "dynamixel_sdk.h"
 
 // Control table address
-#define ADDR_MX_TORQUE_ENABLE 24
-#define ADDR_MX_GOAL_POSITION 30
+// #define ADDR_MX_TORQUE_ENABLE 24
+// #define ADDR_MX_GOAL_POSITION 30
 #define ADDR_MX_PRESENT_POSITION 36
 
 // Protocol version
@@ -40,6 +47,8 @@ int getch()
     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
     return ch;
 }
+
+bool get_present_position(double& angle);
 
 int main()
 {
@@ -83,65 +92,71 @@ int main()
     }
 
     // Enable Dynamixel Torque
-    dxl_comm_result = packetHandler->write1ByteTxRx(portHandler, DXL_ID, ADDR_MX_TORQUE_ENABLE, TORQUE_ENABLE, &dxl_error);
-    if (dxl_comm_result != COMM_SUCCESS) {
-        printf("%s\n", packetHandler->getTxRxResult(dxl_comm_result));
-    }
-    else if (dxl_error != 0) {
-        printf("%s\n", packetHandler->getRxPacketError(dxl_error));
-    }
-    else {
-        printf("Dynamixel has been successfully connected \n");
-    }
+    // dxl_comm_result = packetHandler->write1ByteTxRx(portHandler, DXL_ID, ADDR_MX_TORQUE_ENABLE, TORQUE_ENABLE, &dxl_error);
+    // if (dxl_comm_result != COMM_SUCCESS) {
+    //     printf("%s\n", packetHandler->getTxRxResult(dxl_comm_result));
+    // }
+    // else if (dxl_error != 0) {
+    //     printf("%s\n", packetHandler->getRxPacketError(dxl_error));
+    // }
+    // else {
+    //     printf("Dynamixel has been successfully connected \n");
+    // }
+
+    bool success = false;
+    double angle = 0;
+    std::chrono::time_point<std::chrono::system_clock>
+        start, end;
 
     while (1) {
-        printf("Press any key to continue! (or press ESC to quit!)\n");
-        if (getch() == ESC_ASCII_VALUE)
-            break;
-
-        // Write goal position
-        dxl_comm_result = packetHandler->write2ByteTxRx(portHandler, DXL_ID, ADDR_MX_GOAL_POSITION, dxl_goal_position[index], &dxl_error);
-        if (dxl_comm_result != COMM_SUCCESS) {
-            printf("%s\n", packetHandler->getTxRxResult(dxl_comm_result));
-        }
-        else if (dxl_error != 0) {
-            printf("%s\n", packetHandler->getRxPacketError(dxl_error));
-        }
-
-        do {
-            // Read present position
-            dxl_comm_result = packetHandler->read2ByteTxRx(portHandler, DXL_ID, ADDR_MX_PRESENT_POSITION, &dxl_present_position, &dxl_error);
-            if (dxl_comm_result != COMM_SUCCESS) {
-                printf("%s\n", packetHandler->getTxRxResult(dxl_comm_result));
-            }
-            else if (dxl_error != 0) {
-                printf("%s\n", packetHandler->getRxPacketError(dxl_error));
-            }
-
-            printf("[ID:%03d] GoalPos:%03d  PresPos:%03d\n", DXL_ID, dxl_goal_position[index], dxl_present_position);
-
-        } while ((abs(dxl_goal_position[index] - dxl_present_position) > DXL_MOVING_STATUS_THRESHOLD));
-
-        // Change goal position
-        if (index == 0) {
-            index = 1;
-        }
-        else {
-            index = 0;
-        }
+        start = std::chrono::system_clock::now();
+        success = get_present_position(angle);
+        end = std::chrono::system_clock::now();
+        std::cout << "present position of servo 1: "
+                  //   << dynamixel::servos::Mx28::parse_present_position_angle(1, status)
+                  << std::endl;
+        std::chrono::duration<double> send_dt = end - start;
+        // std::chrono::duration<double> recv_dt = recv_end - recv_start;
+        // std::chrono::duration<double> reply_dt = recv_end - send_end;
+        std::cout << "sending/receiving time: " << send_dt.count() << "s" << std::endl
+                //   << "receiveing time: " << recv_dt.count() << "s" << std::endl
+                //   << "reply time: " << reply_dt.count() << "s"
+                  << std::endl;
+        std::cout << "receive has " << (success ? "succeeded" : "failed")
+                  << "\n"
+                  << std::endl;
     }
 
     // Disable Dynamixel Torque
-    dxl_comm_result = packetHandler->write1ByteTxRx(portHandler, DXL_ID, ADDR_MX_TORQUE_ENABLE, TORQUE_DISABLE, &dxl_error);
-    if (dxl_comm_result != COMM_SUCCESS) {
-        printf("%s\n", packetHandler->getTxRxResult(dxl_comm_result));
-    }
-    else if (dxl_error != 0) {
-        printf("%s\n", packetHandler->getRxPacketError(dxl_error));
-    }
+    // dxl_comm_result = packetHandler->write1ByteTxRx(portHandler, DXL_ID, ADDR_MX_TORQUE_ENABLE, TORQUE_DISABLE, &dxl_error);
+    // if (dxl_comm_result != COMM_SUCCESS) {
+    //     printf("%s\n", packetHandler->getTxRxResult(dxl_comm_result));
+    // }
+    // else if (dxl_error != 0) {
+    //     printf("%s\n", packetHandler->getRxPacketError(dxl_error));
+    // }
 
     // Close port
     portHandler->closePort();
 
     return 0;
+}
+
+bool get_present_position(double& angle)
+{
+    uint16_t dxl_present_position = 0;
+    dxl_comm_result = packetHandler->read2ByteTxRx(portHandler, DXL_ID,
+        ADDR_MX_PRESENT_POSITION, &dxl_present_position, &dxl_error);
+    if (dxl_comm_result != COMM_SUCCESS) {
+        // printf("%s\n", packetHandler->getTxRxResult(dxl_comm_result));
+        return false;
+    }
+    else if (dxl_error != 0) {
+        // printf("%s\n", packetHandler->getRxPacketError(dxl_error));
+        return false;
+    }
+
+    // printf("[ID:%03d] GoalPos:%03d  PresPos:%03d\n", DXL_ID, dxl_goal_position[index], dxl_present_position);
+    angle = dxl_present_position * 2 * M_PI / 4095. + M_PI;
+    return true;
 }
