@@ -1,3 +1,7 @@
+## May, 16th 2018
+
+- [New model] Add (almost complete) support for the servo-motors in the X series
+
 ## March, 26th 2018
 
 - [Improvement] Add support to MX series using protocol 2
