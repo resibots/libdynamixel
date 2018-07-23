@@ -9,6 +9,8 @@
 
 namespace dynamixel {
     namespace instructions {
+        /** @ingroup instructions
+        **/
         template <class T>
         class SyncWrite : public InstructionPacket<T> {
         public:

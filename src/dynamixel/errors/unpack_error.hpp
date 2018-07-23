@@ -9,6 +9,8 @@
 
 namespace dynamixel {
     namespace errors {
+        /** @ingroup errors
+        **/
         class UnpackError : public Error {
         public:
             using size_type = std::vector<uint8_t>::size_type;

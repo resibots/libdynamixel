@@ -5,6 +5,8 @@
 
 namespace dynamixel {
     namespace instructions {
+        /** @ingroup instructions
+        **/
         template <class T>
         class Action : public InstructionPacket<T> {
         public:

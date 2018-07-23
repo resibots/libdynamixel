@@ -10,5 +10,8 @@ build/
 # Clang-format style files
 .clang-format
 
+# Generated content of the documentation
+_build/
+doxygen_doc/
 # Visual Studio code
 .vscode
