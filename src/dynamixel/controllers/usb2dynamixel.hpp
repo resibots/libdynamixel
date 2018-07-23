@@ -144,11 +144,9 @@ namespace dynamixel {
                 if (_fd != -1)
                     throw errors::Error("error attempting to open device " + name + ": an other connection is active; call `close serial` before opening a new connection");
 
-                _fd = open(name.c_str(), O_RDWR | O_NOCTTY | O_NONBLOCK );
+                _fd = open(name.c_str(), O_RDWR | O_NOCTTY );
                 if (_fd == -1)
                     throw errors::Error("error opening device " + name + ": " + std::string(strerror(errno)));
-
-                std::cout<<"serial open"<<std::endl;
 
                 // Serial port setting
                 bzero(&tio_serial, sizeof(tio_serial));
@@ -166,8 +164,6 @@ namespace dynamixel {
                 cfgetispeed(&tio_serial);
                 tcflush(_fd, TCIFLUSH);
                 tcsetattr(_fd, TCSANOW, &tio_serial);
-                std::cout<<"serial ready"<<std::endl;
-
             }
 
             /** Close the serial port
@@ -232,32 +228,32 @@ namespace dynamixel {
                 std::vector<uint8_t> packet;
                 packet.reserve(_recv_buffer_size);
 
-                std::cout << "Receive timeout" << _recv_timeout << std::endl;
+                // std::cout << "Receive timeout" << _recv_timeout << std::endl;
                 do {
                     double current_time = get_time();
                     uint8_t byte;
                     int res = read(_fd, &byte, 1);
                     if (res > 0) {
-                         std::cout << std::setfill('0') << std::setw(2)
-                                   << std::hex << (unsigned int)byte << " ";
+                        //  std::cout << std::setfill('0') << std::setw(2)
+                        //            << std::hex << (unsigned int)byte << " ";
                         packet.push_back(byte);
 
                         state = status.decode_packet(packet, _report_bad_packet);
-                        status.print(std::cout);
-                        std::cout<<"----"<<std::endl;
+                        // status.print(std::cout);
+                        // std::cout<<"----"<<std::endl;
                         if (state == DecodeState::INVALID) {
                             // std::cout << "\tBad packet: ";
                             // for (const auto byte : packet)
                             //     std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
                             // std::cout << std::endl;
 
-                            //packet.clear();
+                            packet.clear();
                         }
 
                         time = current_time;
                     }
 
-                    if (current_time - time > 0.25)//_recv_timeout)
+                    if (current_time - time > _recv_timeout)
                         return false;
                 } while (state != DecodeState::DONE);
 
