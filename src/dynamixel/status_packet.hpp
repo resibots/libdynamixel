@@ -4,6 +4,7 @@
 #include <vector>
 #include <stdint.h>
 #include <cassert>
+#include <iostream>
 
 #include "./errors/error.hpp"
 
@@ -76,6 +77,6 @@ namespace dynamixel {
     {
         return st.print(os);
     }
-}
+} // namespace dynamixel
 
 #endif

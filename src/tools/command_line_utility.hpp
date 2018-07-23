@@ -28,8 +28,9 @@ namespace dynamixel {
             @throws dynamixel::errors:Error if an issue was met while attempting
             to open the serial interface
         **/
-        CommandLineUtility(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
-            : _dyn_util(name, baudrate, recv_timeout)
+        CommandLineUtility(const std::string& name, int baudrate = get_baudrate(115200),
+            double recv_timeout = 0.1, double scan_timeout = 0.05)
+            : _dyn_util(name, baudrate, recv_timeout, scan_timeout)
         {
         }
 
@@ -39,7 +40,13 @@ namespace dynamixel {
 
             try {
                 if ("list" == command) {
-                    list();
+                    if (vm.count("id")) {
+                        std::vector<id_t> ids = vm["id"].as<std::vector<id_t>>();
+                        list(ids);
+                    }
+                    else {
+                        list();
+                    }
                 }
                 else if ("write" == command) {
                     std::vector<std::string>
@@ -184,7 +191,7 @@ namespace dynamixel {
             }
             catch (std::out_of_range e) {
                 std::cerr << "An error (out_of_range from " << e.what()
-                          << ") has been catched. You probably used a nonexistant ID."
+                          << ") has been caught. You probably used a nonexistent ID."
                           << std::endl;
             }
             catch (errors::ServoLimitError e) {
@@ -259,7 +266,21 @@ namespace dynamixel {
             std::map<typename Protocol::id_t, std::shared_ptr<BaseServo<Protocol>>>
                 actuators = _dyn_util.servos();
 
-            std::cout << "Connected devices (" << actuators.size() << ") :"
+            std::cout << "Connected devices (" << actuators.size() << "):"
+                      << std::endl;
+            for (auto actuator : actuators) {
+                std::cout << (long long int)actuator.first
+                          << "\t" << actuator.second->model_name() << std::endl;
+            }
+        }
+
+        void list(std::vector<id_t> ids)
+        {
+            _dyn_util.detect_servos(ids);
+            std::map<typename Protocol::id_t, std::shared_ptr<BaseServo<Protocol>>>
+                actuators = _dyn_util.servos();
+
+            std::cout << "Connected devices (" << actuators.size() << "):"
                       << std::endl;
             for (auto actuator : actuators) {
                 std::cout << (long long int)actuator.first
@@ -415,7 +436,7 @@ namespace dynamixel {
 
         void change_baudrate(const std::vector<id_t>& ids, unsigned int baudrate)
         {
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
 
             for (auto id : ids) {
                 _dyn_util.change_baudrate(id, baudrate);
@@ -429,7 +450,7 @@ namespace dynamixel {
 
         void factory_reset(const std::vector<id_t>& ids)
         {
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
 
             for (auto id : ids) {
                 _dyn_util.factory_reset(id);
@@ -444,11 +465,11 @@ namespace dynamixel {
         void position(const std::vector<id_t>& ids, const std::vector<double>& angles)
         {
             if (angles.size() == 1) {
-                _dyn_util.detect_servos();
+                _dyn_util.detect_servos(ids);
                 _dyn_util.set_angle(ids, angles.at(0));
             }
             else if (ids.size() == angles.size()) {
-                _dyn_util.detect_servos();
+                _dyn_util.detect_servos(ids);
                 _dyn_util.set_angle(ids, angles);
             }
             else
@@ -478,7 +499,7 @@ namespace dynamixel {
             if (ids.size() == 0)
                 return;
 
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
 
             std::vector<double> positions;
             positions = _dyn_util.get_angle(ids);
@@ -506,11 +527,11 @@ namespace dynamixel {
             bool wheel_mode = false)
         {
             if (speeds.size() == 1) {
-                _dyn_util.detect_servos();
+                _dyn_util.detect_servos(ids);
                 _dyn_util.set_speed(ids, speeds.at(0), wheel_mode);
             }
             else if (ids.size() == speeds.size()) {
-                _dyn_util.detect_servos();
+                _dyn_util.detect_servos(ids);
                 _dyn_util.set_speed(ids, speeds, wheel_mode);
             }
             else
@@ -540,7 +561,7 @@ namespace dynamixel {
             if (ids.size() == 0)
                 return;
 
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
 
             std::vector<double> speeds;
             speeds = _dyn_util.get_speed(ids);
@@ -567,7 +588,7 @@ namespace dynamixel {
 
         void torque_enable(const std::vector<id_t>& ids, bool enable = true)
         {
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
 
             for (auto id : ids) {
                 _dyn_util.torque_enable(id, enable);
@@ -582,7 +603,7 @@ namespace dynamixel {
 
         void print_torque_enable(const std::vector<id_t>& ids)
         {
-            _dyn_util.detect_servos();
+            _dyn_util.detect_servos(ids);
             std::vector<bool> enabled = _dyn_util.get_torque_enable(ids);
 
             if (ids.size() == 1) {
@@ -600,8 +621,7 @@ namespace dynamixel {
             }
         }
 
-        void
-        print_torque_enable()
+        void print_torque_enable()
         {
             _dyn_util.detect_servos();
             std::pair<std::vector<id_t>, std::vector<bool>> response
@@ -653,6 +673,6 @@ namespace dynamixel {
                 _dyn_util.set_angle(ids, angle);
         }
     };
-}
+} // namespace dynamixel
 
 #endif

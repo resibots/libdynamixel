@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <stdint.h>
+#include <cstddef> // for size-t
 
 ///@defgroup instructions
 
@@ -33,6 +34,6 @@ namespace dynamixel {
     protected:
         std::vector<uint8_t> _packet;
     };
-}
+} // namespace dynamixel
 
 #endif

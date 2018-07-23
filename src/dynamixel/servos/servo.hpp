@@ -147,7 +147,12 @@ namespace dynamixel {
             {
                 double deg = rad * 57.2958;
                 if (!(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg))
-                    throw errors::ServoLimitError(id, ct_t::min_goal_angle_deg, ct_t::max_goal_angle_deg, deg);
+                    throw errors::ServoLimitError(
+                        id,
+                        ct_t::min_goal_angle_deg * 0.01745, // convert from deg to rad
+                        ct_t::max_goal_angle_deg * 0.01745,
+                        rad
+                        );
                 typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
                 return set_goal_position(id, pos);
             }
@@ -156,7 +161,12 @@ namespace dynamixel {
             {
                 double deg = rad * 57.2958;
                 if (!(deg >= ct_t::min_goal_angle_deg && deg <= ct_t::max_goal_angle_deg))
-                    throw errors::ServoLimitError(id, ct_t::min_goal_angle_deg, ct_t::max_goal_angle_deg, deg);
+                    throw errors::ServoLimitError(
+                        id,
+                        ct_t::min_goal_angle_deg * 0.01745,
+                        ct_t::max_goal_angle_deg * 0.01745,
+                        rad
+                        );
                 typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
                 return reg_goal_position(id, pos);
             }
@@ -211,22 +221,22 @@ namespace dynamixel {
             // =================================================================
             // Speed-specific
 
-            static inline InstructionPacket<protocol_t> set_moving_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
+            static inline InstructionPacket<protocol_t> set_moving_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, OperatingMode operating_mode)
             {
                 return ProtocolSpecificPackets<Model, protocol_t>::set_moving_speed_angle(id, rad_per_s, operating_mode);
             }
 
-            static inline InstructionPacket<protocol_t> reg_moving_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, cst::OperatingMode operating_mode)
+            static inline InstructionPacket<protocol_t> reg_moving_speed_angle(typename Servo<Model>::protocol_t::id_t id, double rad_per_s, OperatingMode operating_mode)
             {
                 return ProtocolSpecificPackets<Model, protocol_t>::reg_moving_speed_angle(id, rad_per_s, operating_mode);
             }
 
-            InstructionPacket<protocol_t> set_moving_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
+            InstructionPacket<protocol_t> set_moving_speed_angle(double rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const override
             {
                 return Model::set_moving_speed_angle(this->_id, rad_per_s, operating_mode);
             }
 
-            InstructionPacket<protocol_t> reg_moving_speed_angle(double rad_per_s, cst::OperatingMode operating_mode = cst::joint) const override
+            InstructionPacket<protocol_t> reg_moving_speed_angle(double rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const override
             {
                 return Model::reg_moving_speed_angle(this->_id, rad_per_s, operating_mode);
             }
@@ -299,7 +309,7 @@ namespace dynamixel {
 
             typename protocol_t::id_t _id;
         };
-    }
-}
+    } // namespace servos
+} // namespace dynamixel
 
 #endif

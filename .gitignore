@@ -13,3 +13,5 @@ build/
 # Generated content of the documentation
 _build/
 doxygen_doc/
+# Visual Studio code
+.vscode

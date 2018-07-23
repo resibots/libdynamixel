@@ -98,7 +98,7 @@ namespace dynamixel {
                     std::stringstream ofs;
                     perror("write:");
                     ofs << "written= " << ret << ", size=" << packet.size();
-                    throw errors::Error("File2Dynamixel::Send: packet not fully written" + ofs.str());
+                    throw errors::Error("File2Dynamixel::Send: packet not fully written " + ofs.str());
                 }
             }
 
@@ -119,7 +119,7 @@ namespace dynamixel {
                     std::stringstream ofs;
                     perror("write:");
                     ofs << "written= " << ret << ", size=" << packet.size();
-                    throw errors::Error("File2Dynamixel::Send: packet not fully written" + ofs.str());
+                    throw errors::Error("File2Dynamixel::Send: packet not fully written " + ofs.str());
                 }
             }
 
@@ -202,7 +202,7 @@ namespace dynamixel {
             int _fd;
             bool _report_bad_packet;
         };
-    }
-}
+    } // namespace controllers
+} // namespace dynamixel
 
 #endif

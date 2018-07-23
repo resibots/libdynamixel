@@ -58,10 +58,10 @@ namespace dynamixel {
                 typedef uint8_t led_g_t;
                 static const protocol_t::address_t led_b = 565;
                 typedef uint8_t led_b_t;
-                static const protocol_t::address_t velocity_i_gain = 586;
-                typedef uint16_t velocity_i_gain_t;
-                static const protocol_t::address_t velocity_p_gain = 588;
-                typedef uint16_t velocity_p_gain_t;
+                static const protocol_t::address_t position_d_gain = 590;
+                typedef uint16_t position_d_gain_t;
+                static const protocol_t::address_t position_i_gain = 592;
+                typedef uint16_t position_i_gain_t;
                 static const protocol_t::address_t position_p_gain = 594;
                 typedef uint16_t position_p_gain_t;
                 static const protocol_t::address_t goal_position = 596;
@@ -71,7 +71,7 @@ namespace dynamixel {
                 static const uint16_t min_goal_angle_deg = 0;
                 static const uint16_t max_goal_angle_deg = 360;
                 static const protocol_t::address_t moving_speed = 600;
-                typedef uint32_t moving_speed_t;
+                typedef int32_t moving_speed_t;
                 static const moving_speed_t min_goal_speed = 0;
                 static const moving_speed_t max_goal_speed = 1023;
                 static constexpr double rpm_per_tick = 0.114;
@@ -85,9 +85,9 @@ namespace dynamixel {
                 static const protocol_t::address_t present_position = 611;
                 typedef int32_t present_position_t;
                 static const protocol_t::address_t present_speed = 615;
-                typedef uint32_t present_speed_t;
-                static const protocol_t::address_t current = 621;
-                typedef uint16_t current_t;
+                typedef int32_t present_speed_t;
+                static const protocol_t::address_t present_current = 621;
+                typedef uint16_t present_current_t;
                 static const protocol_t::address_t present_voltage = 623;
                 typedef uint16_t present_voltage_t;
                 static const protocol_t::address_t present_temperature = 625;
@@ -121,15 +121,15 @@ namespace dynamixel {
             READ_WRITE_FIELD(led_r);
             READ_WRITE_FIELD(led_g);
             READ_WRITE_FIELD(led_b);
-            READ_WRITE_FIELD(velocity_i_gain);
-            READ_WRITE_FIELD(velocity_p_gain);
+            READ_WRITE_FIELD(position_d_gain);
+            READ_WRITE_FIELD(position_i_gain);
             READ_WRITE_FIELD(position_p_gain);
             READ_WRITE_FIELD(goal_torque);
             READ_WRITE_FIELD(goal_acceleration);
-            READ_FIELD(current);
+            READ_FIELD(present_current);
             READ_FIELD(hardware_error_status);
         };
-    }
-}
+    } // namespace servos
+} // namespace dynamixel
 
 #endif

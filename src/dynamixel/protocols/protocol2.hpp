@@ -13,6 +13,9 @@ namespace dynamixel {
     namespace protocols {
         class Protocol2 {
         public:
+            // version of the protocol
+            static constexpr uint8_t version = 2;
+
             typedef uint8_t id_t;
             typedef uint8_t instr_t;
             typedef uint16_t address_t;
@@ -134,29 +137,29 @@ namespace dynamixel {
 
             static void unpack_data(const std::vector<uint8_t>& packet, uint8_t& res)
             {
-                if (packet.size() == 0)
-                    throw errors::UnpackError(2);
+                if (packet.size() != 1)
+                    throw errors::UnpackError(2, packet.size(), 1);
                 res = packet[0];
             }
 
             static void unpack_data(const std::vector<uint8_t>& packet, uint16_t& res)
             {
                 if (packet.size() != 2)
-                    throw errors::UnpackError(2);
+                    throw errors::UnpackError(2, packet.size(), 2);
                 res = (((uint16_t)packet[1]) << 8) | ((uint16_t)packet[0]);
             }
 
             static void unpack_data(const std::vector<uint8_t>& packet, uint32_t& res)
             {
                 if (packet.size() != 4)
-                    throw errors::UnpackError(2);
+                    throw errors::UnpackError(2, packet.size(), 4);
                 res = (((uint32_t)packet[3]) << 24) | (((uint32_t)packet[2]) << 16) | (((uint32_t)packet[1]) << 8) | ((uint32_t)packet[0]);
             }
 
             static void unpack_data(const std::vector<uint8_t>& packet, int32_t& res)
             {
                 if (packet.size() != 4)
-                    throw errors::UnpackError(2);
+                    throw errors::UnpackError(2, packet.size(), 4);
                 res = (((int32_t)packet[3]) << 24) | (((int32_t)packet[2]) << 16) | (((int32_t)packet[1]) << 8) | ((int32_t)packet[0]);
             }
 
@@ -318,7 +321,7 @@ namespace dynamixel {
                 return crc_accum;
             }
         };
-    }
-}
+    } // namespace protocols
+} // namespace dynamixel
 
 #endif

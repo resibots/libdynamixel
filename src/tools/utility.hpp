@@ -27,11 +27,16 @@ namespace dynamixel {
         typedef unsigned short id_t;
 
         /**
+
+            @param scan_timeout (default 0.05) set a special listening timeout;
+                will only apply for this detection process
+
             @throws dynamixel::errors:Error if an issue was met while attempting
             to open the serial interface
         **/
-        Utility(const std::string& name, int baudrate = B115200, double recv_timeout = 0.1)
-            : _serial_interface(name, baudrate, recv_timeout), _scanned(false)
+        Utility(const std::string& name, int baudrate = get_baudrate(115200),
+            double recv_timeout = 0.1, double scan_timeout = 0.05)
+            : _serial_interface(name, baudrate, recv_timeout), _scanned(false), _scan_timeout(scan_timeout)
         {
         }
 
@@ -43,19 +48,42 @@ namespace dynamixel {
             interface and talking at a given baudrate. Also, they have to speak
             the same protocol you use to talk to them.
 
-            @param scan_timeout (default 0.01) set a special listening timeout;
-                will only apply for this detection process
+            @throws dynamixel::error::UnpackError from auto_detect_map
+            @throws dynamixel::error:Error from auto_detect_map
+
+        **/
+        void detect_servos()
+        {
+            double original_timeout = _serial_interface.recv_timeout();
+            _serial_interface.set_recv_timeout(_scan_timeout);
+
+            _servos = auto_detect_map<Protocol>(_serial_interface);
+            _scanned = true;
+
+            _serial_interface.set_recv_timeout(original_timeout);
+        }
+
+        /** Detect the connected servos on the bus.
+            These servos are then stored internally and you can use the other
+            methods to send them orders or get data about them.
+
+            This method looks only for the servos requested through the parameter ids
+
+            @see detect_servos(double scan_timeout = 0.01)
+
+            @param ids vector of servo ID to be searched for
 
             @throws dynamixel::error::UnpackError from auto_detect_map
             @throws dynamixel::error:Error from auto_detect_map
 
         **/
-        void detect_servos(double scan_timeout = 0.01)
+        void detect_servos(const std::vector<id_t>& ids)
         {
             double original_timeout = _serial_interface.recv_timeout();
-            _serial_interface.set_recv_timeout(scan_timeout);
+            _serial_interface.set_recv_timeout(_scan_timeout);
 
-            _servos = auto_detect_map<Protocol>(_serial_interface);
+            std::vector<typename Protocol::id_t> ids_right_type(ids.begin(), ids.end());
+            _servos = auto_detect_map<Protocol>(_serial_interface, ids_right_type);
             _scanned = true;
 
             _serial_interface.set_recv_timeout(original_timeout);
@@ -314,7 +342,6 @@ namespace dynamixel {
         void set_angle(const std::vector<id_t>& ids, double angle)
         {
             check_scanned();
-
             for (auto id : ids) {
                 _serial_interface.send(_servos.at(id)->reg_goal_position_angle(angle));
 
@@ -324,6 +351,7 @@ namespace dynamixel {
 
             _serial_interface.send(
                 dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+
         }
 
         /** Move servos to a given angle
@@ -371,7 +399,6 @@ namespace dynamixel {
                 throw errors::UtilityError("set_position(vector, vector): the "
                                            "vectors of IDs and angles should have "
                                            "the same length");
-
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.send(
                     _servos.at(ids[i])->reg_goal_position_angle(angles[i]));
@@ -486,7 +513,7 @@ namespace dynamixel {
             for (auto id : ids) {
                 _serial_interface.send(_servos.at(id)->reg_moving_speed_angle(
                     speed,
-                    wheel_mode ? cst::wheel : cst::joint));
+                    wheel_mode ? OperatingMode::wheel : OperatingMode::joint));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);
@@ -518,7 +545,7 @@ namespace dynamixel {
             // "Action" (see bellow) command to enact the change
             for (auto servo : _servos) {
                 _serial_interface.send(servo.second->reg_moving_speed_angle(speed,
-                    wheel_mode ? cst::wheel : cst::joint));
+                    wheel_mode ? OperatingMode::wheel : OperatingMode::joint));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);
@@ -558,7 +585,7 @@ namespace dynamixel {
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.send(
                     _servos.at(ids[i])->reg_moving_speed_angle(speeds[i],
-                        wheel_mode ? cst::wheel : cst::joint));
+                        wheel_mode ? OperatingMode::wheel : OperatingMode::joint));
 
                 StatusPacket<Protocol> status;
                 _serial_interface.recv(status);
@@ -779,7 +806,8 @@ namespace dynamixel {
         std::map<typename Protocol::id_t, std::shared_ptr<BaseServo<Protocol>>>
             _servos;
         bool _scanned;
+        double _scan_timeout;
     };
-}
+} // namespace dynamixel
 
 #endif
