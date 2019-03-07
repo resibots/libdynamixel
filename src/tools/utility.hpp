@@ -5,9 +5,9 @@
 #include <tools/utility_error.hpp>
 
 #include <map>
-#include <utility> // std::pair
 #include <sstream>
 #include <stdexcept>
+#include <utility> // std::pair
 
 using namespace dynamixel;
 using namespace controllers;
@@ -351,7 +351,6 @@ namespace dynamixel {
 
             _serial_interface.send(
                 dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
-
         }
 
         /** Move servos to a given angle
@@ -410,6 +409,37 @@ namespace dynamixel {
             if (ids.size() > 0)
                 _serial_interface.send(
                     dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+        }
+
+        /** Move servos to a given angle
+            This version moves each servo to its own angle
+            IMPORTANT : optimal version, works only with Model Mx28
+            TODO : generalize to all models !
+            @param ids vector of ids for the servos to be moved
+            @param angles vector of angles, one for each actuator
+
+            @throws out_of_range if the id is not among the detected servos
+            @throws dynamixel::errors::ServoLimitError if angle is out of the
+                servo's feasible positions
+            @throws errors::UtilityError if the ids and angles vectors have different
+                lengths or if you didn't detect connected servos before
+        **/
+        void set_angle_sync(
+            const std::vector<id_t>& ids,
+            const std::vector<double>& angles)
+        {
+            check_scanned();
+            if (ids.size() != angles.size())
+                throw errors::UtilityError("set_position(vector, vector): the "
+                                           "vectors of IDs and angles should have "
+                                           "the same length");
+            _serial_interface.send(
+                std::make_shared<servos::Mx28>(0)->set_goal_positions<id_t, double>(ids, angles));
+
+            StatusPacket<Protocol> status;
+            for (int i = 0; i < ids.size(); i++) {
+                _serial_interface.recv(status);
+            }
         }
 
         /** Give current angular position (rad) of desired servos
@@ -487,6 +517,43 @@ namespace dynamixel {
             return std::make_pair(ids, positions);
         }
 
+        std::pair<std::vector<id_t>, std::vector<double>>
+        get_angle_bulk() const
+        {
+            check_scanned();
+
+            std::vector<double> positions;
+            std::vector<id_t> ids;
+
+            for (auto servo : _servos) {
+                ids.push_back(servo.first);
+            }
+
+            _serial_interface.send(
+                std::make_shared<servos::Mx28>(0)->get_current_positions<id_t>(ids));
+
+            StatusPacket<Protocol> status;
+            for (auto servo : _servos) {
+
+                //  std::cout << "recv status : " << (int)servo.first << std::endl;
+                _serial_interface.recv(status);
+
+                // parse response to get the position
+                if (status.valid()) {
+
+                    positions.push_back(
+                        servo.second->parse_present_position_angle(status));
+                }
+                else {
+                    std::stringstream message;
+                    message << (int)servo.first << " did not answer to the request for "
+                            << "its position";
+                    throw errors::Error(message.str());
+                }
+            }
+            return std::make_pair(ids, positions);
+        }
+
         /** Give a speed target for a given set of servos.
             This version gives the selected servos one common speed target.
 
@@ -503,7 +570,8 @@ namespace dynamixel {
                 servo's feasible bounds
             @throws errors::UtilityError if you didn't detect connected servos before
         **/
-        void set_speed(const std::vector<id_t>& ids, double speed,
+        void
+        set_speed(const std::vector<id_t>& ids, double speed,
             bool wheel_mode = false)
         {
             check_scanned();
@@ -594,6 +662,25 @@ namespace dynamixel {
             if (ids.size() > 0)
                 _serial_interface.send(
                     dynamixel::instructions::Action<Protocol>(Protocol::broadcast_id));
+        }
+        //template <typename Model> // servos::Mx28>
+        void set_speed_sync(
+            const std::vector<id_t>& ids,
+            const std::vector<double>& speeds)
+        {
+            check_scanned();
+            if (ids.size() != speeds.size())
+                throw errors::UtilityError("set_speed_sync(vector, vector): the "
+                                           "vectors of IDs and speeds should have "
+                                           "the same length");
+
+            _serial_interface.send(
+                std::make_shared<servos::Mx28>(0)->set_moving_speeds<id_t, double>(ids, speeds, OperatingMode::wheel));
+
+            StatusPacket<Protocol> status;
+            for (int i = 0; i < ids.size(); i++) {
+                _serial_interface.recv(status);
+            }
         }
 
         /** Give goal angular velocity (rad/s) of desired servos
@@ -807,7 +894,7 @@ namespace dynamixel {
             _servos;
         bool _scanned;
         double _scan_timeout;
-    };
+    }; // namespace dynamixel
 } // namespace dynamixel
 
 #endif
