@@ -79,6 +79,8 @@ namespace dynamixel {
             return OperatingMode::torque;
         if (1 == mode)
             return OperatingMode::wheel;
+        else if (2 == mode)
+            return OperatingMode::joint;
         else if (3 == mode)
             return OperatingMode::joint;
         else if (4 == mode)
