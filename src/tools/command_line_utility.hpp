@@ -1,19 +1,19 @@
 #ifndef COMMAND_LINE_UTILITY
 #define COMMAND_LINE_UTILITY
 
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <cmath>
 #include <algorithm>
 #include <chrono>
+#include <cmath>
+#include <iostream>
+#include <sstream>
+#include <string>
 #include <thread> // for a standard-compliant way to sleep
 
 #include <boost/program_options.hpp>
 
 #include <dynamixel/dynamixel.hpp>
-#include <tools/utility.hpp>
 #include <tools/missing_parameter_error.hpp> // an exception class
+#include <tools/utility.hpp>
 
 #include <stdexcept>
 
@@ -113,12 +113,22 @@ namespace dynamixel {
                     else
                         position(vm["angle"].as<std::vector<double>>());
                 }
+                else if ("position-sync" == command) {
+                    check_vm(vm, "angle");
+
+                    if (vm.count("id"))
+                        position_sync(vm["id"].as<std::vector<id_t>>(),
+                            vm["angle"].as<std::vector<double>>());
+                }
                 else if ("get-position" == command) {
                     if (vm.count("id"))
                         print_position(vm["id"].as<std::vector<id_t>>());
                     else {
                         print_position();
                     }
+                }
+                else if ("get-position-bulk" == command) {
+                    print_position_bulk();
                 }
                 else if ("set-speed" == command) {
                     check_vm(vm, "speed");
@@ -134,6 +144,17 @@ namespace dynamixel {
                     else
                         speed(vm["speed"].as<std::vector<double>>(),
                             wheel_mode);
+                }
+                else if ("set-speed-sync" == command) {
+                    check_vm(vm, "speed");
+
+                    // bool wheel_mode = false;
+                    // if (vm.count("wheel-mode"))
+                    //     wheel_mode = true;
+
+                    if (vm.count("id"))
+                        speed_sync(vm["id"].as<std::vector<id_t>>(),
+                            vm["speed"].as<std::vector<double>>());
                 }
                 else if ("get-speed" == command) {
                     if (vm.count("id"))
@@ -494,6 +515,19 @@ namespace dynamixel {
                           << std::endl;
         }
 
+        void position_sync(const std::vector<id_t>& ids, const std::vector<double>& angles)
+        {
+            if (ids.size() == angles.size()) {
+                _dyn_util.detect_servos(ids);
+                _dyn_util.set_angle_sync(ids, angles);
+            }
+            else
+                std::cout << "Usage for position_sync command (with IDs):\n"
+                             "- as many angles as there are ids, to give target "
+                             "angle for each servo"
+                          << std::endl;
+        }
+
         void print_position(const std::vector<id_t>& ids)
         {
             if (ids.size() == 0)
@@ -517,6 +551,19 @@ namespace dynamixel {
             std::pair<std::vector<id_t>, std::vector<double>> angles;
             angles = _dyn_util.get_angle();
 
+            std::cout << "Angular positions of the actuators (rad):" << std::endl;
+            for (unsigned i = 0; i < angles.first.size(); ++i) {
+                std::cout << angles.first[i] << "\t" << angles.second[i] << std::endl;
+            }
+        }
+
+        void print_position_bulk()
+        {
+            std::chrono::steady_clock::time_point time_before;
+            std::chrono::steady_clock::time_point time_after;
+            _dyn_util.detect_servos();
+            std::pair<std::vector<id_t>, std::vector<double>> angles;
+            angles = _dyn_util.get_angle_bulk();
             std::cout << "Angular positions of the actuators (rad):" << std::endl;
             for (unsigned i = 0; i < angles.first.size(); ++i) {
                 std::cout << angles.first[i] << "\t" << angles.second[i] << std::endl;
@@ -553,6 +600,19 @@ namespace dynamixel {
                 std::cout << "Usage for set-speed command with no ID:\n"
                              "only one speed is accepted, and applied to all "
                              "connected servos"
+                          << std::endl;
+        }
+
+        void speed_sync(const std::vector<id_t>& ids, const std::vector<double>& speeds)
+        {
+            if (ids.size() == speeds.size()) {
+                _dyn_util.detect_servos(ids);
+                _dyn_util.set_speed_sync(ids, speeds);
+            }
+            else
+                std::cout << "Usage for set-speed-sync command (with IDs):\n"
+                             "- as many speeds as there are ids, to give target "
+                             "speed for each servo"
                           << std::endl;
         }
 
