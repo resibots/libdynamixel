@@ -40,7 +40,7 @@ namespace dynamixel {
             }
 
             std::vector<uint8_t> _get_parameters(const std::vector<uint16_t>& address, const std::vector<typename T::id_t>& ids,
-                const std::vector<uint8_t>& data_length)
+                const std::vector<uint16_t>& data_length)
             {
                 if (ids.size() == 0)
                     throw errors::Error("BulkRead: ids vector of size zero");

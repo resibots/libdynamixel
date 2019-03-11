@@ -1,21 +1,21 @@
 #ifndef DYNAMIXEL_CONTROLLERS_USB2DYNAMIXEL_HPP_
 #define DYNAMIXEL_CONTROLLERS_USB2DYNAMIXEL_HPP_
 
-#include <fcntl.h>
-#include <errno.h>
-#include <termios.h>
-#include <vector>
 #include <cstdio>
-#include <stdint.h>
-#include <unistd.h>
-#include <iostream>
 #include <cstring>
-#include <sstream>
+#include <errno.h>
+#include <fcntl.h>
 #include <iomanip>
+#include <iostream>
+#include <sstream>
+#include <stdint.h>
+#include <termios.h>
+#include <unistd.h>
+#include <vector>
 
 #include "../errors/error.hpp"
-#include "../misc.hpp"
 #include "../instruction_packet.hpp"
+#include "../misc.hpp"
 #include "../status_packet.hpp"
 
 namespace dynamixel {
@@ -123,9 +123,9 @@ namespace dynamixel {
                 // apparently the mac does not flush everything
                 // before closing the fd (Linux does)
                 //... which can cause the last packet to be ignored
-            #ifdef __APPLE__
+#ifdef __APPLE__
                 usleep(1000);
-            #endif
+#endif
                 close(_fd);
                 _fd = -1;
             }
@@ -147,10 +147,10 @@ namespace dynamixel {
 
                 const int ret = write(_fd, packet.data(), packet.size());
 
-                /*std::cout << "Send: ";
-            for (size_t i = 0; i < packet.size(); ++i)
-                std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)packet[i] << " ";
-            std::cout << std::endl;*/
+                std::cout << "Send: ";
+                for (size_t i = 0; i < packet.size(); ++i)
+                    std::cout << "0x" << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)packet[i] << " ";
+                std::cout << std::endl;
 
                 if (ret == -1) {
                     throw errors::Error("Usb2Dynamixel::Send write error " + write_error_string(errno));
@@ -178,23 +178,23 @@ namespace dynamixel {
                 std::vector<uint8_t> packet;
                 packet.reserve(_recv_buffer_size);
 
-                //std::cout << "Receive:" << std::endl;
+                std::cout << "Receive:" << std::endl;
 
                 do {
                     double current_time = get_time();
                     uint8_t byte;
                     int res = read(_fd, &byte, 1);
                     if (res > 0) {
-                        // std::cout << std::setfill('0') << std::setw(2)
-                        //           << std::hex << (unsigned int)byte << " ";
+                        std::cout << std::setfill('0') << std::setw(2)
+                                  << std::hex << (unsigned int)byte << " ";
                         packet.push_back(byte);
 
                         state = status.decode_packet(packet, _report_bad_packet);
                         if (state == DecodeState::INVALID) {
-                            // std::cout << "\tBad packet: ";
-                            // for (const auto byte : packet)
-                            //     std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
-                            // std::cout << std::endl;
+                            std::cout << "\tBad packet: ";
+                            for (const auto byte : packet)
+                                std::cout << std::setfill('0') << std::setw(2) << std::hex << (unsigned int)byte << " ";
+                            std::cout << std::endl;
 
                             packet.clear();
                         }
@@ -206,8 +206,8 @@ namespace dynamixel {
                         return false;
                 } while (state != DecodeState::DONE);
 
-                //std::cout << std::endl;
-                // std::cout << std::dec;
+                std::cout << std::endl;
+                std::cout << std::dec;
 
                 return true;
             }

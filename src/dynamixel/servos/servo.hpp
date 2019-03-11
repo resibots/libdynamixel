@@ -229,7 +229,7 @@ namespace dynamixel {
                 std::vector<uint8_t> address;
                 std::vector<uint8_t> data_length;
                 for (size_t i = 0; i < ids.size(); i++) {
-                    address.push_back(0x24); // adress 36 on MX models (0x24)
+                    address.push_back(0x24); // adress 36 on MX models (0x24) -- adress 37 on XL models (0x25)
                     data_length.push_back(0x02);
                 }
                 return bulk_read_t(address, _get_typed<typename protocol_t::id_t>(ids), data_length);
@@ -331,11 +331,11 @@ namespace dynamixel {
             static InstructionPacket<protocol_t> get_current_speed(const std::vector<Id>& ids)
             {
                 //std::vector<protocols::Protocol1::address_t> address;
-                std::vector<uint8_t> address;
+                std::vector<uint8_t> address; //uint8_t
 
-                std::vector<uint8_t> data_length;
+                std::vector<uint8_t> data_length; //uint8_t
                 for (size_t i = 0; i < ids.size(); i++) {
-                    address.push_back(0x26);
+                    address.push_back(0x26); // 0x27 for XL and 0x26 for MX
                     data_length.push_back(0x02);
                 }
                 return bulk_read_t(address, _get_typed<typename protocol_t::id_t>(ids), data_length);

@@ -3,12 +3,12 @@
 
 #include <cmath>
 
+#include "../errors/error.hpp"
+#include "../errors/servo_limit_error.hpp"
 #include "../instruction_packet.hpp"
 #include "../protocols.hpp"
 #include "base_servo.hpp"
 #include "model_traits.hpp"
-#include "../errors/error.hpp"
-#include "../errors/servo_limit_error.hpp"
 
 namespace dynamixel {
     namespace servos {

@@ -1,10 +1,10 @@
 #ifndef DYNAMIXEL_PROTOCOLS_PROTOCOL1_HPP_
 #define DYNAMIXEL_PROTOCOLS_PROTOCOL1_HPP_
 
-#include <stdint.h>
-#include <vector>
 #include <cassert>
 #include <sstream>
+#include <stdint.h>
+#include <vector>
 
 #include "../errors/bad_packet.hpp"
 #include "../errors/crc_error.hpp"
@@ -33,6 +33,7 @@ namespace dynamixel {
                 static const instr_t action = 0x05;
                 static const instr_t factory_reset = 0x06;
                 static const instr_t sync_write = 0x83;
+                static const instr_t bulk_read = 0x92;
             };
 
             enum DecodeState {
