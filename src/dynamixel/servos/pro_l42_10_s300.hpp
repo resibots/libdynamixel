@@ -3,8 +3,8 @@
 
 #include <stdint.h>
 
-#include "servo.hpp"
 #include "../protocols/protocol2.hpp"
+#include "servo.hpp"
 
 namespace dynamixel {
     namespace servos {

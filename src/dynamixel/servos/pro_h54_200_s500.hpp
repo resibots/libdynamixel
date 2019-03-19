@@ -3,8 +3,8 @@
 
 #include <stdint.h>
 
-#include "servo.hpp"
 #include "../protocols/protocol2.hpp"
+#include "servo.hpp"
 
 namespace dynamixel {
     namespace servos {
@@ -132,7 +132,7 @@ namespace dynamixel {
             READ_FIELD(present_current);
             READ_FIELD(hardware_error_status);
         };
-    }
-}
+    } // namespace servos
+} // namespace dynamixel
 
 #endif

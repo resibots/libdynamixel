@@ -206,13 +206,31 @@ namespace dynamixel {
                 return Model::parse_present_position_angle(this->_id, st);
             }
 
+            // static InstructionPacket<typename Servo<Model>::protocol_t> get_current_positions_all(typename Servo<Model>::protocol_t::id_t id, const std::vector<id_t> ids)
+            // {
+            //     typename Servo<Model>::ct_t::present_position_t pos;
+            //     std::vector<uint8_t> address;
+            //     std::vector<uint8_t> data_length;
+            //     for (size_t i = 0; i < ids.size(); i++) {
+            //         address.push_back(pos); // adress 36 on MX models (0x24) -- adress 37 on XL models (0x25)
+            //         data_length.push_back(sizeof(pos));
+            //     }
+            //     return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address,  data_length);
+            // }
+            //
+            // InstructionPacket<typename Servo<Model>::protocol_t> get_current_positions_all(const std::vector<id_t> ids) const override
+            // {
+            //     return Model::get_current_positions_all(this->_id, ids);
+            // }
+
             // Sync operations. Only works if the models are known and they are all the same
+            // use case : std::make_shared<servos::MODEL_SERVO>(0)->set_goal_positions<id_t, double>(ids, angles)); replace MODEL_SERVO by Mx28 or Xl320...
             template <typename Id, typename Pos>
             static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)
             {
                 std::vector<double> final_pos;
                 for (size_t j = 0; j < pos.size(); j++)
-                    final_pos.push_back(((pos[j] * 57.2958 - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position);
+                    final_pos.push_back((((pos[j] * 57.2958) - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position);
                 if (ids.size() != final_pos.size())
                     throw errors::Error("Instruction: error when setting goal positions: \n\tMismatch in vector size for ids and positions");
                 std::vector<std::vector<uint8_t>> packed(final_pos.size());
@@ -224,7 +242,7 @@ namespace dynamixel {
 
             // Bulk operations. Only works for MX models with protocol 1. Only works if the models are known and they are all the same
             template <typename Id>
-            static InstructionPacket<protocol_t> get_current_positions(const std::vector<Id>& ids)
+            static InstructionPacket<protocol_t> get_current_positions_MX(const std::vector<Id>& ids)
             {
                 std::vector<uint8_t> address;
                 std::vector<uint8_t> data_length;
@@ -232,7 +250,33 @@ namespace dynamixel {
                     address.push_back(0x24); // adress 36 on MX models (0x24) -- adress 37 on XL models (0x25)
                     data_length.push_back(0x02);
                 }
-                return bulk_read_t(address, _get_typed<typename protocol_t::id_t>(ids), data_length);
+                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
+            }
+
+            // Bulk operations. Only works for XL models with protocol 2. Only works if the models are known and they are all the same
+            template <typename Id>
+            static InstructionPacket<protocol_t> get_current_positions_XL(const std::vector<Id>& ids)
+            {
+                std::vector<uint16_t> address;
+                std::vector<uint16_t> data_length;
+                for (size_t i = 0; i < ids.size(); i++) {
+                    address.push_back(0x25); // adress 36 on MX models (0x24) -- adress 37 on XL models (0x25)
+                    data_length.push_back(0x02);
+                }
+                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
+            }
+
+            // Bulk operations. Only works for XM models with protocol 2. Only works if the models are known and they are all the same
+            template <typename Id>
+            static InstructionPacket<protocol_t> get_current_positions_XM(const std::vector<Id>& ids)
+            {
+                std::vector<uint16_t> address;
+                std::vector<uint16_t> data_length;
+                for (size_t i = 0; i < ids.size(); i++) {
+                    address.push_back(0x84); // adress 36 on MX models (0x24) -- adress 37 on XL models (0x25)
+                    data_length.push_back(0x04);
+                }
+                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
             }
 
             // =================================================================
@@ -331,14 +375,14 @@ namespace dynamixel {
             static InstructionPacket<protocol_t> get_current_speed(const std::vector<Id>& ids)
             {
                 //std::vector<protocols::Protocol1::address_t> address;
-                std::vector<uint8_t> address; //uint8_t
+                std::vector<uint16_t> address; //uint8_t
 
-                std::vector<uint8_t> data_length; //uint8_t
+                std::vector<uint16_t> data_length; //uint8_t
                 for (size_t i = 0; i < ids.size(); i++) {
-                    address.push_back(0x26); // 0x27 for XL and 0x26 for MX
+                    address.push_back(0x27); // 0x27 for XL and 0x26 for MX
                     data_length.push_back(0x02);
                 }
-                return bulk_read_t(address, _get_typed<typename protocol_t::id_t>(ids), data_length);
+                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
             }
 
             // =================================================================

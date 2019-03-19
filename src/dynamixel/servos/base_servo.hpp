@@ -1,8 +1,8 @@
 #ifndef DYNAMIXEL_SERVOS_BASE_SERVO_HPP_
 #define DYNAMIXEL_SERVOS_BASE_SERVO_HPP_
 
-#include "../instruction_packet.hpp"
 #include "../errors/error.hpp"
+#include "../instruction_packet.hpp"
 
 #define BASE_FIELD(Name)                                                         \
     virtual InstructionPacket<protocol_t> get_##Name() const                     \
@@ -192,6 +192,11 @@ namespace dynamixel {
             {
                 throw errors::Error("parse_present_position_angle not implemented in model");
             }
+
+            // virtual InstructionPacket<protocol_t> get_current_positions_all(std::vector<id_t> ids) const
+            // {
+            //     throw errors::Error("get_current_positions_all not implemented in model");
+            // }
 
             // =================================================================
             // Speed-specific

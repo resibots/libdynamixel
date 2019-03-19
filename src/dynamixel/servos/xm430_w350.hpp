@@ -1,6 +1,11 @@
 #ifndef DYNAMIXEL_SERVOS_XM430W350_HPP_
 #define DYNAMIXEL_SERVOS_XM430W350_HPP_
 
+/* TODO : check why realtime_tick, profile_acceleration, profile_velocity didnt work.
+READ_WRITE_FIELD(profile_acceleration);
+READ_WRITE_FIELD(profile_velocity);
+*/
+
 #include <stdint.h>
 
 #include "../protocols/protocol2.hpp"
@@ -18,8 +23,8 @@ namespace dynamixel {
                 static const protocol_t::address_t model_number = 0;
                 typedef uint16_t model_number_t;
                 static const model_number_t model_number_value = 1020;
-                static const protocol_t::address_t model_information = 2;
-                typedef uint32_t model_information_t;
+                static const protocol_t::address_t model_info = 2;
+                typedef uint32_t model_info_t;
                 static const protocol_t::address_t firmware_version = 6;
                 typedef uint8_t firmware_version_t;
                 static const protocol_t::address_t id = 7;
@@ -40,12 +45,12 @@ namespace dynamixel {
                 typedef uint32_t homing_offset_t;
                 static const protocol_t::address_t moving_threshold = 24;
                 typedef uint32_t moving_threshold_t;
-                static const protocol_t::address_t temperature_limit = 31;
-                typedef uint8_t temperature_limit_t;
-                static const protocol_t::address_t max_voltage_limit = 32;
-                typedef uint16_t max_voltage_limit_t;
-                static const protocol_t::address_t min_voltage_limit = 34;
-                typedef uint16_t min_voltage_limit_t;
+                static const protocol_t::address_t highest_temperature_limit = 31; // temperature_limit
+                typedef uint8_t highest_temperature_limit_t;
+                static const protocol_t::address_t highest_voltage_limit = 32; //max_voltage_limit
+                typedef uint16_t highest_voltage_limit_t;
+                static const protocol_t::address_t lowest_voltage_limit = 34; //min_voltage_limit
+                typedef uint16_t lowest_voltage_limit_t;
                 static const protocol_t::address_t pwm_limit = 36;
                 typedef uint16_t pwm_limit_t;
                 static const protocol_t::address_t current_limit = 38;
@@ -56,17 +61,17 @@ namespace dynamixel {
                 typedef uint32_t max_position_limit_t;
                 static const protocol_t::address_t min_position_limit = 52;
                 typedef uint32_t min_position_limit_t;
-                static const protocol_t::address_t shutdown = 63;
-                typedef uint8_t shutdown_t;
-                static const shutdown_t shutdown_value = 52;
+                static const protocol_t::address_t alarm_shutdown = 63; //shutdown
+                typedef uint8_t alarm_shutdown_t;
+                static const alarm_shutdown_t alarm_shutdown_value = 52;
                 static const protocol_t::address_t torque_enable = 64;
                 typedef uint8_t torque_enable_t;
                 static const protocol_t::address_t led = 65;
                 typedef uint8_t led_t;
                 static const protocol_t::address_t status_return_level = 68;
                 typedef uint8_t status_return_level_t;
-                static const protocol_t::address_t registered_instruction = 69;
-                typedef uint8_t registered_instruction_t;
+                static const protocol_t::address_t registered = 69; // registered_instruction
+                typedef uint8_t registered_t;
                 static const protocol_t::address_t hardware_error_status = 70;
                 typedef uint8_t hardware_error_status_t;
                 static const protocol_t::address_t velocity_i_gain = 76;
@@ -87,14 +92,22 @@ namespace dynamixel {
                 typedef uint8_t bus_watchdog_t;
                 static const protocol_t::address_t goal_pwm = 100;
                 typedef uint16_t goal_pwm_t;
-                static const protocol_t::address_t goal_velocity = 104;
-                typedef uint32_t goal_velocity_t;
+                static const protocol_t::address_t moving_speed = 104; // goal_velocity
+                typedef uint32_t moving_speed_t;
+                static const moving_speed_t min_goal_speed = 0;
+                static const moving_speed_t max_goal_speed = 1023;
+                static constexpr double rpm_per_tick = 0.111;
+                static const bool speed_sign_bit = true;
                 static const protocol_t::address_t profile_acceleration = 108;
                 typedef uint32_t profil_acceleration_t;
                 static const protocol_t::address_t profile_velocity = 112;
                 typedef uint32_t profil_velocity_t;
                 static const protocol_t::address_t goal_position = 116;
                 typedef uint32_t goal_position_t;
+                static const goal_position_t min_goal_position = 0;
+                static const goal_position_t max_goal_position = 4095;
+                static const uint16_t min_goal_angle_deg = 30;
+                static const uint16_t max_goal_angle_deg = 330;
                 static const protocol_t::address_t realtime_tick = 120;
                 typedef uint16_t realtime_tick_t;
                 static const protocol_t::address_t moving = 122;
@@ -105,16 +118,16 @@ namespace dynamixel {
                 typedef uint16_t present_pwm_t;
                 static const protocol_t::address_t present_load = 126;
                 typedef uint16_t present_load_t;
-                static const protocol_t::address_t present_velocity = 128;
-                typedef uint32_t present_veclocity_t;
+                static const protocol_t::address_t present_speed = 128; // present_velocity
+                typedef uint32_t present_speed_t;
                 static const protocol_t::address_t present_position = 132;
                 typedef uint32_t present_position_t;
                 static const protocol_t::address_t velocity_trajectory = 136;
                 typedef uint32_t velocity_trajectory_t;
                 static const protocol_t::address_t position_trajectory = 140;
                 typedef uint32_t position_trajectory_t;
-                static const protocol_t::address_t present_input_voltage = 144;
-                typedef uint16_t present_input_voltage_t;
+                static const protocol_t::address_t present_voltage = 144; // present_input_voltage
+                typedef uint16_t present_voltage_t;
                 static const protocol_t::address_t present_temperature = 146;
                 typedef uint16_t present_temperature_t;
             };
@@ -132,21 +145,16 @@ namespace dynamixel {
             READ_WRITE_FIELD(drive_mode);
             READ_WRITE_FIELD(operating_mode);
             READ_WRITE_FIELD(secondary_id);
-            READ_WRITE_FIELD(protocol_version);
             READ_WRITE_FIELD(homing_offset);
             READ_WRITE_FIELD(moving_threshold);
-            READ_WRITE_FIELD(temperature_limit);
-            READ_WRITE_FIELD(max_voltage_limit);
-            READ_WRITE_FIELD(min_voltage_limit);
+
             READ_WRITE_FIELD(pwm_limit);
-            READ_WRITE_FIELD(velocity_limit);
+            //READ_WRITE_FIELD(velocity_limit);
             READ_WRITE_FIELD(max_position_limit);
             READ_WRITE_FIELD(min_position_limit);
-            READ_WRITE_FIELD(shutdown);
+
             READ_WRITE_FIELD(velocity_i_gain);
             READ_WRITE_FIELD(velocity_p_gain);
-            READ_WRITE_FIELD(position_d_gain);
-            READ_WRITE_FIELD(position_i_gain);
             READ_WRITE_FIELD(protocol_version);
             READ_WRITE_FIELD(led);
             READ_WRITE_FIELD(position_d_gain);
@@ -156,21 +164,33 @@ namespace dynamixel {
             READ_WRITE_FIELD(feedforward_1st_gain);
             READ_WRITE_FIELD(bus_watchdog);
             READ_WRITE_FIELD(goal_pwm);
-            READ_WRITE_FIELD(goal_velocity);
-            READ_WRITE_FIELD(profile_acceleration);
-            READ_WRITE_FIELD(profile_velocity);
-            READ_FIELD(model_information);
-            READ_FIELD(registered_instruction);
+
+            READ_FIELD(model_info);
+
             READ_FIELD(hardware_error_status);
-            READ_FIELD(realtime_tick);
+
             READ_FIELD(moving_status);
             READ_FIELD(present_pwm);
             READ_FIELD(present_load);
-            READ_FIELD(present_velocity);
-            READ_FIELD(velocity_trajectory);
+
+            //READ_FIELD(velocity_trajectory);
             READ_FIELD(position_trajectory);
-            READ_FIELD(present_input_voltage);
+
+            READ_FIELD(model_number);
+            READ_FIELD(firmware_version);
+            READ_WRITE_FIELD(id);
+            READ_WRITE_FIELD(baudrate);
+            READ_WRITE_FIELD(return_delay_time);
+            READ_WRITE_FIELD(status_return_level);
+
+            READ_WRITE_FIELD(torque_enable);
+            READ_WRITE_FIELD(goal_position);
+            READ_FIELD(present_position);
             READ_FIELD(present_temperature);
+            READ_FIELD(moving);
+            READ_FIELD(realtime_tick);
+            //READ_WRITE_FIELD(profile_acceleration);
+            //  READ_WRITE_FIELD(profile_velocity);
         };
     } // namespace servos
 } // namespace dynamixel
