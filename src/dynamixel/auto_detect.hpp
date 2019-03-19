@@ -1,8 +1,8 @@
 #ifndef DYNAMIXEL_AUTO_DETECT_HPP_
 #define DYNAMIXEL_AUTO_DETECT_HPP_
 
-#include <memory>
 #include <map>
+#include <memory>
 
 #include "errors/error.hpp"
 #include "servos.hpp"
@@ -35,6 +35,8 @@ namespace dynamixel {
     inline std::shared_ptr<servos::BaseServo<protocols::Protocol2>> get_servo(protocols::Protocol2::id_t id, uint16_t model, protocols::Protocol2::address_t selected_protocol)
     {
         switch (model) {
+        case servos::Xm430W350::ct_t::model_number_value:
+            return std::make_shared<servos::Xm430W350>(id);
         case servos::Xl320::ct_t::model_number_value:
             return std::make_shared<servos::Xl320>(id);
         case servos::ProL4210S300::ct_t::model_number_value:
