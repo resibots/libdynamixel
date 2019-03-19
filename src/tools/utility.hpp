@@ -434,7 +434,7 @@ namespace dynamixel {
                                            "vectors of IDs and angles should have "
                                            "the same length");
             _serial_interface.send(
-                std::make_shared<servos::Mx28>(0)->set_goal_positions<id_t, double>(ids, angles));
+                std::make_shared<servos::Xm430W350>(0)->set_goal_positions<id_t, double>(ids, angles)); //Mx28
 
             StatusPacket<Protocol> status;
             for (int i = 0; i < ids.size(); i++) {
@@ -529,9 +529,12 @@ namespace dynamixel {
                 ids.push_back(servo.first);
             }
 
-            _serial_interface.send(
-                std::make_shared<servos::Mx28>(0)->get_current_positions<id_t>(ids));
-
+            for (auto servo : _servos) {
+                _serial_interface.send(
+                    std::make_shared<servos::Xl320>(0)->get_current_positions_XL<id_t>(ids));
+                //  servo.second->get_current_positions_all(ids));
+                break;
+            }
             StatusPacket<Protocol> status;
             for (auto servo : _servos) {
 

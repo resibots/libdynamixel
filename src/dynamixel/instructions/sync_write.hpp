@@ -1,11 +1,11 @@
 #ifndef DYNAMIXEL_INSTRUCTIONS_SYNC_WRITE_HPP_
 #define DYNAMIXEL_INSTRUCTIONS_SYNC_WRITE_HPP_
 
-#include <stdint.h>
 #include <cassert>
+#include <stdint.h>
 
-#include "../instruction_packet.hpp"
 #include "../errors/error.hpp"
+#include "../instruction_packet.hpp"
 
 namespace dynamixel {
     namespace instructions {
@@ -77,7 +77,7 @@ namespace dynamixel {
                 return parameters;
             }
         };
-    }
-}
+    } // namespace instructions
+} // namespace dynamixel
 
 #endif
