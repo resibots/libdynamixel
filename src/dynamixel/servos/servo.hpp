@@ -372,19 +372,45 @@ namespace dynamixel {
 
             // Bulk operations. Only works for MX models with protocol 1. Only works if the models are known and they are all the same
             template <typename Id>
-            static InstructionPacket<protocol_t> get_current_speed(const std::vector<Id>& ids)
+            static InstructionPacket<protocol_t> get_current_speed_MX(const std::vector<Id>& ids)
             {
                 //std::vector<protocols::Protocol1::address_t> address;
-                std::vector<uint16_t> address; //uint8_t
-
-                std::vector<uint16_t> data_length; //uint8_t
+                std::vector<uint8_t> address; //uint8_t
+                std::vector<uint8_t> data_length; //uint8_t
                 for (size_t i = 0; i < ids.size(); i++) {
-                    address.push_back(0x27); // 0x27 for XL and 0x26 for MX
+                    address.push_back(0x26); // 0x27 for XL and 0x26 for MX
                     data_length.push_back(0x02);
                 }
                 return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
             }
 
+            // Bulk operations. Only works for MX models with protocol 1. Only works if the models are known and they are all the same
+            template <typename Id>
+            static InstructionPacket<protocol_t> get_current_speed_XM(const std::vector<Id>& ids)
+            {
+                //std::vector<protocols::Protocol1::address_t> address;
+                std::vector<uint16_t> address; //uint8_t
+                std::vector<uint16_t> data_length; //uint8_t
+                for (size_t i = 0; i < ids.size(); i++) {
+                    address.push_back(0x80); // 0x80 for XM
+                    data_length.push_back(0x04);
+                }
+                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
+            }
+
+            // Bulk operations. Only works for MX models with protocol 1. Only works if the models are known and they are all the same
+            template <typename Id>
+            static InstructionPacket<protocol_t> get_current_speed_XL(const std::vector<Id>& ids)
+            {
+                //std::vector<protocols::Protocol1::address_t> address;
+                std::vector<uint16_t> address; //uint8_t
+                std::vector<uint16_t> data_length; //uint8_t
+                for (size_t i = 0; i < ids.size(); i++) {
+                    address.push_back(0x27); // 0x27 for XL
+                    data_length.push_back(0x02);
+                }
+                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
+            }
             // =================================================================
             // Torque-specific
 
