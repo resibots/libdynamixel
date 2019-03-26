@@ -9,11 +9,13 @@
 #include "../instruction_packet.hpp"
 #include "../instructions/action.hpp"
 #include "../instructions/bulk_read.hpp"
+#include "../instructions/bulk_write.hpp"
 #include "../instructions/factory_reset.hpp"
 #include "../instructions/ping.hpp"
 #include "../instructions/read.hpp"
 #include "../instructions/reboot.hpp"
 #include "../instructions/reg_write.hpp"
+#include "../instructions/sync_read.hpp"
 #include "../instructions/sync_write.hpp"
 #include "../instructions/write.hpp"
 #include "../status_packet.hpp"
@@ -99,8 +101,10 @@ namespace dynamixel {
             typedef instructions::RegWrite<protocol_t> reg_write_t;
             typedef instructions::Action<protocol_t> action_t;
             typedef instructions::FactoryReset<protocol_t> factory_reset_t;
+            typedef instructions::SyncRead<protocol_t> sync_read_t;
             typedef instructions::SyncWrite<protocol_t> sync_write_t;
             typedef instructions::BulkRead<protocol_t> bulk_read_t;
+            typedef instructions::BulkWrite<protocol_t> bulk_write_t;
 
             long long int id() const override
             {

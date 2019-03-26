@@ -1,11 +1,11 @@
 #ifndef DYNAMIXEL_BAUDRATE_HPP_
 #define DYNAMIXEL_BAUDRATE_HPP_
 
-#include <stdint.h>
 #include <memory>
+#include <stdint.h>
 
-#include "protocols.hpp"
 #include "errors/error.hpp"
+#include "protocols.hpp"
 
 namespace dynamixel {
     /** The template specifications of this method are used to set the baudrate
@@ -45,6 +45,12 @@ namespace dynamixel {
             return 3;
         case 1000000:
             return 1;
+        case 2250000:
+            return 250;
+        case 2500000:
+            return 251;
+        case 3000000:
+            return 252;
         default:
             std::stringstream err_message;
             err_message << "Invalid baudrate for protocol 1: " << baudrate;
@@ -80,6 +86,6 @@ namespace dynamixel {
             throw errors::Error(err_message.str());
         }
     }
-}
+} // namespace dynamixel
 
 #endif

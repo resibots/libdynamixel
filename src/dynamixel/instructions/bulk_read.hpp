@@ -116,7 +116,7 @@ namespace dynamixel {
                 std::vector<C> lengths)
             {
                 if (ids.size() == 0)
-                    throw errors::Error("SyncWrite: ids vector of size zero");
+                    throw errors::Error("BulkRead: ids vector of size zero");
                 if (ids.size() != addresses.size())
                     throw errors::Error("BulkRead: mismatching size for ids and addresses");
                 if (ids.size() != lengths.size())
