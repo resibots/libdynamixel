@@ -125,7 +125,7 @@ namespace dynamixel {
             return "multi_turn";
             break;
         case OperatingMode::voltage:
-            return "PWM (voltage)";
+            return "voltage";
             break;
         case OperatingMode::unknown:
         default:

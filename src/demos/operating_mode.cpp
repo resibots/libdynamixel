@@ -1,9 +1,9 @@
 
 #include <dynamixel/dynamixel.hpp>
 
+#include <iostream>
 #include <string.h>
 #include <string>
-#include <iostream>
 
 using namespace dynamixel;
 using namespace servos;
@@ -25,6 +25,9 @@ std::string string_operating_mode(Usb2Dynamixel& controller, typename Protocol::
         break;
     case OperatingMode::multi_turn:
         str_mode = "multi-turn";
+        break;
+    case OperatingMode::voltage:
+        str_mode = "voltage";
         break;
     default:
         str_mode = "unknown";

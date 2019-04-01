@@ -24,10 +24,10 @@ namespace dynamixel {
 
                 std::vector<uint8_t> parameters(ids.size() + 9);
 
-                parameters[0] = (uint8_t)(address[m] & 0xFF);
-                parameters[1] = (uint8_t)(address[m] >> 8) & 0xFF;
-                parameters[2] = (uint8_t)(data_length[m] & 0xFF);
-                parameters[3] = (uint8_t)(data_length[m] >> 8) & 0xFF;
+                parameters[0] = (uint8_t)(address & 0xFF);
+                parameters[1] = (uint8_t)(address >> 8) & 0xFF;
+                parameters[2] = (uint8_t)(data_length & 0xFF);
+                parameters[3] = (uint8_t)(data_length >> 8) & 0xFF;
 
                 size_t curr = 4;
 
