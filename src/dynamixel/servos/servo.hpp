@@ -230,16 +230,30 @@ namespace dynamixel {
             // Sync operations. Only works if the models are known and they are all the same
             // use case : std::make_shared<servos::MODEL_SERVO>(0)->set_goal_positions<id_t, double>(ids, angles)); replace MODEL_SERVO by Mx28 or Xl320...
             template <typename Id, typename Pos>
+            static InstructionPacket<protocol_t> set_goal_positions_angle(const std::vector<Id>& ids, const std::vector<Pos>& positions)
+            {
+                if (ids.size() != positions.size())
+                    throw errors::Error("Instruction: error when setting goal positions: \n\tMismatch in vector size for ids and positions");
+                // Convert from radians to ticks (after going through degrees)
+                std::vector<double> tick_positions;
+                for (auto pos : positions)
+                    tick_positions.push_back((((pos * 57.2958) - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position);
+                // Pack the angles into bytes (for sending)
+                std::vector<std::vector<uint8_t>> packed(tick_positions.size());
+                for (auto tick_pos : tick_positions)
+                    packed.push_back(protocol_t::pack_data((typename ct_t::goal_position_t)tick_pos));
+
+                return sync_write_t(ct_t::goal_position, _get_typed<typename protocol_t::id_t>(ids), packed);
+            }
+
+            template <typename Id, typename Pos>
             static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)
             {
-                std::vector<double> final_pos;
-                for (size_t j = 0; j < pos.size(); j++)
-                    final_pos.push_back((((pos[j] * 57.2958) - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position);
-                if (ids.size() != final_pos.size())
+                if (ids.size() != pos.size())
                     throw errors::Error("Instruction: error when setting goal positions: \n\tMismatch in vector size for ids and positions");
-                std::vector<std::vector<uint8_t>> packed(final_pos.size());
-                for (size_t i = 0; i < final_pos.size(); i++)
-                    packed[i] = protocol_t::pack_data((typename ct_t::goal_position_t)final_pos[i]);
+                std::vector<std::vector<uint8_t>> packed(pos.size());
+                for (size_t i = 0; i < pos.size(); i++)
+                    packed[i] = protocol_t::pack_data((typename ct_t::goal_position_t)pos[i]);
 
                 return sync_write_t(ct_t::goal_position, _get_typed<typename protocol_t::id_t>(ids), packed);
             }
