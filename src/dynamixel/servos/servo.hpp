@@ -6,6 +6,7 @@
 
 #include "../errors/error.hpp"
 #include "../errors/servo_limit_error.hpp"
+#include "../errors/vector_size_errors.hpp"
 #include "../instruction_packet.hpp"
 #include "../instructions/action.hpp"
 #include "../instructions/bulk_read.hpp"
@@ -230,17 +231,17 @@ namespace dynamixel {
             // Sync operations. Only works if the models are known and they are all the same
             // use case : std::make_shared<servos::MODEL_SERVO>(0)->set_goal_positions<id_t, double>(ids, angles)); replace MODEL_SERVO by Mx28 or Xl320...
             template <typename Id, typename Pos>
-            static InstructionPacket<protocol_t> set_goal_positions_angle(const std::vector<Id>& ids, const std::vector<Pos>& positions)
+            static InstructionPacket<protocol_t> set_goal_positions_angle(const std::vector<Id>& ids, const std::vector<Pos>& angles)
             {
-                if (ids.size() != positions.size())
-                    throw errors::Error("Instruction: error when setting goal positions: \n\tMismatch in vector size for ids and positions");
+                if (ids.size() != angles.size())
+                    throw errors::VectorSizesDifferError("set_goal_positions_angle", "ids", "angles");
                 // Convert from radians to ticks (after going through degrees)
-                std::vector<double> tick_positions;
-                for (auto pos : positions)
-                    tick_positions.push_back((((pos * 57.2958) - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position);
+                std::vector<double> positions;
+                for (auto pos : angles)
+                    positions.push_back((((pos * 57.2958) - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position);
                 // Pack the angles into bytes (for sending)
-                std::vector<std::vector<uint8_t>> packed(tick_positions.size());
-                for (auto tick_pos : tick_positions)
+                std::vector<std::vector<uint8_t>> packed(positions.size());
+                for (auto tick_pos : positions)
                     packed.push_back(protocol_t::pack_data((typename ct_t::goal_position_t)tick_pos));
 
                 return sync_write_t(ct_t::goal_position, _get_typed<typename protocol_t::id_t>(ids), packed);
@@ -250,7 +251,7 @@ namespace dynamixel {
             static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)
             {
                 if (ids.size() != pos.size())
-                    throw errors::Error("Instruction: error when setting goal positions: \n\tMismatch in vector size for ids and positions");
+                    throw errors::VectorSizesDifferError("set_goal_positions", "ids", "pos");
                 std::vector<std::vector<uint8_t>> packed(pos.size());
                 for (size_t i = 0; i < pos.size(); i++)
                     packed[i] = protocol_t::pack_data((typename ct_t::goal_position_t)pos[i]);
@@ -352,7 +353,7 @@ namespace dynamixel {
             static InstructionPacket<protocol_t> set_moving_speeds(const std::vector<Id>& ids, const std::vector<Speed>& speeds, OperatingMode operating_mode)
             {
                 if (ids.size() != speeds.size())
-                    throw errors::Error("Instruction: error when setting moving speeds: \n\tMismatch in vector size for ids and speeds");
+                    throw errors::VectorSizesDifferError("set_moving_speeds", "ids", "speeds");
                 std::vector<int32_t> speed_ticks;
                 // convert radians per second to ticks
                 for (int i = 0; i < speeds.size(); i++)
@@ -434,7 +435,7 @@ namespace dynamixel {
             static InstructionPacket<protocol_t> set_torque_limits(const std::vector<Id>& ids, const std::vector<TorqueLimit>& torque_limits)
             {
                 if (ids.size() != torque_limits.size())
-                    throw errors::Error("Instruction: error when setting torque limits: \n\tMismatch in vector size for ids and torques");
+                    throw errors::VectorSizesDifferError("set_torque_limits", "ids", "torque_limits");
                 std::vector<std::vector<uint8_t>> packed(torque_limits.size());
                 for (size_t i = 0; i < torque_limits.size(); i++)
                     packed[i] = protocol_t::pack_data((typename ct_t::torque_limit_t)torque_limits[i]);

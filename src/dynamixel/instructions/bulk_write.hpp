@@ -4,7 +4,7 @@
 #include <cassert>
 #include <stdint.h>
 
-#include "../errors/error.hpp"
+#include "../errors/vector_size_errors.hpp"
 #include "../instruction_packet.hpp"
 
 namespace dynamixel {
@@ -22,7 +22,7 @@ namespace dynamixel {
                 const uint16_t& data_length, const std::vector<std::vector<uint8_t>>& data)
             {
                 if (ids.size() == 0)
-                    throw errors::Error("BulkWrite: ids vector of size zero");
+                    throw errors::VectorEmptyError("BulkWrite", "ids");
 
                 std::vector<uint8_t> parameters((5 + data_length) * ids.size() + 5);
                 size_t curr = 0;

@@ -1,9 +1,9 @@
 #ifndef DYNAMIXEL_ERRORS_SERVO_LIMIT_ERROR_HPP_
 #define DYNAMIXEL_ERRORS_SERVO_LIMIT_ERROR_HPP_
 
-#include <string>
-#include <stdint.h>
 #include <sstream>
+#include <stdint.h>
+#include <string>
 
 #include "error.hpp"
 
@@ -46,7 +46,7 @@ namespace dynamixel {
             int _id;
             double _max, _min, _value;
         };
-    }
-}
+    } // namespace errors
+} // namespace dynamixel
 
 #endif

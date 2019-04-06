@@ -1,8 +1,8 @@
 #ifndef DYNAMIXEL_STATUS_ERROR_HPP_
 #define DYNAMIXEL_STATUS_ERROR_HPP_
 
-#include <string>
 #include <stdint.h>
+#include <string>
 
 #include "error.hpp"
 
@@ -38,7 +38,7 @@ namespace dynamixel {
         private:
             uint8_t _id, _protocol, _error_byte;
         };
-    }
-}
+    } // namespace errors
+} // namespace dynamixel
 
 #endif
