@@ -433,9 +433,13 @@ namespace dynamixel {
                 throw errors::UtilityError("set_position(vector, vector): the "
                                            "vectors of IDs and angles should have "
                                            "the same length");
-            _serial_interface.send(
-                std::make_shared<servos::Xm430W350>(0)->set_goal_positions<id_t, double>(ids, angles)); //Mx28
-
+            std::vector<uint8_t> ids_cast;
+            for (int i = 0; i < ids.size(); i++) {
+                ids_cast.push_back((uint8_t)ids[i]);
+            }
+            // _serial_interface.send(
+            //     std::make_shared<servos::Xm430W350>(0)->set_goal_positions<id_t, double>(ids, angles)); //Mx28
+            _serial_interface.send(_servos.at(ids[0])->sync_goal_position_angle(ids_cast, angles));
             StatusPacket<Protocol> status;
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.recv(status);
@@ -529,12 +533,17 @@ namespace dynamixel {
                 ids.push_back(servo.first);
             }
 
-            for (auto servo : _servos) {
-                _serial_interface.send(
-                    std::make_shared<servos::Xl320>(0)->get_current_positions_XL<id_t>(ids));
-                //  servo.second->get_current_positions_all(ids));
-                break;
+            std::vector<uint8_t> ids_cast;
+            for (int i = 0; i < ids.size(); i++) {
+                ids_cast.push_back((uint8_t)ids[i]);
             }
+            // _servos.at(ids[0])->
+            // _serial_interface.send(_servos.at(ids[0])->sync_goal_position_angle(ids_cast, angles));
+            //  for (auto servo : _servos) {
+            _serial_interface.send(_servos.at(ids[0])->bulk_read_position_angle(ids_cast));
+            //  std::make_shared<servos::Xl320>(0)->get_current_positions_XL<id_t>(ids));
+            //    break;
+            //  }
             StatusPacket<Protocol> status;
             for (auto servo : _servos) {
 

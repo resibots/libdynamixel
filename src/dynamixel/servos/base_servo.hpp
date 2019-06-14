@@ -194,6 +194,16 @@ namespace dynamixel {
                 throw errors::Error("parse_present_position_angle not implemented in model");
             }
 
+            virtual InstructionPacket<protocol_t> sync_goal_position_angle(const std::vector<uint8_t>& ids, const std::vector<double>& pos) const
+            {
+                throw errors::Error("sync_goal_position_angle not implemented in model");
+            }
+
+            virtual InstructionPacket<protocol_t> bulk_read_position_angle(const std::vector<uint8_t>& ids) const
+            {
+                throw errors::Error("bulk_read_position_angle not implemented in model");
+            }
+
             // virtual InstructionPacket<protocol_t> get_current_positions_all(std::vector<id_t> ids) const
             // {
             //     throw errors::Error("get_current_positions_all not implemented in model");

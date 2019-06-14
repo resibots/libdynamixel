@@ -1,9 +1,6 @@
 #ifndef DYNAMIXEL_SERVOS_SERVO_HPP_
 #define DYNAMIXEL_SERVOS_SERVO_HPP_
 
-#include <cassert>
-#include <stdint.h>
-
 #include "../errors/error.hpp"
 #include "../errors/servo_limit_error.hpp"
 #include "../instruction_packet.hpp"
@@ -22,6 +19,9 @@
 #include "base_servo.hpp"
 #include "model_traits.hpp"
 #include "protocol_specific_packets.hpp"
+#include <cassert>
+#include <iostream>
+#include <stdint.h>
 
 #define MODEL_NAME(Name)                    \
     std::string model_name() const override \
@@ -101,6 +101,7 @@ namespace dynamixel {
             typedef instructions::RegWrite<protocol_t> reg_write_t;
             typedef instructions::Action<protocol_t> action_t;
             typedef instructions::FactoryReset<protocol_t> factory_reset_t;
+            typedef instructions::Reboot<protocol_t> reboot_t;
             typedef instructions::SyncRead<protocol_t> sync_read_t;
             typedef instructions::SyncWrite<protocol_t> sync_write_t;
             typedef instructions::BulkRead<protocol_t> bulk_read_t;
@@ -175,6 +176,33 @@ namespace dynamixel {
 
                 return reg_goal_position(id, pos);
             }
+            // template <typename Id, typename Pos>
+            static inline InstructionPacket<protocol_t> sync_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, const std::vector<uint8_t>& ids, const std::vector<double>& pos)
+            {
+                std::vector<double> final_pos;
+                for (size_t j = 0; j < pos.size(); j++)
+                    final_pos.push_back((((pos[j] * 57.2958) - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position);
+                if (ids.size() != final_pos.size())
+                    throw errors::Error("Instruction: error when setting goal positions: \n\tMismatch in vector size for ids and positions");
+                std::vector<std::vector<uint8_t>> packed(final_pos.size());
+                for (size_t i = 0; i < final_pos.size(); i++)
+                    packed[i] = protocol_t::pack_data((typename ct_t::goal_position_t)final_pos[i]);
+
+                return sync_write_t(ct_t::goal_position, ids, packed);
+            }
+
+            static inline InstructionPacket<protocol_t> bulk_read_position_angle(typename Servo<Model>::protocol_t::id_t id, const std::vector<uint8_t>& ids)
+            {
+                std::vector<typename Servo<Model>::protocol_t::address_t> address;
+                std::vector<typename Servo<Model>::protocol_t::length_t> data_length;
+                typename Servo<Model>::protocol_t::address_t present_position_address = ct_t::present_position;
+                typename ct_t::present_position_t type_address;
+                for (size_t i = 0; i < ids.size(); i++) {
+                    address.push_back(present_position_address);
+                    data_length.push_back(sizeof(type_address));
+                }
+                return bulk_read_t(ids, address, data_length);
+            }
 
             InstructionPacket<protocol_t> set_goal_position_angle(double rad) const override
             {
@@ -186,6 +214,15 @@ namespace dynamixel {
                 return Model::reg_goal_position_angle(this->_id, rad);
             }
 
+            InstructionPacket<protocol_t> sync_goal_position_angle(const std::vector<uint8_t>& ids, const std::vector<double>& pos) const override
+            {
+                return Model::sync_goal_position_angle(this->_id, ids, pos);
+            }
+
+            InstructionPacket<protocol_t> bulk_read_position_angle(const std::vector<uint8_t>& ids) const override
+            {
+                return Model::bulk_read_position_angle(this->_id, ids);
+            }
             static InstructionPacket<typename Servo<Model>::protocol_t> get_present_position_angle(typename Servo<Model>::protocol_t::id_t id)
             {
                 return get_present_position(id);
@@ -208,40 +245,6 @@ namespace dynamixel {
             double parse_present_position_angle(const StatusPacket<typename Servo<Model>::protocol_t>& st) const override
             {
                 return Model::parse_present_position_angle(this->_id, st);
-            }
-
-            // static InstructionPacket<typename Servo<Model>::protocol_t> get_current_positions_all(typename Servo<Model>::protocol_t::id_t id, const std::vector<id_t> ids)
-            // {
-            //     typename Servo<Model>::ct_t::present_position_t pos;
-            //     std::vector<uint8_t> address;
-            //     std::vector<uint8_t> data_length;
-            //     for (size_t i = 0; i < ids.size(); i++) {
-            //         address.push_back(pos); // adress 36 on MX models (0x24) -- adress 37 on XL models (0x25)
-            //         data_length.push_back(sizeof(pos));
-            //     }
-            //     return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address,  data_length);
-            // }
-            //
-            // InstructionPacket<typename Servo<Model>::protocol_t> get_current_positions_all(const std::vector<id_t> ids) const override
-            // {
-            //     return Model::get_current_positions_all(this->_id, ids);
-            // }
-
-            // Sync operations. Only works if the models are known and they are all the same
-            // use case : std::make_shared<servos::MODEL_SERVO>(0)->set_goal_positions<id_t, double>(ids, angles)); replace MODEL_SERVO by Mx28 or Xl320...
-            template <typename Id, typename Pos>
-            static InstructionPacket<protocol_t> set_goal_positions(const std::vector<Id>& ids, const std::vector<Pos>& pos)
-            {
-                std::vector<double> final_pos;
-                for (size_t j = 0; j < pos.size(); j++)
-                    final_pos.push_back((((pos[j] * 57.2958) - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position);
-                if (ids.size() != final_pos.size())
-                    throw errors::Error("Instruction: error when setting goal positions: \n\tMismatch in vector size for ids and positions");
-                std::vector<std::vector<uint8_t>> packed(final_pos.size());
-                for (size_t i = 0; i < final_pos.size(); i++)
-                    packed[i] = protocol_t::pack_data((typename ct_t::goal_position_t)final_pos[i]);
-
-                return sync_write_t(ct_t::goal_position, _get_typed<typename protocol_t::id_t>(ids), packed);
             }
 
             // Bulk operations. Only works for MX models with protocol 1. Only works if the models are known and they are all the same
@@ -444,6 +447,7 @@ namespace dynamixel {
             }
 
             typename protocol_t::id_t _id;
+
         }; // namespace servos
     } // namespace servos
 } // namespace dynamixel
