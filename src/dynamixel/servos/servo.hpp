@@ -149,7 +149,6 @@ namespace dynamixel {
 
             // =================================================================
             // Position-specific
-
             static inline InstructionPacket<protocol_t> set_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, double rad)
             {
                 double deg = rad * 57.2958;
@@ -163,6 +162,10 @@ namespace dynamixel {
                 return set_goal_position(id, pos);
             }
 
+            InstructionPacket<protocol_t> set_goal_position_angle(double rad) const override
+            {
+                return Model::set_goal_position_angle(this->_id, rad);
+            }
             static inline InstructionPacket<protocol_t> reg_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, double rad)
             {
                 double deg = rad * 57.2958;
@@ -175,6 +178,11 @@ namespace dynamixel {
                 typename ct_t::goal_position_t pos = ((deg - ct_t::min_goal_angle_deg) * (ct_t::max_goal_position - ct_t::min_goal_position) / (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg)) + ct_t::min_goal_position;
 
                 return reg_goal_position(id, pos);
+            }
+
+            InstructionPacket<protocol_t> reg_goal_position_angle(double rad) const override
+            {
+                return Model::reg_goal_position_angle(this->_id, rad);
             }
             // template <typename Id, typename Pos>
             static inline InstructionPacket<protocol_t> sync_goal_position_angle(typename Servo<Model>::protocol_t::id_t id, const std::vector<uint8_t>& ids, const std::vector<double>& pos)
@@ -191,6 +199,11 @@ namespace dynamixel {
                 return sync_write_t(ct_t::goal_position, ids, packed);
             }
 
+            InstructionPacket<protocol_t> sync_goal_position_angle(const std::vector<uint8_t>& ids, const std::vector<double>& pos) const override
+            {
+                return Model::sync_goal_position_angle(this->_id, ids, pos);
+            }
+
             static inline InstructionPacket<protocol_t> bulk_read_position_angle(typename Servo<Model>::protocol_t::id_t id, const std::vector<uint8_t>& ids)
             {
                 std::vector<typename Servo<Model>::protocol_t::address_t> address;
@@ -202,21 +215,6 @@ namespace dynamixel {
                     data_length.push_back(sizeof(type_address));
                 }
                 return bulk_read_t(ids, address, data_length);
-            }
-
-            InstructionPacket<protocol_t> set_goal_position_angle(double rad) const override
-            {
-                return Model::set_goal_position_angle(this->_id, rad);
-            }
-
-            InstructionPacket<protocol_t> reg_goal_position_angle(double rad) const override
-            {
-                return Model::reg_goal_position_angle(this->_id, rad);
-            }
-
-            InstructionPacket<protocol_t> sync_goal_position_angle(const std::vector<uint8_t>& ids, const std::vector<double>& pos) const override
-            {
-                return Model::sync_goal_position_angle(this->_id, ids, pos);
             }
 
             InstructionPacket<protocol_t> bulk_read_position_angle(const std::vector<uint8_t>& ids) const override
@@ -247,45 +245,6 @@ namespace dynamixel {
                 return Model::parse_present_position_angle(this->_id, st);
             }
 
-            // Bulk operations. Only works for MX models with protocol 1. Only works if the models are known and they are all the same
-            template <typename Id>
-            static InstructionPacket<protocol_t> get_current_positions_MX(const std::vector<Id>& ids)
-            {
-                std::vector<uint8_t> address;
-                std::vector<uint8_t> data_length;
-                for (size_t i = 0; i < ids.size(); i++) {
-                    address.push_back(0x24); // adress 36 on MX models (0x24) -- adress 37 on XL models (0x25)
-                    data_length.push_back(0x02);
-                }
-                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
-            }
-
-            // Bulk operations. Only works for XL models with protocol 2. Only works if the models are known and they are all the same
-            template <typename Id>
-            static InstructionPacket<protocol_t> get_current_positions_XL(const std::vector<Id>& ids)
-            {
-                std::vector<uint16_t> address;
-                std::vector<uint16_t> data_length;
-                for (size_t i = 0; i < ids.size(); i++) {
-                    address.push_back(0x25); // adress 36 on MX models (0x24) -- adress 37 on XL models (0x25)
-                    data_length.push_back(0x02);
-                }
-                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
-            }
-
-            // Bulk operations. Only works for XM models with protocol 2. Only works if the models are known and they are all the same
-            template <typename Id>
-            static InstructionPacket<protocol_t> get_current_positions_XM(const std::vector<Id>& ids)
-            {
-                std::vector<uint16_t> address;
-                std::vector<uint16_t> data_length;
-                for (size_t i = 0; i < ids.size(); i++) {
-                    address.push_back(0x84); // adress 36 on MX models (0x24) -- adress 37 on XL models (0x25)
-                    data_length.push_back(0x04);
-                }
-                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
-            }
-
             // =================================================================
             // Speed-specific
 
@@ -308,6 +267,50 @@ namespace dynamixel {
             InstructionPacket<protocol_t> reg_moving_speed_angle(double rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const override
             {
                 return Model::reg_moving_speed_angle(this->_id, rad_per_s, operating_mode);
+            }
+
+            static inline InstructionPacket<protocol_t> sync_moving_speed_angle(typename Servo<Model>::protocol_t::id_t id, const std::vector<uint8_t>& ids, const std::vector<double>& rad_per_s, OperatingMode operating_mode)
+            {
+                if (ids.size() != rad_per_s.size())
+                    throw errors::Error("Instruction: error when setting moving speeds: \n\tMismatch in vector size for ids and speeds");
+                std::vector<int32_t> speed_ticks;
+                // convert radians per second to ticks
+                for (int i = 0; i < rad_per_s.size(); i++)
+                    speed_ticks.push_back(round(60 * rad_per_s[i] / (two_pi * ct_t::rpm_per_tick)));
+
+                for (int j = 0; j < speed_ticks.size(); j++) {
+                    // The actuator is operated as a wheel (continuous rotation)
+                    if (operating_mode == OperatingMode::wheel) {
+                        // Check that desired speed is within the actuator's bounds
+
+                        if (!(abs(speed_ticks[j]) >= ct_t::min_goal_speed && abs(speed_ticks[j]) <= ct_t::max_goal_speed)) {
+                            throw errors::Error("Desired speed is out actuator's bounds");
+                        }
+
+                        // Move negatives values in the range [ct_t::min_goal_speed,
+                        // ct_t::2*max_goal_speed+1]
+                        if (speed_ticks[j] < 0) {
+                            speed_ticks[j] = -speed_ticks[j] + ct_t::max_goal_speed + 1;
+                        }
+                    }
+                    // The actuator is operated as a joint (not continuous rotation)
+                    else if (operating_mode == OperatingMode::joint) {
+                        if (!(speed_ticks[j] >= ct_t::min_goal_speed && speed_ticks[j] <= ct_t::max_goal_speed)) {
+                            throw errors::Error("Desired speed is out actuator's bounds");
+                        }
+                    }
+                }
+
+                std::vector<std::vector<uint8_t>> packed(speed_ticks.size());
+                for (size_t i = 0; i < speed_ticks.size(); i++)
+                    packed[i] = protocol_t::pack_data((typename ct_t::moving_speed_t)speed_ticks[i]);
+
+                return sync_write_t(ct_t::moving_speed, ids, packed);
+            }
+
+            InstructionPacket<protocol_t> sync_moving_speed_angle(const std::vector<uint8_t>& ids, const std::vector<double>& rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const override
+            {
+                return Model::sync_moving_speed_angle(this->_id, ids, rad_per_s, operating_mode);
             }
 
             // TODO: read speed from dynamixel pros to check that we do get negative values too
@@ -377,45 +380,24 @@ namespace dynamixel {
                 return sync_write_t(ct_t::moving_speed, _get_typed<typename protocol_t::id_t>(ids), packed);
             }
 
-            // Bulk operations. Only works for MX models with protocol 1. Only works if the models are known and they are all the same
-            template <typename Id>
-            static InstructionPacket<protocol_t> get_current_speed_MX(const std::vector<Id>& ids)
+            static inline InstructionPacket<protocol_t> bulk_read_speed_angle(typename Servo<Model>::protocol_t::id_t id, const std::vector<uint8_t>& ids)
             {
-                //std::vector<protocols::Protocol1::address_t> address;
-                std::vector<uint8_t> address; //uint8_t
-                std::vector<uint8_t> data_length; //uint8_t
+                std::vector<typename Servo<Model>::protocol_t::address_t> address;
+                std::vector<typename Servo<Model>::protocol_t::length_t> data_length;
+                typename Servo<Model>::protocol_t::address_t present_speed_address = ct_t::present_speed;
+                typename ct_t::present_speed_t type_address;
                 for (size_t i = 0; i < ids.size(); i++) {
-                    address.push_back(0x26); // 0x27 for XL and 0x26 for MX
-                    data_length.push_back(0x02);
+                    address.push_back(present_speed_address);
+                    data_length.push_back(sizeof(type_address));
                 }
-                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
+                return bulk_read_t(ids, address, data_length);
             }
 
-            // Bulk operations. Only works for XM models with protocol 2. Only works if the models are known and they are all the same
-            template <typename Id>
-            static InstructionPacket<protocol_t> get_current_speed_XM(const std::vector<Id>& ids)
+            InstructionPacket<protocol_t> bulk_read_speed_angle(const std::vector<uint8_t>& ids) const override
             {
-                std::vector<uint16_t> address;
-                std::vector<uint16_t> data_length;
-                for (size_t i = 0; i < ids.size(); i++) {
-                    address.push_back(0x80); // 0x80 for XM
-                    data_length.push_back(0x04);
-                }
-                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
+                return Model::bulk_read_speed_angle(this->_id, ids);
             }
 
-            // Bulk operations. Only works for XL models with protocol 2. Only works if the models are known and they are all the same
-            template <typename Id>
-            static InstructionPacket<protocol_t> get_current_speed_XL(const std::vector<Id>& ids)
-            {
-                std::vector<uint16_t> address;
-                std::vector<uint16_t> data_length;
-                for (size_t i = 0; i < ids.size(); i++) {
-                    address.push_back(0x27); // 0x27 for XL
-                    data_length.push_back(0x02);
-                }
-                return bulk_read_t(_get_typed<typename protocol_t::id_t>(ids), address, data_length);
-            }
             // =================================================================
             // Torque-specific
 

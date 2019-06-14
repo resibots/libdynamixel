@@ -204,11 +204,6 @@ namespace dynamixel {
                 throw errors::Error("bulk_read_position_angle not implemented in model");
             }
 
-            // virtual InstructionPacket<protocol_t> get_current_positions_all(std::vector<id_t> ids) const
-            // {
-            //     throw errors::Error("get_current_positions_all not implemented in model");
-            // }
-
             // =================================================================
             // Speed-specific
 
@@ -220,6 +215,16 @@ namespace dynamixel {
             virtual InstructionPacket<protocol_t> reg_moving_speed_angle(double rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const
             {
                 throw errors::Error("reg_moving_speed_angle not implemented in model");
+            }
+
+            virtual InstructionPacket<protocol_t> sync_moving_speed_angle(const std::vector<uint8_t>& ids, const std::vector<double>& rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const
+            {
+                throw errors::Error("sync_moving_speed_angle not implemented in model");
+            }
+
+            virtual InstructionPacket<protocol_t> bulk_read_speed_angle(const std::vector<uint8_t>& ids) const
+            {
+                throw errors::Error("bulk_read_speed_angle not implemented in model");
             }
 
             virtual double parse_joint_speed(const StatusPacket<protocol_t>& st) const

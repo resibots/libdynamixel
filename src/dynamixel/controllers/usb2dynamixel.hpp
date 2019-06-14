@@ -24,7 +24,7 @@ namespace dynamixel {
         @param error number, usually the value of errno
         @return std::string of the explanation
     **/
-    std::string write_error_string(int error_number)
+    inline std::string write_error_string(int error_number)
     {
         switch (error_number) {
         case EAGAIN:
