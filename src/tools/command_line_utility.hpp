@@ -637,7 +637,7 @@ namespace dynamixel {
             _dyn_util.detect_servos();
 
             std::pair<std::vector<id_t>, std::vector<double>> speeds
-                = _dyn_util.get_speed();
+                = _dyn_util.get_speed_bulk();
 
             std::cout << "Goal angular velocities of the actuators (rad/s):"
                       << std::endl;

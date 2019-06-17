@@ -31,7 +31,8 @@ namespace dynamixel {
         wheel,
         joint,
         multi_turn,
-        voltage,
+        multi_turn_torque,
+        PWM,
         unknown
     };
     namespace servos {
