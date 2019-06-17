@@ -32,10 +32,10 @@ namespace dynamixel {
                    "a socket and has been marked nonblocking (O_NONBLOCK), and "
                    "the write would block.";
         // On some OS, EWOULDBLOCK has the same value as EAGAIN and would hence not compile.
-        // case EWOULDBLOCK:
-        //     return "EWOULDBLOCK: The file descriptor fd refers to a socket "
-        //            "and has been marked nonblocking (O_NONBLOCK), and the "
-        //            "write would block.";
+        case EWOULDBLOCK:
+            return "EWOULDBLOCK: The file descriptor fd refers to a socket "
+                   "and has been marked nonblocking (O_NONBLOCK), and the "
+                   "write would block.";
         case EBADF:
             return "EBADF: fd is not a valid file descriptor or is not open for writing.";
         case EDESTADDRREQ:
