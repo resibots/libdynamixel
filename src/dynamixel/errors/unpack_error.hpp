@@ -1,9 +1,9 @@
 #ifndef DYNAMIXEL_ERRORS_UNPACK_ERROR_HPP_
 #define DYNAMIXEL_ERRORS_UNPACK_ERROR_HPP_
 
-#include <string>
-#include <stdint.h>
 #include <sstream>
+#include <stdint.h>
+#include <string>
 
 #include "error.hpp"
 

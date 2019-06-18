@@ -4,7 +4,7 @@
 #include <cassert>
 #include <stdint.h>
 
-#include "../errors/error.hpp"
+#include "../errors/vector_size_errors.hpp"
 #include "../instruction_packet.hpp"
 
 namespace dynamixel {
@@ -20,7 +20,7 @@ namespace dynamixel {
                 uint16_t data_length)
             {
                 if (ids.size() == 0)
-                    throw errors::Error("SyncRead: ids vector of size zero");
+                    throw errors::VectorEmptyError("SyncRead", "ids");
 
                 std::vector<uint8_t> parameters(ids.size() + 9);
 

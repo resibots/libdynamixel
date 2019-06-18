@@ -4,7 +4,7 @@
 #include <cassert>
 #include <stdint.h>
 
-#include "../errors/error.hpp"
+#include "../errors/vector_size_errors.hpp"
 #include "../instruction_packet.hpp"
 
 namespace dynamixel {
@@ -54,7 +54,7 @@ namespace dynamixel {
                 const uint8_t& data_length)
             {
                 if (ids.size() == 0)
-                    throw errors::Error("BulkRead: ids vector of size zero");
+                    throw errors::VectorEmptyError("BulkRead", "ids");
 
                 std::vector<uint8_t> parameters(3 * ids.size() + 3);
 
@@ -95,7 +95,7 @@ namespace dynamixel {
                 const uint16_t& data_length)
             {
                 if (ids.size() == 0)
-                    throw errors::Error("BulkRead: ids vector of size zero");
+                    throw errors::VectorEmptyError("BulkRead", "ids");
 
                 std::vector<uint8_t> parameters(5 * ids.size() + 5);
                 size_t curr = 0;
@@ -116,11 +116,11 @@ namespace dynamixel {
                 std::vector<C> lengths)
             {
                 if (ids.size() == 0)
-                    throw errors::Error("BulkRead: ids vector of size zero");
+                    throw errors::VectorEmptyError("BulkRead", "ids");
                 if (ids.size() != addresses.size())
-                    throw errors::Error("BulkRead: mismatching size for ids and addresses");
+                    throw errors::VectorSizesDifferError("BulkRead", "ids", "addresses");
                 if (ids.size() != lengths.size())
-                    throw errors::Error("BulkRead: mismatching size for ids and lengths/sizes");
+                    throw errors::VectorSizesDifferError("BulkRead", "ids", "lengths");
             }
         };
     } // namespace instructions
