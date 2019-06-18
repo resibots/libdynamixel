@@ -1,11 +1,11 @@
 #ifndef DYNAMIXEL_INSTRUCTIONS_SYNC_WRITE_HPP_
 #define DYNAMIXEL_INSTRUCTIONS_SYNC_WRITE_HPP_
 
-#include <stdint.h>
 #include <cassert>
+#include <stdint.h>
 
+#include "../errors/vector_size_errors.hpp"
 #include "../instruction_packet.hpp"
-#include "../errors/error.hpp"
 
 namespace dynamixel {
     namespace instructions {
@@ -21,9 +21,9 @@ namespace dynamixel {
                 const std::vector<std::vector<uint8_t>>& data)
             {
                 if (ids.size() == 0)
-                    throw errors::Error("SyncWrite: ids vector of size zero");
+                    throw errors::VectorEmptyError("SyncWrite", "ids");
                 if (ids.size() != data.size())
-                    throw errors::Error("SyncWrite: mismatching vectors size for ids and data");
+                    throw errors::VectorSizesDifferError("SyncWrite", "ids", "data");
 
                 typename T::length_t data_length = data[0].size();
                 std::vector<uint8_t> parameters((data_length + 1) * ids.size() + 2);
@@ -50,9 +50,9 @@ namespace dynamixel {
                 const std::vector<std::vector<uint8_t>>& data)
             {
                 if (ids.size() == 0)
-                    throw errors::Error("SyncWrite: ids vector of size zero");
+                    throw errors::VectorEmptyError("SyncWrite", "ids");
                 if (ids.size() != data.size())
-                    throw errors::Error("SyncWrite: mismatching vectors size for ids and data");
+                    throw errors::VectorSizesDifferError("SyncWrite", "ids", "data");
 
                 typename T::length_t data_length = data[0].size();
                 std::vector<uint8_t> parameters((data_length + 1) * ids.size() + 4);
@@ -77,7 +77,7 @@ namespace dynamixel {
                 return parameters;
             }
         };
-    }
-}
+    } // namespace instructions
+} // namespace dynamixel
 
 #endif

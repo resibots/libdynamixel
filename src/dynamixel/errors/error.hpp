@@ -47,8 +47,8 @@ namespace dynamixel {
         {
             return err.print(os);
         }
-    }
-}
+    } // namespace errors
+} // namespace dynamixel
 
 #define CHECK(val, msg) check(__FILE__, __LINE__, (val), msg)
 #endif

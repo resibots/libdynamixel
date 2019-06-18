@@ -32,7 +32,7 @@ If you want your USB2AX serial interface to appear in `/dev` as `usb2axN` (where
 
 If the reading time seems too long, check the value of the USB latency timer. On ubuntu this value is retrieved with this command `cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer`. It is the time, in milliseconds, for which the device driver buffers data before making it available.
 
-You can change this timer with the command `echo 4 | sudo tee /sys/bus/usb-serial/devices/ttyUSB0/latency_timer` which sets it to 4 ms for the device `/dev/ttyUSB0`.
+You can change this timer with the command `echo 0 | sudo tee /sys/bus/usb-serial/devices/ttyUSB0/latency_timer` which sets it to 0 ms for the device `/dev/ttyUSB0`.
 
 ## Using Libdynamixel on Mac
 

@@ -433,9 +433,13 @@ namespace dynamixel {
                 throw errors::UtilityError("set_position(vector, vector): the "
                                            "vectors of IDs and angles should have "
                                            "the same length");
-            _serial_interface.send(
-                std::make_shared<servos::Mx28>(0)->set_goal_positions<id_t, double>(ids, angles));
-
+            std::vector<uint8_t> ids_cast;
+            for (int i = 0; i < ids.size(); i++) {
+                ids_cast.push_back((uint8_t)ids[i]);
+            }
+            // _serial_interface.send(
+            //     std::make_shared<servos::Xm430W350>(0)->set_goal_positions<id_t, double>(ids, angles)); //Mx28
+            _serial_interface.send(_servos.at(ids[0])->sync_goal_position_angle(ids_cast, angles));
             StatusPacket<Protocol> status;
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.recv(status);
@@ -529,9 +533,17 @@ namespace dynamixel {
                 ids.push_back(servo.first);
             }
 
-            _serial_interface.send(
-                std::make_shared<servos::Mx28>(0)->get_current_positions<id_t>(ids));
-
+            std::vector<uint8_t> ids_cast;
+            for (int i = 0; i < ids.size(); i++) {
+                ids_cast.push_back((uint8_t)ids[i]);
+            }
+            // _servos.at(ids[0])->
+            // _serial_interface.send(_servos.at(ids[0])->sync_goal_position_angle(ids_cast, angles));
+            //  for (auto servo : _servos) {
+            _serial_interface.send(_servos.at(ids[0])->bulk_read_position_angle(ids_cast));
+            //  std::make_shared<servos::Xl320>(0)->get_current_positions_XL<id_t>(ids));
+            //    break;
+            //  }
             StatusPacket<Protocol> status;
             for (auto servo : _servos) {
 
@@ -673,10 +685,13 @@ namespace dynamixel {
                 throw errors::UtilityError("set_speed_sync(vector, vector): the "
                                            "vectors of IDs and speeds should have "
                                            "the same length");
-
-            _serial_interface.send(
-                std::make_shared<servos::Mx28>(0)->set_moving_speeds<id_t, double>(ids, speeds, OperatingMode::wheel));
-
+            std::vector<uint8_t> ids_cast;
+            for (int i = 0; i < ids.size(); i++) {
+                ids_cast.push_back((uint8_t)ids[i]);
+            }
+            // _serial_interface.send(
+            //     std::make_shared<servos::Mx28>(0)->set_moving_speeds<id_t, double>(ids, speeds, OperatingMode::wheel));
+            _serial_interface.send(_servos.at(ids[0])->sync_moving_speed_angle(ids_cast, speeds, OperatingMode::joint));
             StatusPacket<Protocol> status;
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.recv(status);
@@ -756,6 +771,46 @@ namespace dynamixel {
                 }
             }
 
+            return std::make_pair(ids, speeds);
+        }
+
+        std::pair<std::vector<id_t>, std::vector<double>>
+        get_speed_bulk() const
+        {
+            check_scanned();
+
+            std::vector<double> speeds;
+            std::vector<id_t> ids;
+
+            for (auto servo : _servos) {
+                ids.push_back(servo.first);
+            }
+
+            std::vector<uint8_t> ids_cast;
+            for (int i = 0; i < ids.size(); i++) {
+                ids_cast.push_back((uint8_t)ids[i]);
+            }
+
+            _serial_interface.send(_servos.at(ids[0])->bulk_read_speed_angle(ids_cast));
+
+            StatusPacket<Protocol> status;
+            for (auto servo : _servos) {
+
+                _serial_interface.recv(status);
+
+                // parse response to get the speed
+                if (status.valid()) {
+
+                    speeds.push_back(
+                        servo.second->parse_present_position_angle(status));
+                }
+                else {
+                    std::stringstream message;
+                    message << (int)servo.first << " did not answer to the request for "
+                            << "its speed";
+                    throw errors::Error(message.str());
+                }
+            }
             return std::make_pair(ids, speeds);
         }
 

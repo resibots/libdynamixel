@@ -3,8 +3,8 @@
 
 #include <stdint.h>
 
-#include "servo.hpp"
 #include "../protocols/protocol2.hpp"
+#include "servo.hpp"
 
 namespace dynamixel {
     namespace servos {
@@ -174,7 +174,7 @@ namespace dynamixel {
             READ_FIELD(speed_trajectory);
             READ_FIELD(position_trajectory);
         };
-    }
-}
+    } // namespace servos
+} // namespace dynamixel
 
 #endif

@@ -1,9 +1,9 @@
 #ifndef DYNAMIXEL_ERRORS_CRC_ERROR_HPP_
 #define DYNAMIXEL_ERRORS_CRC_ERROR_HPP_
 
-#include <string>
-#include <stdint.h>
 #include <sstream>
+#include <stdint.h>
+#include <string>
 
 #include "error.hpp"
 
@@ -11,7 +11,8 @@ namespace dynamixel {
     namespace errors {
         class CrcError : public Error {
         public:
-            CrcError(uint8_t id, uint8_t protocol, uint32_t expected, uint32_t received) : _id(id), _protocol(protocol), _expected(expected), _received(received)
+            CrcError(uint8_t id, uint8_t protocol, uint32_t expected, uint32_t received)
+                : _id(id), _protocol(protocol), _expected(expected), _received(received)
             {
                 std::stringstream err_message;
                 err_message << "Status: checksum error while decoding packet with ID " << (int)id;
@@ -44,7 +45,7 @@ namespace dynamixel {
             uint8_t _id, _protocol;
             uint32_t _expected, _received;
         };
-    }
-}
+    } // namespace errors
+} // namespace dynamixel
 
 #endif

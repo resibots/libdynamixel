@@ -85,6 +85,10 @@ namespace dynamixel {
             return OperatingMode::joint;
         else if (4 == mode)
             return OperatingMode::multi_turn;
+        else if (5 == mode)
+            return OperatingMode::multi_turn_torque;
+        else if (16 == mode)
+            return OperatingMode::PWM;
         else
             return OperatingMode::unknown;
     }
@@ -119,6 +123,12 @@ namespace dynamixel {
             break;
         case OperatingMode::multi_turn:
             return "multi_turn";
+            break;
+        case OperatingMode::multi_turn_torque:
+            return "multi_turn_torque";
+            break;
+        case OperatingMode::PWM:
+            return "PWM/Voltage";
             break;
         case OperatingMode::unknown:
         default:

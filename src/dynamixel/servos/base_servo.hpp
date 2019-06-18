@@ -1,8 +1,8 @@
 #ifndef DYNAMIXEL_SERVOS_BASE_SERVO_HPP_
 #define DYNAMIXEL_SERVOS_BASE_SERVO_HPP_
 
-#include "../instruction_packet.hpp"
 #include "../errors/error.hpp"
+#include "../instruction_packet.hpp"
 
 #define BASE_FIELD(Name)                                                         \
     virtual InstructionPacket<protocol_t> get_##Name() const                     \
@@ -31,6 +31,8 @@ namespace dynamixel {
         wheel,
         joint,
         multi_turn,
+        multi_turn_torque,
+        PWM,
         unknown
     };
     namespace servos {
@@ -193,6 +195,16 @@ namespace dynamixel {
                 throw errors::Error("parse_present_position_angle not implemented in model");
             }
 
+            virtual InstructionPacket<protocol_t> sync_goal_position_angle(const std::vector<uint8_t>& ids, const std::vector<double>& pos) const
+            {
+                throw errors::Error("sync_goal_position_angle not implemented in model");
+            }
+
+            virtual InstructionPacket<protocol_t> bulk_read_position_angle(const std::vector<uint8_t>& ids) const
+            {
+                throw errors::Error("bulk_read_position_angle not implemented in model");
+            }
+
             // =================================================================
             // Speed-specific
 
@@ -204,6 +216,16 @@ namespace dynamixel {
             virtual InstructionPacket<protocol_t> reg_moving_speed_angle(double rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const
             {
                 throw errors::Error("reg_moving_speed_angle not implemented in model");
+            }
+
+            virtual InstructionPacket<protocol_t> sync_moving_speed_angle(const std::vector<uint8_t>& ids, const std::vector<double>& rad_per_s, OperatingMode operating_mode = OperatingMode::joint) const
+            {
+                throw errors::Error("sync_moving_speed_angle not implemented in model");
+            }
+
+            virtual InstructionPacket<protocol_t> bulk_read_speed_angle(const std::vector<uint8_t>& ids) const
+            {
+                throw errors::Error("bulk_read_speed_angle not implemented in model");
             }
 
             virtual double parse_joint_speed(const StatusPacket<protocol_t>& st) const

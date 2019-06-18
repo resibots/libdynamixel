@@ -1,8 +1,8 @@
 #ifndef DYNAMIXEL_BAD_PACKET_ERROR_HPP_
 #define DYNAMIXEL_BAD_PACKET_ERROR_HPP_
 
-#include <string>
 #include <stdint.h>
+#include <string>
 
 #include "error.hpp"
 
@@ -39,7 +39,7 @@ namespace dynamixel {
         private:
             const std::vector<uint8_t> _packet;
         };
-    }
-}
+    } // namespace errors
+} // namespace dynamixel
 
 #endif
