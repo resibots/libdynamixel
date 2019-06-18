@@ -433,11 +433,6 @@ namespace dynamixel {
                 throw errors::UtilityError("set_position(vector, vector): the "
                                            "vectors of IDs and angles should have "
                                            "the same length");
-<<<<<<< HEAD
-            _serial_interface.send(
-                std::make_shared<servos::Xm430W350>(0)->set_goal_positions_angle<id_t, double>(ids, angles)); //Mx28
-
-=======
             std::vector<uint8_t> ids_cast;
             for (int i = 0; i < ids.size(); i++) {
                 ids_cast.push_back((uint8_t)ids[i]);
@@ -445,7 +440,6 @@ namespace dynamixel {
             // _serial_interface.send(
             //     std::make_shared<servos::Xm430W350>(0)->set_goal_positions<id_t, double>(ids, angles)); //Mx28
             _serial_interface.send(_servos.at(ids[0])->sync_goal_position_angle(ids_cast, angles));
->>>>>>> dev
             StatusPacket<Protocol> status;
             for (int i = 0; i < ids.size(); i++) {
                 _serial_interface.recv(status);
