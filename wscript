@@ -28,7 +28,7 @@ def configure(conf):
     conf.recurse('src/tools')
     # conf.recurse('src/tests')
 
-    print 'CXXFLAGS:' + str(conf.env['CXXFLAGS'])
+    print('CXXFLAGS:' + str(conf.env['CXXFLAGS']))
 
 
 def build(bld):
