@@ -195,7 +195,7 @@ namespace dynamixel {
             {
                 typename Servo<Model>::ct_t::present_position_t pos;
                 Servo<Model>::protocol_t::unpack_data(st.parameters(), pos);
-                double deg = ((pos - ct_t::min_goal_position) * (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg) / (ct_t::max_goal_position - ct_t::min_goal_position)) + ct_t::min_goal_angle_deg;
+                double deg = (((double)pos - ct_t::min_goal_position) * (ct_t::max_goal_angle_deg - ct_t::min_goal_angle_deg) / (ct_t::max_goal_position - ct_t::min_goal_position)) + ct_t::min_goal_angle_deg;
                 double rad = deg / 57.2958;
                 return rad;
             }
